@@ -1062,13 +1062,17 @@
                                   <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel36" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="BFRE" min="-2" max="-2" attributes="0"/>
                                   <Component id="FREI" min="-2" pref="145" max="-2" attributes="0"/>
-                                  <Component id="UDLRE" min="-2" pref="145" max="-2" attributes="0"/>
                                   <Component id="FBRE" min="-2" pref="145" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="FFBRE" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="UDLRE" alignment="0" pref="145" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -1089,7 +1093,12 @@
                                   <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="UDLRE" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="FFBRE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="FBRE" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1099,7 +1108,7 @@
                                   <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="BFRE" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="14" max="32767" attributes="0"/>
+                              <EmptySpace pref="62" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1153,6 +1162,16 @@
                     <Component class="javax.swing.JTextField" name="UDLRE">
                     </Component>
                     <Component class="javax.swing.JTextField" name="FBRE">
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="FFBRE">
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FFBREActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel43">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Fecha firma baja:"/>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
