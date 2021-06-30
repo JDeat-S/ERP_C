@@ -198,14 +198,14 @@ public final class RH_4 extends javax.swing.JFrame {
     }
 
     public void buscar(String buscar) {
-        String[] titulos = {"id bd", "# Exp", "Nombre(s)", "Apellido P", "Apellido M", "Correo", "# Recados",
-            "# Casa", "# Celular", "RFC", "NSS", "CURP", "Forma de pago", "Sueldo", "Bono", "Caja de ahorro", "Banco", "Zona", "Servicio",
-            "Status", "Cta_banco", "Observaciones", "Calle", "# Exterior", "# Interior", "Colonia",
+        String[] titulos = {"ID BD", "# Exp", "Nombre completo", "Correo", "# Casa",
+            "# Recados", "# Celular", "RFC", "NSS", "CURP", "Forma de pago", "Sueldo", "Bono", "Caja de ahorro", "Banco", "Zona", "Servicio",
+            "Status", "Cuenta banco", "Observaciones", "Calle", "# Exterior", "# Interior", "Colonia",
             "DLG o Mun", "CP", "Doc. Originales", "Doc. Faltantes", "Doc. Entregables", "Fecha entrevista",
             "Fecha de ingreso", "Ultimo dia laborado", "Fecha firma baja", "Baja firmada", "Finiquito", "Cambio de Zona",
             "Cambio de servicio", "Fecha de Re-Ingreso", "Ultimo dia elaborado (Re)", "Fecha baja (Re)", "Baja firmada (Re)",
             "# recepcion personal"};
-        String[] registros = new String[44];
+        String[] registros = new String[42];
         DefaultTableModel modelo = new DefaultTableModel(null, titulos) {
             @Override
             public boolean isCellEditable(int filas, int columnas) {
@@ -213,8 +213,8 @@ public final class RH_4 extends javax.swing.JFrame {
             }
         };
 
-        String sql = "SELECT * FROM empleados WHERE `Nombre(s)_E` LIKE '%" + buscar + "%'"
-                + " OR `Apellido_P_E` LIKE '%" + buscar + "%' OR `Apellido_M_E` LIKE '%" + buscar + "%'";
+        String sql = "SELECT * FROM empleados WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
+                //+ " OR `Apellido_P_E` LIKE '%" + buscar + "%' OR `Apellido_M_E` LIKE '%" + buscar + "%'"; este es para buscar por 2+ filtros
         try {
 
             java.sql.Statement st = con.createStatement();
@@ -223,48 +223,46 @@ public final class RH_4 extends javax.swing.JFrame {
             while (rs.next()) {
                 registros[0] = rs.getString("id_bd");
                 registros[1] = rs.getString("Exp");
-                registros[2] = rs.getString("Nombre(s)_E");
-                registros[3] = rs.getString("Apellido_P_E");
-                registros[4] = rs.getString("Apellido_M_E");
-                registros[5] = rs.getString("Correo");
-                registros[6] = rs.getString("#_Recados");
-                registros[7] = rs.getString("#_Casa");
-                registros[8] = rs.getString("#_Celular");
-                registros[9] = rs.getString("RFC");
-                registros[10] = rs.getString("NSS");
-                registros[11] = rs.getString("CURP");
-                registros[12] = rs.getString("Forma_de_pago");
-                registros[13] = rs.getString("Sueldo");
-                registros[14] = rs.getString("Bono");
-                registros[15] = rs.getString("Caja de ahorro");
-                registros[16] = rs.getString("Banco");
-                registros[17] = rs.getString("Zona");
-                registros[18] = rs.getString("Servicio");
-                registros[19] = rs.getString("Status");
-                registros[20] = rs.getString("Cta_banco");
-                registros[21] = rs.getString("Observaciones");
-                registros[22] = rs.getString("Calle");
-                registros[23] = rs.getString("#_Exterior");
-                registros[24] = rs.getString("#_Interior");
-                registros[25] = rs.getString("Colonia");
-                registros[26] = rs.getString("DLG_o_Mun");
-                registros[27] = rs.getString("C.P");
-                registros[28] = rs.getString("Documentos originales");
-                registros[29] = rs.getString("Documentos Faltantes");
-                registros[30] = rs.getString("Documentos Entregables");
-                registros[31] = rs.getString("Fecha de entrevista");
-                registros[32] = rs.getString("Fecha de ingreso");
-                registros[33] = rs.getString("Fecha ultimo dia laborado");
-                registros[34] = rs.getString("Fecha Firma baja");
-                registros[35] = rs.getString("Baja Firmada");
-                registros[36] = rs.getString("Finiquito");
-                registros[37] = rs.getString("Cambio de Zona");
-                registros[38] = rs.getString("Cambio de Servicio");
-                registros[39] = rs.getString("Fecha de Re-ingreso");
-                registros[40] = rs.getString("Fecha ultimo dia laborado (Re)");
-                registros[41] = rs.getString("Fecha de baja (Re)");
-                registros[42] = rs.getString("Baja Firmada (Re)");
-                registros[43] = rs.getString("# recepcion personal");
+                registros[2] = rs.getString("Nombre Completo");
+                registros[3] = rs.getString("Correo");
+                registros[4] = rs.getString("#_Recados");
+                registros[5] = rs.getString("#_Casa");
+                registros[6] = rs.getString("#_Celular");
+                registros[7] = rs.getString("RFC");
+                registros[8] = rs.getString("NSS");
+                registros[9] = rs.getString("CURP");
+                registros[10] = rs.getString("Forma_de_pago");
+                registros[11] = rs.getString("Sueldo");
+                registros[12] = rs.getString("Bono");
+                registros[13] = rs.getString("Caja de ahorro");
+                registros[14] = rs.getString("Banco");
+                registros[15] = rs.getString("Zona");
+                registros[16] = rs.getString("Servicio");
+                registros[17] = rs.getString("Status");
+                registros[18] = rs.getString("Cuenta banco");
+                registros[19] = rs.getString("Observaciones");
+                registros[20] = rs.getString("Calle");
+                registros[21] = rs.getString("# Exterior");
+                registros[22] = rs.getString("# Interior");
+                registros[23] = rs.getString("Colonia");
+                registros[24] = rs.getString("DLG o Mun");
+                registros[25] = rs.getString("C.P");
+                registros[26] = rs.getString("Documentos originales");
+                registros[27] = rs.getString("Documentos Faltantes");
+                registros[28] = rs.getString("Documentos Entregables");
+                registros[29] = rs.getString("Fecha de entrevista");
+                registros[30] = rs.getString("Fecha de ingreso");
+                registros[31] = rs.getString("Fecha ultimo dia laborado");
+                registros[32] = rs.getString("Fecha Firma baja");
+                registros[33] = rs.getString("Baja Firmada");
+                registros[34] = rs.getString("Finiquito");
+                registros[35] = rs.getString("Cambio de Zona");
+                registros[36] = rs.getString("Cambio de Servicio");
+                registros[37] = rs.getString("Fecha de Re-ingreso");
+                registros[38] = rs.getString("Fecha ultimo dia laborado (Re)");
+                registros[39] = rs.getString("Fecha de baja (Re)");
+                registros[40] = rs.getString("Baja Firmada (Re)");
+                registros[41] = rs.getString("# recepcion personal");
 
                 modelo.addRow(registros);
             }
@@ -276,10 +274,10 @@ public final class RH_4 extends javax.swing.JFrame {
     }
 
     public void buscari(String buscari) {
-        String[] titulos = {"id bd", "# Exp", "Nombre(s)", "Apellido P", "Apellido M",
+        String[] titulos = {"id bd", "# Exp", "Nombre completo",
             "Genero", "Fecha de incorporacion", "Zona", "RFC", "NSS", "CURP", "Puesto", "Sueldo",
             "Status", "Fecha baja", "Observaciones"};
-        String[] registros = new String[16];
+        String[] registros = new String[14];
         DefaultTableModel modelo = new DefaultTableModel(null, titulos) {
             @Override
             public boolean isCellEditable(int filas, int columnas) {
@@ -287,8 +285,8 @@ public final class RH_4 extends javax.swing.JFrame {
             }
         };
 
-        String sql = "SELECT * FROM imss WHERE idimss LIKE '%" + buscari + "%'"
-                + " OR Apellido_P_imss LIKE '%" + buscari + "%' OR Apellido_M_imss LIKE '%" + buscari + "%'";
+        String sql = "SELECT * FROM imss WHERE `Nombre completo` LIKE '%" + buscari + "%'";
+               // + " OR Apellido_P_imss LIKE '%" + buscari + "%' OR Apellido_M_imss LIKE '%" + buscari + "%'";
         try {
 
             java.sql.Statement st = con.createStatement();
@@ -297,20 +295,18 @@ public final class RH_4 extends javax.swing.JFrame {
             while (rs.next()) {
                 registros[0] = rs.getString("idimss");
                 registros[1] = rs.getString("#_Exp");
-                registros[2] = rs.getString("Nombre(s)_imss");
-                registros[3] = rs.getString("Apellido_P_imss");
-                registros[4] = rs.getString("Apellido_M_imss");
-                registros[5] = rs.getString("Genero_imss");
-                registros[6] = rs.getString("Fecha_de_incorporacion");
-                registros[7] = rs.getString("Zona_Imss");
-                registros[8] = rs.getString("nss_imss");
-                registros[9] = rs.getString("rfc_imss");
-                registros[10] = rs.getString("curp_imss");
-                registros[11] = rs.getString("Puesto");
-                registros[12] = rs.getString("Salario");
-                registros[13] = rs.getString("Status_imss");
-                registros[14] = rs.getString("fecha_baja");
-                registros[15] = rs.getString("observaciones");
+                registros[2] = rs.getString("Nombre completo");        
+                registros[3] = rs.getString("Genero_imss");
+                registros[4] = rs.getString("Fecha_de_incorporacion");
+                registros[5] = rs.getString("Zona_Imss");
+                registros[6] = rs.getString("nss_imss");
+                registros[7] = rs.getString("rfc_imss");
+                registros[8] = rs.getString("curp_imss");
+                registros[9] = rs.getString("Puesto");
+                registros[10] = rs.getString("Salario");
+                registros[11] = rs.getString("Status_imss");
+                registros[12] = rs.getString("fecha_baja");
+                registros[13] = rs.getString("observaciones");
 
                 modelo.addRow(registros);
             }
@@ -475,10 +471,10 @@ public final class RH_4 extends javax.swing.JFrame {
     }
 
     public void mostrarimss() {
-        String[] titulos = {"id bd", "# Exp", "Nombre(s)", "Apellido P", "Apellido M",
+        String[] titulos = {"id bd", "# Exp", "Nombre Completo", 
             "Genero", "Fecha de incorporacion", "Zona", "RFC", "NSS", "CURP", "Puesto", "Sueldo",
             "Status", "Fecha baja", "Observaciones"};
-        String[] registros = new String[16];
+        String[] registros = new String[14];
         DefaultTableModel modelo = new DefaultTableModel(null, titulos) {
             @Override
             public boolean isCellEditable(int filas, int columnas) {
@@ -496,20 +492,18 @@ public final class RH_4 extends javax.swing.JFrame {
 
                 registros[0] = rs.getString("idimss");
                 registros[1] = rs.getString("#_Exp");
-                registros[2] = rs.getString("Nombre(s)_imss");
-                registros[3] = rs.getString("Apellido_P_imss");
-                registros[4] = rs.getString("Apellido_M_imss");
-                registros[5] = rs.getString("Genero_imss");
-                registros[6] = rs.getString("Fecha_de_incorporacion");
-                registros[7] = rs.getString("Zona_Imss");
-                registros[8] = rs.getString("nss_imss");
-                registros[9] = rs.getString("rfc_imss");
-                registros[10] = rs.getString("curp_imss");
-                registros[11] = rs.getString("Puesto");
-                registros[12] = rs.getString("Salario");
-                registros[13] = rs.getString("Status_imss");
-                registros[14] = rs.getString("fecha_baja");
-                registros[15] = rs.getString("observaciones");
+                registros[2] = rs.getString("Nombre completo");        
+                registros[3] = rs.getString("Genero_imss");
+                registros[4] = rs.getString("Fecha_de_incorporacion");
+                registros[5] = rs.getString("Zona_Imss");
+                registros[6] = rs.getString("nss_imss");
+                registros[7] = rs.getString("rfc_imss");
+                registros[8] = rs.getString("curp_imss");
+                registros[9] = rs.getString("Puesto");
+                registros[10] = rs.getString("Salario");
+                registros[11] = rs.getString("Status_imss");
+                registros[12] = rs.getString("fecha_baja");
+                registros[13] = rs.getString("observaciones");
 
                 modelo.addRow(registros);
             }
@@ -740,6 +734,7 @@ public final class RH_4 extends javax.swing.JFrame {
         CURP = new javax.swing.JTextField();
         jScrollPane9 = new javax.swing.JScrollPane();
         NombreE = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         Status = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
@@ -844,6 +839,7 @@ public final class RH_4 extends javax.swing.JFrame {
         FIimss = new com.toedter.calendar.JDateChooser();
         jScrollPane10 = new javax.swing.JScrollPane();
         nameimss = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         puesto = new javax.swing.JComboBox<>();
         jLabel50 = new javax.swing.JLabel();
@@ -899,25 +895,29 @@ public final class RH_4 extends javax.swing.JFrame {
         NombreE.setRows(5);
         jScrollPane9.setViewportView(NombreE);
 
+        jLabel2.setText("Completo");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(27, 27, 27)
-                            .addComponent(jLabel26))
-                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(jLabel26))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(jLabel8)
+                        .addComponent(jLabel7)
+                        .addComponent(jLabel9)
+                        .addComponent(jLabel10))
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Correo)
@@ -940,7 +940,10 @@ public final class RH_4 extends javax.swing.JFrame {
                     .addComponent(exp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel17)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2))
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1566,15 +1569,7 @@ public final class RH_4 extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 153));
 
-        serch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                serchActionPerformed(evt);
-            }
-        });
         serch.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                serchKeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 serchKeyReleased(evt);
             }
@@ -1627,7 +1622,7 @@ public final class RH_4 extends javax.swing.JFrame {
                         .addComponent(elim))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 9154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 11842, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -1692,6 +1687,8 @@ public final class RH_4 extends javax.swing.JFrame {
         nameimss.setRows(5);
         jScrollPane10.setViewportView(nameimss);
 
+        jLabel3.setText("Completo");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -1701,11 +1698,14 @@ public final class RH_4 extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addComponent(txtid2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel42, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(txtid2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(52, 52, 52)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel42, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(expimss, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
@@ -1740,7 +1740,10 @@ public final class RH_4 extends javax.swing.JFrame {
                             .addComponent(jLabel42))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel45)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel45)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3))
                             .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1951,10 +1954,9 @@ public final class RH_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(serch2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6)
-                        .addGap(0, 1811, Short.MAX_VALUE))
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                        .addComponent(jButton6))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 5280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2222,14 +2224,6 @@ public final class RH_4 extends javax.swing.JFrame {
         buscar(serch.getText());
     }//GEN-LAST:event_serchKeyReleased
 
-    private void serchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_serchKeyPressed
-
-    private void serchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_serchActionPerformed
-
     private void CZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CZActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CZActionPerformed
@@ -2395,6 +2389,7 @@ public final class RH_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -2405,6 +2400,7 @@ public final class RH_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
