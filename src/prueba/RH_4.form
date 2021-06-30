@@ -150,53 +150,32 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                              <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                          <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Correo" max="32767" attributes="0"/>
-                                          <Component id="Rec" max="32767" attributes="0"/>
-                                          <Component id="Casa" max="32767" attributes="0"/>
-                                          <Component id="AP" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="AM" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="exp" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                                  <Component id="txtname" min="-2" pref="140" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel17" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Celular" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="RFC" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="NSS" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="CURP" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="Correo" max="32767" attributes="0"/>
+                                  <Component id="Rec" max="32767" attributes="0"/>
+                                  <Component id="Casa" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane9" max="32767" attributes="0"/>
+                                  <Component id="exp" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Celular" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RFC" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="NSS" max="32767" attributes="0"/>
+                                  <Component id="CURP" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -211,21 +190,11 @@
                                   <Component id="exp" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtname" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane9" min="-2" pref="76" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="AP" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="AM" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="10" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="Correo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -245,10 +214,10 @@
                                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="Celular" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="10" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="RFC" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="RFC" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -268,16 +237,10 @@
                   <SubComponents>
                     <Component class="javax.swing.JTextField" name="exp">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtname">
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="AP">
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel5">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="# Recados:"/>
                       </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="AM">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel6">
                       <Properties>
@@ -319,16 +282,6 @@
                         <Property name="text" type="java.lang.String" value="Nombre(s):"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel2">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Apellido M:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel3">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Apellido P:"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel4">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Correo:"/>
@@ -343,6 +296,22 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="CURP">
                     </Component>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane9">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTextArea" name="NombreE">
+                          <Properties>
+                            <Property name="columns" type="int" value="20"/>
+                            <Property name="lineWrap" type="boolean" value="true"/>
+                            <Property name="rows" type="int" value="5"/>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
                   </SubComponents>
                 </Container>
                 <Container class="javax.swing.JPanel" name="jPanel2">
@@ -543,6 +512,7 @@
                         <Component class="javax.swing.JTextArea" name="Obs">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
+                            <Property name="lineWrap" type="boolean" value="true"/>
                             <Property name="rows" type="int" value="5"/>
                           </Properties>
                         </Component>
@@ -1325,19 +1295,21 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
                                   <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="serch" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="elim" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane2" alignment="1" pref="4023" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane2" min="-2" pref="9154" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="136" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1350,9 +1322,9 @@
                               <Component id="serch" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="elim" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="580" max="-2" attributes="0"/>
-                          <EmptySpace pref="43" max="32767" attributes="0"/>
+                          <EmptySpace pref="38" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1380,10 +1352,198 @@
                     <Component class="javax.swing.JTable" name="data">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="0" rowCount="4"/>
+                          <Table columnCount="31" rowCount="0">
+                            <Column editable="false" title="ID_BD" type="java.lang.Object"/>
+                            <Column editable="false" title="# Exp" type="java.lang.Object"/>
+                            <Column editable="false" title="Nombre completo" type="java.lang.Object"/>
+                            <Column editable="false" title="# Casa" type="java.lang.Object"/>
+                            <Column editable="false" title="# Recados" type="java.lang.Object"/>
+                            <Column editable="false" title="# Celular" type="java.lang.Object"/>
+                            <Column editable="false" title="RFC" type="java.lang.Object"/>
+                            <Column editable="false" title="NSS" type="java.lang.Object"/>
+                            <Column editable="false" title="CURP" type="java.lang.Object"/>
+                            <Column editable="false" title="Documentos originales" type="java.lang.Object"/>
+                            <Column editable="false" title="Documentos Faltantes" type="java.lang.Object"/>
+                            <Column editable="false" title="Documentos Entregables" type="java.lang.Object"/>
+                            <Column editable="false" title="Forma de pago" type="java.lang.Object"/>
+                            <Column editable="false" title="Sueldo" type="java.lang.Object"/>
+                            <Column editable="false" title="Bono" type="java.lang.Object"/>
+                            <Column editable="false" title="Zona" type="java.lang.Object"/>
+                            <Column editable="false" title="Servicio" type="java.lang.Object"/>
+                            <Column editable="false" title="Status" type="java.lang.Object"/>
+                            <Column editable="false" title="Fecha de entrevista" type="java.lang.Object"/>
+                            <Column editable="false" title="Fecha de ingreso" type="java.lang.Object"/>
+                            <Column editable="false" title="Fecha ultimo dia laborado" type="java.lang.Object"/>
+                            <Column editable="false" title="Fecha firma baja" type="java.lang.Object"/>
+                            <Column editable="false" title="Baja firmada" type="java.lang.Object"/>
+                            <Column editable="false" title="Finiquito" type="java.lang.Object"/>
+                            <Column editable="false" title="Fecha de Re-ingreso" type="java.lang.Object"/>
+                            <Column editable="false" title="Cambio de Servicio" type="java.lang.Object"/>
+                            <Column editable="false" title="Fecha ultimo dia laborado (Re)" type="java.lang.Object"/>
+                            <Column editable="false" title="Fecha firma baja (Re)" type="java.lang.Object"/>
+                            <Column editable="false" title="Baja firmada (Re)" type="java.lang.Object"/>
+                            <Column editable="false" title="Observaciones" type="java.lang.Object"/>
+                            <Column editable="false" title="# recepcion personal" type="java.lang.Object"/>
+                          </Table>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                          <TableColumnModel selectionModel="0"/>
+                          <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                          </TableColumnModel>
                         </Property>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -1494,26 +1654,17 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                              <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                              <Component id="txtid2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel45" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel42" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
+                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                      <Component id="txtid2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel45" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel42" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="apimss" max="32767" attributes="0"/>
-                                          <Component id="nameimss" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="expimss" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                          <Component id="expimss" pref="142" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane10" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -1525,19 +1676,17 @@
                                           <Component id="jLabel48" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel47" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel46" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel44" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="gen" min="-2" max="-2" attributes="0"/>
-                                          <Component id="amimss" alignment="0" pref="142" max="32767" attributes="0"/>
                                           <Component id="zona1" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                           <Component id="nssimss" pref="142" max="32767" attributes="0"/>
                                           <Component id="FIimss" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="13" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1545,34 +1694,24 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Component id="txtid2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="expimss" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="nameimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane10" min="-2" pref="76" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                      <Component id="txtid2" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="apimss" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="amimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="gen" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1603,16 +1742,6 @@
                         <Property name="text" type="java.lang.String" value="# Exp"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel43">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Apellido P:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel44">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Apellido M:"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel45">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Nombre:"/>
@@ -1637,13 +1766,6 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="NSS:"/>
                       </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="amimss">
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="amimssActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="nameimss">
                     </Component>
                     <Component class="javax.swing.JComboBox" name="zona1">
                       <Properties>
@@ -1682,17 +1804,28 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="expimssActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="apimss">
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="apimssActionPerformed"/>
-                      </Events>
-                    </Component>
                     <Component class="javax.swing.JTextField" name="nssimss">
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtid2">
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="FIimss">
                     </Component>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane10">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTextArea" name="nameimss">
+                          <Properties>
+                            <Property name="columns" type="int" value="20"/>
+                            <Property name="lineWrap" type="boolean" value="true"/>
+                            <Property name="rows" type="int" value="5"/>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
                   </SubComponents>
                 </Container>
                 <Container class="javax.swing.JPanel" name="jPanel5">
@@ -1866,6 +1999,7 @@
                         <Component class="javax.swing.JTextArea" name="obsimss">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
+                            <Property name="lineWrap" type="boolean" value="true"/>
                             <Property name="rows" type="int" value="5"/>
                           </Properties>
                         </Component>
