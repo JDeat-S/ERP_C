@@ -329,16 +329,18 @@ public final class RH_4 extends javax.swing.JFrame {
         String Item8 = BFRE.getSelectedItem().toString();
         String Item9 = CZ.getSelectedItem().toString();
         String Item10 = CS.getSelectedItem().toString();
-        String SQL = "UPDATE empleados SET `Exp` = ?, `Nombre(s)_E` = ?, `Apellido_P_E` = ?,"
-                + " `Apellido_M_E` = ?, `Correo` = ?, `#_Recados` = ?, `#_Casa` = ?, `#_Celular` = ?,"
-                + " `RFC` = ?, `NSS` = ?, `CURP` = ?, `Forma_de_pago` = ?, `Sueldo` = ?, `Bono` = ?, `Caja de ahorro` = ?,"
-                + " `Banco` = ?, `Zona` = ?, `Servicio` = ?, `Status` = ?, `Cta_banco` = ?, "
-                + "`Observaciones` = ?, `Calle` = ?, `#_Exterior` = ?, `#_Interior` = ?, `Colonia` = ?, "
-                + "`DLG_o_Mun` = ?, `C.P` = ?, `Documentos originales` = ?, `Documentos Faltantes` = ?, "
-                + "`Documentos Entregables` = ?, `Fecha de entrevista` = ?, `Fecha de ingreso` = ?, "
-                + "`Fecha ultimo dia laborado` = ?, `Fecha Firma baja` = ?, `Baja Firmada` = ?, `Finiquito` = ?,"
-                + " `Cambio de Zona` = ?, `Cambio de Servicio` = ?, `Fecha de Re-ingreso` = ?,"
-                + " `Fecha ultimo dia laborado (Re)` = ?, `Fecha de baja (Re)` = ?, `Baja Firmada (Re)` = ?,"
+        String SQL = "UPDATE empleados SET `Exp` = ?, `Nombre Completo` = ?,"
+                + " `Correo` = ?, `#_Casa` = ?, `#_Recados` = ?, `#_Celular` = ?,"
+                + " `RFC` = ?, `NSS` = ?, `CURP` = ?, `Forma_de_pago` = ?, `Sueldo` = ?,"
+                + " `Bono` = ?, `Caja de ahorro` = ?, `Banco` = ?, `Zona` = ?, "
+                + "`Servicio` = ?, `Status` = ?, `Cuenta banco` = ?, `Observaciones` = ?,"
+                + " `Calle` = ?, `# Exterior` = ?, `# Interior` = ?, `Colonia` = ?,"
+                + " `DLG o Mun` = ?, `C.P` = ?, `Documentos originales` = ?,"
+                + " `Documentos Faltantes` = ?, `Documentos Entregables` = ?, "
+                + "`Fecha de entrevista` = ?, `Fecha de ingreso` = ?, `Fecha ultimo dia laborado` = ?,"
+                + " `Fecha firma baja` = ?, `Baja firmada` = ?, `Finiquito` = ?, `Cambio de Zona` = ?,"
+                + " `Cambio de Servicio` = ?, `Fecha de Re-ingreso` = ?, `Fecha ultimo dia laborado (Re)` = ?,"
+                + " `Fecha firma baja (Re)` = ?, `Fecha de baja (Re)` = ?, `Baja firmada (Re)` = ?,"
                 + " `# recepcion personal` = ? WHERE (`id_bd` = ?)";
 
         try {
@@ -346,47 +348,47 @@ public final class RH_4 extends javax.swing.JFrame {
 
             pst.setString(1, exp.getText());
             pst.setString(2, NombreE.getText());
-            
-            pst.setString(5, Correo.getText());
-            pst.setString(6, Rec.getText());
-            pst.setString(7, Casa.getText());
-            pst.setString(8, Celular.getText());
-            pst.setString(9, RFC.getText());
-            pst.setString(10, NSS.getText());
-            pst.setString(11, CURP.getText());
-            pst.setString(12, Item);
-            pst.setString(13, Sueldo.getText());
-            pst.setString(14, Bono.getText());
-            pst.setString(15, Cda.getText());
-            pst.setString(16, Item5);
-            pst.setString(17, Item2);
-            pst.setString(18, Item4);
-            pst.setString(19, Item3);
-            pst.setString(20, cta.getText());
-            pst.setString(21, Obs.getText());
-            pst.setString(22, Calle.getText());
-            pst.setString(23, Exterior.getText());
-            pst.setString(24, INT.getText());
-            pst.setString(25, Colonia.getText());
-            pst.setString(26, DLGMUN.getText());
-            pst.setString(27, CP.getText());
-            pst.setString(28, DO.getText());
-            pst.setString(29, DF.getText());
-            pst.setString(30, DE.getText());
-            pst.setString(31, FE.getText());
-            pst.setString(32, FI.getText());
-            pst.setString(33, UDL.getText());
-            pst.setString(34, FFB.getText());
-            pst.setString(35, Item6);
-            pst.setString(36, Item7);
-            pst.setString(37, Item9);
-            pst.setString(38, Item10);
-            pst.setString(39, FREI.getText());
-            pst.setString(40, UDLRE.getText());
-            pst.setString(41, FBRE.getText());
-            pst.setString(42, Item8);
-            pst.setString(43, NRP.getText());
-            pst.setInt(44, id);
+            pst.setString(3, Correo.getText());
+            pst.setString(4, Casa.getText());
+            pst.setString(5, Rec.getText());
+            pst.setString(6, Celular.getText());
+            pst.setString(7, RFC.getText());
+            pst.setString(8, NSS.getText());
+            pst.setString(9, CURP.getText());
+            pst.setString(10, Item);
+            pst.setString(11, Sueldo.getText());
+            pst.setString(12, Bono.getText());
+            pst.setString(13, Cda.getText());
+            pst.setString(14, Item5);
+            pst.setString(15, Item2);
+            pst.setString(16, Item4);
+            pst.setString(17, Item3);
+            pst.setString(18, cta.getText());
+            pst.setString(19, Obs.getText());
+            pst.setString(20, Calle.getText());
+            pst.setString(21, Exterior.getText());
+            pst.setString(22, INT.getText());
+            pst.setString(23, Colonia.getText());
+            pst.setString(24, DLGMUN.getText());
+            pst.setString(25, CP.getText());
+            pst.setString(26, DO.getText());
+            pst.setString(27, DF.getText());
+            pst.setString(28, DE.getText());
+            pst.setString(29, FE.getText());
+            pst.setString(30, FI.getText());
+            pst.setString(31, UDL.getText());
+            pst.setString(32, FFB.getText());
+            pst.setString(33, Item6);
+            pst.setString(34, Item7);
+            pst.setString(35, Item9);
+            pst.setString(36, Item10);
+            pst.setString(37, FREI.getText());
+            pst.setString(38, UDLRE.getText());
+            pst.setString(39, FFBRE.getText());
+            pst.setString(40, FBRE.getText());
+            pst.setString(41, Item8);
+            pst.setString(42, NRP.getText());
+            pst.setInt(43, id);
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Registro Modificado");
@@ -402,27 +404,27 @@ public final class RH_4 extends javax.swing.JFrame {
         String Item2 = zona1.getSelectedItem().toString();
         String Item3 = puesto.getSelectedItem().toString();
         String Item4 = Status1.getSelectedItem().toString();
-        String SQL = "UPDATE imss SET `#_Exp` = ?, `Nombre(s)_imss` = ?, `Apellido_P_imss` = ?,"
-                + " `Apellido_M_imss` = ?, `Genero_imss` = ?, `Fecha_de_incorporacion` = ?,"
-                + " `Zona_Imss` = ?, `nss_imss` = ?, `rfc_imss` = ?, `curp_imss` = ?, `Puesto` = ?, "
-                + "`Salario` = ?, `Status_imss` = ?, `fecha_baja` = ?, `observaciones` = ? WHERE (`idimss` = ?);";
+        String SQL = "UPDATE imss SET ``#_Exp` = ?, `Nombre completo` = ?, "
+                + "`Genero_imss` = ?, `Fecha_de_incorporacion` = ?, `Zona_Imss` = ?,"
+                + " `nss_imss` = ?, `rfc_imss` = ?, `curp_imss` = ?, `Puesto` = ?, `Salario` = ?, "
+                + "`Status_imss` = ?, `fecha_baja` = ?, `observaciones` = ? WHERE (`idimss` = ?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
             pst.setString(1, expimss.getText());
             pst.setString(2, nameimss.getText());
-            pst.setString(5, Item);
-            pst.setString(6, ((JTextField) FIimss.getDateEditor().getUiComponent()).getText());
-            pst.setString(7, Item2);
-            pst.setString(8, rfcimss.getText());
-            pst.setString(9, nssimss.getText());
-            pst.setString(10, curpimss.getText());
-            pst.setString(11, Item3);
-            pst.setString(12, sueldoimss.getText());
-            pst.setString(13, Item4);
-            pst.setString(14, ((JTextField) FBimss.getDateEditor().getUiComponent()).getText());
-            pst.setString(15, obsimss.getText());
-            pst.setInt(16, id);
+            pst.setString(3, Item);
+            pst.setString(4, ((JTextField) FIimss.getDateEditor().getUiComponent()).getText());
+            pst.setString(5, Item2);
+            pst.setString(6, rfcimss.getText());
+            pst.setString(7, nssimss.getText());
+            pst.setString(8, curpimss.getText());
+            pst.setString(9, Item3);
+            pst.setString(10, sueldoimss.getText());
+            pst.setString(11, Item4);
+            pst.setString(12, ((JTextField) FBimss.getDateEditor().getUiComponent()).getText());
+            pst.setString(13, obsimss.getText());
+            pst.setInt(14, id);
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Registro Modificado");
@@ -598,27 +600,25 @@ public final class RH_4 extends javax.swing.JFrame {
         String Item2 = zona1.getSelectedItem().toString();
         String Item3 = puesto.getSelectedItem().toString();
         String Item4 = Status1.getSelectedItem().toString();
-        String SQL = "insert into imss (`#_Exp`, `Nombre(s)_imss`, `Apellido_P_imss`,"
-                + " `Apellido_M_imss`, `Genero_imss`, `Fecha_de_incorporacion`, `Zona_Imss`,"
-                + " `nss_imss`, `rfc_imss`, `curp_imss`, `Puesto`, `Salario`, `Status_imss`,"
-                + " `fecha_baja`, `observaciones`) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String SQL = "insert into imss (`#_Exp`, `Nombre completo`, `Genero_imss`, `Fecha_de_incorporacion`,"
+                + " `Zona_Imss`, `nss_imss`, `rfc_imss`, `curp_imss`, `Puesto`, `Salario`, `Status_imss`, "
+                + "`fecha_baja`, `observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setString(1, expimss.getText());
             pst.setString(2, nameimss.getText());
-
-            pst.setString(5, Item);
-            pst.setString(6, ((JTextField) FIimss.getDateEditor().getUiComponent()).getText());
-            pst.setString(7, Item2);
-            pst.setString(8, rfcimss.getText());
-            pst.setString(9, nssimss.getText());
-            pst.setString(10, curpimss.getText());
-            pst.setString(11, Item3);
-            pst.setString(12, sueldoimss.getText());
-            pst.setString(13, Item4);
-            pst.setString(14, ((JTextField) FBimss.getDateEditor().getUiComponent()).getText());
-            pst.setString(15, obsimss.getText());
+            pst.setString(3, Item);
+            pst.setString(4, ((JTextField) FIimss.getDateEditor().getUiComponent()).getText());
+            pst.setString(5, Item2);
+            pst.setString(6, rfcimss.getText());
+            pst.setString(7, nssimss.getText());
+            pst.setString(8, curpimss.getText());
+            pst.setString(9, Item3);
+            pst.setString(10, sueldoimss.getText());
+            pst.setString(11, Item4);
+            pst.setString(12, ((JTextField) FBimss.getDateEditor().getUiComponent()).getText());
+            pst.setString(13, obsimss.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Registro Exitoso");
@@ -641,64 +641,62 @@ public final class RH_4 extends javax.swing.JFrame {
         String Item9 = CZ.getSelectedItem().toString();
         String Item10 = CS.getSelectedItem().toString();
 
-        String SQL = "insert into empleados (`Exp`, `Nombre(s)_E`, `Apellido_P_E`, `Apellido_M_E`, "
-                + "`Correo`, `#_Recados`, `#_Casa`, `#_Celular`, `RFC`, `NSS`, `CURP`, "
-                + "`Forma_de_pago`, `Sueldo`, `Bono`, `Caja de ahorro`, `Banco`, `Zona`, `Servicio`, `Status`, "
-                + "`Cta_banco`, `Observaciones`, `Calle`, `#_Exterior`, `#_Interior`, "
-                + "`Colonia`, `DLG_o_Mun`, `C.P`, `Documentos originales`, `Documentos Faltantes`, "
-                + "`Documentos Entregables`, `Fecha de entrevista`, `Fecha de ingreso`,"
-                + " `Fecha ultimo dia laborado`, `Fecha Firma baja`, `Baja Firmada`, `Finiquito`, "
-                + "`Cambio de Zona`, `Cambio de Servicio`, `Fecha de Re-ingreso`, "
-                + "`Fecha ultimo dia laborado (Re)`, `Fecha de baja (Re)`, `Baja Firmada (Re)`, "
-                + "`# recepcion personal`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "insert into empleados (`Exp`, `Nombre Completo`, `Correo`, `#_Casa`, `#_Recados`,"
+                + " `#_Celular`, `RFC`, `NSS`, `CURP`, `Forma_de_pago`, `Sueldo`, `Bono`, "
+                + "`Caja de ahorro`, `Banco`, `Zona`, `Servicio`, `Status`, `Cuenta banco`, "
+                + "`Observaciones`, `Calle`, `# Exterior`, `# Interior`, `Colonia`, `DLG o Mun`, `C.P`,"
+                + " `Documentos originales`, `Documentos Faltantes`, `Documentos Entregables`,"
+                + " `Fecha de entrevista`, `Fecha de ingreso`, `Fecha ultimo dia laborado`, "
+                + "`Fecha firma baja`, `Baja firmada`, `Finiquito`, `Cambio de Zona`, `Cambio de Servicio`,"
+                + " `Fecha de Re-ingreso`, `Fecha ultimo dia laborado (Re)`, `Fecha firma baja (Re)`, "
+                + "`Fecha de baja (Re)`, `Baja firmada (Re)`, `# recepcion personal`) VALUES (?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
             pst.setString(1, exp.getText());
             pst.setString(2, NombreE.getText());
-            
-            pst.setString(5, Correo.getText());
-            pst.setString(6, Rec.getText());
-            pst.setString(7, Casa.getText());
-            pst.setString(8, Celular.getText());
-            pst.setString(9, RFC.getText());
-            pst.setString(10, NSS.getText());
-            pst.setString(11, CURP.getText());
-            pst.setString(12, Item);
-            pst.setString(13, Sueldo.getText());
-            pst.setString(14, Bono.getText());
-            pst.setString(15, Cda.getText());
-            pst.setString(16, Item5);
-            pst.setString(17, Item2);
-            pst.setString(18, Item4);
-            pst.setString(19, Item3);
-            pst.setString(20, cta.getText());
-            pst.setString(21, Obs.getText());
-            pst.setString(22, Calle.getText());
-            pst.setString(23, Exterior.getText());
-            pst.setString(24, INT.getText());
-            pst.setString(25, Colonia.getText());
-            pst.setString(26, DLGMUN.getText());
-            pst.setString(27, CP.getText());
-            pst.setString(28, DO.getText());
-            pst.setString(29, DF.getText());
-            pst.setString(30, DE.getText());
-            pst.setString(31, FE.getText());
-            pst.setString(32, FI.getText());
-            pst.setString(33, UDL.getText());
-            pst.setString(34, FFB.getText());
-            pst.setString(35, Item6);
-            pst.setString(36, Item7);
-            pst.setString(37, Item9);
-            pst.setString(38, Item10);
-            pst.setString(39, FREI.getText());
-            pst.setString(40, UDLRE.getText());
-            pst.setString(41, FBRE.getText());
-            pst.setString(42, Item8);
-            pst.setString(43, NRP.getText());
-
+            pst.setString(3, Correo.getText());
+            pst.setString(4, Casa.getText());
+            pst.setString(5, Rec.getText());
+            pst.setString(6, Celular.getText());
+            pst.setString(7, RFC.getText());
+            pst.setString(8, NSS.getText());
+            pst.setString(9, CURP.getText());
+            pst.setString(10, Item);
+            pst.setString(11, Sueldo.getText());
+            pst.setString(12, Bono.getText());
+            pst.setString(13, Cda.getText());
+            pst.setString(14, Item5);
+            pst.setString(15, Item2);
+            pst.setString(16, Item4);
+            pst.setString(17, Item3);
+            pst.setString(18, cta.getText());
+            pst.setString(19, Obs.getText());
+            pst.setString(20, Calle.getText());
+            pst.setString(21, Exterior.getText());
+            pst.setString(22, INT.getText());
+            pst.setString(23, Colonia.getText());
+            pst.setString(24, DLGMUN.getText());
+            pst.setString(25, CP.getText());
+            pst.setString(26, DO.getText());
+            pst.setString(27, DF.getText());
+            pst.setString(28, DE.getText());
+            pst.setString(29, FE.getText());
+            pst.setString(30, FI.getText());
+            pst.setString(31, UDL.getText());
+            pst.setString(32, FFB.getText());
+            pst.setString(33, Item6);
+            pst.setString(34, Item7);
+            pst.setString(35, Item9);
+            pst.setString(36, Item10);
+            pst.setString(37, FREI.getText());
+            pst.setString(38, UDLRE.getText());
+            pst.setString(39, FFBRE.getText());
+            pst.setString(40, FBRE.getText());
+            pst.setString(41, Item8);
+            pst.setString(42, NRP.getText());
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Registro Exitoso");
 
@@ -805,6 +803,8 @@ public final class RH_4 extends javax.swing.JFrame {
         FREI = new javax.swing.JTextField();
         UDLRE = new javax.swing.JTextField();
         FBRE = new javax.swing.JTextField();
+        FFBRE = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
         mod = new javax.swing.JButton();
         add = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
@@ -1376,6 +1376,14 @@ public final class RH_4 extends javax.swing.JFrame {
 
         BFRE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Si", "No", "No aplica", "No ha venido a firmar", "Firma no coincide con la ine", "Pendiente" }));
 
+        FFBRE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FFBREActionPerformed(evt);
+            }
+        });
+
+        jLabel43.setText("Fecha firma baja:");
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -1390,13 +1398,16 @@ public final class RH_4 extends javax.swing.JFrame {
                     .addComponent(jLabel38)
                     .addComponent(jLabel37)
                     .addComponent(jLabel35)
-                    .addComponent(jLabel36))
+                    .addComponent(jLabel36)
+                    .addComponent(jLabel43))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BFRE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FREI, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UDLRE, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FBRE, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FBRE, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(FFBRE, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(UDLRE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
@@ -1412,7 +1423,11 @@ public final class RH_4 extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36)
                     .addComponent(UDLRE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FFBRE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel43))
+                .addGap(12, 12, 12)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
                     .addComponent(FBRE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1420,7 +1435,7 @@ public final class RH_4 extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
                     .addComponent(BFRE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         mod.setText("Modificar");
@@ -2138,7 +2153,7 @@ public final class RH_4 extends javax.swing.JFrame {
                 CP.setText(rs.getString("C.P"));
                 expimss.setText(rs.getString("Exp"));
                 nameimss.setText(rs.getString("Nombre Completo"));
-                
+                FFBRE.setText(rs.getString("Fecha firma baja (Re)"));
                 rfcimss.setText(rs.getString("RFC"));
                 nssimss.setText(rs.getString("NSS"));
                 curpimss.setText(rs.getString("CURP"));
@@ -2290,6 +2305,10 @@ public final class RH_4 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_zonaItemStateChanged
 
+    private void FFBREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FFBREActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FFBREActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2344,6 +2363,7 @@ public final class RH_4 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser FBimss;
     private javax.swing.JTextField FE;
     private javax.swing.JTextField FFB;
+    private javax.swing.JTextField FFBRE;
     private javax.swing.JTextField FI;
     private com.toedter.calendar.JDateChooser FIimss;
     private javax.swing.JTextField FREI;
@@ -2415,6 +2435,7 @@ public final class RH_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
