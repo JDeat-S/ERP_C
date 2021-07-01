@@ -1,11 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package prueba;
 
 import Conexion.ConexionSQL;
+import ZyS.Servicios;
+import ZyS.Zonas;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.sql.Connection;
@@ -14,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -44,7 +43,9 @@ public final class RH_4 extends javax.swing.JFrame {
         mostrarimss();
         txtid.setVisible(false);
         txtid2.setVisible(false);
-
+        Zonas zz = new Zonas();
+        DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
+        zona.setModel(modelzonas);
     }
 
     /**
@@ -55,8 +56,7 @@ public final class RH_4 extends javax.swing.JFrame {
      * @param buscar
      */
     @SuppressWarnings("unchecked")
-    
-
+   
 
     private void limpimms() {
         expimss.setText("");
@@ -116,85 +116,6 @@ public final class RH_4 extends javax.swing.JFrame {
         FREI.setText("");
         UDLRE.setText("");
         FBRE.setText("");
-    }
-
-    public String[] datos(String datos) {
-        String[] info = new String[16];
-        if (datos.equalsIgnoreCase("Sur 1")) {
-            info[0] = "SANTANDER GUADALUPE";
-            info[1] = "SANTANDER INSURGENTES";
-            info[2] = "SANTANDER SAN JERONIMO";
-            info[3] = "SANTANDER XOLA";
-            info[4] = "SANTANDER TLALPAN";
-            info[5] = "SANTANDER FELIX CUEVAS";
-            info[6] = "SANTANDER COPILCO";
-            info[7] = "SANT. DESIERTO DE LOS LEONES";
-            info[8] = "DIVISION DEL NORTE";
-            info[9] = "EST. ITURBIDE $15 X HRA";
-            info[10] = "EST. PTE TITLA $18 X HRA";
-            info[11] = "CLUB KIDS $50 BOLETAJE";
-            info[12] = "PARTY SURPRISE $45 BOLETAJE";
-            info[13] = "CITY EXPRESS PERIFERICO";
-            info[14] = "XOTEPINGO";
-            info[15] = "EDIFICIO AGATHA";
-
-        }
-        if (datos.equalsIgnoreCase("Sur 2")) {
-            info[0] = "SANTANDER MAZARIK";
-            info[1] = "SANTANDER MISISIPI";
-            info[2] = "SANTANDER NEWTON";
-            info[3] = "SANTANDER PALMAS";
-            info[4] = "SANTANDER PLAZA REFORMA";
-            info[5] = "SANTANDER POLANCO";
-            info[6] = "SANTANDER L. DE CHAPULTEPEC";
-            info[7] = "SANTANDER NIZA";
-            info[8] = "NOTARIA EDIF. ROSSEAU";
-            info[9] = "GRUPO EXPANSION";
-            info[10] = "HONDA SAN ANTONIO";
-            info[11] = "BELMAR  $50 BOLETAJE";
-            info[12] = "EST. TEHUANTEPEC $22 X HRA";
-        }
-        if (datos.equalsIgnoreCase("Zona Norte")) {
-            info[0] = "SANTANDER LOMAS VERDES";
-            info[1] = "SANTANDER INTERLOMAS";
-            info[2] = "ENTRE GAUCHOS S/BOLETAJE";
-            info[3] = "SANTANDER PALMAS";
-            info[4] = "LA ERA/LA ERA EST.";
-            info[5] = "LA ERA SANTA CRUZ";
-        }
-        if (datos.equalsIgnoreCase("Foraneos Acapulco")) {
-            info[0] = "SANTANDER RENACIMIENTO";
-            info[1] = "SANTANDER PRINCIPAPL";
-            info[2] = "SANTANDER COSTA AZUL";
-        }
-        if (datos.equalsIgnoreCase("Zona Poniente")) {
-            info[0] = "SANTANDER MONTEVIDEO";
-            info[1] = "SANTANDER CANAL DEL NORTE";
-            info[2] = "SANTANDER AZCAPOTZALCO";
-            info[3] = "SANTANDER MARINA NACIONAL";
-            info[4] = "SANTANDER EL CABALLITO";
-        }
-        if (datos.equalsIgnoreCase("Foraneos Puebla")) {
-            info[0] = "SANTANDER TEHUACAN";
-        }
-        if (datos.equalsIgnoreCase("Foraneos Toluca")) {
-            info[0] = "SANTANDER MORELOS";
-            info[1] = "SANTANDER METEPEC";
-            info[2] = "EST. MORELOS";
-            info[3] = "EST. VITRALES";
-            info[4] = "EST. PROCURADORIA";
-            info[5] = "EST. SAN MATEO";
-            info[6] = "SALON DIAMANTE";
-            info[7] = "SALON HACIENDA LA BONITA";
-            info[8] = "SALON FINCA LAS JOYAS";
-            info[9] = "SALON ALCATRACES";
-            info[10] = "JARDIN ESMERALDA";
-            info[11] = "SALON MALLORCA";
-            info[12] = "SALON TARASCO";
-            info[13] = "SALON MAGYCAL PARTY";
-        }
-        return info;
-
     }
 
     public void buscar(String buscar) {
@@ -744,8 +665,6 @@ public final class RH_4 extends javax.swing.JFrame {
         Obs = new javax.swing.JTextArea();
         jLabel16 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        zona = new javax.swing.JComboBox<>();
-        Serv = new javax.swing.JComboBox<>();
         cta = new javax.swing.JTextField();
         fdp = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
@@ -755,6 +674,8 @@ public final class RH_4 extends javax.swing.JFrame {
         Banco = new javax.swing.JComboBox<>();
         jLabel60 = new javax.swing.JLabel();
         Cda = new javax.swing.JTextField();
+        zona = new javax.swing.JComboBox<>();
+        Serv = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         Calle = new javax.swing.JTextField();
         Exterior = new javax.swing.JTextField();
@@ -811,8 +732,8 @@ public final class RH_4 extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        CS = new javax.swing.JComboBox<>();
         CZ = new javax.swing.JComboBox<>();
+        CS = new javax.swing.JComboBox<>();
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         serch = new javax.swing.JTextField();
@@ -997,30 +918,6 @@ public final class RH_4 extends javax.swing.JFrame {
 
         jLabel11.setText("Forma de pago");
 
-        zona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Foraneos Acapulco", "Foraneos Puebla", "Sur 1", "Sur 2", "Zona Norte", "Zona Poniente" }));
-        zona.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                zonaItemStateChanged(evt);
-            }
-        });
-        zona.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                zonaMouseClicked(evt);
-            }
-        });
-        zona.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                zonaActionPerformed(evt);
-            }
-        });
-
-        Serv.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
-        Serv.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ServActionPerformed(evt);
-            }
-        });
-
         fdp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Tarjeta", "Efectivo" }));
         fdp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1039,6 +936,13 @@ public final class RH_4 extends javax.swing.JFrame {
         Banco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Bancomer", "Santander" }));
 
         jLabel60.setText("Caja de ahorro:");
+
+        zona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        zona.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                zonaItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1068,12 +972,12 @@ public final class RH_4 extends javax.swing.JFrame {
                                     .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(zona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(cta)
-                                        .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(Banco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(Banco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(zona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1092,7 +996,8 @@ public final class RH_4 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(Bono)
-                                            .addComponent(Cda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+                                            .addComponent(Cda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGap(17, 17, 17)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -1123,19 +1028,17 @@ public final class RH_4 extends javax.swing.JFrame {
                     .addComponent(jLabel14)
                     .addComponent(zona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel15))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel27))))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1460,27 +1363,10 @@ public final class RH_4 extends javax.swing.JFrame {
 
         jLabel34.setText("Cambio de Servicio:");
 
-        CS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
-        CS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CSActionPerformed(evt);
-            }
-        });
-
-        CZ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Foraneos Acapulco", "Foraneos Puebla", "Sur 1", "Sur 2", "Zona Norte", "Zona Poniente" }));
+        CZ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         CZ.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CZItemStateChanged(evt);
-            }
-        });
-        CZ.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CZMouseClicked(evt);
-            }
-        });
-        CZ.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CZActionPerformed(evt);
             }
         });
 
@@ -1502,7 +1388,7 @@ public final class RH_4 extends javax.swing.JFrame {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(94, 94, 94)
                         .addComponent(jLabel32)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1517,7 +1403,7 @@ public final class RH_4 extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
                     .addComponent(CS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout GeneralLayout = new javax.swing.GroupLayout(General);
@@ -2239,27 +2125,6 @@ public final class RH_4 extends javax.swing.JFrame {
         buscar(serch.getText());
     }//GEN-LAST:event_serchKeyReleased
 
-    private void CZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CZActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CZActionPerformed
-
-    private void CZMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CZMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CZMouseClicked
-
-    private void CZItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CZItemStateChanged
-        // TODO add your handling code here:
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            if (this.CZ.getSelectedIndex() > 0) {
-                this.CS.setModel(new DefaultComboBoxModel(this.datos(this.CZ.getSelectedItem().toString())));
-            }
-        }
-    }//GEN-LAST:event_CZItemStateChanged
-
-    private void CSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CSActionPerformed
-
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your handling code here:
         AgregarE();
@@ -2284,30 +2149,23 @@ public final class RH_4 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fdpActionPerformed
 
-    private void ServActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ServActionPerformed
-
-    private void zonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zonaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_zonaActionPerformed
-
-    private void zonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_zonaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_zonaMouseClicked
-
-    private void zonaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_zonaItemStateChanged
-        // TODO add your handling code here:
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            if (this.zona.getSelectedIndex() > 0) {
-                this.Serv.setModel(new DefaultComboBoxModel(this.datos(this.zona.getSelectedItem().toString())));
-            }
-        }
-    }//GEN-LAST:event_zonaItemStateChanged
-
     private void FFBREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FFBREActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FFBREActionPerformed
+
+    private void zonaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_zonaItemStateChanged
+        // TODO add your handling code here:
+        if(evt.getStateChange() == ItemEvent.SELECTED){
+            Zonas zon = (Zonas) zona.getSelectedItem();
+            Servicios serv = new Servicios();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+        Serv.setModel(modelServicio);
+        }
+    }//GEN-LAST:event_zonaItemStateChanged
+
+    private void CZItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CZItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CZItemStateChanged
 
     /**
      * @param args the command line arguments
