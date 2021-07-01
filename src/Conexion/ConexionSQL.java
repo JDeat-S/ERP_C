@@ -15,6 +15,10 @@ import javax.swing.JOptionPane;
  */
 
 public class ConexionSQL {
+
+    static Connection getConexion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     Connection con=null;
     
