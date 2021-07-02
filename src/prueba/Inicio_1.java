@@ -22,6 +22,7 @@ FondoPanel fondo = new FondoPanel();
     public Inicio_1() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(Usuarios_RH_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         
     }
 
@@ -39,6 +40,7 @@ FondoPanel fondo = new FondoPanel();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Inicio");
         setResizable(false);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N

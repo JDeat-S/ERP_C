@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -33,6 +34,8 @@ public class AltasZyS_3 extends javax.swing.JFrame {
         Zona.setVisible(false);
         mostrarZonas();
         mostrarServicios();
+        setIconImage(new ImageIcon(AltasZyS_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+
     }
 
     /**
@@ -366,6 +369,8 @@ public class AltasZyS_3 extends javax.swing.JFrame {
         EliminarS = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Alta de Zonas y Servicios");
+        setResizable(false);
 
         jLabel1.setText("Nombre de la zona:");
 
@@ -600,7 +605,7 @@ public class AltasZyS_3 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(IDS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AgrergarS)
                             .addComponent(ModS))
                         .addGap(299, 299, 299)
