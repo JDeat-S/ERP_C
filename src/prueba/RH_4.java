@@ -937,12 +937,14 @@ public final class RH_4 extends javax.swing.JFrame {
 
         jLabel60.setText("Caja de ahorro:");
 
-        zona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        zona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
         zona.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 zonaItemStateChanged(evt);
             }
         });
+
+        Serv.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
