@@ -9,6 +9,7 @@ import Conexion.ConexionSQL;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,6 +23,8 @@ public class Login_2 extends javax.swing.JFrame {
     public Login_2() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(Login_2.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+
     }
 
     /**

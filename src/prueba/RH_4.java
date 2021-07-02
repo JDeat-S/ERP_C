@@ -12,13 +12,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -46,6 +46,10 @@ public final class RH_4 extends javax.swing.JFrame {
         Zonas zz = new Zonas();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
         zona.setModel(modelzonas);
+                DefaultComboBoxModel Cz = new DefaultComboBoxModel(zz.mostrarzonas());
+        CZ.setModel(Cz);
+        setIconImage(new ImageIcon(RH_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+
     }
 
     /**
@@ -57,7 +61,6 @@ public final class RH_4 extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
    
-
     private void limpimms() {
         expimss.setText("");
         nssimss.setText("");
@@ -732,8 +735,8 @@ public final class RH_4 extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        CZ = new javax.swing.JComboBox<>();
         CS = new javax.swing.JComboBox<>();
+        CZ = new javax.swing.JComboBox<>();
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         serch = new javax.swing.JTextField();
@@ -945,6 +948,11 @@ public final class RH_4 extends javax.swing.JFrame {
         });
 
         Serv.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
+        Serv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ServActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1365,7 +1373,14 @@ public final class RH_4 extends javax.swing.JFrame {
 
         jLabel34.setText("Cambio de Servicio:");
 
-        CZ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
+        CS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CSActionPerformed(evt);
+            }
+        });
+
+        CZ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
         CZ.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CZItemStateChanged(evt);
@@ -1385,12 +1400,12 @@ public final class RH_4 extends javax.swing.JFrame {
                             .addComponent(jLabel33))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(CZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(94, 94, 94)
                         .addComponent(jLabel32)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1405,7 +1420,7 @@ public final class RH_4 extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
                     .addComponent(CS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout GeneralLayout = new javax.swing.GroupLayout(General);
@@ -1909,11 +1924,11 @@ public final class RH_4 extends javax.swing.JFrame {
 
             int fila = imss.getSelectedRow();
             //incorporacion
-            Date date8 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse((String) model.getValueAt(fila, 6));
-            FIimss.setDate(date8);
+            //Date date8 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse((String) model.getValueAt(fila, 6));
+            //FIimss.setDate(date8);
             //fecha baja
-            Date date9 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse((String) model.getValueAt(fila, 14));
-            FBimss.setDate(date9);
+            //Date date9 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse((String) model.getValueAt(fila, 14));
+            //FBimss.setDate(date9);
 
             //combo1
             String combo10 = model.getValueAt(fila, 5).toString();
@@ -1954,7 +1969,7 @@ public final class RH_4 extends javax.swing.JFrame {
             while (rs.next()) {
                 txtid2.setText(String.valueOf(id));
                 expimss.setText(rs.getString("#_Exp"));
-                nameimss.setText(rs.getString("Nombre(s)_imss"));
+                nameimss.setText(rs.getString("Nombre Completo"));
 
                 rfcimss.setText(rs.getString("rfc_imss"));
                 nssimss.setText(rs.getString("nss_imss"));
@@ -1966,8 +1981,8 @@ public final class RH_4 extends javax.swing.JFrame {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
 
-        } catch (ParseException ex) {
-            Logger.getLogger(RH_4.class.getName()).log(Level.SEVERE, null, ex);
+        //} catch (ParseException ex) {
+          //  Logger.getLogger(RH_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_imssMouseClicked
 
@@ -2008,7 +2023,6 @@ public final class RH_4 extends javax.swing.JFrame {
 
         try {
             int fila = data.getSelectedRow();
-
             int id = Integer.parseInt(data.getValueAt(fila, 0).toString());
             PreparedStatement ps;
             ResultSet rs;
@@ -2061,7 +2075,9 @@ public final class RH_4 extends javax.swing.JFrame {
             
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
-            int fila = data.getSelectedRow();
+            
+        }
+        int fila = data.getSelectedRow();
 //combobox1
             String combo1 = model.getValueAt(fila, 10).toString();
             for (int i = 0; i < fdp.getItemCount(); i++) {
@@ -2076,13 +2092,7 @@ public final class RH_4 extends javax.swing.JFrame {
                     Banco.setSelectedIndex(i);
                 }
             }
-            //combobox3
-            String combo3 = model.getValueAt(fila, 15).toString();
-            for (int i = 0; i < zona.getItemCount(); i++) {
-                if (zona.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    zona.setSelectedIndex(i);
-                }
-            }
+           
             //combobox5
             String combo5 = model.getValueAt(fila, 17).toString();
             for (int i = 0; i < Status.getItemCount(); i++) {
@@ -2111,15 +2121,6 @@ public final class RH_4 extends javax.swing.JFrame {
                     cfin.setSelectedIndex(i);
                 }
             }
-            //combobox9
-            String combo9 = model.getValueAt(fila, 39).toString();
-            for (int i = 0; i < CZ.getItemCount(); i++) {
-                if (CZ.getItemAt(i).equalsIgnoreCase(combo9)) {
-                    CZ.setSelectedIndex(i);
-                }
-            }
-
-        }
     }//GEN-LAST:event_dataMouseClicked
 
     private void serchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchKeyReleased
@@ -2165,8 +2166,22 @@ public final class RH_4 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_zonaItemStateChanged
 
+    private void ServActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ServActionPerformed
+
+    private void CSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CSActionPerformed
+
     private void CZItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CZItemStateChanged
         // TODO add your handling code here:
+        if(evt.getStateChange() == ItemEvent.SELECTED){
+            Zonas zon = (Zonas) CZ.getSelectedItem();
+            Servicios serv = new Servicios();
+            DefaultComboBoxModel Cs = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+        CS.setModel(Cs);
+        }
     }//GEN-LAST:event_CZItemStateChanged
 
     /**
