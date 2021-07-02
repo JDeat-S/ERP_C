@@ -48,7 +48,7 @@ public class Servicios {
 
             dat = new Servicios();
             dat.setId(0);
-            dat.setNombre("Seleccione Servicio");
+            dat.setNombre(".");
             datos.add(dat);
 
             while (rs.next()) {

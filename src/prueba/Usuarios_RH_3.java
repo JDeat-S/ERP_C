@@ -224,14 +224,14 @@ public class Usuarios_RH_3 extends javax.swing.JFrame {
         bntdel = new javax.swing.JButton();
         serch1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        Menu = new javax.swing.JMenuBar();
+        CambiarA = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        Ira = new javax.swing.JMenu();
+        IdRH = new javax.swing.JMenuItem();
+        IdN = new javax.swing.JMenuItem();
+        AZyS = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -448,7 +448,7 @@ public class Usuarios_RH_3 extends javax.swing.JFrame {
 
         jScrollPane3.setViewportView(jPanel1);
 
-        jMenu1.setText("Cambiar a");
+        CambiarA.setText("Cambiar a");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         jMenuItem1.setText("Administradores");
@@ -457,16 +457,7 @@ public class Usuarios_RH_3 extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
-
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        jMenuItem2.setText("Usuarios de Recursos Humanos");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
+        CambiarA.add(jMenuItem1);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         jMenuItem3.setText("Usuarios de Nomina");
@@ -475,31 +466,39 @@ public class Usuarios_RH_3 extends javax.swing.JFrame {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        CambiarA.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu1);
+        Menu.add(CambiarA);
 
-        jMenu2.setText("Ir a");
+        Ira.setText("Ir a");
 
-        jMenuItem4.setText("Interface de RH");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        IdRH.setText("Interface de RH");
+        IdRH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                IdRHActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem4);
+        Ira.add(IdRH);
 
-        jMenuItem5.setText("Interface de Nomina");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        IdN.setText("Interface de Nomina");
+        IdN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                IdNActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem5);
+        Ira.add(IdN);
 
-        jMenuBar1.add(jMenu2);
+        AZyS.setText("Altas Zonas y Servicios");
+        AZyS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AZySActionPerformed(evt);
+            }
+        });
+        Ira.add(AZyS);
 
-        setJMenuBar(jMenuBar1);
+        Menu.add(Ira);
+
+        setJMenuBar(Menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -543,13 +542,6 @@ public class Usuarios_RH_3 extends javax.swing.JFrame {
         eliminardatos();
         mostrardatosrh();
     }//GEN-LAST:event_bntdelActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        Usuarios_RH_3 Form = new Usuarios_RH_3();
-        Form.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
@@ -635,19 +627,26 @@ public class Usuarios_RH_3 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_serch1ActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void IdRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdRHActionPerformed
         // TODO add your handling code here:
         RH_4 kk = new RH_4();
         kk.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_IdRHActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void IdNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdNActionPerformed
         // TODO add your handling code here:
         Nomina_5 kk = new Nomina_5();
         kk.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_IdNActionPerformed
+
+    private void AZySActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AZySActionPerformed
+        // TODO add your handling code here:
+        AltasZyS_3 ZyS = new AltasZyS_3();
+        ZyS.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_AZySActionPerformed
 
     /**
      * @param args the command line arguments
@@ -692,7 +691,13 @@ public class Usuarios_RH_3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AZyS;
+    private javax.swing.JMenu CambiarA;
     private com.toedter.calendar.JDateChooser FR;
+    private javax.swing.JMenuItem IdN;
+    private javax.swing.JMenuItem IdRH;
+    private javax.swing.JMenu Ira;
+    private javax.swing.JMenuBar Menu;
     private com.toedter.calendar.JDateChooser UM;
     private javax.swing.JButton bntdel;
     private javax.swing.JButton btnadd;
@@ -706,14 +711,8 @@ public class Usuarios_RH_3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
