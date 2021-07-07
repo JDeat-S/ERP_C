@@ -92,7 +92,7 @@ public class Login_2 extends javax.swing.JFrame {
         int resultado = 0;
         String pass=String.valueOf(passnom.getPassword());
         String usuario=usernom.getText();
-        String SQL = "select * from usuarios_nomina where usuario_nomina='"+usuario+"' and pass_nomina='"+pass+"'";
+        String SQL = "select * from usuarios_nomina where Usuario_N='"+usuario+"' and Pass_N='"+pass+"'";
         
         try {
             Statement st=con.createStatement();
@@ -110,7 +110,7 @@ public class Login_2 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error de acceso verifique usuario o contraseña de Nomina");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error prueba de nuevo" +e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error prueba de nuevo: " +e.getMessage());
         }
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

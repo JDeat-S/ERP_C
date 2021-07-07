@@ -101,12 +101,12 @@ public final class Nomina_5 extends javax.swing.JFrame {
         fol.setText("");
         name.setText("");
         txtid.setText("");
-        Bono.setText("");
+        Bono.setText("0");
         cta.setText("");
         ban.setText("");
         Zon.setText("");
         lug.setText("");
-        sueldo.setText("");
+        sueldo.setText("0");
         pd.setText("0");
         Fdb.setText("0");
         Fde.setText("0");
@@ -691,7 +691,9 @@ public final class Nomina_5 extends javax.swing.JFrame {
         MT.setText("0");
         Carpeta.setText("");
         FL.setText("");
-
+        Status.setText("");
+        Metodo.setText("");
+        
     }
 
     public void AgregarT() {
@@ -966,7 +968,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
         };
 
-        String sql = "SELECT * FROM pago WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
+        String sql = "SELECT * FROM pago& WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
 
         try {
 
@@ -3196,6 +3198,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         jLabel90.setText("Bono:");
 
+        Bono.setText("0");
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
@@ -3251,6 +3255,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
         jLabel14.setText("Zona:");
 
         jLabel13.setText("Banco:");
+
+        sueldo.setText("0");
 
         jLabel5.setText("Cuenta de Banco:");
 
@@ -3720,7 +3726,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(BE, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addComponent(Close2))
-                .addContainerGap(260, Short.MAX_VALUE))
+                .addContainerGap(283, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4154,7 +4160,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel72)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(PQT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(PQT, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addContainerGap())
                             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -4340,6 +4346,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         // TODO add your handling code here:
         eliminarT();
         MDT();
+        limpiarT();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void OdTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OdTMouseClicked
@@ -5106,6 +5113,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         // TODO add your handling code here:
         eliminarpre();
         MDP();
+        limpiarP();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void PreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PreMouseClicked
@@ -5163,8 +5171,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         int seleccionar = share1.getSelectedRow();
         Name.setText(String.valueOf(share1.getValueAt(seleccionar, 0)));
-        Zona.setText(String.valueOf(share1.getValueAt(seleccionar, 2)));
-        Serv.setText(String.valueOf(share1.getValueAt(seleccionar, 3)));
+        Zona.setText(String.valueOf(share1.getValueAt(seleccionar, 1)));
+        Serv.setText(String.valueOf(share1.getValueAt(seleccionar, 2)));
     }//GEN-LAST:event_share1MouseClicked
 
     private void BEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BEKeyReleased
@@ -5239,6 +5247,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         // TODO add your handling code here:
         eliminarp();
         pagos();
+        limpiarnom();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void pagoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pagoMouseClicked
@@ -5275,6 +5284,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         // TODO add your handling code here:
         eliminarnom();
         mostrardatos();
+        limpiarnom();
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void NominabKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NominabKeyReleased

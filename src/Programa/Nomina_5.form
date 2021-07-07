@@ -2536,6 +2536,9 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Bono">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -2652,6 +2655,9 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="sueldo">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel5">
                       <Properties>
@@ -2959,7 +2965,7 @@
                               </Group>
                               <Component id="Close2" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="260" max="32767" attributes="0"/>
+                          <EmptySpace pref="283" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3486,7 +3492,7 @@
                                                       </Group>
                                                   </Group>
                                               </Group>
-                                              <Group type="102" alignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="CA" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                                       <Group type="102" alignment="0" attributes="0">
@@ -3503,7 +3509,7 @@
                                                           <EmptySpace max="-2" attributes="0"/>
                                                           <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="PQT" min="-2" pref="100" max="-2" attributes="0"/>
+                                                          <Component id="PQT" min="-2" pref="140" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>

@@ -26,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public class Usuarios_RH_3 extends javax.swing.JFrame {
+public final class Usuarios_RH_3 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
@@ -37,6 +37,7 @@ public class Usuarios_RH_3 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         mostrardatosrh();
         UM.setCalendar(fecha_actual);
+        FR.setCalendar(fecha_actual);
         txtid1.setVisible(false);
         setIconImage(new ImageIcon(Usuarios_RH_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
     }
@@ -510,7 +511,7 @@ public class Usuarios_RH_3 extends javax.swing.JFrame {
         });
         Ira.add(IdN);
 
-        AZyS.setText("Altas Zonas y Servicios");
+        AZyS.setText("Altas de Zonas y Servicios");
         AZyS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AZySActionPerformed(evt);

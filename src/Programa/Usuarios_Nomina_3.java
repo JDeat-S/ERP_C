@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -25,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public class Usuarios_Nomina_3 extends javax.swing.JFrame {
+public final class Usuarios_Nomina_3 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
@@ -37,6 +38,9 @@ public class Usuarios_Nomina_3 extends javax.swing.JFrame {
         mostrardatosnomina();
         UM.setCalendar(fecha_actual);
         txtid1.setVisible(false);
+        FR.setCalendar(fecha_actual);
+        setIconImage(new ImageIcon(Usuarios_Nomina_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+
     }
 
     private void limpiar() {
@@ -95,7 +99,7 @@ public class Usuarios_Nomina_3 extends javax.swing.JFrame {
         int id = Integer.parseInt(txtid1.getText());
         String pass = String.valueOf(txtpass.getPassword());
         String SQL = "Update usuarios_nomina SET `Nombre(s)_N` = ?, `Apellido_P_N` = ?, "
-                + "`Apellido_M_Adm` = ?, `mod_N` = ?, `Usuario_N` = ?, "
+                + "`Apellido_M_N` = ?, `mod_N` = ?, `Usuario_N` = ?, "
                 + "`Pass_N` = ? WHERE (`id_Usuario_N` = ?)";
 
         try {
@@ -179,7 +183,8 @@ public class Usuarios_Nomina_3 extends javax.swing.JFrame {
     public void AgregarN() {
 
         String pass = String.valueOf(txtpass.getPassword());
-        String SQL = "insert into usuarios_nomina(`Nombre(s)_N`, `Apellido_P_N`, `Apellido_M_N`, `Fecha_de_registro_N`, `Usuario_Nomina`, `Pass_Nomina`) values(?,?,?,?,?,?)";
+        String SQL = "insert into usuarios_nomina(`Nombre(s)_N`, `Apellido_P_N`, `Apellido_M_N`, "
+                + "`Fecha_de_registro_N`, `Usuario_N`, `Pass_N`) values(?,?,?,?,?,?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -353,9 +358,7 @@ public class Usuarios_Nomina_3 extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(47, 47, 47)
-                                .addComponent(jLabel5))
+                            .addComponent(jLabel5)
                             .addComponent(jLabel2)
                             .addComponent(jLabel4)
                             .addComponent(jLabel6)
@@ -500,7 +503,7 @@ public class Usuarios_Nomina_3 extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem5);
 
-        AZyS.setText("Altas Zonas y Servicios");
+        AZyS.setText("Altas de Zonas y Servicios");
         AZyS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AZySActionPerformed(evt);
@@ -516,7 +519,7 @@ public class Usuarios_Nomina_3 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 936, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
