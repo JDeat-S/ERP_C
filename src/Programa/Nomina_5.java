@@ -197,7 +197,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
     }
 
     public void buscart(String buscar) {
-        String[] titulos = {"Nombre(s)", 
+        String[] titulos = {"Nombre(s)",
             "Zona", "Servicio"};
         String[] registros = new String[3];
         DefaultTableModel modelo = new DefaultTableModel(null, titulos) {
@@ -518,7 +518,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
     public void buscarot(String buscar) {
         String[] titulos = {"# de Orden", "Fecha de Expedicion", "Nombre Completo",
-             "Zona", "Servicio", "Datos vehiculo",
+            "Zona", "Servicio", "Datos vehiculo",
             "# de piezas", "Daño", "Costo Aproximado", "Ingreso a taller", "Pagado por cliente", "Pago a confort",
             "Cobrado", "Pagado", "Pendiente", "Por Quincenas", "Forma de pago", "Observaciones"};
         String[] registros = new String[18];
@@ -529,7 +529,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
         };
         String sql = "SELECT * FROM taller WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
-                //+ " OR `Apellido P_T` LIKE '%" + buscar + "%' OR `Apellido M_T` LIKE '%" + buscar + "%'";
+        //+ " OR `Apellido P_T` LIKE '%" + buscar + "%' OR `Apellido M_T` LIKE '%" + buscar + "%'";
         try {
             java.sql.Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -769,7 +769,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
         };
         String sql = "SELECT * FROM prestamos WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
-              //  + " OR `Apellido P_pre` LIKE '%" + buscar + "%' OR `Apellido M_pre` LIKE '%" + buscar + "%'";
+        //  + " OR `Apellido P_pre` LIKE '%" + buscar + "%' OR `Apellido M_pre` LIKE '%" + buscar + "%'";
         try {
             java.sql.Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -954,6 +954,48 @@ public final class Nomina_5 extends javax.swing.JFrame {
         }
     }
 
+    public void buscarpagos(String buscar) {
+        String[] titulos = {"id bd", "# Folio", "Nombre Completo", "Bono", "Cuenta", "Banco",
+            "Zona", "Servicio", "Quincena", "Año", "Sueldo Quincenal", "Deposito"};
+
+        String[] registros = new String[12];
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos) {
+            @Override
+            public boolean isCellEditable(int filas, int columnas) {
+                return columnas == 99;
+            }
+        };
+
+        String sql = "SELECT * FROM pago WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
+
+        try {
+
+            java.sql.Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                registros[0] = rs.getString("idPago");
+                registros[1] = rs.getString("# Folio");
+                registros[2] = rs.getString("Nombre Completo");
+                registros[3] = rs.getString("Bono");
+                registros[4] = rs.getString("Cuenta");
+                registros[5] = rs.getString("Banco");
+                registros[6] = rs.getString("Zona");
+                registros[7] = rs.getString("Servicio");
+                registros[8] = rs.getString("Quincena");
+                registros[9] = rs.getString("Año");
+                registros[10] = rs.getString("Sueldo Quincenal");
+                registros[11] = rs.getString("Deposito");
+                modelo.addRow(registros);
+            }
+            this.pago.setModel(modelo);
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Pagos: " + e.getMessage());
+        }
+
+    }
+    
     public void pagos() {
         String[] titulos = {"id bd", "# Folio", "Nombre Completo", "Bono", "Cuenta", "Banco",
             "Zona", "Servicio", "Quincena", "Año", "Sueldo Quincenal", "Deposito"};
@@ -1363,7 +1405,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
     }
 
     public void buscarN(String buscar) {
-        String[] titulos = {"id bd", "# Folio", "Nombre Completo","Cuenta", "Banco",
+        String[] titulos = {"id bd", "# Folio", "Nombre Completo", "Cuenta", "Banco",
             "Zona", "Servicio", "Sueldo", "Quincena", "Año", "Por dia", "1-16", "2-17", "3-18", "4-19", "5-20", "6-21",
             "7-22", "8-23", "9-24", "10-25", "11-26", "12-27", "13-28", "14-29", "15-30", "31",
             "Observaciones", "Total de descuentos", "Desc. IMSS", "Apoyo", "Lugar", "Caja", "Adicionales", "Bono", "Faltantes de boleto",
@@ -1379,7 +1421,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         };
 
         String sql = "SELECT * FROM nomina WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
-            //    + " OR Apellido_P_Nom LIKE '%" + buscar + "%' OR Apellido_M_Nom LIKE '%" + buscar + "%'";
+        //    + " OR Apellido_P_Nom LIKE '%" + buscar + "%' OR Apellido_M_Nom LIKE '%" + buscar + "%'";
 
         try {
 
@@ -1459,7 +1501,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         };
 
         String sql = "SELECT * FROM empleados WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
-               // + " OR `Apellido_P_E` LIKE '%" + buscar + "%' OR `Apellido_M_E` LIKE '%" + buscar + "%'";
+        // + " OR `Apellido_P_E` LIKE '%" + buscar + "%' OR `Apellido_M_E` LIKE '%" + buscar + "%'";
         try {
 
             java.sql.Statement st = con.createStatement();
@@ -1810,7 +1852,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         pago = new javax.swing.JTable();
         jLabel28 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        busp = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         Prestamos = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
@@ -3220,10 +3262,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -3233,12 +3271,18 @@ public final class Nomina_5 extends javax.swing.JFrame {
                             .addComponent(cta, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ban, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Zon, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 1, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lug, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lug, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
@@ -3415,7 +3459,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                         .addComponent(Nominab, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(74, 74, 74)
                         .addComponent(Eliminar))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 6791, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 10074, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -3457,6 +3501,12 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         jLabel28.setText("Buscar");
 
+        busp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                buspKeyReleased(evt);
+            }
+        });
+
         jButton4.setText("Eliminar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3474,12 +3524,11 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(busp, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
-                        .addComponent(jButton4)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 2627, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addComponent(jButton4))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 3702, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3487,7 +3536,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(busp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3800,13 +3849,13 @@ public final class Nomina_5 extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel48)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6)))
+                        .addComponent(jButton6))
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 2401, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -3965,11 +4014,11 @@ public final class Nomina_5 extends javax.swing.JFrame {
                             .addComponent(jLabel66))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Zona1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Serv1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ndp, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane12)
-                            .addComponent(jScrollPane13)))
+                            .addComponent(jScrollPane13)
+                            .addComponent(Zona1)
+                            .addComponent(Serv1)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(81, 81, 81)
                         .addComponent(jLabel63))
@@ -4126,7 +4175,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                                 .addGap(4, 4, 4)
                                 .addComponent(FE, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(Close3))
-                .addContainerGap(967, Short.MAX_VALUE))
+                .addContainerGap(969, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4252,8 +4301,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                 .addComponent(jButton7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 2627, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 2780, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -4315,8 +4364,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
             Pagado.setText(String.valueOf(OdT.getValueAt(fila, 13)));
             Pendiente.setText(String.valueOf(OdT.getValueAt(fila, 14)));
             PQT.setText(String.valueOf(OdT.getValueAt(fila, 15)));
-            Presp.setText(String.valueOf(OdT.getValueAt(fila, 16)));
-            Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 17)));
+            Odtp.setText(String.valueOf(OdT.getValueAt(fila, 15)));
+            Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 16)));
 
             String combo1 = model.getValueAt(fila, 10).toString();
             for (int i = 0; i < Ppc.getItemCount(); i++) {
@@ -4350,11 +4399,12 @@ public final class Nomina_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e.toString());
 
         }
+        deposito();
     }//GEN-LAST:event_OdTMouseClicked
 
     private void BodtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BodtKeyReleased
         // TODO add your handling code here:
-        buscart(Bodt.getText());
+        buscarot(Bodt.getText());
     }//GEN-LAST:event_BodtKeyReleased
 
     private void QAPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_QAPItemStateChanged
@@ -5030,7 +5080,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
     private void BE1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BE1KeyReleased
         // TODO add your handling code here:
-        buscart(BE.getText());
+        buscarp(BE.getText());
     }//GEN-LAST:event_BE1KeyReleased
 
     private void share2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_share2MouseClicked
@@ -5077,16 +5127,17 @@ public final class Nomina_5 extends javax.swing.JFrame {
         interes.setText(String.valueOf(Pre.getValueAt(seleccionar, 7)));
         MT.setText(String.valueOf(Pre.getValueAt(seleccionar, 8)));
         PQ.setText(String.valueOf(Pre.getValueAt(seleccionar, 9)));
-        Odtp.setText(String.valueOf(Pre.getValueAt(seleccionar, 10)));
-        Carpeta.setText(String.valueOf(Pre.getValueAt(seleccionar, 11)));
-        FL.setText(String.valueOf(Pre.getValueAt(seleccionar, 12)));
-        Status.setText(String.valueOf(Pre.getValueAt(seleccionar, 13)));
-        Metodo.setText(String.valueOf(Pre.getValueAt(seleccionar, 14)));
+        Presp.setText(String.valueOf(Pre.getValueAt(seleccionar, 9)));
+        Carpeta.setText(String.valueOf(Pre.getValueAt(seleccionar, 10)));
+        FL.setText(String.valueOf(Pre.getValueAt(seleccionar, 11)));
+        Status.setText(String.valueOf(Pre.getValueAt(seleccionar, 12)));
+        Metodo.setText(String.valueOf(Pre.getValueAt(seleccionar, 13)));
+        deposito();
     }//GEN-LAST:event_PreMouseClicked
 
     private void BPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BPKeyReleased
         // TODO add your handling code here:
-        buscart(BP.getText());
+        buscarpre(BP.getText());
     }//GEN-LAST:event_BPKeyReleased
 
     private void FSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FSActionPerformed
@@ -8659,6 +8710,11 @@ public final class Nomina_5 extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_Close3ActionPerformed
 
+    private void buspKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buspKeyReleased
+        // TODO add your handling code here:
+        buscarpagos(busp.getText());
+    }//GEN-LAST:event_buspKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -8926,6 +8982,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField apy;
     private com.toedter.calendar.JDateChooser año;
     private javax.swing.JTextField ban;
+    private javax.swing.JTextField busp;
     private javax.swing.JTextField cda;
     private javax.swing.JTextField cta;
     private javax.swing.JLabel d;
@@ -9079,7 +9136,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField lug;
     private javax.swing.JButton modP;
     private javax.swing.JButton modprestamo;
