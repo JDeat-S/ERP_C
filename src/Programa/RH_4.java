@@ -9,17 +9,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -74,9 +68,12 @@ public final class RH_4 extends javax.swing.JFrame {
         Status1.setSelectedIndex(0);
         FIimss.setText("");
         FBimss.setText("");
+        obsimss.setText("");
     }
 
     private void limpiar() {
+        FFBRE.setText("");
+        NRP.setText("");
         txtid.setText("");
         exp.setText("");
         NombreE.setText("");
@@ -191,7 +188,7 @@ public final class RH_4 extends javax.swing.JFrame {
             }
             data.setModel(modelo);
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al buscar en tabla general: " + e.getMessage());
         }
 
     }
@@ -235,7 +232,7 @@ public final class RH_4 extends javax.swing.JFrame {
             }
             imss.setModel(modelo);
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al buscar en tabla imss: " + e.getMessage());
         }
 
     }
@@ -314,10 +311,10 @@ public final class RH_4 extends javax.swing.JFrame {
             pst.setInt(43, id);
 
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Registro Modificado");
+            JOptionPane.showMessageDialog(null, "Empleado Modificado");
 
         } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error de registro" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error en modificar empleado: " + e.getMessage());
         }
     }
 
@@ -326,10 +323,10 @@ public final class RH_4 extends javax.swing.JFrame {
         String Item = gen.getSelectedItem().toString();
         String Item3 = puesto.getSelectedItem().toString();
         String Item4 = Status1.getSelectedItem().toString();
-        String SQL = "UPDATE imss SET ``#_Exp` = ?, `Nombre completo` = ?, "
-                + "`Genero_imss` = ?, `Fecha_de_incorporacion` = ?, `Zona_Imss` = ?,"
-                + " `nss_imss` = ?, `rfc_imss` = ?, `curp_imss` = ?, `Puesto` = ?, `Salario` = ?, "
-                + "`Status_imss` = ?, `fecha_baja` = ?, `observaciones` = ? WHERE (`idimss` = ?)";
+        String SQL = "UPDATE `confort`.`imss` SET `#_Exp` = ?, `Nombre completo` = ?, `Genero_imss` = ?,"
+                + " `Fecha_de_incorporacion` = ?, `Zona_Imss` = ?, `nss_imss` = ?, `rfc_imss` = ?, `curp_imss` = ?,"
+                + " `Puesto` = ?, `Salario` = ?, `Status_imss` = ?, `fecha_baja` = ?, `observaciones` = ?"
+                + " WHERE (`idimss` = ?);";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -349,10 +346,10 @@ public final class RH_4 extends javax.swing.JFrame {
             pst.setInt(14, id);
 
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Registro Modificado");
+            JOptionPane.showMessageDialog(null, "IMSS Modificado");
 
         } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error de registro" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error modificar IMSS: " + e.getMessage());
         }
     }
 
@@ -365,11 +362,11 @@ public final class RH_4 extends javax.swing.JFrame {
             java.sql.Statement st = con.createStatement();
             int n = st.executeUpdate(sql);
             if (n >= 0) {
-                JOptionPane.showMessageDialog(null, "Usuario eliminado Satisfactoriamente.");
+                JOptionPane.showMessageDialog(null, "Empleado eliminado.");
             }
         } catch (HeadlessException | SQLException e) {
 
-            JOptionPane.showMessageDialog(null, "Error al eliminar usuario" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al eliminar empleado: " + e.getMessage());
 
         }
 
@@ -384,11 +381,11 @@ public final class RH_4 extends javax.swing.JFrame {
             java.sql.Statement st = con.createStatement();
             int n = st.executeUpdate(sql);
             if (n >= 0) {
-                JOptionPane.showMessageDialog(null, "Usuario eliminado Satisfactoriamente.");
+                JOptionPane.showMessageDialog(null, "IMSS eliminado.");
             }
         } catch (HeadlessException | SQLException e) {
 
-            JOptionPane.showMessageDialog(null, "Error al eliminar usuario" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al eliminar IMSS." + e.getMessage());
 
         }
 
@@ -434,7 +431,7 @@ public final class RH_4 extends javax.swing.JFrame {
             imss.setModel(modelo);
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de IMSS: " + e.getMessage());
         }
     }
 
@@ -512,7 +509,7 @@ public final class RH_4 extends javax.swing.JFrame {
             data.setModel(modelo);
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de empleados: " + e.getMessage());
         }
 
     }
@@ -542,10 +539,10 @@ public final class RH_4 extends javax.swing.JFrame {
             pst.setString(13, obsimss.getText());
 
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Registro Exitoso");
+            JOptionPane.showMessageDialog(null, "IMSS agregado.");
 
         } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error de registro " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al agregar imss: " + e.getMessage());
         }
     }
 
@@ -619,10 +616,10 @@ public final class RH_4 extends javax.swing.JFrame {
             pst.setString(41, Item8);
             pst.setString(42, NRP.getText());
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Registro Exitoso");
+            JOptionPane.showMessageDialog(null, "Empleado agregado.");
 
         } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error de registro " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al registrar empleado: " + e.getMessage());
         }
     }
 
@@ -655,7 +652,6 @@ public final class RH_4 extends javax.swing.JFrame {
         NombreE = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        Status = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
         Sueldo = new javax.swing.JTextField();
         Bono = new javax.swing.JTextField();
@@ -676,6 +672,7 @@ public final class RH_4 extends javax.swing.JFrame {
         Cda = new javax.swing.JTextField();
         zona = new javax.swing.JComboBox<>();
         Serv = new javax.swing.JComboBox<>();
+        Status = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         Calle = new javax.swing.JTextField();
         Exterior = new javax.swing.JTextField();
@@ -776,8 +773,8 @@ public final class RH_4 extends javax.swing.JFrame {
         jLabel56 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         obsimss = new javax.swing.JTextArea();
-        Status1 = new javax.swing.JComboBox<>();
         FBimss = new javax.swing.JTextField();
+        Status1 = new javax.swing.JComboBox<>();
         Close1 = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
@@ -902,10 +899,6 @@ public final class RH_4 extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 153));
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "IMSS", "PENDIENTE", "RECHAZADO", "TEMPORAL", "VIGENTE" }));
-        Status.setMinimumSize(new java.awt.Dimension(100, 20));
-        Status.setPreferredSize(new java.awt.Dimension(100, 20));
-
         jLabel14.setText("Zona");
 
         Sueldo.setText("0");
@@ -960,6 +953,8 @@ public final class RH_4 extends javax.swing.JFrame {
             }
         });
 
+        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "IMSS", "PENDIENTE", "RECHAZADO", "TEMPORAL", "VIGENTE" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -976,7 +971,9 @@ public final class RH_4 extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addGap(49, 49, 49)
-                                .addComponent(jLabel16))
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -988,9 +985,7 @@ public final class RH_4 extends javax.swing.JFrame {
                                     .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(cta)
-                                        .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cta, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Banco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(zona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1049,8 +1044,8 @@ public final class RH_4 extends javax.swing.JFrame {
                     .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
+                    .addComponent(jLabel16)
+                    .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1476,6 +1471,7 @@ public final class RH_4 extends javax.swing.JFrame {
                     .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(add)
                     .addComponent(mod))
+                .addGap(3, 3, 3)
                 .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(GeneralLayout.createSequentialGroup()
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1495,7 +1491,7 @@ public final class RH_4 extends javax.swing.JFrame {
                         .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Close)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jScrollPane3.setViewportView(General);
@@ -1721,9 +1717,7 @@ public final class RH_4 extends javax.swing.JFrame {
         obsimss.setRows(5);
         jScrollPane4.setViewportView(obsimss);
 
-        Status1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "VIGENTE", "RECHAZADO", "BAJA", "IMSS", "VIGENTE", "Temporal", "PENDIENTE" }));
-        Status1.setMinimumSize(new java.awt.Dimension(100, 20));
-        Status1.setPreferredSize(new java.awt.Dimension(100, 20));
+        Status1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "IMSS", "PENDIENTE", "RECHAZADO", "TEMPORAL", "VIGENTE" }));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1753,13 +1747,13 @@ public final class RH_4 extends javax.swing.JFrame {
                             .addGap(39, 39, 39)
                             .addComponent(sueldoimss))
                         .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addGap(75, 75, 75)
-                            .addComponent(Status1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel54)
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addComponent(jLabel55)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel55)
+                                .addComponent(jLabel54))
                             .addGap(18, 18, 18)
-                            .addComponent(FBimss)))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Status1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FBimss))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel56)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1833,7 +1827,7 @@ public final class RH_4 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5)
@@ -1929,7 +1923,7 @@ public final class RH_4 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RH, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
+            .addComponent(RH)
         );
 
         pack();
@@ -2013,7 +2007,7 @@ public final class RH_4 extends javax.swing.JFrame {
         // TODO add your handling code here:
         eliminarimss();
         mostrarimss();
-
+        limpimms();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void expimssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expimssActionPerformed
@@ -2038,6 +2032,7 @@ public final class RH_4 extends javax.swing.JFrame {
         // TODO add your handling code here:
         eliminardatos();
         mostrardatos();
+        limpiar();
     }//GEN-LAST:event_elimActionPerformed
 
     private void dataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dataMouseClicked
@@ -2093,7 +2088,8 @@ public final class RH_4 extends javax.swing.JFrame {
                 UDL.setText(rs.getString("Fecha ultimo dia laborado"));
                 FREI.setText(rs.getString("Fecha de Re-ingreso"));
                 UDLRE.setText(rs.getString("Fecha ultimo dia laborado (Re)"));
-                FBRE.setText(rs.getString("Baja Firmada (Re)"));
+                FBRE.setText(rs.getString("Fecha de baja (Re)"));
+                FFB.setText(rs.getString("Fecha firma baja"));
             }
 
         } catch (SQLException e) {
