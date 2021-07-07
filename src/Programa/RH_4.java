@@ -1,4 +1,3 @@
-
 package Programa;
 
 import Conexion.ConexionSQL;
@@ -46,7 +45,7 @@ public final class RH_4 extends javax.swing.JFrame {
         Zonas zz = new Zonas();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
         zona.setModel(modelzonas);
-                DefaultComboBoxModel Cz = new DefaultComboBoxModel(zz.mostrarzonas());
+        DefaultComboBoxModel Cz = new DefaultComboBoxModel(zz.mostrarzonas());
         CZ.setModel(Cz);
         setIconImage(new ImageIcon(RH_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
@@ -60,7 +59,7 @@ public final class RH_4 extends javax.swing.JFrame {
      * @param buscar
      */
     @SuppressWarnings("unchecked")
-   
+
     private void limpimms() {
         expimss.setText("");
         nssimss.setText("");
@@ -69,7 +68,7 @@ public final class RH_4 extends javax.swing.JFrame {
         rfcimss.setText("");
         curpimss.setText("");
         sueldoimss.setText("");
-        zona1.setSelectedIndex(0);
+        zona1.setText("");
         gen.setSelectedIndex(0);
         puesto.setSelectedIndex(0);
         Status1.setSelectedIndex(0);
@@ -88,8 +87,8 @@ public final class RH_4 extends javax.swing.JFrame {
         RFC.setText("");
         NSS.setText("");
         CURP.setText("");
-        Sueldo.setText("");
-        Bono.setText("");
+        Sueldo.setText("0");
+        Bono.setText("0");
         cta.setText("");
         Obs.setText("");
         Calle.setText("");
@@ -101,7 +100,7 @@ public final class RH_4 extends javax.swing.JFrame {
         DO.setText("");
         DE.setText("");
         DF.setText("");
-        Cda.setText("");
+        Cda.setText("0");
         fdp.setSelectedIndex(0);
         Banco.setSelectedIndex(0);
         zona.setSelectedIndex(0);
@@ -138,7 +137,7 @@ public final class RH_4 extends javax.swing.JFrame {
         };
 
         String sql = "SELECT * FROM empleados WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
-                //+ " OR `Apellido_P_E` LIKE '%" + buscar + "%' OR `Apellido_M_E` LIKE '%" + buscar + "%'"; este es para buscar por 2+ filtros
+        //+ " OR `Apellido_P_E` LIKE '%" + buscar + "%' OR `Apellido_M_E` LIKE '%" + buscar + "%'"; este es para buscar por 2+ filtros
         try {
 
             java.sql.Statement st = con.createStatement();
@@ -210,7 +209,7 @@ public final class RH_4 extends javax.swing.JFrame {
         };
 
         String sql = "SELECT * FROM imss WHERE `Nombre completo` LIKE '%" + buscari + "%'";
-               // + " OR Apellido_P_imss LIKE '%" + buscari + "%' OR Apellido_M_imss LIKE '%" + buscari + "%'";
+        // + " OR Apellido_P_imss LIKE '%" + buscari + "%' OR Apellido_M_imss LIKE '%" + buscari + "%'";
         try {
 
             java.sql.Statement st = con.createStatement();
@@ -219,7 +218,7 @@ public final class RH_4 extends javax.swing.JFrame {
             while (rs.next()) {
                 registros[0] = rs.getString("idimss");
                 registros[1] = rs.getString("#_Exp");
-                registros[2] = rs.getString("Nombre completo");        
+                registros[2] = rs.getString("Nombre completo");
                 registros[3] = rs.getString("Genero_imss");
                 registros[4] = rs.getString("Fecha_de_incorporacion");
                 registros[5] = rs.getString("Zona_Imss");
@@ -325,7 +324,6 @@ public final class RH_4 extends javax.swing.JFrame {
     public void editari() {
         int id = Integer.parseInt(txtid2.getText());
         String Item = gen.getSelectedItem().toString();
-        String Item2 = zona1.getSelectedItem().toString();
         String Item3 = puesto.getSelectedItem().toString();
         String Item4 = Status1.getSelectedItem().toString();
         String SQL = "UPDATE imss SET ``#_Exp` = ?, `Nombre completo` = ?, "
@@ -339,7 +337,7 @@ public final class RH_4 extends javax.swing.JFrame {
             pst.setString(2, nameimss.getText());
             pst.setString(3, Item);
             pst.setString(4, FIimss.getText());
-            pst.setString(5, Item2);
+            pst.setString(5, zona1.getText());
             pst.setString(6, rfcimss.getText());
             pst.setString(7, nssimss.getText());
             pst.setString(8, curpimss.getText());
@@ -397,7 +395,7 @@ public final class RH_4 extends javax.swing.JFrame {
     }
 
     public void mostrarimss() {
-        String[] titulos = {"id bd", "# Exp", "Nombre Completo", 
+        String[] titulos = {"id bd", "# Exp", "Nombre Completo",
             "Genero", "Fecha de incorporacion", "Zona", "RFC", "NSS", "CURP", "Puesto", "Sueldo",
             "Status", "Fecha baja", "Observaciones"};
         String[] registros = new String[14];
@@ -418,7 +416,7 @@ public final class RH_4 extends javax.swing.JFrame {
 
                 registros[0] = rs.getString("idimss");
                 registros[1] = rs.getString("#_Exp");
-                registros[2] = rs.getString("Nombre completo");        
+                registros[2] = rs.getString("Nombre completo");
                 registros[3] = rs.getString("Genero_imss");
                 registros[4] = rs.getString("Fecha_de_incorporacion");
                 registros[5] = rs.getString("Zona_Imss");
@@ -521,7 +519,6 @@ public final class RH_4 extends javax.swing.JFrame {
 
     public void AgregarI() {
         String Item = gen.getSelectedItem().toString();
-        String Item2 = zona1.getSelectedItem().toString();
         String Item3 = puesto.getSelectedItem().toString();
         String Item4 = Status1.getSelectedItem().toString();
         String SQL = "insert into imss (`#_Exp`, `Nombre completo`, `Genero_imss`, `Fecha_de_incorporacion`,"
@@ -534,7 +531,7 @@ public final class RH_4 extends javax.swing.JFrame {
             pst.setString(2, nameimss.getText());
             pst.setString(3, Item);
             pst.setString(4, FIimss.getText());
-            pst.setString(5, Item2);
+            pst.setString(5, zona1.getText());
             pst.setString(6, rfcimss.getText());
             pst.setString(7, nssimss.getText());
             pst.setString(8, curpimss.getText());
@@ -756,7 +753,6 @@ public final class RH_4 extends javax.swing.JFrame {
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
-        zona1 = new javax.swing.JComboBox<>();
         gen = new javax.swing.JComboBox<>();
         expimss = new javax.swing.JTextField();
         nssimss = new javax.swing.JTextField();
@@ -765,6 +761,7 @@ public final class RH_4 extends javax.swing.JFrame {
         nameimss = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         FIimss = new javax.swing.JTextField();
+        zona1 = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         puesto = new javax.swing.JComboBox<>();
         jLabel50 = new javax.swing.JLabel();
@@ -905,11 +902,15 @@ public final class RH_4 extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 153));
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Baja", "IMSS", "Pendiente", "Rechazado", "Temporal", "Vigente" }));
+        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "IMSS", "PENDIENTE", "RECHAZADO", "TEMPORAL", "VIGENTE" }));
         Status.setMinimumSize(new java.awt.Dimension(100, 20));
         Status.setPreferredSize(new java.awt.Dimension(100, 20));
 
         jLabel14.setText("Zona");
+
+        Sueldo.setText("0");
+
+        Bono.setText("0");
 
         jLabel13.setText("Bono");
 
@@ -924,7 +925,7 @@ public final class RH_4 extends javax.swing.JFrame {
 
         jLabel11.setText("Forma de pago");
 
-        fdp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Tarjeta", "Efectivo" }));
+        fdp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "TARJETA", "EFECTIVO" }));
         fdp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fdpActionPerformed(evt);
@@ -939,9 +940,11 @@ public final class RH_4 extends javax.swing.JFrame {
 
         jLabel29.setText("Banco:");
 
-        Banco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Bancomer", "Santander" }));
+        Banco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BANCOMER", "SANTANDER" }));
 
         jLabel60.setText("Caja de ahorro:");
+
+        Cda.setText("0");
 
         zona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
         zona.addItemListener(new java.awt.event.ItemListener() {
@@ -1604,9 +1607,7 @@ public final class RH_4 extends javax.swing.JFrame {
 
         jLabel49.setText("NSS:");
 
-        zona1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Sur 1", "Sur 2", "Norte", "Poniente", "Acapulco", "Puebla" }));
-
-        gen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Hombre", "Mujer" }));
+        gen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "HOMBRE", "MUJER" }));
 
         expimss.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1651,11 +1652,12 @@ public final class RH_4 extends javax.swing.JFrame {
                             .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(gen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(zona1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nssimss, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                            .addComponent(FIimss))))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(gen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FIimss, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                                .addComponent(zona1))
+                            .addComponent(nssimss, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -1687,8 +1689,8 @@ public final class RH_4 extends javax.swing.JFrame {
                     .addComponent(FIimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(3, 3, 3)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(zona1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel48))
+                    .addComponent(jLabel48)
+                    .addComponent(zona1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(3, 3, 3)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
@@ -1698,7 +1700,7 @@ public final class RH_4 extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 204, 255));
 
-        puesto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Chofer", "Administrativo", "Supervisor" }));
+        puesto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "CHOFER", "ADMINISTRATIVO", "SUPERVISOR" }));
 
         jLabel50.setText("RFC");
 
@@ -1719,7 +1721,7 @@ public final class RH_4 extends javax.swing.JFrame {
         obsimss.setRows(5);
         jScrollPane4.setViewportView(obsimss);
 
-        Status1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Vigente", "Rechazado", "Baja", "IMSS", "Vigente", "Temporal", "Pendiente" }));
+        Status1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "VIGENTE", "RECHAZADO", "BAJA", "IMSS", "VIGENTE", "Temporal", "PENDIENTE" }));
         Status1.setMinimumSize(new java.awt.Dimension(100, 20));
         Status1.setPreferredSize(new java.awt.Dimension(100, 20));
 
@@ -1957,28 +1959,22 @@ public final class RH_4 extends javax.swing.JFrame {
             //FBimss.setDate(date9);
 
             //combo1
-            String combo10 = model.getValueAt(fila, 5).toString();
+            String combo10 = model.getValueAt(fila, 3).toString();
             for (int i = 0; i < gen.getItemCount(); i++) {
                 if (gen.getItemAt(i).equalsIgnoreCase(combo10)) {
                     gen.setSelectedIndex(i);
                 }
             }
-            //Combo2
-            String combo11 = model.getValueAt(fila, 7).toString();
-            for (int i = 0; i < zona1.getItemCount(); i++) {
-                if (zona1.getItemAt(i).equalsIgnoreCase(combo11)) {
-                    zona1.setSelectedIndex(i);
-                }
-            }
+
             //Combo3
-            String combo12 = model.getValueAt(fila, 11).toString();
+            String combo12 = model.getValueAt(fila, 9).toString();
             for (int i = 0; i < puesto.getItemCount(); i++) {
                 if (puesto.getItemAt(i).equalsIgnoreCase(combo12)) {
                     puesto.setSelectedIndex(i);
                 }
             }
             //Combo4
-            String combo13 = model.getValueAt(fila, 13).toString();
+            String combo13 = model.getValueAt(fila, 11).toString();
             for (int i = 0; i < Status1.getItemCount(); i++) {
                 if (Status1.getItemAt(i).equalsIgnoreCase(combo13)) {
                     Status1.setSelectedIndex(i);
@@ -1996,19 +1992,20 @@ public final class RH_4 extends javax.swing.JFrame {
                 txtid2.setText(String.valueOf(id));
                 expimss.setText(rs.getString("#_Exp"));
                 nameimss.setText(rs.getString("Nombre Completo"));
-
+                zona1.setText(rs.getString("Zona_Imss"));
                 rfcimss.setText(rs.getString("rfc_imss"));
                 nssimss.setText(rs.getString("nss_imss"));
                 curpimss.setText(rs.getString("curp_imss"));
                 sueldoimss.setText(rs.getString("salario"));
                 obsimss.setText(rs.getString("observaciones"));
-
+                FIimss.setText(rs.getString("Fecha_de_incorporacion"));
+                FBimss.setText(rs.getString("fecha_baja"));
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
 
-        //} catch (ParseException ex) {
-          //  Logger.getLogger(RH_4.class.getName()).log(Level.SEVERE, null, ex);
+            //} catch (ParseException ex) {
+            //  Logger.getLogger(RH_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_imssMouseClicked
 
@@ -2060,7 +2057,7 @@ public final class RH_4 extends javax.swing.JFrame {
                 txtid.setText(String.valueOf(id));
                 exp.setText(rs.getString("Exp"));
                 NombreE.setText(rs.getString("Nombre Completo"));
-                
+                zona1.setText(rs.getString("Zona"));
                 Correo.setText(rs.getString("Correo"));
                 Rec.setText(rs.getString("#_Recados"));
                 Casa.setText(rs.getString("#_Casa"));
@@ -2098,55 +2095,55 @@ public final class RH_4 extends javax.swing.JFrame {
                 UDLRE.setText(rs.getString("Fecha ultimo dia laborado (Re)"));
                 FBRE.setText(rs.getString("Baja Firmada (Re)"));
             }
-            
+
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
-            
+
         }
         int fila = data.getSelectedRow();
 //combobox1
-            String combo1 = model.getValueAt(fila, 10).toString();
-            for (int i = 0; i < fdp.getItemCount(); i++) {
-                if (fdp.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    fdp.setSelectedIndex(i);
-                }
+        String combo1 = model.getValueAt(fila, 10).toString();
+        for (int i = 0; i < fdp.getItemCount(); i++) {
+            if (fdp.getItemAt(i).equalsIgnoreCase(combo1)) {
+                fdp.setSelectedIndex(i);
             }
-            //combobox2
-            String combo2 = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Banco.getItemCount(); i++) {
-                if (Banco.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    Banco.setSelectedIndex(i);
-                }
+        }
+        //combobox2
+        String combo2 = model.getValueAt(fila, 14).toString();
+        for (int i = 0; i < Banco.getItemCount(); i++) {
+            if (Banco.getItemAt(i).equalsIgnoreCase(combo2)) {
+                Banco.setSelectedIndex(i);
             }
-           
-            //combobox5
-            String combo5 = model.getValueAt(fila, 17).toString();
-            for (int i = 0; i < Status.getItemCount(); i++) {
-                if (Status.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    Status.setSelectedIndex(i);
-                }
+        }
+
+        //combobox5
+        String combo5 = model.getValueAt(fila, 17).toString();
+        for (int i = 0; i < Status.getItemCount(); i++) {
+            if (Status.getItemAt(i).equalsIgnoreCase(combo5)) {
+                Status.setSelectedIndex(i);
             }
-            //combobox6
-            String combo6 = model.getValueAt(fila, 40).toString();
-            for (int i = 0; i < BFRE.getItemCount(); i++) {
-                if (BFRE.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    BFRE.setSelectedIndex(i);
-                }
+        }
+        //combobox6
+        String combo6 = model.getValueAt(fila, 40).toString();
+        for (int i = 0; i < BFRE.getItemCount(); i++) {
+            if (BFRE.getItemAt(i).equalsIgnoreCase(combo6)) {
+                BFRE.setSelectedIndex(i);
             }
-            //combobox7
-            String combo7 = model.getValueAt(fila, 33).toString();
-            for (int i = 0; i < cbf.getItemCount(); i++) {
-                if (cbf.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    cbf.setSelectedIndex(i);
-                }
+        }
+        //combobox7
+        String combo7 = model.getValueAt(fila, 33).toString();
+        for (int i = 0; i < cbf.getItemCount(); i++) {
+            if (cbf.getItemAt(i).equalsIgnoreCase(combo7)) {
+                cbf.setSelectedIndex(i);
             }
-            //combobox8
-            String combo8 = model.getValueAt(fila, 34).toString();
-            for (int i = 0; i < cfin.getItemCount(); i++) {
-                if (cfin.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    cfin.setSelectedIndex(i);
-                }
+        }
+        //combobox8
+        String combo8 = model.getValueAt(fila, 34).toString();
+        for (int i = 0; i < cfin.getItemCount(); i++) {
+            if (cfin.getItemAt(i).equalsIgnoreCase(combo8)) {
+                cfin.setSelectedIndex(i);
             }
+        }
     }//GEN-LAST:event_dataMouseClicked
 
     private void serchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchKeyReleased
@@ -2184,11 +2181,11 @@ public final class RH_4 extends javax.swing.JFrame {
 
     private void zonaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_zonaItemStateChanged
         // TODO add your handling code here:
-        if(evt.getStateChange() == ItemEvent.SELECTED){
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
             Zonas zon = (Zonas) zona.getSelectedItem();
             Servicios serv = new Servicios();
             DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-        Serv.setModel(modelServicio);
+            Serv.setModel(modelServicio);
         }
     }//GEN-LAST:event_zonaItemStateChanged
 
@@ -2202,11 +2199,11 @@ public final class RH_4 extends javax.swing.JFrame {
 
     private void CZItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CZItemStateChanged
         // TODO add your handling code here:
-        if(evt.getStateChange() == ItemEvent.SELECTED){
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
             Zonas zon = (Zonas) CZ.getSelectedItem();
             Servicios serv = new Servicios();
             DefaultComboBoxModel Cs = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-        CS.setModel(Cs);
+            CS.setModel(Cs);
         }
     }//GEN-LAST:event_CZItemStateChanged
 
@@ -2241,7 +2238,7 @@ public final class RH_4 extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        
+
         //</editor-fold>
         //</editor-fold>
 
@@ -2408,6 +2405,6 @@ public final class RH_4 extends javax.swing.JFrame {
     private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtid2;
     private javax.swing.JComboBox<String> zona;
-    private javax.swing.JComboBox<String> zona1;
+    private javax.swing.JTextField zona1;
     // End of variables declaration//GEN-END:variables
 }
