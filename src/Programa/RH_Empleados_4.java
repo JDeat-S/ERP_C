@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class RH_4 extends javax.swing.JFrame {
+public final class RH_Empleados_4 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
@@ -29,7 +29,7 @@ public final class RH_4 extends javax.swing.JFrame {
     /**
      * Creates new form RH
      */
-    public RH_4() {
+    public RH_Empleados_4() {
         initComponents();
         this.setExtendedState(6);
         mostrardatos();
@@ -41,7 +41,7 @@ public final class RH_4 extends javax.swing.JFrame {
         zona.setModel(modelzonas);
         DefaultComboBoxModel Cz = new DefaultComboBoxModel(zz.mostrarzonas());
         CZ.setModel(Cz);
-        setIconImage(new ImageIcon(RH_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(RH_Empleados_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
 
@@ -1999,7 +1999,7 @@ public final class RH_4 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e.toString());
 
             //} catch (ParseException ex) {
-            //  Logger.getLogger(RH_4.class.getName()).log(Level.SEVERE, null, ex);
+            //  Logger.getLogger(RH_Empleados_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_imssMouseClicked
 
@@ -2203,15 +2203,61 @@ public final class RH_4 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CZItemStateChanged
 
+<<<<<<< Updated upstream:src/Programa/RH_4.java
     private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_CloseActionPerformed
+=======
+    private void CsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CsActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CsActionPerformed
+
+    private void Cs3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs3ActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_Cs3ActionPerformed
+
+    private void Cs2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs2ActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_Cs2ActionPerformed
+>>>>>>> Stashed changes:src/Programa/RH_Empleados_4.java
 
     private void Close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close1ActionPerformed
         // TODO add your handling code here:
+<<<<<<< Updated upstream:src/Programa/RH_4.java
         dispose();
     }//GEN-LAST:event_Close1ActionPerformed
+=======
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_Cs4ActionPerformed
+>>>>>>> Stashed changes:src/Programa/RH_Empleados_4.java
 
     /**
      * @param args the command line arguments
@@ -2230,8 +2276,10 @@ public final class RH_4 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RH_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RH_Empleados_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -2240,7 +2288,7 @@ public final class RH_4 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new RH_4().setVisible(true);
+            new RH_Empleados_4().setVisible(true);
         });
     }
 

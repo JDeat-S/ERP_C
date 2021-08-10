@@ -1507,7 +1507,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                 return columnas == 99;
             }
         };
-
+        
         String sql = "SELECT * FROM empleados WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
         // + " OR `Apellido_P_E` LIKE '%" + buscar + "%' OR `Apellido_M_E` LIKE '%" + buscar + "%'";
         try {
@@ -8748,11 +8748,23 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
     private void Close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close1ActionPerformed
         // TODO add your handling code here:
+<<<<<<< Updated upstream
         dispose();
     }//GEN-LAST:event_Close1ActionPerformed
+=======
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS4ActionPerformed
+>>>>>>> Stashed changes
 
     private void Close2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close2ActionPerformed
         // TODO add your handling code here:
+<<<<<<< Updated upstream
         dispose();
     }//GEN-LAST:event_Close2ActionPerformed
 
@@ -8760,6 +8772,16 @@ public final class Nomina_5 extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_Close3ActionPerformed
+=======
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS6ActionPerformed
+>>>>>>> Stashed changes
 
     private void buspKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buspKeyReleased
         // TODO add your handling code here:
@@ -8768,6 +8790,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
     private void BsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsiActionPerformed
         // TODO add your handling code here:
+        String Bonosi = Bono1.getText();
+        Bono.setText(Bonosi);
     }//GEN-LAST:event_BsiActionPerformed
 
     private void shareMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shareMouseEntered
@@ -8779,6 +8803,61 @@ public final class Nomina_5 extends javax.swing.JFrame {
         Bono.setText("0");
     }//GEN-LAST:event_BnoActionPerformed
 
+<<<<<<< Updated upstream
+=======
+    private void CSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CSActionPerformed
+
+    private void CS7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS7ActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS7ActionPerformed
+
+    private void CS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2ActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS2ActionPerformed
+
+    private void CS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS3ActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS3ActionPerformed
+
+    private void CS5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS5ActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS5ActionPerformed
+
+>>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */

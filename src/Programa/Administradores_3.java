@@ -216,7 +216,7 @@ public final class Administradores_3 extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         txtid = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        CS = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         serch = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -255,10 +255,10 @@ public final class Administradores_3 extends javax.swing.JFrame {
         setIconImages(getIconImages());
         setResizable(false);
 
-        jButton1.setText("Cerrar Sesion");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        CS.setText("Cerrar Sesion");
+        CS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                CSActionPerformed(evt);
             }
         });
 
@@ -433,7 +433,7 @@ public final class Administradores_3 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(CS)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -456,7 +456,7 @@ public final class Administradores_3 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(CS))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -511,7 +511,7 @@ public final class Administradores_3 extends javax.swing.JFrame {
         });
         jMenu2.add(IDN);
 
-        AZyS.setText("Altas de Zonas y Servicios");
+        AZyS.setText("Zonas y Servicios");
         AZyS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AZySActionPerformed(evt);
@@ -581,21 +581,21 @@ public final class Administradores_3 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAPActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void CSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSActionPerformed
         // TODO add your handling code here:
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
-            Inicio_1 regr = new Inicio_1();
+            Login_2 regr = new Login_2();
             regr.setVisible(true);
             this.dispose();
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_CSActionPerformed
 
     private void IDRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDRHActionPerformed
         // TODO add your handling code here:
-        RH_4 kk = new RH_4();
+        RH_Empleados_4 kk = new RH_Empleados_4();
         kk.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_IDRHActionPerformed
@@ -701,6 +701,7 @@ public final class Administradores_3 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AZyS;
+    private javax.swing.JButton CS;
     private com.toedter.calendar.JDateChooser FR;
     private javax.swing.JMenuItem IDN;
     private javax.swing.JMenuItem IDRH;
@@ -709,7 +710,6 @@ public final class Administradores_3 extends javax.swing.JFrame {
     private javax.swing.JMenuItem UsN;
     private javax.swing.JButton bntdel;
     private javax.swing.JButton btnadd;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

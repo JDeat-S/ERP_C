@@ -26,7 +26,8 @@ public class ConexionSQL {
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=(Connection) DriverManager.getConnection("jdbc:mysql://192.168.3.10:3306/confort","Servidor","Remoto08");
+//            con=(Connection) DriverManager.getConnection("jdbc:mysql://192.168.3.10:3306/confort","Servidor","Remoto08");
+            con=(Connection) DriverManager.getConnection("jdbc:mysql://192.168.1.2:3306/confort","JDeat","JDeat5577");
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error de conexion" +e.getMessage());
         }
