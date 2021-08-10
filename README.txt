@@ -1,6 +1,5 @@
 - Ver 1.0
-<<<<<<< Updated upstream
-=======
+
 Cambios 09/08/2021
 -Se añadieron los botones cerrar sesión en la mayoría de las ventanas.
 -Se corrigieron errores ortográficos.
@@ -32,4 +31,4 @@ Ventana Administrador
 
 Cambios BD
 -En la tabla de servicios ahora aparecen los nombres de las Zonas (Antes solo aparecían números)
->>>>>>> Stashed changes
+
