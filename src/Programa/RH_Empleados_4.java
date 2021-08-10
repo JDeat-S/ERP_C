@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class RH_4 extends javax.swing.JFrame {
+public final class RH_Empleados_4 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
@@ -29,7 +29,7 @@ public final class RH_4 extends javax.swing.JFrame {
     /**
      * Creates new form RH
      */
-    public RH_4() {
+    public RH_Empleados_4() {
         initComponents();
         this.setExtendedState(6);
         mostrardatos();
@@ -41,7 +41,7 @@ public final class RH_4 extends javax.swing.JFrame {
         zona.setModel(modelzonas);
         DefaultComboBoxModel Cz = new DefaultComboBoxModel(zz.mostrarzonas());
         CZ.setModel(Cz);
-        setIconImage(new ImageIcon(RH_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(RH_Empleados_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
 
@@ -731,7 +731,7 @@ public final class RH_4 extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         CS = new javax.swing.JComboBox<>();
         CZ = new javax.swing.JComboBox<>();
-        Cs = new javax.swing.JButton();
+        Close = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         serch = new javax.swing.JTextField();
@@ -739,7 +739,6 @@ public final class RH_4 extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         data = new javax.swing.JTable();
         elim = new javax.swing.JButton();
-        Cs2 = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         IMSS = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
@@ -776,7 +775,7 @@ public final class RH_4 extends javax.swing.JFrame {
         obsimss = new javax.swing.JTextArea();
         FBimss = new javax.swing.JTextField();
         Status1 = new javax.swing.JComboBox<>();
-        Cs3 = new javax.swing.JButton();
+        Close1 = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
@@ -784,7 +783,6 @@ public final class RH_4 extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         imss = new javax.swing.JTable();
         serch2 = new javax.swing.JTextField();
-        Cs4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Interface de Recursos Humanos");
@@ -1426,10 +1424,10 @@ public final class RH_4 extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        Cs.setText("Cerrar sesion");
-        Cs.addActionListener(new java.awt.event.ActionListener() {
+        Close.setText("Cerrar Programa");
+        Close.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CsActionPerformed(evt);
+                CloseActionPerformed(evt);
             }
         });
 
@@ -1458,7 +1456,7 @@ public final class RH_4 extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Cs))))
+                            .addComponent(Close))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1484,14 +1482,16 @@ public final class RH_4 extends javax.swing.JFrame {
                             .addGroup(GeneralLayout.createSequentialGroup()
                                 .addGap(9, 9, 9)
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(GeneralLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Cs)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addComponent(Close)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jScrollPane3.setViewportView(General);
@@ -1538,13 +1538,6 @@ public final class RH_4 extends javax.swing.JFrame {
             }
         });
 
-        Cs2.setText("Cerrar sesion");
-        Cs2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cs2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -1560,10 +1553,7 @@ public final class RH_4 extends javax.swing.JFrame {
                         .addComponent(elim))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 11842, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Cs2)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 11842, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -1576,9 +1566,7 @@ public final class RH_4 extends javax.swing.JFrame {
                     .addComponent(elim))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Cs2)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         jScrollPane5.setViewportView(jPanel6);
@@ -1806,10 +1794,10 @@ public final class RH_4 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Cs3.setText("Cerrar sesion");
-        Cs3.addActionListener(new java.awt.event.ActionListener() {
+        Close1.setText("Cerrar Programa");
+        Close1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cs3ActionPerformed(evt);
+                Close1ActionPerformed(evt);
             }
         });
 
@@ -1830,7 +1818,7 @@ public final class RH_4 extends javax.swing.JFrame {
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Cs3))
+                    .addComponent(Close1))
                 .addContainerGap(292, Short.MAX_VALUE))
         );
         IMSSLayout.setVerticalGroup(
@@ -1844,8 +1832,8 @@ public final class RH_4 extends javax.swing.JFrame {
                 .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5)
                     .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 318, Short.MAX_VALUE)
-                .addComponent(Cs3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
+                .addComponent(Close1)
                 .addContainerGap())
         );
 
@@ -1894,13 +1882,6 @@ public final class RH_4 extends javax.swing.JFrame {
             }
         });
 
-        Cs4.setText("Cerrar sesion");
-        Cs4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cs4ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -1914,8 +1895,7 @@ public final class RH_4 extends javax.swing.JFrame {
                         .addComponent(serch2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton6))
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 5280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cs4))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 5280, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -1928,9 +1908,7 @@ public final class RH_4 extends javax.swing.JFrame {
                     .addComponent(jButton6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Cs4)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         jScrollPane6.setViewportView(jPanel8);
@@ -2021,7 +1999,7 @@ public final class RH_4 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e.toString());
 
             //} catch (ParseException ex) {
-            //  Logger.getLogger(RH_4.class.getName()).log(Level.SEVERE, null, ex);
+            //  Logger.getLogger(RH_Empleados_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_imssMouseClicked
 
@@ -2225,33 +2203,61 @@ public final class RH_4 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CZItemStateChanged
 
+<<<<<<< Updated upstream:src/Programa/RH_4.java
+    private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_CloseActionPerformed
+=======
     private void CsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CsActionPerformed
         // TODO add your handling code here:
-        Inicio_1 regr = new Inicio_1();
-        regr.setVisible(true);
-        this.dispose();
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_CsActionPerformed
 
     private void Cs3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs3ActionPerformed
         // TODO add your handling code here:
-        Inicio_1 regr = new Inicio_1();
-        regr.setVisible(true);
-        this.dispose();
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_Cs3ActionPerformed
 
     private void Cs2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs2ActionPerformed
         // TODO add your handling code here:
-        Inicio_1 regr = new Inicio_1();
-        regr.setVisible(true);
-        this.dispose();
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_Cs2ActionPerformed
+>>>>>>> Stashed changes:src/Programa/RH_Empleados_4.java
 
-    private void Cs4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs4ActionPerformed
+    private void Close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close1ActionPerformed
         // TODO add your handling code here:
-        Inicio_1 regr = new Inicio_1();
-        regr.setVisible(true);
-        this.dispose();
+<<<<<<< Updated upstream:src/Programa/RH_4.java
+        dispose();
+    }//GEN-LAST:event_Close1ActionPerformed
+=======
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_Cs4ActionPerformed
+>>>>>>> Stashed changes:src/Programa/RH_Empleados_4.java
 
     /**
      * @param args the command line arguments
@@ -2270,8 +2276,10 @@ public final class RH_4 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RH_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RH_Empleados_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -2280,7 +2288,7 @@ public final class RH_4 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new RH_4().setVisible(true);
+            new RH_Empleados_4().setVisible(true);
         });
     }
 
@@ -2296,12 +2304,10 @@ public final class RH_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Casa;
     private javax.swing.JTextField Cda;
     private javax.swing.JTextField Celular;
+    private javax.swing.JButton Close;
+    private javax.swing.JButton Close1;
     private javax.swing.JTextField Colonia;
     private javax.swing.JTextField Correo;
-    private javax.swing.JButton Cs;
-    private javax.swing.JButton Cs2;
-    private javax.swing.JButton Cs3;
-    private javax.swing.JButton Cs4;
     private javax.swing.JTextField DE;
     private javax.swing.JTextField DF;
     private javax.swing.JTextField DLGMUN;

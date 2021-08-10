@@ -56,7 +56,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="AZyS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Altas de Zonas y Servicios"/>
+                <Property name="text" type="java.lang.String" value="Zonas y Servicios"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AZySActionPerformed"/>

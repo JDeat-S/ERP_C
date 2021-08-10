@@ -503,7 +503,7 @@ public final class Usuarios_Nomina_3 extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem5);
 
-        AZyS.setText("Altas de Zonas y Servicios");
+        AZyS.setText("Zonas y Servicios");
         AZyS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AZySActionPerformed(evt);
@@ -540,7 +540,7 @@ public final class Usuarios_Nomina_3 extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        RH_4 kk = new RH_4();
+        RH_Empleados_4 kk = new RH_Empleados_4();
         kk.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
@@ -580,9 +580,13 @@ public final class Usuarios_Nomina_3 extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here: Inicio_1 regr = new Inicio_1();
-        Inicio_1 regr = new Inicio_1();
-        regr.setVisible(true);
-        this.dispose();
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void tuserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tuserMouseClicked

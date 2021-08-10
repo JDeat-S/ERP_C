@@ -511,7 +511,7 @@ public final class Usuarios_RH_3 extends javax.swing.JFrame {
         });
         Ira.add(IdN);
 
-        AZyS.setText("Altas de Zonas y Servicios");
+        AZyS.setText("Zonas y Servicios");
         AZyS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AZySActionPerformed(evt);
@@ -580,9 +580,13 @@ public final class Usuarios_RH_3 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Inicio_1 re = new Inicio_1();
-        re.setVisible(true);
-        this.dispose();
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ModRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModRHActionPerformed
@@ -635,7 +639,7 @@ public final class Usuarios_RH_3 extends javax.swing.JFrame {
 
     private void IdRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdRHActionPerformed
         // TODO add your handling code here:
-        RH_4 kk = new RH_4();
+        RH_Empleados_4 kk = new RH_Empleados_4();
         kk.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_IdRHActionPerformed

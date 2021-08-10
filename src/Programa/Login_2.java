@@ -74,7 +74,7 @@ public class Login_2 extends javax.swing.JFrame {
             if(rs.next()){
                 resultado=1;
                 if (resultado==1) {
-                    RH_4 Form = new RH_4();
+                    RH_Empleados_4 Form = new RH_Empleados_4();
                     Form.setVisible(true);
                     this.dispose();
                     
