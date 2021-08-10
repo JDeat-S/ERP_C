@@ -88,7 +88,7 @@
                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Close" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Cs" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -130,10 +130,10 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="Close" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Cs" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="21" max="32767" attributes="0"/>
+                          <EmptySpace pref="25" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1287,12 +1287,12 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="Close">
+                <Component class="javax.swing.JButton" name="Cs">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Cerrar Programa"/>
+                    <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CloseActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CsActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -1334,6 +1334,10 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane2" min="-2" pref="11842" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Cs2" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace pref="136" max="32767" attributes="0"/>
                       </Group>
@@ -1350,7 +1354,9 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="580" max="-2" attributes="0"/>
-                          <EmptySpace pref="38" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Cs2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="21" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1587,6 +1593,14 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="elimActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JButton" name="Cs2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cs2ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -1628,7 +1642,7 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="Close1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Cs3" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="292" max="32767" attributes="0"/>
                       </Group>
@@ -1647,8 +1661,8 @@
                               <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="308" max="32767" attributes="0"/>
-                          <Component id="Close1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="318" max="32767" attributes="0"/>
+                          <Component id="Cs3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -2059,12 +2073,12 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="Close1">
+                <Component class="javax.swing.JButton" name="Cs3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Cerrar Programa"/>
+                    <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Close1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cs3ActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -2103,6 +2117,7 @@
                                   <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane7" alignment="0" min="-2" pref="5280" max="-2" attributes="0"/>
+                              <Component id="Cs4" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -2119,7 +2134,9 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane7" min="-2" pref="580" max="-2" attributes="0"/>
-                          <EmptySpace pref="41" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Cs4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="12" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2166,6 +2183,14 @@
                 <Component class="javax.swing.JTextField" name="serch2">
                   <Events>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="serch2KeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="Cs4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cs4ActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

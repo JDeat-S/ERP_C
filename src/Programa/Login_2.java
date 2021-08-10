@@ -163,7 +163,7 @@ public class Login_2 extends javax.swing.JFrame {
 
         jLabel3.setText("Contraseña:");
 
-        jButton1.setText("Regeresar");
+        jButton1.setText("Regresar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -227,7 +227,7 @@ public class Login_2 extends javax.swing.JFrame {
 
         login.addTab("Administrador", jPanel1);
 
-        jButton2.setText("Regeresar");
+        jButton2.setText("Regresar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -339,7 +339,7 @@ public class Login_2 extends javax.swing.JFrame {
 
         jLabel12.setText("Por favor ingresa Usuario y contraseña del area de Nomina");
 
-        jButton3.setText("Regeresar");
+        jButton3.setText("Regresar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
