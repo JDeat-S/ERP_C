@@ -128,7 +128,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         DVT.setText("0");
         apy.setText("0");
         Lugar.setText("");
-        DI.setText("0");
+        DI.setText("26.98");
         cda.setText("0");
         Presp.setText("0");
         obs.setText("");
@@ -1507,7 +1507,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                 return columnas == 99;
             }
         };
-        
+
         String sql = "SELECT * FROM empleados WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
         // + " OR `Apellido_P_E` LIKE '%" + buscar + "%' OR `Apellido_M_E` LIKE '%" + buscar + "%'";
         try {
@@ -1848,7 +1848,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         sueldo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        Close1 = new javax.swing.JButton();
+        CS = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         Bsi = new javax.swing.JRadioButton();
         Bno = new javax.swing.JRadioButton();
@@ -1860,6 +1860,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         Nominab = new javax.swing.JTextField();
         Eliminar = new javax.swing.JButton();
+        CS2 = new javax.swing.JButton();
         TPagos = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -1867,6 +1868,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         busp = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
+        CS3 = new javax.swing.JButton();
         Prestamos = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
@@ -1903,7 +1905,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         PQ = new javax.swing.JTextField();
         FS = new javax.swing.JTextField();
         FL = new javax.swing.JTextField();
-        Close2 = new javax.swing.JButton();
+        CS4 = new javax.swing.JButton();
         jScrollPane11 = new javax.swing.JScrollPane();
         Name = new javax.swing.JTextArea();
         Tprestamos = new javax.swing.JScrollPane();
@@ -1913,6 +1915,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         Pre = new javax.swing.JTable();
         jButton6 = new javax.swing.JButton();
+        CS5 = new javax.swing.JButton();
         Talleres = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel49 = new javax.swing.JLabel();
@@ -1967,14 +1970,15 @@ public final class Nomina_5 extends javax.swing.JFrame {
         jLabel72 = new javax.swing.JLabel();
         PQT = new javax.swing.JTextField();
         FE = new javax.swing.JTextField();
-        Close3 = new javax.swing.JButton();
+        CS6 = new javax.swing.JButton();
         TTalleres = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
         jLabel73 = new javax.swing.JLabel();
         Bodt = new javax.swing.JTextField();
         jScrollPane9 = new javax.swing.JScrollPane();
         OdT = new javax.swing.JTable();
-        jButton7 = new javax.swing.JButton();
+        EliminarT = new javax.swing.JButton();
+        CS7 = new javax.swing.JButton();
 
         DO1.setText("0");
 
@@ -3012,7 +3016,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
         });
 
-        DI.setText("0");
+        DI.setText("26.98");
         DI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DIActionPerformed(evt);
@@ -3326,10 +3330,10 @@ public final class Nomina_5 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Close1.setText("Cerrar Programa");
-        Close1.addActionListener(new java.awt.event.ActionListener() {
+        CS.setText("Cerrar sesion");
+        CS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Close1ActionPerformed(evt);
+                CSActionPerformed(evt);
             }
         });
 
@@ -3402,7 +3406,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                                     .addComponent(modP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(Close1)))
+                        .addComponent(CS)))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -3452,8 +3456,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(Close1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addComponent(CS)
                 .addContainerGap())
         );
 
@@ -3496,6 +3500,13 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
         });
 
+        CS2.setText("Cerrar sesion");
+        CS2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -3509,7 +3520,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                         .addComponent(Nominab, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(74, 74, 74)
                         .addComponent(Eliminar))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 10074, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 10074, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CS2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -3522,6 +3534,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     .addComponent(Eliminar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CS2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -3564,6 +3578,13 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
         });
 
+        CS3.setText("Cerrar sesion");
+        CS3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -3577,7 +3598,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                         .addComponent(busp, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(jButton4))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 3702, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 3702, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CS3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -3590,7 +3612,9 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     .addComponent(jButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CS3)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         TPagos.setViewportView(jPanel3);
@@ -3695,10 +3719,10 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
         });
 
-        Close2.setText("Cerrar Programa");
-        Close2.addActionListener(new java.awt.event.ActionListener() {
+        CS4.setText("Cerrar sesion");
+        CS4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Close2ActionPerformed(evt);
+                CS4ActionPerformed(evt);
             }
         });
 
@@ -3769,8 +3793,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                                         .addComponent(jLabel46)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(BE, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addComponent(Close2))
-                .addContainerGap(407, Short.MAX_VALUE))
+                    .addComponent(CS4))
+                .addContainerGap(424, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3841,8 +3865,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     .addComponent(Metodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Agregarprestamo)
                     .addComponent(modprestamo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
-                .addComponent(Close2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addComponent(CS4)
                 .addGap(88, 88, 88))
         );
 
@@ -3885,6 +3909,13 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
         });
 
+        CS5.setText("Cerrar sesion");
+        CS5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -3898,7 +3929,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                         .addComponent(BP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton6))
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 2401, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 2401, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CS5))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -3911,7 +3943,9 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     .addComponent(jButton6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CS5)
+                .addGap(25, 25, 25))
         );
 
         Tprestamos.setViewportView(jPanel5);
@@ -4114,10 +4148,10 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         jLabel72.setText("Por Quincena:");
 
-        Close3.setText("Cerrar Programa");
-        Close3.addActionListener(new java.awt.event.ActionListener() {
+        CS6.setText("Cerrar sesion");
+        CS6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Close3ActionPerformed(evt);
+                CS6ActionPerformed(evt);
             }
         });
 
@@ -4217,7 +4251,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
                                 .addComponent(FE, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(Close3))
+                    .addComponent(CS6))
                 .addContainerGap(1165, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -4287,8 +4321,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                             .addComponent(FE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 195, Short.MAX_VALUE)
-                .addComponent(Close3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
+                .addComponent(CS6)
                 .addContainerGap())
         );
 
@@ -4324,10 +4358,17 @@ public final class Nomina_5 extends javax.swing.JFrame {
         });
         jScrollPane9.setViewportView(OdT);
 
-        jButton7.setText("Eliminar");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        EliminarT.setText("Eliminar");
+        EliminarT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                EliminarTActionPerformed(evt);
+            }
+        });
+
+        CS7.setText("Cerrar sesion");
+        CS7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS7ActionPerformed(evt);
             }
         });
 
@@ -4336,16 +4377,23 @@ public final class Nomina_5 extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel73)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Bodt, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 2780, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 2780, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(jLabel73)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bodt, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(EliminarT))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(CS7)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -4355,10 +4403,12 @@ public final class Nomina_5 extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel73)
                     .addComponent(Bodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7))
+                    .addComponent(EliminarT))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CS7)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         TTalleres.setViewportView(jPanel8);
@@ -4373,18 +4423,18 @@ public final class Nomina_5 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void EliminarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarTActionPerformed
         // TODO add your handling code here:
         eliminarT();
         MDT();
         limpiarT();
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_EliminarTActionPerformed
 
     private void OdTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OdTMouseClicked
 
@@ -8746,42 +8796,25 @@ public final class Nomina_5 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_folActionPerformed
 
-    private void Close1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close1ActionPerformed
+    private void CS4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS4ActionPerformed
         // TODO add your handling code here:
-<<<<<<< Updated upstream
-        dispose();
-    }//GEN-LAST:event_Close1ActionPerformed
-=======
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
             Login_2 regr = new Login_2();
             regr.setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_CS4ActionPerformed
->>>>>>> Stashed changes
 
-    private void Close2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close2ActionPerformed
+    private void CS6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS6ActionPerformed
         // TODO add your handling code here:
-<<<<<<< Updated upstream
-        dispose();
-    }//GEN-LAST:event_Close2ActionPerformed
-
-    private void Close3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close3ActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_Close3ActionPerformed
-=======
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
             Login_2 regr = new Login_2();
             regr.setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_CS6ActionPerformed
->>>>>>> Stashed changes
 
     private void buspKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buspKeyReleased
         // TODO add your handling code here:
@@ -8803,8 +8836,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
         Bono.setText("0");
     }//GEN-LAST:event_BnoActionPerformed
 
-<<<<<<< Updated upstream
-=======
     private void CSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSActionPerformed
         // TODO add your handling code here:
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
@@ -8839,7 +8870,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
         // TODO add your handling code here:
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
             Login_2 regr = new Login_2();
             regr.setVisible(true);
             this.dispose();
@@ -8850,14 +8880,12 @@ public final class Nomina_5 extends javax.swing.JFrame {
         // TODO add your handling code here:
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            JOptionPane.showMessageDialog(this, "Volviendo a inicio...");
             Login_2 regr = new Login_2();
             regr.setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_CS5ActionPerformed
 
->>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */
@@ -8909,13 +8937,17 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Bp;
     private javax.swing.JRadioButton Bsi;
     private javax.swing.JTextField CA;
+    private javax.swing.JButton CS;
+    private javax.swing.JButton CS2;
+    private javax.swing.JButton CS3;
+    private javax.swing.JButton CS4;
+    private javax.swing.JButton CS5;
+    private javax.swing.JButton CS6;
+    private javax.swing.JButton CS7;
     private javax.swing.JTextField Cantidad;
     private javax.swing.JTextField Carpeta;
     private javax.swing.JTextField Chaleco;
     private javax.swing.JTextField Chamarra;
-    private javax.swing.JButton Close1;
-    private javax.swing.JButton Close2;
-    private javax.swing.JButton Close3;
     private javax.swing.JTextField Cobrado;
     private javax.swing.JTextField Corbata;
     private javax.swing.JTextField Credencial;
@@ -8990,6 +9022,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField DVT;
     private javax.swing.JTextArea Daño;
     private javax.swing.JButton Eliminar;
+    private javax.swing.JButton EliminarT;
     private javax.swing.JLabel F;
     private javax.swing.JLabel F1;
     private javax.swing.JLabel F10;
@@ -9169,7 +9202,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField interes;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
