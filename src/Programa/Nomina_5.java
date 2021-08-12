@@ -567,7 +567,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos " + e.getMessage());
         }
     }
-
+//Mostrar orden de taller
     public void MDT() {
         String[] titulos = {"# de Orden", "Fecha de Expedicion", "Nombre(s)",
             "Zona", "Servicio", "Datos vehiculo",
@@ -612,7 +612,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de taller:  " + e.getMessage());
         }
     }
-
+//Editar orden de taller
     public void editarT() {
         int id = Integer.parseInt(Ndo.getText());
         String Item = Ppc.getSelectedItem().toString();
@@ -743,15 +743,15 @@ public final class Nomina_5 extends javax.swing.JFrame {
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Orden de Taller Agregada");
 
-        } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al agregar orden de taller: " + e.getMessage());
+        } catch (HeadlessException | SQLException Ex_Taller) {
+            JOptionPane.showMessageDialog(null, "Error al agregar orden de taller: " + Ex_Taller.getMessage());
         }
     }
 
     public void DAR() {
-        double d1 = Double.parseDouble(this.CA.getText());
+        double Dar1 = Double.parseDouble(this.CA.getText());
 
-        double igual = d1;
+        double igual = Dar1;
 
         this.Pac.setText("" + igual + "");
     }
