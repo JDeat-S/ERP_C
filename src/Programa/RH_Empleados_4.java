@@ -949,11 +949,6 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         });
 
         Serv.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
-        Serv.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ServActionPerformed(evt);
-            }
-        });
 
         Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "IMSS", "PENDIENTE", "RECHAZADO", "TEMPORAL", "VIGENTE" }));
 
@@ -2206,10 +2201,6 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             Serv.setModel(modelServicio);
         }
     }//GEN-LAST:event_zonaItemStateChanged
-
-    private void ServActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ServActionPerformed
 
     private void CSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSActionPerformed
         // TODO add your handling code here:
