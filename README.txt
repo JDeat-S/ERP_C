@@ -64,6 +64,22 @@ General
 -Se cambio el programa a nombre ERP CONFORT
 
 Ventana Administrador
--Se esta desarrollando la pestaña Agregar Detalles de servicios
+-Ahora se pueden visualizar los datos detallados de los servicios.
+-Agrega Servicios detallados sin limpiar detalles
+-No modifica los detalles de los servicios
+- Las tablas de la ventana "Zonas y Servicios" ahora tienen medidas especificas (Anteriormente no se tenían)
 
 Cambios BD
+- Se agrego los apartados de supervisor, Horario, abre y cierre, Sábado y domingo en Servicio
+
+Interno
+-Se busco la forma de optimizar el código para buscar datos en tablas resulto un éxito.
+
+-Ver 1.0.3 beta
+Cambios 12/08/2021
+
+Ventana Administrador
+- Al seleccionar los datos en la tabla de servicios ahora los llena adecuadamente según el dato que haya.
+- Ahora se puede modificar cualquier dato un servicio servicio.
+- Al agregar o modificar servicios ahora limpia todos los campos
+- Se generan reportes pero no los guarda
