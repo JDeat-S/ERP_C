@@ -7,10 +7,14 @@
 package Programa;
 
 import Conexion.ConexionSQL;
+import Filtros.FiltroServ;
+import Filtros.FiltrosZonas;
 import java.awt.HeadlessException;
+import java.awt.event.ItemEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,6 +24,7 @@ import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -75,6 +80,12 @@ public final class Nomina_5 extends javax.swing.JFrame {
      */
     public Nomina_5() {
         initComponents();
+        FiltrosZonas zz = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
+        FiltroZnomina.setModel(modelzonas);
+        FiltrosZonas FZS = new FiltrosZonas();
+        DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
+        FZservicio.setModel(MODELFZS);
         año.setCalendar(fecha_actual);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
@@ -92,6 +103,24 @@ public final class Nomina_5 extends javax.swing.JFrame {
         DAB.add(Bsi);
         DAB.add(Bno);
         MDT();
+        LabelBE.setVisible(false);
+        LabelBQ.setVisible(false);
+        LabelBS.setVisible(false);
+        LabelBZ.setVisible(false);
+        LabelSZ.setVisible(false);
+        Nominab.setText("");
+        Nominab.setVisible(false);
+        FiltroZnomina.setVisible(false);
+        FiltroZnomina.setSelectedIndex(0);
+        FiltroSnomina.setVisible(false);
+        FiltroSnomina.setSelectedIndex(0);
+        FZservicio.setVisible(false);
+        FZservicio.setSelectedIndex(0);
+        FiltroQuincenanomina.setVisible(false);
+        FiltroQuincenanomina.setSelectedIndex(0);
+        FiltroNDF.setText("");
+        FiltroNDF.setVisible(false);
+        LabelBNDF.setVisible(false);
         setIconImage(new ImageIcon(Nomina_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
     }
 
@@ -154,6 +183,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         DT14.setSelectedIndex(0);
         DT15.setSelectedIndex(0);
     }
+//Descuentos varios
 
     public void dv() {
         double d1 = Double.parseDouble(this.Fdb.getText());
@@ -289,6 +319,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         double total = d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11 + d12 + d13 + d14 + d15 + d16;
         this.DSGS.setText("" + total + "");
     }
+// Dia laborado
 
     public void DL() {
         String d1 = DL1.getText();
@@ -327,6 +358,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         DL.setText("" + total + "");
 
     }
+//descanso trabajado
 
     public void DT() {
         double d1 = Double.parseDouble(this.dt1.getText());
@@ -349,6 +381,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         double total = d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11 + d12 + d13 + d14 + d15 + d16;
         this.dt.setText("" + total + "");
     }
+//falta
 
     public void F() {
         double d1 = Double.parseDouble(this.F1.getText());
@@ -371,6 +404,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         double total = d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11 + d12 + d13 + d14 + d15 + d16;
         this.F.setText("" + total + "");
     }
+//Falta justificada
 
     public void FJ() {
         double d1 = Double.parseDouble(this.FJ1.getText());
@@ -393,6 +427,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         double total = d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11 + d12 + d13 + d14 + d15 + d16;
         this.FJ.setText("" + total + "");
     }
+//retardos
 
     public void R() {
         double d1 = Double.parseDouble(this.R1.getText());
@@ -415,6 +450,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         double total = d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11 + d12 + d13 + d14 + d15 + d16;
         this.R.setText("" + total + "");
     }
+//Descanso otorgado
 
     public void DO() {
         double d1 = Double.parseDouble(this.DO1.getText());
@@ -439,39 +475,67 @@ public final class Nomina_5 extends javax.swing.JFrame {
     }
 
     public void shareN() {
-        String[] titulos = {"Nombre Completo", "Cuenta de banco",
-            "Banco", "Zona", "Servicio", "Sueldo", "Caja de ahorro", "Bono"};
-        String[] registros = new String[8];
-        DefaultTableModel modelo = new DefaultTableModel(null, titulos) {
-            @Override
-            public boolean isCellEditable(int filas, int columnas) {
-                return columnas == 99;
-            }
-        };
-        String sql = "select `Nombre Completo`,"
-                + " `Sueldo`, `Servicio`, `Cuenta banco`, `Banco`, `Zona`, `Caja de ahorro`, `Bono` from empleados";
-        try {
-            java.sql.Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                registros[0] = rs.getString("Nombre Completo");
-                registros[1] = rs.getString("Cuenta banco");
-                registros[2] = rs.getString("Banco");
-                registros[3] = rs.getString("Zona");
-                registros[4] = rs.getString("Servicio");
-                registros[5] = rs.getString("Sueldo");
-                registros[6] = rs.getString("Caja de ahorro");
-                registros[7] = rs.getString("Bono");
+        //Buscar empleado
+        String Share = search.getText();
+        String where = "select `Nombre Completo`, `Sueldo`, `Servicio`, `Cuenta banco`, `Banco`, `Zona`, `Caja de ahorro`,"
+                + " `Bono` from empleados  where `Status` LIKE '%Vigente%'";
 
-                modelo.addRow(registros);
-            }
-            share.setModel(modelo);
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al Compartir con nomina: " + e.getMessage());
+        if (!"".equals(Share)) {
+            where = " select `Nombre Completo`, `Sueldo`, `Servicio`, `Cuenta banco`, `Banco`, `Zona`, `Caja de ahorro`, `Bono` "
+                    + "from empleados WHERE `Nombre completo` LIKE '%" + Share + "%'";
         }
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            share.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("Nombre completo");//1
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Servicio");//3
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Banco");//5
+            modelo.addColumn("Zona");
+            modelo.addColumn("Caja de ahorro");//7
+            modelo.addColumn("Bono");
+
+//Anchos
+            int[] anchos = {200, 50, 175, 100, 60, 60, 40, 40};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                share.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos " + e.getMessage());
+
+        }
+
     }
 
+//pago por quincena (division)
     public void PQt() {
         double d1 = Double.parseDouble(this.Q1.getText());
         double d2 = Double.parseDouble(this.Q2.getText());
@@ -535,7 +599,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
         };
         String sql = "SELECT * FROM taller WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
-        //+ " OR `Apellido P_T` LIKE '%" + buscar + "%' OR `Apellido M_T` LIKE '%" + buscar + "%'";
+        //+ " OR `Apellido M_T` LIKE '%" + buscar + "%'";
         try {
             java.sql.Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -568,6 +632,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         }
     }
 //Mostrar orden de taller
+
     public void MDT() {
         String[] titulos = {"# de Orden", "Fecha de Expedicion", "Nombre(s)",
             "Zona", "Servicio", "Datos vehiculo",
@@ -613,6 +678,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         }
     }
 //Editar orden de taller
+
     public void editarT() {
         int id = Integer.parseInt(Ndo.getText());
         String Item = Ppc.getSelectedItem().toString();
@@ -699,7 +765,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         FL.setText("");
         Status.setText("");
         Metodo.setText("");
-        
+
     }
 
     public void AgregarT() {
@@ -1003,45 +1069,78 @@ public final class Nomina_5 extends javax.swing.JFrame {
         }
 
     }
-    
+//15.08
     public void pagos() {
-        String[] titulos = {"id bd", "# Folio", "Nombre Completo", "Bono", "Cuenta", "Banco",
-            "Zona", "Servicio", "Quincena", "Año", "Sueldo Quincenal", "Deposito"};
+        //Nombre persona del pago
+        String FiltroN = busp.getText();
+        String where = "select * from pago";
+        String FiltroZpago = FiltroZnomina.getSelectedItem().toString();
+        String FiltroSpago = FiltroSnomina.getSelectedItem().toString();
+        String FiltroQuinpago = FiltroQuincenanomina.getSelectedItem().toString();
 
-        String[] registros = new String[12];
-        DefaultTableModel modelo = new DefaultTableModel(null, titulos) {
-            @Override
-            public boolean isCellEditable(int filas, int columnas) {
-                return columnas == 99;
-            }
-        };
-
-        String sql = "select * from pago ";
+        if (!"".equals(FiltroN)) {
+            where = "Select * from pago where `Nombre Completo` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroZpago)) {
+            where = "select * from pago where `Zona_Nom` LIKE '%" + FiltroZpago + "%'";
+        } else if (!"".equals(FiltroSpago)) {
+            where = "select * from pago Where `Servicio_Nom` LIKE '%" + FiltroSpago + "%'";
+        } else if (!"".equals(FiltroQuinpago)) {
+            where = "select * from pago Where `Quincena` LIKE '%" + FiltroQuinpago + "%'";
+        }
 
         try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
 
-            java.sql.Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
+            };
+//Nombre de la tabla
+            pago.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("# Folio");
+            modelo.addColumn("Nombre empleado");//3
+            modelo.addColumn("Bono");
+            modelo.addColumn("Cuenta de banco");//5
+            modelo.addColumn("Banco");
+            modelo.addColumn("Zona");//7
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Quincena del mes");//9
+            modelo.addColumn("Año");//10
+            modelo.addColumn("Sueldo Quincenal");//11
+            modelo.addColumn("Deposito");//12
+
+//Anchos hasta año
+            int[] anchos = {50, 50, 250, 35, 65, 55, 60, 80, 150, 15,
+                //anchos hasta Deposito
+                150, 75};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                pago.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
 
             while (rs.next()) {
-                registros[0] = rs.getString("idPago");
-                registros[1] = rs.getString("# Folio");
-                registros[2] = rs.getString("Nombre Completo");
-                registros[3] = rs.getString("Bono");
-                registros[4] = rs.getString("Cuenta");
-                registros[5] = rs.getString("Banco");
-                registros[6] = rs.getString("Zona");
-                registros[7] = rs.getString("Servicio");
-                registros[8] = rs.getString("Quincena");
-                registros[9] = rs.getString("Año");
-                registros[10] = rs.getString("Sueldo Quincenal");
-                registros[11] = rs.getString("Deposito");
-                modelo.addRow(registros);
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
             }
-            this.pago.setModel(modelo);
-
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Pagos: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
+
         }
 
     }
@@ -1107,6 +1206,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al modificar pago: " + e.getMessage());
         }
     }
+//editar nomina
 
     public void editar() {
         int id = Integer.parseInt(txtid.getText());
@@ -1204,8 +1304,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         try {
 
-            int filaseleccionada = nom.getSelectedRow();
-            String sql = "delete from nomina where idNomina=" + nom.getValueAt(filaseleccionada, 0);
+            int filaseleccionada = Tnom.getSelectedRow();
+            String sql = "delete from nomina where idNomina=" + Tnom.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
             int n = st.executeUpdate(sql);
             if (n >= 0) {
@@ -1239,85 +1339,123 @@ public final class Nomina_5 extends javax.swing.JFrame {
     }
 
     public void mostrardatos() {
-        String[] titulos = {"id bd", "# Folio", "Nombre Completo", "Cuenta", "Banco",
-            "Zona", "Servicio", "Sueldo", "Quincena", "Año", "Por dia", "1-16", "2-17", "3-18", "4-19", "5-20", "6-21",
-            "7-22", "8-23", "9-24", "10-25", "11-26", "12-27", "13-28", "14-29", "15-30", "31",
-            "Observaciones", "Total de descuentos", "Desc. IMSS", "Apoyo", "Lugar", "Caja", "Adicionales", "Bono", "Faltantes de boleto",
-            "Faltante de efectivo", "Boleto perdido", "Sancion", "Grua", "Playera", "Chamarra", "Pantalon",
-            "Corbata", "Chaleco", "Credencial", "Orden de taller", "Prestamos", "Rembolso", "Deposito"};
+        //Buscar empleado
+        String FiltroN = Nominab.getText();
+        String where = "select * from nomina";
+        String FiltroZnom = FiltroZnomina.getSelectedItem().toString();
+        String FiltroSnom = FiltroSnomina.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF.getText();
 
-        String[] registros = new String[50];
-        DefaultTableModel modelo = new DefaultTableModel(null, titulos) {
-            @Override
-            public boolean isCellEditable(int filas, int columnas) {
-                return columnas == 99;
-            }
-        };
-
-        String sql = "select * from nomina ";
+        if (!"".equals(FiltroN)) {
+            where = "Select * from nomina where `Nombre Completo` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroZnom)) {
+            where = "select * from nomina where `Zona_Nom` LIKE '%" + FiltroZnom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            where = "select * from nomina Where `Servicio_Nom` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            where = "select * from nomina Where `Quincena` LIKE '%" + FiltroQuin + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            where = "select * from nomina Where `#_Folio` LIKE '%" + FiltroFol + "%'";
+        }
 
         try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
 
-            java.sql.Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
+            };
+//Nombre de la tabla
+            Tnom.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("# Folio");
+            modelo.addColumn("Nombre empleado");//3
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Banco");//5
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");//7
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Por dia");//9
+            modelo.addColumn("Quincena del mes");//10
+            modelo.addColumn("Año");//11
+            modelo.addColumn("Dia 1 o 16");//12
+            modelo.addColumn("Dia 2 o 17");//13
+            modelo.addColumn("Dia 3 o 18");//14
+            modelo.addColumn("Dia 4 o 19");
+            modelo.addColumn("Dia 5 o 20");//16
+            modelo.addColumn("Dia 6 o 21");
+            modelo.addColumn("Dia 7 o 22");//18
+            modelo.addColumn("Dia 8 o 23");
+            modelo.addColumn("Dia 9 o 24");//20
+            modelo.addColumn("Dia 10 o 25");
+            modelo.addColumn("Dia 11 o 26");//22
+            modelo.addColumn("Dia 12 o 27");
+            modelo.addColumn("Dia 13 o 28");//24
+            modelo.addColumn("Dia 14 o 29");
+            modelo.addColumn("Dia 15 o 30");//26
+            modelo.addColumn("Dia 31");
+            modelo.addColumn("Desc.  Varios");//28
+            modelo.addColumn("Desc. IMSS");
+            modelo.addColumn("Apoyo");//30
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Caja de ahorro");//32
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("Bono");//34
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Faltante de efectivo");//36
+            modelo.addColumn("Boleto Perdido");
+            modelo.addColumn("Sancion");//38
+            modelo.addColumn("Grua");
+            modelo.addColumn("Playera");//40
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Pantalon");//42
+            modelo.addColumn("Corbata");
+            modelo.addColumn("Chaleco");//44
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Orden de taller");//46
+            modelo.addColumn("Prestamos");
+            modelo.addColumn("Rembolso");//48
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//50
+
+//Anchos hasta quincena
+            int[] anchos = {50, 50, 250, 60, 60, 60, 50, 35, 55, 150,
+                //anchos hasta 9-24
+                25, 35, 35, 35, 35, 35, 35, 35, 35, 35,
+                //anchos hasta apoyo
+                35, 35, 35, 35, 35, 35, 25, 55, 40, 50,
+                //anchos hasta Playera
+                50, 75, 55, 35, 100, 90, 60, 55, 60, 60,
+                //anchos hasta observaciones
+                55, 60, 55, 60, 65, 75, 65, 65, 65, 600};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
 
             while (rs.next()) {
-                registros[0] = rs.getString("idNomina");
-                registros[1] = rs.getString("#_Folio");
-                registros[2] = rs.getString("Nombre Completo");
-                registros[3] = rs.getString("Cuenta_Nom");
-                registros[4] = rs.getString("Banco_Nom");
-                registros[5] = rs.getString("Zona_Nom");
-                registros[6] = rs.getString("Servicio_Nom");
-                registros[7] = rs.getString("Sueldo_Nom");
-                registros[8] = rs.getString("Quincena");
-                registros[9] = rs.getString("Año");
-                registros[10] = rs.getString("Pd");
-                registros[11] = rs.getString("1-16");
-                registros[12] = rs.getString("2-17");
-                registros[13] = rs.getString("3-18");
-                registros[14] = rs.getString("4-19");
-                registros[15] = rs.getString("5-20");
-                registros[16] = rs.getString("6-21");
-                registros[17] = rs.getString("7-22");
-                registros[18] = rs.getString("8-23");
-                registros[19] = rs.getString("9-24");
-                registros[20] = rs.getString("10-25");
-                registros[21] = rs.getString("11-26");
-                registros[22] = rs.getString("12-27");
-                registros[23] = rs.getString("13-28");
-                registros[24] = rs.getString("14-29");
-                registros[25] = rs.getString("15-30");
-                registros[26] = rs.getString("31");
-                registros[27] = rs.getString("Observaciones");
-                registros[28] = rs.getString("Desc_v");
-                registros[29] = rs.getString("Desc_IMSS");
-                registros[30] = rs.getString("Apoyo");
-                registros[31] = rs.getString("Lugar");
-                registros[32] = rs.getString("Caja");
-                registros[33] = rs.getString("add");
-                registros[34] = rs.getString("Bono");
-                registros[35] = rs.getString("Faltantes de boleto");
-                registros[36] = rs.getString("Faltante de efectivo");
-                registros[37] = rs.getString("Boleto perdido");
-                registros[38] = rs.getString("Sancion");
-                registros[39] = rs.getString("Grua");
-                registros[40] = rs.getString("Playera");
-                registros[41] = rs.getString("Chamarra");
-                registros[42] = rs.getString("Pantalon");
-                registros[43] = rs.getString("Corbata");
-                registros[44] = rs.getString("Chaleco");
-                registros[45] = rs.getString("Credencial");
-                registros[46] = rs.getString("Orden de taller");
-                registros[47] = rs.getString("Prestamos");
-                registros[48] = rs.getString("Rembolso");
-                registros[49] = rs.getString("Deposito");
-                modelo.addRow(registros);
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
             }
-            nom.setModel(modelo);
-
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Nominas detalladas: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
+
         }
 
     }
@@ -1412,129 +1550,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
         }
     }
 
-    public void buscarN(String buscar) {
-        String[] titulos = {"id bd", "# Folio", "Nombre Completo", "Cuenta", "Banco",
-            "Zona", "Servicio", "Sueldo", "Quincena", "Año", "Por dia", "1-16", "2-17", "3-18", "4-19", "5-20", "6-21",
-            "7-22", "8-23", "9-24", "10-25", "11-26", "12-27", "13-28", "14-29", "15-30", "31",
-            "Observaciones", "Total de descuentos", "Desc. IMSS", "Apoyo", "Lugar", "Caja", "Adicionales", "Bono", "Faltantes de boleto",
-            "Faltante de efectivo", "Boleto perdido", "Sancion", "Grua", "Playera", "Chamarra", "Pantalon",
-            "Corbata", "Chaleco", "Credencial", "Orden de taller", "Prestamos", "Rembolso", "Deposito"};
-
-        String[] registros = new String[50];
-        DefaultTableModel modelo = new DefaultTableModel(null, titulos) {
-            @Override
-            public boolean isCellEditable(int filas, int columnas) {
-                return columnas == 99;
-            }
-        };
-
-        String sql = "SELECT * FROM nomina WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
-        //    + " OR Apellido_P_Nom LIKE '%" + buscar + "%' OR Apellido_M_Nom LIKE '%" + buscar + "%'";
-
-        try {
-
-            java.sql.Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-
-            while (rs.next()) {
-                registros[0] = rs.getString("idNomina");
-                registros[1] = rs.getString("#_Folio");
-                registros[2] = rs.getString("Nombre Completo");
-                registros[3] = rs.getString("Cuenta_Nom");
-                registros[4] = rs.getString("Banco_Nom");
-                registros[5] = rs.getString("Zona_Nom");
-                registros[6] = rs.getString("Servicio_Nom");
-                registros[7] = rs.getString("Sueldo_Nom");
-                registros[8] = rs.getString("Quincena");
-                registros[9] = rs.getString("Año");
-                registros[10] = rs.getString("Pd");
-                registros[11] = rs.getString("1-16");
-                registros[12] = rs.getString("2-17");
-                registros[13] = rs.getString("3-18");
-                registros[14] = rs.getString("4-19");
-                registros[15] = rs.getString("5-20");
-                registros[16] = rs.getString("6-21");
-                registros[17] = rs.getString("7-22");
-                registros[18] = rs.getString("8-23");
-                registros[19] = rs.getString("9-24");
-                registros[20] = rs.getString("10-25");
-                registros[21] = rs.getString("11-26");
-                registros[22] = rs.getString("12-27");
-                registros[23] = rs.getString("13-28");
-                registros[24] = rs.getString("14-29");
-                registros[25] = rs.getString("15-30");
-                registros[26] = rs.getString("31");
-                registros[27] = rs.getString("Observaciones");
-                registros[28] = rs.getString("Desc_v");
-                registros[29] = rs.getString("Desc_IMSS");
-                registros[30] = rs.getString("Apoyo");
-                registros[31] = rs.getString("Lugar");
-                registros[32] = rs.getString("Caja");
-                registros[33] = rs.getString("add");
-                registros[34] = rs.getString("Bono");
-                registros[35] = rs.getString("Faltantes de boleto");
-                registros[36] = rs.getString("Faltante de efectivo");
-                registros[37] = rs.getString("Boleto perdido");
-                registros[38] = rs.getString("Sancion");
-                registros[39] = rs.getString("Grua");
-                registros[40] = rs.getString("Playera");
-                registros[41] = rs.getString("Chamarra");
-                registros[42] = rs.getString("Pantalon");
-                registros[43] = rs.getString("Corbata");
-                registros[44] = rs.getString("Chaleco");
-                registros[45] = rs.getString("Credencial");
-                registros[46] = rs.getString("Orden de taller");
-                registros[47] = rs.getString("Prestamos");
-                registros[48] = rs.getString("Rembolso");
-                registros[49] = rs.getString("Deposito");
-                modelo.addRow(registros);
-            }
-            nom.setModel(modelo);
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al buscar Datos " + e.getMessage());
-        }
-
-    }
-
-    public void buscarEN(String buscar) {
-        String[] titulos = {"Nombre(s)", "Cuenta de banco",
-            "Banco", "Zona", "Servicio", "Sueldo", "Caja de ahorro", "Bono"};
-        String[] registros = new String[8];
-        DefaultTableModel modelo = new DefaultTableModel(null, titulos) {
-            @Override
-            public boolean isCellEditable(int filas, int columnas) {
-                return columnas == 99;
-            }
-        };
-
-        String sql = "SELECT * FROM empleados WHERE `Nombre Completo` LIKE '%" + buscar + "%'";
-        // + " OR `Apellido_P_E` LIKE '%" + buscar + "%' OR `Apellido_M_E` LIKE '%" + buscar + "%'";
-        try {
-
-            java.sql.Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-
-            while (rs.next()) {
-
-                registros[0] = rs.getString("Nombre Completo");
-                registros[1] = rs.getString("Cuenta banco");
-                registros[2] = rs.getString("Banco");
-                registros[3] = rs.getString("Zona");
-                registros[4] = rs.getString("Servicio");
-                registros[5] = rs.getString("Sueldo");
-                registros[6] = rs.getString("Caja de ahorro");
-                registros[7] = rs.getString("Bono");
-
-                modelo.addRow(registros);
-            }
-            share.setModel(modelo);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al buscar empleado en Nomina: " + e.getMessage());
-        }
-
-    }
-
     public void pago() {
         double d1 = Double.parseDouble(this.DL.getText());
         double d2 = Double.parseDouble(this.dt.getText());
@@ -1564,7 +1579,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         double d10 = Double.parseDouble(this.Bono.getText());
         double d11 = (d10 + d9 + d6 + d3 + d5);
         double d12 = (d1 + d2 + d7 + d8 + d4);
-        double total =d11-d12;
+        double total = d11 - d12;
         this.deposito.setText("" + total + "");
     }
 
@@ -1856,11 +1871,23 @@ public final class Nomina_5 extends javax.swing.JFrame {
         TDnomina = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        nom = new javax.swing.JTable();
-        jLabel27 = new javax.swing.JLabel();
+        Tnom = new javax.swing.JTable();
+        LabelBE = new javax.swing.JLabel();
         Nominab = new javax.swing.JTextField();
         Eliminar = new javax.swing.JButton();
         CS2 = new javax.swing.JButton();
+        LabelBZ = new javax.swing.JLabel();
+        FiltroZnomina = new javax.swing.JComboBox<>();
+        LabelBS = new javax.swing.JLabel();
+        FiltroSnomina = new javax.swing.JComboBox<>();
+        LabelBQ = new javax.swing.JLabel();
+        FiltroQuincenanomina = new javax.swing.JComboBox<>();
+        LabelSZ = new javax.swing.JLabel();
+        FZservicio = new javax.swing.JComboBox<>();
+        jLabel65 = new javax.swing.JLabel();
+        Filtros = new javax.swing.JComboBox<>();
+        LabelBNDF = new javax.swing.JLabel();
+        FiltroNDF = new javax.swing.JTextField();
         TPagos = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -2273,40 +2300,26 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
-        jScrollPane2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jScrollPane2MouseClicked(evt);
-            }
-        });
-
         share.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
             }
         ));
         share.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shareMouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                shareMouseEntered(evt);
-            }
         });
         jScrollPane2.setViewportView(share);
 
         jLabel8.setText("Buscar empleado:");
 
-        search.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchActionPerformed(evt);
-            }
-        });
         search.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 searchKeyReleased(evt);
@@ -2316,11 +2329,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
         jLabel9.setText("Datos generales");
 
         pd.setText("0");
-        pd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pdActionPerformed(evt);
-            }
-        });
 
         jLabel26.setText("Por dia:");
 
@@ -3259,12 +3267,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         jLabel7.setText("Sueldo:");
 
-        Zon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ZonActionPerformed(evt);
-            }
-        });
-
         jLabel14.setText("Zona:");
 
         jLabel13.setText("Banco:");
@@ -3364,50 +3366,52 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Bsi)
-                                    .addComponent(Bno)
+                                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(29, 29, 29)
-                                        .addComponent(jLabel3))
-                                    .addComponent(Bono, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel26)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(8, 8, 8)
+                                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(Bsi)
+                                            .addComponent(Bno)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(29, 29, 29)
+                                                .addComponent(jLabel3))
+                                            .addComponent(Bono, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(AgregarNP)
+                                        .addGap(49, 49, 49)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(Modm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(modP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel9))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel26)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(0, 0, 0)
                                                 .addComponent(jLabel8)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(711, 711, 711))
-                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 460, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(AgregarNP)
-                                .addGap(49, 49, 49)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(Modm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(modP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addGap(559, 559, 559)
+                                .addComponent(jScrollPane2))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(CS)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(90, 90, 90))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3419,13 +3423,11 @@ public final class Nomina_5 extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(104, 104, 104)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel26)
-                                    .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel26)
+                            .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3456,7 +3458,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addComponent(CS)
                 .addContainerGap())
         );
@@ -3467,25 +3469,25 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 
-        nom.setModel(new javax.swing.table.DefaultTableModel(
+        Tnom.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
             }
         ));
-        nom.addMouseListener(new java.awt.event.MouseAdapter() {
+        Tnom.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                nomMouseClicked(evt);
+                TnomMouseClicked(evt);
             }
         });
-        jScrollPane3.setViewportView(nom);
+        jScrollPane3.setViewportView(Tnom);
 
-        jLabel27.setText("Buscar:");
+        LabelBE.setText("Buscar Empleado:");
 
         Nominab.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -3507,6 +3509,51 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
         });
 
+        LabelBZ.setText("Buscar Zona");
+
+        FiltroZnomina.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroZnominaItemStateChanged(evt);
+            }
+        });
+
+        LabelBS.setText("Buscar Servicio:");
+
+        FiltroSnomina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FiltroSnomina.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroSnominaItemStateChanged(evt);
+            }
+        });
+
+        LabelBQ.setText("Buscar Quincena:");
+
+        FiltroQuincenanomina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQuincenanomina.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQuincenanominaItemStateChanged(evt);
+            }
+        });
+
+        LabelSZ.setText("Selecciona Zona:");
+
+        FZservicio.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FZservicioItemStateChanged(evt);
+            }
+        });
+
+        jLabel65.setText("Filtros:");
+
+        Filtros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Nombre", "Filtrar por Zona", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por Folio" }));
+        Filtros.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosItemStateChanged(evt);
+            }
+        });
+
+        LabelBNDF.setText("Buscar # de folio");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -3515,13 +3562,37 @@ public final class Nomina_5 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel27)
+                        .addComponent(Eliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel65)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Filtros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Nominab, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74)
-                        .addComponent(Eliminar))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 10074, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CS2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBZ)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroZnomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS2)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 5657, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -3529,14 +3600,26 @@ public final class Nomina_5 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
+                    .addComponent(LabelBE)
                     .addComponent(Nominab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Eliminar))
+                    .addComponent(Eliminar)
+                    .addComponent(LabelBZ)
+                    .addComponent(FiltroZnomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBS)
+                    .addComponent(FiltroSnomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBQ)
+                    .addComponent(FiltroQuincenanomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZ)
+                    .addComponent(FZservicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel65)
+                    .addComponent(Filtros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBNDF)
+                    .addComponent(FiltroNDF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CS2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         TDnomina.setViewportView(jPanel2);
@@ -3547,13 +3630,13 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         pago.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12"
             }
         ));
         pago.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -3598,8 +3681,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                         .addComponent(busp, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(jButton4))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 3702, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CS3))
+                    .addComponent(CS3)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1744, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -3614,7 +3697,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CS3)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         TPagos.setViewportView(jPanel3);
@@ -5376,23 +5459,23 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
     private void NominabKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NominabKeyReleased
         // TODO add your handling code here:
-        buscarN(Nominab.getText());
+        mostrardatos();
     }//GEN-LAST:event_NominabKeyReleased
 
-    private void nomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nomMouseClicked
+    private void TnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TnomMouseClicked
         try {
             // TODO add your handling code here:
-            DefaultTableModel model = (DefaultTableModel) nom.getModel();
+            DefaultTableModel model = (DefaultTableModel) Tnom.getModel();
 
-            int fila = nom.getSelectedRow();
-            txtid.setText(String.valueOf(nom.getValueAt(fila, 0)));
-            fol.setText(String.valueOf(nom.getValueAt(fila, 1)));
-            name.setText(String.valueOf(nom.getValueAt(fila, 2)));
-            cta.setText(String.valueOf(nom.getValueAt(fila, 3)));
-            ban.setText(String.valueOf(nom.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(nom.getValueAt(fila, 5)));
-            lug.setText(String.valueOf(nom.getValueAt(fila, 6)));
-            sueldo.setText(String.valueOf(nom.getValueAt(fila, 7)));
+            int fila = Tnom.getSelectedRow();
+            txtid.setText(String.valueOf(Tnom.getValueAt(fila, 0)));
+            fol.setText(String.valueOf(Tnom.getValueAt(fila, 1)));
+            name.setText(String.valueOf(Tnom.getValueAt(fila, 2)));
+            cta.setText(String.valueOf(Tnom.getValueAt(fila, 3)));
+            ban.setText(String.valueOf(Tnom.getValueAt(fila, 4)));
+            Zon.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
+            lug.setText(String.valueOf(Tnom.getValueAt(fila, 6)));
+            sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
             String combo1 = model.getValueAt(fila, 8).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).toString().equalsIgnoreCase(combo1)) {
@@ -5401,7 +5484,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 9));
             año.setDate(date);
-            pd.setText(String.valueOf(nom.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom.getValueAt(fila, 10)));
             String combo2 = model.getValueAt(fila, 11).toString();
             for (int i = 0; i < DT.getItemCount(); i++) {
                 if (DT.getItemAt(i).toString().equalsIgnoreCase(combo2)) {
@@ -5498,34 +5581,34 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     DT15.setSelectedIndex(i);
                 }
             }
-            obs.setText(String.valueOf(nom.getValueAt(fila, 27)));
-            DVT.setText(String.valueOf(nom.getValueAt(fila, 28)));
-            DI.setText(String.valueOf(nom.getValueAt(fila, 29)));
-            apy.setText(String.valueOf(nom.getValueAt(fila, 30)));
-            Lugar.setText(String.valueOf(nom.getValueAt(fila, 31)));
-            cda.setText(String.valueOf(nom.getValueAt(fila, 32)));
-            ADD.setText(String.valueOf(nom.getValueAt(fila, 33)));
-            Bono.setText(String.valueOf(nom.getValueAt(fila, 34)));
-            Bono1.setText(String.valueOf(nom.getValueAt(fila, 34)));
-            Fdb.setText(String.valueOf(nom.getValueAt(fila, 35)));
-            Fde.setText(String.valueOf(nom.getValueAt(fila, 36)));
-            Bp.setText(String.valueOf(nom.getValueAt(fila, 37)));
-            Sancion.setText(String.valueOf(nom.getValueAt(fila, 38)));
-            Grua.setText(String.valueOf(nom.getValueAt(fila, 39)));
-            Playera.setText(String.valueOf(nom.getValueAt(fila, 40)));
-            Chamarra.setText(String.valueOf(nom.getValueAt(fila, 41)));
-            Pantalon.setText(String.valueOf(nom.getValueAt(fila, 42)));
-            Corbata.setText(String.valueOf(nom.getValueAt(fila, 43)));
-            Chaleco.setText(String.valueOf(nom.getValueAt(fila, 44)));
-            Credencial.setText(String.valueOf(nom.getValueAt(fila, 45)));
-            Odtp.setText(String.valueOf(nom.getValueAt(fila, 46)));
-            Presp.setText(String.valueOf(nom.getValueAt(fila, 47)));
-            Rembolso.setText(String.valueOf(nom.getValueAt(fila, 48)));
-            deposito.setText(String.valueOf(nom.getValueAt(fila, 49)));
+            obs.setText(String.valueOf(Tnom.getValueAt(fila, 27)));
+            DVT.setText(String.valueOf(Tnom.getValueAt(fila, 28)));
+            DI.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
+            apy.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
+            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
+            cda.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
+            ADD.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
+            Bono.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            Bono1.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
+            Fde.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
+            Bp.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
+            Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
+            Grua.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
+            Playera.setText(String.valueOf(Tnom.getValueAt(fila, 40)));
+            Chamarra.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
+            Pantalon.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
+            Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 43)));
+            Chaleco.setText(String.valueOf(Tnom.getValueAt(fila, 44)));
+            Credencial.setText(String.valueOf(Tnom.getValueAt(fila, 45)));
+            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 46)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 47)));
+            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 48)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 49)));
         } catch (ParseException ex) {
             Logger.getLogger(Nomina_5.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_nomMouseClicked
+    }//GEN-LAST:event_TnomMouseClicked
 
     private void ModmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModmActionPerformed
         // TODO add your handling code here:
@@ -8755,26 +8838,10 @@ public final class Nomina_5 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_QuincenasItemStateChanged
 
-    private void pdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pdActionPerformed
-
-    private void ZonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ZonActionPerformed
-
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyReleased
         // TODO add your handling code here:
-        buscarEN(search.getText());
+        shareN();
     }//GEN-LAST:event_searchKeyReleased
-
-    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchActionPerformed
-
-    private void jScrollPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jScrollPane2MouseClicked
 
     private void shareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shareMouseClicked
         // TODO add your handling code here:
@@ -8826,10 +8893,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
         String Bonosi = Bono1.getText();
         Bono.setText(Bonosi);
     }//GEN-LAST:event_BsiActionPerformed
-
-    private void shareMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shareMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_shareMouseEntered
 
     private void BnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BnoActionPerformed
         // TODO add your handling code here:
@@ -8885,6 +8948,162 @@ public final class Nomina_5 extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_CS5ActionPerformed
+
+    private void FiltroQuincenanominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanominaItemStateChanged
+        // TODO add your handling code here:
+        mostrardatos();
+    }//GEN-LAST:event_FiltroQuincenanominaItemStateChanged
+
+    private void FZservicioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicioItemStateChanged
+        // TODO add your handling code here:
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina.setModel(modelServicio);
+        }
+    }//GEN-LAST:event_FZservicioItemStateChanged
+
+    private void FiltroZnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnominaItemStateChanged
+        // TODO add your handling code here:
+        mostrardatos();
+    }//GEN-LAST:event_FiltroZnominaItemStateChanged
+
+    private void FiltroSnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnominaItemStateChanged
+        // TODO add your handling code here:
+        mostrardatos();
+    }//GEN-LAST:event_FiltroSnominaItemStateChanged
+
+    private void FiltrosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosItemStateChanged
+        // TODO add your handling code here:
+        String dt = (String) Filtros.getSelectedItem();
+        if (dt.equals("Selecciona filtro")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            Nominab.setVisible(false);
+            FiltroZnomina.setVisible(false);
+            FiltroZnomina.setSelectedIndex(0);
+            LabelBZ.setVisible(false);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            mostrardatos();
+
+        }
+        if (dt.equals("Filtrar por Nombre")) {
+            Nominab.setText("");
+            LabelBE.setVisible(true);
+            Nominab.setVisible(true);
+            FiltroZnomina.setVisible(false);
+            FiltroZnomina.setSelectedIndex(0);
+            LabelBZ.setVisible(false);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+
+        }
+        if (dt.equals("Filtrar por Zona")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            Nominab.setVisible(false);
+            FiltroZnomina.setVisible(true);
+            FiltroZnomina.setSelectedIndex(0);
+            LabelBZ.setVisible(true);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+
+        }
+        if (dt.equals("Filtrar por Servicio")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            Nominab.setVisible(false);
+            FiltroZnomina.setVisible(false);
+            FiltroZnomina.setSelectedIndex(0);
+            LabelBZ.setVisible(false);
+            FiltroSnomina.setVisible(true);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(true);
+            FZservicio.setVisible(true);
+            LabelSZ.setVisible(true);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+
+        }
+        if (dt.equals("Filtrar por quincena")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            Nominab.setVisible(false);
+            FiltroZnomina.setVisible(false);
+            FiltroZnomina.setSelectedIndex(0);
+            LabelBZ.setVisible(false);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(true);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(true);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+
+        }
+        if (dt.equals("Filtrar por Folio")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            Nominab.setVisible(false);
+            FiltroZnomina.setVisible(false);
+            FiltroZnomina.setSelectedIndex(0);
+            LabelBZ.setVisible(false);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(true);
+            LabelBNDF.setVisible(true);
+        }
+    }//GEN-LAST:event_FiltrosItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -9060,11 +9279,23 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JLabel FJ9;
     private javax.swing.JTextField FL;
     private javax.swing.JTextField FS;
+    private javax.swing.JComboBox<String> FZservicio;
     private javax.swing.JTextField Fdb;
     private javax.swing.JTextField Fde;
     private javax.swing.JComboBox<String> Fdp;
+    private javax.swing.JTextField FiltroNDF;
+    private javax.swing.JComboBox<String> FiltroQuincenanomina;
+    private javax.swing.JComboBox<String> FiltroSnomina;
+    private javax.swing.JComboBox<String> FiltroZnomina;
+    private javax.swing.JComboBox<String> Filtros;
     private javax.swing.JTextField Grua;
     private javax.swing.JComboBox<String> Interes;
+    private javax.swing.JLabel LabelBE;
+    private javax.swing.JLabel LabelBNDF;
+    private javax.swing.JLabel LabelBQ;
+    private javax.swing.JLabel LabelBS;
+    private javax.swing.JLabel LabelBZ;
+    private javax.swing.JLabel LabelSZ;
     private javax.swing.JTextField Lugar;
     private javax.swing.JLabel M1;
     private javax.swing.JLabel M2;
@@ -9154,6 +9385,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane TPagos;
     private javax.swing.JScrollPane TTalleres;
     private javax.swing.JScrollPane Talleres;
+    private javax.swing.JTable Tnom;
     private javax.swing.JScrollPane Tprestamos;
     private javax.swing.JTextField Zon;
     private javax.swing.JTextField Zona;
@@ -9221,7 +9453,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
@@ -9259,6 +9490,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
@@ -9321,7 +9553,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextArea name;
     private javax.swing.JTextField ndp;
     private javax.swing.JRadioButton no;
-    private javax.swing.JTable nom;
     private javax.swing.JTextField obs;
     private javax.swing.JTable pago;
     private javax.swing.JTextField pd;
