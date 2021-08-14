@@ -39,8 +39,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         Zonas zz = new Zonas();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
         zona.setModel(modelzonas);
-        DefaultComboBoxModel Cz = new DefaultComboBoxModel(zz.mostrarzonas());
-        CZ.setModel(Cz);
+        
         setIconImage(new ImageIcon(RH_Empleados_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
@@ -1491,7 +1490,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
         jScrollPane3.setViewportView(General);
 
-        RH.addTab("General", jScrollPane3);
+        RH.addTab("Registro", jScrollPane3);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 153));
 
@@ -1745,7 +1744,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                                     .addComponent(puesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(25, 25, 25))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(curpimss)
                                         .addComponent(rfcimss, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))))
