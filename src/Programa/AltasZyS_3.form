@@ -140,6 +140,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="AgregarZ">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/agregar.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Agregar Zona"/>
                   </Properties>
                   <Events>
@@ -215,6 +218,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="EliminarZ">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/eliminarlogo.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Eliminar"/>
                   </Properties>
                   <Events>
@@ -223,6 +229,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="ModZ">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Lapizmod.jpg"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Modificar"/>
                   </Properties>
                   <Events>
@@ -231,7 +240,10 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="Volver1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&lt;-- Volver"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/volver.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Volver"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Volver1ActionPerformed"/>
@@ -385,6 +397,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="AgrergarS">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/agregar.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Agregar Servicio"/>
                   </Properties>
                   <Events>
@@ -408,6 +423,9 @@
                 </Container>
                 <Component class="javax.swing.JButton" name="ModS">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Lapizmod.jpg"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Modificar"/>
                   </Properties>
                   <Events>
@@ -418,7 +436,10 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="Volver">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&lt;-- Volver"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/volver.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value=" Volver"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VolverActionPerformed"/>
@@ -758,7 +779,10 @@
                 </Container>
                 <Component class="javax.swing.JButton" name="Volver2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&lt;-- Volver"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/volver.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Volver"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Volver2ActionPerformed"/>
@@ -786,11 +810,12 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="EliminarServ" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="BStext" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="BS" min="-2" pref="99" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EliminarS" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="BZtext" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -806,9 +831,9 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="BStext" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="BS" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="EliminarS" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="BZtext" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="FiltroZ" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="EliminarServ" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -824,14 +849,6 @@
                     <Component class="javax.swing.JTextField" name="BS">
                       <Events>
                         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="BSKeyReleased"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="EliminarS">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Eliminar"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EliminarSActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="BZtext">
@@ -853,6 +870,17 @@
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="EliminarServ">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Imagenes/eliminarlogo.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Eliminar"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EliminarServActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>

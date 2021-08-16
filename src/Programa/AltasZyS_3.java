@@ -548,9 +548,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         Filtros = new javax.swing.JPanel();
         BStext = new javax.swing.JLabel();
         BS = new javax.swing.JTextField();
-        EliminarS = new javax.swing.JButton();
         BZtext = new javax.swing.JLabel();
         FiltroZ = new javax.swing.JComboBox<>();
+        EliminarServ = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Zonas y Servicios");
@@ -559,6 +559,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre de la zona");
 
+        AgregarZ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregar.png"))); // NOI18N
         AgregarZ.setText("Agregar Zona");
         AgregarZ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -605,6 +606,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         NZ.setRows(5);
         jScrollPane5.setViewportView(NZ);
 
+        EliminarZ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
         EliminarZ.setText("Eliminar");
         EliminarZ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -612,6 +614,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
 
+        ModZ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
         ModZ.setText("Modificar");
         ModZ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -619,7 +622,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
 
-        Volver1.setText("<-- Volver");
+        Volver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/volver.png"))); // NOI18N
+        Volver1.setText("Volver");
         Volver1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Volver1ActionPerformed(evt);
@@ -719,6 +723,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
 
+        AgrergarS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregar.png"))); // NOI18N
         AgrergarS.setText("Agregar Servicio");
         AgrergarS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -730,6 +735,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         NS.setRows(5);
         jScrollPane6.setViewportView(NS);
 
+        ModS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
         ModS.setText("Modificar");
         ModS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -737,7 +743,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
 
-        Volver.setText("<-- Volver");
+        Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/volver.png"))); // NOI18N
+        Volver.setText(" Volver");
         Volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VolverActionPerformed(evt);
@@ -949,7 +956,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         });
         jScrollPane9.setViewportView(TServ);
 
-        Volver2.setText("<-- Volver");
+        Volver2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/volver.png"))); // NOI18N
+        Volver2.setText("Volver");
         Volver2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Volver2ActionPerformed(evt);
@@ -978,13 +986,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
 
-        EliminarS.setText("Eliminar");
-        EliminarS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarSActionPerformed(evt);
-            }
-        });
-
         BZtext.setText("Filtrar por Zonas:");
 
         FiltroZ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
@@ -994,16 +995,25 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
 
+        EliminarServ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
+        EliminarServ.setText("Eliminar");
+        EliminarServ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarServActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout FiltrosLayout = new javax.swing.GroupLayout(Filtros);
         Filtros.setLayout(FiltrosLayout);
         FiltrosLayout.setHorizontalGroup(
             FiltrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FiltrosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(EliminarServ)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BStext)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BS, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EliminarS)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BZtext)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1017,9 +1027,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 .addGroup(FiltrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BStext)
                     .addComponent(BS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EliminarS)
                     .addComponent(BZtext)
-                    .addComponent(FiltroZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FiltroZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EliminarServ))
                 .addContainerGap())
         );
 
@@ -1079,11 +1089,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         // TODO add your handling code here:
         mostrarServicios();
     }//GEN-LAST:event_FiltroZItemStateChanged
-
-    private void EliminarSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarSActionPerformed
-        // TODO add your handling code here:
-        eliminarS();
-    }//GEN-LAST:event_EliminarSActionPerformed
 
     private void BSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BSKeyReleased
         // TODO add your handling code here:
@@ -1396,6 +1401,11 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         FiltroZ.setModel(modelzonas);
     }//GEN-LAST:event_AgregarZActionPerformed
 
+    private void EliminarServActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarServActionPerformed
+        // TODO add your handling code here:
+        eliminarS();
+    }//GEN-LAST:event_EliminarServActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1452,7 +1462,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JTextField Cierra;
     private javax.swing.JRadioButton Dom;
     private javax.swing.JTextField DomingoT;
-    private javax.swing.JButton EliminarS;
+    private javax.swing.JButton EliminarServ;
     private javax.swing.JButton EliminarZ;
     private javax.swing.JRadioButton FPNDS;
     private javax.swing.JRadioButton FPNDZ;

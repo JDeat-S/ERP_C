@@ -55,7 +55,7 @@ FondoPanel fondo = new FondoPanel();
             }
         });
 
-        jLabel1.setText("Ver 1.0.4");
+        jLabel1.setText("Ver 1.0.5");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -69,7 +69,7 @@ FondoPanel fondo = new FondoPanel();
                         .addGap(55, 55, 55))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(85, 85, 85)
+                        .addGap(112, 112, 112)
                         .addComponent(jLabel1)
                         .addContainerGap())))
         );

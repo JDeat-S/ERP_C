@@ -1,3 +1,27 @@
+Ver 1.0.5
+Cambios 15/08/2021
+
+Ventana RH > tabla general
+-Se oculto boton eliminar
+-Se añadio las opciones de filtrar (aun no es funcional, solo se puede filtrar por nombres por ahora)
+-se añadio la opcion "entra imss"
+
+Ventana RH > registro
+-En Status se añadio la opcion boletinado
+
+Ventana Nomina > Pestaña tabla pagos
+-Se añadio opcion de "filtrar por"
+Esta opcion permite filtrar dependiendo de la opcion que elijas (solo se puede filtrar una opcion a la vez)
+Filtros disponibles: Zona, Servicio (requieres seleccionar una zona), Quincena, nombre empleados y numero de folio.
+
+Ventana Nomina > Pestaña tabla nomina
+-Se añadio filtro por folio
+
+Cambios en la BD
+-Se re-nombraron algunos datos de nomina y empleados
+
+Se agregaron iconos a botones "volver", "eliminar", "agregar", "modificar" y "cerrar sesion".
+
 Ver 1.0.4 
 Cambios 14/08/2021
 
