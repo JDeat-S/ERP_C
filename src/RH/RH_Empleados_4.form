@@ -86,18 +86,24 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Cs" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jPanel7" max="32767" attributes="0"/>
-                              <Component id="jPanel10" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jPanel7" max="32767" attributes="0"/>
+                                      <Component id="jPanel10" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="245" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="Cs" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="277" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace pref="130" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -109,6 +115,7 @@
                               <Component id="txtid" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="add" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="mod" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Cs" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -129,11 +136,9 @@
                                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="Cs" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="29" max="32767" attributes="0"/>
+                          <EmptySpace pref="90" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -154,39 +159,38 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                                  <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel17" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                          <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel17" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Correo" max="32767" attributes="0"/>
+                                  <Component id="Correo" pref="223" max="32767" attributes="0"/>
                                   <Component id="Rec" max="32767" attributes="0"/>
                                   <Component id="Casa" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane9" max="32767" attributes="0"/>
                                   <Component id="exp" alignment="0" max="32767" attributes="0"/>
                                   <Component id="Celular" alignment="0" max="32767" attributes="0"/>
                                   <Component id="RFC" alignment="0" max="32767" attributes="0"/>
                                   <Component id="NSS" max="32767" attributes="0"/>
                                   <Component id="CURP" alignment="0" max="32767" attributes="0"/>
                                   <Component id="EntraIMSS" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="APgen" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="AMgen" max="32767" attributes="0"/>
+                                  <Component id="NameGen" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -201,13 +205,19 @@
                                   <Component id="exp" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jScrollPane9" min="-2" pref="76" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="APgen" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AMgen" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel62" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NameGen" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -299,7 +309,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel17">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Nombre(s):"/>
+                        <Property name="text" type="java.lang.String" value="Apellido P:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel4">
@@ -316,33 +326,28 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="CURP">
                     </Component>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane9">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="NombreE">
-                          <Properties>
-                            <Property name="columns" type="int" value="20"/>
-                            <Property name="lineWrap" type="boolean" value="true"/>
-                            <Property name="rows" type="int" value="5"/>
-                          </Properties>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                    <Component class="javax.swing.JLabel" name="jLabel2">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Completo"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel61">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Entra IMSS"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="EntraIMSS">
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="APgen">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel44">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Apellido M:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="AMgen">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel62">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Nombre(s):"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="NameGen">
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1276,6 +1281,9 @@
                 </Container>
                 <Component class="javax.swing.JButton" name="Cs">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
                   </Properties>
                   <Events>
@@ -1312,7 +1320,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" min="-2" pref="6601" max="-2" attributes="0"/>
+                                  <Component id="ScrollpaneTG" min="-2" pref="8554" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="elim" min="-2" max="-2" attributes="0"/>
@@ -1340,8 +1348,9 @@
                                   <Component id="FiltroCurpGen" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FiltroNSSGen" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Cs2" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="Cs2" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="136" max="32767" attributes="0"/>
                       </Group>
@@ -1365,12 +1374,11 @@
                               <Component id="FiltroServGen" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FiltroCurpGen" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FiltroNSSGen" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Cs2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" pref="580" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Cs2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="48" max="32767" attributes="0"/>
+                          <Component id="ScrollpaneTG" min="-2" pref="580" max="-2" attributes="0"/>
+                          <EmptySpace pref="77" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1386,7 +1394,7 @@
                     <Property name="text" type="java.lang.String" value="Buscar:"/>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                <Container class="javax.swing.JScrollPane" name="ScrollpaneTG">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
@@ -1726,6 +1734,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="Cs2">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
                   </Properties>
                   <Events>
@@ -1872,21 +1883,18 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
-                                          <Component id="modIMSS" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="addimss" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="jPanel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                                  <Component id="modIMSS" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addimss" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="Cs3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jPanel4" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="508" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="Cs3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="351" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1895,17 +1903,20 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jPanel5" alignment="0" min="-2" pref="283" max="-2" attributes="0"/>
+                              <Component id="Cs3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jPanel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jPanel5" alignment="0" min="-2" pref="283" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="modIMSS" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="modIMSS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="addimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="3564" max="32767" attributes="0"/>
-                          <Component id="Cs3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="391" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2323,6 +2334,9 @@
                 </Container>
                 <Component class="javax.swing.JButton" name="Cs3">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
                   </Properties>
                   <Events>
@@ -2363,9 +2377,10 @@
                                   <Component id="serch2" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="deleteimss" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="395" max="-2" attributes="0"/>
+                                  <Component id="Cs4" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane7" alignment="0" min="-2" pref="5280" max="-2" attributes="0"/>
-                              <Component id="Cs4" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -2379,12 +2394,11 @@
                               <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="serch2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="deleteimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane7" min="-2" pref="580" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Cs4" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="3265" max="32767" attributes="0"/>
+                          <EmptySpace pref="3294" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2438,6 +2452,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="Cs4">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
                   </Properties>
                   <Events>

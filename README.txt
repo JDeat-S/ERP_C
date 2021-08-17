@@ -1,3 +1,19 @@
+Ver 1.0.6
+Cambios 16-17/08/2021
+
+Ventana RH > tabla general
+-Se añadieron los campos de Apellido paterno, materno y nombre en la tabla
+-Se movio entra imss al inicio de la tabla
+-La tabla selecciona correctamente dependiento del campo
+Ventana RH > Registro
+-Se añadieron los campos de Apellido paterno, materno y nombre para llenar
+-Se subieron todos lo botones cerrar sesion
+
+Cambios en la BD
+-Se añadieron campo apellido M y apellido P
+-Se importo la base datos del dia 16-08-2021(mayoria de datos que venian en el)
+-Se corrigieron servicios
+
 Ver 1.0.5
 Cambios 15/08/2021
 
@@ -19,6 +35,7 @@ Ventana Nomina > Pestaña tabla nomina
 
 Cambios en la BD
 -Se re-nombraron algunos datos de nomina y empleados
+
 Ver 1.0.4 
 Cambios 14/08/2021
 

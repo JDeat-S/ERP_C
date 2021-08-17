@@ -1,11 +1,13 @@
-package Programa;
+package RH;
 
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
+import Inicio.Login_2;
 import ZyS.Servicios;
 import ZyS.Zonas;
 import java.awt.HeadlessException;
+import java.awt.Rectangle;
 import java.awt.event.ItemEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -49,6 +51,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         FiltrosZonas xd = new FiltrosZonas();
         DefaultComboBoxModel modelzonass = new DefaultComboBoxModel(xd.mostrarzonas());
         FiltroSZGen.setModel(modelzonass);
+
         setIconImage(new ImageIcon(RH_Empleados_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
@@ -84,7 +87,9 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         NRP.setText("");
         txtid.setText("");
         exp.setText("");
-        NombreE.setText("");
+        NameGen.setText("");
+        APgen.setText("");
+        AMgen.setText("");
         Correo.setText("");
         Rec.setText("");
         Casa.setText("");
@@ -123,10 +128,6 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         FREI.setText("");
         UDLRE.setText("");
         FBRE.setText("");
-    }
-
-    public void buscar(String buscar) {
-
     }
 
     public void buscari(String buscari) {
@@ -175,78 +176,76 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
     public void editar() {
         int id = Integer.parseInt(txtid.getText());
-        String Item = fdp.getSelectedItem().toString();
-        String Item2 = zona.getSelectedItem().toString();
-        String Item3 = Status.getSelectedItem().toString();
-        String Item4 = Serv.getSelectedItem().toString();
-        String Item5 = Banco.getSelectedItem().toString();
-        String Item6 = cbf.getSelectedItem().toString();
-        String Item7 = cfin.getSelectedItem().toString();
-        String Item8 = BFRE.getSelectedItem().toString();
-        String Item9 = CZ.getSelectedItem().toString();
-        String Item10 = CS.getSelectedItem().toString();
-        String SQL = "UPDATE empleados SET `Exp` = ?, `Nombre Completo` = ?,"
-                + " `Correo` = ?, `#_Casa` = ?, `#_Recados` = ?, `#_Celular` = ?,"
-                + " `RFC` = ?, `NSS` = ?, `CURP` = ?, `Forma_de_pago` = ?, `Sueldo` = ?,"
-                + " `Bono` = ?, `Caja de ahorro` = ?, `Banco` = ?, `Zona` = ?, "
-                + "`Servicio` = ?, `Status` = ?, `Cuenta banco` = ?, `Observaciones` = ?,"
-                + " `Calle` = ?, `# Exterior` = ?, `# Interior` = ?, `Colonia` = ?,"
-                + " `DLG o Mun` = ?, `C.P` = ?, `Documentos originales` = ?,"
-                + " `Documentos Faltantes` = ?, `Documentos Entregables` = ?, "
-                + "`Fecha de entrevista` = ?, `Fecha de ingreso` = ?, `Fecha ultimo dia laborado` = ?,"
-                + " `Fecha firma baja` = ?, `Baja firmada` = ?, `Finiquito` = ?, `Cambio de Zona` = ?,"
-                + " `Cambio de Servicio` = ?, `Fecha de Re-ingreso` = ?, `Fecha ultimo dia laborado (Re)` = ?,"
-                + " `Fecha firma baja (Re)` = ?, `Fecha de baja (Re)` = ?, `Baja firmada (Re)` = ?,"
-                + " `# recepcion personal` = ?, `Entra imss` = ? WHERE (`id_bd` = ?)";
+        String Formdp = fdp.getSelectedItem().toString();
+        String Zon = zona.getSelectedItem().toString();
+        String Statusgen = Status.getSelectedItem().toString();
+        String Servgen = Serv.getSelectedItem().toString();
+        String bancogen = Banco.getSelectedItem().toString();
+        String cdfgen = cbf.getSelectedItem().toString();
+        String cfingen = cfin.getSelectedItem().toString();
+        String BFREgen = BFRE.getSelectedItem().toString();
+        String CZGEN = CZ.getSelectedItem().toString();
+        String CSGEN = CS.getSelectedItem().toString();
+        String SQL = "UPDATE `confort`.`empleados` SET `Entra imss` = ?,"
+                + " `Exp` = ?, `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?,"
+                + " `Correo` = ?, `#_Casa` = ?, `#_Recados` = ?, `#_Celular` = ?, `RFC` = ?, `NSS` = ?, "
+                + "`CURP` = ?, `Forma_de_pago` = ?, `Sueldo` = ?, `Bono` = ?, `Caja de ahorro` = ?, `Banco` = ?, "
+                + "`Zona` = ?, `Servicio` = ?, `Status` = ?, `Cuenta banco` = ?, `Calle` = ?, `# Exterior` = ?, `# Interior` = ?, "
+                + "`Colonia` = ?, `DLG o Mun` = ?, `C.P` = ?, `Documentos originales` = ?, `Documentos Faltantes` = ?, "
+                + "`Documentos Entregables` = ?, `Fecha de entrevista` = ?, `Fecha de ingreso` = ?, `Fecha ultimo dia laborado` = ?, "
+                + "`Fecha firma baja` = ?, `Baja firmada` = ?, `Finiquito` = ?, `Cambio de Zona` = ?, `Cambio de Servicio` = ?,"
+                + " `Fecha de Re-ingreso` = ?, `Fecha ultimo dia laborado (Re)` = ?, `Fecha firma baja (Re)` = ?, `Fecha de baja (Re)` = ?,"
+                + " `Baja firmada (Re)` = ?, `# recepcion personal` = ?, `Observaciones` = ? WHERE (`id_bd` = ?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, exp.getText());
-            pst.setString(2, NombreE.getText());
-            pst.setString(3, Correo.getText());
-            pst.setString(4, Casa.getText());
-            pst.setString(5, Rec.getText());
-            pst.setString(6, Celular.getText());
-            pst.setString(7, RFC.getText());
-            pst.setString(8, NSS.getText());
-            pst.setString(9, CURP.getText());
-            pst.setString(10, Item);
-            pst.setString(11, Sueldo.getText());
-            pst.setString(12, Bono.getText());
-            pst.setString(13, Cda.getText());
-            pst.setString(14, Item5);
-            pst.setString(15, Item2);
-            pst.setString(16, Item4);
-            pst.setString(17, Item3);
-            pst.setString(18, cta.getText());
-            pst.setString(19, Obs.getText());
-            pst.setString(20, Calle.getText());
-            pst.setString(21, Exterior.getText());
-            pst.setString(22, INT.getText());
-            pst.setString(23, Colonia.getText());
-            pst.setString(24, DLGMUN.getText());
-            pst.setString(25, CP.getText());
-            pst.setString(26, DO.getText());
-            pst.setString(27, DF.getText());
-            pst.setString(28, DE.getText());
-            pst.setString(29, FE.getText());
-            pst.setString(30, FI.getText());
-            pst.setString(31, UDL.getText());
-            pst.setString(32, FFB.getText());
-            pst.setString(33, Item6);
-            pst.setString(34, Item7);
-            pst.setString(35, Item9);
-            pst.setString(36, Item10);
-            pst.setString(37, FREI.getText());
-            pst.setString(38, UDLRE.getText());
-            pst.setString(39, FFBRE.getText());
-            pst.setString(40, FBRE.getText());
-            pst.setString(41, Item8);
-            pst.setString(42, NRP.getText());
-            pst.setString(43, EntraIMSS.getText());
-
-            pst.setInt(44, id);
+            pst.setString(1, EntraIMSS.getText());
+            pst.setString(2, exp.getText());
+            pst.setString(3, APgen.getText());
+            pst.setString(4, AMgen.getText());
+            pst.setString(5, NameGen.getText());
+            pst.setString(6, Correo.getText());
+            pst.setString(7, Casa.getText());
+            pst.setString(8, Rec.getText());
+            pst.setString(9, Celular.getText());
+            pst.setString(10, RFC.getText());
+            pst.setString(11, NSS.getText());
+            pst.setString(12, CURP.getText());
+            pst.setString(13, Formdp);
+            pst.setString(14, Sueldo.getText());
+            pst.setString(15, Bono.getText());
+            pst.setString(16, Cda.getText());
+            pst.setString(17, bancogen);
+            pst.setString(18, Zon);
+            pst.setString(19, Servgen);
+            pst.setString(20, Statusgen);
+            pst.setString(21, cta.getText());
+            pst.setString(22, Calle.getText());
+            pst.setString(23, Exterior.getText());
+            pst.setString(24, INT.getText());
+            pst.setString(25, Colonia.getText());
+            pst.setString(26, DLGMUN.getText());
+            pst.setString(27, CP.getText());
+            pst.setString(28, DO.getText());
+            pst.setString(29, DF.getText());
+            pst.setString(30, DE.getText());
+            pst.setString(31, FE.getText());
+            pst.setString(32, FI.getText());
+            pst.setString(33, UDL.getText());
+            pst.setString(34, FFB.getText());
+            pst.setString(35, cdfgen);
+            pst.setString(36, cfingen);
+            pst.setString(37, CZGEN);
+            pst.setString(38, CSGEN);
+            pst.setString(39, FREI.getText());
+            pst.setString(40, UDLRE.getText());
+            pst.setString(41, FFBRE.getText());
+            pst.setString(42, FBRE.getText());
+            pst.setString(43, BFREgen);
+            pst.setString(44, NRP.getText());
+            pst.setString(45, Obs.getText());
+            pst.setInt(46, id);
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Empleado Modificado");
@@ -393,7 +392,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         String FiltroStatusGen = FiltroStatus.getSelectedItem().toString();
          */
         if (!"".equals(FiltroNGe)) {
-            where = "Select * from empleados where `Nombre Completo` LIKE '%" + FiltroNGe + "%'";
+            where = "Select * from empleados where `Nombre(s)` LIKE '%" + FiltroNGe + "%'";
         }
         /*else if (!"".equals(FiltroZGen)) {
             where = "select * from empleados where `Zona` LIKE '%" + FiltroZGen + "%'";
@@ -429,60 +428,57 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("ID BD");//1
-            modelo.addColumn("# Expediente");
-            modelo.addColumn("Nombre empleado");//3
-            modelo.addColumn("Correo");
-            modelo.addColumn("# Casa");//5
-            modelo.addColumn("# Recados");
-            modelo.addColumn("# Celular");//7
-            modelo.addColumn("RFC");
-            modelo.addColumn("NSS");//9
-            modelo.addColumn("CURP");//10
-            modelo.addColumn("Forma de pago");//11
-            modelo.addColumn("Sueldo");//12
-            modelo.addColumn("Bono");//13
-            modelo.addColumn("Caja de ahorro");//14
-            modelo.addColumn("Banco");
-            modelo.addColumn("Zona");//16
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Estatus");//18
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Observaciones");//20
+            modelo.addColumn("Entra IMSS");
+            modelo.addColumn("# Exp");//3
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//5
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Correo");//7
+            modelo.addColumn("# Casa");
+            modelo.addColumn("# Recados");//9
+            modelo.addColumn("# Celular");//10
+            modelo.addColumn("RFC");//11
+            modelo.addColumn("NSS");//12
+            modelo.addColumn("CURP");//13
+            modelo.addColumn("Forma de pago");//14
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");//16
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Banco");//18
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");//20
+            modelo.addColumn("Status");
+            modelo.addColumn("Cuenta de banco");//22
             modelo.addColumn("Calle");
-            modelo.addColumn("# Exterior");//22
+            modelo.addColumn("# Exterior");//24
             modelo.addColumn("# Interior");
-            modelo.addColumn("Colonia");//24
-            modelo.addColumn("DLG o Mun");
-            modelo.addColumn("C.P");//26
-            modelo.addColumn("Doc. originales");
-            modelo.addColumn("Doc. faltantes");//28
-            modelo.addColumn("Doc. entregables");
-            modelo.addColumn("Fecha entrevista");//30
+            modelo.addColumn("Colonia");//26
+            modelo.addColumn("DLG o MUN");
+            modelo.addColumn("C.P");//28
+            modelo.addColumn("Doc. Originales");
+            modelo.addColumn("Doc. Faltantes");//30
+            modelo.addColumn("Doc. Entregables");
+            modelo.addColumn("Fecha entrevista");//32
             modelo.addColumn("Fecha ingreso");
-            modelo.addColumn("Fecha ultimo dia laborado");//32
+            modelo.addColumn("Fecha ultimo dia laborado");//34
             modelo.addColumn("Fecha firma baja");
-            modelo.addColumn("Baja firmada");//34
+            modelo.addColumn("Baja firmada");//36
             modelo.addColumn("Finiquito");
-            modelo.addColumn("Cambio de Zona");//36
-            modelo.addColumn("Cambio de Servicio");
-            modelo.addColumn("Fecha de Re-ingreso");//38
+            modelo.addColumn("Cambio de Zona");//38
+            modelo.addColumn("Cambio de servicio");
+            modelo.addColumn("Fecha de Re-ingreso (Re)");//40
             modelo.addColumn("Fecha ultimo dia laborado (Re)");
-            modelo.addColumn("Fecha firma baja (Re)");//40
+            modelo.addColumn("Fecha firma baja (Re)");//42
             modelo.addColumn("Fecha de baja (Re)");
-            modelo.addColumn("Baja firmada (Re)");//42
-            modelo.addColumn("# recepcion personal");
-            modelo.addColumn("entra imss");//44
+            modelo.addColumn("Baja firmada (Re)");//44
+            modelo.addColumn("# recepcion personal");//44
+            modelo.addColumn("Observaciones");//44
 
-//Anchos hasta Forma de pago
-            int[] anchos = {35, 75, 250, 65, 60, 60, 60, 55, 75, 60,
-                //anchos sueldo - calle
-                25, 45, 35, 50, 65, 70, 95, 100, 50, 1000,
-                //anchos exterior
-                250, 30, 40, 55, 55, 60, 1000, 100, 60, 60,
-                //anchos hasta fecha ultimo dia laborado
-                75, 75, 60, 75, 80, 100, 65, 85, 80, 75,
-                //anchos hasta observaciones
-                70, 70, 50, 60, 80};
+            int[] anchos = {/*idbd*/35, /*entraimms*/65, /*Exp*/50, /*ap*/70, /*am*/70, /*name*/100, /*correo*/ 75, /*casa*/65, /*recados*/70, /*celular*/65, /*rfc*/60,
+                /*nss*/65, /*curp*/ 70, /*fdp*/70, /*sueldo*/40, /*bono*/35, /*cda*/70, /*banco*/55, /*zona*/60, /*serv*/60, /*status*/75,
+                /*CTA*/60, /*calle*/200, /*ext*/30, /*int*/30, /*colonia*/60, /*dlgmun*/75, /*cp*/85, /*DO*/1000, /*DF*/300, /*DE*/300,
+                /*FDE*/75, /*FDI*/75, /*FUDL*/75, /*FFB*/75, /*BF*/60, /*FIN*/70, /*CZ*/70, /*CS*/75, /*FRE*/85, /*FUDLRE*/75,
+                /*FFBRE*/75, /*FDBRE*/75, /*FBRE*/60, /*NRP*/60, /*OBS*/2000};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -496,10 +492,10 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     filas[i] = rs.getObject(i + 1);
                 }
                 modelo.addRow(filas);
+
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
-
         }
 
     }
@@ -538,74 +534,74 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
     public void AgregarE() {
 
-        String Item = fdp.getSelectedItem().toString();
-        String Item2 = zona.getSelectedItem().toString();
-        String Item3 = Status.getSelectedItem().toString();
-        String Item4 = Serv.getSelectedItem().toString();
-        String Item5 = Banco.getSelectedItem().toString();
-        String Item6 = cbf.getSelectedItem().toString();
-        String Item7 = cfin.getSelectedItem().toString();
-        String Item8 = BFRE.getSelectedItem().toString();
-        String Item9 = CZ.getSelectedItem().toString();
-        String Item10 = CS.getSelectedItem().toString();
+        String Formdp = fdp.getSelectedItem().toString();
+        String Zon = zona.getSelectedItem().toString();
+        String Statusgen = Status.getSelectedItem().toString();
+        String Servgen = Serv.getSelectedItem().toString();
+        String bancogen = Banco.getSelectedItem().toString();
+        String cdfgen = cbf.getSelectedItem().toString();
+        String cfingen = cfin.getSelectedItem().toString();
+        String BFREgen = BFRE.getSelectedItem().toString();
+        String CZGEN = CZ.getSelectedItem().toString();
+        String CSGEN = CS.getSelectedItem().toString();
 
-        String SQL = "insert into empleados (`Exp`, `Nombre Completo`, `Correo`, `#_Casa`, `#_Recados`,"
-                + " `#_Celular`, `RFC`, `NSS`, `CURP`, `Forma_de_pago`, `Sueldo`, `Bono`, "
-                + "`Caja de ahorro`, `Banco`, `Zona`, `Servicio`, `Status`, `Cuenta banco`, "
-                + "`Observaciones`, `Calle`, `# Exterior`, `# Interior`, `Colonia`, `DLG o Mun`, `C.P`,"
-                + " `Documentos originales`, `Documentos Faltantes`, `Documentos Entregables`,"
-                + " `Fecha de entrevista`, `Fecha de ingreso`, `Fecha ultimo dia laborado`, "
-                + "`Fecha firma baja`, `Baja firmada`, `Finiquito`, `Cambio de Zona`, `Cambio de Servicio`,"
-                + " `Fecha de Re-ingreso`, `Fecha ultimo dia laborado (Re)`, `Fecha firma baja (Re)`, "
-                + "`Fecha de baja (Re)`, `Baja firmada (Re)`, `# recepcion personal`, `Entra imss`) VALUES (?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO `confort`.`empleados` (`Entra imss`, `Exp`, `Apellido P`,"
+                + " `Apellido M`, `Nombre(s)`, `Correo`, `#_Casa`, `#_Recados`, `#_Celular`, `RFC`,"
+                + " `NSS`, `CURP`, `Forma_de_pago`, `Sueldo`, `Bono`, `Caja de ahorro`, `Banco`, `Zona`, `Servicio`,"
+                + " `Status`, `Cuenta banco`, `Calle`, `# Exterior`, `# Interior`, `Colonia`, `DLG o Mun`, `C.P`,"
+                + " `Documentos originales`, `Documentos Faltantes`, `Documentos Entregables`, `Fecha de entrevista`,"
+                + " `Fecha de ingreso`, `Fecha ultimo dia laborado`, `Fecha firma baja`, `Baja firmada`, `Finiquito`, `Cambio de Zona`,"
+                + " `Cambio de Servicio`, `Fecha de Re-ingreso`, `Fecha ultimo dia laborado (Re)`, `Fecha firma baja (Re)`, `Fecha de baja (Re)`, "
+                + "`Baja firmada (Re)`, `Observaciones`, `# recepcion personal`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
+                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            pst.setString(1, exp.getText());
-            pst.setString(2, NombreE.getText());
-            pst.setString(3, Correo.getText());
-            pst.setString(4, Casa.getText());
-            pst.setString(5, Rec.getText());
-            pst.setString(6, Celular.getText());
-            pst.setString(7, RFC.getText());
-            pst.setString(8, NSS.getText());
-            pst.setString(9, CURP.getText());
-            pst.setString(10, Item);
-            pst.setString(11, Sueldo.getText());
-            pst.setString(12, Bono.getText());
-            pst.setString(13, Cda.getText());
-            pst.setString(14, Item5);
-            pst.setString(15, Item2);
-            pst.setString(16, Item4);
-            pst.setString(17, Item3);
-            pst.setString(18, cta.getText());
-            pst.setString(19, Obs.getText());
-            pst.setString(20, Calle.getText());
-            pst.setString(21, Exterior.getText());
-            pst.setString(22, INT.getText());
-            pst.setString(23, Colonia.getText());
-            pst.setString(24, DLGMUN.getText());
-            pst.setString(25, CP.getText());
-            pst.setString(26, DO.getText());
-            pst.setString(27, DF.getText());
-            pst.setString(28, DE.getText());
-            pst.setString(29, FE.getText());
-            pst.setString(30, FI.getText());
-            pst.setString(31, UDL.getText());
-            pst.setString(32, FFB.getText());
-            pst.setString(33, Item6);
-            pst.setString(34, Item7);
-            pst.setString(35, Item9);
-            pst.setString(36, Item10);
-            pst.setString(37, FREI.getText());
-            pst.setString(38, UDLRE.getText());
-            pst.setString(39, FFBRE.getText());
-            pst.setString(40, FBRE.getText());
-            pst.setString(41, Item8);
-            pst.setString(42, NRP.getText());
-            pst.setString(43, EntraIMSS.getText());
+            pst.setString(1, EntraIMSS.getText());
+            pst.setString(2, exp.getText());
+            pst.setString(3, APgen.getText());
+            pst.setString(4, AMgen.getText());
+            pst.setString(5, NameGen.getText());
+            pst.setString(6, Correo.getText());
+            pst.setString(7, Casa.getText());
+            pst.setString(8, Rec.getText());
+            pst.setString(9, Celular.getText());
+            pst.setString(10, RFC.getText());
+            pst.setString(11, NSS.getText());
+            pst.setString(12, CURP.getText());
+            pst.setString(13, Formdp);
+            pst.setString(14, Sueldo.getText());
+            pst.setString(15, Bono.getText());
+            pst.setString(16, Cda.getText());
+            pst.setString(17, bancogen);
+            pst.setString(18, Zon);
+            pst.setString(19, Servgen);
+            pst.setString(20, Statusgen);
+            pst.setString(21, cta.getText());
+            pst.setString(22, Calle.getText());
+            pst.setString(23, Exterior.getText());
+            pst.setString(24, INT.getText());
+            pst.setString(25, Colonia.getText());
+            pst.setString(26, DLGMUN.getText());
+            pst.setString(27, CP.getText());
+            pst.setString(28, DO.getText());
+            pst.setString(29, DF.getText());
+            pst.setString(30, DE.getText());
+            pst.setString(31, FE.getText());
+            pst.setString(32, FI.getText());
+            pst.setString(33, UDL.getText());
+            pst.setString(34, FFB.getText());
+            pst.setString(35, cdfgen);
+            pst.setString(36, cfingen);
+            pst.setString(37, CZGEN);
+            pst.setString(38, CSGEN);
+            pst.setString(39, FREI.getText());
+            pst.setString(40, UDLRE.getText());
+            pst.setString(41, FFBRE.getText());
+            pst.setString(42, FBRE.getText());
+            pst.setString(43, BFREgen);
+            pst.setString(44, NRP.getText());
+            pst.setString(45, Obs.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Empleado agregado.");
@@ -640,11 +636,13 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         NSS = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         CURP = new javax.swing.JTextField();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        NombreE = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         EntraIMSS = new javax.swing.JTextField();
+        APgen = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        AMgen = new javax.swing.JTextField();
+        jLabel62 = new javax.swing.JLabel();
+        NameGen = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         Sueldo = new javax.swing.JTextField();
@@ -730,7 +728,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         FiltroNG = new javax.swing.JTextField();
         LabelF1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        ScrollpaneTG = new javax.swing.JScrollPane();
         data = new javax.swing.JTable();
         elim = new javax.swing.JButton();
         Cs2 = new javax.swing.JButton();
@@ -811,20 +809,17 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
         jLabel26.setText("# Exp");
 
-        jLabel17.setText("Nombre(s):");
+        jLabel17.setText("Apellido P:");
 
         jLabel4.setText("Correo:");
 
         jLabel10.setText("CURP");
 
-        NombreE.setColumns(20);
-        NombreE.setLineWrap(true);
-        NombreE.setRows(5);
-        jScrollPane9.setViewportView(NombreE);
-
-        jLabel2.setText("Completo");
-
         jLabel61.setText("Entra IMSS");
+
+        jLabel44.setText("Apellido M:");
+
+        jLabel62.setText("Nombre(s):");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -833,34 +828,35 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel62)
+                    .addComponent(jLabel44)
                     .addComponent(jLabel61)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(27, 27, 27)
-                                    .addComponent(jLabel26))
-                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addComponent(jLabel2)))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(27, 27, 27)
+                            .addComponent(jLabel26))
+                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Correo)
+                    .addComponent(Correo, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                     .addComponent(Rec)
                     .addComponent(Casa)
-                    .addComponent(jScrollPane9)
                     .addComponent(exp)
                     .addComponent(Celular)
                     .addComponent(RFC)
                     .addComponent(NSS)
                     .addComponent(CURP)
-                    .addComponent(EntraIMSS))
+                    .addComponent(EntraIMSS)
+                    .addComponent(APgen)
+                    .addComponent(AMgen)
+                    .addComponent(NameGen))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -871,12 +867,17 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(jLabel26)
                     .addComponent(exp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2))
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(APgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel44)
+                    .addComponent(AMgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel62)
+                    .addComponent(NameGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -1416,6 +1417,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
+        Cs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
         Cs.setText("Cerrar sesion");
         Cs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1446,14 +1448,18 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(GeneralLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Cs))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(130, Short.MAX_VALUE))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(GeneralLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(245, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GeneralLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Cs)
+                        .addGap(277, 277, 277))))
         );
         GeneralLayout.setVerticalGroup(
             GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1462,7 +1468,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                 .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(add)
-                    .addComponent(mod))
+                    .addComponent(mod)
+                    .addComponent(Cs))
                 .addGap(3, 3, 3)
                 .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(GeneralLayout.createSequentialGroup()
@@ -1478,10 +1485,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Cs)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         jScrollPane3.setViewportView(General);
@@ -1511,7 +1516,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                 dataMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(data);
+        ScrollpaneTG.setViewportView(data);
 
         elim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
         elim.setText("Eliminar");
@@ -1521,6 +1526,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             }
         });
 
+        Cs2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
         Cs2.setText("Cerrar sesion");
         Cs2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1589,7 +1595,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 6601, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ScrollpaneTG, javax.swing.GroupLayout.PREFERRED_SIZE, 8554, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(elim)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1615,8 +1621,9 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroCurpGen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroNSSGen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Cs2))
+                        .addComponent(FiltroNSSGen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Cs2)))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -1636,12 +1643,11 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(FiltroFDI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FiltroServGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FiltroCurpGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FiltroNSSGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FiltroNSSGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cs2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Cs2)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addComponent(ScrollpaneTG, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         jScrollPane5.setViewportView(jPanel6);
@@ -1871,6 +1877,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        Cs3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
         Cs3.setText("Cerrar sesion");
         Cs3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1886,32 +1893,32 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(IMSSLayout.createSequentialGroup()
-                        .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(IMSSLayout.createSequentialGroup()
-                                .addGap(134, 134, 134)
-                                .addComponent(modIMSS)
-                                .addGap(18, 18, 18)
-                                .addComponent(addimss))
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(134, 134, 134)
+                        .addComponent(modIMSS)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Cs3))
-                .addContainerGap(508, Short.MAX_VALUE))
+                        .addComponent(addimss))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90)
+                .addComponent(Cs3)
+                .addContainerGap(351, Short.MAX_VALUE))
         );
         IMSSLayout.setVerticalGroup(
             IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IMSSLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(modIMSS)
-                    .addComponent(addimss))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 3564, Short.MAX_VALUE)
-                .addComponent(Cs3)
-                .addContainerGap())
+                    .addComponent(Cs3)
+                    .addGroup(IMSSLayout.createSequentialGroup()
+                        .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(modIMSS)
+                            .addComponent(addimss))))
+                .addContainerGap(391, Short.MAX_VALUE))
         );
 
         jScrollPane8.setViewportView(IMSS);
@@ -1960,6 +1967,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             }
         });
 
+        Cs4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
         Cs4.setText("Cerrar sesion");
         Cs4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1979,9 +1987,10 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(serch2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deleteimss))
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 5280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cs4))
+                        .addComponent(deleteimss)
+                        .addGap(395, 395, 395)
+                        .addComponent(Cs4))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 5280, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -1991,12 +2000,11 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(serch2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deleteimss))
+                    .addComponent(deleteimss)
+                    .addComponent(Cs4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Cs4)
-                .addContainerGap(3265, Short.MAX_VALUE))
+                .addContainerGap(3294, Short.MAX_VALUE))
         );
 
         jScrollPane6.setViewportView(jPanel8);
@@ -2139,7 +2147,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             while (rs.next()) {
                 txtid.setText(String.valueOf(id));
                 exp.setText(rs.getString("Exp"));
-                NombreE.setText(rs.getString("Nombre Completo"));
+                NameGen.setText(rs.getString("Nombre(s)"));
                 zona1.setText(rs.getString("Zona"));
                 Correo.setText(rs.getString("Correo"));
                 Rec.setText(rs.getString("#_Recados"));
@@ -2160,7 +2168,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                 DLGMUN.setText(rs.getString("DLG o Mun"));
                 CP.setText(rs.getString("C.P"));
                 expimss.setText(rs.getString("Exp"));
-                nameimss.setText(rs.getString("Nombre Completo"));
+                nameimss.setText(rs.getString("Nombre(s)"));
                 FFBRE.setText(rs.getString("Fecha firma baja (Re)"));
                 rfcimss.setText(rs.getString("RFC"));
                 nssimss.setText(rs.getString("NSS"));
@@ -2402,6 +2410,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AMgen;
+    private javax.swing.JTextField APgen;
     private javax.swing.JComboBox<String> BFRE;
     private javax.swing.JComboBox<String> Banco;
     private javax.swing.JTextField Bono;
@@ -2449,11 +2459,12 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelF2;
     private javax.swing.JTextField NRP;
     private javax.swing.JTextField NSS;
-    private javax.swing.JTextArea NombreE;
+    private javax.swing.JTextField NameGen;
     private javax.swing.JTextArea Obs;
     private javax.swing.JTextField RFC;
     private javax.swing.JTabbedPane RH;
     private javax.swing.JTextField Rec;
+    private javax.swing.JScrollPane ScrollpaneTG;
     private javax.swing.JComboBox<String> Serv;
     private javax.swing.JComboBox<String> Status;
     private javax.swing.JComboBox<String> Status1;
@@ -2485,7 +2496,6 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -2512,6 +2522,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
@@ -2531,6 +2542,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
@@ -2552,14 +2564,12 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JButton mod;
     private javax.swing.JButton modIMSS;
     private javax.swing.JTextArea nameimss;
