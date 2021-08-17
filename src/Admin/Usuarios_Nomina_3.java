@@ -3,9 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Programa;
+package Admin;
 
+import RH.RH_Empleados_4;
+import Admin.AltasZyS_3;
+import Admin.Administradores_3;
 import Conexion.ConexionSQL;
+import Inicio.Login_2;
+import Nomina.Nomina_5;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

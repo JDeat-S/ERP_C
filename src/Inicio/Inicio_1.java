@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Programa;
+package Inicio;
 
+import Admin.Usuarios_RH_3;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -55,7 +56,7 @@ FondoPanel fondo = new FondoPanel();
             }
         });
 
-        jLabel1.setText("Ver 1.0.5");
+        jLabel1.setText("Ver 1.0.6");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

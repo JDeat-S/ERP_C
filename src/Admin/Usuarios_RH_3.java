@@ -3,9 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Programa;
+package Admin;
 
+import Admin.Usuarios_Nomina_3;
+import RH.RH_Empleados_4;
+import Admin.AltasZyS_3;
+import Admin.Administradores_3;
 import Conexion.ConexionSQL;
+import Inicio.Login_2;
+import Nomina.Nomina_5;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,9 +29,9 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
- * @author JDeat
- */
+ **
+ ** @author JDeat
+ **/
 public final class Usuarios_RH_3 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
