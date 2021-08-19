@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -36,6 +37,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
      */
     public AltasZyS_3() {
         initComponents();
+        this.setExtendedState(6);
         this.setLocationRelativeTo(null);
         IDS.setVisible(false);
         IDZ.setVisible(false);
@@ -53,7 +55,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         FiltrosZonas zz = new FiltrosZonas();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
         FiltroZ.setModel(modelzonas);
-        this.setExtendedState(6);
         mostrarzonas();
         mostrarServicios();
         compartirZ();
@@ -555,7 +556,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Zonas y Servicios");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setResizable(false);
 
         jLabel1.setText("Nombre de la zona");
 
@@ -1064,7 +1064,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                     .addComponent(Filtros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         jScrollPane8.setViewportView(jPanel3);

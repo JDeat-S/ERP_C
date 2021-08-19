@@ -8,7 +8,7 @@ package Admin;
 import Conexion.ConexionSQL;
 import Inicio.Login_2;
 import Nomina.Nomina_5;
-import RH.RH_Empleados_4;
+import Admin.RH_EADM_4;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.sql.Connection;
@@ -598,7 +598,7 @@ public final class Administradores_3 extends javax.swing.JFrame {
 
     private void IDRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDRHActionPerformed
         // TODO add your handling code here:
-        RH_Empleados_4 kk = new RH_Empleados_4();
+        RH_EADM_4 kk = new RH_EADM_4();
         kk.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_IDRHActionPerformed

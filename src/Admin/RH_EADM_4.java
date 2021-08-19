@@ -1,5 +1,6 @@
-package RH;
+package Admin;
 
+import Admin.Administradores_3;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
@@ -25,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class RH_Empleados_4 extends javax.swing.JFrame {
+public final class RH_EADM_4 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
@@ -34,7 +35,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     /**
      * Creates new form RH
      */
-    public RH_Empleados_4() {
+    public RH_EADM_4() {
         initComponents();
         this.setExtendedState(6);
         mostrardatos();
@@ -52,7 +53,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         DefaultComboBoxModel modelzonass = new DefaultComboBoxModel(xd.mostrarzonas());
         FiltroSZGen.setModel(modelzonass);
 
-        setIconImage(new ImageIcon(RH_Empleados_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(RH_EADM_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
 
@@ -710,6 +711,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         CS = new javax.swing.JComboBox<>();
         CZ = new javax.swing.JComboBox<>();
         Cs = new javax.swing.JButton();
+        Volver = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         FiltroNG = new javax.swing.JTextField();
@@ -728,6 +730,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         FiltroServGen = new javax.swing.JComboBox<>();
         FiltroCurpGen = new javax.swing.JTextField();
         FiltroNSSGen = new javax.swing.JTextField();
+        Volver2 = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         IMSS = new javax.swing.JPanel();
         modIMSS = new javax.swing.JButton();
@@ -1397,6 +1400,19 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             }
         });
 
+        Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/volver.png"))); // NOI18N
+        Volver.setText("Volver");
+        Volver.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                VolverItemStateChanged(evt);
+            }
+        });
+        Volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout GeneralLayout = new javax.swing.GroupLayout(General);
         General.setLayout(GeneralLayout);
         GeneralLayout.setHorizontalGroup(
@@ -1430,6 +1446,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addContainerGap(245, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GeneralLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Volver)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Cs)
                         .addGap(277, 277, 277))))
         );
@@ -1441,7 +1459,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(add)
                     .addComponent(mod)
-                    .addComponent(Cs))
+                    .addComponent(Cs)
+                    .addComponent(Volver))
                 .addGap(3, 3, 3)
                 .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(GeneralLayout.createSequentialGroup()
@@ -1556,6 +1575,14 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             }
         });
 
+        Volver2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/volver.png"))); // NOI18N
+        Volver2.setText("Volver");
+        Volver2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -1593,6 +1620,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNSSGen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Volver2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Cs2)))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
@@ -1614,10 +1643,11 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(FiltroServGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FiltroCurpGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FiltroNSSGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cs2))
+                    .addComponent(Cs2)
+                    .addComponent(Volver2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ScrollpaneTG, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         jScrollPane5.setViewportView(jPanel6);
@@ -2357,6 +2387,30 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         mostrardatos();
     }//GEN-LAST:event_FiltroNSSGenKeyReleased
 
+    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres a ventana administrador?");
+        if (i == 0) {
+            Administradores_3 regr = new Administradores_3();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_VolverActionPerformed
+
+    private void VolverItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_VolverItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VolverItemStateChanged
+
+    private void Volver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver2ActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres a ventana administrador?");
+        if (i == 0) {
+            Administradores_3 regr = new Administradores_3();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_Volver2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2374,36 +2428,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RH_Empleados_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RH_EADM_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -2414,7 +2440,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new RH_Empleados_4().setVisible(true);
+            new RH_EADM_4().setVisible(true);
         });
     }
 
@@ -2483,6 +2509,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTable Timss;
     private javax.swing.JTextField UDL;
     private javax.swing.JTextField UDLRE;
+    private javax.swing.JButton Volver;
+    private javax.swing.JButton Volver2;
     private javax.swing.JButton add;
     private javax.swing.JButton addimss;
     private javax.swing.JComboBox<String> cbf;

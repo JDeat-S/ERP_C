@@ -90,6 +90,8 @@
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="Volver" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Cs" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="277" max="-2" attributes="0"/>
                               </Group>
@@ -106,6 +108,7 @@
                               <Component id="add" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="mod" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Cs" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Volver" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1250,6 +1253,18 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CsActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JButton" name="Volver">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/volver.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Volver"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="VolverItemStateChanged"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VolverActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -1304,6 +1319,8 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FiltroNSSGen" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Volver2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="Cs2" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1330,10 +1347,11 @@
                               <Component id="FiltroCurpGen" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FiltroNSSGen" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Cs2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Volver2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="ScrollpaneTG" min="-2" pref="580" max="-2" attributes="0"/>
-                          <EmptySpace pref="77" max="32767" attributes="0"/>
+                          <EmptySpace pref="78" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1807,6 +1825,17 @@
                 <Component class="javax.swing.JTextField" name="FiltroNSSGen">
                   <Events>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroNSSGenKeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="Volver2">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/volver.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Volver"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Volver2ActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
