@@ -6,7 +6,7 @@
 package Admin;
 
 import Admin.Usuarios_Nomina_3;
-import RH.RH_Empleados_4;
+import Admin.RH_EADM_4;
 import Admin.AltasZyS_3;
 import Admin.Administradores_3;
 import Conexion.ConexionSQL;
@@ -645,7 +645,7 @@ public final class Usuarios_RH_3 extends javax.swing.JFrame {
 
     private void IdRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdRHActionPerformed
         // TODO add your handling code here:
-        RH_Empleados_4 kk = new RH_Empleados_4();
+        RH_EADM_4 kk = new RH_EADM_4();
         kk.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_IdRHActionPerformed

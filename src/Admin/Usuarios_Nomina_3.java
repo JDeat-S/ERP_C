@@ -5,7 +5,7 @@
  */
 package Admin;
 
-import RH.RH_Empleados_4;
+import Admin.RH_EADM_4;
 import Admin.AltasZyS_3;
 import Admin.Administradores_3;
 import Conexion.ConexionSQL;
@@ -545,7 +545,7 @@ public final class Usuarios_Nomina_3 extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        RH_Empleados_4 kk = new RH_Empleados_4();
+        RH_EADM_4 kk = new RH_EADM_4();
         kk.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed

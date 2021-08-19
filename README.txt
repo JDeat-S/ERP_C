@@ -1,16 +1,38 @@
+Ver 1.0.7
+Cambios 18/08/2021
+Ventana Administradores > Interface RH
+-Ahora se puede volver a la pestaña de administradores desde interface RH
+(para esto se necesita iniciar sesion como administrador)
+
+Ventana RH > Registro y tabla general
+-Se cambio el color por defecto
+
+Ventana RH > tabla IMSS
+-Se añadieron los campos de Apellido paterno, materno y nombre(s) en la tabla
+-Se corrigio el tamaño de la tabla
+
+Ventana RH > IMSS
+- Se añadio campos apellido paterno, materno y nombre(s) para llenar
+Cambios BD
+-Se añadieron campos Apellido paterno y materno en IMSS
+
+AVISO
+EL DIA 18/08/2021 LA VENTANA NOMINA NO ESTA DISPONIBLE POR EL COMPARTIMIENTO DE DATOS ENTRE RH Y NOMINA A PARTE DE SUS CAMBIOS
+
+
 Ver 1.0.6
 Cambios 16-17/08/2021
 
 Ventana RH > tabla general
--Se añadieron los campos de Apellido paterno, materno y nombre en la tabla
+-Se añadieron los campos de Apellido paterno, materno y nombre(s) en la tabla
 -Se movio entra imss al inicio de la tabla
 -La tabla selecciona correctamente dependiento del campo
 Ventana RH > Registro
--Se añadieron los campos de Apellido paterno, materno y nombre para llenar
+-Se añadieron los campos de Apellido paterno, materno y nombre(s) para llenar
 -Se subieron todos lo botones cerrar sesion
 
 Cambios en la BD
--Se añadieron campo apellido M y apellido P
+-Se añadieron campo apellido M, apellido P y nombre(s) en empleados
 -Se importo la base datos del dia 16-08-2021(mayoria de datos que venian en el)
 -Se corrigieron servicios
 

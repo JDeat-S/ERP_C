@@ -56,7 +56,7 @@ FondoPanel fondo = new FondoPanel();
             }
         });
 
-        jLabel1.setText("Ver 1.0.6");
+        jLabel1.setText("Ver 1.0.7");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
