@@ -1,3 +1,33 @@
+Ver 1.0.9
+Cambios 20/08/2021
+Ventana RH
+-Se añadio ventana con Registro y tablas para
+	-Tortas
+	-Estadia
+En ventana RH > Estadias podras registrar:
+# Exp
+Apellido P
+Apellido M
+Nombre(s)
+# Celular
+Carrera
+Tipo de carrera
+CURP
+Status
+Fecha de ingreso
+Fecha de termino
+Carta de presentación
+Carta de aceptación
+Programa de actividades
+1er avance
+2do avance
+3er avance
+Carta termino
+Autorización del empastado
+Evaluación
+Observaciones
+
+
 Ver 1.0.8
 Cambios 19/08/2021
 
