@@ -1,3 +1,29 @@
+
+Ver 1.0.8
+Cambios 19/08/2021
+
+Ventana Administradores > Interface Nomina
+-Ahora se puede volver a la pestaña de administradores desde interface Nomina
+(para esto se necesita iniciar sesion como administrador)
+
+Ventana Nomina > Nomina, Tabla detallada, Tabla pagos, taller, Tabla taller, prestamos y tabla prestamos
+-ahora se comparten los datos correctamente en tabla datos con apellido paterno, materno y nombre(s):
+	-Nomina
+	-Taller
+	-Prestamos
+-Se añadio los campos Apellido P, Apellido M y Nombre(s) para llenar en:
+	-Nomina
+	-Taller
+	-Prestamos	
+-Ahora muestra Campos Apellido P, Apellido M y Nombre(s) en las tablas:
+	-Nomina
+	-Pagos
+	-Taller
+	-Prestamos
+-Se corrigieron el tamaño de todas las tablas
+-ahora comparte los datos Apellido P y M registrados en empleados en cualquier pestaña de nomina
+Actualmente solo se puede filtrar por nombres en prestamos y ordenes de taller
+
 Ver 1.0.7
 Cambios 18/08/2021
 Ventana Administradores > Interface RH

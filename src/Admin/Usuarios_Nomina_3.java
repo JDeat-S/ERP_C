@@ -5,12 +5,8 @@
  */
 package Admin;
 
-import Admin.RH_EADM_4;
-import Admin.AltasZyS_3;
-import Admin.Administradores_3;
 import Conexion.ConexionSQL;
 import Inicio.Login_2;
-import Nomina.Nomina_5;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -552,7 +548,7 @@ public final class Usuarios_Nomina_3 extends javax.swing.JFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-        Nomina_5 kk = new Nomina_5();
+        AdminNomina_5 kk = new AdminNomina_5();
         kk.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem5ActionPerformed

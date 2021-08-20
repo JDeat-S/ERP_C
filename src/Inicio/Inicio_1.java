@@ -5,7 +5,6 @@
  */
 package Inicio;
 
-import Admin.Usuarios_RH_3;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -23,7 +22,7 @@ FondoPanel fondo = new FondoPanel();
     public Inicio_1() {
         initComponents();
         this.setLocationRelativeTo(null);
-        setIconImage(new ImageIcon(Usuarios_RH_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Inicio_1.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         
     }
 
@@ -56,7 +55,7 @@ FondoPanel fondo = new FondoPanel();
             }
         });
 
-        jLabel1.setText("Ver 1.0.7");
+        jLabel1.setText("Ver 1.0.8");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

@@ -7,7 +7,6 @@ import Inicio.Login_2;
 import ZyS.Servicios;
 import ZyS.Zonas;
 import java.awt.HeadlessException;
-import java.awt.Rectangle;
 import java.awt.event.ItemEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -51,7 +50,14 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         FiltrosZonas xd = new FiltrosZonas();
         DefaultComboBoxModel modelzonass = new DefaultComboBoxModel(xd.mostrarzonas());
         FiltroSZGen.setModel(modelzonass);
-
+        LabelF2.setVisible(false);
+        FiltroCurpGen.setVisible(false);
+        FiltroFDI.setVisible(false);
+        FiltroNSSGen.setVisible(false);
+        FiltroSZGen.setVisible(false);
+        FiltroStatus.setVisible(false);
+        FiltroServGen.setVisible(false);
+        FiltroZGe.setVisible(false);
         setIconImage(new ImageIcon(RH_Empleados_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
@@ -335,8 +341,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Observaciones");
 
 //Anchos
-            int[] anchos = {/*idbd*/10, /*NEXP*/10, /*AP*/60, /*AM*/60, /*NAME*/80, /*GEN*/30, /*FDI*/50, /*ZONA*/50, /*NSS*/65, /*RFC*/60,
-                /*CURP*/60, /*puesto*/60, /*salario*/50, /*Status*/65, /*FDB*/70, /*OBS*/2000};
+            int[] anchos = {/*idbd*/10, /*NEXP*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80, /*GEN*/ 30, /*FDI*/ 50, /*ZONA*/ 50, /*NSS*/ 65, /*RFC*/ 60,
+                /*CURP*/ 60, /*puesto*/ 60, /*salario*/ 50, /*Status*/ 65, /*FDB*/ 70, /*OBS*/ 2000};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -362,29 +368,17 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         //Buscar empleado
         String FiltroNGe = FiltroNG.getText();
         String where = "select * from empleados";
-        LabelF2.setVisible(false);
-        FiltroCurpGen.setVisible(false);
-        FiltroFDI.setVisible(false);
-        FiltroNSSGen.setVisible(false);
-        FiltroSZGen.setVisible(false);
-        FiltroStatus.setVisible(false);
-        FiltroServGen.setVisible(false);
-        FiltroZGe.setVisible(false);
-        /*        String FiltroZGen = FiltroZGe.getSelectedItem().toString();
+/*
+        String FiltroZGen = FiltroZGe.getSelectedItem().toString();
         String FiltroSGen = FiltroServGen.getSelectedItem().toString();
         String FiltroFDIGen = FiltroFDI.getText();
         String FiltrocurpGen = FiltroCurpGen.getText();
         String FiltroNSSGen = this.FiltroNSSGen.getText();
         String FiltroStatusGen = FiltroStatus.getSelectedItem().toString();
-         */
+*/
         if (!"".equals(FiltroNGe)) {
             where = "Select * from empleados where `Nombre(s)` LIKE '%" + FiltroNGe + "%'";
-        }
-        /*else if (!"".equals(FiltroZGen)) {
-            where = "select * from empleados where `Zona` LIKE '%" + FiltroZGen + "%'";
-        } else if (!"".equals(FiltroSGen)) {
-            where = "select * from empleados Where `Servicio` LIKE '%" + FiltroSGen + "%'";
-        } else if (!"".equals(FiltroFDIGen)) {
+        }  /*else if (!"".equals(FiltroFDIGen)) {
             where = "select * from empleados Where `Fecha ingreso` LIKE '%" + FiltroFDIGen + "%'";
         } else if (!"".equals(FiltrocurpGen)) {
             where = "select * from empleados Where `CURP` LIKE '%" + FiltrocurpGen + "%'";
@@ -392,8 +386,12 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             where = "select * from empleados Where `NSS` LIKE '%" + FiltroNSSGen + "%'";
         } else if (!"".equals(FiltroStatusGen)) {
             where = "select * from empleados Where `Status` LIKE '%" + FiltroStatusGen + "%'";
-        }
-         */
+        } else if (!"".equals(FiltroZGen)) {
+            where = "select * from empleados where `Zona` LIKE '%" + FiltroZGen + "%'";
+        } else if (!"".equals(FiltroSGen)) {
+            where = "select * from empleados Where `Servicio` LIKE '%" + FiltroSGen + "%'";
+        }*/
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
