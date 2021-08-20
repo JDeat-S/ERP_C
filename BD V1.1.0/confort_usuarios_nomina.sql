@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
--- Host: 192.168.1.2    Database: confort
+-- Host: 192.168.3.10    Database: confort
 -- ------------------------------------------------------
 -- Server version	8.0.22
 
@@ -16,27 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `zona`
+-- Table structure for table `usuarios_nomina`
 --
 
-DROP TABLE IF EXISTS `zona`;
+DROP TABLE IF EXISTS `usuarios_nomina`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `zona` (
-  `idZona` int NOT NULL AUTO_INCREMENT,
-  `Zonas` varchar(45) NOT NULL,
-  PRIMARY KEY (`idZona`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `usuarios_nomina` (
+  `id_Usuario_N` int NOT NULL AUTO_INCREMENT,
+  `Nombre(s)_N` varchar(45) DEFAULT NULL,
+  `Apellido_P_N` varchar(45) DEFAULT NULL,
+  `Apellido_M_N` varchar(45) DEFAULT NULL,
+  `Fecha_de_registro_N` timestamp NULL DEFAULT NULL,
+  `mod_N` timestamp NULL DEFAULT NULL,
+  `Usuario_N` varchar(45) DEFAULT NULL,
+  `Pass_N` blob,
+  PRIMARY KEY (`id_Usuario_N`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `zona`
+-- Dumping data for table `usuarios_nomina`
 --
 
-LOCK TABLES `zona` WRITE;
-/*!40000 ALTER TABLE `zona` DISABLE KEYS */;
-INSERT INTO `zona` VALUES (1,'Sur 1'),(2,'Sur 2'),(3,'Norte'),(4,'Foraneos Acapulco'),(5,'Poniente'),(6,'Foraneos Puebla'),(7,'Foraneos Toluca');
-/*!40000 ALTER TABLE `zona` ENABLE KEYS */;
+LOCK TABLES `usuarios_nomina` WRITE;
+/*!40000 ALTER TABLE `usuarios_nomina` DISABLE KEYS */;
+INSERT INTO `usuarios_nomina` VALUES (1,'Teresa','','','2021-05-01 00:54:06','2021-08-10 16:39:15','Nomina',_binary 'Nomina');
+/*!40000 ALTER TABLE `usuarios_nomina` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-19 21:22:46
+-- Dump completed on 2021-08-20 17:22:38

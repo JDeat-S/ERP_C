@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
--- Host: 192.168.1.2    Database: confort
+-- Host: 192.168.3.10    Database: confort
 -- ------------------------------------------------------
 -- Server version	8.0.22
 
@@ -25,8 +25,8 @@ DROP TABLE IF EXISTS `taller`;
 CREATE TABLE `taller` (
   `idTaller` int NOT NULL AUTO_INCREMENT,
   `Fecha de expedicion` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `Apellido P` varchar(45) COLLATE utf8_bin NOT NULL,
-  `Apellido M` varchar(45) COLLATE utf8_bin NOT NULL,
+  `Apellido P` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Apellido M` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `Nombre(s)` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `Zona` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `Servicio` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
@@ -66,4 +66,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-19 21:22:43
+-- Dump completed on 2021-08-20 17:22:41

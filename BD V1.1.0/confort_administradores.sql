@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
--- Host: 192.168.1.2    Database: confort
+-- Host: 192.168.3.10    Database: confort
 -- ------------------------------------------------------
 -- Server version	8.0.22
 
@@ -16,33 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `usuarios_nomina`
+-- Table structure for table `administradores`
 --
 
-DROP TABLE IF EXISTS `usuarios_nomina`;
+DROP TABLE IF EXISTS `administradores`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `usuarios_nomina` (
-  `id_Usuario_N` int NOT NULL AUTO_INCREMENT,
-  `Nombre(s)_N` varchar(45) DEFAULT NULL,
-  `Apellido_P_N` varchar(45) DEFAULT NULL,
-  `Apellido_M_N` varchar(45) DEFAULT NULL,
-  `Fecha_de_registro_N` timestamp NULL DEFAULT NULL,
-  `mod_N` timestamp NULL DEFAULT NULL,
-  `Usuario_N` varchar(45) DEFAULT NULL,
-  `Pass_N` blob,
-  PRIMARY KEY (`id_Usuario_N`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+CREATE TABLE `administradores` (
+  `id_Administrador` int NOT NULL AUTO_INCREMENT,
+  `Apellido_P_Adm` varchar(45) DEFAULT NULL,
+  `Apellido_M_Adm` varchar(45) DEFAULT NULL,
+  `Nombre(s)_Adm` varchar(45) DEFAULT NULL,
+  `mod` timestamp NULL DEFAULT NULL,
+  `Fecha_de_registro_Adm` timestamp NULL DEFAULT NULL,
+  `Usuario_Adm` varchar(45) DEFAULT NULL,
+  `Pass_Adm` blob,
+  PRIMARY KEY (`id_Administrador`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `usuarios_nomina`
+-- Dumping data for table `administradores`
 --
 
-LOCK TABLES `usuarios_nomina` WRITE;
-/*!40000 ALTER TABLE `usuarios_nomina` DISABLE KEYS */;
-INSERT INTO `usuarios_nomina` VALUES (1,'Teresa','','','2021-05-01 00:54:06','2021-08-10 16:39:15','Nomina',_binary 'Nomina');
-/*!40000 ALTER TABLE `usuarios_nomina` ENABLE KEYS */;
+LOCK TABLES `administradores` WRITE;
+/*!40000 ALTER TABLE `administradores` DISABLE KEYS */;
+INSERT INTO `administradores` VALUES (28,'Neri','Milpas','Cristina','2021-08-10 16:38:54','2021-07-04 20:23:39','Admin',_binary 'Admin');
+/*!40000 ALTER TABLE `administradores` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-19 21:22:46
+-- Dump completed on 2021-08-20 17:22:55

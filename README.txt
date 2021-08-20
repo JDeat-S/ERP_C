@@ -1,3 +1,35 @@
+Ver 1.1.0
+Cambios 20/08/2021
+Ventana RH
+-Se añadio ventana con Registro y tablas para
+	-Estadia
+En ventana RH > Estadias podras registrar:
+-# Exp
+-Apellido P
+-Apellido M
+-Nombre(s)
+-# Celular
+-Carrera
+-Tipo de carrera
+-CURP
+-Status
+-Fecha de ingreso
+-Fecha de termino
+-Carta de presentación
+-Carta de aceptación
+-Programa de actividades
+-1er avance
+-2do avance
+-3er avance
+-Carta termino
+-Autorización del empastado
+-Evaluación
+-Observaciones
+
+Cambios BD
+-Se creo una tabla para llenar los campos de estadia
+
+
 Ver 1.0.8
 Cambios 19/08/2021
 
