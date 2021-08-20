@@ -7,8 +7,6 @@ package Admin;
 
 import Conexion.ConexionSQL;
 import Inicio.Login_2;
-import Nomina.Nomina_5;
-import Admin.RH_EADM_4;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.sql.Connection;
@@ -652,7 +650,7 @@ public final class Administradores_3 extends javax.swing.JFrame {
 
     private void IDNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDNActionPerformed
         // TODO add your handling code here:
-        Nomina_5 kk = new Nomina_5();
+        AdminNomina_5 kk = new AdminNomina_5();
         kk.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_IDNActionPerformed

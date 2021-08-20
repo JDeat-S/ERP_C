@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 //
-package Nomina;
+package Admin;
 
-import Admin.Administradores_3;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
@@ -36,7 +35,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class Nomina_5 extends javax.swing.JFrame {
+public final class AdminNomina_5 extends javax.swing.JFrame {
 
     int a = 1;
     int Pa = 10;
@@ -80,7 +79,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
     /**
      * Creates new form Nomina_4
      */
-    public Nomina_5() {
+    public AdminNomina_5() {
         initComponents();
         LabelPrestamos.setVisible(false);
         BE.setVisible(false);
@@ -168,8 +167,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         BAMNom.setText("");
         BAppag.setVisible(false);
         Bampag.setVisible(false);
-        Volver.setVisible(false);
-        setIconImage(new ImageIcon(Nomina_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(AdminNomina_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         
     }
 
@@ -5837,7 +5835,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
             año.setDate(date);
 
         } catch (ParseException ex) {
-            Logger.getLogger(Nomina_5.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminNomina_5.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_pagoMouseClicked
 
@@ -6001,7 +5999,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
             obs.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(Nomina_5.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminNomina_5.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_TnomMouseClicked
 
@@ -10050,23 +10048,21 @@ public final class Nomina_5 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Nomina_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminNomina_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Nomina_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminNomina_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Nomina_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminNomina_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Nomina_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminNomina_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Nomina_5().setVisible(true);
+                new AdminNomina_5().setVisible(true);
             }
         });
     }

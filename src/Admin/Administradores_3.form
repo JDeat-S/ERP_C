@@ -247,7 +247,7 @@
                                       <Component id="txtAP" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtAM" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtname" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="FR" alignment="0" pref="148" max="32767" attributes="0"/>
+                                      <Component id="FR" alignment="0" max="32767" attributes="0"/>
                                       <Component id="UM" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                               </Group>

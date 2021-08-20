@@ -1,6 +1,5 @@
 package Admin;
 
-import Admin.Administradores_3;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
@@ -8,7 +7,6 @@ import Inicio.Login_2;
 import ZyS.Servicios;
 import ZyS.Zonas;
 import java.awt.HeadlessException;
-import java.awt.Rectangle;
 import java.awt.event.ItemEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
