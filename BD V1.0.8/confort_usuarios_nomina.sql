@@ -16,37 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `pago`
+-- Table structure for table `usuarios_nomina`
 --
 
-DROP TABLE IF EXISTS `pago`;
+DROP TABLE IF EXISTS `usuarios_nomina`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `pago` (
-  `idPago` int NOT NULL AUTO_INCREMENT,
-  `# Folio` varchar(45) NOT NULL,
-  `Nombre Completo` varchar(45) NOT NULL,
-  `Bono` varchar(45) NOT NULL,
-  `Cuenta` varchar(45) NOT NULL,
-  `Banco` varchar(45) NOT NULL,
-  `Zona` varchar(45) NOT NULL,
-  `Servicio` varchar(45) NOT NULL,
-  `Quincena` varchar(45) NOT NULL,
-  `Año` varchar(45) NOT NULL,
-  `Sueldo Quincenal` varchar(45) NOT NULL,
-  `Deposito` varchar(45) NOT NULL,
-  PRIMARY KEY (`idPago`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+CREATE TABLE `usuarios_nomina` (
+  `id_Usuario_N` int NOT NULL AUTO_INCREMENT,
+  `Nombre(s)_N` varchar(45) DEFAULT NULL,
+  `Apellido_P_N` varchar(45) DEFAULT NULL,
+  `Apellido_M_N` varchar(45) DEFAULT NULL,
+  `Fecha_de_registro_N` timestamp NULL DEFAULT NULL,
+  `mod_N` timestamp NULL DEFAULT NULL,
+  `Usuario_N` varchar(45) DEFAULT NULL,
+  `Pass_N` blob,
+  PRIMARY KEY (`id_Usuario_N`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `pago`
+-- Dumping data for table `usuarios_nomina`
 --
 
-LOCK TABLES `pago` WRITE;
-/*!40000 ALTER TABLE `pago` DISABLE KEYS */;
-INSERT INTO `pago` VALUES (15,'','','0','','','','','1ra Quincena de Agosto','2021','0','0'),(16,'','PEDROZA ARGAEZ JULIO CESAR','500','.','.','SUR 2','KOWLAAN','1ra Quincena de Agosto','2021','1500','1050.0'),(17,'','PEDROZA ARGAEZ JULIO CESAR','0','.','.','SUR 2','KOWLAAN','1ra Quincena de Agosto','2021','1500','878.02'),(18,'','PEDROZA ARGAEZ JULIO CESAR','500','.','.','SUR 2','KOWLAAN','1ra Quincena de Agosto','2021','1500','1739.6866666666665'),(19,'','','0','','','','','Selecciona una Quincena','2021','0','0');
-/*!40000 ALTER TABLE `pago` ENABLE KEYS */;
+LOCK TABLES `usuarios_nomina` WRITE;
+/*!40000 ALTER TABLE `usuarios_nomina` DISABLE KEYS */;
+INSERT INTO `usuarios_nomina` VALUES (1,'Teresa','','','2021-05-01 00:54:06','2021-08-10 16:39:15','Nomina',_binary 'Nomina');
+/*!40000 ALTER TABLE `usuarios_nomina` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -58,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-17 17:42:28
+-- Dump completed on 2021-08-19 21:22:46

@@ -24,21 +24,23 @@ DROP TABLE IF EXISTS `prestamos`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `prestamos` (
   `idprestamos` int NOT NULL AUTO_INCREMENT,
-  `Fecha de solicitud` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Mes` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Nombre Completo` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Zona` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Servicio` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Cantidad` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Interes` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Monto total` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Por quincena` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Carpeta de descuentos` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Fecha liberado` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Status` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Metodo` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `Fecha de solicitud` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Mes` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Apellido P` varchar(45) COLLATE utf8_bin NOT NULL,
+  `Apellido M` varchar(45) COLLATE utf8_bin NOT NULL,
+  `Nombre(s)` varchar(70) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Zona` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Servicio` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Cantidad` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Interes` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Monto total` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Por quincena` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Carpeta de descuentos` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Fecha liberado` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Status` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Metodo` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`idprestamos`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +49,7 @@ CREATE TABLE `prestamos` (
 
 LOCK TABLES `prestamos` WRITE;
 /*!40000 ALTER TABLE `prestamos` DISABLE KEYS */;
-INSERT INTO `prestamos` VALUES (35,'04/08/2021','Agosto','PEDROZA ARGAEZ JULIO CESAR','SUR 2','KOWLAAN','2000','300.0','2300.0','575.0','','19/08/2021','AUTORIZADO','BBVA');
+INSERT INTO `prestamos` VALUES (37,'','Enero','','','','','','0','0','0','0','','','','');
 /*!40000 ALTER TABLE `prestamos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-17 17:42:28
+-- Dump completed on 2021-08-19 21:22:47

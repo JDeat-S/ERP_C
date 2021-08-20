@@ -25,7 +25,9 @@ DROP TABLE IF EXISTS `nomina`;
 CREATE TABLE `nomina` (
   `idNomina` int NOT NULL AUTO_INCREMENT,
   `#_Folio` varchar(45) NOT NULL,
-  `Nombre Completo` varchar(45) NOT NULL,
+  `Apellido P` varchar(45) NOT NULL,
+  `Apellido M` varchar(45) NOT NULL,
+  `Nombre(s)` varchar(90) NOT NULL,
   `Cuenta_Nom` varchar(45) NOT NULL,
   `Banco_Nom` varchar(45) NOT NULL,
   `Zona_Nom` varchar(45) NOT NULL,
@@ -83,7 +85,7 @@ CREATE TABLE `nomina` (
 
 LOCK TABLES `nomina` WRITE;
 /*!40000 ALTER TABLE `nomina` DISABLE KEYS */;
-INSERT INTO `nomina` VALUES (26,'','','','','','','0','0.0','1ra Quincena de Agosto','2021','A','A','A','A','A','A','A','A','A','A','A','A','A','A','A','.','0','0','0','','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',''),(27,'','PEDROZA ARGAEZ JULIO CESAR','.','.','SUR 2','KOWLAAN','1500','100.0','1ra Quincena de Agosto','2021','A','A','A','F','A','A','D','D','A','A','A','D','D','A','A','.','500','0','0','0','0','0','500','0','0','0','0','0','0','0','0','0','0','0','0','0','00','1050.0',''),(28,'','PEDROZA ARGAEZ JULIO CESAR','.','.','SUR 2','KOWLAAN','1500','100.0','1ra Quincena de Agosto','2021','A','A','A','A','A','A','D','F','A','A','A','A','A','D','D','.','95.0','26.98','0','','100','0','500','0','95.00','0','0','0','0','0','0','0','0','0','0','50','0','878.02',''),(29,'','PEDROZA ARGAEZ JULIO CESAR','.','.','SUR 2','KOWLAAN','1500','103.33333333333333','1ra Quincena de Agosto','2021','A','V','V','A','A','A','A','A','A','A','A','D','D','V','V','.','0','26.98','120','CAFE','.','0','500','0','0','0','0','0','0','0','0','0','0','0','0','0','200','1739.6866666666665',''),(30,'','','','','','','0','0','Selecciona una Quincena','2021','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','0','26.98','0','','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','');
+INSERT INTO `nomina` VALUES (26,'','','','','','','','','0','0.0','1ra Quincena de Agosto','2021','A','A','A','A','A','A','A','A','A','A','A','A','A','A','A','.','0','0','0','','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',''),(27,'','','','PEDROZA ARGAEZ JULIO CESAR','.','.','SUR 2','KOWLAAN','1500','100.0','1ra Quincena de Agosto','2021','A','A','A','F','A','A','D','D','A','A','A','D','D','A','A','.','500','0','0','0','0','0','500','0','0','0','0','0','0','0','0','0','0','0','0','0','00','1050.0',''),(28,'','','','PEDROZA ARGAEZ JULIO CESAR','.','.','SUR 2','KOWLAAN','1500','100.0','1ra Quincena de Agosto','2021','A','A','A','A','A','A','D','F','A','A','A','A','A','D','D','.','95.0','26.98','0','','100','0','500','0','95.00','0','0','0','0','0','0','0','0','0','0','50','0','878.02',''),(29,'','','','PEDROZA ARGAEZ JULIO CESAR','.','.','SUR 2','KOWLAAN','1500','103.33333333333333','1ra Quincena de Agosto','2021','A','V','V','A','A','A','A','A','A','A','A','D','D','V','V','.','0','26.98','120','CAFE','.','0','500','0','0','0','0','0','0','0','0','0','0','0','0','0','200','1739.6866666666665',''),(30,'','','','','','','','','0','0','Selecciona una Quincena','2021','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','0','26.98','0','','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','');
 /*!40000 ALTER TABLE `nomina` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -96,4 +98,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-17 17:42:28
+-- Dump completed on 2021-08-19 21:22:46
