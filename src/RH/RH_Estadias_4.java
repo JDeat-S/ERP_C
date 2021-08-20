@@ -27,7 +27,13 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
 
     public RH_Estadias_4() {
         initComponents();
+         LabelF1.setVisible(false);
+        FilAP.setVisible(false);
+        FilAM.setVisible(false);
+        Filname.setVisible(false);
+        idest.setVisible(false);
         MDE();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -54,9 +60,112 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
         Fdiest.setText("");
         Fdtest.setText("");
         Obsest.setText("");
+        idest.setText("");
     }
+//editar
 
+    private void EditarEst() {
+        int id = Integer.parseInt(idest.getText());
+        String TDC = TDCest.getSelectedItem().toString();
+        String STAT = Statusest.getSelectedItem().toString();
+        String Cdp = null;
+        if (Cdpest.isSelected() == true) {
+            Cdp = "x";
+        } else if (Cdpest.isSelected() == false) {
+            Cdp = "";
+        }
+        String Cda = null;
+        if (Cdaest.isSelected() == true) {
+            Cda = "x";
+        } else if (Cdaest.isSelected() == false) {
+            Cda = "";
+        }
+        String Pda = null;
+        if (Pdaest.isSelected() == true) {
+            Pda = "x";
+        } else if (Pdaest.isSelected() == false) {
+            Pda = "";
+        }
+        String Pa = null;
+        if (Paest.isSelected() == true) {
+            Pa = "x";
+        } else if (Paest.isSelected() == false) {
+            Pa = "";
+        }
+        String Sa = null;
+        if (Saest.isSelected() == true) {
+            Sa = "x";
+        } else if (Saest.isSelected() == false) {
+            Sa = "";
+        }
+        String Ta = null;
+        if (Taest.isSelected() == true) {
+            Ta = "x";
+        } else if (Taest.isSelected() == false) {
+            Ta = "";
+        }
+        String Ct = null;
+        if (Ctest.isSelected() == true) {
+            Ct = "x";
+        } else if (Ctest.isSelected() == false) {
+            Ct = "";
+        }
+        String Ade = null;
+        if (Adeest.isSelected() == true) {
+            Ade = "x";
+        } else if (Adeest.isSelected() == false) {
+            Ade = "";
+        }
+        String Ev = null;
+        if (Evest.isSelected() == true) {
+            Ev = "x";
+        } else if (Evest.isSelected() == false) {
+            Ev = "";
+        }
+        String SQL = " UPDATE `confort`.`estadia` SET `# Exp` = ?, "
+                + "`Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?,"
+                + " `# Celular` = ?, `Carrera` = ?, `Tipo de carrera` = ?, `CURP` = ?,"
+                + " `Status` = ?, `Fecha de ingreso` = ?, `Fecha de termino` = ?,"
+                + " `Carta de precentacion` = ?, `Carta de aceptacion` = ?,"
+                + " `Programa de actividades` = ?, `1er avance` = ?,"
+                + " `2do avance` = ?, `3er avance` = ?, `Carta termino` = ?,"
+                + " `Autorizacion empastado` = ?, `Evaluacion` = ?, `Observaciones` = ?"
+                + " WHERE (`idEstadias` = ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setString(1, NexpEst.getText());
+            pst.setString(2, APEst.getText());
+            pst.setString(3, AMest.getText());
+            pst.setString(4, nameest.getText());
+            pst.setString(5, NCest.getText());
+            pst.setString(6, Carrest.getText());
+            pst.setString(7, TDC);
+            pst.setString(8, Curpest.getText());
+            pst.setString(9, STAT);
+            pst.setString(10, Fdiest.getText());
+            pst.setString(11, Fdtest.getText());
+            pst.setString(12, Cdp);
+            pst.setString(13, Cda);
+            pst.setString(14, Pda);
+            pst.setString(15, Pa);
+            pst.setString(16, Sa);
+            pst.setString(17, Ta);
+            pst.setString(18, Ct);
+            pst.setString(19, Ade);
+            pst.setString(20, Ev);
+            pst.setString(21, Obsest.getText());
+            pst.setInt(22, id);
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Estadia Modificada");
+
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al modificar Estadia: " + e.getMessage());
+        }
+
+    }
 //agregar
+
     public void AgregarE() {
         String TDC = TDCest.getSelectedItem().toString();
         String STAT = Statusest.getSelectedItem().toString();
@@ -282,6 +391,7 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
         Obsest = new javax.swing.JTextArea();
         add = new javax.swing.JButton();
         mod = new javax.swing.JButton();
+        idest = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -522,7 +632,10 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(idest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel13)
@@ -555,7 +668,11 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(idest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13)
@@ -569,7 +686,12 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
 
         jLabel14.setText("Filtrat por:");
 
-        Filtroest.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Apellido P", "Apellido M", "Nombre(s)" }));
+        Filtroest.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona Filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
+        Filtroest.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroestItemStateChanged(evt);
+            }
+        });
 
         LabelF1.setText("jLabel15");
 
@@ -602,6 +724,11 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22"
             }
         ));
+        Testadia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TestadiaMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(Testadia);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -613,13 +740,13 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Filtroest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(LabelF1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FilAP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(17, 17, 17)
                 .addComponent(FilAM, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -692,8 +819,154 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
 
     private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
         // TODO add your handling code here:
+        EditarEst();
+        MDE();
         cleanest();
     }//GEN-LAST:event_modActionPerformed
+
+    private void TestadiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TestadiaMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) Testadia.getModel();
+        try {
+
+            int fila = Testadia.getSelectedRow();
+            idest.setText(String.valueOf(Testadia.getValueAt(fila, 0)));
+            NexpEst.setText(String.valueOf(Testadia.getValueAt(fila, 1)));
+            APEst.setText(String.valueOf(Testadia.getValueAt(fila, 2)));
+            AMest.setText(String.valueOf(Testadia.getValueAt(fila, 3)));
+            nameest.setText(String.valueOf(Testadia.getValueAt(fila, 4)));
+            NCest.setText(String.valueOf(Testadia.getValueAt(fila, 5)));
+            Carrest.setText(String.valueOf(Testadia.getValueAt(fila, 6)));
+            String combo1 = model.getValueAt(fila, 7).toString();
+            for (int i = 0; i < TDCest.getItemCount(); i++) {
+                if (TDCest.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    TDCest.setSelectedIndex(i);
+                }
+            }
+            Curpest.setText(String.valueOf(Testadia.getValueAt(fila, 8)));
+            //Combobo2
+            String combo2 = model.getValueAt(fila, 9).toString();
+            for (int i = 0; i < Statusest.getItemCount(); i++) {
+                if (Statusest.getItemAt(i).equalsIgnoreCase(combo2)) {
+                    Statusest.setSelectedIndex(i);
+                }
+            }
+            Obsest.setText(String.valueOf(Testadia.getValueAt(fila, 21)));
+            Fdiest.setText(String.valueOf(Testadia.getValueAt(fila, 10)));
+            Fdtest.setText(String.valueOf(Testadia.getValueAt(fila, 11)));
+
+            int id = Integer.parseInt(Testadia.getValueAt(fila, 0).toString());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select * from estadia where idEstadias =?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+            while (rs.next()) {
+                if (rs.getString("Carta de precentacion").equals("x")) {
+                    Cdpest.setSelected(true);
+
+                } else if (rs.getString("Carta de precentacion").equals("")) {
+                    Cdpest.setSelected(false);
+                }
+                if (rs.getString("Carta de aceptacion").equals("x")) {
+                    Cdaest.setSelected(true);
+                } else if (rs.getString("Carta de aceptacion").equals("")) {
+                    Cdaest.setSelected(false);
+                }
+                if (rs.getString("Programa de actividades").equals("x")) {
+                    Pdaest.setSelected(true);
+                } else if (rs.getString("Programa de actividades").equals("")) {
+                    Pdaest.setSelected(false);
+                }
+                if (rs.getString("1er avance").equals("x")) {
+                    Paest.setSelected(true);
+                } else if (rs.getString("1er avance").equals("")) {
+                    Paest.setSelected(false);
+                }
+                if (rs.getString("2do avance").equals("x")) {
+                    Saest.setSelected(true);
+                } else if (rs.getString("2do avance").equals("")) {
+                    Saest.setSelected(false);
+                }
+                if (rs.getString("3er avance").equals("x")) {
+                    Taest.setSelected(true);
+                } else if (rs.getString("3er avance").equals("")) {
+                    Taest.setSelected(false);
+                }
+                if (rs.getString("Carta termino").equals("x")) {
+                    Ctest.setSelected(true);
+                } else if (rs.getString("Carta termino").equals("")) {
+                    Ctest.setSelected(false);
+                }
+                if (rs.getString("Autorizacion empastado").equals("x")) {
+                    Adeest.setSelected(true);
+                } else if (rs.getString("Autorizacion empastado").equals("")) {
+                    Adeest.setSelected(false);
+                }
+                if (rs.getString("Evaluacion").equals("x")) {
+                    Evest.setSelected(true);
+                } else if (rs.getString("Evaluacion").equals("")) {
+                    Evest.setSelected(false);
+
+                }
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+
+        }
+
+    }//GEN-LAST:event_TestadiaMouseClicked
+
+    private void FiltroestItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroestItemStateChanged
+        // TODO add your handling code here:
+        String dt = (String) Filtroest.getSelectedItem();
+        if (dt.equals("Selecciona Filtro")) {
+            LabelF1.setText("");
+            LabelF1.setVisible(false);
+            FilAP.setText("");
+            FilAP.setVisible(false);
+            FilAM.setVisible(false);
+            FilAM.setText("");
+            Filname.setVisible(false);
+            Filname.setText("");
+            MDE();
+        }
+        if (dt.equals("Apellido P")) {
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar Apellido P:");
+            FilAP.setText("");
+            FilAP.setVisible(true);
+            FilAM.setVisible(false);
+            FilAM.setText("");
+            Filname.setVisible(false);
+            Filname.setText("");
+            MDE();
+        }
+        if (dt.equals("Apellido M")) {
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar Apellido M:");
+            FilAP.setText("");
+            FilAP.setVisible(false);
+            FilAM.setVisible(true);
+            FilAM.setText("");
+            Filname.setVisible(false);
+            Filname.setText("");
+            MDE();
+        }
+        if (dt.equals("Filtrar por Nombre(s)")) {
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar Nombre(s):");
+            FilAP.setText("");
+            FilAP.setVisible(false);
+            FilAM.setVisible(false);
+            FilAM.setText("");
+            Filname.setVisible(true);
+            Filname.setText("");
+            MDE();
+        }
+    }//GEN-LAST:event_FiltroestItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -709,16 +982,24 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RH_Estadias_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RH_Estadias_4.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RH_Estadias_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RH_Estadias_4.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RH_Estadias_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RH_Estadias_4.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RH_Estadias_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RH_Estadias_4.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -758,6 +1039,7 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
     private javax.swing.JCheckBox Taest;
     private javax.swing.JTable Testadia;
     private javax.swing.JButton add;
+    private javax.swing.JTextField idest;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -2,7 +2,6 @@ Ver 1.1.0
 Cambios 20/08/2021
 Ventana RH
 -Se añadio ventana con Registro y tablas para
-	-Tortas
 	-Estadia
 En ventana RH > Estadias podras registrar:
 -# Exp
@@ -26,39 +25,6 @@ En ventana RH > Estadias podras registrar:
 -Autorización del empastado
 -Evaluación
 -Observaciones
-
-En ventana RH > Tortas podras registrar:
--# EXP.
--Apellido P
--Apellido M
--Nombres(s)
--# Casa
--# Recados
--# Celular	
--RFC
--NSS
--CURP
--Documentos originales	
--Documentos faltantes
--Documentos entregados
--Forma de pago
--Sueldo
--Bono
--Servicio 
--Status
--Fecha entrevista
--Fecha ingreso
--Fecha ultimo dia laborado
--Fecha firma baja	
--BAJA FIRMADA
--FINIQUITO
--FECHA RE-INGRESO
--CAMBIO DE SERVICIO
--FECHA ULTIMO DIA LABORADO
--FECHA DE BAJA	
--BAJA FIRMADA	
--OBSERVACIONES	
--# RECEPCION PERSONAL
 
 Cambios BD
 -Se creo una tabla para llenar los campos de estadia
