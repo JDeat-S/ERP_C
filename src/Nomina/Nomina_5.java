@@ -1222,7 +1222,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         String Item = Quincenas.getSelectedItem().toString();
 
         String SQL = "INSERT INTO `confort`.`pago` (`# Folio`, "
-                + "`Nombre Completo`, `Bono`, `Cuenta`, `Banco`, `Zona`, `Servicio`, `Quincena`, `Año`, `Sueldo Quincenal`,"
+                + "`Nombre(s)`, `Bono`, `Cuenta`, `Banco`, `Zona`, `Servicio`, `Quincena`, `Año`, `Sueldo Quincenal`,"
                 + " `Deposito`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         try {
@@ -1562,7 +1562,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         String Item16 = DT14.getSelectedItem().toString();
         String Item17 = DT15.getSelectedItem().toString();
 
-        String SQL = "Insert INTO `confort`.`nomina` (`#_Folio`, `Nombre Completo`, `Cuenta_Nom`,"
+        String SQL = "Insert INTO `confort`.`nomina` (`#_Folio`, `Nombre(s)`, `Cuenta_Nom`,"
                 + " `Banco_Nom`, `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`, `Pd`, `Quincena`, `Año`,"
                 + " `Dia 1 o 16`, `Dia 2 o 17`, `Dia 3 o 18`, `Dia 4 o 19`, `Dia 5 o 20`, `Dia 6 o 21`, `Dia 7 o 22`,"
                 + " `Dia 8 o 23`, `Dia 9 o 24`, `Dia 10 o 25`, `Dia 11 o 26`, `Dia 12 o 27`, `Dia 13 o 28`, `Dia 14 o 29`,"
