@@ -5,25 +5,7 @@ require 'Libmail/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-$fileTmpPath = $_FILES['uploadedFile']['tmp_name'];
-$fileName = $_FILES['uploadedFile']['name'];
-$fileSize = $_FILES['uploadedFile']['size'];
-$fileType = $_FILES['uploadedFile']['type'];
-$fileNameCmps = explode(".", $fileName);
-$fileExtension = strtolower(end($fileNameCmps));
-$newFileName = md5(time() . $fileName) . '.' . $fileExtension;
-$uploadFileDir = './uploaded_files/';
-$dest_path = $uploadFileDir . $newFileName;
- 
-if(move_uploaded_file($fileTmpPath, $dest_path))
-{
-  $message ='File is successfully uploaded.';
-}
-else
-{
-  $message = 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
-}
-
+$destino = $_FILES["archivo_fls"]["name"];
 try {
     $mail = new PHPMailer();
     $mail->IsSMTP(); // enable SMTP
@@ -44,7 +26,9 @@ try {
     $mail->addAddress('jhovan14000@gmail.com', 'Receptor');
     $mail->addCC('jdeat0101@gmail.com');
 
-    $mail->addAttachment($dest_path);
+    foreach ($matrizDeFicherosAdjuntos as $adjunto) {
+        $mail->AddAttachment($adjunto["fichero"], $name = $adjunto["nombre"]);
+    }
 
     $mail->isHTML(true);
     $mail->Subject = 'Prueba desde GMAIL';
