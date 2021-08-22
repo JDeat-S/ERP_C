@@ -5,9 +5,7 @@
  */
 package Conexion;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import javax.swing.JOptionPane;
 /**
  *
@@ -20,16 +18,17 @@ public class ConexionSQL {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    Connection con=null;
+    Connection con;
+    Statement st;
     
     public Connection conexion(){
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=(Connection) DriverManager.getConnection("jdbc:mysql://192.168.3.10:3306/confort","Servidor","Remoto08");
-//            con=(Connection) DriverManager.getConnection("jdbc:mysql://192.168.1.2:3306/confort","JDeat","JDeat5577");
+//            con=(Connection) DriverManager.getConnection("jdbc:mysql://192.168.3.10:3306/confort","Servidor","Remoto08");
+            con = DriverManager.getConnection("jdbc:mysql://192.168.1.2:3306/confort","JDeat","JDeat5577");
         } catch (ClassNotFoundException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error de conexion" +e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error de conexion: " +e.getMessage());
         }
         
         return con;
