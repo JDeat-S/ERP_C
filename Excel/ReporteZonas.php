@@ -1,6 +1,6 @@
 <?php
 
-require 'vendor/autoload.php';
+require 'LibExc/autoload.php';
 require 'conexion.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -36,8 +36,7 @@ $objDrawing->setDescription('Logotipo');
 $objDrawing->setPath('images/logo.png');
 $objDrawing->setHeight(100);
 $objDrawing->setCoordinates('A1');
-$objDrawing->setOffsetX(110);
-$objDrawing->setRotation(25);
+
 $objDrawing->getShadow()->setVisible(true);
 $objDrawing->getShadow()->setDirection(45);
 $objDrawing->setWorksheet($spreadsheet->getActiveSheet());
@@ -159,3 +158,6 @@ header('Cache-Control: max-age=0');
 $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
 $writer->save('php://output');
 
+
+
+?>
