@@ -92,7 +92,9 @@
                                   <Component id="jScrollPane4" min="-2" pref="334" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="249" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="botonWeb1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="131" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -124,6 +126,10 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                                  <Component id="botonWeb1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="106" max="32767" attributes="0"/>
@@ -247,6 +253,15 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Volver1ActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="botones.BotonWeb" name="botonWeb1">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Lapizmod.jpg"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="botonWeb1"/>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.2/excel/index.php"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
