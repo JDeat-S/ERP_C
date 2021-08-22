@@ -1,26 +1,40 @@
 <?php
 
-require 'vendor/autoload.php';
+require 'Libmail/autoload.php';
 
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\IOFactory;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-$spreadsheet =new Spreadsheet();
-$spreadsheet->getProperties()->setCreator("JDeat")->setTitle("Zona");
+try {
+    $mail = new PHPMailer();
+    $mail->IsSMTP(); // enable SMTP
 
-$spreadsheet ->setActiveSheetIndex(0);
-$hojaactiva = $spreadsheet->getActiveSheet();
+    $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+    $mail->SMTPAuth = true; // authentication enabled
+    $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+    $mail->Host = "smtp.gmail.com";
+    $mail->Port = 465; // or 587
+    $mail->IsHTML(true);
+    $mail->Username = "jhovan14000@gmail.com";
+    $mail->Password = "JDeat5577";
+    $mail->setFrom('jhovan14000@gmail.com', 'TU Nombre');
 
-$hojaactiva->setCellValue('A1', 'Zonas');
-$hojaactiva->setCellValue('B1', 'Zonas');
-$hojaactiva->setCellValue('C1', 'Zonas');
+    $mail->Subject = "Test";
+    $mail->Body = "hello";
 
-header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-header('Content-Disposition: attachment;filename="Excel.xlsx"');
-header('Cache-Control: max-age=0');
+    $mail->addAddress('jhovan14000@gmail.com', 'Receptor');
+    $mail->addCC('jdeat0101@gmail.com');
 
-$writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
-$writer->save('php://output');
-        
-        
+   // $mail->addAttachment();
+
+    $mail->isHTML(true);
+    $mail->Subject = 'Prueba desde GMAIL';
+    $mail->Body = 'Hola, <br/>Esta es una prueba desde <b>Gmail</b>.';
+    $mail->send();
+
+    echo 'Correo enviado';
+} catch (Exception $e) {
+    echo 'Mensaje ' . $mail->ErrorInfo;
+}
 ?>
