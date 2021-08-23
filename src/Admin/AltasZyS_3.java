@@ -70,6 +70,18 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
 //Modificar Servicio
     public void modS() {
+        String Costov = "";
+        String Q = (String) Cbxcosto.getSelectedItem();
+        if (Q.equals(",")) {
+            Costov = "";
+        }
+        if (Q.equals("Con costo")) {
+            Costov = "";
+
+        }
+        if (Q.equals("Sin costo")) {
+            Costov = "Sin costo";
+        }
         String horarioSMOD;
         if (Sab.isSelected() == true) {
             //Entre Semana Sabado
@@ -110,8 +122,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         }
         int id = Integer.parseInt(IDS.getText());
-        String SQL = "UPDATE `confort`.`servicio` SET `idZona` = ?, `Nombre Zona` = ?, `Supervisor` = ?,"
-                + " `Servicio` = ?, `Horario` = ?, `Abre` = ?, `Cierra` = ?, `Sabado` = ?, `Domingo` = ?, `Otro` = ? WHERE (`idServ` = ?)";
+        String SQL = "UPDATE `servicio` SET `idZona` = ?, `Nombre Zona` = ?, `Supervisor` = ?, `Servicio` = ?,"
+                + " `Horario` = ?, `Abre` = ?, `Cierra` = ?,"
+                + " `Sabado` = ?, `Domingo` = ?, `Otro` = ?, `Tipo de valet` = ?, `Costo` = ? WHERE `servicio`.`idServ` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -125,7 +138,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             pst.setString(8, horarioSMOD);
             pst.setString(9, horarioDMOD);
             pst.setString(10, OtroMOD);
-            pst.setInt(11, id);
+            pst.setString(11, Tdv.getText());
+            pst.setString(12, Costov + Costo.getText());
+            pst.setInt(13, id);
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Servicio Modificado");
@@ -220,6 +235,18 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
 //Agregar Servicio
     public void AgregarS() {
+        String Costov = "";
+        String Q = (String) Cbxcosto.getSelectedItem();
+        if (Q.equals(",")) {
+            Costov = "";
+        }
+        if (Q.equals("Con costo")) {
+            Costov = "";
+
+        }
+        if (Q.equals("Sin costo")) {
+            Costov = "Sin costo";
+        }
         String horarioS;
         if (Sab.isSelected() == true) {
             //Entre Semana Sabado
@@ -259,8 +286,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             boolean name = Allday.isSelected() == false;
             TED = "";
         }
-        String SQL = "INSERT INTO `confort`.`servicio` (`idZona`, `Nombre Zona`, `Supervisor`, `Servicio`, `Horario`, `Abre`, `Cierra`, `Sabado`, `Domingo`, `Otro`) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        String SQL = "INSERT INTO `servicio` (`idZona`, `Nombre Zona`,"
+                + " `Supervisor`, `Servicio`, `Horario`, `Abre`, `Cierra`, `Sabado`,"
+                + " `Domingo`, `Otro`, `Tipo de valet`, `Costo`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -276,6 +304,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             pst.setString(8, horarioS);
             pst.setString(9, horarioD);
             pst.setString(10, OtroS);
+            pst.setString(11, Tdv.getText());
+            pst.setString(12, Costov + Costo.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Servicio agregado.");
@@ -309,6 +339,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         SabadoT.setEnabled(false);
         DomingoT.setEnabled(false);
         Otrotxt.setEnabled(false);
+        Cbxcosto.setSelectedIndex(0);
+        Costo.setText("");
+        Costo.setVisible(false);
     }
 
     private void clearzone() {
@@ -359,9 +392,12 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             modelo.addColumn("Sabado");//9
             modelo.addColumn("Domingo");
             modelo.addColumn("Otro horario");//11
+            modelo.addColumn("Tipo de valet");
+            modelo.addColumn("Costo");//
 
 //Anchos
-            int[] anchos = {10, 10, 50, 150, 150, 30, 15, 15, 15, 15, 100};
+            int[] anchos = {10, 10, 50, 150, 150, 30, 15, 15, 15, 15, 100,
+                50, 50};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -539,6 +575,11 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         DomingoT = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Tdv = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        Costo = new javax.swing.JTextField();
+        Cbxcosto = new javax.swing.JComboBox<>();
         jScrollPane8 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
@@ -802,19 +843,39 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         jLabel12.setText("Detalles de Servicio");
 
+        jLabel5.setText("Tipo de valet:");
+
+        jLabel6.setText("Costo:");
+
+        Cbxcosto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ",", "Con costo", "Sin costo" }));
+        Cbxcosto.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CbxcostoItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(jLabel12)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(23, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel11))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel5)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel14)))
+                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Tdv, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Supervisor, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -837,12 +898,12 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                             .addComponent(Otro)))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(Abre, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Cierra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Cierra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(Cbxcosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Costo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(jLabel12)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -875,7 +936,16 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(Cierra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(Tdv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(Costo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cbxcosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -955,7 +1025,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13"
             }
         ));
         TServ.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1415,6 +1485,25 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         eliminarS();
     }//GEN-LAST:event_EliminarServActionPerformed
 
+    private void CbxcostoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CbxcostoItemStateChanged
+        // TODO add your handling code here:
+        String Q = (String) Cbxcosto.getSelectedItem();
+        if (Q.equals(",")) {
+            Costo.setVisible(false);
+            Costo.setText("");
+
+        }
+        if (Q.equals("Con costo")) {
+            Costo.setVisible(true);
+            Costo.setText("");
+
+        }
+        if (Q.equals("Sin costo")) {
+            Costo.setVisible(false);
+            Costo.setText("");
+        }
+    }//GEN-LAST:event_CbxcostoItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -1468,7 +1557,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JTextField BZ;
     private javax.swing.JTextField BZS;
     private javax.swing.JLabel BZtext;
+    private javax.swing.JComboBox<String> Cbxcosto;
     private javax.swing.JTextField Cierra;
+    private javax.swing.JTextField Costo;
     private javax.swing.JRadioButton Dom;
     private javax.swing.JTextField DomingoT;
     private javax.swing.JButton EliminarServ;
@@ -1493,6 +1584,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JTextField Supervisor;
     private javax.swing.JTable TServ;
     private javax.swing.JTable TablaZona;
+    private javax.swing.JTextField Tdv;
     private javax.swing.JButton Volver;
     private javax.swing.JButton Volver1;
     private javax.swing.JButton Volver2;
@@ -1508,6 +1600,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
