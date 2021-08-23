@@ -46,6 +46,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         SabadoT.setEnabled(false);
         DomingoT.setEnabled(false);
         Otrotxt.setEnabled(false);
+        Costo.setVisible(false);
         Fil = new ButtonGroup();
         Fil.add(FPNDS);
         Fil.add(FPNDZ);
@@ -124,7 +125,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         int id = Integer.parseInt(IDS.getText());
         String SQL = "UPDATE `servicio` SET `idZona` = ?, `Nombre Zona` = ?, `Supervisor` = ?, `Servicio` = ?,"
                 + " `Horario` = ?, `Abre` = ?, `Cierra` = ?,"
-                + " `Sabado` = ?, `Domingo` = ?, `Otro` = ?, `Tipo de valet` = ?, `Costo` = ? WHERE `servicio`.`idServ` = ?";
+                + " `Sabado` = ?, `Domingo` = ?, `Otro` = ?, `Tipo de valet` = ?, `Costo` = ? WHERE"
+                + " `servicio`.`idServ` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
