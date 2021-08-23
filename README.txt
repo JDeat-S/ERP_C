@@ -1,3 +1,9 @@
+Cambios 21/08/2021
+Se añadio nuevo codigo fuente al repocitorio reportes, ese codigo hara reportes y enviarcelos a la licenciada
+Se cuando haya una version disponible se publicara como Ver 1.0
+Versiones anteriores a la 1.0 son experimentales es decir pueden producir errores o no estan totalmente terminadas
+
+
 Ver 1.1.0
 Cambios 20/08/2021
 Ventana RH
