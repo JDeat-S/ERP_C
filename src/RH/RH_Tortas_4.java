@@ -1,4 +1,3 @@
-
 package RH;
 
 import Conexion.ConexionSQL;
@@ -14,14 +13,106 @@ import javax.swing.table.DefaultTableModel;
 
 public class RH_Tortas_4 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form RH_Tortas_4
-     */
+    ConexionSQL cc = new ConexionSQL();
+    Connection con = cc.conexion();
+
     public RH_Tortas_4() {
         initComponents();
+        MDT();
     }
 
-    
+    //Mostrardatostorteria
+    public void MDT() {
+        //Buscar estadias
+        String FiltroNGe = Filname.getText();
+        String FAP = filap.getText();
+        String FAM = filam.getText();
+        String where = "select * from torteria";
+        if (!"".equals(FiltroNGe)) {
+            where = "Select * from torteria where `Nombre(s)` LIKE '%" + FiltroNGe + "%'";
+        } else if (!"".equals(FAP)) {
+            where = "Select * from torteria where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            where = "Select * from torteria where `Apellido M` LIKE '%" + FAM + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TTortas.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("# Exp");
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//5
+            modelo.addColumn("# Casa");
+            modelo.addColumn("# Recados");//7
+            modelo.addColumn("# Celular");
+            modelo.addColumn("RFC");//9
+            modelo.addColumn("NSS");
+            modelo.addColumn("CURP");//11
+            modelo.addColumn("Doc. Originales");
+            modelo.addColumn("Doc. Faltantes");//13
+            modelo.addColumn("Doc. Entregables");
+            modelo.addColumn("Forma de pago");//15
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");//17
+            modelo.addColumn("Status");
+            modelo.addColumn("Fecha entrevista");//19
+            modelo.addColumn("Fecha ingreso");
+            modelo.addColumn("Fecha ultimo dia laborado");//21
+            modelo.addColumn("Fecha firma baja");
+            modelo.addColumn("Baja firmada");//23
+            modelo.addColumn("Finiquito");
+            modelo.addColumn("Cambio de servicio");//25
+            modelo.addColumn("Fecha de Re-ingreso");
+            modelo.addColumn("Fecha ultimo dia laborado (Re)");
+            modelo.addColumn("Fecha firma baja (Re)");//28
+            modelo.addColumn("Fecha de baja (Re)");
+            modelo.addColumn("Baja firmada (Re)");//30
+            modelo.addColumn("# recepcion personal");
+            modelo.addColumn("Observaciones");//32
+
+            int[] anchos = {/*idbd*/35, /*Exp*/ 50, /*ap*/ 70, /*am*/ 70, /*name*/100,  /*casa*/ 65, /*recados*/ 70, /*celular*/ 65, /*rfc*/ 60,
+                /*nss*/ 65, /*curp*/ 70, /*DO*/ 500, /*DF*/ 300, /*DE*/ 300, /*fdp*/ 70, /*sueldo*/ 40, /*bono*/ 35, /*status*/ 75,
+                /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
+                /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TTortas.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Estadia: " + e.getMessage());
+        }
+
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -98,14 +189,16 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         obstor = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel28 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        Filtrotor = new javax.swing.JComboBox<>();
+        labelfiltor = new javax.swing.JLabel();
+        Filname = new javax.swing.JTextField();
+        filap = new javax.swing.JTextField();
+        filam = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
         TTortas = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -460,6 +553,10 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         obstor.setRows(5);
         jScrollPane3.setViewportView(obstor);
 
+        jButton1.setText("Modificar");
+
+        jButton2.setText("Agregar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -473,14 +570,19 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jLabel27)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(2845, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -492,7 +594,11 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel27)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jButton2)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -505,17 +611,11 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Registro", jScrollPane1);
 
-        jLabel19.setText("jLabel19");
+        jLabel19.setText("Filtrar por:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Filtrotor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona Filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
 
-        jLabel28.setText("jLabel28");
-
-        jTextField3.setText("jTextField3");
-
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
+        labelfiltor.setText("jLabel28");
 
         TTortas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -535,21 +635,23 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Filtrotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel28)
+                        .addComponent(labelfiltor)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(filap, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 4923, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(filam, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 6806, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -558,11 +660,11 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel28)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Filtrotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelfiltor)
+                    .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(98, Short.MAX_VALUE))
@@ -584,7 +686,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1253, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1117, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -650,6 +752,8 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Fdptor;
     private javax.swing.JLabel Fe;
     private javax.swing.JTextField Fetor;
+    private javax.swing.JTextField Filname;
+    private javax.swing.JComboBox<String> Filtrotor;
     private javax.swing.JComboBox<String> Fintor;
     private javax.swing.JTextField NDEtor;
     private javax.swing.JTextField Ndcel;
@@ -663,7 +767,10 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JTextField UDLtor;
     private javax.swing.JTextField amtor;
     private javax.swing.JTextField curptor;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JTextField filam;
+    private javax.swing.JTextField filap;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -684,7 +791,6 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel35;
@@ -712,9 +818,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel labelfiltor;
     private javax.swing.JTextField nametor;
     private javax.swing.JTextField nsstor;
     private javax.swing.JTextArea obstor;
