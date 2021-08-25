@@ -5,7 +5,8 @@ Ventana RH
 Esta funcion sirve para todas las acceder a las ventanas Estadia y Torteria
 Para acceder a las ventanas hay un menu en la parte superior izquierda
 
-
+Ventana Nomina
+-Se corrigieron errores menores
 
 Acceso como administrador
 *Nueva funcion: Todas las ventanas*
