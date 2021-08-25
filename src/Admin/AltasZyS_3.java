@@ -50,7 +50,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         Fil = new ButtonGroup();
         Fil.add(FPNDS);
         Fil.add(FPNDZ);
-
+        Costo.setVisible(false);
         //El combobox jala datos de la base de datos
         FiltrosZonas zz = new FiltrosZonas();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());

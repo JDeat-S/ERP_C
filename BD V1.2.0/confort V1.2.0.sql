@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-08-2021 a las 21:30:57
+-- Tiempo de generación: 25-08-2021 a las 01:18:02
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -6610,75 +6610,78 @@ CREATE TABLE `servicio` (
   `Cierra` varchar(45) CHARACTER SET utf8 NOT NULL,
   `Sabado` varchar(45) CHARACTER SET utf8 NOT NULL,
   `Domingo` varchar(45) CHARACTER SET utf8 NOT NULL,
-  `Otro` varchar(100) CHARACTER SET utf8 NOT NULL
+  `Otro` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `Tipo de valet` text COLLATE utf8_spanish_ci NOT NULL,
+  `Costo` varchar(50) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `servicio`
 --
 
-INSERT INTO `servicio` (`idServ`, `idZona`, `Nombre Zona`, `Supervisor`, `Servicio`, `Horario`, `Abre`, `Cierra`, `Sabado`, `Domingo`, `Otro`) VALUES
-(1, '1', 'Sur 1', '', 'SANTANDER GUADALUPE', '', '', '', '', '', ''),
-(2, '1', 'Sur 1', '', 'SANTANDER INSURGENTES', '', '', '', '', '', ''),
-(3, '1', 'Sur 1', '', 'SANTANDER SAN JERONIMO', '', '', '', '', '', ''),
-(4, '1', 'Sur 1', '', 'SANTANDER XOLA', '', '', '', '', '', ''),
-(5, '1', 'Sur 1', '', 'SANTANDER TLALPAN', '', '', '', '', '', ''),
-(6, '1', 'Sur 1', '', 'SANTANDER FELIX CUEVAS', '', '', '', '', '', ''),
-(7, '1', 'Sur 1', '', 'SANTANDER COPILCO', '', '', '', '', '', ''),
-(8, '1', 'Sur 1', '', 'SANT. DESIERTO DE LOS LEONES', '', '', '', '', '', ''),
-(9, '1', 'Sur 1', '', 'EST. ITURBIDE $15 X HRA', '', '', '', '', '', ''),
-(10, '1', 'Sur 1', '', 'EST. PTE TITLA $18 X HRA', '', '', '', '', '', ''),
-(11, '1', 'Sur 1', '', 'CLUB KIDS $50 BOLETAJE', '', '', '', '', '', ''),
-(12, '1', 'Sur 1', '', 'PARTY SURPRISE $45 BOLETAJE', '', '', '', '', '', ''),
-(13, '1', 'Sur 1', '', 'CITY EXPRESS PERIFERICO', '', '', '', '', '', ''),
-(14, '1', 'Sur 1', '', 'XOTEPINGO', '', '', '', '', '', ''),
-(15, '1', 'Sur 1', '', 'EDIFICIO AGATHA', '', '', '', '', '', ''),
-(16, '2', 'Sur 2', '', 'SANTANDER MASARIK', '', '', '', '', '', ''),
-(17, '2', 'Sur 2', '', 'SANTANDER MISISIPI', '', '', '', '', '', ''),
-(18, '2', 'Sur 2', '', 'SANTANDER NEWTON', '', '', '', '', '', ''),
-(19, '2', 'Sur 2', '', 'SANTANDER PALMAS', '', '', '', '', '', ''),
-(20, '2', 'Sur 2', '', 'SANTANDER PLAZA REFORMA', '', '', '', '', '', ''),
-(21, '2', 'Sur 2', '', 'SANTANDER POLANCO', '', '', '', '', '', ''),
-(22, '2', 'Sur 2', '', 'SANTANDER L. DE CHAPULTEPEC', '', '', '', '', '', ''),
-(23, '2', 'Sur 2', '', 'SANTANDER NIZA', '', '', '', '', '', ''),
-(24, '2', 'Sur 2', '', 'NOTARIA EDIF. ROSSEAU', '', '', '', '', '', ''),
-(25, '2', 'Sur 2', '', 'GRUPO EXPANSION', '', '', '', '', '', ''),
-(26, '2', 'Sur 2', '', 'HONDA SAN ANTONIO', '', '', '', '', '', ''),
-(27, '2', 'Sur 2', '', 'BELMAR  $50 BOLETAJE', '', '', '', '', '', ''),
-(28, '2', 'Sur 2', '', 'EST. TEHUANTEPEC $22 X HRA', '', '', '', '', '', ''),
-(29, '3', 'Zona Norte', '', 'SANTANDER LOMAS VERDES', '', '', '', '', '', ''),
-(30, '3', 'Zona Norte', '', 'SANTANDER INTERLOMAS', '', '', '', '', '', ''),
-(31, '3', 'Zona Norte', '', 'ENTRE GAUCHOS S/BOLETAJE', '', '', '', '', '', ''),
-(33, '3', 'Zona Norte', '', 'LA ERA/LA ERA EST.', '', '', '', '', '', ''),
-(34, '3', 'Zona Norte', '', 'LA ERA SANTA CRUZ', '', '', '', '', '', ''),
-(35, '4', 'Foraneos Acapulco', '', 'SANTANDER RENACIMIENTO', '', '', '', '', '', ''),
-(36, '4', 'Foraneos Acapulco', '', 'SANTANDER PRINCIPAPL', '', '', '', '', '', ''),
-(37, '4', 'Foraneos Acapulco', '', 'SANTANDER COSTA AZUL', '', '', '', '', '', ''),
-(38, '5', 'Zona Poniente', '', 'SANTANDER MONTEVIDEO', '', '', '', '', '', ''),
-(39, '5', 'Zona Poniente', '', 'SANTANDER CANAL DEL NORTE', '', '', '', '', '', ''),
-(40, '5', 'Zona Poniente', '', 'SANTANDER AZCAPOTZALCO', '', '', '', '', '', ''),
-(41, '5', 'Zona Poniente', '', 'SANTANDER MARINA NACIONAL', '', '', '', '', '', ''),
-(42, '5', 'Zona Poniente', '', 'SANTANDER EL CABALLITO', '', '', '', '', '', ''),
-(43, '6', 'Foraneos Puebla', '', 'SANTANDER TEHUACAN', '', '', '', '', '', ''),
-(44, '7', 'Foraneos Toluca', '', 'SANTANDER MORELOS', '', '', '', '', '', ''),
-(45, '7', 'Foraneos Toluca', '', 'SANTANDER METEPEC', '', '', '', '', '', ''),
-(46, '7', 'Foraneos Toluca', '', 'EST. MORELOS', '', '', '', '', '', ''),
-(47, '7', 'Foraneos Toluca', '', 'EST. VITRALES', '', '', '', '', '', ''),
-(48, '7', 'Foraneos Toluca', '', 'EST. PROCURADORIA', '', '', '', '', '', ''),
-(49, '7', 'Foraneos Toluca', '', 'EST. SAN MATEO', '', '', '', '', '', ''),
-(50, '7', 'Foraneos Toluca', '', 'SALON DIAMANTE', '', '', '', '', '', ''),
-(51, '7', 'Foraneos Toluca', '', 'SALON HACIENDA LA BONITA', '', '', '', '', '', ''),
-(52, '7', 'Foraneos Toluca', '', 'SALON FINCA LAS JOYAS', '', '', '', '', '', ''),
-(53, '7', 'Foraneos Toluca', '', 'SALON ALCATRACES', '', '', '', '', '', ''),
-(54, '7', 'Foraneos Toluca', '', 'JARDIN ESMERALDA', '', '', '', '', '', ''),
-(55, '7', 'Foraneos Toluca', '', 'SALON MALLORCA', '', '', '', '', '', ''),
-(56, '7', 'Foraneos Toluca', '', 'SALON TARASCO', '', '', '', '', '', ''),
-(57, '7', 'Foraneos Toluca', '', 'SALON MAGYCAL PARTY', '', '', '', '', '', ''),
-(63, '1', 'Sur 1', '', 'SUPERVISOR', '', '', '', '', '', ''),
-(64, '2', 'Sur 2', '', 'SUPERVISOR', '', '', '', '', '', ''),
-(65, '3', 'Zona Norte', '', 'SUPERVISOR', '', '', '', '', '', ''),
-(66, '5', 'Zona Poniente', '', 'SUPERVISOR', '', '', '', '', '', ''),
-(86, '2', 'Sur 2', 'ARTURO LADRILLERO', 'KOWLAAN $30 BOLETAJE SS. $50', '', '', '', '', '', '08:00 AM HASTA EL CIERRE');
+INSERT INTO `servicio` (`idServ`, `idZona`, `Nombre Zona`, `Supervisor`, `Servicio`, `Horario`, `Abre`, `Cierra`, `Sabado`, `Domingo`, `Otro`, `Tipo de valet`, `Costo`) VALUES
+(1, '1', 'Sur 1', '', 'SANTANDER GUADALUPE', '', '', '', '', '', '', '', ''),
+(2, '1', 'Sur 1', '', 'SANTANDER INSURGENTES', '', '', '', '', '', '', '', ''),
+(3, '1', 'Sur 1', '', 'SANTANDER SAN JERONIMO', '', '', '', '', '', '', '', ''),
+(4, '1', 'Sur 1', '', 'SANTANDER XOLA', '', '', '', '', '', '', '', ''),
+(5, '1', 'Sur 1', '', 'SANTANDER TLALPAN', '', '', '', '', '', '', '', ''),
+(6, '1', 'Sur 1', '', 'SANTANDER FELIX CUEVAS', '', '', '', '', '', '', '', ''),
+(7, '1', 'Sur 1', '', 'SANTANDER COPILCO', '', '', '', '', '', '', '', ''),
+(8, '1', 'Sur 1', '', 'SANT. DESIERTO DE LOS LEONES', '', '', '', '', '', '', '', ''),
+(9, '1', 'Sur 1', '', 'EST. ITURBIDE $15 X HRA', '', '', '', '', '', '', '', ''),
+(10, '1', 'Sur 1', '', 'EST. PTE TITLA $18 X HRA', '', '', '', '', '', '', '', ''),
+(11, '1', 'Sur 1', '', 'CLUB KIDS $50 BOLETAJE', '', '', '', '', '', '', '', ''),
+(12, '1', 'Sur 1', '', 'PARTY SURPRISE $45 BOLETAJE', '', '', '', '', '', '', '', ''),
+(13, '1', 'Sur 1', '', 'CITY EXPRESS PERIFERICO', '', '', '', '', '', '', '', ''),
+(14, '1', 'Sur 1', '', 'XOTEPINGO', '', '', '', '', '', '', '', ''),
+(15, '1', 'Sur 1', '', 'EDIFICIO AGATHA', '', '', '', '', '', '', '', ''),
+(16, '2', 'Sur 2', '', 'SANTANDER MASARIK', '', '', '', '', '', '', '', ''),
+(17, '2', 'Sur 2', '', 'SANTANDER MISISIPI', '', '', '', '', '', '', '', ''),
+(18, '2', 'Sur 2', '', 'SANTANDER NEWTON', '', '', '', '', '', '', '', ''),
+(19, '2', 'Sur 2', '', 'SANTANDER PALMAS', '', '', '', '', '', '', '', ''),
+(20, '2', 'Sur 2', '', 'SANTANDER PLAZA REFORMA', '', '', '', '', '', '', '', ''),
+(21, '2', 'Sur 2', '', 'SANTANDER POLANCO', '', '', '', '', '', '', '', ''),
+(22, '2', 'Sur 2', '', 'SANTANDER L. DE CHAPULTEPEC', '', '', '', '', '', '', '', ''),
+(23, '2', 'Sur 2', '', 'SANTANDER NIZA', '', '', '', '', '', '', '', ''),
+(24, '2', 'Sur 2', '', 'NOTARIA EDIF. ROSSEAU', '', '', '', '', '', '', '', ''),
+(25, '2', 'Sur 2', '', 'GRUPO EXPANSION', '', '', '', '', '', '', '', ''),
+(26, '2', 'Sur 2', '', 'HONDA SAN ANTONIO', '', '', '', '', '', '', '', ''),
+(27, '2', 'Sur 2', '', 'BELMAR  $50 BOLETAJE', '', '', '', '', '', '', '', ''),
+(28, '2', 'Sur 2', '', 'EST. TEHUANTEPEC $22 X HRA', '', '', '', '', '', '', '', ''),
+(29, '3', 'Zona Norte', '', 'SANTANDER LOMAS VERDES', '', '', '', '', '', '', '', ''),
+(30, '3', 'Zona Norte', '', 'SANTANDER INTERLOMAS', '', '', '', '', '', '', '', ''),
+(31, '3', 'Zona Norte', '', 'ENTRE GAUCHOS S/BOLETAJE', '', '', '', '', '', '', '', ''),
+(33, '3', 'Zona Norte', '', 'LA ERA/LA ERA EST.', '', '', '', '', '', '', '', ''),
+(34, '3', 'Zona Norte', '', 'LA ERA SANTA CRUZ', '', '', '', '', '', '', '', ''),
+(35, '4', 'Foraneos Acapulco', '', 'SANTANDER RENACIMIENTO', '', '', '', '', '', '', '', ''),
+(36, '4', 'Foraneos Acapulco', '', 'SANTANDER PRINCIPAPL', '', '', '', '', '', '', '', ''),
+(37, '4', 'Foraneos Acapulco', '', 'SANTANDER COSTA AZUL', '', '', '', '', '', '', '', ''),
+(38, '5', 'Zona Poniente', '', 'SANTANDER MONTEVIDEO', '', '', '', '', '', '', '', ''),
+(39, '5', 'Zona Poniente', '', 'SANTANDER CANAL DEL NORTE', '', '', '', '', '', '', '', ''),
+(40, '5', 'Zona Poniente', '', 'SANTANDER AZCAPOTZALCO', '', '', '', '', '', '', '', ''),
+(41, '5', 'Zona Poniente', '', 'SANTANDER MARINA NACIONAL', '', '', '', '', '', '', '', ''),
+(42, '5', 'Zona Poniente', '', 'SANTANDER EL CABALLITO', '', '', '', '', '', '', '', ''),
+(43, '6', 'Foraneos Puebla', '', 'SANTANDER TEHUACAN', '', '', '', '', '', '', '', ''),
+(44, '7', 'Foraneos Toluca', '', 'SANTANDER MORELOS', '', '', '', '', '', '', '', ''),
+(45, '7', 'Foraneos Toluca', '', 'SANTANDER METEPEC', '', '', '', '', '', '', '', ''),
+(46, '7', 'Foraneos Toluca', '', 'EST. MORELOS', '', '', '', '', '', '', '', ''),
+(47, '7', 'Foraneos Toluca', '', 'EST. VITRALES', '', '', '', '', '', '', '', ''),
+(48, '7', 'Foraneos Toluca', '', 'EST. PROCURADORIA', '', '', '', '', '', '', '', ''),
+(49, '7', 'Foraneos Toluca', '', 'EST. SAN MATEO', '', '', '', '', '', '', '', ''),
+(50, '7', 'Foraneos Toluca', '', 'SALON DIAMANTE', '', '', '', '', '', '', '', ''),
+(51, '7', 'Foraneos Toluca', '', 'SALON HACIENDA LA BONITA', '', '', '', '', '', '', '', ''),
+(52, '7', 'Foraneos Toluca', '', 'SALON FINCA LAS JOYAS', '', '', '', '', '', '', '', ''),
+(53, '7', 'Foraneos Toluca', '', 'SALON ALCATRACES', '', '', '', '', '', '', '', ''),
+(54, '7', 'Foraneos Toluca', '', 'JARDIN ESMERALDA', '', '', '', '', '', '', '', ''),
+(55, '7', 'Foraneos Toluca', '', 'SALON MALLORCA', '', '', '', '', '', '', '', ''),
+(56, '7', 'Foraneos Toluca', '', 'SALON TARASCO', '', '', '', '', '', '', '', ''),
+(57, '7', 'Foraneos Toluca', '', 'SALON MAGYCAL PARTY', '', '', '', '', '', '', '', ''),
+(63, '1', 'Sur 1', '', 'SUPERVISOR', '', '', '', '', '', '', '', ''),
+(64, '2', 'Sur 2', '', 'SUPERVISOR', '', '', '', '', '', '', '', ''),
+(65, '3', 'Zona Norte', '', 'SUPERVISOR', '', '', '', '', '', '', '', ''),
+(66, '5', 'Zona Poniente', '', 'SUPERVISOR', '', '', '', '', '', '', '', ''),
+(86, '2', 'Sur 2', 'ARTURO LADRILLERO', 'KOWLAAN $30 BOLETAJE SS. $50', '', '', '', '', '', '08:00 AM HASTA EL CIERRE', '', ''),
+(87, '', '', '', '', 'L a V', '', '', 'OFF', 'OFF', '', '', 'Sin costo');
 
 -- --------------------------------------------------------
 
@@ -6715,6 +6718,54 @@ CREATE TABLE `taller` (
 
 INSERT INTO `taller` (`idTaller`, `Fecha de expedicion`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Datos vehiculo`, `# de piezas`, `Daño`, `Costo Aproximado`, `Ingreso a taller`, `Pagado por cliente`, `Pago a confort`, `Cobrado`, `Pagado`, `Pendiente`, `Por quincenas`, `Forma de pago`, `Observaciones`) VALUES
 (12, '', '', '', '', '', '', '', '', '', '0', 'Si', '.', '0', '', '0', '', '', '.', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `torteria`
+--
+
+CREATE TABLE `torteria` (
+  `idTorteria` int(11) NOT NULL,
+  `# Exp` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `Apellido P` varchar(75) COLLATE utf8_spanish_ci NOT NULL,
+  `Apellido M` varchar(75) COLLATE utf8_spanish_ci NOT NULL,
+  `Nombre(s)` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
+  `# Casa` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `# Recados` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `# Celular` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `RFC` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `NSS` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
+  `CURP` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
+  `Doc originales` text COLLATE utf8_spanish_ci NOT NULL,
+  `Doc faltantes` text COLLATE utf8_spanish_ci NOT NULL,
+  `Doc entregados` text COLLATE utf8_spanish_ci NOT NULL,
+  `Forma de pago` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `Sueldo` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `Bono` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `Status` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `Fecha entrevista` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Fecha ingreso` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Ultimo dia laborado` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Fecha de firma baja` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Baja firmada` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `Finiquito` varchar(55) COLLATE utf8_spanish_ci NOT NULL,
+  `Fecha de Re-ingreso` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Ultimo dia laborado (re)` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Fecha firma baja (re)` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Fecha de Baja (re)` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Baja firmada (re)` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `Cambio de Servicio` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `# recepcion personal` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `Observaciones` text COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `torteria`
+--
+
+INSERT INTO `torteria` (`idTorteria`, `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `# Casa`, `# Recados`, `# Celular`, `RFC`, `NSS`, `CURP`, `Doc originales`, `Doc faltantes`, `Doc entregados`, `Forma de pago`, `Sueldo`, `Bono`, `Status`, `Fecha entrevista`, `Fecha ingreso`, `Ultimo dia laborado`, `Fecha de firma baja`, `Baja firmada`, `Finiquito`, `Fecha de Re-ingreso`, `Ultimo dia laborado (re)`, `Fecha firma baja (re)`, `Fecha de Baja (re)`, `Baja firmada (re)`, `Cambio de Servicio`, `# recepcion personal`, `Observaciones`) VALUES
+(1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '.', '', '', '', '', 'No ha venido a firmar', '.', '', '', '', '', '.', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -6847,6 +6898,12 @@ ALTER TABLE `taller`
   ADD PRIMARY KEY (`idTaller`);
 
 --
+-- Indices de la tabla `torteria`
+--
+ALTER TABLE `torteria`
+  ADD PRIMARY KEY (`idTorteria`);
+
+--
 -- Indices de la tabla `usuarios_nomina`
 --
 ALTER TABLE `usuarios_nomina`
@@ -6914,13 +6971,19 @@ ALTER TABLE `prestamos`
 -- AUTO_INCREMENT de la tabla `servicio`
 --
 ALTER TABLE `servicio`
-  MODIFY `idServ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `idServ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT de la tabla `taller`
 --
 ALTER TABLE `taller`
   MODIFY `idTaller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de la tabla `torteria`
+--
+ALTER TABLE `torteria`
+  MODIFY `idTorteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios_nomina`

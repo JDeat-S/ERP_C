@@ -1,4 +1,3 @@
-
 package RH;
 
 import Conexion.ConexionSQL;
@@ -14,14 +13,264 @@ import javax.swing.table.DefaultTableModel;
 
 public class RH_Tortas_4 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form RH_Tortas_4
-     */
+    ConexionSQL cc = new ConexionSQL();
+    Connection con = cc.conexion();
+
     public RH_Tortas_4() {
         initComponents();
+        MDT();
+        LabelF1.setVisible(false);
+        filap.setVisible(false);
+        filam.setVisible(false);
+        Filname.setVisible(false);
+        idbd.setVisible(false);
     }
 
-    
+    public void clean() {
+        idbd.setText("");
+        NDEtor.setText("");
+        Aptor.setText("");
+        amtor.setText("");
+        nametor.setText("");
+        Ndctor.setText("");
+        Ndrtor.setText("");
+        Ndcel.setText("");
+        RFCtor.setText("");
+        nsstor.setText("");
+        curptor.setText("");
+        Dotor.setText("");
+        Dftor.setText("");
+        Detor.setText("");
+        Fdptor.setText("");
+        sueltor.setText("");
+        Bonotor.setText("");
+        Statustor.setSelectedIndex(0);
+        Fetor.setText("");
+        FItor.setText("");
+        UDLtor.setText("");
+        FdFBtor.setText("");
+        BFtor.setSelectedIndex(0);
+        Fintor.setSelectedIndex(0);
+        FREI.setText("");
+        UDLRE.setText("");
+        FFBRE.setText("");
+        FBRE.setText("");
+        Fintor.setSelectedIndex(0);
+        CdStor.setText("");
+        Nrptor.setText("");
+        obstor.setText("");
+    }
+
+    public void AgregarE() {
+        String Status = Statustor.getSelectedItem().toString();
+        String BF = BFtor.getSelectedItem().toString();
+        String Finiquito = Fintor.getSelectedItem().toString();
+        String BFREtor = BFRE.getSelectedItem().toString();
+
+        String SQL = "INSERT INTO `confort`.`torteria` (`# Exp`, `Apellido P`, `Apellido M`,"
+                + " `Nombre(s)`, `# Casa`, `# Recados`, `# Celular`, `RFC`, `NSS`, `CURP`,"
+                + " `Doc originales`, `Doc faltantes`, `Doc entregados`, `Forma de pago`,"
+                + " `Sueldo`, `Bono`, `Status`, `Fecha entrevista`, `Fecha ingreso`,"
+                + " `Ultimo dia laborado`, `Fecha de firma baja`, `Baja firmada`, `Finiquito`,"
+                + " `Fecha de Re-ingreso`, `Ultimo dia laborado (re)`, `Fecha firma baja (re)`,"
+                + " `Fecha de Baja (re)`, `Baja firmada (re)`, `Cambio de Servicio`, `# recepcion personal`,"
+                + " `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setString(1, NDEtor.getText());
+            pst.setString(2, Aptor.getText());
+            pst.setString(3, amtor.getText());
+            pst.setString(4, nametor.getText());
+            pst.setString(5, Ndctor.getText());
+            pst.setString(6, Ndrtor.getText());
+            pst.setString(7, Ndcel.getText());
+            pst.setString(8, RFCtor.getText());
+            pst.setString(9, nsstor.getText());
+            pst.setString(10, curptor.getText());
+            pst.setString(11, Dotor.getText());
+            pst.setString(12, Dftor.getText());
+            pst.setString(13, Detor.getText());
+            pst.setString(14, Fdptor.getText());
+            pst.setString(15, sueltor.getText());
+            pst.setString(16, Bonotor.getText());
+            pst.setString(17, Status);
+            pst.setString(18, Fetor.getText());
+            pst.setString(19, FItor.getText());
+            pst.setString(20, UDLtor.getText());
+            pst.setString(21, FdFBtor.getText());
+            pst.setString(22, BF);
+            pst.setString(23, Finiquito);
+            pst.setString(24, FREI.getText());
+            pst.setString(25, UDLRE.getText());
+            pst.setString(26, FFBRE.getText());
+            pst.setString(27, FBRE.getText());
+            pst.setString(28, BFREtor);
+            pst.setString(29, CdStor.getText());
+            pst.setString(30, Nrptor.getText());
+            pst.setString(31, obstor.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Empleado de torteria agregado.");
+
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al agregar en Empleado de torteria: " + e.getMessage());
+        }
+    }
+
+    //Mostrardatostorteria
+    public void MDT() {
+        //Buscar estadias
+        String FiltroNGe = Filname.getText();
+        String FAP = filap.getText();
+        String FAM = filam.getText();
+        String where = "select * from torteria";
+        if (!"".equals(FiltroNGe)) {
+            where = "Select * from torteria where `Nombre(s)` LIKE '%" + FiltroNGe + "%'";
+        } else if (!"".equals(FAP)) {
+            where = "Select * from torteria where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            where = "Select * from torteria where `Apellido M` LIKE '%" + FAM + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TTortas.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("# Exp");
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//5
+            modelo.addColumn("# Casa");
+            modelo.addColumn("# Recados");//7
+            modelo.addColumn("# Celular");
+            modelo.addColumn("RFC");//9
+            modelo.addColumn("NSS");
+            modelo.addColumn("CURP");//11
+            modelo.addColumn("Doc. Originales");
+            modelo.addColumn("Doc. Faltantes");//13
+            modelo.addColumn("Doc. Entregables");
+            modelo.addColumn("Forma de pago");//15
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");//17
+            modelo.addColumn("Status");
+            modelo.addColumn("Fecha entrevista");//19
+            modelo.addColumn("Fecha ingreso");
+            modelo.addColumn("Fecha ultimo dia laborado");//21
+            modelo.addColumn("Fecha firma baja");
+            modelo.addColumn("Baja firmada");//23
+            modelo.addColumn("Finiquito");
+            modelo.addColumn("Cambio de servicio");//25
+            modelo.addColumn("Fecha de Re-ingreso");
+            modelo.addColumn("Fecha ultimo dia laborado (Re)");
+            modelo.addColumn("Fecha firma baja (Re)");//28
+            modelo.addColumn("Fecha de baja (Re)");
+            modelo.addColumn("Baja firmada (Re)");//30
+            modelo.addColumn("# recepcion personal");
+            modelo.addColumn("Observaciones");//32
+
+            int[] anchos = {/*idbd*/35, /*Exp*/ 50, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*casa*/ 65, /*recados*/ 70, /*celular*/ 65, /*rfc*/ 60,
+                /*nss*/ 65, /*curp*/ 70, /*DO*/ 500, /*DF*/ 300, /*DE*/ 300, /*fdp*/ 70, /*sueldo*/ 40, /*bono*/ 35, /*status*/ 75,
+                /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
+                /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TTortas.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Estadia: " + e.getMessage());
+        }
+
+    }
+
+    public void editar() {
+        int id = Integer.parseInt(idbd.getText());
+        String Status = Statustor.getSelectedItem().toString();
+        String BF = BFtor.getSelectedItem().toString();
+        String Finiquito = Fintor.getSelectedItem().toString();
+        String BFREtor = BFRE.getSelectedItem().toString();
+        String SQL = "UPDATE `confort`.`torteria` SET `# Exp` = ?, `Apellido P` = ?,"
+                + " `Apellido M` = ?, `Nombre(s)` = ?, `# Casa` = ?, `# Recados` = ?,"
+                + " `# Celular` = ?, `RFC` = ?, `NSS` = ?, `CURP` = ?, `Doc originales` = ?,"
+                + " `Doc faltantes` = ?, `Doc entregados` = ?, `Forma de pago` = ?, `Sueldo` = ?,"
+                + " `Bono` = ?, `Status` = ?, `Fecha entrevista` = ?, `Fecha ingreso` = ?,"
+                + " `Ultimo dia laborado` = ?, `Fecha de firma baja` = ?, `Baja firmada` = ?,"
+                + " `Finiquito` = ?, `Fecha de Re-ingreso` = ?, `Ultimo dia laborado (re)` = ?,"
+                + " `Fecha firma baja (re)` = ?, `Fecha de Baja (re)` = ?, `Baja firmada (re)` = ?,"
+                + " `Cambio de Servicio` = ?, `# recepcion personal` = ?, `Observaciones` = ? WHERE `idTorteria` = ?";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setString(1, NDEtor.getText());
+            pst.setString(2, Aptor.getText());
+            pst.setString(3, amtor.getText());
+            pst.setString(4, nametor.getText());
+            pst.setString(5, Ndctor.getText());
+            pst.setString(6, Ndrtor.getText());
+            pst.setString(7, Ndcel.getText());
+            pst.setString(8, RFCtor.getText());
+            pst.setString(9, nsstor.getText());
+            pst.setString(10, curptor.getText());
+            pst.setString(11, Dotor.getText());
+            pst.setString(12, Dftor.getText());
+            pst.setString(13, Detor.getText());
+            pst.setString(14, Fdptor.getText());
+            pst.setString(15, sueltor.getText());
+            pst.setString(16, Bonotor.getText());
+            pst.setString(17, Status);
+            pst.setString(18, Fetor.getText());
+            pst.setString(19, FItor.getText());
+            pst.setString(20, UDLtor.getText());
+            pst.setString(21, FdFBtor.getText());
+            pst.setString(22, BF);
+            pst.setString(23, Finiquito);
+            pst.setString(24, FREI.getText());
+            pst.setString(25, UDLRE.getText());
+            pst.setString(26, FFBRE.getText());
+            pst.setString(27, FBRE.getText());
+            pst.setString(28, BFREtor);
+            pst.setString(29, CdStor.getText());
+            pst.setString(30, Nrptor.getText());
+            pst.setString(31, obstor.getText());
+            pst.setInt(32, id);
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Empleado Modificado");
+
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error en modificar empleado: " + e.getMessage());
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -93,13 +342,24 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        CdStor = new javax.swing.JTextField();
+        Nrptor = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         obstor = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        idbd = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        Filtrotor = new javax.swing.JComboBox<>();
+        LabelF1 = new javax.swing.JLabel();
+        Filname = new javax.swing.JTextField();
+        filap = new javax.swing.JTextField();
+        filam = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        TTortas = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -403,8 +663,8 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
                             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(FFBRE, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(UDLRE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Nrptor, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CdStor, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(159, 159, 159)
                         .addComponent(jLabel31)))
@@ -427,7 +687,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FFBRE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel43))
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
                     .addComponent(FBRE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -438,11 +698,11 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CdStor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Nrptor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
@@ -452,27 +712,51 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         obstor.setRows(5);
         jScrollPane3.setViewportView(obstor);
 
+        jButton1.setText("Modificar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Agregar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(idbd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(75, 75, 75)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jLabel27)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(191, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -484,12 +768,19 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel27)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jButton2)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(idbd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -497,15 +788,91 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Registro", jScrollPane1);
 
+        jLabel19.setText("Filtrar por:");
+
+        Filtrotor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona Filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
+        Filtrotor.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrotorItemStateChanged(evt);
+            }
+        });
+
+        LabelF1.setText("jLabel28");
+
+        Filname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FilnameKeyReleased(evt);
+            }
+        });
+
+        filap.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                filapKeyReleased(evt);
+            }
+        });
+
+        filam.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                filamKeyReleased(evt);
+            }
+        });
+
+        TTortas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32"
+            }
+        ));
+        TTortas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TTortasMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(TTortas);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1161, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Filtrotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelF1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(filap, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(filam, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 6806, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 529, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(Filtrotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelF1)
+                    .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel2);
@@ -524,7 +891,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1117, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -537,6 +904,147 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private void FFBREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FFBREActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FFBREActionPerformed
+
+    private void FiltrotorItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrotorItemStateChanged
+        // TODO add your handling code here:
+        String dt = (String) Filtrotor.getSelectedItem();
+        if (dt.equals("Selecciona Filtro")) {
+            LabelF1.setText("");
+            LabelF1.setVisible(false);
+            filap.setText("");
+            filap.setVisible(false);
+            filam.setVisible(false);
+            filam.setText("");
+            Filname.setVisible(false);
+            Filname.setText("");
+            MDT();
+        }
+        if (dt.equals("Apellido P")) {
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar Apellido P:");
+            filap.setText("");
+            filap.setVisible(true);
+            filam.setVisible(false);
+            filam.setText("");
+            Filname.setVisible(false);
+            Filname.setText("");
+            MDT();
+        }
+        if (dt.equals("Apellido M")) {
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar Apellido M:");
+            filap.setText("");
+            filap.setVisible(false);
+            filam.setVisible(true);
+            filam.setText("");
+            Filname.setVisible(false);
+            Filname.setText("");
+            MDT();
+        }
+        if (dt.equals("Filtrar por Nombre(s)")) {
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar Nombre(s):");
+            filap.setText("");
+            filap.setVisible(false);
+            filam.setVisible(false);
+            filam.setText("");
+            Filname.setVisible(true);
+            Filname.setText("");
+            MDT();
+        }
+    }//GEN-LAST:event_FiltrotorItemStateChanged
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        AgregarE();
+        MDT();
+        clean();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void FilnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilnameKeyReleased
+        // TODO add your handling code here:
+        MDT();
+
+    }//GEN-LAST:event_FilnameKeyReleased
+
+    private void filapKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filapKeyReleased
+        // TODO add your handling code here:
+        MDT();
+
+    }//GEN-LAST:event_filapKeyReleased
+
+    private void filamKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filamKeyReleased
+        // TODO add your handling code here:
+        MDT();
+
+    }//GEN-LAST:event_filamKeyReleased
+
+    private void TTortasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TTortasMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) TTortas.getModel();
+
+        int fila = TTortas.getSelectedRow();
+        idbd.setText(String.valueOf(TTortas.getValueAt(fila, 0)));
+        NDEtor.setText(String.valueOf(TTortas.getValueAt(fila, 1)));
+        Aptor.setText(String.valueOf(TTortas.getValueAt(fila, 2)));
+        amtor.setText(String.valueOf(TTortas.getValueAt(fila, 3)));
+        nametor.setText(String.valueOf(TTortas.getValueAt(fila, 4)));
+        Ndctor.setText(String.valueOf(TTortas.getValueAt(fila, 5)));
+        Ndrtor.setText(String.valueOf(TTortas.getValueAt(fila, 6)));
+        Ndcel.setText(String.valueOf(TTortas.getValueAt(fila, 7)));
+        RFCtor.setText(String.valueOf(TTortas.getValueAt(fila, 8)));
+        nsstor.setText(String.valueOf(TTortas.getValueAt(fila, 9)));
+        curptor.setText(String.valueOf(TTortas.getValueAt(fila, 10)));
+        Dotor.setText(String.valueOf(TTortas.getValueAt(fila, 11)));
+        Dftor.setText(String.valueOf(TTortas.getValueAt(fila, 12)));
+        Detor.setText(String.valueOf(TTortas.getValueAt(fila, 13)));
+        Fdptor.setText(String.valueOf(TTortas.getValueAt(fila, 14)));
+        sueltor.setText(String.valueOf(TTortas.getValueAt(fila, 15)));
+        Bonotor.setText(String.valueOf(TTortas.getValueAt(fila, 16)));
+        String combo1 = model.getValueAt(fila, 17).toString();
+        for (int i = 0; i < Statustor.getItemCount(); i++) {
+            if (Statustor.getItemAt(i).equalsIgnoreCase(combo1)) {
+                Statustor.setSelectedIndex(i);
+            }
+        }
+        Fetor.setText(String.valueOf(TTortas.getValueAt(fila, 18)));
+        FItor.setText(String.valueOf(TTortas.getValueAt(fila, 19)));
+        UDLtor.setText(String.valueOf(TTortas.getValueAt(fila, 20)));
+        FdFBtor.setText(String.valueOf(TTortas.getValueAt(fila, 21)));
+        String combo2 = model.getValueAt(fila, 22).toString();
+        for (int i = 0; i < BFtor.getItemCount(); i++) {
+            if (BFtor.getItemAt(i).equalsIgnoreCase(combo2)) {
+                BFtor.setSelectedIndex(i);
+            }
+        }
+        String combo3 = model.getValueAt(fila, 23).toString();
+        for (int i = 0; i < Fintor.getItemCount(); i++) {
+            if (Fintor.getItemAt(i).equalsIgnoreCase(combo3)) {
+                Fintor.setSelectedIndex(i);
+            }
+        }
+        FREI.setText(String.valueOf(TTortas.getValueAt(fila, 24)));
+        UDLRE.setText(String.valueOf(TTortas.getValueAt(fila, 25)));
+        FFBRE.setText(String.valueOf(TTortas.getValueAt(fila, 26)));
+        FBRE.setText(String.valueOf(TTortas.getValueAt(fila, 27)));
+        String combo4 = model.getValueAt(fila, 28).toString();
+        for (int i = 0; i < Fintor.getItemCount(); i++) {
+            if (Fintor.getItemAt(i).equalsIgnoreCase(combo4)) {
+                Fintor.setSelectedIndex(i);
+            }
+        }
+        CdStor.setText(String.valueOf(TTortas.getValueAt(fila, 29)));
+        Nrptor.setText(String.valueOf(TTortas.getValueAt(fila, 30)));
+        obstor.setText(String.valueOf(TTortas.getValueAt(fila, 31)));
+
+    }//GEN-LAST:event_TTortasMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        editar();
+        MDT();
+        clean();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -578,6 +1086,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> BFRE;
     private javax.swing.JComboBox<String> BFtor;
     private javax.swing.JTextField Bonotor;
+    private javax.swing.JTextField CdStor;
     private javax.swing.JTextField Detor;
     private javax.swing.JTextField Dftor;
     private javax.swing.JTextField Dotor;
@@ -589,17 +1098,27 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Fdptor;
     private javax.swing.JLabel Fe;
     private javax.swing.JTextField Fetor;
+    private javax.swing.JTextField Filname;
+    private javax.swing.JComboBox<String> Filtrotor;
     private javax.swing.JComboBox<String> Fintor;
+    private javax.swing.JLabel LabelF1;
     private javax.swing.JTextField NDEtor;
     private javax.swing.JTextField Ndcel;
     private javax.swing.JTextField Ndctor;
     private javax.swing.JTextField Ndrtor;
+    private javax.swing.JTextField Nrptor;
     private javax.swing.JTextField RFCtor;
     private javax.swing.JComboBox<String> Statustor;
+    private javax.swing.JTable TTortas;
     private javax.swing.JTextField UDLRE;
     private javax.swing.JTextField UDLtor;
     private javax.swing.JTextField amtor;
     private javax.swing.JTextField curptor;
+    private javax.swing.JTextField filam;
+    private javax.swing.JTextField filap;
+    private javax.swing.JTextField idbd;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -610,6 +1129,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
@@ -644,9 +1164,8 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField nametor;
     private javax.swing.JTextField nsstor;
     private javax.swing.JTextArea obstor;
