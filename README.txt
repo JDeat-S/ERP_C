@@ -1,8 +1,49 @@
+Ver 1.2.0
+Cambios 24/08/2021
+-Se añadio ventana con Registro y tablas para
+	-Tortas
+En ventana RH > Tortas podras registrar:
+-# EXP.
+-Apellido P
+-Apellido M
+-Nombres(s)
+-# Casa
+-# Recados
+-# Celular	
+-RFC
+-NSS
+-CURP
+-Documentos originales	
+-Documentos faltantes
+-Documentos entregados
+-Forma de pago
+-Sueldo
+-Bono
+-Servicio 
+-Status
+-Fecha entrevista
+-Fecha ingreso
+-Fecha ultimo dia laborado
+-Fecha firma baja	
+-BAJA FIRMADA
+-FINIQUITO
+-FECHA RE-INGRESO
+-CAMBIO DE SERVICIO
+-FECHA ULTIMO DIA LABORADO
+-FECHA DE BAJA	
+-BAJA FIRMADA	
+-OBSERVACIONES	
+-# RECEPCION PERSONAL
+Cambios BD
+-Se creo una tabla para llenar los campos de Tortas
+-Se añadieron detalles a los servicios
+
 Cambios 21-23/08/2021
 Se añadio nuevo codigo fuente al repocitorio reportes, ese codigo hara reportes y enviarcelos a la licenciada
 Se cuando haya una version disponible se publicara como Ver 1.0
 Versiones anteriores a la 1.0 son experimentales es decir pueden producir errores o no estan totalmente terminadas
-
+CAMBIO IMPORTANTE
+-El programa MYSQL workbreanch ya no es 100% funcional en el programa se remplazara por Xampp
 
 Ver 1.1.0
 Cambios 20/08/2021
@@ -31,6 +72,7 @@ En ventana RH > Estadias podras registrar:
 -Autorización del empastado
 -Evaluación
 -Observaciones
+(aun no es accesible)
 
 Cambios BD
 -Se creo una tabla para llenar los campos de estadia
