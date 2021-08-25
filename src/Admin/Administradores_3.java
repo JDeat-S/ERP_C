@@ -596,7 +596,7 @@ public final class Administradores_3 extends javax.swing.JFrame {
 
     private void IDRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDRHActionPerformed
         // TODO add your handling code here:
-        RH_EADM_4 kk = new RH_EADM_4();
+        Admin_Empleados_4 kk = new Admin_Empleados_4();
         kk.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_IDRHActionPerformed
@@ -650,7 +650,7 @@ public final class Administradores_3 extends javax.swing.JFrame {
 
     private void IDNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDNActionPerformed
         // TODO add your handling code here:
-        AdminNomina_5 kk = new AdminNomina_5();
+        Admin_Nomina_5 kk = new Admin_Nomina_5();
         kk.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_IDNActionPerformed

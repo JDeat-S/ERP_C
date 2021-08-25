@@ -27,13 +27,13 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
 
     public RH_Estadias_4() {
         initComponents();
-         LabelF1.setVisible(false);
+        LabelF1.setVisible(false);
         FilAP.setVisible(false);
         FilAM.setVisible(false);
         Filname.setVisible(false);
         idest.setVisible(false);
         MDE();
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -404,7 +404,8 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
         Testadia = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        General = new javax.swing.JMenuItem();
+        Torteria = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -773,11 +774,25 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Tabla Estadia", jScrollPane2);
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        jMenu1.setText("Cambiar a");
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        General.setText("Empleados General");
+        General.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GeneralActionPerformed(evt);
+            }
+        });
+        jMenu1.add(General);
+
+        Torteria.setText("Empleados Torteria");
+        Torteria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TorteriaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Torteria);
+
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -955,7 +970,7 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
             Filname.setText("");
             MDE();
         }
-        if (dt.equals("Filtrar por Nombre(s)")) {
+        if (dt.equals("Nombre(s)")) {
             LabelF1.setVisible(true);
             LabelF1.setText("Buscar Nombre(s):");
             FilAP.setText("");
@@ -967,6 +982,20 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
             MDE();
         }
     }//GEN-LAST:event_FiltroestItemStateChanged
+
+    private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
+        // TODO add your handling code here:
+        RH_Empleados_4 regr = new RH_Empleados_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_GeneralActionPerformed
+
+    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
+        // TODO add your handling code here:
+        RH_Tortas_4 regr = new RH_Tortas_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_TorteriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1027,6 +1056,7 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
     private javax.swing.JTextField FilAP;
     private javax.swing.JTextField Filname;
     private javax.swing.JComboBox<String> Filtroest;
+    private javax.swing.JMenuItem General;
     private javax.swing.JLabel LabelF1;
     private javax.swing.JTextField NCest;
     private javax.swing.JTextField NexpEst;
@@ -1038,6 +1068,7 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> TDCest;
     private javax.swing.JCheckBox Taest;
     private javax.swing.JTable Testadia;
+    private javax.swing.JMenuItem Torteria;
     private javax.swing.JButton add;
     private javax.swing.JTextField idest;
     private javax.swing.JLabel jLabel1;
@@ -1055,7 +1086,6 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

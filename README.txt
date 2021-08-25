@@ -1,3 +1,30 @@
+Ver 1.3.0
+Cambios 25/08/2021
+Ventana RH
+*Nueva Funcion: Cambiar a*
+Esta funcion sirve para todas las acceder a las ventanas Estadia y Torteria
+Para acceder a las ventanas hay un menu en la parte superior izquierda
+
+Ventana RH > Tabla general
+Ahora puedes filtrar datos
+Los siguientes filtros estan disponibles:
+-Nombre
+-Zona
+-Servicio
+-Fecha de ingreso
+-CURP
+-NSS
+-Estatus
+
+Ventana Nomina
+-Se corrigieron errores menores
+
+Acceso como administrador
+*Nueva funcion: Todas las ventanas*
+Esta funcion se encuentra en la parte superior izquierda de cualquier ventana que abras accediendo como administrador
+Esta funcion te da acceso a cualquier ventana ya sea de Nomina, RH o administradores.
+Se hizo con el fin de remplazar el boton "volver"
+
 Ver 1.2.0
 Cambios 24/08/2021
 -Se añadio ventana con Registro y tablas para
@@ -42,7 +69,8 @@ Cambios 21-23/08/2021
 Se añadio nuevo codigo fuente al repocitorio reportes, ese codigo hara reportes y enviarcelos a la licenciada
 Se cuando haya una version disponible se publicara como Ver 1.0
 Versiones anteriores a la 1.0 son experimentales es decir pueden producir errores o no estan totalmente terminadas
-CAMBIO IMPORTANTE
+CAMBIOS IMPORTANTES
+Versiones superiores 1.1.0
 -El programa MYSQL workbreanch ya no es 100% funcional en el programa se remplazara por Xampp
 
 Ver 1.1.0

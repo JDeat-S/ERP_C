@@ -12,15 +12,9 @@ import javax.swing.JOptionPane;
  *
  * @author JDeat
  */
-
 public class ConexionSQL {
 
-    static Connection getConexion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    Connection con;
-    Statement st;
+    Connection con = null;
 
     public Connection conexion() {
 
@@ -32,13 +26,17 @@ public class ConexionSQL {
             con = DriverManager.getConnection("jdbc:mysql://192.168.1.2:3306/confort", "JDeat", "JDeat5577");
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error de conexion: " + e.getMessage());
-        }
+            con.close();
+        } finally {
 
-        return con;
+            return con;
+        }
     }
 
     public Connection getConnection() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");
+        //To change body of generated methods, choose Tools | Templates.
+
     }
 
 }

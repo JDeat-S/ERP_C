@@ -237,10 +237,12 @@ public final class Usuarios_RH_3 extends javax.swing.JFrame {
         CambiarA = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        Ira = new javax.swing.JMenu();
-        IdRH = new javax.swing.JMenuItem();
-        IdN = new javax.swing.JMenuItem();
-        AZyS = new javax.swing.JMenuItem();
+        Menuadm = new javax.swing.JMenu();
+        Nomina1 = new javax.swing.JMenuItem();
+        ZYS = new javax.swing.JMenuItem();
+        General = new javax.swing.JMenuItem();
+        Estadias = new javax.swing.JMenuItem();
+        Torteria = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Usuarios de Recursos Humanos");
@@ -389,7 +391,7 @@ public final class Usuarios_RH_3 extends javax.swing.JFrame {
                             .addComponent(txtAP)
                             .addComponent(FR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtAM)
-                            .addComponent(txtname, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                            .addComponent(txtname, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(UM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -495,33 +497,49 @@ public final class Usuarios_RH_3 extends javax.swing.JFrame {
 
         Menu.add(CambiarA);
 
-        Ira.setText("Ir a");
+        Menuadm.setText("Todas las ventanas");
 
-        IdRH.setText("Interface de RH");
-        IdRH.addActionListener(new java.awt.event.ActionListener() {
+        Nomina1.setText("Ventana Nomina");
+        Nomina1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IdRHActionPerformed(evt);
+                Nomina1ActionPerformed(evt);
             }
         });
-        Ira.add(IdRH);
+        Menuadm.add(Nomina1);
 
-        IdN.setText("Interface de Nomina");
-        IdN.addActionListener(new java.awt.event.ActionListener() {
+        ZYS.setText("Zonas y Servicios");
+        ZYS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IdNActionPerformed(evt);
+                ZYSActionPerformed(evt);
             }
         });
-        Ira.add(IdN);
+        Menuadm.add(ZYS);
 
-        AZyS.setText("Zonas y Servicios");
-        AZyS.addActionListener(new java.awt.event.ActionListener() {
+        General.setText("Empleados General");
+        General.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AZySActionPerformed(evt);
+                GeneralActionPerformed(evt);
             }
         });
-        Ira.add(AZyS);
+        Menuadm.add(General);
 
-        Menu.add(Ira);
+        Estadias.setText("Alumno de estadia");
+        Estadias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstadiasActionPerformed(evt);
+            }
+        });
+        Menuadm.add(Estadias);
+
+        Torteria.setText("Empleados Torteria");
+        Torteria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TorteriaActionPerformed(evt);
+            }
+        });
+        Menuadm.add(Torteria);
+
+        Menu.add(Menuadm);
 
         setJMenuBar(Menu);
 
@@ -639,26 +657,40 @@ public final class Usuarios_RH_3 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_serch1ActionPerformed
 
-    private void IdRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdRHActionPerformed
+    private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
         // TODO add your handling code here:
-        RH_EADM_4 kk = new RH_EADM_4();
-        kk.setVisible(true);
+        Admin_Nomina_5 regr = new Admin_Nomina_5();
+        regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_IdRHActionPerformed
+    }//GEN-LAST:event_Nomina1ActionPerformed
 
-    private void IdNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdNActionPerformed
+    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
         // TODO add your handling code here:
-        AdminNomina_5 kk = new AdminNomina_5();
-        kk.setVisible(true);
+        AltasZyS_3 regr = new AltasZyS_3();
+        regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_IdNActionPerformed
+    }//GEN-LAST:event_ZYSActionPerformed
 
-    private void AZySActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AZySActionPerformed
+    private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
         // TODO add your handling code here:
-        AltasZyS_3 ZyS = new AltasZyS_3();
-        ZyS.setVisible(true);
+        Admin_Empleados_4 regr = new Admin_Empleados_4();
+        regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_AZySActionPerformed
+    }//GEN-LAST:event_GeneralActionPerformed
+
+    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
+        // TODO add your handling code here:
+        Admin_Estadias_4 regr = new Admin_Estadias_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EstadiasActionPerformed
+
+    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
+        // TODO add your handling code here:
+        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_TorteriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -703,15 +735,17 @@ public final class Usuarios_RH_3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem AZyS;
     private javax.swing.JMenu CambiarA;
+    private javax.swing.JMenuItem Estadias;
     private com.toedter.calendar.JDateChooser FR;
-    private javax.swing.JMenuItem IdN;
-    private javax.swing.JMenuItem IdRH;
-    private javax.swing.JMenu Ira;
+    private javax.swing.JMenuItem General;
     private javax.swing.JMenuBar Menu;
+    private javax.swing.JMenu Menuadm;
     private javax.swing.JButton ModRH;
+    private javax.swing.JMenuItem Nomina1;
+    private javax.swing.JMenuItem Torteria;
     private com.toedter.calendar.JDateChooser UM;
+    private javax.swing.JMenuItem ZYS;
     private javax.swing.JButton bntdel;
     private javax.swing.JButton btnadd;
     private javax.swing.JButton jButton1;
