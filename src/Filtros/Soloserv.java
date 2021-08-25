@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-public class FiltrosZonas {
+public class Soloserv {
      ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     int id;
@@ -39,29 +39,29 @@ public class FiltrosZonas {
         return this.nombre;
     }
 
-    public Vector<FiltrosZonas> mostrarzonas() {
+    public Vector<Soloserv> mostrarzonas() {
 
         PreparedStatement ps = null;
         ResultSet rs = null;
         
 
-        Vector<FiltrosZonas> datos = new Vector<FiltrosZonas>();
-        FiltrosZonas dat = null;
+        Vector<Soloserv> datos = new Vector<Soloserv>();
+        Soloserv dat = null;
         try {
 
-            String sql = "SELECT * FROM zona";
+            String sql = "SELECT `idServ`, `Servicio` FROM Servicio";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
-            dat = new FiltrosZonas();
+            dat = new Soloserv();
             dat.setId(0);
             dat.setNombre("");
             datos.add(dat);
 
             while (rs.next()) {
-                dat = new FiltrosZonas();
-                dat.setId(rs.getInt("idZona"));
-                dat.setNombre(rs.getString("Zonas"));
+                dat = new Soloserv();
+                dat.setId(rs.getInt("idServ"));
+                dat.setNombre(rs.getString("Servicio"));
                 datos.add(dat);
             }
             rs.close();
@@ -69,6 +69,5 @@ public class FiltrosZonas {
             System.err.println("Error consulta: " + ex.getMessage());
         }
         return datos;
-        
     }
 }

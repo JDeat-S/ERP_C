@@ -3,6 +3,7 @@ package RH;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
+import Filtros.Soloserv;
 import Inicio.Login_2;
 import ZyS.Servicios;
 import ZyS.Zonas;
@@ -50,14 +51,14 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         FiltrosZonas xd = new FiltrosZonas();
         DefaultComboBoxModel modelzonass = new DefaultComboBoxModel(xd.mostrarzonas());
         FiltroSZGen.setModel(modelzonass);
-        LabelF2.setVisible(false);
+        /*LabelF2.setVisible(false);
         FiltroCurpGen.setVisible(false);
         FiltroFDI.setVisible(false);
         FiltroNSSGen.setVisible(false);
         FiltroSZGen.setVisible(false);
         FiltroStatus.setVisible(false);
         FiltroServGen.setVisible(false);
-        FiltroZGe.setVisible(false);
+        FiltroZGe.setVisible(false);*/
         setIconImage(new ImageIcon(RH_Empleados_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
@@ -363,36 +364,334 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         }
 
     }
+    
+    public void filtrosstatus() {
+        //filtro Zonas
+
+        String where = "select * from empleados";
+        String FiltroStatusGen = FiltroStatus.getSelectedItem().toString();
+
+        if (!"".equals(FiltroStatusGen)) {
+            where = "select * from empleados Where `Status` LIKE '%" + FiltroStatusGen + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            data.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("Entra IMSS");
+            modelo.addColumn("# Exp");//3
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//5
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Correo");//7
+            modelo.addColumn("# Casa");
+            modelo.addColumn("# Recados");//9
+            modelo.addColumn("# Celular");//10
+            modelo.addColumn("RFC");//11
+            modelo.addColumn("NSS");//12
+            modelo.addColumn("CURP");//13
+            modelo.addColumn("Forma de pago");//14
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");//16
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Banco");//18
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");//20
+            modelo.addColumn("Status");
+            modelo.addColumn("Cuenta de banco");//22
+            modelo.addColumn("Calle");
+            modelo.addColumn("# Exterior");//24
+            modelo.addColumn("# Interior");
+            modelo.addColumn("Colonia");//26
+            modelo.addColumn("DLG o MUN");
+            modelo.addColumn("C.P");//28
+            modelo.addColumn("Doc. Originales");
+            modelo.addColumn("Doc. Faltantes");//30
+            modelo.addColumn("Doc. Entregables");
+            modelo.addColumn("Fecha entrevista");//32
+            modelo.addColumn("Fecha ingreso");
+            modelo.addColumn("Fecha ultimo dia laborado");//34
+            modelo.addColumn("Fecha firma baja");
+            modelo.addColumn("Baja firmada");//36
+            modelo.addColumn("Finiquito");
+            modelo.addColumn("Cambio de Zona");//38
+            modelo.addColumn("Cambio de servicio");
+            modelo.addColumn("Fecha de Re-ingreso (Re)");//40
+            modelo.addColumn("Fecha ultimo dia laborado (Re)");
+            modelo.addColumn("Fecha firma baja (Re)");//42
+            modelo.addColumn("Fecha de baja (Re)");
+            modelo.addColumn("Baja firmada (Re)");//44
+            modelo.addColumn("# recepcion personal");//44
+            modelo.addColumn("Observaciones");//44
+
+            int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*Exp*/ 50, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*correo*/ 75, /*casa*/ 65, /*recados*/ 70,
+                /*celular*/ 65, /*rfc*/ 60,
+                /*nss*/ 65, /*curp*/ 70, /*fdp*/ 70, /*sueldo*/ 40, /*bono*/ 35, /*cda*/ 70, /*banco*/ 55, /*zona*/ 60, /*serv*/ 60, /*status*/ 75,
+                /*CTA*/ 60, /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
+                /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CZ*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
+                /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                data.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
+        }
+
+    }
+
+    public void filtroszonas() {
+        //filtro Zonas
+
+        String where = "select * from empleados";
+        String FiltroZGen = FiltroZGe.getSelectedItem().toString();
+
+        if (!"".equals(FiltroZGen)) {
+            where = "select * from empleados where `Zona` LIKE '%" + FiltroZGen + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            data.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("Entra IMSS");
+            modelo.addColumn("# Exp");//3
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//5
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Correo");//7
+            modelo.addColumn("# Casa");
+            modelo.addColumn("# Recados");//9
+            modelo.addColumn("# Celular");//10
+            modelo.addColumn("RFC");//11
+            modelo.addColumn("NSS");//12
+            modelo.addColumn("CURP");//13
+            modelo.addColumn("Forma de pago");//14
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");//16
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Banco");//18
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");//20
+            modelo.addColumn("Status");
+            modelo.addColumn("Cuenta de banco");//22
+            modelo.addColumn("Calle");
+            modelo.addColumn("# Exterior");//24
+            modelo.addColumn("# Interior");
+            modelo.addColumn("Colonia");//26
+            modelo.addColumn("DLG o MUN");
+            modelo.addColumn("C.P");//28
+            modelo.addColumn("Doc. Originales");
+            modelo.addColumn("Doc. Faltantes");//30
+            modelo.addColumn("Doc. Entregables");
+            modelo.addColumn("Fecha entrevista");//32
+            modelo.addColumn("Fecha ingreso");
+            modelo.addColumn("Fecha ultimo dia laborado");//34
+            modelo.addColumn("Fecha firma baja");
+            modelo.addColumn("Baja firmada");//36
+            modelo.addColumn("Finiquito");
+            modelo.addColumn("Cambio de Zona");//38
+            modelo.addColumn("Cambio de servicio");
+            modelo.addColumn("Fecha de Re-ingreso (Re)");//40
+            modelo.addColumn("Fecha ultimo dia laborado (Re)");
+            modelo.addColumn("Fecha firma baja (Re)");//42
+            modelo.addColumn("Fecha de baja (Re)");
+            modelo.addColumn("Baja firmada (Re)");//44
+            modelo.addColumn("# recepcion personal");//44
+            modelo.addColumn("Observaciones");//44
+
+            int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*Exp*/ 50, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*correo*/ 75, /*casa*/ 65, /*recados*/ 70,
+                /*celular*/ 65, /*rfc*/ 60,
+                /*nss*/ 65, /*curp*/ 70, /*fdp*/ 70, /*sueldo*/ 40, /*bono*/ 35, /*cda*/ 70, /*banco*/ 55, /*zona*/ 60, /*serv*/ 60, /*status*/ 75,
+                /*CTA*/ 60, /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
+                /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CZ*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
+                /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                data.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
+        }
+
+    }
+    
+    public void filtroserv() {
+        //filtro servicio
+
+        String where = "select * from empleados";
+        String FiltroSGen = FiltroServGen.getSelectedItem().toString();
+
+        if (!"".equals(FiltroSGen)) {
+            where = "select * from empleados Where `Servicio` LIKE '%" + FiltroSGen + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            data.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("Entra IMSS");
+            modelo.addColumn("# Exp");//3
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//5
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Correo");//7
+            modelo.addColumn("# Casa");
+            modelo.addColumn("# Recados");//9
+            modelo.addColumn("# Celular");//10
+            modelo.addColumn("RFC");//11
+            modelo.addColumn("NSS");//12
+            modelo.addColumn("CURP");//13
+            modelo.addColumn("Forma de pago");//14
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");//16
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Banco");//18
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");//20
+            modelo.addColumn("Status");
+            modelo.addColumn("Cuenta de banco");//22
+            modelo.addColumn("Calle");
+            modelo.addColumn("# Exterior");//24
+            modelo.addColumn("# Interior");
+            modelo.addColumn("Colonia");//26
+            modelo.addColumn("DLG o MUN");
+            modelo.addColumn("C.P");//28
+            modelo.addColumn("Doc. Originales");
+            modelo.addColumn("Doc. Faltantes");//30
+            modelo.addColumn("Doc. Entregables");
+            modelo.addColumn("Fecha entrevista");//32
+            modelo.addColumn("Fecha ingreso");
+            modelo.addColumn("Fecha ultimo dia laborado");//34
+            modelo.addColumn("Fecha firma baja");
+            modelo.addColumn("Baja firmada");//36
+            modelo.addColumn("Finiquito");
+            modelo.addColumn("Cambio de Zona");//38
+            modelo.addColumn("Cambio de servicio");
+            modelo.addColumn("Fecha de Re-ingreso (Re)");//40
+            modelo.addColumn("Fecha ultimo dia laborado (Re)");
+            modelo.addColumn("Fecha firma baja (Re)");//42
+            modelo.addColumn("Fecha de baja (Re)");
+            modelo.addColumn("Baja firmada (Re)");//44
+            modelo.addColumn("# recepcion personal");//44
+            modelo.addColumn("Observaciones");//44
+
+            int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*Exp*/ 50, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*correo*/ 75, /*casa*/ 65, /*recados*/ 70,
+                /*celular*/ 65, /*rfc*/ 60,
+                /*nss*/ 65, /*curp*/ 70, /*fdp*/ 70, /*sueldo*/ 40, /*bono*/ 35, /*cda*/ 70, /*banco*/ 55, /*zona*/ 60, /*serv*/ 60, /*status*/ 75,
+                /*CTA*/ 60, /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
+                /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CZ*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
+                /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                data.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
+        }
+
+    }
 
     public void mostrardatos() {
         //Buscar empleado
         String FiltroNGe = FiltroNG.getText();
         String where = "select * from empleados";
-        /*
-        String FiltroZGen = FiltroZGe.getSelectedItem().toString();
-        String FiltroSGen = FiltroServGen.getSelectedItem().toString();
         String FiltroFDIGen = FiltroFDI.getText();
         String FiltrocurpGen = FiltroCurpGen.getText();
-        String FiltroNSSGen = this.FiltroNSSGen.getText();
-        String FiltroStatusGen = FiltroStatus.getSelectedItem().toString();
-         */
+        String FiltroNSSGe = FiltroNSSGen.getText();
+
         if (!"".equals(FiltroNGe)) {
             where = "Select * from empleados where `Nombre(s)` LIKE '%" + FiltroNGe + "%'";
-        }
-        /*else if (!"".equals(FiltroFDIGen)) {
-            where = "select * from empleados Where `Fecha ingreso` LIKE '%" + FiltroFDIGen + "%'";
+        } else if (!"".equals(FiltroFDIGen)) {
+            where = "select * from empleados Where `Fecha de ingreso` LIKE '%" + FiltroFDIGen + "%'";
         } else if (!"".equals(FiltrocurpGen)) {
             where = "select * from empleados Where `CURP` LIKE '%" + FiltrocurpGen + "%'";
-        } else if (!"".equals(FiltroNSSGen)) {
-            where = "select * from empleados Where `NSS` LIKE '%" + FiltroNSSGen + "%'";
-        } else if (!"".equals(FiltroStatusGen)) {
-            where = "select * from empleados Where `Status` LIKE '%" + FiltroStatusGen + "%'";
-        } else if (!"".equals(FiltroZGen)) {
-            where = "select * from empleados where `Zona` LIKE '%" + FiltroZGen + "%'";
-        } else if (!"".equals(FiltroSGen)) {
-            where = "select * from empleados Where `Servicio` LIKE '%" + FiltroSGen + "%'";
-        }*/
-
+        } else if (!"".equals(FiltroNSSGe)) {
+            where = "select * from empleados Where `NSS` LIKE '%" + FiltroNSSGe + "%'";
+        }
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1619,8 +1918,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(FiltroNSSGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Cs2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ScrollpaneTG, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addComponent(ScrollpaneTG, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jScrollPane5.setViewportView(jPanel6);
@@ -1978,8 +2277,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(deleteimss)
                     .addComponent(Cs4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(3294, Short.MAX_VALUE))
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jScrollPane6.setViewportView(jPanel8);
@@ -2346,30 +2645,19 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         mostrardatos();
     }//GEN-LAST:event_FiltroFDIKeyReleased
 
-    private void FiltroSZGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZGenItemStateChanged
-        // TODO add your handling code here:
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FiltroSZGen.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroServGen.setModel(modelServicio);
-        }
-
-    }//GEN-LAST:event_FiltroSZGenItemStateChanged
-
     private void FiltroZGeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZGeItemStateChanged
         // TODO add your handling code here:
-        mostrardatos();
+       filtroszonas();
     }//GEN-LAST:event_FiltroZGeItemStateChanged
 
     private void FiltroServGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServGenItemStateChanged
         // TODO add your handling code here:
-        mostrardatos();
+        filtroserv();
     }//GEN-LAST:event_FiltroServGenItemStateChanged
 
     private void FiltroStatusItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroStatusItemStateChanged
         // TODO add your handling code here:
-        mostrardatos();
+        filtrosstatus();
     }//GEN-LAST:event_FiltroStatusItemStateChanged
 
     private void FiltroCurpGenKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroCurpGenKeyReleased
@@ -2395,6 +2683,17 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed
+
+    private void FiltroSZGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZGenItemStateChanged
+        // TODO add your handling code here:
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FiltroSZGen.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroServGen.setModel(modelServicio);
+        }
+
+    }//GEN-LAST:event_FiltroSZGenItemStateChanged
 
     /**
      * @param args the command line arguments

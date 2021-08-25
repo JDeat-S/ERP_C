@@ -1362,8 +1362,8 @@
                               <Component id="Cs2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ScrollpaneTG" min="-2" pref="580" max="-2" attributes="0"/>
-                          <EmptySpace pref="77" max="32767" attributes="0"/>
+                          <Component id="ScrollpaneTG" pref="629" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2377,8 +2377,8 @@
                               <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane7" min="-2" pref="580" max="-2" attributes="0"/>
-                          <EmptySpace pref="3294" max="32767" attributes="0"/>
+                          <Component id="jScrollPane7" pref="637" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
