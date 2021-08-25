@@ -362,7 +362,8 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         TTortas = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        General = new javax.swing.JMenuItem();
+        Estadias = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -752,9 +753,10 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addGap(67, 67, 67)
+                                .addComponent(jButton2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))
+                                .addComponent(jButton1))
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(142, Short.MAX_VALUE))
         );
@@ -840,9 +842,9 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Filtrotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -854,9 +856,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
                         .addComponent(filap, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(filam, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 6806, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 6806, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -879,11 +879,25 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Tabla torteria", jScrollPane2);
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        jMenu1.setText("Cambiar a");
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        General.setText("Empleados General");
+        General.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GeneralActionPerformed(evt);
+            }
+        });
+        jMenu1.add(General);
+
+        Estadias.setText("Alumno de estadia");
+        Estadias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstadiasActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Estadias);
+
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -1046,6 +1060,20 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         clean();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
+        // TODO add your handling code here:
+        RH_Empleados_4 regr = new RH_Empleados_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_GeneralActionPerformed
+
+    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
+        // TODO add your handling code here:
+        RH_Estadias_4 regr = new RH_Estadias_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EstadiasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1090,6 +1118,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Detor;
     private javax.swing.JTextField Dftor;
     private javax.swing.JTextField Dotor;
+    private javax.swing.JMenuItem Estadias;
     private javax.swing.JTextField FBRE;
     private javax.swing.JTextField FFBRE;
     private javax.swing.JTextField FItor;
@@ -1101,6 +1130,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Filname;
     private javax.swing.JComboBox<String> Filtrotor;
     private javax.swing.JComboBox<String> Fintor;
+    private javax.swing.JMenuItem General;
     private javax.swing.JLabel LabelF1;
     private javax.swing.JTextField NDEtor;
     private javax.swing.JTextField Ndcel;
@@ -1153,7 +1183,6 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;

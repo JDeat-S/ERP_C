@@ -368,17 +368,18 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         //Buscar empleado
         String FiltroNGe = FiltroNG.getText();
         String where = "select * from empleados";
-/*
+        /*
         String FiltroZGen = FiltroZGe.getSelectedItem().toString();
         String FiltroSGen = FiltroServGen.getSelectedItem().toString();
         String FiltroFDIGen = FiltroFDI.getText();
         String FiltrocurpGen = FiltroCurpGen.getText();
         String FiltroNSSGen = this.FiltroNSSGen.getText();
         String FiltroStatusGen = FiltroStatus.getSelectedItem().toString();
-*/
+         */
         if (!"".equals(FiltroNGe)) {
             where = "Select * from empleados where `Nombre(s)` LIKE '%" + FiltroNGe + "%'";
-        }  /*else if (!"".equals(FiltroFDIGen)) {
+        }
+        /*else if (!"".equals(FiltroFDIGen)) {
             where = "select * from empleados Where `Fecha ingreso` LIKE '%" + FiltroFDIGen + "%'";
         } else if (!"".equals(FiltrocurpGen)) {
             where = "select * from empleados Where `CURP` LIKE '%" + FiltrocurpGen + "%'";
@@ -773,6 +774,10 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         Timss = new javax.swing.JTable();
         serch2 = new javax.swing.JTextField();
         Cs4 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        Alumnos = new javax.swing.JMenuItem();
+        EmpleadosT = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Interface de Recursos Humanos");
@@ -1425,7 +1430,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(245, Short.MAX_VALUE))
+                        .addContainerGap(130, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GeneralLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Cs)
@@ -1456,7 +1461,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane3.setViewportView(General);
@@ -1981,6 +1986,28 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
         RH.addTab("Tabla IMSS", jScrollPane6);
 
+        jMenu1.setText("Cambiar a:");
+
+        Alumnos.setText("Alumnos estadia");
+        Alumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlumnosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Alumnos);
+
+        EmpleadosT.setText("Empelados torteria");
+        EmpleadosT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmpleadosTActionPerformed(evt);
+            }
+        });
+        jMenu1.add(EmpleadosT);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1989,7 +2016,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RH, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
+            .addComponent(RH, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
         );
 
         pack();
@@ -2355,6 +2382,20 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         mostrardatos();
     }//GEN-LAST:event_FiltroNSSGenKeyReleased
 
+    private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
+        // TODO add your handling code here:
+        RH_Estadias_4 regr = new RH_Estadias_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_AlumnosActionPerformed
+
+    private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
+        // TODO add your handling code here:
+        RH_Tortas_4 regr = new RH_Tortas_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EmpleadosTActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2421,6 +2462,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTextField AMimss;
     private javax.swing.JTextField APgen;
     private javax.swing.JTextField APimss;
+    private javax.swing.JMenuItem Alumnos;
     private javax.swing.JComboBox<String> BFRE;
     private javax.swing.JComboBox<String> Banco;
     private javax.swing.JTextField Bono;
@@ -2442,6 +2484,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTextField DF;
     private javax.swing.JTextField DLGMUN;
     private javax.swing.JTextField DO;
+    private javax.swing.JMenuItem EmpleadosT;
     private javax.swing.JTextField EntraIMSS;
     private javax.swing.JTextField Exterior;
     private javax.swing.JTextField FBRE;
@@ -2562,6 +2605,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
