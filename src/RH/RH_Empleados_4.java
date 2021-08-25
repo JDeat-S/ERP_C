@@ -3,7 +3,6 @@ package RH;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
-import Filtros.Soloserv;
 import Inicio.Login_2;
 import ZyS.Servicios;
 import ZyS.Zonas;
@@ -51,14 +50,18 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         FiltrosZonas xd = new FiltrosZonas();
         DefaultComboBoxModel modelzonass = new DefaultComboBoxModel(xd.mostrarzonas());
         FiltroSZGen.setModel(modelzonass);
-        /*LabelF2.setVisible(false);
+        FiltroNG.setVisible(false);
+        Filtroam.setVisible(false);
+        Filtroap.setVisible(false);
+        LabelF1.setVisible(false);
+        LabelF2.setVisible(false);
         FiltroCurpGen.setVisible(false);
         FiltroFDI.setVisible(false);
         FiltroNSSGen.setVisible(false);
         FiltroSZGen.setVisible(false);
         FiltroStatus.setVisible(false);
         FiltroServGen.setVisible(false);
-        FiltroZGe.setVisible(false);*/
+        FiltroZGe.setVisible(false);
         setIconImage(new ImageIcon(RH_Empleados_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
@@ -364,7 +367,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         }
 
     }
-    
+
     public void filtrosstatus() {
         //filtro Zonas
 
@@ -570,7 +573,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         }
 
     }
-    
+
     public void filtroserv() {
         //filtro servicio
 
@@ -677,6 +680,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     public void mostrardatos() {
         //Buscar empleado
         String FiltroNGe = FiltroNG.getText();
+        String Filtroapgen =Filtroap.getText();
+        String FilAM = Filtroam.getText();
         String where = "select * from empleados";
         String FiltroFDIGen = FiltroFDI.getText();
         String FiltrocurpGen = FiltroCurpGen.getText();
@@ -690,8 +695,12 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             where = "select * from empleados Where `CURP` LIKE '%" + FiltrocurpGen + "%'";
         } else if (!"".equals(FiltroNSSGe)) {
             where = "select * from empleados Where `NSS` LIKE '%" + FiltroNSSGe + "%'";
+        }else if (!"".equals(Filtroapgen)) {
+            where = "select * from empleados Where `Apellido P` LIKE '%" + Filtroapgen + "%'";
+        }else if (!"".equals(FilAM)) {
+            where = "select * from empleados Where `Apellido M` LIKE '%" + FilAM + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1026,6 +1035,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         FiltroServGen = new javax.swing.JComboBox<>();
         FiltroCurpGen = new javax.swing.JTextField();
         FiltroNSSGen = new javax.swing.JTextField();
+        Filtroap = new javax.swing.JTextField();
+        Filtroam = new javax.swing.JTextField();
         jScrollPane8 = new javax.swing.JScrollPane();
         IMSS = new javax.swing.JPanel();
         modIMSS = new javax.swing.JButton();
@@ -1808,7 +1819,12 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
         jLabel28.setText("Filtrar por:");
 
-        Filtros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar Filtro", "Nombre", "Zona", "Servicio", "Fecha de ingreso", "CURP", "NSS", "Estatus" }));
+        Filtros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar Filtro", "Apellido P", "Apellido M", "Nombre(s)", "Zona", "Servicio", "Fecha de ingreso", "CURP", "NSS", "Estatus" }));
+        Filtros.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosItemStateChanged(evt);
+            }
+        });
 
         LabelF2.setText("Filtro 2:");
 
@@ -1858,6 +1874,18 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             }
         });
 
+        Filtroap.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroapKeyReleased(evt);
+            }
+        });
+
+        Filtroam.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroamKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -1876,14 +1904,18 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addComponent(Filtros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelF1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(FiltroNG, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelF2)
+                        .addComponent(Filtroam, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Filtroap, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNG, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroZGe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroSZGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelF2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroServGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1916,7 +1948,9 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(FiltroServGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FiltroCurpGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FiltroNSSGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cs2))
+                    .addComponent(Cs2)
+                    .addComponent(Filtroap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Filtroam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ScrollpaneTG, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
                 .addContainerGap())
@@ -2647,7 +2681,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
     private void FiltroZGeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZGeItemStateChanged
         // TODO add your handling code here:
-       filtroszonas();
+        filtroszonas();
     }//GEN-LAST:event_FiltroZGeItemStateChanged
 
     private void FiltroServGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServGenItemStateChanged
@@ -2695,6 +2729,287 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_FiltroSZGenItemStateChanged
 
+    private void FiltrosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosItemStateChanged
+        // TODO add your handling code here:
+        String dt = (String) Filtros.getSelectedItem();
+        if (dt.equals("Selecciona Filtro")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(false);
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+        }
+        if (dt.equals("Apellido P")) {
+            Filtroam.setVisible(false);
+            Filtroam.setText("");
+            Filtroap.setVisible(true);
+            Filtroap.setText("");
+            FiltroNG.setVisible(false);
+            FiltroNG.setText("");
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar por Apellido P:");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroCurpGen.setText("");
+            FiltroFDI.setVisible(false);
+            FiltroFDI.setText("");
+            FiltroNSSGen.setVisible(false);
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setVisible(false);
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setVisible(false);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setVisible(false);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setVisible(false);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+        }
+        if (dt.equals("Apellido M")) {
+            Filtroam.setVisible(true);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar por Apellido M:");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+        }
+        if (dt.equals("Nombre(s)")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(true);
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar por Nombre(s):");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+
+        }
+        if (dt.equals("Zona")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar por Zona:");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(true);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+
+        }
+        if (dt.equals("Servicio")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(true);
+            LabelF1.setText("Selecciona Zona:");
+            LabelF2.setVisible(true);
+            LabelF2.setText("Selecciona servicio:");
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(true);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(true);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+        }
+        if (dt.equals("Fecha de ingreso")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(false);
+            LabelF1.setText("Buscar Fecha de ingreso");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(true);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+
+        }
+        if (dt.equals("CURP")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(false);
+            LabelF1.setText("Buscar por CURP:");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(true);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+
+        }
+        if (dt.equals("NSS")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(false);
+            LabelF1.setText("Buscar por NSS:");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(true);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+
+        }
+        if (dt.equals("Estatus")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(false);
+            LabelF1.setText("Buscar por Estatus:");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(true);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+
+        }
+    }//GEN-LAST:event_FiltrosItemStateChanged
+
+    private void FiltroapKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroapKeyReleased
+        // TODO add your handling code here:
+        mostrardatos();
+    }//GEN-LAST:event_FiltroapKeyReleased
+
+    private void FiltroamKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroamKeyReleased
+        // TODO add your handling code here:
+        mostrardatos();
+    }//GEN-LAST:event_FiltroamKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -2714,41 +3029,6 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(RH_Empleados_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
@@ -2802,6 +3082,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroServGen;
     private javax.swing.JComboBox<String> FiltroStatus;
     private javax.swing.JComboBox<String> FiltroZGe;
+    private javax.swing.JTextField Filtroam;
+    private javax.swing.JTextField Filtroap;
     private javax.swing.JComboBox<String> Filtros;
     private javax.swing.JPanel General;
     private javax.swing.JPanel IMSS;

@@ -50,6 +50,10 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         FiltrosZonas xd = new FiltrosZonas();
         DefaultComboBoxModel modelzonass = new DefaultComboBoxModel(xd.mostrarzonas());
         FiltroSZGen.setModel(modelzonass);
+        FiltroNG.setVisible(false);
+        Filtroam.setVisible(false);
+        Filtroap.setVisible(false);
+        LabelF1.setVisible(false);
         LabelF2.setVisible(false);
         FiltroCurpGen.setVisible(false);
         FiltroFDI.setVisible(false);
@@ -364,34 +368,338 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
     }
 
+    public void filtrosstatus() {
+        //filtro Zonas
+
+        String where = "select * from empleados";
+        String FiltroStatusGen = FiltroStatus.getSelectedItem().toString();
+
+        if (!"".equals(FiltroStatusGen)) {
+            where = "select * from empleados Where `Status` LIKE '%" + FiltroStatusGen + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            data.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("Entra IMSS");
+            modelo.addColumn("# Exp");//3
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//5
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Correo");//7
+            modelo.addColumn("# Casa");
+            modelo.addColumn("# Recados");//9
+            modelo.addColumn("# Celular");//10
+            modelo.addColumn("RFC");//11
+            modelo.addColumn("NSS");//12
+            modelo.addColumn("CURP");//13
+            modelo.addColumn("Forma de pago");//14
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");//16
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Banco");//18
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");//20
+            modelo.addColumn("Status");
+            modelo.addColumn("Cuenta de banco");//22
+            modelo.addColumn("Calle");
+            modelo.addColumn("# Exterior");//24
+            modelo.addColumn("# Interior");
+            modelo.addColumn("Colonia");//26
+            modelo.addColumn("DLG o MUN");
+            modelo.addColumn("C.P");//28
+            modelo.addColumn("Doc. Originales");
+            modelo.addColumn("Doc. Faltantes");//30
+            modelo.addColumn("Doc. Entregables");
+            modelo.addColumn("Fecha entrevista");//32
+            modelo.addColumn("Fecha ingreso");
+            modelo.addColumn("Fecha ultimo dia laborado");//34
+            modelo.addColumn("Fecha firma baja");
+            modelo.addColumn("Baja firmada");//36
+            modelo.addColumn("Finiquito");
+            modelo.addColumn("Cambio de Zona");//38
+            modelo.addColumn("Cambio de servicio");
+            modelo.addColumn("Fecha de Re-ingreso (Re)");//40
+            modelo.addColumn("Fecha ultimo dia laborado (Re)");
+            modelo.addColumn("Fecha firma baja (Re)");//42
+            modelo.addColumn("Fecha de baja (Re)");
+            modelo.addColumn("Baja firmada (Re)");//44
+            modelo.addColumn("# recepcion personal");//44
+            modelo.addColumn("Observaciones");//44
+
+            int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*Exp*/ 50, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*correo*/ 75, /*casa*/ 65, /*recados*/ 70,
+                /*celular*/ 65, /*rfc*/ 60,
+                /*nss*/ 65, /*curp*/ 70, /*fdp*/ 70, /*sueldo*/ 40, /*bono*/ 35, /*cda*/ 70, /*banco*/ 55, /*zona*/ 60, /*serv*/ 60, /*status*/ 75,
+                /*CTA*/ 60, /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
+                /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CZ*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
+                /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                data.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
+        }
+
+    }
+
+    public void filtroszonas() {
+        //filtro Zonas
+
+        String where = "select * from empleados";
+        String FiltroZGen = FiltroZGe.getSelectedItem().toString();
+
+        if (!"".equals(FiltroZGen)) {
+            where = "select * from empleados where `Zona` LIKE '%" + FiltroZGen + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            data.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("Entra IMSS");
+            modelo.addColumn("# Exp");//3
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//5
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Correo");//7
+            modelo.addColumn("# Casa");
+            modelo.addColumn("# Recados");//9
+            modelo.addColumn("# Celular");//10
+            modelo.addColumn("RFC");//11
+            modelo.addColumn("NSS");//12
+            modelo.addColumn("CURP");//13
+            modelo.addColumn("Forma de pago");//14
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");//16
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Banco");//18
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");//20
+            modelo.addColumn("Status");
+            modelo.addColumn("Cuenta de banco");//22
+            modelo.addColumn("Calle");
+            modelo.addColumn("# Exterior");//24
+            modelo.addColumn("# Interior");
+            modelo.addColumn("Colonia");//26
+            modelo.addColumn("DLG o MUN");
+            modelo.addColumn("C.P");//28
+            modelo.addColumn("Doc. Originales");
+            modelo.addColumn("Doc. Faltantes");//30
+            modelo.addColumn("Doc. Entregables");
+            modelo.addColumn("Fecha entrevista");//32
+            modelo.addColumn("Fecha ingreso");
+            modelo.addColumn("Fecha ultimo dia laborado");//34
+            modelo.addColumn("Fecha firma baja");
+            modelo.addColumn("Baja firmada");//36
+            modelo.addColumn("Finiquito");
+            modelo.addColumn("Cambio de Zona");//38
+            modelo.addColumn("Cambio de servicio");
+            modelo.addColumn("Fecha de Re-ingreso (Re)");//40
+            modelo.addColumn("Fecha ultimo dia laborado (Re)");
+            modelo.addColumn("Fecha firma baja (Re)");//42
+            modelo.addColumn("Fecha de baja (Re)");
+            modelo.addColumn("Baja firmada (Re)");//44
+            modelo.addColumn("# recepcion personal");//44
+            modelo.addColumn("Observaciones");//44
+
+            int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*Exp*/ 50, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*correo*/ 75, /*casa*/ 65, /*recados*/ 70,
+                /*celular*/ 65, /*rfc*/ 60,
+                /*nss*/ 65, /*curp*/ 70, /*fdp*/ 70, /*sueldo*/ 40, /*bono*/ 35, /*cda*/ 70, /*banco*/ 55, /*zona*/ 60, /*serv*/ 60, /*status*/ 75,
+                /*CTA*/ 60, /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
+                /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CZ*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
+                /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                data.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
+        }
+
+    }
+
+    public void filtroserv() {
+        //filtro servicio
+
+        String where = "select * from empleados";
+        String FiltroSGen = FiltroServGen.getSelectedItem().toString();
+
+        if (!"".equals(FiltroSGen)) {
+            where = "select * from empleados Where `Servicio` LIKE '%" + FiltroSGen + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            data.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("Entra IMSS");
+            modelo.addColumn("# Exp");//3
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//5
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Correo");//7
+            modelo.addColumn("# Casa");
+            modelo.addColumn("# Recados");//9
+            modelo.addColumn("# Celular");//10
+            modelo.addColumn("RFC");//11
+            modelo.addColumn("NSS");//12
+            modelo.addColumn("CURP");//13
+            modelo.addColumn("Forma de pago");//14
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");//16
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Banco");//18
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");//20
+            modelo.addColumn("Status");
+            modelo.addColumn("Cuenta de banco");//22
+            modelo.addColumn("Calle");
+            modelo.addColumn("# Exterior");//24
+            modelo.addColumn("# Interior");
+            modelo.addColumn("Colonia");//26
+            modelo.addColumn("DLG o MUN");
+            modelo.addColumn("C.P");//28
+            modelo.addColumn("Doc. Originales");
+            modelo.addColumn("Doc. Faltantes");//30
+            modelo.addColumn("Doc. Entregables");
+            modelo.addColumn("Fecha entrevista");//32
+            modelo.addColumn("Fecha ingreso");
+            modelo.addColumn("Fecha ultimo dia laborado");//34
+            modelo.addColumn("Fecha firma baja");
+            modelo.addColumn("Baja firmada");//36
+            modelo.addColumn("Finiquito");
+            modelo.addColumn("Cambio de Zona");//38
+            modelo.addColumn("Cambio de servicio");
+            modelo.addColumn("Fecha de Re-ingreso (Re)");//40
+            modelo.addColumn("Fecha ultimo dia laborado (Re)");
+            modelo.addColumn("Fecha firma baja (Re)");//42
+            modelo.addColumn("Fecha de baja (Re)");
+            modelo.addColumn("Baja firmada (Re)");//44
+            modelo.addColumn("# recepcion personal");//44
+            modelo.addColumn("Observaciones");//44
+
+            int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*Exp*/ 50, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*correo*/ 75, /*casa*/ 65, /*recados*/ 70,
+                /*celular*/ 65, /*rfc*/ 60,
+                /*nss*/ 65, /*curp*/ 70, /*fdp*/ 70, /*sueldo*/ 40, /*bono*/ 35, /*cda*/ 70, /*banco*/ 55, /*zona*/ 60, /*serv*/ 60, /*status*/ 75,
+                /*CTA*/ 60, /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
+                /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CZ*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
+                /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                data.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
+        }
+
+    }
+
     public void mostrardatos() {
         //Buscar empleado
         String FiltroNGe = FiltroNG.getText();
+        String Filtroapgen = Filtroap.getText();
+        String FilAM = Filtroam.getText();
         String where = "select * from empleados";
-        /*
-        String FiltroZGen = FiltroZGe.getSelectedItem().toString();
-        String FiltroSGen = FiltroServGen.getSelectedItem().toString();
         String FiltroFDIGen = FiltroFDI.getText();
         String FiltrocurpGen = FiltroCurpGen.getText();
-        String FiltroNSSGen = this.FiltroNSSGen.getText();
-        String FiltroStatusGen = FiltroStatus.getSelectedItem().toString();
-         */
+        String FiltroNSSGe = FiltroNSSGen.getText();
+
         if (!"".equals(FiltroNGe)) {
             where = "Select * from empleados where `Nombre(s)` LIKE '%" + FiltroNGe + "%'";
-        }
-        /*else if (!"".equals(FiltroFDIGen)) {
-            where = "select * from empleados Where `Fecha ingreso` LIKE '%" + FiltroFDIGen + "%'";
+        } else if (!"".equals(FiltroFDIGen)) {
+            where = "select * from empleados Where `Fecha de ingreso` LIKE '%" + FiltroFDIGen + "%'";
         } else if (!"".equals(FiltrocurpGen)) {
             where = "select * from empleados Where `CURP` LIKE '%" + FiltrocurpGen + "%'";
-        } else if (!"".equals(FiltroNSSGen)) {
-            where = "select * from empleados Where `NSS` LIKE '%" + FiltroNSSGen + "%'";
-        } else if (!"".equals(FiltroStatusGen)) {
-            where = "select * from empleados Where `Status` LIKE '%" + FiltroStatusGen + "%'";
-        } else if (!"".equals(FiltroZGen)) {
-            where = "select * from empleados where `Zona` LIKE '%" + FiltroZGen + "%'";
-        } else if (!"".equals(FiltroSGen)) {
-            where = "select * from empleados Where `Servicio` LIKE '%" + FiltroSGen + "%'";
-        }*/
+        } else if (!"".equals(FiltroNSSGe)) {
+            where = "select * from empleados Where `NSS` LIKE '%" + FiltroNSSGe + "%'";
+        } else if (!"".equals(Filtroapgen)) {
+            where = "select * from empleados Where `Apellido P` LIKE '%" + Filtroapgen + "%'";
+        } else if (!"".equals(FilAM)) {
+            where = "select * from empleados Where `Apellido M` LIKE '%" + FilAM + "%'";
+        }
 
         try {
             //Cargar datos
@@ -727,6 +1035,8 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         FiltroServGen = new javax.swing.JComboBox<>();
         FiltroCurpGen = new javax.swing.JTextField();
         FiltroNSSGen = new javax.swing.JTextField();
+        Filtroap = new javax.swing.JTextField();
+        Filtroam = new javax.swing.JTextField();
         jScrollPane8 = new javax.swing.JScrollPane();
         IMSS = new javax.swing.JPanel();
         modIMSS = new javax.swing.JButton();
@@ -1515,7 +1825,12 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         jLabel28.setText("Filtrar por:");
 
-        Filtros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar Filtro", "Nombre", "Zona", "Servicio", "Fecha de ingreso", "CURP", "NSS", "Estatus" }));
+        Filtros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar Filtro", "Apellido P", "Apellido M", "Nombre(s)", "Zona", "Servicio", "Fecha de ingreso", "CURP", "NSS", "Estatus" }));
+        Filtros.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosItemStateChanged(evt);
+            }
+        });
 
         LabelF2.setText("Filtro 2:");
 
@@ -1565,6 +1880,18 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
             }
         });
 
+        Filtroap.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroapKeyReleased(evt);
+            }
+        });
+
+        Filtroam.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroamKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -1583,14 +1910,18 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
                         .addComponent(Filtros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelF1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(FiltroNG, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelF2)
+                        .addComponent(Filtroam, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Filtroap, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNG, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroZGe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroSZGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelF2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroServGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1623,10 +1954,12 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(FiltroServGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FiltroCurpGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FiltroNSSGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cs2))
+                    .addComponent(Cs2)
+                    .addComponent(Filtroap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Filtroam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ScrollpaneTG, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addComponent(ScrollpaneTG, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jScrollPane5.setViewportView(jPanel6);
@@ -1984,8 +2317,8 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(deleteimss)
                     .addComponent(Cs4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(3294, Short.MAX_VALUE))
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jScrollPane6.setViewportView(jPanel8);
@@ -2396,30 +2729,19 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         mostrardatos();
     }//GEN-LAST:event_FiltroFDIKeyReleased
 
-    private void FiltroSZGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZGenItemStateChanged
-        // TODO add your handling code here:
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FiltroSZGen.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroServGen.setModel(modelServicio);
-        }
-
-    }//GEN-LAST:event_FiltroSZGenItemStateChanged
-
     private void FiltroZGeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZGeItemStateChanged
         // TODO add your handling code here:
-        mostrardatos();
+        filtroszonas();
     }//GEN-LAST:event_FiltroZGeItemStateChanged
 
     private void FiltroServGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServGenItemStateChanged
         // TODO add your handling code here:
-        mostrardatos();
+        filtroserv();
     }//GEN-LAST:event_FiltroServGenItemStateChanged
 
     private void FiltroStatusItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroStatusItemStateChanged
         // TODO add your handling code here:
-        mostrardatos();
+        filtrosstatus();
     }//GEN-LAST:event_FiltroStatusItemStateChanged
 
     private void FiltroCurpGenKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroCurpGenKeyReleased
@@ -2446,12 +2768,303 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed
 
+    private void FiltroSZGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZGenItemStateChanged
+        // TODO add your handling code here:
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FiltroSZGen.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroServGen.setModel(modelServicio);
+        }
+
+    }//GEN-LAST:event_FiltroSZGenItemStateChanged
+
+    private void FiltrosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosItemStateChanged
+        // TODO add your handling code here:
+        String dt = (String) Filtros.getSelectedItem();
+        if (dt.equals("Selecciona Filtro")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(false);
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+        }
+        if (dt.equals("Apellido P")) {
+            Filtroam.setVisible(false);
+            Filtroam.setText("");
+            Filtroap.setVisible(true);
+            Filtroap.setText("");
+            FiltroNG.setVisible(false);
+            FiltroNG.setText("");
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar por Apellido P:");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroCurpGen.setText("");
+            FiltroFDI.setVisible(false);
+            FiltroFDI.setText("");
+            FiltroNSSGen.setVisible(false);
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setVisible(false);
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setVisible(false);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setVisible(false);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setVisible(false);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+        }
+        if (dt.equals("Apellido M")) {
+            Filtroam.setVisible(true);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar por Apellido M:");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+        }
+        if (dt.equals("Nombre(s)")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(true);
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar por Nombre(s):");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+
+        }
+        if (dt.equals("Zona")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(true);
+            LabelF1.setText("Buscar por Zona:");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(true);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+
+        }
+        if (dt.equals("Servicio")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(true);
+            LabelF1.setText("Selecciona Zona:");
+            LabelF2.setVisible(true);
+            LabelF2.setText("Selecciona servicio:");
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(true);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(true);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+        }
+        if (dt.equals("Fecha de ingreso")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(false);
+            LabelF1.setText("Buscar Fecha de ingreso");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(true);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+
+        }
+        if (dt.equals("CURP")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(false);
+            LabelF1.setText("Buscar por CURP:");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(true);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+
+        }
+        if (dt.equals("NSS")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(false);
+            LabelF1.setText("Buscar por NSS:");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(true);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(false);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+
+        }
+        if (dt.equals("Estatus")) {
+            Filtroam.setVisible(false);
+            Filtroap.setVisible(false);
+            FiltroNG.setVisible(false);
+            LabelF1.setVisible(false);
+            LabelF1.setText("Buscar por Estatus:");
+            LabelF2.setVisible(false);
+            FiltroCurpGen.setVisible(false);
+            FiltroFDI.setVisible(false);
+            FiltroNSSGen.setVisible(false);
+            FiltroSZGen.setVisible(false);
+            FiltroStatus.setVisible(true);
+            FiltroServGen.setVisible(false);
+            FiltroZGe.setVisible(false);
+            Filtroap.setText("");
+            Filtroam.setText("");
+            FiltroNG.setText("");
+            FiltroCurpGen.setText("");
+            FiltroFDI.setText("");
+            FiltroNSSGen.setText("");
+            FiltroSZGen.setSelectedIndex(0);
+            FiltroStatus.setSelectedIndex(0);
+            FiltroServGen.setSelectedIndex(0);
+            FiltroZGe.setSelectedIndex(0);
+            mostrardatos();
+
+        }
+    }//GEN-LAST:event_FiltrosItemStateChanged
+
+    private void FiltroapKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroapKeyReleased
+        // TODO add your handling code here:
+        mostrardatos();
+    }//GEN-LAST:event_FiltroapKeyReleased
+
+    private void FiltroamKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroamKeyReleased
+        // TODO add your handling code here:
+        mostrardatos();
+    }//GEN-LAST:event_FiltroamKeyReleased
+
     private void NominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NominaActionPerformed
         // TODO add your handling code here:
         Admin_Nomina_5 regr = new Admin_Nomina_5();
         regr.setVisible(true);
         this.dispose();
-
     }//GEN-LAST:event_NominaActionPerformed
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
@@ -2468,19 +3081,19 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
 
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-        // TODO add your handling code here:
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
-
     private void UsuariosnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosnomActionPerformed
         // TODO add your handling code here:
         Usuarios_Nomina_3 regr = new Usuarios_Nomina_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_UsuariosnomActionPerformed
+
+    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
+        // TODO add your handling code here:
+        Usuarios_RH_3 regr = new Usuarios_RH_3();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_UsuariosRHActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2502,6 +3115,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Admin_Empleados_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new Admin_Empleados_4().setVisible(true);
         });
@@ -2554,6 +3168,8 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroServGen;
     private javax.swing.JComboBox<String> FiltroStatus;
     private javax.swing.JComboBox<String> FiltroZGe;
+    private javax.swing.JTextField Filtroam;
+    private javax.swing.JTextField Filtroap;
     private javax.swing.JComboBox<String> Filtros;
     private javax.swing.JPanel General;
     private javax.swing.JPanel IMSS;

@@ -1362,14 +1362,18 @@
                                   <Component id="Filtros" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="LabelF1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Filtroam" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Filtroap" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FiltroNG" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelF2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="FiltroZGe" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FiltroSZGen" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="LabelF2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FiltroServGen" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -1407,10 +1411,12 @@
                               <Component id="FiltroCurpGen" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FiltroNSSGen" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Cs2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Filtroap" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Filtroam" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ScrollpaneTG" min="-2" pref="580" max="-2" attributes="0"/>
-                          <EmptySpace pref="77" max="32767" attributes="0"/>
+                          <Component id="ScrollpaneTG" pref="629" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1783,18 +1789,23 @@
                 <Component class="javax.swing.JComboBox" name="Filtros">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="8">
+                      <StringArray count="10">
                         <StringItem index="0" value="Seleccionar Filtro"/>
-                        <StringItem index="1" value="Nombre"/>
-                        <StringItem index="2" value="Zona"/>
-                        <StringItem index="3" value="Servicio"/>
-                        <StringItem index="4" value="Fecha de ingreso"/>
-                        <StringItem index="5" value="CURP"/>
-                        <StringItem index="6" value="NSS"/>
-                        <StringItem index="7" value="Estatus"/>
+                        <StringItem index="1" value="Apellido P"/>
+                        <StringItem index="2" value="Apellido M"/>
+                        <StringItem index="3" value="Nombre(s)"/>
+                        <StringItem index="4" value="Zona"/>
+                        <StringItem index="5" value="Servicio"/>
+                        <StringItem index="6" value="Fecha de ingreso"/>
+                        <StringItem index="7" value="CURP"/>
+                        <StringItem index="8" value="NSS"/>
+                        <StringItem index="9" value="Estatus"/>
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltrosItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1884,6 +1895,16 @@
                 <Component class="javax.swing.JTextField" name="FiltroNSSGen">
                   <Events>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroNSSGenKeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="Filtroap">
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroapKeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="Filtroam">
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroamKeyReleased"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -2424,8 +2445,8 @@
                               <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane7" min="-2" pref="580" max="-2" attributes="0"/>
-                          <EmptySpace pref="3294" max="32767" attributes="0"/>
+                          <Component id="jScrollPane7" pref="637" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

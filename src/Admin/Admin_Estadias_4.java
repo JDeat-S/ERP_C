@@ -5,7 +5,6 @@
  */
 package Admin;
 
-import RH.*;
 import Conexion.ConexionSQL;
 import java.awt.HeadlessException;
 import java.sql.PreparedStatement;

@@ -955,7 +955,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
             Filname.setText("");
             MDT();
         }
-        if (dt.equals("Filtrar por Nombre(s)")) {
+        if (dt.equals("Nombre(s)")) {
             LabelF1.setVisible(true);
             LabelF1.setText("Buscar Nombre(s):");
             filap.setText("");

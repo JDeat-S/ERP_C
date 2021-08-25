@@ -5,15 +5,25 @@ Ventana RH
 Esta funcion sirve para todas las acceder a las ventanas Estadia y Torteria
 Para acceder a las ventanas hay un menu en la parte superior izquierda
 
+Ventana RH > Tabla general
+Ahora puedes filtrar datos
+Los siguientes filtros estan disponibles:
+-Nombre
+-Zona
+-Servicio
+-Fecha de ingreso
+-CURP
+-NSS
+-Estatus
+
 Ventana Nomina
 -Se corrigieron errores menores
 
 Acceso como administrador
 *Nueva funcion: Todas las ventanas*
 Esta funcion se encuentra en la parte superior izquierda de cualquier ventana que abras accediendo como administrador
+Esta funcion te da acceso a cualquier ventana ya sea de Nomina, RH o administradores.
 Se hizo con el fin de remplazar el boton "volver"
-
-
 
 Ver 1.2.0
 Cambios 24/08/2021
