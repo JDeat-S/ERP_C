@@ -1,3 +1,19 @@
+Ver 1.3.0
+Cambios 25/08/2021
+Ventana RH
+*Nueva Funcion: Cambiar a*
+Esta funcion sirve para todas las acceder a las ventanas Estadia y Torteria
+Para acceder a las ventanas hay un menu en la parte superior izquierda
+
+
+
+Acceso como administrador
+*Nueva funcion: Todas las ventanas*
+Esta funcion se encuentra en la parte superior izquierda de cualquier ventana que abras accediendo como administrador
+Se hizo con el fin de remplazar el boton "volver"
+
+
+
 Ver 1.2.0
 Cambios 24/08/2021
 -Se añadio ventana con Registro y tablas para
