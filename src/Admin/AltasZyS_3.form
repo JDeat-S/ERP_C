@@ -94,7 +94,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                           <Component id="botonWeb1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="131" max="32767" attributes="0"/>
+                          <EmptySpace pref="249" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -257,10 +257,9 @@
                 <Component class="botones.BotonWeb" name="botonWeb1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/Lapizmod.jpg"/>
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="botonWeb1"/>
-                    <Property name="link" type="java.lang.String" value="http://192.168.1.2/excel/index.php"/>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.2/Reportes/EPCServicios.php"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -722,7 +721,9 @@
                                   <Component id="FPNDS" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FPNDZ" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="botonWeb2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                                   <Component id="Volver2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="614" max="32767" attributes="0"/>
                               </Group>
@@ -737,16 +738,19 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Volver2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FPNDS" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FPNDZ" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
                               <Component id="Filtros" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Component id="botonWeb2" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Volver2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FPNDS" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FPNDZ" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jScrollPane9" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="67" max="32767" attributes="0"/>
+                          <Component id="jScrollPane9" pref="482" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -964,6 +968,14 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="botones.BotonWeb" name="botonWeb2">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.2/Reportes/Reporteservicios/EPCServicios.php"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
