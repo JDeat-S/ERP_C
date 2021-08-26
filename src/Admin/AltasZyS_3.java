@@ -595,6 +595,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         BZtext = new javax.swing.JLabel();
         FiltroZ = new javax.swing.JComboBox<>();
         EliminarServ = new javax.swing.JButton();
+        botonWeb2 = new botones.BotonWeb();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Zonas y Servicios");
@@ -673,9 +674,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
-        botonWeb1.setText("botonWeb1");
-        botonWeb1.setLink("http://192.168.1.2/excel/index.php");
+        botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb1.setLink("http://192.168.1.2/Reportes/EPCServicios.php");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -711,7 +711,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(55, 55, 55)
                 .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1114,6 +1114,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb2.setLink("http://192.168.1.2/Reportes/Reporteservicios/EPCServicios.php");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1127,7 +1130,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                         .addComponent(FPNDS)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FPNDZ)
-                        .addGap(120, 120, 120)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(87, 87, 87)
                         .addComponent(Volver2)
                         .addGap(0, 614, Short.MAX_VALUE))
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -1138,14 +1143,16 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Volver2)
-                        .addComponent(FPNDS)
-                        .addComponent(FPNDZ))
-                    .addComponent(Filtros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Filtros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Volver2)
+                            .addComponent(FPNDS)
+                            .addComponent(FPNDZ))))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jScrollPane8.setViewportView(jPanel3);
@@ -1592,6 +1599,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JButton Volver2;
     private javax.swing.JTable ZSh;
     private botones.BotonWeb botonWeb1;
+    private botones.BotonWeb botonWeb2;
     private javax.swing.JTextField idZona;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
