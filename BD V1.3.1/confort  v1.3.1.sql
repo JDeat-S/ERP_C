@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-08-2021 a las 01:18:02
+-- Tiempo de generación: 27-08-2021 a las 00:40:46
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -6525,7 +6525,9 @@ INSERT INTO `nomina` (`idNomina`, `#_Folio`, `Apellido P`, `Apellido M`, `Nombre
 (27, '', '', '', 'PEDROZA ARGAEZ JULIO CESAR', '.', '.', 'SUR 2', 'KOWLAAN', '1500', '100.0', '1ra Quincena de Agosto', '2021', 'A', 'A', 'A', 'F', 'A', 'A', 'D', 'D', 'A', 'A', 'A', 'D', 'D', 'A', 'A', '.', '500', '0', '0', '0', '0', '0', '500', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '00', '1050.0', ''),
 (28, '', '', '', 'PEDROZA ARGAEZ JULIO CESAR', '.', '.', 'SUR 2', 'KOWLAAN', '1500', '100.0', '1ra Quincena de Agosto', '2021', 'A', 'A', 'A', 'A', 'A', 'A', 'D', 'F', 'A', 'A', 'A', 'A', 'A', 'D', 'D', '.', '95.0', '26.98', '0', '', '100', '0', '500', '0', '95.00', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '50', '0', '878.02', ''),
 (29, '', '', '', 'PEDROZA ARGAEZ JULIO CESAR', '.', '.', 'SUR 2', 'KOWLAAN', '1500', '103.33333333333333', '1ra Quincena de Agosto', '2021', 'A', 'V', 'V', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'D', 'D', 'V', 'V', '.', '0', '26.98', '120', 'CAFE', '.', '0', '500', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '200', '1739.6866666666665', ''),
-(30, '', '', '', '', '', '', '', '', '0', '0', 'Selecciona una Quincena', '2021', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '0', '26.98', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '');
+(30, '', '', '', '', '', '', '', '', '0', '0', 'Selecciona una Quincena', '2021', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '0', '26.98', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', ''),
+(31, '', '', '', '', '', '', '', '', '0', '0', 'Selecciona una Quincena', '2021', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '', '0', '26.98', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
+(34, '', '', '', '', '', '', '', '', '0', '0', 'Selecciona una Quincena', '2021', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '0', '26.98', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '');
 
 -- --------------------------------------------------------
 
@@ -6559,7 +6561,13 @@ INSERT INTO `pago` (`idPago`, `# Folio`, `Apellido P`, `Apellido M`, `Nombre(s)`
 (16, '', '', '', 'PEDROZA ARGAEZ JULIO CESAR', '500', '.', '.', 'SUR 2', 'KOWLAAN', '1ra Quincena de Agosto', '2021', '1500', '1050.0'),
 (17, '', '', '', 'PEDROZA ARGAEZ JULIO CESAR', '0', '.', '.', 'SUR 2', 'KOWLAAN', '1ra Quincena de Agosto', '2021', '1500', '878.02'),
 (18, '', '', '', 'PEDROZA ARGAEZ JULIO CESAR', '500', '.', '.', 'SUR 2', 'KOWLAAN', '1ra Quincena de Agosto', '2021', '1500', '1739.6866666666665'),
-(19, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0');
+(19, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0'),
+(20, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0'),
+(21, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0'),
+(22, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0'),
+(23, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0'),
+(24, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0'),
+(25, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -6591,7 +6599,8 @@ CREATE TABLE `prestamos` (
 --
 
 INSERT INTO `prestamos` (`idprestamos`, `Fecha de solicitud`, `Mes`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Cantidad`, `Interes`, `Monto total`, `Por quincena`, `Carpeta de descuentos`, `Fecha liberado`, `Status`, `Metodo`) VALUES
-(37, '', 'Enero', '', '', '', '', '', '0', '0', '0', '0', '', '', '', '');
+(37, '', 'Enero', '', '', '', '', '', '0', '0', '0', '0', '', '', '', ''),
+(38, '', 'Enero', '', '', '', '', '', '0', '0', '0', '0', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -6717,7 +6726,9 @@ CREATE TABLE `taller` (
 --
 
 INSERT INTO `taller` (`idTaller`, `Fecha de expedicion`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Datos vehiculo`, `# de piezas`, `Daño`, `Costo Aproximado`, `Ingreso a taller`, `Pagado por cliente`, `Pago a confort`, `Cobrado`, `Pagado`, `Pendiente`, `Por quincenas`, `Forma de pago`, `Observaciones`) VALUES
-(12, '', '', '', '', '', '', '', '', '', '0', 'Si', '.', '0', '', '0', '', '', '.', '');
+(12, '', '', '', '', '', '', '', '', '', '0', 'Si', '.', '0', '', '0', '', '', '.', ''),
+(13, '', '', '', '', '', '', '', '', '', '0', 'Si', '.', '0', '', '0', '', '', '.', ''),
+(14, '', '', '', '', '', '', '', '', '', '0', 'Si', '.', '0', '', '0', '', '', '.', '');
 
 -- --------------------------------------------------------
 
@@ -6953,19 +6964,19 @@ ALTER TABLE `imss`
 -- AUTO_INCREMENT de la tabla `nomina`
 --
 ALTER TABLE `nomina`
-  MODIFY `idNomina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `idNomina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `pago`
 --
 ALTER TABLE `pago`
-  MODIFY `idPago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idPago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamos`
 --
 ALTER TABLE `prestamos`
-  MODIFY `idprestamos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `idprestamos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `servicio`
@@ -6977,7 +6988,7 @@ ALTER TABLE `servicio`
 -- AUTO_INCREMENT de la tabla `taller`
 --
 ALTER TABLE `taller`
-  MODIFY `idTaller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idTaller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `torteria`
