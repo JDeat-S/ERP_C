@@ -1,3 +1,9 @@
+Ver 1.3.1 JAVA Ver 0.1.0
+Cambios 26/08/2021
+Ventana Administrador > 
+Se añadio boton para hacer reportes en excel
+El boton esta con una imagen de excel para que resalte en la ventana
+
 Ver 1.3.0
 Cambios 25/08/2021
 Ventana RH
