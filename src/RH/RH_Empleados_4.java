@@ -1085,6 +1085,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         Timss = new javax.swing.JTable();
         serch2 = new javax.swing.JTextField();
         Cs4 = new javax.swing.JButton();
+        botonWeb2 = new botones.BotonWeb();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Alumnos = new javax.swing.JMenuItem();
@@ -2290,6 +2291,9 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             }
         });
 
+        botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb2.setLink("http://192.168.1.153/Reportes/ReporteRH/EPCIMSS.php");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -2301,6 +2305,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(serch2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(deleteimss)
                         .addGap(395, 395, 395)
@@ -2316,7 +2322,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(serch2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteimss)
-                    .addComponent(Cs4))
+                    .addComponent(Cs4)
+                    .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
                 .addContainerGap())
@@ -3115,6 +3122,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JButton add;
     private javax.swing.JButton addimss;
     private botones.BotonWeb botonWeb1;
+    private botones.BotonWeb botonWeb2;
     private javax.swing.JComboBox<String> cbf;
     private javax.swing.JComboBox<String> cfin;
     private javax.swing.JTextField cta;

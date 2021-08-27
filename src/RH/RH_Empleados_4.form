@@ -2388,6 +2388,8 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="serch2" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="botonWeb2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="deleteimss" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="395" max="-2" attributes="0"/>
                                   <Component id="Cs4" min="-2" max="-2" attributes="0"/>
@@ -2407,6 +2409,7 @@
                               <Component id="serch2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="deleteimss" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botonWeb2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane7" pref="637" max="32767" attributes="0"/>
@@ -2570,6 +2573,14 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cs4ActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="botones.BotonWeb" name="botonWeb2">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteRH/EPCIMSS.php"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
