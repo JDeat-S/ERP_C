@@ -2873,6 +2873,8 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FiltrosTD" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="botonWeb1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="LabelBE" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Nominab" min="-2" pref="100" max="-2" attributes="0"/>
@@ -2930,6 +2932,7 @@
                               <Component id="FiltroNDF" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FApT" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FAmT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botonWeb1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jScrollPane3" min="-2" pref="627" max="-2" attributes="0"/>
@@ -3444,6 +3447,14 @@
                   <Events>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmTKeyReleased"/>
                   </Events>
+                </Component>
+                <Component class="botones.BotonWeb" name="botonWeb1">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteNomina/EPCNomina.php"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
