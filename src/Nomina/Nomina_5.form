@@ -4395,6 +4395,8 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="botonWeb3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="CS5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane10" alignment="0" min="-2" pref="2401" max="-2" attributes="0"/>
@@ -4412,6 +4414,7 @@
                               <Component id="BP" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="CS5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botonWeb3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane10" pref="708" max="32767" attributes="0"/>
@@ -4560,6 +4563,13 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS5ActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="botones.BotonWeb" name="botonWeb3">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

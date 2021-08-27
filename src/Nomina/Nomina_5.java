@@ -2067,6 +2067,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         Pre = new javax.swing.JTable();
         jButton6 = new javax.swing.JButton();
         CS5 = new javax.swing.JButton();
+        botonWeb3 = new botones.BotonWeb();
         Talleres = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel49 = new javax.swing.JLabel();
@@ -4375,6 +4376,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
         });
 
+        botonWeb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -4389,6 +4392,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CS5))
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 2401, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -4401,7 +4406,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     .addComponent(jLabel48)
                     .addComponent(BP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6)
-                    .addComponent(CS5))
+                    .addComponent(CS5)
+                    .addComponent(botonWeb3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
                 .addGap(55, 55, 55))
@@ -10381,6 +10387,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField ban;
     private botones.BotonWeb botonWeb1;
     private botones.BotonWeb botonWeb2;
+    private botones.BotonWeb botonWeb3;
     private javax.swing.JTextField busp;
     private javax.swing.JTextField cda;
     private javax.swing.JTextField cta;
