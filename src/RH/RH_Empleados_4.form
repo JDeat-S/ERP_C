@@ -1314,6 +1314,8 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Filtros" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="botonWeb1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="LabelF1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Filtroam" min="-2" pref="100" max="-2" attributes="0"/>
@@ -1366,6 +1368,7 @@
                               <Component id="Cs2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Filtroap" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Filtroam" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botonWeb1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="ScrollpaneTG" pref="629" max="32767" attributes="0"/>
@@ -1859,6 +1862,14 @@
                   <Events>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroamKeyReleased"/>
                   </Events>
+                </Component>
+                <Component class="botones.BotonWeb" name="botonWeb1">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteRH/EPCEmpleados.php"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
