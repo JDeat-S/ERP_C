@@ -2138,6 +2138,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         OdT = new javax.swing.JTable();
         EliminarT = new javax.swing.JButton();
         CS7 = new javax.swing.JButton();
+        botonWeb4 = new botones.BotonWeb();
 
         DO1.setText("0");
 
@@ -4377,6 +4378,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         });
 
         botonWeb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb3.setLink("http://192.168.1.153/Reportes/ReporteNomina/EPCprestamos.php");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -4622,6 +4624,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         jLabel72.setText("Por Quincena:");
 
+        CS6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
         CS6.setText("Cerrar sesion");
         CS6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -4733,7 +4736,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                                         .addComponent(Busamshpre1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(CS6)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                                        .addGap(0, 53, Short.MAX_VALUE)))))
                         .addGap(11, 11, 11))))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
@@ -4747,7 +4750,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addComponent(FE, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1085, Short.MAX_VALUE))
+                .addContainerGap(1103, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4868,6 +4871,9 @@ public final class Nomina_5 extends javax.swing.JFrame {
             }
         });
 
+        botonWeb4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb4.setLink("http://192.168.1.153/Reportes/ReporteNomina/EPCodtaller.php");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -4881,6 +4887,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                         .addComponent(Bodt, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(EliminarT)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CS7))
                     .addGroup(jPanel8Layout.createSequentialGroup()
@@ -4896,7 +4904,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     .addComponent(jLabel73)
                     .addComponent(Bodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EliminarT)
-                    .addComponent(CS7))
+                    .addComponent(CS7)
+                    .addComponent(botonWeb4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(153, Short.MAX_VALUE))
@@ -10388,6 +10397,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private botones.BotonWeb botonWeb1;
     private botones.BotonWeb botonWeb2;
     private botones.BotonWeb botonWeb3;
+    private botones.BotonWeb botonWeb4;
     private javax.swing.JTextField busp;
     private javax.swing.JTextField cda;
     private javax.swing.JTextField cta;

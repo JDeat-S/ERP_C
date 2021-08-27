@@ -4569,6 +4569,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                     </Property>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteNomina/EPCprestamos.php"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -4687,7 +4688,7 @@
                                                   <Component id="Busamshpre1" min="-2" pref="100" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="CS6" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  <EmptySpace min="0" pref="53" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -4712,7 +4713,7 @@
                                   <Component id="FE" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="1085" max="32767" attributes="0"/>
+                          <EmptySpace pref="1103" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -5239,6 +5240,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="CS6">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
                   </Properties>
                   <Events>
@@ -5313,6 +5317,8 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="EliminarT" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="botonWeb4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="CS7" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -5333,6 +5339,7 @@
                               <Component id="Bodt" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="EliminarT" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="CS7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botonWeb4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane9" min="-2" pref="599" max="-2" attributes="0"/>
@@ -5514,6 +5521,14 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS7ActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="botones.BotonWeb" name="botonWeb4">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteNomina/EPCodtaller.php"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
