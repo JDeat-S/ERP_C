@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Connection;
+import javax.swing.ImageIcon;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -24,6 +25,10 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         filam.setVisible(false);
         Filname.setVisible(false);
         idbd.setVisible(false);
+        this.setExtendedState(6);
+        this.setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(RH_Tortas_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+
     }
 
     public void clean() {
@@ -360,6 +365,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         filam = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
         TTortas = new javax.swing.JTable();
+        botonWeb1 = new botones.BotonWeb();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
@@ -537,7 +543,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
 
         jLabel24.setText("Finiquito:");
 
-        Fintor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "No", "No aplca", "Si", "Si se le dio", "Pagado", "Pendiente" }));
+        Fintor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "No", "No aplica", "Si", "Si se le dio", "Pagado", "Pendiente" }));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -837,6 +843,9 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(TTortas);
 
+        botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb1.setLink("http://192.168.1.2/Reportes/ReporteRH/EPCTorteria.php");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -848,6 +857,8 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Filtrotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelF1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -869,7 +880,8 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
                     .addComponent(LabelF1)
                     .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(filap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(filam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(filam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(98, Short.MAX_VALUE))
@@ -1143,6 +1155,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JTextField UDLRE;
     private javax.swing.JTextField UDLtor;
     private javax.swing.JTextField amtor;
+    private botones.BotonWeb botonWeb1;
     private javax.swing.JTextField curptor;
     private javax.swing.JTextField filam;
     private javax.swing.JTextField filap;

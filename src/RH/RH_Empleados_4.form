@@ -992,7 +992,7 @@
                           <StringArray count="7">
                             <StringItem index="0" value="."/>
                             <StringItem index="1" value="No"/>
-                            <StringItem index="2" value="No aplca"/>
+                            <StringItem index="2" value="No aplica"/>
                             <StringItem index="3" value="Si"/>
                             <StringItem index="4" value="Si se le dio"/>
                             <StringItem index="5" value="Pagado"/>

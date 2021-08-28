@@ -2941,6 +2941,8 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FiltrosTD" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="botonWeb1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="LabelBE" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Nominab" min="-2" pref="100" max="-2" attributes="0"/>
@@ -2998,6 +3000,7 @@
                               <Component id="FiltroNDF" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FApT" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FAmT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botonWeb1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jScrollPane3" min="-2" pref="627" max="-2" attributes="0"/>
@@ -3513,6 +3516,14 @@
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmTKeyReleased"/>
                   </Events>
                 </Component>
+                <Component class="botones.BotonWeb" name="botonWeb1">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteNomina/EPCNomina.php"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -3549,7 +3560,9 @@
                                           <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltrosP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                          <Component id="botonWeb2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelBEP" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="busp" min="-2" pref="109" max="-2" attributes="0"/>
@@ -3610,6 +3623,7 @@
                               <Component id="FiltrosP" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="BAppag" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Bampag" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botonWeb2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane6" min="-2" pref="604" max="-2" attributes="0"/>
@@ -3901,6 +3915,15 @@
                   <Events>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="BampagKeyReleased"/>
                   </Events>
+                </Component>
+                <Component class="botones.BotonWeb" name="botonWeb2">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteNomina/EPCpagos.php"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -4446,6 +4469,8 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="botonWeb3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="CS5" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane10" alignment="0" min="-2" pref="2401" max="-2" attributes="0"/>
@@ -4463,6 +4488,7 @@
                               <Component id="BP" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="CS5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botonWeb3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane10" pref="708" max="32767" attributes="0"/>
@@ -4608,6 +4634,14 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS5ActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="botones.BotonWeb" name="botonWeb3">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteNomina/EPCprestamos.php"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -5351,6 +5385,8 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="EliminarT" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="botonWeb4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="CS7" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -5371,6 +5407,7 @@
                               <Component id="Bodt" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="EliminarT" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="CS7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botonWeb4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane9" min="-2" pref="599" max="-2" attributes="0"/>
@@ -5552,6 +5589,15 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS7ActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="botones.BotonWeb" name="botonWeb4">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteNomina/EPCodtaller.php"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

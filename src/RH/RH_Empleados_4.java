@@ -1465,7 +1465,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
         cbf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Si", "No", "No aplica", "No ha venido a firmar", "Firma no coincide con la ine", "Pendiente" }));
 
-        cfin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "No", "No aplca", "Si", "Si se le dio", "Pagado", "Pendiente" }));
+        cfin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "No", "No aplica", "Si", "Si se le dio", "Pagado", "Pendiente" }));
 
         jLabel71.setText("# recepcion personal:");
 
