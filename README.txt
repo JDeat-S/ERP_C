@@ -1,3 +1,12 @@
+Ver 1.4.0 JAVA VER 1.0.0 PHP
+Cambios 28/08/2021
+-Se añadió botón para hacer reportes en Excel en las siguientes tablas:
+Estadias
+Torteria
+El botón esta con una imagen de Excel para que resalte en la ventana
+Este boton direcciona a una interfaz basica de php leer las notas de la ver 0.2.0 para mas detalles
+
+
 Ver 1.3.2 JAVA VER 0.2.0 PHP
 Cambios 27/08/2021
 -Se añadió botón para hacer reportes en Excel en las siguientes tablas:

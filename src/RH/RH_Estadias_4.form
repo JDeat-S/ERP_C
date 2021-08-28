@@ -565,7 +565,9 @@
                           <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="Filtroest" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="botonWeb1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="LabelF1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="Filname" min="-2" pref="100" max="-2" attributes="0"/>
@@ -592,6 +594,7 @@
                               <Component id="Filname" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FilAP" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FilAM" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botonWeb1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane4" pref="369" max="32767" attributes="0"/>
@@ -803,6 +806,15 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="botones.BotonWeb" name="botonWeb1">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="link" type="java.lang.String" value="http://192.168.1.2/Reportes/ReporteRH/EPCEstadia.php"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>

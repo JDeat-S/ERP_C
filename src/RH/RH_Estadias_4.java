@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Connection;
+import javax.swing.ImageIcon;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -27,12 +28,15 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
 
     public RH_Estadias_4() {
         initComponents();
+        this.setExtendedState(6);
+        this.setLocationRelativeTo(null);
         LabelF1.setVisible(false);
         FilAP.setVisible(false);
         FilAM.setVisible(false);
         Filname.setVisible(false);
         idest.setVisible(false);
         MDE();
+        setIconImage(new ImageIcon(RH_Estadias_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
 
@@ -402,6 +406,7 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
         FilAM = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
         Testadia = new javax.swing.JTable();
+        botonWeb1 = new botones.BotonWeb();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
@@ -732,6 +737,10 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(Testadia);
 
+        botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb1.setToolTipText("");
+        botonWeb1.setLink("http://192.168.1.2/Reportes/ReporteRH/EPCEstadia.php");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -741,7 +750,9 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Filtroest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelF1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -764,7 +775,8 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
                     .addComponent(LabelF1)
                     .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilAP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FilAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FilAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1070,6 +1082,7 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
     private javax.swing.JTable Testadia;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JButton add;
+    private botones.BotonWeb botonWeb1;
     private javax.swing.JTextField idest;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
