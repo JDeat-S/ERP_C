@@ -578,10 +578,10 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        Tdv = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         Costo = new javax.swing.JTextField();
         Cbxcosto = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane8 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
@@ -845,7 +845,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         jLabel12.setText("Detalles de Servicio");
 
-        jLabel5.setText("Tipo de valet:");
+        jLabel5.setText("Tipo de Servicio:");
 
         jLabel6.setText("Costo:");
 
@@ -856,6 +856,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Valet parking", "Estacionamiento", "Plaza" }));
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -865,7 +867,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -877,7 +879,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                     .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Tdv, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Supervisor, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -904,7 +905,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(Cbxcosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Costo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Costo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -941,7 +943,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(Tdv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -1593,7 +1595,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JTextField Supervisor;
     private javax.swing.JTable TServ;
     private javax.swing.JTable TablaZona;
-    private javax.swing.JTextField Tdv;
     private javax.swing.JButton Volver;
     private javax.swing.JButton Volver1;
     private javax.swing.JButton Volver2;
@@ -1601,6 +1602,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private botones.BotonWeb botonWeb1;
     private botones.BotonWeb botonWeb2;
     private javax.swing.JTextField idZona;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

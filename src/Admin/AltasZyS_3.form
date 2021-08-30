@@ -471,7 +471,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="23" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
@@ -486,7 +486,6 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Tdv" min="-2" pref="100" max="-2" attributes="0"/>
                                   <Component id="Supervisor" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -522,6 +521,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Costo" min="-2" pref="100" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -566,7 +566,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Tdv" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -661,10 +661,8 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel5">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Tipo de valet:"/>
+                        <Property name="text" type="java.lang.String" value="Tipo de Servicio:"/>
                       </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Tdv">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel6">
                       <Properties>
@@ -686,6 +684,21 @@
                       <Events>
                         <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="CbxcostoItemStateChanged"/>
                       </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="jComboBox1">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="4">
+                            <StringItem index="0" value="."/>
+                            <StringItem index="1" value="Valet parking"/>
+                            <StringItem index="2" value="Estacionamiento"/>
+                            <StringItem index="3" value="Plaza"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
