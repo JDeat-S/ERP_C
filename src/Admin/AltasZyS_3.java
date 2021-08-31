@@ -122,6 +122,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             OtroMOD = "";
 
         }
+        String TDs = TDS.getSelectedItem().toString();
+
         int id = Integer.parseInt(IDS.getText());
         String SQL = "UPDATE `servicio` SET `idZona` = ?, `Nombre Zona` = ?, `Supervisor` = ?, `Servicio` = ?,"
                 + " `Horario` = ?, `Abre` = ?, `Cierra` = ?,"
@@ -140,7 +142,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             pst.setString(8, horarioSMOD);
             pst.setString(9, horarioDMOD);
             pst.setString(10, OtroMOD);
-            pst.setString(11, Tdv.getText());
+            pst.setString(11, TDs);
             pst.setString(12, Costov + Costo.getText());
             pst.setInt(13, id);
 
@@ -288,6 +290,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             boolean name = Allday.isSelected() == false;
             TED = "";
         }
+        String TDs = TDS.getSelectedItem().toString();
+
         String SQL = "INSERT INTO `servicio` (`idZona`, `Nombre Zona`,"
                 + " `Supervisor`, `Servicio`, `Horario`, `Abre`, `Cierra`, `Sabado`,"
                 + " `Domingo`, `Otro`, `Tipo de valet`, `Costo`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -306,7 +310,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             pst.setString(8, horarioS);
             pst.setString(9, horarioD);
             pst.setString(10, OtroS);
-            pst.setString(11, Tdv.getText());
+            pst.setString(11, TDs);
             pst.setString(12, Costov + Costo.getText());
 
             pst.executeUpdate();
@@ -581,7 +585,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         Costo = new javax.swing.JTextField();
         Cbxcosto = new javax.swing.JComboBox<>();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        TDS = new javax.swing.JComboBox<>();
         jScrollPane8 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
@@ -856,7 +860,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Valet parking", "Estacionamiento", "Plaza" }));
+        TDS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Valet parking", "Estacionamiento", "Plaza" }));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -906,7 +910,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                         .addComponent(Cbxcosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Costo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TDS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -943,7 +947,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TDS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -1593,6 +1597,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JRadioButton Sab;
     private javax.swing.JTextField SabadoT;
     private javax.swing.JTextField Supervisor;
+    private javax.swing.JComboBox<String> TDS;
     private javax.swing.JTable TServ;
     private javax.swing.JTable TablaZona;
     private javax.swing.JButton Volver;
@@ -1602,7 +1607,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private botones.BotonWeb botonWeb1;
     private botones.BotonWeb botonWeb2;
     private javax.swing.JTextField idZona;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
