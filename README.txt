@@ -1,3 +1,12 @@
+Ver 1.4.2
+Cambios 01/09/2021
+Ventana Almacen
+Aun se esta re-diseñando la ventana
+Se estan programando la automatizacion de
+Entrada y salida para blocks
+
+El diseño aun no se ha terminado
+
 Ver 1.4.1 Ver 1.0.0 PHP
 Cambios 30-31/08/2021
 Ventana ADM > Zonas y servicios
