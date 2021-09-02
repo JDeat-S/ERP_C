@@ -1,3 +1,9 @@
+Ver 1.4.3
+Cambios 02/09/2021
+Ventana Almacen
+Se esta adaptando todas las funciones de los blocks para que no salgan con errores
+Aun no se termina de diseñar la ventana
+
 Ver 1.4.2
 Cambios 01/09/2021
 Ventana Almacen
