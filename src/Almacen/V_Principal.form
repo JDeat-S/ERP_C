@@ -153,7 +153,7 @@
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="6">
                         <StringItem index="0" value="Selecciona Articulo"/>
-                        <StringItem index="1" value="Blocks  padrones"/>
+                        <StringItem index="1" value="Blocks Padrones"/>
                         <StringItem index="2" value="Blocks RDV"/>
                         <StringItem index="3" value="Blocks RDB"/>
                         <StringItem index="4" value="Blocks Boletaje"/>
@@ -436,7 +436,7 @@
                                           <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="471" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -456,7 +456,7 @@
                                           <Component id="Bqe" min="-2" pref="60" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="624" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -645,7 +645,7 @@
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="6">
                         <StringItem index="0" value="Selecciona Articulo"/>
-                        <StringItem index="1" value="Blocks  padrones"/>
+                        <StringItem index="1" value="Blocks Padrones"/>
                         <StringItem index="2" value="Blocks RDV"/>
                         <StringItem index="3" value="Blocks RDB"/>
                         <StringItem index="4" value="Blocks Boletaje"/>

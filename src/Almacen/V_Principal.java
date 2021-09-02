@@ -31,7 +31,6 @@ public final class V_Principal extends javax.swing.JFrame {
     /*
      * Creates new form V_Principal
      */
-    
     public V_Principal() {
         initComponents();
         FiltrosZonas FZS = new FiltrosZonas();
@@ -44,14 +43,14 @@ public final class V_Principal extends javax.swing.JFrame {
 
     }
 
-        public void OperacionBlocks() {
-        double d1 = Double.parseDouble(this.Bqe.getText());
-        double d2 = Double.parseDouble(this.FEmpieza.getText());
-        double d3 = 100;
-        double total = (d1 * d3) + d2;
+    public void OperacionBlocks() {
+        int d1 = Integer.parseInt(Bqe.getText());
+        int d2 = Integer.parseInt(FEmpieza.getText());
+        int d3 = 100;
+        int total = ((d1 * d3) + d2) - 1 ;
         Ftermina.setText("" + total + "");
     }
-    
+
     public void RolloT() {
         String sql = "SELECT `Cantidad` FROM almacen where `Articulo` LIKE '%Rollo termico%'";
         try {
@@ -140,7 +139,7 @@ public final class V_Principal extends javax.swing.JFrame {
 
         AgregarS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        Sarticuloobj1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona Articulo", "Blocks  padrones", "Blocks RDV", "Blocks RDB", "Blocks Boletaje", "Rollo termico" }));
+        Sarticuloobj1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona Articulo", "Blocks Padrones", "Blocks RDV", "Blocks RDB", "Blocks Boletaje", "Rollo termico" }));
         Sarticuloobj1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 Sarticuloobj1ItemStateChanged(evt);
@@ -336,7 +335,7 @@ public final class V_Principal extends javax.swing.JFrame {
 
         jCheckBox1.setText("Desactivar iniciales.");
 
-        AccionBR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona Articulo", "Blocks  padrones", "Blocks RDV", "Blocks RDB", "Blocks Boletaje", "Rollo termico" }));
+        AccionBR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona Articulo", "Blocks Padrones", "Blocks RDV", "Blocks RDB", "Blocks Boletaje", "Rollo termico" }));
 
         jLabel17.setText("0");
 
@@ -397,7 +396,7 @@ public final class V_Principal extends javax.swing.JFrame {
                                 .addComponent(jLabel19)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel20)))
-                        .addContainerGap(471, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -412,7 +411,7 @@ public final class V_Principal extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Bqe, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 624, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(152, 152, 152)
                 .addComponent(AccionBR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
