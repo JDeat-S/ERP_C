@@ -43,11 +43,19 @@ public final class V_Principal extends javax.swing.JFrame {
 
     }
 
-    public void OperacionBlocks() {
+    public void OperacionBlocksB() {
         int d1 = Integer.parseInt(BlocksEboletaje.getText());
         int d2 = Integer.parseInt(FEmpieza.getText());
         int d3 = 100;
-        int total = ((d1 * d3) + d2) - 1 ;
+        int total = ((d1 * d3) + d2) - 1;
+        Ftermina.setText("" + total + "");
+    }
+
+    public void OperacionBlocksP() {
+        int d1 = Integer.parseInt(BlocksEboletaje.getText());
+        int d2 = Integer.parseInt(FEmpieza.getText());
+        int d3 = 50;
+        int total = ((d1 * d3) + d2) - 1;
         Ftermina.setText("" + total + "");
     }
 
@@ -127,10 +135,6 @@ public final class V_Principal extends javax.swing.JFrame {
         jComboBox6 = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -318,7 +322,7 @@ public final class V_Principal extends javax.swing.JFrame {
 
         jLabel4.setText("Fecha:");
 
-        jLabel5.setText("Blocks que entran:");
+        jLabel5.setText("Cantidad");
 
         BlocksEboletaje.setText("0");
 
@@ -362,8 +366,6 @@ public final class V_Principal extends javax.swing.JFrame {
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel11.setText("Serie:");
-
-        jTextField5.setText("jTextField5");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -419,11 +421,11 @@ public final class V_Principal extends javax.swing.JFrame {
                                                 .addComponent(jLabel7)
                                                 .addGap(18, 18, 18)))
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Ftermina, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(10, 10, 10)
-                                                .addComponent(jLabel8)))))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(jLabel8))
+                                            .addComponent(Ftermina, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addContainerGap(458, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -437,16 +439,8 @@ public final class V_Principal extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BlocksEboletaje, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 345, Short.MAX_VALUE))))
+                                .addComponent(BlocksEboletaje, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 614, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(152, 152, 152)
                 .addComponent(AccionBR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -469,11 +463,7 @@ public final class V_Principal extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(BlocksEboletaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BlocksEboletaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -532,21 +522,6 @@ public final class V_Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ServItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ServItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ServItemStateChanged
-
-    private void zonaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_zonaItemStateChanged
-        // TODO add your handling code here:
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) zona.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            Serv.setModel(modelServicio);
-        }
-        //int xd = zona.getSelectedIndex();
-    }//GEN-LAST:event_zonaItemStateChanged
-
     private void AgregarZItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_AgregarZItemStateChanged
         // TODO add your handling code here:
         if (evt.getStateChange() == ItemEvent.SELECTED) {
@@ -563,8 +538,40 @@ public final class V_Principal extends javax.swing.JFrame {
 
     private void FEmpiezaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FEmpiezaKeyReleased
         // TODO add your handling code here:
-        OperacionBlocks();
+        String dt = (String) AccionBR.getSelectedItem();
+        if (dt.equals("Selecciona Articulo")) {
+            
+        }
+        if (dt.equals("Blocks Padrones")) {
+            OperacionBlocksP();
+        }
+        if (dt.equals("Blocks RDV")) {
+
+        }
+        if (dt.equals("Blocks RDB")) {
+        }
+        if (dt.equals("Blocks Boletaje")) {
+            OperacionBlocksB();
+
+        }
+        if (dt.equals("Rollo termico")) {
+        }
     }//GEN-LAST:event_FEmpiezaKeyReleased
+
+    private void ServItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ServItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ServItemStateChanged
+
+    private void zonaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_zonaItemStateChanged
+        // TODO add your handling code here:
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) zona.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            Serv.setModel(modelServicio);
+        }
+        //int xd = zona.getSelectedIndex();
+    }//GEN-LAST:event_zonaItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -655,10 +662,6 @@ public final class V_Principal extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JComboBox<String> zona;
     // End of variables declaration//GEN-END:variables
