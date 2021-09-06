@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-08-2021 a las 00:40:46
+-- Tiempo de generación: 06-09-2021 a las 20:11:27
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -44,6 +44,20 @@ CREATE TABLE `administradores` (
 
 INSERT INTO `administradores` (`id_Administrador`, `Apellido_P_Adm`, `Apellido_M_Adm`, `Nombre(s)_Adm`, `mod`, `Fecha_de_registro_Adm`, `Usuario_Adm`, `Pass_Adm`) VALUES
 (28, 'Neri', 'Milpas', 'Cristina', '2021-08-10 16:38:54', '2021-07-04 20:23:39', 'Admin', 0x41646d696e);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `almacen`
+--
+
+CREATE TABLE `almacen` (
+  `idArticulo` int(11) NOT NULL,
+  `Zona` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `Servicio` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `Articulo` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `Cantidad` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -6274,13 +6288,6 @@ CREATE TABLE `estadia` (
   `Observaciones` varchar(1000) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `estadia`
---
-
-INSERT INTO `estadia` (`idEstadias`, `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `# Celular`, `Carrera`, `Tipo de carrera`, `CURP`, `Status`, `Fecha de ingreso`, `Fecha de termino`, `Carta de precentacion`, `Carta de aceptacion`, `Programa de actividades`, `1er avance`, `2do avance`, `3er avance`, `Carta termino`, `Autorizacion empastado`, `Evaluacion`, `Observaciones`) VALUES
-(1, '789', 'Perez', 'Tore', 'Dom', '55123', 'ADM', 'TSU', 'PRDASD456', 'Pendiente', '20/256/45', '+65*65/45', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', '');
-
 -- --------------------------------------------------------
 
 --
@@ -6525,9 +6532,7 @@ INSERT INTO `nomina` (`idNomina`, `#_Folio`, `Apellido P`, `Apellido M`, `Nombre
 (27, '', '', '', 'PEDROZA ARGAEZ JULIO CESAR', '.', '.', 'SUR 2', 'KOWLAAN', '1500', '100.0', '1ra Quincena de Agosto', '2021', 'A', 'A', 'A', 'F', 'A', 'A', 'D', 'D', 'A', 'A', 'A', 'D', 'D', 'A', 'A', '.', '500', '0', '0', '0', '0', '0', '500', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '00', '1050.0', ''),
 (28, '', '', '', 'PEDROZA ARGAEZ JULIO CESAR', '.', '.', 'SUR 2', 'KOWLAAN', '1500', '100.0', '1ra Quincena de Agosto', '2021', 'A', 'A', 'A', 'A', 'A', 'A', 'D', 'F', 'A', 'A', 'A', 'A', 'A', 'D', 'D', '.', '95.0', '26.98', '0', '', '100', '0', '500', '0', '95.00', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '50', '0', '878.02', ''),
 (29, '', '', '', 'PEDROZA ARGAEZ JULIO CESAR', '.', '.', 'SUR 2', 'KOWLAAN', '1500', '103.33333333333333', '1ra Quincena de Agosto', '2021', 'A', 'V', 'V', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'D', 'D', 'V', 'V', '.', '0', '26.98', '120', 'CAFE', '.', '0', '500', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '200', '1739.6866666666665', ''),
-(30, '', '', '', '', '', '', '', '', '0', '0', 'Selecciona una Quincena', '2021', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '0', '26.98', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', ''),
-(31, '', '', '', '', '', '', '', '', '0', '0', 'Selecciona una Quincena', '2021', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '', '0', '26.98', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
-(34, '', '', '', '', '', '', '', '', '0', '0', 'Selecciona una Quincena', '2021', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '0', '26.98', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '');
+(30, '', '', '', '', '', '', '', '', '0', '0', 'Selecciona una Quincena', '2021', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '0', '26.98', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '');
 
 -- --------------------------------------------------------
 
@@ -6561,13 +6566,7 @@ INSERT INTO `pago` (`idPago`, `# Folio`, `Apellido P`, `Apellido M`, `Nombre(s)`
 (16, '', '', '', 'PEDROZA ARGAEZ JULIO CESAR', '500', '.', '.', 'SUR 2', 'KOWLAAN', '1ra Quincena de Agosto', '2021', '1500', '1050.0'),
 (17, '', '', '', 'PEDROZA ARGAEZ JULIO CESAR', '0', '.', '.', 'SUR 2', 'KOWLAAN', '1ra Quincena de Agosto', '2021', '1500', '878.02'),
 (18, '', '', '', 'PEDROZA ARGAEZ JULIO CESAR', '500', '.', '.', 'SUR 2', 'KOWLAAN', '1ra Quincena de Agosto', '2021', '1500', '1739.6866666666665'),
-(19, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0'),
-(20, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0'),
-(21, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0'),
-(22, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0'),
-(23, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0'),
-(24, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0'),
-(25, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0');
+(19, '', '', '', '', '0', '', '', '', '', 'Selecciona una Quincena', '2021', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -6599,8 +6598,7 @@ CREATE TABLE `prestamos` (
 --
 
 INSERT INTO `prestamos` (`idprestamos`, `Fecha de solicitud`, `Mes`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Cantidad`, `Interes`, `Monto total`, `Por quincena`, `Carpeta de descuentos`, `Fecha liberado`, `Status`, `Metodo`) VALUES
-(37, '', 'Enero', '', '', '', '', '', '0', '0', '0', '0', '', '', '', ''),
-(38, '', 'Enero', '', '', '', '', '', '0', '0', '0', '0', '', '', '', '');
+(37, '45/15/6545', 'Abril', 'VARONA', ' SANDOVAL', 'HUGO', 'TOLUCA', 'X', '1000', '100.0', '1100.0', '550.0', 'xD', '46/16/6545', 'XDE', 'XDES');
 
 -- --------------------------------------------------------
 
@@ -6621,7 +6619,7 @@ CREATE TABLE `servicio` (
   `Domingo` varchar(45) CHARACTER SET utf8 NOT NULL,
   `Otro` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Tipo de valet` text COLLATE utf8_spanish_ci NOT NULL,
-  `Costo` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+  `Costo` text COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -6690,7 +6688,9 @@ INSERT INTO `servicio` (`idServ`, `idZona`, `Nombre Zona`, `Supervisor`, `Servic
 (65, '3', 'Zona Norte', '', 'SUPERVISOR', '', '', '', '', '', '', '', ''),
 (66, '5', 'Zona Poniente', '', 'SUPERVISOR', '', '', '', '', '', '', '', ''),
 (86, '2', 'Sur 2', 'ARTURO LADRILLERO', 'KOWLAAN $30 BOLETAJE SS. $50', '', '', '', '', '', '08:00 AM HASTA EL CIERRE', '', ''),
-(87, '', '', '', '', 'L a V', '', '', 'OFF', 'OFF', '', '', 'Sin costo');
+(87, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'),
+(88, '', '', '', '', 'L a V', '', '', 'OFF', 'OFF', '', '', '123'),
+(89, '4', 'Foraneos Acapulco', 'Leonel garcia', 'Santander re-nacimiento', 'L a V', '8:30', '16:00', '10:00 - 14:00', 'OFF', '', 'Valet', 'Sin costo');
 
 -- --------------------------------------------------------
 
@@ -6726,57 +6726,7 @@ CREATE TABLE `taller` (
 --
 
 INSERT INTO `taller` (`idTaller`, `Fecha de expedicion`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Datos vehiculo`, `# de piezas`, `Daño`, `Costo Aproximado`, `Ingreso a taller`, `Pagado por cliente`, `Pago a confort`, `Cobrado`, `Pagado`, `Pendiente`, `Por quincenas`, `Forma de pago`, `Observaciones`) VALUES
-(12, '', '', '', '', '', '', '', '', '', '0', 'Si', '.', '0', '', '0', '', '', '.', ''),
-(13, '', '', '', '', '', '', '', '', '', '0', 'Si', '.', '0', '', '0', '', '', '.', ''),
-(14, '', '', '', '', '', '', '', '', '', '0', 'Si', '.', '0', '', '0', '', '', '.', '');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `torteria`
---
-
-CREATE TABLE `torteria` (
-  `idTorteria` int(11) NOT NULL,
-  `# Exp` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `Apellido P` varchar(75) COLLATE utf8_spanish_ci NOT NULL,
-  `Apellido M` varchar(75) COLLATE utf8_spanish_ci NOT NULL,
-  `Nombre(s)` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
-  `# Casa` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `# Recados` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `# Celular` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `RFC` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `NSS` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
-  `CURP` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
-  `Doc originales` text COLLATE utf8_spanish_ci NOT NULL,
-  `Doc faltantes` text COLLATE utf8_spanish_ci NOT NULL,
-  `Doc entregados` text COLLATE utf8_spanish_ci NOT NULL,
-  `Forma de pago` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `Sueldo` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
-  `Bono` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
-  `Status` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `Fecha entrevista` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `Fecha ingreso` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `Ultimo dia laborado` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `Fecha de firma baja` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `Baja firmada` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `Finiquito` varchar(55) COLLATE utf8_spanish_ci NOT NULL,
-  `Fecha de Re-ingreso` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `Ultimo dia laborado (re)` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `Fecha firma baja (re)` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `Fecha de Baja (re)` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `Baja firmada (re)` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `Cambio de Servicio` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `# recepcion personal` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `Observaciones` text COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `torteria`
---
-
-INSERT INTO `torteria` (`idTorteria`, `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `# Casa`, `# Recados`, `# Celular`, `RFC`, `NSS`, `CURP`, `Doc originales`, `Doc faltantes`, `Doc entregados`, `Forma de pago`, `Sueldo`, `Bono`, `Status`, `Fecha entrevista`, `Fecha ingreso`, `Ultimo dia laborado`, `Fecha de firma baja`, `Baja firmada`, `Finiquito`, `Fecha de Re-ingreso`, `Ultimo dia laborado (re)`, `Fecha firma baja (re)`, `Fecha de Baja (re)`, `Baja firmada (re)`, `Cambio de Servicio`, `# recepcion personal`, `Observaciones`) VALUES
-(1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '.', '', '', '', '', 'No ha venido a firmar', '.', '', '', '', '', '.', '', '', '');
+(12, '12/12/5461', 'TORRES', ' CANCINO', ' MIGUEL', 'KOWLAAN', 'SUR 2', '13asd6a45sd6', '45', 'asdasdasdasd', '5465', 'Si', 'Pagado', '5465.0', '150', '227.708', '5237.292', '227.70833333333334', 'Deposito', 'muschascosas wuiiuuu');
 
 -- --------------------------------------------------------
 
@@ -6861,6 +6811,12 @@ ALTER TABLE `administradores`
   ADD PRIMARY KEY (`id_Administrador`);
 
 --
+-- Indices de la tabla `almacen`
+--
+ALTER TABLE `almacen`
+  ADD PRIMARY KEY (`idArticulo`);
+
+--
 -- Indices de la tabla `empleados`
 --
 ALTER TABLE `empleados`
@@ -6909,12 +6865,6 @@ ALTER TABLE `taller`
   ADD PRIMARY KEY (`idTaller`);
 
 --
--- Indices de la tabla `torteria`
---
-ALTER TABLE `torteria`
-  ADD PRIMARY KEY (`idTorteria`);
-
---
 -- Indices de la tabla `usuarios_nomina`
 --
 ALTER TABLE `usuarios_nomina`
@@ -6943,6 +6893,12 @@ ALTER TABLE `administradores`
   MODIFY `id_Administrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
+-- AUTO_INCREMENT de la tabla `almacen`
+--
+ALTER TABLE `almacen`
+  MODIFY `idArticulo` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
@@ -6964,37 +6920,31 @@ ALTER TABLE `imss`
 -- AUTO_INCREMENT de la tabla `nomina`
 --
 ALTER TABLE `nomina`
-  MODIFY `idNomina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `idNomina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `pago`
 --
 ALTER TABLE `pago`
-  MODIFY `idPago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `idPago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamos`
 --
 ALTER TABLE `prestamos`
-  MODIFY `idprestamos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `idprestamos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `servicio`
 --
 ALTER TABLE `servicio`
-  MODIFY `idServ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `idServ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT de la tabla `taller`
 --
 ALTER TABLE `taller`
-  MODIFY `idTaller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT de la tabla `torteria`
---
-ALTER TABLE `torteria`
-  MODIFY `idTorteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idTaller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios_nomina`
@@ -7012,7 +6962,7 @@ ALTER TABLE `usuarios_rh`
 -- AUTO_INCREMENT de la tabla `zona`
 --
 ALTER TABLE `zona`
-  MODIFY `idZona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idZona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
