@@ -1121,7 +1121,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         );
 
         botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb2.setLink("http://192.168.1.2/Reportes/Reporteservicios/EPCServicios.php");
+        botonWeb2.setLink("http://192.168.3.10/Reportes/Reporteservicios/EPCServicios.php");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);

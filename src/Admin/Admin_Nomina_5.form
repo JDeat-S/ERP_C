@@ -3521,7 +3521,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                     </Property>
-                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteNomina/EPCNomina.php"/>
+                    <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReporteNomina/EPCNomina.php"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -3922,7 +3922,7 @@
                       <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
-                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteNomina/EPCpagos.php"/>
+                    <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReporteNomina/EPCpagos.php"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -4640,7 +4640,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                     </Property>
-                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteNomina/EPCprestamos.php"/>
+                    <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReporteNomina/EPCprestamos.php"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -5596,7 +5596,7 @@
                       <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
-                    <Property name="link" type="java.lang.String" value="http://192.168.1.153/Reportes/ReporteNomina/EPCodtaller.php"/>
+                    <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReporteNomina/EPCodtaller.php"/>
                   </Properties>
                 </Component>
               </SubComponents>

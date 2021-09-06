@@ -739,7 +739,7 @@ public class RH_Estadias_4 extends javax.swing.JFrame {
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb1.setToolTipText("");
-        botonWeb1.setLink("http://192.168.1.2/Reportes/ReporteRH/EPCEstadia.php");
+        botonWeb1.setLink("http://192.168.3.10/Reportes/ReporteRH/EPCEstadia.php");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

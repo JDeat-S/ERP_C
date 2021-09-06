@@ -986,7 +986,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                     </Property>
-                    <Property name="link" type="java.lang.String" value="http://192.168.1.2/Reportes/Reporteservicios/EPCServicios.php"/>
+                    <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/Reporteservicios/EPCServicios.php"/>
                   </Properties>
                 </Component>
               </SubComponents>
