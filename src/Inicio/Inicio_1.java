@@ -8,6 +8,7 @@ package Inicio;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -39,7 +40,7 @@ FondoPanel fondo = new FondoPanel();
         jPanel1 = new FondoPanel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio");
@@ -55,7 +56,12 @@ FondoPanel fondo = new FondoPanel();
             }
         });
 
-        jLabel1.setText("Ver 1.4.2");
+        jButton2.setText("Ver 1.4.2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -69,8 +75,8 @@ FondoPanel fondo = new FondoPanel();
                         .addGap(55, 55, 55))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(112, 112, 112)
-                        .addComponent(jLabel1)
+                        .addGap(100, 100, 100)
+                        .addComponent(jButton2)
                         .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
@@ -81,7 +87,7 @@ FondoPanel fondo = new FondoPanel();
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jLabel1))
+                    .addComponent(jButton2))
                 .addContainerGap())
         );
 
@@ -105,6 +111,14 @@ FondoPanel fondo = new FondoPanel();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres buscar actualizaciones?");
+        if (i == 0) {
+            
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,7 +158,7 @@ FondoPanel fondo = new FondoPanel();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
