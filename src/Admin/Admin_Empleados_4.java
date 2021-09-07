@@ -3,6 +3,7 @@ package Admin;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
+import Funciones.ColorFilas;
 import Inicio.Login_2;
 import ZyS.Servicios;
 import ZyS.Zonas;
@@ -29,12 +30,14 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
+    ColorFilas colores = new ColorFilas();
 
     /**
      * Creates new form RH
      */
     public Admin_Empleados_4() {
         initComponents();
+        data.setDefaultRenderer(data.getColumnClass(0), colores);
         this.setExtendedState(6);
         mostrardatos();
         mostrarimss();
@@ -470,10 +473,10 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         }
 
     }
-
+ 
     public void filtroszonas() {
         //filtro Zonas
-
+        
         String where = "select * from empleados";
         String FiltroZGen = FiltroZGe.getSelectedItem().toString();
 
@@ -1895,7 +1898,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         });
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb1.setLink("http://192.168.1.153/Reportes/ReporteRH/EPCEmpleados.php");
+        botonWeb1.setLink("http://192.168.3.10/Reportes/ReporteRH/EPCEmpleados.php");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -2298,7 +2301,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         });
 
         botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb2.setLink("http://192.168.1.153/Reportes/ReporteRH/EPCIMSS.php");
+        botonWeb2.setLink("http://192.168.3.10/Reportes/ReporteRH/EPCIMSS.php");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);

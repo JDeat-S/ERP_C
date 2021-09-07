@@ -844,7 +844,7 @@ public class RH_Tortas_4 extends javax.swing.JFrame {
         jScrollPane4.setViewportView(TTortas);
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb1.setLink("http://192.168.1.2/Reportes/ReporteRH/EPCTorteria.php");
+        botonWeb1.setLink("http://192.168.3.10/Reportes/ReporteRH/EPCTorteria.php");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

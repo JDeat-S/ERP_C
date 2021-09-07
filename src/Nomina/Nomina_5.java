@@ -3764,7 +3764,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         });
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb1.setLink("http://192.168.1.153/Reportes/ReporteNomina/EPCNomina.php");
+        botonWeb1.setLink("http://192.168.3.10/Reportes/ReporteNomina/EPCNomina.php");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -3956,7 +3956,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         });
 
         botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb2.setLink("http://192.168.1.153/Reportes/ReporteNomina/EPCpagos.php");
+        botonWeb2.setLink("http://192.168.3.10/Reportes/ReporteNomina/EPCpagos.php");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -4378,7 +4378,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         });
 
         botonWeb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb3.setLink("http://192.168.1.153/Reportes/ReporteNomina/EPCprestamos.php");
+        botonWeb3.setLink("http://192.168.3.10/Reportes/ReporteNomina/EPCprestamos.php");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -4872,7 +4872,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         });
 
         botonWeb4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb4.setLink("http://192.168.1.153/Reportes/ReporteNomina/EPCodtaller.php");
+        botonWeb4.setLink("http://192.168.3.10/Reportes/ReporteNomina/EPCodtaller.php");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
