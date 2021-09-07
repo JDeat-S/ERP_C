@@ -1,3 +1,6 @@
+A partir de 05/09/2021 se subiran las actualizaciones al buscar actualizaciones dentro del programa.
+
+
 Ver 1.4.3
 Cambios 02/09/2021
 Ventana Almacen

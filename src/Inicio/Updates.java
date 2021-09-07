@@ -15,6 +15,7 @@ import java.net.URLConnection;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -28,6 +29,9 @@ public class Updates extends javax.swing.JFrame {
     public Updates() {
         initComponents();
         btnDesc.setVisible(false);
+        setIconImage(new ImageIcon(Updates.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        this.setLocationRelativeTo(null);
+
     }
 
     /**
@@ -45,10 +49,13 @@ public class Updates extends javax.swing.JFrame {
         Search = new javax.swing.JButton();
         LabelAll = new javax.swing.JLabel();
         btnDesc = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Buscar Actualizaciones");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 0));
         jPanel2.setForeground(new java.awt.Color(255, 255, 102));
@@ -64,7 +71,7 @@ public class Updates extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(jLabel1)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,7 +90,7 @@ public class Updates extends javax.swing.JFrame {
         });
 
         LabelAll.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        LabelAll.setForeground(new java.awt.Color(51, 255, 0));
+        LabelAll.setForeground(new java.awt.Color(51, 204, 0));
         LabelAll.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelAll.setText("Verificar Actualizacion");
 
@@ -94,22 +101,36 @@ public class Updates extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Regresar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(LabelAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(179, 179, 179)
+                                .addComponent(Search))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(172, 172, 172)
+                                .addComponent(btnDesc)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnDesc)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Search)
-                        .addGap(4, 4, 4)))
+                .addContainerGap()
+                .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -118,11 +139,13 @@ public class Updates extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(Search)
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addComponent(LabelAll)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addComponent(btnDesc)
-                .addGap(70, 70, 70))
+                .addGap(30, 30, 30)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -146,7 +169,7 @@ public class Updates extends javax.swing.JFrame {
             URLConnection con = url.openConnection();
             con.connect();
             return true;
-            
+
         } catch (MalformedURLException ex) {
             Logger.getLogger(Updates.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -169,7 +192,7 @@ public class Updates extends javax.swing.JFrame {
         }
         return null;
     }
-    
+
     public static String Contenido(URL url) {
         try {
             Scanner S = new Scanner(url.openStream()).useDelimiter("\\Z");
@@ -180,12 +203,12 @@ public class Updates extends javax.swing.JFrame {
         }
         return null;
     }
-    
+
     //Redireccionar un enlace
-    public static void abrirenlace(String url){
+    public static void abrirenlace(String url) {
         try {
             Desktop.getDesktop().browse(new URI(url));
-            
+
         } catch (URISyntaxException | IOException ex) {
             Logger.getLogger(Updates.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -194,25 +217,26 @@ public class Updates extends javax.swing.JFrame {
         LabelAll.setText("Buscando actualizacion...");
         new Thread(new Runnable() {
             @Override
-            public void run(){
+            public void run() {
                 try {
                     //5 segundos de busqueda
                     Thread.sleep(5000);
-                    if(verificarConexion()){
-                       if(version().equals("1.4.2")){
-                           LabelAll.setText("La aplicacion esta actualizada.");
-                       }else{
-                           LabelAll.setText("Version " + version() +" disponible.");
-                           btnDesc.setVisible(true);
-                       }
-                    }else{
+                    if (verificarConexion()) {
+                        if (version().equals("1.5.0")) {
+                            LabelAll.setText("La aplicacion esta actualizada.");
+                            btnDesc.setVisible(false);
+                        } else {
+                            LabelAll.setText("Version " + version() + " disponible.");
+                            btnDesc.setVisible(true);
+                        }
+                    } else {
                         LabelAll.setText("Verificar conexion internet.");
                     }
-                    
+
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Updates.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
+
             }
         }).start();
     }//GEN-LAST:event_SearchActionPerformed
@@ -220,6 +244,12 @@ public class Updates extends javax.swing.JFrame {
     private void btnDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDescActionPerformed
         abrirenlace("https://github.com/JDeat-S/ActualizacionERP");
     }//GEN-LAST:event_btnDescActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Inicio_1 regreso = new Inicio_1();
+        regreso.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,6 +290,7 @@ public class Updates extends javax.swing.JFrame {
     private javax.swing.JLabel LabelAll;
     private javax.swing.JButton Search;
     private javax.swing.JButton btnDesc;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -3,6 +3,7 @@ package Admin;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
+import Funciones.ColorFilas;
 import Inicio.Login_2;
 import ZyS.Servicios;
 import ZyS.Zonas;
@@ -29,12 +30,14 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
+    ColorFilas colores = new ColorFilas();
 
     /**
      * Creates new form RH
      */
     public Admin_Empleados_4() {
         initComponents();
+        data.setDefaultRenderer(data.getColumnClass(0), colores);
         this.setExtendedState(6);
         mostrardatos();
         mostrarimss();
@@ -470,10 +473,10 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         }
 
     }
-
+ 
     public void filtroszonas() {
         //filtro Zonas
-
+        
         String where = "select * from empleados";
         String FiltroZGen = FiltroZGe.getSelectedItem().toString();
 
