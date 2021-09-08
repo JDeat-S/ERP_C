@@ -41,6 +41,8 @@ public class ColorFilas extends DefaultTableCellRenderer {
             setBackground(EEs);
         } else if (table.getValueAt(row, 20).toString().equals("PENDIENTE")) {
             setBackground(Pen);
+        } else if (table.getValueAt(row, 20).toString().equals("BOLETINADO")) {
+            setBackground(RyB);
         } else{
             setBackground(Color.CYAN);
         }
