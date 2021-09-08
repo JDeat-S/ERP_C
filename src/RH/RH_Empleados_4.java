@@ -3,6 +3,7 @@ package RH;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
+import Funciones.ColorFilas;
 import Inicio.Login_2;
 import ZyS.Servicios;
 import ZyS.Zonas;
@@ -29,12 +30,14 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
+    ColorFilas colores = new ColorFilas();
 
     /**
      * Creates new form RH
      */
     public RH_Empleados_4() {
         initComponents();
+        data.setDefaultRenderer(data.getColumnClass(0), colores);
         this.setExtendedState(6);
         mostrardatos();
         mostrarimss();
@@ -680,7 +683,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     public void mostrardatos() {
         //Buscar empleado
         String FiltroNGe = FiltroNG.getText();
-        String Filtroapgen =Filtroap.getText();
+        String Filtroapgen = Filtroap.getText();
         String FilAM = Filtroam.getText();
         String where = "select * from empleados";
         String FiltroFDIGen = FiltroFDI.getText();
@@ -695,9 +698,9 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             where = "select * from empleados Where `CURP` LIKE '%" + FiltrocurpGen + "%'";
         } else if (!"".equals(FiltroNSSGe)) {
             where = "select * from empleados Where `NSS` LIKE '%" + FiltroNSSGe + "%'";
-        }else if (!"".equals(Filtroapgen)) {
+        } else if (!"".equals(Filtroapgen)) {
             where = "select * from empleados Where `Apellido P` LIKE '%" + Filtroapgen + "%'";
-        }else if (!"".equals(FilAM)) {
+        } else if (!"".equals(FilAM)) {
             where = "select * from empleados Where `Apellido M` LIKE '%" + FilAM + "%'";
         }
 
