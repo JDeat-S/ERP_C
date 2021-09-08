@@ -16,7 +16,10 @@ import javax.swing.table.DefaultTableCellRenderer;
  * @author JDeat
  */
 public class ColorFilas extends DefaultTableCellRenderer {
+    Color RyB=new Color(255, 175, 175);
+
     @Override
+    
     public Component getTableCellRendererComponent(JTable table, Object value, 
                                                    boolean isSelected, 
                                                    boolean hasFocus, 
@@ -24,9 +27,11 @@ public class ColorFilas extends DefaultTableCellRenderer {
                                                    int column) {
         super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         if(table.getValueAt(row, 20).toString().equals("BAJA")){
-            setBackground(Color.red);
+            setBackground(RyB);
         } else if (table.getValueAt(row, 20).toString().equals("VIGENTE")){
             setBackground(Color.yellow);
+        } else if (table.getValueAt(row, 20).toString().equals("RECHAZADO")){
+            setBackground(RyB);
         } 
  
         return this;
