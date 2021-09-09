@@ -318,23 +318,23 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         if (!"".equals(NIMSS)) {
             where = " select * from imss WHERE `Nombre(s)` LIKE '%" + NIMSS + "%'";
         } else if (!"".equals(Exp)) {
-            where = " Where `#_Exp` LIKE '%" + Exp + "%'";
+            where = " select * from imss Where `#_Exp` LIKE '%" + Exp + "%'";
         } else if (!"".equals(Ap)) {
-            where = " Where `Apellido P` LIKE '%" + Ap + "%'";
+            where = "select * from imss Where `Apellido P` LIKE '%" + Ap + "%'";
         } else if (!"".equals(Am)) {
-            where = " Where `Apellido M` LIKE '%" + Am + "%'";
+            where = "select * from imss Where `Apellido M` LIKE '%" + Am + "%'";
         } else if (!"".equals(fdi)) {
-            where = " Where `Fecha_de_incorporacion` LIKE '%" + fdi + "%'";
+            where = "select * from imss Where `Fecha_de_incorporacion` LIKE '%" + fdi + "%'";
         } else if (!"".equals(nss)) {
-            where = " Where `nss_imss` LIKE '%" + nss + "%'";
+            where = "select * from imss Where `nss_imss` LIKE '%" + nss + "%'";
         } else if (!"".equals(rfc)) {
-            where = " Where `rfc_imss` LIKE '%" + rfc + "%'";
+            where = "select * from imss Where `rfc_imss` LIKE '%" + rfc + "%'";
         } else if (!"".equals(curp)) {
-            where = " Where `curp_imss` LIKE '%" + curp + "%'";
+            where = "select * from imss Where `curp_imss` LIKE '%" + curp + "%'";
         } else if (!"".equals(fb)) {
-            where = " Where `fecha_baja` LIKE '%" + fb + "%'";
+            where = "select * from imss Where `fecha_baja` LIKE '%" + fb + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -2298,12 +2298,6 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         Nfilimss.setText("Buscar por IMSS:");
 
-        jScrollPane7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jScrollPane7MouseClicked(evt);
-            }
-        });
-
         Timss.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -2343,11 +2337,59 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         jLabel3.setText("Filtrar por:");
 
+        expFimss.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                expFimssKeyReleased(evt);
+            }
+        });
+
+        ApimssF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ApimssFKeyReleased(evt);
+            }
+        });
+
+        AmimssF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                AmimssFKeyReleased(evt);
+            }
+        });
+
+        FdiimssF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FdiimssFKeyReleased(evt);
+            }
+        });
+
         FZimss.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
+
+        nssimssF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nssimssFKeyReleased(evt);
+            }
+        });
+
+        rfcimssF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                rfcimssFKeyReleased(evt);
+            }
+        });
+
+        curpimssF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                curpimssFKeyReleased(evt);
+            }
+        });
 
         PuestoimssF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         StatusimssF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        FBimssF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FBimssFKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -2511,10 +2553,6 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         // TODO add your handling code here:
         mostrarimss();
     }//GEN-LAST:event_namesimssKeyReleased
-
-    private void jScrollPane7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane7MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jScrollPane7MouseClicked
 
     private void TimssMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TimssMouseClicked
         // TODO add your handling code here:
@@ -3196,6 +3234,38 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_UsuariosRHActionPerformed
+
+    private void expFimssKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_expFimssKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_expFimssKeyReleased
+
+    private void ApimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ApimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_ApimssFKeyReleased
+
+    private void AmimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AmimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_AmimssFKeyReleased
+
+    private void FdiimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FdiimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_FdiimssFKeyReleased
+
+    private void nssimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nssimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_nssimssFKeyReleased
+
+    private void rfcimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rfcimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_rfcimssFKeyReleased
+
+    private void curpimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_curpimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_curpimssFKeyReleased
+
+    private void FBimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FBimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_FBimssFKeyReleased
 
     /**
      * @param args the command line arguments

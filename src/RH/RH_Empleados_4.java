@@ -318,21 +318,21 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         if (!"".equals(NIMSS)) {
             where = " select * from imss WHERE `Nombre(s)` LIKE '%" + NIMSS + "%'";
         } else if (!"".equals(Exp)) {
-            where = " Where `#_Exp` LIKE '%" + Exp + "%'";
+            where = " select * from imss Where `#_Exp` LIKE '%" + Exp + "%'";
         } else if (!"".equals(Ap)) {
-            where = " Where `Apellido P` LIKE '%" + Ap + "%'";
+            where = "select * from imss Where `Apellido P` LIKE '%" + Ap + "%'";
         } else if (!"".equals(Am)) {
-            where = " Where `Apellido M` LIKE '%" + Am + "%'";
+            where = "select * from imss Where `Apellido M` LIKE '%" + Am + "%'";
         } else if (!"".equals(fdi)) {
-            where = " Where `Fecha_de_incorporacion` LIKE '%" + fdi + "%'";
+            where = "select * from imss Where `Fecha_de_incorporacion` LIKE '%" + fdi + "%'";
         } else if (!"".equals(nss)) {
-            where = " Where `nss_imss` LIKE '%" + nss + "%'";
+            where = "select * from imss Where `nss_imss` LIKE '%" + nss + "%'";
         } else if (!"".equals(rfc)) {
-            where = " Where `rfc_imss` LIKE '%" + rfc + "%'";
+            where = "select * from imss Where `rfc_imss` LIKE '%" + rfc + "%'";
         } else if (!"".equals(curp)) {
-            where = " Where `curp_imss` LIKE '%" + curp + "%'";
+            where = "select * from imss Where `curp_imss` LIKE '%" + curp + "%'";
         } else if (!"".equals(fb)) {
-            where = " Where `fecha_baja` LIKE '%" + fb + "%'";
+            where = "select * from imss Where `fecha_baja` LIKE '%" + fb + "%'";
         }
         
         try {
@@ -2292,12 +2292,6 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
         Nfilimss.setText("Buscar por IMSS:");
 
-        jScrollPane7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jScrollPane7MouseClicked(evt);
-            }
-        });
-
         Timss.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -2340,6 +2334,11 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         AmimssF.setToolTipText("");
 
         expFimss.setToolTipText("");
+        expFimss.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                expFimssKeyReleased(evt);
+            }
+        });
 
         ApimssF.setToolTipText("");
 
@@ -2469,10 +2468,6 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         // TODO add your handling code here:
         mostrarimss();
     }//GEN-LAST:event_namesimssKeyReleased
-
-    private void jScrollPane7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane7MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jScrollPane7MouseClicked
 
     private void TimssMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TimssMouseClicked
         // TODO add your handling code here:
@@ -3116,9 +3111,12 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroapKeyReleased
 
     private void FiltroamKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroamKeyReleased
-        // TODO add your handling code here:
         mostrardatos();
     }//GEN-LAST:event_FiltroamKeyReleased
+
+    private void expFimssKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_expFimssKeyReleased
+mostrarimss();
+    }//GEN-LAST:event_expFimssKeyReleased
 
     /**
      * @param args the command line arguments
