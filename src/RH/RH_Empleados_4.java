@@ -302,6 +302,142 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
     }
 
+        public void FStatusimss() {
+        //Buscar servicio
+        String Status = StatusimssF.getSelectedItem().toString();
+        String where = "select * from imss";
+
+        if (!"".equals(Status)) {
+            where = " select * from imss WHERE `Status_imss` LIKE '%" + Status + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//Nombre de la tabla
+            Timss.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("# Exp");
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//5
+            modelo.addColumn("Genero");
+            modelo.addColumn("Fecha de incorporacion");//7
+            modelo.addColumn("Zona");
+            modelo.addColumn("NSS");//9
+            modelo.addColumn("RFC");
+            modelo.addColumn("CURP");//11
+            modelo.addColumn("Puesto");
+            modelo.addColumn("Salario");//13
+            modelo.addColumn("Status");
+            modelo.addColumn("Fecha baja");//15
+            modelo.addColumn("Observaciones");
+
+//Anchos
+            int[] anchos = {/*idbd*/10, /*NEXP*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80, /*GEN*/ 30, /*FDI*/ 50, /*ZONA*/ 50, /*NSS*/ 65, /*RFC*/ 60,
+                /*CURP*/ 60, /*puesto*/ 60, /*salario*/ 50, /*Status*/ 65, /*FDB*/ 70, /*OBS*/ 2000};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Timss.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos " + e.getMessage());
+
+        }
+
+    }
+    
+    public void FPuestoimss() {
+        //Buscar servicio
+        String puesto = PuestoimssF.getSelectedItem().toString();
+        String where = "select * from imss";
+
+        if (!"".equals(puesto)) {
+            where = " select * from imss WHERE `Puesto` LIKE '%" + puesto + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//Nombre de la tabla
+            Timss.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("# Exp");
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//5
+            modelo.addColumn("Genero");
+            modelo.addColumn("Fecha de incorporacion");//7
+            modelo.addColumn("Zona");
+            modelo.addColumn("NSS");//9
+            modelo.addColumn("RFC");
+            modelo.addColumn("CURP");//11
+            modelo.addColumn("Puesto");
+            modelo.addColumn("Salario");//13
+            modelo.addColumn("Status");
+            modelo.addColumn("Fecha baja");//15
+            modelo.addColumn("Observaciones");
+
+//Anchos
+            int[] anchos = {/*idbd*/10, /*NEXP*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80, /*GEN*/ 30, /*FDI*/ 50, /*ZONA*/ 50, /*NSS*/ 65, /*RFC*/ 60,
+                /*CURP*/ 60, /*puesto*/ 60, /*salario*/ 50, /*Status*/ 65, /*FDB*/ 70, /*OBS*/ 2000};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Timss.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos " + e.getMessage());
+
+        }
+
+    }
+
     public void FiltroZimss() {
         //Buscar servicio
         String Zonaimms = FZimss.getSelectedItem().toString();
@@ -2419,9 +2555,19 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             }
         });
 
-        PuestoimssF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "CHOFER", "ADMINISTRATIVO", "SUPERVISOR" }));
+        PuestoimssF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "CHOFER", "ADMINISTRATIVO", "SUPERVISOR" }));
+        PuestoimssF.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                PuestoimssFItemStateChanged(evt);
+            }
+        });
 
-        StatusimssF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "IMSS", "PENDIENTE", "RECHAZADO", "TEMPORAL", "VIGENTE" }));
+        StatusimssF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "BAJA", "IMSS", "PENDIENTE", "RECHAZADO", "TEMPORAL", "VIGENTE" }));
+        StatusimssF.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                StatusimssFItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -2538,12 +2684,12 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void namesimssKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_namesimssKeyReleased
-        // TODO add your handling code here:
+
         mostrarimss();
     }//GEN-LAST:event_namesimssKeyReleased
 
     private void TimssMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TimssMouseClicked
-        // TODO add your handling code here:
+
         DefaultTableModel model = (DefaultTableModel) Timss.getModel();
 
         try {
@@ -2610,39 +2756,39 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_TimssMouseClicked
 
     private void deleteimssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteimssActionPerformed
-        // TODO add your handling code here:
+
         eliminarimss();
         mostrarimss();
         limpimms();
     }//GEN-LAST:event_deleteimssActionPerformed
 
     private void expimssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expimssActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_expimssActionPerformed
 
     private void addimssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addimssActionPerformed
-        // TODO add your handling code here:
+
         AgregarI();
         mostrarimss();
         limpimms();
     }//GEN-LAST:event_addimssActionPerformed
 
     private void modIMSSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modIMSSActionPerformed
-        // TODO add your handling code here:
+
         editari();
         mostrarimss();
         limpimms();
     }//GEN-LAST:event_modIMSSActionPerformed
 
     private void elimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimActionPerformed
-        // TODO add your handling code here:
+
         eliminardatos();
         mostrardatos();
         limpiar();
     }//GEN-LAST:event_elimActionPerformed
 
     private void dataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dataMouseClicked
-        // TODO add your handling code here:
+
         DefaultTableModel model = (DefaultTableModel) data.getModel();
 
         try {
@@ -2753,12 +2899,12 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_dataMouseClicked
 
     private void FiltroNGKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNGKeyReleased
-        // TODO add your handling code here:
+
         mostrardatos();
     }//GEN-LAST:event_FiltroNGKeyReleased
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
+
         AgregarE();
         limpiar();
 
@@ -2766,7 +2912,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_addActionPerformed
 
     private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "Recuerda que debes volver a seleccionar la zona y servicio. ¿Seguro que quieres realizar la modificacion?");
         if (i == 0) {
             editar();
@@ -2777,19 +2923,19 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_modActionPerformed
 
     private void CPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CPActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_CPActionPerformed
 
     private void fdpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fdpActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_fdpActionPerformed
 
     private void FFBREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FFBREActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FFBREActionPerformed
 
     private void zonaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_zonaItemStateChanged
-        // TODO add your handling code here:
+
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             Zonas zon = (Zonas) zona.getSelectedItem();
             Servicios serv = new Servicios();
@@ -2799,11 +2945,11 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_zonaItemStateChanged
 
     private void CSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_CSActionPerformed
 
     private void CZItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CZItemStateChanged
-        // TODO add your handling code here:
+
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             Zonas zon = (Zonas) CZ.getSelectedItem();
             Servicios serv = new Servicios();
@@ -2813,7 +2959,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_CZItemStateChanged
 
     private void CsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CsActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -2823,7 +2969,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_CsActionPerformed
 
     private void Cs3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs3ActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -2833,7 +2979,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Cs3ActionPerformed
 
     private void Cs2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs2ActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -2843,7 +2989,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Cs2ActionPerformed
 
     private void Cs4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs4ActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -2853,51 +2999,48 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Cs4ActionPerformed
 
     private void FiltroFDIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroFDIKeyReleased
-        // TODO add your handling code here:
+
         mostrardatos();
     }//GEN-LAST:event_FiltroFDIKeyReleased
 
     private void FiltroZGeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZGeItemStateChanged
-        // TODO add your handling code here:
+
         filtroszonas();
     }//GEN-LAST:event_FiltroZGeItemStateChanged
 
     private void FiltroServGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServGenItemStateChanged
-        // TODO add your handling code here:
+
         filtroserv();
     }//GEN-LAST:event_FiltroServGenItemStateChanged
 
     private void FiltroStatusItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroStatusItemStateChanged
-        // TODO add your handling code here:
+
         filtrosstatus();
     }//GEN-LAST:event_FiltroStatusItemStateChanged
 
     private void FiltroCurpGenKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroCurpGenKeyReleased
-        // TODO add your handling code here:
+
         mostrardatos();
     }//GEN-LAST:event_FiltroCurpGenKeyReleased
 
     private void FiltroNSSGenKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNSSGenKeyReleased
-        // TODO add your handling code here:
+
         mostrardatos();
     }//GEN-LAST:event_FiltroNSSGenKeyReleased
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
-        // TODO add your handling code here:
         RH_Estadias_4 regr = new RH_Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
-        // TODO add your handling code here:
         RH_Tortas_4 regr = new RH_Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed
 
     private void FiltroSZGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZGenItemStateChanged
-        // TODO add your handling code here:
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             FiltrosZonas zon = (FiltrosZonas) FiltroSZGen.getSelectedItem();
             FiltroServ serv = new FiltroServ();
@@ -2908,7 +3051,6 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroSZGenItemStateChanged
 
     private void FiltrosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosItemStateChanged
-        // TODO add your handling code here:
         String dt = (String) Filtros.getSelectedItem();
         if (dt.equals("Selecciona Filtro")) {
             Filtroam.setVisible(false);
@@ -3179,7 +3321,6 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosItemStateChanged
 
     private void FiltroapKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroapKeyReleased
-        // TODO add your handling code here:
         mostrardatos();
     }//GEN-LAST:event_FiltroapKeyReleased
 
@@ -3194,6 +3335,14 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private void FZimssItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZimssItemStateChanged
         FiltroZimss();
     }//GEN-LAST:event_FZimssItemStateChanged
+
+    private void PuestoimssFItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_PuestoimssFItemStateChanged
+        FPuestoimss();
+    }//GEN-LAST:event_PuestoimssFItemStateChanged
+
+    private void StatusimssFItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_StatusimssFItemStateChanged
+        FStatusimss();
+    }//GEN-LAST:event_StatusimssFItemStateChanged
 
     /**
      * @param args the command line arguments
