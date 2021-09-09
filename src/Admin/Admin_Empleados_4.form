@@ -101,7 +101,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="RH" alignment="0" pref="1186" max="32767" attributes="0"/>
+          <Component id="RH" alignment="0" pref="990" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -163,7 +163,7 @@
                                       <Component id="jPanel7" max="32767" attributes="0"/>
                                       <Component id="jPanel10" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="120" max="32767" attributes="0"/>
+                                  <EmptySpace pref="973" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
@@ -1959,7 +1959,7 @@
                           <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                           <Component id="Cs3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="312" max="32767" attributes="0"/>
+                          <EmptySpace pref="1142" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2669,7 +2669,7 @@
                 <Component class="javax.swing.JComboBox" name="Fimss">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="12">
+                      <StringArray count="13">
                         <StringItem index="0" value="Selecciona filtro"/>
                         <StringItem index="1" value="# Exp"/>
                         <StringItem index="2" value="Apellido P"/>
@@ -2679,12 +2679,16 @@
                         <StringItem index="6" value="Zona"/>
                         <StringItem index="7" value="NSS"/>
                         <StringItem index="8" value="RFC"/>
-                        <StringItem index="9" value="Puesto"/>
-                        <StringItem index="10" value="Status"/>
-                        <StringItem index="11" value="Fecha de baja"/>
+                        <StringItem index="9" value="CURP"/>
+                        <StringItem index="10" value="Puesto"/>
+                        <StringItem index="11" value="Status"/>
+                        <StringItem index="12" value="Fecha de baja"/>
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FimssItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>

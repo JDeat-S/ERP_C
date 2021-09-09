@@ -41,6 +41,19 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         this.setExtendedState(6);
         mostrardatos();
         mostrarimss();
+        namesimss.setVisible(false);
+        expFimss.setVisible(false);
+        ApimssF.setVisible(false);
+        AmimssF.setVisible(false);
+        FdiimssF.setVisible(false);
+        nssimssF.setVisible(false);
+        rfcimssF.setVisible(false);
+        curpimssF.setVisible(false);
+        FBimssF.setVisible(false);
+        FZimss.setVisible(false);
+        PuestoimssF.setVisible(false);
+        StatusimssF.setVisible(false);
+        Nfilimss.setVisible(false);
         txtid.setVisible(false);
         txtid2.setVisible(false);
         Zonas zz = new Zonas();
@@ -68,6 +81,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         FiltroStatus.setVisible(false);
         FiltroServGen.setVisible(false);
         FiltroZGe.setVisible(false);
+        
         setIconImage(new ImageIcon(Admin_Empleados_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
@@ -508,8 +522,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
     public void mostrarimss() {
         //Buscar servicio
-        String NIMSS = nameimss.getText();
-        String where = "select * from imss";
+        String NIMSS = namesimss.getText();
         String Exp = expFimss.getText();
         String Ap = ApimssF.getText();
         String Am = AmimssF.getText();
@@ -518,6 +531,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         String rfc = rfcimssF.getText();
         String curp = curpimssF.getText();
         String fb = FBimssF.getText();
+        String where = "select * from imss";
 
         if (!"".equals(NIMSS)) {
             where = " select * from imss WHERE `Nombre(s)` LIKE '%" + NIMSS + "%'";
@@ -1991,7 +2005,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
                         .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(120, Short.MAX_VALUE))
+                        .addContainerGap(973, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GeneralLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Cs)
@@ -2467,7 +2481,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90)
                 .addComponent(Cs3)
-                .addContainerGap(312, Short.MAX_VALUE))
+                .addContainerGap(1142, Short.MAX_VALUE))
         );
         IMSSLayout.setVerticalGroup(
             IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2537,7 +2551,12 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb2.setLink("http://192.168.3.10/Reportes/ReporteRH/EPCIMSS.php");
 
-        Fimss.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "# Exp", "Apellido P", "Apellido M", "Nombre(s)", "Fecha de incorporacion", "Zona", "NSS", "RFC", "Puesto", "Status", "Fecha de baja" }));
+        Fimss.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "# Exp", "Apellido P", "Apellido M", "Nombre(s)", "Fecha de incorporacion", "Zona", "NSS", "RFC", "CURP", "Puesto", "Status", "Fecha de baja" }));
+        Fimss.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FimssItemStateChanged(evt);
+            }
+        });
 
         jLabel3.setText("Filtrar por:");
 
@@ -2758,7 +2777,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RH, javax.swing.GroupLayout.DEFAULT_SIZE, 1186, Short.MAX_VALUE)
+            .addComponent(RH, javax.swing.GroupLayout.DEFAULT_SIZE, 990, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2767,85 +2786,6 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void namesimssKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_namesimssKeyReleased
-
-        mostrarimss();
-    }//GEN-LAST:event_namesimssKeyReleased
-
-    private void TimssMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TimssMouseClicked
-
-        DefaultTableModel model = (DefaultTableModel) Timss.getModel();
-
-        try {
-
-            int fila = Timss.getSelectedRow();
-            /*incorporacion
-            Date date8 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse((String) model.getValueAt(fila, 6));
-            FIimss.setDate(date8);
-            fecha baja
-            Date date9 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse((String) model.getValueAt(fila, 14));
-            FBimss.setDate(date9);
-             */
-            //combo1
-            String combo10 = model.getValueAt(fila, 5).toString();
-            for (int i = 0; i < gen.getItemCount(); i++) {
-                if (gen.getItemAt(i).equalsIgnoreCase(combo10)) {
-                    gen.setSelectedIndex(i);
-                }
-            }
-
-            //Combo3
-            String combo12 = model.getValueAt(fila, 11).toString();
-            for (int i = 0; i < puesto.getItemCount(); i++) {
-                if (puesto.getItemAt(i).equalsIgnoreCase(combo12)) {
-                    puesto.setSelectedIndex(i);
-                }
-            }
-            //Combo4
-            String combo13 = model.getValueAt(fila, 13).toString();
-            for (int i = 0; i < Status1.getItemCount(); i++) {
-                if (Status1.getItemAt(i).equalsIgnoreCase(combo13)) {
-                    Status1.setSelectedIndex(i);
-                }
-            }
-
-            int id = Integer.parseInt(Timss.getValueAt(fila, 0).toString());
-            PreparedStatement ps;
-            ResultSet rs;
-            ps = con.prepareStatement("select * from imss where idimss =?");
-            ps.setInt(1, id);
-            rs = ps.executeQuery();
-            java.sql.Statement st = con.createStatement();
-            while (rs.next()) {
-                txtid2.setText(String.valueOf(id));
-                expimss.setText(rs.getString("#_Exp"));
-                APimss.setText(rs.getString("Apellido P"));
-                AMimss.setText(rs.getString("Apellido M"));
-                nameimss.setText(rs.getString("Nombre(s)"));
-                zona1.setText(rs.getString("Zona_Imss"));
-                rfcimss.setText(rs.getString("rfc_imss"));
-                nssimss.setText(rs.getString("nss_imss"));
-                curpimss.setText(rs.getString("curp_imss"));
-                sueldoimss.setText(rs.getString("salario"));
-                obsimss.setText(rs.getString("observaciones"));
-                FIimss.setText(rs.getString("Fecha_de_incorporacion"));
-                FBimss.setText(rs.getString("fecha_baja"));
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.toString());
-
-            //} catch (ParseException ex) {
-            //  Logger.getLogger(RH_4.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_TimssMouseClicked
-
-    private void deleteimssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteimssActionPerformed
-
-        eliminarimss();
-        mostrarimss();
-        limpimms();
-    }//GEN-LAST:event_deleteimssActionPerformed
 
     private void expimssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expimssActionPerformed
 
@@ -3072,16 +3012,6 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_Cs2ActionPerformed
-
-    private void Cs4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs4ActionPerformed
-
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Login_2 regr = new Login_2();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_Cs4ActionPerformed
 
     private void FiltroFDIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroFDIKeyReleased
 
@@ -3454,49 +3384,529 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_UsuariosRHActionPerformed
 
-    private void expFimssKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_expFimssKeyReleased
-        mostrarimss();
-    }//GEN-LAST:event_expFimssKeyReleased
-
-    private void ApimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ApimssFKeyReleased
-        mostrarimss();
-    }//GEN-LAST:event_ApimssFKeyReleased
-
-    private void AmimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AmimssFKeyReleased
-        mostrarimss();
-    }//GEN-LAST:event_AmimssFKeyReleased
-
-    private void FdiimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FdiimssFKeyReleased
-        mostrarimss();
-    }//GEN-LAST:event_FdiimssFKeyReleased
-
-    private void nssimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nssimssFKeyReleased
-        mostrarimss();
-    }//GEN-LAST:event_nssimssFKeyReleased
-
-    private void rfcimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rfcimssFKeyReleased
-        mostrarimss();
-    }//GEN-LAST:event_rfcimssFKeyReleased
-
-    private void curpimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_curpimssFKeyReleased
-        mostrarimss();
-    }//GEN-LAST:event_curpimssFKeyReleased
-
     private void FBimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FBimssFKeyReleased
         mostrarimss();
     }//GEN-LAST:event_FBimssFKeyReleased
 
-    private void FZimssItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZimssItemStateChanged
-        FiltroZimss();
-    }//GEN-LAST:event_FZimssItemStateChanged
+    private void StatusimssFItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_StatusimssFItemStateChanged
+        FStatusimss();
+    }//GEN-LAST:event_StatusimssFItemStateChanged
 
     private void PuestoimssFItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_PuestoimssFItemStateChanged
         FPuestoimss();
     }//GEN-LAST:event_PuestoimssFItemStateChanged
 
-    private void StatusimssFItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_StatusimssFItemStateChanged
-        FStatusimss();
-    }//GEN-LAST:event_StatusimssFItemStateChanged
+    private void curpimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_curpimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_curpimssFKeyReleased
+
+    private void rfcimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rfcimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_rfcimssFKeyReleased
+
+    private void nssimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nssimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_nssimssFKeyReleased
+
+    private void FZimssItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZimssItemStateChanged
+        FiltroZimss();
+    }//GEN-LAST:event_FZimssItemStateChanged
+
+    private void FdiimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FdiimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_FdiimssFKeyReleased
+
+    private void AmimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AmimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_AmimssFKeyReleased
+
+    private void ApimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ApimssFKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_ApimssFKeyReleased
+
+    private void expFimssKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_expFimssKeyReleased
+        mostrarimss();
+    }//GEN-LAST:event_expFimssKeyReleased
+
+    private void FimssItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FimssItemStateChanged
+
+       String dt = (String) Fimss.getSelectedItem();
+        if (dt.equals("Selecciona filtro")) {
+            namesimss.setText("");
+            namesimss.setVisible(false);
+            expFimss.setText("");
+            expFimss.setVisible(false);
+            ApimssF.setText("");
+            ApimssF.setVisible(false);
+            AmimssF.setText("");
+            AmimssF.setVisible(false);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(false);
+            nssimssF.setText("");
+            nssimssF.setVisible(false);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(false);
+            curpimssF.setText("");
+            curpimssF.setVisible(false);
+            FBimssF.setText("");
+            FBimssF.setVisible(false);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(false);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(false);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(false);
+            Nfilimss.setVisible(false);
+            mostrarimss();
+
+        }
+        if (dt.equals("# Exp")) {
+            namesimss.setText("");
+            namesimss.setVisible(false);
+            expFimss.setText("");
+            expFimss.setVisible(true);
+            ApimssF.setText("");
+            ApimssF.setVisible(false);
+            AmimssF.setText("");
+            AmimssF.setVisible(false);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(false);
+            nssimssF.setText("");
+            nssimssF.setVisible(false);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(false);
+            curpimssF.setText("");
+            curpimssF.setVisible(false);
+            FBimssF.setText("");
+            FBimssF.setVisible(false);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(false);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(false);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(false);
+            Nfilimss.setText("Buscar por # de expediente:");
+            Nfilimss.setVisible(true);
+            mostrarimss();
+
+        }
+        if (dt.equals("Apellido P")) {
+            namesimss.setText("");
+            namesimss.setVisible(false);
+            expFimss.setText("");
+            expFimss.setVisible(false);
+            ApimssF.setText("");
+            ApimssF.setVisible(true);
+            AmimssF.setText("");
+            AmimssF.setVisible(false);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(false);
+            nssimssF.setText("");
+            nssimssF.setVisible(false);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(false);
+            curpimssF.setText("");
+            curpimssF.setVisible(false);
+            FBimssF.setText("");
+            FBimssF.setVisible(false);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(false);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(false);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(false);
+            Nfilimss.setText("Buscar por Apellido Paterno: ");
+            Nfilimss.setVisible(true);
+            mostrarimss();
+        }
+        if (dt.equals("Apellido M")) {
+            namesimss.setText("");
+            namesimss.setVisible(false);
+            expFimss.setText("");
+            expFimss.setVisible(false);
+            ApimssF.setText("");
+            ApimssF.setVisible(false);
+            AmimssF.setText("");
+            AmimssF.setVisible(true);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(false);
+            nssimssF.setText("");
+            nssimssF.setVisible(false);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(false);
+            curpimssF.setText("");
+            curpimssF.setVisible(false);
+            FBimssF.setText("");
+            FBimssF.setVisible(false);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(false);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(false);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(false);
+            Nfilimss.setText("Buscar por Apellido Materno: ");
+            Nfilimss.setVisible(true);
+            mostrarimss();
+
+        }
+        if (dt.equals("Nombre(s)")) {
+            namesimss.setText("");
+            namesimss.setVisible(true);
+            expFimss.setText("");
+            expFimss.setVisible(false);
+            ApimssF.setText("");
+            ApimssF.setVisible(false);
+            AmimssF.setText("");
+            AmimssF.setVisible(false);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(false);
+            nssimssF.setText("");
+            nssimssF.setVisible(false);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(false);
+            curpimssF.setText("");
+            curpimssF.setVisible(false);
+            FBimssF.setText("");
+            FBimssF.setVisible(false);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(false);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(false);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(false);
+            Nfilimss.setText("Buscar por Nombre(s): ");
+            Nfilimss.setVisible(true);
+            mostrarimss();
+
+        }
+        if (dt.equals("Fecha de incorporacion")) {
+            namesimss.setText("");
+            namesimss.setVisible(false);
+            expFimss.setText("");
+            expFimss.setVisible(false);
+            ApimssF.setText("");
+            ApimssF.setVisible(false);
+            AmimssF.setText("");
+            AmimssF.setVisible(false);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(true);
+            nssimssF.setText("");
+            nssimssF.setVisible(false);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(false);
+            curpimssF.setText("");
+            curpimssF.setVisible(false);
+            FBimssF.setText("");
+            FBimssF.setVisible(false);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(false);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(false);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(false);
+            Nfilimss.setText("Buscar por Fecha de incorporacion: ");
+            Nfilimss.setVisible(true);
+            mostrarimss();
+        }
+        if (dt.equals("Zona")) {
+            namesimss.setText("");
+            namesimss.setVisible(false);
+            expFimss.setText("");
+            expFimss.setVisible(false);
+            ApimssF.setText("");
+            ApimssF.setVisible(false);
+            AmimssF.setText("");
+            AmimssF.setVisible(false);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(false);
+            nssimssF.setText("");
+            nssimssF.setVisible(false);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(false);
+            curpimssF.setText("");
+            curpimssF.setVisible(false);
+            FBimssF.setText("");
+            FBimssF.setVisible(false);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(true);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(false);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(false);
+            Nfilimss.setText("Buscar por Zona: ");
+            Nfilimss.setVisible(true);
+            mostrarimss();
+
+        }
+        if (dt.equals("NSS")) {
+            namesimss.setText("");
+            namesimss.setVisible(false);
+            expFimss.setText("");
+            expFimss.setVisible(false);
+            ApimssF.setText("");
+            ApimssF.setVisible(false);
+            AmimssF.setText("");
+            AmimssF.setVisible(false);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(false);
+            nssimssF.setText("");
+            nssimssF.setVisible(true);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(false);
+            curpimssF.setText("");
+            curpimssF.setVisible(false);
+            FBimssF.setText("");
+            FBimssF.setVisible(false);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(false);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(false);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(false);
+            Nfilimss.setText("Buscar por NSS: ");
+            Nfilimss.setVisible(true);
+            mostrarimss();
+        }
+        if (dt.equals("RFC")) {
+            namesimss.setText("");
+            namesimss.setVisible(false);
+            expFimss.setText("");
+            expFimss.setVisible(false);
+            ApimssF.setText("");
+            ApimssF.setVisible(false);
+            AmimssF.setText("");
+            AmimssF.setVisible(false);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(false);
+            nssimssF.setText("");
+            nssimssF.setVisible(false);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(true);
+            curpimssF.setText("");
+            curpimssF.setVisible(false);
+            FBimssF.setText("");
+            FBimssF.setVisible(false);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(false);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(false);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(false);
+            Nfilimss.setText("Buscar por RFC: ");
+            Nfilimss.setVisible(true);
+            mostrarimss();
+
+        }
+        if (dt.equals("CURP")) {
+            namesimss.setText("");
+            namesimss.setVisible(false);
+            expFimss.setText("");
+            expFimss.setVisible(false);
+            ApimssF.setText("");
+            ApimssF.setVisible(false);
+            AmimssF.setText("");
+            AmimssF.setVisible(false);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(false);
+            nssimssF.setText("");
+            nssimssF.setVisible(false);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(false);
+            curpimssF.setText("");
+            curpimssF.setVisible(true);
+            FBimssF.setText("");
+            FBimssF.setVisible(false);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(false);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(false);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(false);
+            Nfilimss.setText("Buscar por CURP: ");
+            Nfilimss.setVisible(true);
+            mostrarimss();
+
+        }
+        if (dt.equals("Puesto")) {
+            namesimss.setText("");
+            namesimss.setVisible(false);
+            expFimss.setText("");
+            expFimss.setVisible(false);
+            ApimssF.setText("");
+            ApimssF.setVisible(false);
+            AmimssF.setText("");
+            AmimssF.setVisible(false);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(false);
+            nssimssF.setText("");
+            nssimssF.setVisible(false);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(false);
+            curpimssF.setText("");
+            curpimssF.setVisible(false);
+            FBimssF.setText("");
+            FBimssF.setVisible(false);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(false);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(true);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(false);
+            Nfilimss.setText("Buscar por Puesto: ");
+            Nfilimss.setVisible(true);
+            mostrarimss();
+
+        }
+        if (dt.equals("Status")) {
+            namesimss.setText("");
+            namesimss.setVisible(false);
+            expFimss.setText("");
+            expFimss.setVisible(false);
+            ApimssF.setText("");
+            ApimssF.setVisible(false);
+            AmimssF.setText("");
+            AmimssF.setVisible(false);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(false);
+            nssimssF.setText("");
+            nssimssF.setVisible(false);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(false);
+            curpimssF.setText("");
+            curpimssF.setVisible(false);
+            FBimssF.setText("");
+            FBimssF.setVisible(false);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(false);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(false);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(true);
+            Nfilimss.setText("Buscar por Status: ");
+            Nfilimss.setVisible(true);
+            mostrarimss();
+
+        }
+        if (dt.equals("Fecha de baja")) {
+            namesimss.setText("");
+            namesimss.setVisible(false);
+            expFimss.setText("");
+            expFimss.setVisible(false);
+            ApimssF.setText("");
+            ApimssF.setVisible(false);
+            AmimssF.setText("");
+            AmimssF.setVisible(false);
+            FdiimssF.setText("");
+            FdiimssF.setVisible(false);
+            nssimssF.setText("");
+            nssimssF.setVisible(false);
+            rfcimssF.setText("");
+            rfcimssF.setVisible(false);
+            curpimssF.setText("");
+            curpimssF.setVisible(false);
+            FBimssF.setText("");
+            FBimssF.setVisible(true);
+            FZimss.setSelectedIndex(0);
+            FZimss.setVisible(false);
+            PuestoimssF.setSelectedIndex(0);
+            PuestoimssF.setVisible(false);
+            StatusimssF.setSelectedIndex(0);
+            StatusimssF.setVisible(false);
+            Nfilimss.setText("Buscar por Fecha baja: ");
+            Nfilimss.setVisible(true);
+            mostrarimss();
+
+        }
+    }//GEN-LAST:event_FimssItemStateChanged
+
+    private void Cs4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs4ActionPerformed
+
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_Cs4ActionPerformed
+
+    private void namesimssKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_namesimssKeyReleased
+
+        mostrarimss();
+    }//GEN-LAST:event_namesimssKeyReleased
+
+    private void TimssMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TimssMouseClicked
+
+        DefaultTableModel model = (DefaultTableModel) Timss.getModel();
+
+        try {
+
+            int fila = Timss.getSelectedRow();
+            /*incorporacion
+            Date date8 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse((String) model.getValueAt(fila, 6));
+            FIimss.setDate(date8);
+            fecha baja
+            Date date9 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse((String) model.getValueAt(fila, 14));
+            FBimss.setDate(date9);
+            */
+            //combo1
+            String combo10 = model.getValueAt(fila, 5).toString();
+            for (int i = 0; i < gen.getItemCount(); i++) {
+                if (gen.getItemAt(i).equalsIgnoreCase(combo10)) {
+                    gen.setSelectedIndex(i);
+                }
+            }
+
+            //Combo3
+            String combo12 = model.getValueAt(fila, 11).toString();
+            for (int i = 0; i < puesto.getItemCount(); i++) {
+                if (puesto.getItemAt(i).equalsIgnoreCase(combo12)) {
+                    puesto.setSelectedIndex(i);
+                }
+            }
+            //Combo4
+            String combo13 = model.getValueAt(fila, 13).toString();
+            for (int i = 0; i < Status1.getItemCount(); i++) {
+                if (Status1.getItemAt(i).equalsIgnoreCase(combo13)) {
+                    Status1.setSelectedIndex(i);
+                }
+            }
+
+            int id = Integer.parseInt(Timss.getValueAt(fila, 0).toString());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select * from imss where idimss =?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+            while (rs.next()) {
+                txtid2.setText(String.valueOf(id));
+                expimss.setText(rs.getString("#_Exp"));
+                APimss.setText(rs.getString("Apellido P"));
+                AMimss.setText(rs.getString("Apellido M"));
+                nameimss.setText(rs.getString("Nombre(s)"));
+                zona1.setText(rs.getString("Zona_Imss"));
+                rfcimss.setText(rs.getString("rfc_imss"));
+                nssimss.setText(rs.getString("nss_imss"));
+                curpimss.setText(rs.getString("curp_imss"));
+                sueldoimss.setText(rs.getString("salario"));
+                obsimss.setText(rs.getString("observaciones"));
+                FIimss.setText(rs.getString("Fecha_de_incorporacion"));
+                FBimss.setText(rs.getString("fecha_baja"));
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+
+            //} catch (ParseException ex) {
+            //  Logger.getLogger(RH_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_TimssMouseClicked
+
+    private void deleteimssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteimssActionPerformed
+
+        eliminarimss();
+        mostrarimss();
+        limpimms();
+    }//GEN-LAST:event_deleteimssActionPerformed
 
     /**
      * @param args the command line arguments

@@ -2626,7 +2626,7 @@
                 <Component class="javax.swing.JComboBox" name="Fimss">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="12">
+                      <StringArray count="13">
                         <StringItem index="0" value="Selecciona filtro"/>
                         <StringItem index="1" value="# Exp"/>
                         <StringItem index="2" value="Apellido P"/>
@@ -2636,12 +2636,16 @@
                         <StringItem index="6" value="Zona"/>
                         <StringItem index="7" value="NSS"/>
                         <StringItem index="8" value="RFC"/>
-                        <StringItem index="9" value="Puesto"/>
-                        <StringItem index="10" value="Status"/>
-                        <StringItem index="11" value="Fecha de baja"/>
+                        <StringItem index="9" value="CURP"/>
+                        <StringItem index="10" value="Puesto"/>
+                        <StringItem index="11" value="Status"/>
+                        <StringItem index="12" value="Fecha de baja"/>
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FimssItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -2668,6 +2672,9 @@
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FdiimssFKeyReleased"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="FZimss">
                   <Properties>
