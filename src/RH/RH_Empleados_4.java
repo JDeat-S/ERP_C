@@ -1089,6 +1089,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         serch2 = new javax.swing.JTextField();
         Cs4 = new javax.swing.JButton();
         botonWeb2 = new botones.BotonWeb();
+        jLabel3 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Alumnos = new javax.swing.JMenuItem();
@@ -2297,6 +2299,10 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb2.setLink("http://192.168.3.10/Reportes/ReporteRH/EPCIMSS.php");
 
+        jLabel3.setText("Filtrar por:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "# Exp", "Apellido P", "Apellido M", "Nombre(s)", "Fecha de incorporacion", "Zona", "NSS", "RFC", "Puesto", "Status", "Fecha de baja" }));
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -2305,6 +2311,10 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(serch2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2326,7 +2336,9 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(serch2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteimss)
                     .addComponent(Cs4)
-                    .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
                 .addContainerGap())
@@ -3137,6 +3149,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTextField expimss;
     private javax.swing.JComboBox<String> fdp;
     private javax.swing.JComboBox<String> gen;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3159,6 +3172,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;

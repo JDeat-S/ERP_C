@@ -163,7 +163,7 @@
                                       <Component id="jPanel7" max="32767" attributes="0"/>
                                       <Component id="jPanel10" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="130" max="32767" attributes="0"/>
+                                  <EmptySpace pref="120" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
@@ -2432,6 +2432,10 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="serch2" min="-2" pref="100" max="-2" attributes="0"/>
@@ -2458,6 +2462,8 @@
                               <Component id="deleteimss" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="botonWeb2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane7" pref="637" max="32767" attributes="0"/>
@@ -2628,6 +2634,34 @@
                       <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                     </Property>
                     <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReporteRH/EPCIMSS.php"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="12">
+                        <StringItem index="0" value="Selecciona filtro"/>
+                        <StringItem index="1" value="# Exp"/>
+                        <StringItem index="2" value="Apellido P"/>
+                        <StringItem index="3" value="Apellido M"/>
+                        <StringItem index="4" value="Nombre(s)"/>
+                        <StringItem index="5" value="Fecha de incorporacion"/>
+                        <StringItem index="6" value="Zona"/>
+                        <StringItem index="7" value="NSS"/>
+                        <StringItem index="8" value="RFC"/>
+                        <StringItem index="9" value="Puesto"/>
+                        <StringItem index="10" value="Status"/>
+                        <StringItem index="11" value="Fecha de baja"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Filtrar por:"/>
                   </Properties>
                 </Component>
               </SubComponents>
