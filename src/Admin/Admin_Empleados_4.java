@@ -310,18 +310,31 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         String Ap = ApimssF.getText();
         String Am = AmimssF.getText();
         String fdi = FdiimssF.getText();
-        
+        String nss = nssimssF.getText();
+        String rfc = rfcimssF.getText();
+        String curp = curpimssF.getText();
+        String fb = FBimssF.getText();
+
         if (!"".equals(NIMSS)) {
             where = " select * from imss WHERE `Nombre(s)` LIKE '%" + NIMSS + "%'";
         } else if (!"".equals(Exp)) {
             where = " Where `#_Exp` LIKE '%" + Exp + "%'";
-        }else if (!"".equals(Ap)) {
+        } else if (!"".equals(Ap)) {
             where = " Where `Apellido P` LIKE '%" + Ap + "%'";
-        }else if (!"".equals(Am)) {
+        } else if (!"".equals(Am)) {
             where = " Where `Apellido M` LIKE '%" + Am + "%'";
-        }else if (!"".equals(Exp)) {
+        } else if (!"".equals(fdi)) {
             where = " Where `Fecha_de_incorporacion` LIKE '%" + fdi + "%'";
+        } else if (!"".equals(nss)) {
+            where = " Where `nss_imss` LIKE '%" + nss + "%'";
+        } else if (!"".equals(rfc)) {
+            where = " Where `rfc_imss` LIKE '%" + rfc + "%'";
+        } else if (!"".equals(curp)) {
+            where = " Where `curp_imss` LIKE '%" + curp + "%'";
+        } else if (!"".equals(fb)) {
+            where = " Where `fecha_baja` LIKE '%" + fb + "%'";
         }
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -483,10 +496,10 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         }
 
     }
- 
+
     public void filtroszonas() {
         //filtro Zonas
-        
+
         String where = "select * from empleados";
         String FiltroZGen = FiltroZGe.getSelectedItem().toString();
 
