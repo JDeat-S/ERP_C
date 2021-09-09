@@ -2386,19 +2386,33 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Fimss" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Nfilimss" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="serch2" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="namesimss" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Component id="expFimss" min="-2" max="-2" attributes="0"/>
+                                  <Component id="expFimss" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Component id="ApimssF" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ApimssF" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="AmimssF" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AmimssF" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="FdiimssF" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FdiimssF" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="FZimss" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="nssimssF" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="rfcimssF" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="curpimssF" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="PuestoimssF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="StatusimssF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="FBimssF" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Cs4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -2417,17 +2431,24 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="serch2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Nfilimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="namesimss" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="deleteimss" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Fimss" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="expFimss" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="ApimssF" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="AmimssF" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FdiimssF" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="botonWeb2" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="FZimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nssimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rfcimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="PuestoimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="StatusimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FBimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="curpimssF" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane7" pref="696" max="32767" attributes="0"/>
@@ -2448,7 +2469,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteimssActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel1">
+                <Component class="javax.swing.JLabel" name="Nfilimss">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Buscar por IMSS:"/>
                   </Properties>
@@ -2576,9 +2597,9 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JTextField" name="serch2">
+                <Component class="javax.swing.JTextField" name="namesimss">
                   <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="serch2KeyReleased"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="namesimssKeyReleased"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="Cs4">
@@ -2605,7 +2626,7 @@
                     <Property name="text" type="java.lang.String" value="Filtrar por:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                <Component class="javax.swing.JComboBox" name="Fimss">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="12">
@@ -2630,23 +2651,73 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="AmimssF">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField3"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="expFimss">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="ApimssF">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField2"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FdiimssF">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField4"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="FZimss">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="1">
+                        <StringItem index="0" value="."/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JTextField" name="nssimssF">
+                </Component>
+                <Component class="javax.swing.JTextField" name="rfcimssF">
+                </Component>
+                <Component class="javax.swing.JTextField" name="curpimssF">
+                </Component>
+                <Component class="javax.swing.JComboBox" name="PuestoimssF">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="StatusimssF">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JTextField" name="FBimssF">
                 </Component>
               </SubComponents>
             </Container>

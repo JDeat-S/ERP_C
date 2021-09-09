@@ -53,6 +53,9 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         FiltrosZonas xd = new FiltrosZonas();
         DefaultComboBoxModel modelzonass = new DefaultComboBoxModel(xd.mostrarzonas());
         FiltroSZGen.setModel(modelzonass);
+        FiltrosZonas imss = new FiltrosZonas();
+        DefaultComboBoxModel zonasimss = new DefaultComboBoxModel(imss.mostrarzonas());
+        FiltroSZGen.setModel(zonasimss);
         FiltroNG.setVisible(false);
         Filtroam.setVisible(false);
         Filtroap.setVisible(false);
@@ -1090,18 +1093,25 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
         deleteimss = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        Nfilimss = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         Timss = new javax.swing.JTable();
-        serch2 = new javax.swing.JTextField();
+        namesimss = new javax.swing.JTextField();
         Cs4 = new javax.swing.JButton();
         botonWeb2 = new botones.BotonWeb();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Fimss = new javax.swing.JComboBox<>();
         AmimssF = new javax.swing.JTextField();
         expFimss = new javax.swing.JTextField();
         ApimssF = new javax.swing.JTextField();
         FdiimssF = new javax.swing.JTextField();
+        FZimss = new javax.swing.JComboBox<>();
+        nssimssF = new javax.swing.JTextField();
+        rfcimssF = new javax.swing.JTextField();
+        curpimssF = new javax.swing.JTextField();
+        PuestoimssF = new javax.swing.JComboBox<>();
+        StatusimssF = new javax.swing.JComboBox<>();
+        FBimssF = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Alumnos = new javax.swing.JMenuItem();
@@ -2267,7 +2277,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Buscar por IMSS:");
+        Nfilimss.setText("Buscar por IMSS:");
 
         jScrollPane7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2293,9 +2303,9 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(Timss);
 
-        serch2.addKeyListener(new java.awt.event.KeyAdapter() {
+        namesimss.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                serch2KeyReleased(evt);
+                namesimssKeyReleased(evt);
             }
         });
 
@@ -2312,15 +2322,21 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
         jLabel3.setText("Filtrar por:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "# Exp", "Apellido P", "Apellido M", "Nombre(s)", "Fecha de incorporacion", "Zona", "NSS", "RFC", "Puesto", "Status", "Fecha de baja" }));
+        Fimss.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "# Exp", "Apellido P", "Apellido M", "Nombre(s)", "Fecha de incorporacion", "Zona", "NSS", "RFC", "Puesto", "Status", "Fecha de baja" }));
 
-        AmimssF.setText("jTextField3");
+        AmimssF.setToolTipText("");
 
-        expFimss.setText("jTextField1");
+        expFimss.setToolTipText("");
 
-        ApimssF.setText("jTextField2");
+        ApimssF.setToolTipText("");
 
-        FdiimssF.setText("jTextField4");
+        FdiimssF.setToolTipText("");
+
+        FZimss.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
+
+        PuestoimssF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        StatusimssF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -2332,19 +2348,33 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
+                        .addComponent(Nfilimss)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(serch2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(namesimss, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(expFimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(expFimss, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ApimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ApimssF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(AmimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AmimssF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FdiimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FdiimssF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nssimssF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rfcimssF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(curpimssF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PuestoimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(StatusimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FBimssF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Cs4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2359,17 +2389,24 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(serch2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Nfilimss)
+                    .addComponent(namesimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteimss)
                     .addComponent(Cs4)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(expFimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ApimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AmimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FdiimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FZimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nssimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rfcimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PuestoimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(StatusimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FBimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(curpimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
                 .addContainerGap())
@@ -2415,10 +2452,10 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void serch2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serch2KeyReleased
+    private void namesimssKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_namesimssKeyReleased
         // TODO add your handling code here:
         mostrarimss();
-    }//GEN-LAST:event_serch2KeyReleased
+    }//GEN-LAST:event_namesimssKeyReleased
 
     private void jScrollPane7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane7MouseClicked
         // TODO add your handling code here:
@@ -3130,12 +3167,14 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Exterior;
     private javax.swing.JTextField FBRE;
     private javax.swing.JTextField FBimss;
+    private javax.swing.JTextField FBimssF;
     private javax.swing.JTextField FE;
     private javax.swing.JTextField FFB;
     private javax.swing.JTextField FFBRE;
     private javax.swing.JTextField FI;
     private javax.swing.JTextField FIimss;
     private javax.swing.JTextField FREI;
+    private javax.swing.JComboBox<String> FZimss;
     private javax.swing.JTextField FdiimssF;
     private javax.swing.JTextField FiltroCurpGen;
     private javax.swing.JTextField FiltroFDI;
@@ -3148,6 +3187,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Filtroam;
     private javax.swing.JTextField Filtroap;
     private javax.swing.JComboBox<String> Filtros;
+    private javax.swing.JComboBox<String> Fimss;
     private javax.swing.JPanel General;
     private javax.swing.JPanel IMSS;
     private javax.swing.JTextField INT;
@@ -3156,7 +3196,9 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTextField NRP;
     private javax.swing.JTextField NSS;
     private javax.swing.JTextField NameGen;
+    private javax.swing.JLabel Nfilimss;
     private javax.swing.JTextArea Obs;
+    private javax.swing.JComboBox<String> PuestoimssF;
     private javax.swing.JTextField RFC;
     private javax.swing.JTabbedPane RH;
     private javax.swing.JTextField Rec;
@@ -3164,6 +3206,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Serv;
     private javax.swing.JComboBox<String> Status;
     private javax.swing.JComboBox<String> Status1;
+    private javax.swing.JComboBox<String> StatusimssF;
     private javax.swing.JTextField Sueldo;
     private javax.swing.JTable Timss;
     private javax.swing.JTextField UDL;
@@ -3176,6 +3219,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cfin;
     private javax.swing.JTextField cta;
     private javax.swing.JTextField curpimss;
+    private javax.swing.JTextField curpimssF;
     private javax.swing.JTable data;
     private javax.swing.JButton deleteimss;
     private javax.swing.JButton elim;
@@ -3184,8 +3228,6 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTextField expimss;
     private javax.swing.JComboBox<String> fdp;
     private javax.swing.JComboBox<String> gen;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -3276,11 +3318,13 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JButton mod;
     private javax.swing.JButton modIMSS;
     private javax.swing.JTextField nameimss;
+    private javax.swing.JTextField namesimss;
     private javax.swing.JTextField nssimss;
+    private javax.swing.JTextField nssimssF;
     private javax.swing.JTextArea obsimss;
     private javax.swing.JComboBox<String> puesto;
     private javax.swing.JTextField rfcimss;
-    private javax.swing.JTextField serch2;
+    private javax.swing.JTextField rfcimssF;
     private javax.swing.JTextField sueldoimss;
     private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtid2;
