@@ -303,15 +303,22 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         //Buscar servicio
         String NIMSS = nameimss.getText();
         String where = "select * from imss";
-        /*Filtro Zona
-        String Filtro2 = FiltroZ.getSelectedItem().toString();
-        Filtros*/
+        String Exp = expFimss.getText();
+        String Ap = ApimssF.getText();
+        String Am = AmimssF.getText();
+        String fdi = FdiimssF.getText();
+        
         if (!"".equals(NIMSS)) {
             where = " select * from imss WHERE `Nombre(s)` LIKE '%" + NIMSS + "%'";
+        } else if (!"".equals(Exp)) {
+            where = " Where `#_Exp` LIKE '%" + Exp + "%'";
+        }else if (!"".equals(Ap)) {
+            where = " Where `Apellido P` LIKE '%" + Ap + "%'";
+        }else if (!"".equals(Am)) {
+            where = " Where `Apellido M` LIKE '%" + Am + "%'";
+        }else if (!"".equals(Exp)) {
+            where = " Where `Fecha_de_incorporacion` LIKE '%" + fdi + "%'";
         }
-        /*else if (!"".equals(Filtro2)) {
-            where = " Where `Nombre Zona` LIKE '%" + Filtro2 + "%'";
-        }*/
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1091,6 +1098,10 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         botonWeb2 = new botones.BotonWeb();
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        AmimssF = new javax.swing.JTextField();
+        expFimss = new javax.swing.JTextField();
+        ApimssF = new javax.swing.JTextField();
+        FdiimssF = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Alumnos = new javax.swing.JMenuItem();
@@ -1747,7 +1758,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(130, Short.MAX_VALUE))
+                        .addContainerGap(136, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GeneralLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Cs)
@@ -1965,7 +1976,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(Filtroam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ScrollpaneTG, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
+                .addComponent(ScrollpaneTG, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -2223,7 +2234,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90)
                 .addComponent(Cs3)
-                .addContainerGap(312, Short.MAX_VALUE))
+                .addContainerGap(318, Short.MAX_VALUE))
         );
         IMSSLayout.setVerticalGroup(
             IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2239,7 +2250,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(modIMSS)
                             .addComponent(addimss))))
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(397, Short.MAX_VALUE))
         );
 
         jScrollPane8.setViewportView(IMSS);
@@ -2303,6 +2314,14 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "# Exp", "Apellido P", "Apellido M", "Nombre(s)", "Fecha de incorporacion", "Zona", "NSS", "RFC", "Puesto", "Status", "Fecha de baja" }));
 
+        AmimssF.setText("jTextField3");
+
+        expFimss.setText("jTextField1");
+
+        ApimssF.setText("jTextField2");
+
+        FdiimssF.setText("jTextField4");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -2319,13 +2338,21 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(serch2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(expFimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ApimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AmimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FdiimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Cs4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deleteimss)
-                        .addGap(395, 395, 395)
-                        .addComponent(Cs4))
+                        .addComponent(deleteimss))
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 3470, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(551, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2336,11 +2363,15 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(serch2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteimss)
                     .addComponent(Cs4)
-                    .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(expFimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ApimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AmimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FdiimssF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -2374,11 +2405,11 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RH, javax.swing.GroupLayout.DEFAULT_SIZE, 1186, Short.MAX_VALUE)
+            .addComponent(RH, javax.swing.GroupLayout.DEFAULT_SIZE, 1192, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RH, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
+            .addComponent(RH, javax.swing.GroupLayout.DEFAULT_SIZE, 745, Short.MAX_VALUE)
         );
 
         pack();
@@ -3071,6 +3102,8 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTextField APgen;
     private javax.swing.JTextField APimss;
     private javax.swing.JMenuItem Alumnos;
+    private javax.swing.JTextField AmimssF;
+    private javax.swing.JTextField ApimssF;
     private javax.swing.JComboBox<String> BFRE;
     private javax.swing.JComboBox<String> Banco;
     private javax.swing.JTextField Bono;
@@ -3103,6 +3136,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTextField FI;
     private javax.swing.JTextField FIimss;
     private javax.swing.JTextField FREI;
+    private javax.swing.JTextField FdiimssF;
     private javax.swing.JTextField FiltroCurpGen;
     private javax.swing.JTextField FiltroFDI;
     private javax.swing.JTextField FiltroNG;
@@ -3146,6 +3180,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JButton deleteimss;
     private javax.swing.JButton elim;
     private javax.swing.JTextField exp;
+    private javax.swing.JTextField expFimss;
     private javax.swing.JTextField expimss;
     private javax.swing.JComboBox<String> fdp;
     private javax.swing.JComboBox<String> gen;

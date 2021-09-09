@@ -2435,16 +2435,24 @@
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="serch2" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botonWeb2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="expFimss" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="ApimssF" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="AmimssF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="FdiimssF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                                   <Component id="deleteimss" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="395" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Cs4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="botonWeb2" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane7" alignment="0" min="-2" pref="3470" max="-2" attributes="0"/>
                           </Group>
@@ -2461,9 +2469,13 @@
                               <Component id="serch2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="deleteimss" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botonWeb2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="expFimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ApimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botonWeb2" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="AmimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FdiimssF" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane7" pref="637" max="32767" attributes="0"/>
@@ -2662,6 +2674,26 @@
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Filtrar por:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="expFimss">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jTextField1"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="ApimssF">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jTextField2"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="AmimssF">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jTextField3"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="FdiimssF">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jTextField4"/>
                   </Properties>
                 </Component>
               </SubComponents>

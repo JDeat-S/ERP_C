@@ -54,12 +54,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="RH" alignment="0" pref="1186" max="32767" attributes="0"/>
+          <Component id="RH" alignment="0" pref="1192" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="RH" alignment="0" pref="721" max="32767" attributes="0"/>
+          <Component id="RH" alignment="0" pref="745" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -116,7 +116,7 @@
                                       <Component id="jPanel7" max="32767" attributes="0"/>
                                       <Component id="jPanel10" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="130" max="32767" attributes="0"/>
+                                  <EmptySpace pref="136" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
@@ -1371,7 +1371,7 @@
                               <Component id="botonWeb1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ScrollpaneTG" pref="629" max="32767" attributes="0"/>
+                          <Component id="ScrollpaneTG" pref="653" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1911,7 +1911,7 @@
                           <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                           <Component id="Cs3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="312" max="32767" attributes="0"/>
+                          <EmptySpace pref="318" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1933,7 +1933,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="396" max="32767" attributes="0"/>
+                          <EmptySpace pref="397" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2391,34 +2391,46 @@
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="serch2" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="expFimss" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="ApimssF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="AmimssF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="FdiimssF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Cs4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="botonWeb2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="deleteimss" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="395" max="-2" attributes="0"/>
-                                  <Component id="Cs4" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane7" alignment="0" min="-2" pref="3470" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="551" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="serch2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="deleteimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="deleteimss" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botonWeb2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="expFimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ApimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="AmimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FdiimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="botonWeb2" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane7" pref="637" max="32767" attributes="0"/>
+                          <Component id="jScrollPane7" pref="696" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -2615,6 +2627,26 @@
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
+                </Component>
+                <Component class="javax.swing.JTextField" name="AmimssF">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jTextField3"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="expFimss">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jTextField1"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="ApimssF">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jTextField2"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="FdiimssF">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jTextField4"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
