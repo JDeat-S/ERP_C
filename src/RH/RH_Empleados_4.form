@@ -2677,6 +2677,9 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FZimssItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -2691,10 +2694,10 @@
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
+                        <StringItem index="0" value="."/>
+                        <StringItem index="1" value="CHOFER"/>
+                        <StringItem index="2" value="ADMINISTRATIVO"/>
+                        <StringItem index="3" value="SUPERVISOR"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -2705,11 +2708,14 @@
                 <Component class="javax.swing.JComboBox" name="StatusimssF">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
+                      <StringArray count="7">
+                        <StringItem index="0" value="."/>
+                        <StringItem index="1" value="BAJA"/>
+                        <StringItem index="2" value="IMSS"/>
+                        <StringItem index="3" value="PENDIENTE"/>
+                        <StringItem index="4" value="RECHAZADO"/>
+                        <StringItem index="5" value="TEMPORAL"/>
+                        <StringItem index="6" value="VIGENTE"/>
                       </StringArray>
                     </Property>
                   </Properties>

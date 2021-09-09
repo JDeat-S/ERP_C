@@ -55,7 +55,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         FiltroSZGen.setModel(modelzonass);
         FiltrosZonas imss = new FiltrosZonas();
         DefaultComboBoxModel zonasimss = new DefaultComboBoxModel(imss.mostrarzonas());
-        FiltroSZGen.setModel(zonasimss);
+        FZimss.setModel(zonasimss);
         FiltroNG.setVisible(false);
         Filtroam.setVisible(false);
         Filtroap.setVisible(false);
@@ -302,6 +302,75 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
     }
 
+    public void FiltroZimss() {
+        //Buscar servicio
+        String Zonaimms = FZimss.getSelectedItem().toString();
+        String where = "select * from imss";
+        
+
+        if (!"".equals(Zonaimms)) {
+            where = " select * from imss WHERE `Zona_Imss` LIKE '%" + Zonaimms + "%'";
+        } 
+        
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//Nombre de la tabla
+            Timss.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID BD");//1
+            modelo.addColumn("# Exp");
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//5
+            modelo.addColumn("Genero");
+            modelo.addColumn("Fecha de incorporacion");//7
+            modelo.addColumn("Zona");
+            modelo.addColumn("NSS");//9
+            modelo.addColumn("RFC");
+            modelo.addColumn("CURP");//11
+            modelo.addColumn("Puesto");
+            modelo.addColumn("Salario");//13
+            modelo.addColumn("Status");
+            modelo.addColumn("Fecha baja");//15
+            modelo.addColumn("Observaciones");
+
+//Anchos
+            int[] anchos = {/*idbd*/10, /*NEXP*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80, /*GEN*/ 30, /*FDI*/ 50, /*ZONA*/ 50, /*NSS*/ 65, /*RFC*/ 60,
+                /*CURP*/ 60, /*puesto*/ 60, /*salario*/ 50, /*Status*/ 65, /*FDB*/ 70, /*OBS*/ 2000};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Timss.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos " + e.getMessage());
+
+        }
+
+    }
+    
     public void mostrarimss() {
         //Buscar servicio
         String NIMSS = nameimss.getText();
@@ -2362,6 +2431,11 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         });
 
         FZimss.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
+        FZimss.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FZimssItemStateChanged(evt);
+            }
+        });
 
         nssimssF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -2381,9 +2455,9 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
             }
         });
 
-        PuestoimssF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        PuestoimssF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "CHOFER", "ADMINISTRATIVO", "SUPERVISOR" }));
 
-        StatusimssF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        StatusimssF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "IMSS", "PENDIENTE", "RECHAZADO", "TEMPORAL", "VIGENTE" }));
 
         FBimssF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -3266,6 +3340,10 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     private void FBimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FBimssFKeyReleased
         mostrarimss();
     }//GEN-LAST:event_FBimssFKeyReleased
+
+    private void FZimssItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZimssItemStateChanged
+        FiltroZimss();
+    }//GEN-LAST:event_FZimssItemStateChanged
 
     /**
      * @param args the command line arguments
