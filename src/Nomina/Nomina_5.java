@@ -2084,8 +2084,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
         no = new javax.swing.JRadioButton();
         Ppc = new javax.swing.JComboBox<>();
         Pac = new javax.swing.JTextField();
-        Cobrado = new javax.swing.JTextField();
-        jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         Pagado = new javax.swing.JTextField();
         jLabel60 = new javax.swing.JLabel();
@@ -2108,13 +2106,10 @@ public final class Nomina_5 extends javax.swing.JFrame {
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
-        jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
         Zona1 = new javax.swing.JTextField();
         Serv1 = new javax.swing.JTextField();
         ndp = new javax.swing.JTextField();
-        jScrollPane13 = new javax.swing.JScrollPane();
-        Marca = new javax.swing.JTextArea();
         ApTaller = new javax.swing.JTextField();
         jLabel61 = new javax.swing.JLabel();
         Amtaller = new javax.swing.JTextField();
@@ -4454,8 +4449,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         Pac.setText("0");
 
-        jLabel58.setText("Cobrado:");
-
         jLabel59.setText("Pagado:");
 
         Pagado.setText("0");
@@ -4529,13 +4522,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         jLabel68.setText("Servicio:");
 
-        jLabel69.setText("Datos vehiculo");
-
         jLabel70.setText("# De piezas:");
-
-        Marca.setColumns(20);
-        Marca.setRows(5);
-        jScrollPane13.setViewportView(Marca);
 
         jLabel61.setText("Apellido M:");
 
@@ -4546,15 +4533,14 @@ public final class Nomina_5 extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
+                        .addGap(87, 87, 87)
                         .addComponent(jLabel63))
                     .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel70)
-                            .addComponent(jLabel69)
                             .addComponent(jLabel68)
                             .addComponent(jLabel67)
                             .addComponent(jLabel66)
@@ -4565,7 +4551,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane7)
                             .addComponent(ndp, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane13)
                             .addComponent(Zona1)
                             .addComponent(Serv1)
                             .addComponent(ApTaller)
@@ -4598,11 +4583,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel68)
                     .addComponent(Serv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel69)
-                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
+                .addGap(101, 101, 101)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel70)
                     .addComponent(ndp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -4682,13 +4663,11 @@ public final class Nomina_5 extends javax.swing.JFrame {
                             .addComponent(jLabel54)
                             .addComponent(jLabel53)
                             .addComponent(jLabel52)
-                            .addComponent(jLabel51)
-                            .addComponent(jLabel58))
+                            .addComponent(jLabel51))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(Cobrado, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(106, 106, 106)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addGap(50, 50, 50)
@@ -4785,8 +4764,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
                         .addComponent(jLabel55)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Cobrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel58)
                             .addComponent(jLabel59)
                             .addComponent(Pagado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel60)
@@ -10147,7 +10124,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Carpeta;
     private javax.swing.JTextField Chaleco;
     private javax.swing.JTextField Chamarra;
-    private javax.swing.JTextField Cobrado;
     private javax.swing.JTextField Corbata;
     private javax.swing.JTextField Credencial;
     private javax.swing.JTextField DI;
@@ -10301,7 +10277,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JLabel M3;
     private javax.swing.JLabel M4;
     private javax.swing.JTextField MT;
-    private javax.swing.JTextArea Marca;
     private javax.swing.JComboBox<String> Mes;
     private javax.swing.JTextField Metodo;
     private javax.swing.JButton Modificartaller;
@@ -10493,7 +10468,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
@@ -10505,7 +10479,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
@@ -10546,7 +10519,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
