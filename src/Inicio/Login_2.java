@@ -350,11 +350,6 @@ public class Login_2 extends javax.swing.JFrame {
         });
 
         usernom.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        usernom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernomActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -426,18 +421,18 @@ public class Login_2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+
         Inicio_1 regreso = new Inicio_1();
         regreso.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void userrhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userrhActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_userrhActionPerformed
 
     private void passrhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passrhActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_passrhActionPerformed
 
     private void btningreso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btningreso1ActionPerformed
@@ -450,7 +445,7 @@ public class Login_2 extends javax.swing.JFrame {
     }//GEN-LAST:event_btningreso1ActionPerformed
 
     private void passnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passnomActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_passnomActionPerformed
 
     private void btningreso2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btningreso2ActionPerformed
@@ -463,18 +458,14 @@ public class Login_2 extends javax.swing.JFrame {
     }//GEN-LAST:event_btningreso2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+
         Inicio_1 regreso = new Inicio_1();
         regreso.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void usernomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernomActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usernomActionPerformed
-
     private void btningresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btningresoActionPerformed
-        // TODO add your handling code here:
+
         String pass=String.valueOf(passadm.getPassword());
         if( adm.getText().isEmpty() || pass.isEmpty()){
             JOptionPane.showMessageDialog(this, "Termina de llenar todos los campos");
@@ -484,7 +475,7 @@ public class Login_2 extends javax.swing.JFrame {
     }//GEN-LAST:event_btningresoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+
         Inicio_1 regreso = new Inicio_1();
         regreso.setVisible(true);
         this.dispose();

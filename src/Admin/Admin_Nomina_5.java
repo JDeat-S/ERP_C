@@ -806,7 +806,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             pst.setString(11, Iat);
             pst.setString(12, Item);
             pst.setString(13, Pac.getText());
-            pst.setString(14, Cobrado.getText());
+//            pst.setString(14, Cobrado.getText());
             pst.setString(15, Pagado.getText());
             pst.setString(16, Pendiente.getText());
             pst.setString(17, PQT.getText());
@@ -838,7 +838,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         Pac.setText("0");
         QAP.setSelectedIndex(0);
         PQT.setText("");
-        Cobrado.setText("");
+  //      Cobrado.setText("");
         Pagado.setText("");
         Pendiente.setText("");
         Fdp.setSelectedIndex(0);
@@ -899,7 +899,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             pst.setString(11, Iat);
             pst.setString(12, Item);
             pst.setString(13, Pac.getText());
-            pst.setString(14, Cobrado.getText());
+//            pst.setString(14, Cobrado.getText());
             pst.setString(15, Pagado.getText());
             pst.setString(16, Pendiente.getText());
             pst.setString(17, PQT.getText());
@@ -5074,7 +5074,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             CA.setText(String.valueOf(OdT.getValueAt(fila, 10)));
             //ingreso a taller 11
             Pac.setText(String.valueOf(OdT.getValueAt(fila, 13)));
-            Cobrado.setText(String.valueOf(OdT.getValueAt(fila, 14)));
+  //          Cobrado.setText(String.valueOf(OdT.getValueAt(fila, 14)));
             Pagado.setText(String.valueOf(OdT.getValueAt(fila, 15)));
             Pendiente.setText(String.valueOf(OdT.getValueAt(fila, 16)));
             PQT.setText(String.valueOf(OdT.getValueAt(fila, 17)));
