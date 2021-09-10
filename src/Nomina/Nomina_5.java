@@ -2160,14 +2160,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
         CS7 = new javax.swing.JButton();
         botonWeb4 = new botones.BotonWeb();
         jMenuBar1 = new javax.swing.JMenuBar();
-        Menuadm = new javax.swing.JMenu();
-        Nomina1 = new javax.swing.JMenuItem();
-        Administradores = new javax.swing.JMenuItem();
-        ZYS = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
-        General = new javax.swing.JMenuItem();
-        Estadias = new javax.swing.JMenuItem();
-        Torteria = new javax.swing.JMenuItem();
 
         DO1.setText("0");
 
@@ -4609,10 +4601,10 @@ public final class Nomina_5 extends javax.swing.JFrame {
                             .addComponent(ApTaller)
                             .addComponent(Amtaller)
                             .addComponent(NameTaller)
-                            .addComponent(Modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Placas, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Color, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Marca))))
+                            .addComponent(Marca)
+                            .addComponent(Color)
+                            .addComponent(Placas)
+                            .addComponent(Modelo))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -4646,33 +4638,30 @@ public final class Nomina_5 extends javax.swing.JFrame {
                     .addComponent(Serv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel69)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel93))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel94)
+                    .addComponent(Modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel95)
+                    .addComponent(Placas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel96)
+                    .addComponent(Color, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel70)
+                    .addComponent(ndp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel70)
-                            .addComponent(ndp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel62)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel93)
-                            .addComponent(Marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel94)
-                            .addComponent(Modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel95)
-                            .addComponent(Placas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel96)
-                            .addComponent(Color, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel62))
+                .addGap(16, 16, 16))
         );
 
         jLabel71.setText("Quincenas a pagar:");
@@ -4977,66 +4966,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Tabla talleres", TTalleres);
 
-        Menuadm.setText("Todas las ventanas");
-
-        Nomina1.setText("Ventana Nomina");
-        Nomina1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nomina1ActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Nomina1);
-
-        Administradores.setText("Administradores");
-        Administradores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdministradoresActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Administradores);
-
-        ZYS.setText("Zonas y Servicios");
-        ZYS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ZYSActionPerformed(evt);
-            }
-        });
-        Menuadm.add(ZYS);
-
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
-
-        General.setText("Empleados General");
-        General.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GeneralActionPerformed(evt);
-            }
-        });
-        Menuadm.add(General);
-
-        Estadias.setText("Alumno de estadia");
-        Estadias.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EstadiasActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Estadias);
-
-        Torteria.setText("Empleados Torteria");
-        Torteria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TorteriaActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Torteria);
-
-        jMenuBar1.add(Menuadm);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -5047,7 +4976,7 @@ public final class Nomina_5 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 807, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 828, Short.MAX_VALUE)
         );
 
         pack();
@@ -10196,55 +10125,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_VolverActionPerformed
 
-    private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
-        // TODO add your handling code here:
-        Nomina_5 regr = new Nomina_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_Nomina1ActionPerformed
-
-    private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        // TODO add your handling code here:
-        Administradores_3 regr = new Administradores_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_AdministradoresActionPerformed
-
-    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        // TODO add your handling code here:
-        AltasZyS_3 regr = new AltasZyS_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ZYSActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-        // TODO add your handling code here:
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
-
-    private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        // TODO add your handling code here:
-        Admin_Empleados_4 regr = new Admin_Empleados_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_GeneralActionPerformed
-
-    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
-        // TODO add your handling code here:
-        Admin_Estadias_4 regr = new Admin_Estadias_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_EstadiasActionPerformed
-
-    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        // TODO add your handling code here:
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_TorteriaActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -10345,7 +10225,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ADD;
-    private javax.swing.JMenuItem Administradores;
     private javax.swing.JButton AgregarNP;
     private javax.swing.JButton Agregarprestamo;
     private javax.swing.JButton Agregartaller;
@@ -10458,7 +10337,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextArea Daño;
     private javax.swing.JButton Eliminar;
     private javax.swing.JButton EliminarT;
-    private javax.swing.JMenuItem Estadias;
     private javax.swing.JLabel F;
     private javax.swing.JLabel F1;
     private javax.swing.JLabel F10;
@@ -10516,7 +10394,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltrosTD;
     private javax.swing.JComboBox<String> Filtrosshp;
     private javax.swing.JComboBox<String> FshT;
-    private javax.swing.JMenuItem General;
     private javax.swing.JTextField Grua;
     private javax.swing.JTextField Iad;
     private javax.swing.JComboBox<String> Interes;
@@ -10541,7 +10418,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JLabel M4;
     private javax.swing.JTextField MT;
     private javax.swing.JTextField Marca;
-    private javax.swing.JMenu Menuadm;
     private javax.swing.JComboBox<String> Mes;
     private javax.swing.JTextField Metodo;
     private javax.swing.JTextField Modelo;
@@ -10551,7 +10427,6 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Namepres;
     private javax.swing.JTextField Ndo;
     private javax.swing.JScrollPane Nomina;
-    private javax.swing.JMenuItem Nomina1;
     private javax.swing.JTextField Nominab;
     private javax.swing.JTextField Num;
     private javax.swing.JTextArea Observaciones;
@@ -10627,11 +10502,8 @@ public final class Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane TTalleres;
     private javax.swing.JScrollPane Talleres;
     private javax.swing.JTable Tnom;
-    private javax.swing.JMenuItem Torteria;
     private javax.swing.JScrollPane Tprestamos;
-    private javax.swing.JMenuItem UsuariosRH;
     private javax.swing.JButton Volver;
-    private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zon;
     private javax.swing.JTextField Zona;
     private javax.swing.JTextField Zona1;

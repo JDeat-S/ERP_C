@@ -5105,10 +5105,10 @@
                                           <Component id="ApTaller" alignment="0" max="32767" attributes="0"/>
                                           <Component id="Amtaller" alignment="0" max="32767" attributes="0"/>
                                           <Component id="NameTaller" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="Modelo" min="-2" pref="223" max="-2" attributes="0"/>
-                                          <Component id="Placas" min="-2" pref="223" max="-2" attributes="0"/>
-                                          <Component id="Color" min="-2" pref="223" max="-2" attributes="0"/>
                                           <Component id="Marca" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="Modelo" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="Placas" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="Color" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -5153,42 +5153,36 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel70" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ndp" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel62" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel93" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Marca" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel94" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Modelo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel95" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Placas" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel96" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Color" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel93" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Marca" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel94" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Modelo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel95" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Placas" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel96" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Color" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel70" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ndp" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPane7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
