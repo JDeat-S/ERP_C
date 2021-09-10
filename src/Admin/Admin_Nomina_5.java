@@ -749,7 +749,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
 //Anchos
             int[] anchos = {/*ndo*/35, /*fde*/ 50, /*ap*/ 55, /*am*/ 55, /*nom*/ 150,
-                /*Zon*/ 60, /*serv*/ 75, /*Marca*/ 60, /*Modelo*/ 60, /*Placas*/60, /*Color*/60,
+                /*Zon*/ 60, /*serv*/ 75, /*Marca*/ 60, /*Modelo*/ 60, /*Placas*/ 60, /*Color*/ 60,
                 /*NDP*/ 50, /*Dano*/ 500,
                 /*CT*/ 55, /*IAT*/ 60, /*Status*/ 60, /*IAD*/ 60, /*PAGA*/ 55,
                 /*PENDIENTE*/ 55, /*PPQ*/ 70, /*FDP*/ 65,/*obs*/ 1000};
@@ -5074,26 +5074,28 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             Zona1.setText(String.valueOf(OdT.getValueAt(fila, 5)));
             Serv1.setText(String.valueOf(OdT.getValueAt(fila, 6)));
             Marca.setText(String.valueOf(OdT.getValueAt(fila, 7)));
-            ndp.setText(String.valueOf(OdT.getValueAt(fila, 8)));
-            Daño.setText(String.valueOf(OdT.getValueAt(fila, 9)));
-            CT.setText(String.valueOf(OdT.getValueAt(fila, 10)));
-            //ingreso a taller 11
-            Iad.setText(String.valueOf(OdT.getValueAt(fila, 13)));
-            Cobrado.setText(String.valueOf(OdT.getValueAt(fila, 14)));
-            Pagado.setText(String.valueOf(OdT.getValueAt(fila, 15)));
-            Pendiente.setText(String.valueOf(OdT.getValueAt(fila, 16)));
-            PQT.setText(String.valueOf(OdT.getValueAt(fila, 17)));
-            Odtp.setText(String.valueOf(OdT.getValueAt(fila, 17)));
-            Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 19)));
+            Modelo.setText(String.valueOf(OdT.getValueAt(fila, 8)));
+            Placas.setText(String.valueOf(OdT.getValueAt(fila, 9)));
+            Color.setText(String.valueOf(OdT.getValueAt(fila, 10)));
+            ndp.setText(String.valueOf(OdT.getValueAt(fila, 11)));
+            Daño.setText(String.valueOf(OdT.getValueAt(fila, 12)));
+            CT.setText(String.valueOf(OdT.getValueAt(fila, 13)));
+            //ingreso a taller 14
+            Iad.setText(String.valueOf(OdT.getValueAt(fila, 16)));
+            Pagado.setText(String.valueOf(OdT.getValueAt(fila, 17)));
+            Pendiente.setText(String.valueOf(OdT.getValueAt(fila, 18)));
+            PQT.setText(String.valueOf(OdT.getValueAt(fila, 19)));
+            Odtp.setText(String.valueOf(OdT.getValueAt(fila, 19)));
+            Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 21)));
 
-            String combo1 = model.getValueAt(fila, 12).toString();
+            String combo1 = model.getValueAt(fila, 15).toString();
             for (int i = 0; i < Statustaller.getItemCount(); i++) {
                 if (Statustaller.getItemAt(i).equalsIgnoreCase(combo1)) {
                     Statustaller.setSelectedIndex(i);
                 }
             }
             //Combobo2
-            String combo2 = model.getValueAt(fila, 18).toString();
+            String combo2 = model.getValueAt(fila, 20).toString();
             for (int i = 0; i < Fdp.getItemCount(); i++) {
                 if (Fdp.getItemAt(i).equalsIgnoreCase(combo2)) {
                     Fdp.setSelectedIndex(i);
