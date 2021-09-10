@@ -731,23 +731,28 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             modelo.addColumn("Nombre(s)");//5
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");//7
-            modelo.addColumn("Datos de vehiculo");
-            modelo.addColumn("# de piezas");//9
-            modelo.addColumn("Daño");
-            modelo.addColumn("Costo Aproximado");//11
-            modelo.addColumn("Ingreso a taller");
-            modelo.addColumn("Pagado por cliente");//13
-            modelo.addColumn("Pago a confort");
-            modelo.addColumn("Cobrado");//15
+            modelo.addColumn("Marca");
+            modelo.addColumn("Modelo");//9
+            modelo.addColumn("Placas");
+            modelo.addColumn("Color");//11
+            modelo.addColumn("# de piezas");
+            modelo.addColumn("Daño");//13
+            modelo.addColumn("Costo total");
+            modelo.addColumn("Ingreso a taller");//15
+            modelo.addColumn("Status");
+            modelo.addColumn("Importe a descontar");//17
             modelo.addColumn("Pagado");
-            modelo.addColumn("Pendiente");//17
+            modelo.addColumn("Pendiente");//19
             modelo.addColumn("Pago por quincena");
-            modelo.addColumn("Forma de pago");//19
+            modelo.addColumn("Forma de pago");//21
             modelo.addColumn("Observaciones");
 
 //Anchos
-            int[] anchos = {/*ndo*/35, /*fde*/ 50, /*ap*/ 55, /*am*/ 55, /*nom*/ 150, /*Zon*/ 60, /*serv*/ 75, /*DDv*/ 500, /*NDP*/ 50, /*Dano*/ 500,
-                /*CA*/ 55, /*IAT*/ 60, /*PPC*/ 60, /*PAC*/ 60, /*COBR*/ 55, /*PAGA*/ 55, /*PENDIENTE*/ 55, /*PPQ*/ 70, /*FDP*/ 65,/*obs*/ 1000};
+            int[] anchos = {/*ndo*/35, /*fde*/ 50, /*ap*/ 55, /*am*/ 55, /*nom*/ 150,
+                /*Zon*/ 60, /*serv*/ 75, /*Marca*/ 60, /*Modelo*/ 60, /*Placas*/60, /*Color*/60,
+                /*NDP*/ 50, /*Dano*/ 500,
+                /*CT*/ 55, /*IAT*/ 60, /*Status*/ 60, /*IAD*/ 60, /*PAGA*/ 55,
+                /*PENDIENTE*/ 55, /*PPQ*/ 70, /*FDP*/ 65,/*obs*/ 1000};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
