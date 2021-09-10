@@ -2478,25 +2478,27 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Nfilimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="namesimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="deleteimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Fimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="expFimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ApimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="botonWeb2" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="AmimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FdiimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FZimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="nssimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rfcimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="PuestoimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="StatusimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FBimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="curpimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="Nfilimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="namesimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="deleteimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Fimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="expFimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ApimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AmimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FdiimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FZimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nssimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rfcimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PuestoimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="StatusimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FBimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="curpimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane7" pref="637" max="32767" attributes="0"/>
