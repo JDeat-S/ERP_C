@@ -54,7 +54,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="RH" alignment="0" pref="1192" max="32767" attributes="0"/>
+          <Component id="RH" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -116,7 +116,7 @@
                                       <Component id="jPanel7" max="32767" attributes="0"/>
                                       <Component id="jPanel10" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="136" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7724" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
@@ -1303,11 +1303,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="ScrollpaneTG" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="ScrollpaneTG" min="-2" pref="8554" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
                                   <Component id="elim" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
@@ -1341,9 +1338,13 @@
                                   <Component id="FiltroNSSGen" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Cs2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="5204" max="32767" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane2" min="-2" pref="2083" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="136" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1351,26 +1352,30 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="LabelF1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FiltroNG" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="elim" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Filtros" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="LabelF2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FiltroZGe" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FiltroSZGen" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FiltroStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FiltroFDI" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FiltroServGen" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FiltroCurpGen" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FiltroNSSGen" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Cs2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Filtroap" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Filtroam" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botonWeb1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="LabelF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FiltroNG" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="elim" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Filtros" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LabelF2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FiltroZGe" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FiltroSZGen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FiltroStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FiltroFDI" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FiltroServGen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FiltroCurpGen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FiltroNSSGen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Cs2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Filtroap" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Filtroam" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="botonWeb1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="ScrollpaneTG" pref="653" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1871,6 +1876,26 @@
                     <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReporteRH/EPCEmpleados.php"/>
                   </Properties>
                 </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="ObsTgen">
+                      <Properties>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="rows" type="int" value="5"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="jLabel1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Observaciones:"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -1911,7 +1936,7 @@
                           <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                           <Component id="Cs3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="318" max="32767" attributes="0"/>
+                          <EmptySpace pref="7906" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2422,7 +2447,7 @@
                               </Group>
                               <Component id="jScrollPane7" alignment="0" min="-2" pref="3470" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="551" max="32767" attributes="0"/>
+                          <EmptySpace pref="5286" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2430,25 +2455,27 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Nfilimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="namesimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="deleteimss" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Fimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="expFimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ApimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="AmimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FdiimssF" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="botonWeb2" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="FZimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="nssimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rfcimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="PuestoimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="StatusimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="FBimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="curpimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="Nfilimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="namesimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Fimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="expFimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ApimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AmimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FdiimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FZimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nssimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rfcimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PuestoimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="StatusimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FBimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="curpimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane7" pref="696" max="32767" attributes="0"/>
