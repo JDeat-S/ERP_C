@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-09-2021 a las 00:46:47
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.10
+-- Tiempo de generación: 11-09-2021 a las 22:07:56
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -6737,7 +6737,18 @@ INSERT INTO `servicio` (`idServ`, `idZona`, `Nombre Zona`, `Supervisor`, `Servic
 (64, '8', 'Oficina', '', 'Aux contable', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
 (65, '8', 'Oficina', '', 'Sistemas', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
 (66, '8', 'Oficina', '', 'Ventas', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(67, '8', 'Oficina', '', 'Limpieza', 'L a V', '', '', 'OFF', 'OFF', '', '.', '');
+(67, '8', 'Oficina', '', 'Limpieza', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
+(68, '1', 'Sur 1', '', 'Comodin', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
+(69, '2', 'Sur 2', '', 'Comodin', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
+(70, '3', 'Norte', '', 'Comodin', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
+(71, '5', 'Poniente', '', 'Poniente', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
+(72, '5', 'Poniente', '', 'Cordinador', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
+(73, '3', 'Norte', '', 'Cordinador', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
+(74, '2', 'Sur 2', '', 'Cordinador', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
+(75, '1', 'Sur 1', '', 'Cordinador', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
+(76, '4', 'Foraneos Acapulco', '', 'Supervisor', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
+(77, '6', 'Foraneos Puebla', '', 'Supervisor', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
+(78, '7', 'Foraneos Toluca', '', 'Supervisor', 'L a V', '', '', 'OFF', 'OFF', '', '.', '');
 
 -- --------------------------------------------------------
 
@@ -6981,7 +6992,7 @@ ALTER TABLE `prestamos`
 -- AUTO_INCREMENT de la tabla `servicio`
 --
 ALTER TABLE `servicio`
-  MODIFY `idServ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `idServ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT de la tabla `taller`
