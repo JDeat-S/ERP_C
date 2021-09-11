@@ -31,6 +31,8 @@ public class ColorFilas extends DefaultTableCellRenderer {
         super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         if (table.getValueAt(row, 20).toString().equals("BAJA")) {
             setBackground(RyB);
+        } else if (table.getValueAt(row, 20).toString().equals("VIGENTE (TEMPORAL)")) {
+            setBackground(Pen);
         } else if (table.getValueAt(row, 20).toString().equals("VIGENTE")) {
             setBackground(Color.yellow);
         } else if (table.getValueAt(row, 20).toString().equals("RECHAZADO")) {
@@ -43,7 +45,7 @@ public class ColorFilas extends DefaultTableCellRenderer {
             setBackground(Pen);
         } else if (table.getValueAt(row, 20).toString().equals("BOLETINADO")) {
             setBackground(RyB);
-        } else{
+        }else{
             setBackground(Color.CYAN);
         }
 

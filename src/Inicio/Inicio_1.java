@@ -58,7 +58,7 @@ public class Inicio_1 extends javax.swing.JFrame {
             }
         });
 
-        BActualizaciones.setText("Ver 1.5.2");
+        BActualizaciones.setText("Ver 1.5.4");
         BActualizaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BActualizacionesActionPerformed(evt);

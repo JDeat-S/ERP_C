@@ -6,7 +6,6 @@
 //
 package Admin;
 
-
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
@@ -664,7 +663,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         double d22 = Double.parseDouble(this.Q22.getText());
         double d23 = Double.parseDouble(this.Q23.getText());
         double d24 = Double.parseDouble(this.Q24.getText());
-        double d25 = Double.parseDouble(this.Pac.getText());
+        double d25 = Double.parseDouble(this.Iad.getText());
 
         double total = d25 / (d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11 + d12 + d13 + d14 + d15 + d16 + d17 + d18 + d19 + d20 + d21 + d22 + d23 + d24);
         this.PQT.setText("" + total + "");
@@ -732,23 +731,28 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             modelo.addColumn("Nombre(s)");//5
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");//7
-            modelo.addColumn("Datos de vehiculo");
-            modelo.addColumn("# de piezas");//9
-            modelo.addColumn("Daño");
-            modelo.addColumn("Costo Aproximado");//11
-            modelo.addColumn("Ingreso a taller");
-            modelo.addColumn("Pagado por cliente");//13
-            modelo.addColumn("Pago a confort");
-            modelo.addColumn("Cobrado");//15
+            modelo.addColumn("Marca");
+            modelo.addColumn("Modelo");//9
+            modelo.addColumn("Placas");
+            modelo.addColumn("Color");//11
+            modelo.addColumn("# de piezas");
+            modelo.addColumn("Daño");//13
+            modelo.addColumn("Costo total");
+            modelo.addColumn("Ingreso a taller");//15
+            modelo.addColumn("Status");
+            modelo.addColumn("Importe a descontar");//17
             modelo.addColumn("Pagado");
-            modelo.addColumn("Pendiente");//17
+            modelo.addColumn("Pendiente");//19
             modelo.addColumn("Pago por quincena");
-            modelo.addColumn("Forma de pago");//19
+            modelo.addColumn("Forma de pago");//21
             modelo.addColumn("Observaciones");
 
 //Anchos
-            int[] anchos = {/*ndo*/35, /*fde*/ 50, /*ap*/ 55, /*am*/ 55, /*nom*/ 150, /*Zon*/ 60, /*serv*/ 75, /*DDv*/ 500, /*NDP*/ 50, /*Dano*/ 500,
-                /*CA*/ 55, /*IAT*/ 60, /*PPC*/ 60, /*PAC*/ 60, /*COBR*/ 55, /*PAGA*/ 55, /*PENDIENTE*/ 55, /*PPQ*/ 70, /*FDP*/ 65,/*obs*/ 1000};
+            int[] anchos = {/*ndo*/35, /*fde*/ 50, /*ap*/ 55, /*am*/ 55, /*nom*/ 150,
+                /*Zon*/ 60, /*serv*/ 75, /*Marca*/ 60, /*Modelo*/ 60, /*Placas*/ 60, /*Color*/ 60,
+                /*NDP*/ 50, /*Dano*/ 500,
+                /*CT*/ 55, /*IAT*/ 60, /*Status*/ 60, /*IAD*/ 60, /*PAGA*/ 55,
+                /*PENDIENTE*/ 55, /*PPQ*/ 70, /*FDP*/ 65,/*obs*/ 1000};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -773,7 +777,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
     public void editarT() {
         int id = Integer.parseInt(Ndo.getText());
-        String Item = Ppc.getSelectedItem().toString();
+        String Item = Statustaller.getSelectedItem().toString();
         String Item1 = Fdp.getSelectedItem().toString();
         String Iat;
         if (Si.isSelected() == true) {
@@ -783,12 +787,14 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         } else {
             Iat = "Si";
         }
-        String SQL = "UPDATE `confort`.`taller` SET  `Fecha de expedicion` = ?,"
-                + " `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Zona` = ?,"
-                + " `Servicio` = ?, `Datos vehiculo` = ?, `# de piezas` = ?,"
-                + " `Daño` = ?, `Costo Aproximado` = ?, `Ingreso a taller` = ?, "
-                + "`Pagado por cliente` = ?, `Pago a confort` = ?, `Cobrado` = ?, `Pagado` = ?, "
-                + "`Pendiente` = ?, `Por quincenas` = ?, `Forma de pago` = ?, `Observaciones` = ? WHERE (`idTaller` = ?)";
+        String SQL = "UPDATE `taller` SET `Fecha de expedicion` = ?,"
+                + " `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?,"
+                + " `Zona` = ?, `Servicio` = ?, `Marca` = ?, `Modelo` = ?,"
+                + " `Placas` = ?, `Color` = ?, `# de piezas` = ?, `Daño` = ?,"
+                + " `Costo total` = ?, `Ingreso a taller` = ?, `Status` = ?,"
+                + " `Importe a descontar` = ?, `Cobrado` = ?, `Pagado` = ?,"
+                + " `Pendiente` = ?, `Por quincenas` = ?, `Forma de pago` = ?,"
+                + " `Observaciones` = ? WHERE `taller`.`idTaller` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -799,20 +805,22 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             pst.setString(4, NameTaller.getText());
             pst.setString(5, Zona1.getText());
             pst.setString(6, Serv1.getText());
-//            pst.setString(7, Marca.getText());
-            pst.setString(8, ndp.getText());
-            pst.setString(9, Daño.getText());
-            pst.setString(10, CA.getText());
-            pst.setString(11, Iat);
-            pst.setString(12, Item);
-            pst.setString(13, Pac.getText());
-//            pst.setString(14, Cobrado.getText());
-            pst.setString(15, Pagado.getText());
-            pst.setString(16, Pendiente.getText());
-            pst.setString(17, PQT.getText());
-            pst.setString(18, Item1);
-            pst.setString(19, Observaciones.getText());
-            pst.setInt(20, id);
+            pst.setString(7, Marca.getText());
+            pst.setString(8, Modelo.getText());
+            pst.setString(9, Placas.getText());
+            pst.setString(10, Color.getText());
+            pst.setString(11, ndp.getText());
+            pst.setString(12, Daño.getText());
+            pst.setString(13, CT.getText());
+            pst.setString(14, Iat);
+            pst.setString(15, Item);
+            pst.setString(16, Iad.getText());
+            pst.setString(17, Pagado.getText());
+            pst.setString(18, Pendiente.getText());
+            pst.setString(19, PQT.getText());
+            pst.setString(20, Item1);
+            pst.setString(21, Observaciones.getText());
+            pst.setInt(22, id);
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Orden Modificada");
@@ -830,15 +838,19 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         ApTaller.setText("");
         Amtaller.setText("");
         Zona1.setText("");
+        Marca.setText("");
         Serv1.setText("");
         ndp.setText("");
         Daño.setText("");
-        CA.setText("0");
-        Ppc.setSelectedIndex(0);
-        Pac.setText("0");
+        CT.setText("0");
+        Statustaller.setSelectedIndex(0);
+        Iad.setText("0");
         QAP.setSelectedIndex(0);
         PQT.setText("");
-  //      Cobrado.setText("");
+        Marca.setText("");
+        Modelo.setText("");
+        Color.setText("");
+        Placas.setText("");
         Pagado.setText("");
         Pendiente.setText("");
         Fdp.setSelectedIndex(0);
@@ -867,7 +879,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }
 
     public void AgregarT() {
-        String Item = Ppc.getSelectedItem().toString();
+        String Item = Statustaller.getSelectedItem().toString();
         String Item1 = Fdp.getSelectedItem().toString();
         String Iat;
         if (Si.isSelected() == true) {
@@ -875,14 +887,16 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         } else if (no.isSelected() == true) {
             Iat = "No";
         } else {
-            Iat = "Si";
+            Iat = ".";
         }
-        String SQL = "insert into taller (`Fecha de expedicion`, `Apellido P`,"
-                + " `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Datos vehiculo`,"
-                + " `# de piezas`, `Daño`, `Costo Aproximado`, `Ingreso a taller`,"
-                + " `Pagado por cliente`, `Pago a confort`, `Cobrado`, `Pagado`,"
-                + " `Pendiente`, `Por quincenas`, `Forma de pago`, `Observaciones`)"
-                + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO `taller` (`Fecha de expedicion`,"
+                + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
+                + " `Servicio`, `Marca`, `Modelo`, `Placas`, `Color`,"
+                + " `# de piezas`, `Daño`, `Costo total`, `Ingreso a taller`,"
+                + " `Status`, `Importe a descontar`, `Pagado`,"
+                + " `Pendiente`, `Por quincenas`, `Forma de pago`,"
+                + " `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -892,19 +906,21 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             pst.setString(4, NameTaller.getText());
             pst.setString(5, Zona1.getText());
             pst.setString(6, Serv1.getText());
-//            pst.setString(7, Marca.getText());
-            pst.setString(8, ndp.getText());
-            pst.setString(9, Daño.getText());
-            pst.setString(10, CA.getText());
-            pst.setString(11, Iat);
-            pst.setString(12, Item);
-            pst.setString(13, Pac.getText());
-//            pst.setString(14, Cobrado.getText());
-            pst.setString(15, Pagado.getText());
-            pst.setString(16, Pendiente.getText());
-            pst.setString(17, PQT.getText());
-            pst.setString(18, Item1);
-            pst.setString(19, Observaciones.getText());
+            pst.setString(7, Marca.getText());
+            pst.setString(8, Modelo.getText());
+            pst.setString(9, Placas.getText());
+            pst.setString(10, Color.getText());
+            pst.setString(11, ndp.getText());
+            pst.setString(12, Daño.getText());
+            pst.setString(13, CT.getText());
+            pst.setString(14, Iat);
+            pst.setString(15, Item);
+            pst.setString(16, Iad.getText());
+            pst.setString(17, Pagado.getText());
+            pst.setString(18, Pendiente.getText());
+            pst.setString(19, PQT.getText());
+            pst.setString(20, Item1);
+            pst.setString(21, Observaciones.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Orden de Taller Agregada");
@@ -915,15 +931,15 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }
 
     public void DAR() {
-        double Dar1 = Double.parseDouble(this.CA.getText());
+        double Dar1 = Double.parseDouble(this.CT.getText());
 
         double igual = Dar1;
 
-        this.Pac.setText("" + igual + "");
+        this.Iad.setText("" + igual + "");
     }
 
     public void DAR1() {
-        double d1 = Double.parseDouble(this.CA.getText());
+        double d1 = Double.parseDouble(this.CT.getText());
         double d2 = Double.parseDouble(this.Pagado.getText());
         double d3 = d1 - d2;
         double total = d3;
@@ -2078,11 +2094,11 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
-        CA = new javax.swing.JTextField();
+        CT = new javax.swing.JTextField();
         Si = new javax.swing.JRadioButton();
         no = new javax.swing.JRadioButton();
-        Ppc = new javax.swing.JComboBox<>();
-        Pac = new javax.swing.JTextField();
+        Statustaller = new javax.swing.JComboBox<>();
+        Iad = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
         Pagado = new javax.swing.JTextField();
         jLabel60 = new javax.swing.JLabel();
@@ -2118,11 +2134,11 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         jLabel93 = new javax.swing.JLabel();
         jLabel94 = new javax.swing.JLabel();
         jLabel95 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Marca = new javax.swing.JTextField();
         jLabel96 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        Modelo = new javax.swing.JTextField();
+        Placas = new javax.swing.JTextField();
+        Color = new javax.swing.JTextField();
         jLabel71 = new javax.swing.JLabel();
         QAP = new javax.swing.JComboBox<>();
         jLabel72 = new javax.swing.JLabel();
@@ -4454,10 +4470,10 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
         jLabel57.setText("Observaciones:");
 
-        CA.setText("0");
-        CA.addKeyListener(new java.awt.event.KeyAdapter() {
+        CT.setText("0");
+        CT.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                CAKeyReleased(evt);
+                CTKeyReleased(evt);
             }
         });
 
@@ -4465,9 +4481,9 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
         no.setText("No");
 
-        Ppc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Pago a cliente", "Pago a cerrajeria", "Vencida", "Pago a taller" }));
+        Statustaller.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Pago a cliente", "Pago a cerrajeria", "Vencida", "Pago a taller" }));
 
-        Pac.setText("0");
+        Iad.setText("0");
 
         jLabel59.setText("Pagado:");
 
@@ -4483,6 +4499,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         Fdp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Deposito", "Efectivo", "Transferencia" }));
 
         Observaciones.setColumns(20);
+        Observaciones.setLineWrap(true);
         Observaciones.setRows(5);
         jScrollPane4.setViewportView(Observaciones);
 
@@ -4533,6 +4550,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         jLabel63.setText("Responsable");
 
         Daño.setColumns(20);
+        Daño.setLineWrap(true);
         Daño.setRows(5);
         jScrollPane7.setViewportView(Daño);
 
@@ -4550,21 +4568,13 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
         jLabel92.setText("Nombre(s)");
 
-        jLabel93.setText("MARCA:");
+        jLabel93.setText("Marca:");
 
-        jLabel94.setText("MODELO:");
+        jLabel94.setText("Modelo:");
 
-        jLabel95.setText("PLACAS:");
+        jLabel95.setText("Placas:");
 
-        jTextField1.setText("jTextField1");
-
-        jLabel96.setText("COLOR:");
-
-        jTextField2.setText("jTextField2");
-
-        jTextField3.setText("jTextField3");
-
-        jTextField4.setText("jTextField4");
+        jLabel96.setText("Color:");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -4573,45 +4583,40 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(87, 87, 87)
-                                .addComponent(jLabel63))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel70)
-                                    .addComponent(jLabel68)
-                                    .addComponent(jLabel67)
-                                    .addComponent(jLabel66)
-                                    .addComponent(jLabel61)
-                                    .addComponent(jLabel92)
-                                    .addComponent(jLabel62))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jScrollPane7)
-                                    .addComponent(ndp, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Zona1)
-                                    .addComponent(Serv1)
-                                    .addComponent(ApTaller)
-                                    .addComponent(Amtaller)
-                                    .addComponent(NameTaller))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(87, 87, 87)
+                        .addComponent(jLabel63))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel70)
+                            .addComponent(jLabel68)
+                            .addComponent(jLabel67)
+                            .addComponent(jLabel66)
+                            .addComponent(jLabel61)
+                            .addComponent(jLabel92)
+                            .addComponent(jLabel62)
                             .addComponent(jLabel96)
                             .addComponent(jLabel95)
                             .addComponent(jLabel94)
-                            .addComponent(jLabel93)
-                            .addComponent(jLabel69))
+                            .addComponent(jLabel93))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane7)
+                            .addComponent(ndp, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Zona1)
+                            .addComponent(Serv1)
+                            .addComponent(ApTaller)
+                            .addComponent(Amtaller)
+                            .addComponent(NameTaller)
+                            .addComponent(Marca)
+                            .addComponent(Modelo)
+                            .addComponent(Placas)
+                            .addComponent(Color))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel69)
+                .addGap(86, 86, 86))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4640,31 +4645,30 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                     .addComponent(Serv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel69)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel93)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel94)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel95)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Placas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel96)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
+                    .addComponent(Color, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel70)
                     .addComponent(ndp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel62)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel62))
+                .addGap(16, 16, 16))
         );
 
         jLabel71.setText("Quincenas a pagar:");
@@ -4725,8 +4729,8 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Ppc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Statustaller, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addComponent(Si)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4757,15 +4761,13 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
                                 .addComponent(jLabel57)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Agregartaller)
                                 .addGap(51, 51, 51)
-                                .addComponent(Modificartaller)
-                                .addContainerGap(473, Short.MAX_VALUE))
+                                .addComponent(Modificartaller))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel54)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4785,7 +4787,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(Pendiente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(Pac, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Iad, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel71)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4793,8 +4795,8 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel72)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(PQT, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                        .addComponent(PQT, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addContainerGap())))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -4819,7 +4821,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel51)
-                                    .addComponent(CA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(CT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel52)
@@ -4828,7 +4830,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel53)
-                                    .addComponent(Ppc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(Statustaller, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -4837,7 +4839,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel54)
-                            .addComponent(Pac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Iad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel71)
                             .addComponent(QAP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(PQT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5068,27 +5070,29 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             NameTaller.setText(String.valueOf(OdT.getValueAt(fila, 4)));
             Zona1.setText(String.valueOf(OdT.getValueAt(fila, 5)));
             Serv1.setText(String.valueOf(OdT.getValueAt(fila, 6)));
-//            Marca.setText(String.valueOf(OdT.getValueAt(fila, 7)));
-            ndp.setText(String.valueOf(OdT.getValueAt(fila, 8)));
-            Daño.setText(String.valueOf(OdT.getValueAt(fila, 9)));
-            CA.setText(String.valueOf(OdT.getValueAt(fila, 10)));
-            //ingreso a taller 11
-            Pac.setText(String.valueOf(OdT.getValueAt(fila, 13)));
-  //          Cobrado.setText(String.valueOf(OdT.getValueAt(fila, 14)));
-            Pagado.setText(String.valueOf(OdT.getValueAt(fila, 15)));
-            Pendiente.setText(String.valueOf(OdT.getValueAt(fila, 16)));
-            PQT.setText(String.valueOf(OdT.getValueAt(fila, 17)));
-            Odtp.setText(String.valueOf(OdT.getValueAt(fila, 17)));
-            Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 19)));
+            Marca.setText(String.valueOf(OdT.getValueAt(fila, 7)));
+            Modelo.setText(String.valueOf(OdT.getValueAt(fila, 8)));
+            Placas.setText(String.valueOf(OdT.getValueAt(fila, 9)));
+            Color.setText(String.valueOf(OdT.getValueAt(fila, 10)));
+            ndp.setText(String.valueOf(OdT.getValueAt(fila, 11)));
+            Daño.setText(String.valueOf(OdT.getValueAt(fila, 12)));
+            CT.setText(String.valueOf(OdT.getValueAt(fila, 13)));
+            //ingreso a taller 14
+            Iad.setText(String.valueOf(OdT.getValueAt(fila, 16)));
+            Pagado.setText(String.valueOf(OdT.getValueAt(fila, 17)));
+            Pendiente.setText(String.valueOf(OdT.getValueAt(fila, 18)));
+            PQT.setText(String.valueOf(OdT.getValueAt(fila, 19)));
+            Odtp.setText(String.valueOf(OdT.getValueAt(fila, 19)));
+            Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 21)));
 
-            String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Ppc.getItemCount(); i++) {
-                if (Ppc.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Ppc.setSelectedIndex(i);
+            String combo1 = model.getValueAt(fila, 15).toString();
+            for (int i = 0; i < Statustaller.getItemCount(); i++) {
+                if (Statustaller.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Statustaller.setSelectedIndex(i);
                 }
             }
             //Combobo2
-            String combo2 = model.getValueAt(fila, 18).toString();
+            String combo2 = model.getValueAt(fila, 20).toString();
             for (int i = 0; i < Fdp.getItemCount(); i++) {
                 if (Fdp.getItemAt(i).equalsIgnoreCase(combo2)) {
                     Fdp.setSelectedIndex(i);
@@ -5813,10 +5817,10 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         DAR1();
     }//GEN-LAST:event_PagadoKeyReleased
 
-    private void CAKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CAKeyReleased
+    private void CTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CTKeyReleased
         // TODO add your handling code here:
         DAR();
-    }//GEN-LAST:event_CAKeyReleased
+    }//GEN-LAST:event_CTKeyReleased
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
@@ -10331,7 +10335,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Busamshpre1;
     private javax.swing.JTextField Busapshpre;
     private javax.swing.JTextField Busapshpre1;
-    private javax.swing.JTextField CA;
     private javax.swing.JButton CS;
     private javax.swing.JButton CS2;
     private javax.swing.JButton CS3;
@@ -10339,10 +10342,12 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JButton CS5;
     private javax.swing.JButton CS6;
     private javax.swing.JButton CS7;
+    private javax.swing.JTextField CT;
     private javax.swing.JTextField Cantidad;
     private javax.swing.JTextField Carpeta;
     private javax.swing.JTextField Chaleco;
     private javax.swing.JTextField Chamarra;
+    private javax.swing.JTextField Color;
     private javax.swing.JTextField Corbata;
     private javax.swing.JTextField Credencial;
     private javax.swing.JTextField DI;
@@ -10477,6 +10482,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FshT;
     private javax.swing.JMenuItem General;
     private javax.swing.JTextField Grua;
+    private javax.swing.JTextField Iad;
     private javax.swing.JComboBox<String> Interes;
     private javax.swing.JLabel LabelBE;
     private javax.swing.JLabel LabelBEP;
@@ -10498,9 +10504,11 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JLabel M3;
     private javax.swing.JLabel M4;
     private javax.swing.JTextField MT;
+    private javax.swing.JTextField Marca;
     private javax.swing.JMenu Menuadm;
     private javax.swing.JComboBox<String> Mes;
     private javax.swing.JTextField Metodo;
+    private javax.swing.JTextField Modelo;
     private javax.swing.JButton Modificartaller;
     private javax.swing.JButton Modm;
     private javax.swing.JTextField NameTaller;
@@ -10515,13 +10523,12 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Odtp;
     private javax.swing.JTextField PQ;
     private javax.swing.JTextField PQT;
-    private javax.swing.JTextField Pac;
     private javax.swing.JTextField Pagado;
     private javax.swing.JLabel Pago;
     private javax.swing.JTextField Pantalon;
     private javax.swing.JTextField Pendiente;
+    private javax.swing.JTextField Placas;
     private javax.swing.JTextField Playera;
-    private javax.swing.JComboBox<String> Ppc;
     private javax.swing.JTable Pre;
     private javax.swing.JTextField Presp;
     private javax.swing.JScrollPane Prestamos;
@@ -10578,6 +10585,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Serv1;
     private javax.swing.JRadioButton Si;
     private javax.swing.JTextField Status;
+    private javax.swing.JComboBox<String> Statustaller;
     private javax.swing.JScrollPane TDnomina;
     private javax.swing.JScrollPane TPagos;
     private javax.swing.JScrollPane TTalleres;
@@ -10760,10 +10768,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField lug;
     private javax.swing.JButton modP;
     private javax.swing.JButton modprestamo;
