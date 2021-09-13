@@ -127,7 +127,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         int id = Integer.parseInt(IDS.getText());
         String SQL = "UPDATE `servicio` SET `idZona` = ?, `Nombre Zona` = ?, `Supervisor` = ?, `Servicio` = ?,"
                 + " `Horario` = ?, `Abre` = ?, `Cierra` = ?,"
-                + " `Sabado` = ?, `Domingo` = ?, `Otro` = ?, `Tipo de valet` = ?, `Costo` = ? WHERE"
+                + " `Sabado` = ?, `Domingo` = ?, `Otro` = ?, `Tipo de valet` = ?, `Costo` = ?, `Status` = ? WHERE"
                 + " `servicio`.`idServ` = ?";
 
         try {
@@ -144,7 +144,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             pst.setString(10, OtroMOD);
             pst.setString(11, TDs);
             pst.setString(12, Costov);
-            pst.setInt(13, id);
+            pst.setString(13, StatusServ.getSelectedItem().toString());
+            pst.setInt(14, id);
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Servicio Modificado");
@@ -294,7 +295,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         String SQL = "INSERT INTO `servicio` (`idZona`, `Nombre Zona`,"
                 + " `Supervisor`, `Servicio`, `Horario`, `Abre`, `Cierra`, `Sabado`,"
-                + " `Domingo`, `Otro`, `Tipo de valet`, `Costo`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + " `Domingo`, `Otro`, `Tipo de valet`, `Costo`, `Status`) VALUES (?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -312,6 +314,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             pst.setString(10, OtroS);
             pst.setString(11, TDs);
             pst.setString(12, Costov);
+            pst.setString(13, StatusServ.getSelectedItem().toString());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Servicio agregado.");
@@ -1253,7 +1256,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                     TDS.setSelectedIndex(i);
                 }
             }
-            
+
             Costo.setText(String.valueOf(TServ.getValueAt(seleccionar, 12)));
 
             String combo3 = model.getValueAt(seleccionar, 13).toString();
