@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-09-2021 a las 22:07:56
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 8.0.9
+-- Tiempo de generación: 14-09-2021 a las 00:29:45
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -6599,50 +6599,48 @@ CREATE TABLE `prestamos` (
 --
 
 INSERT INTO `prestamos` (`idprestamos`, `Fecha de solicitud`, `Mes`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Cantidad`, `Interes`, `Monto total`, `Por quincena`, `Carpeta de descuentos`, `Fecha liberado`, `Status`, `Metodo`) VALUES
-(2, '18/01/2021', 'Enero', 'TORRES', 'REMEDIOS', 'JOSE LUIS', 'NORTE', 'LOMA VERDES', '3000', '600.0', '3600.0', '600.0', 'NORTE', '08/02/2021', 'PAGADO', 'BBVA'),
-(3, '20/01/2021', 'Enero', 'SANTANA', 'HERNANDEZ', 'RAUL', 'SANTANDER', 'SEMANAL', '1500', '225.0', '1725.0', '431.25', 'SANT SEMANAL', '14/04/2021', 'PAGADO', 'BBVA'),
-(4, '21/01/2021', 'Enero', 'MEDRANO', 'OVIEDO', 'JESUS MANUEL ', 'PONIENTE', 'MONTEVIDEO', '5000', '0.0', '5000', '0', 'PONIENTE', '23/01/2021 25/01/2021 ', 'DEBE', 'BBVA'),
-(5, '21/01/21', 'Enero', 'OLVERA', 'HERRERA', 'JOSE ALBERTO', 'SANTANDER', 'SEMANAL', '3000', '600.0', '3600.0', '600.0', 'SANTANDER', '14/04/2021', 'PAGADO', 'BBVA'),
-(6, '02/02/2021', 'Febrero', 'JIMENEZ', 'GOMEZ', 'SILAS ', 'SUR 2', 'PALMAS', '2000', '500.0', '2500.0', '312.5', 'SUR 2', '12/02/2021', 'PAGADO', 'BBVA'),
-(7, '08/02/2021', 'Febrero', 'DE LA CRUZ', 'MARIN', 'BLAS', 'SUR 2', 'ITURBIDE ', '2000', '400.0', '2400.0', '400.0', 'SUR 2', '12/02/2021', 'PAGADO ', 'BBVA '),
-(8, '08/02/2021', 'Febrero', 'RANGEL ', 'HERNANDEZ', 'ISRAEL ', 'SUR1', 'COPILOCO', '2000', '500.0', '2500.0', '312.5', 'SUR 1', '10/03/2021', 'PAGADO ', 'BBVA'),
-(9, '12/02/2021', 'Febrero', 'MONDRAGON', 'VILLEGAS', 'FERNANDO ', 'TOLUCA', 'SAN MATEO ', '2000', '500.0', '2500.0', '312.5', 'FORANEOS', '26/02/2021', 'PAGADO ', 'EFECTIVO '),
+(1, '18/01/2021', 'Enero', 'TORRES', 'REMEDIOS', 'JOSE LUIS', 'NORTE', 'LOMA VERDES', '3000', '600.0', '3600.0', '600.0', 'NORTE', '08/02/2021', 'PAGADO', 'BBVA'),
+(2, '20/01/2021', 'Enero', 'SANTANA', 'HERNANDEZ', 'RAUL', 'SANTANDER', 'SEMANAL', '1500', '225.0', '1725.0', '431.25', 'SANT SEMANAL', '14/04/2021', 'PAGADO', 'BBVA'),
+(3, '21/01/2021', 'Enero', 'MEDRANO', 'OVIEDO', 'JESUS MANUEL ', 'PONIENTE', 'MONTEVIDEO', '5000', '0.0', '5000', '300', 'PONIENTE', '23/01/2021 25/01/2021 ', 'DEBE', 'BBVA'),
+(4, '21/01/2021', 'Enero', 'OLVERA', 'HERRERA', 'JOSE ALBERTO', 'SANTANDER', 'SEMANAL', '3000', '600.0', '3600.0', '360.00', 'SANTANDER', '14/04/2021', 'PAGADO', 'BBVA'),
+(5, '02/02/2021', 'Febrero', 'JIMENEZ', 'GOMEZ', 'SILAS ', 'SUR 2', 'PALMAS', '2000', '500.0', '2500.0', '312.5', 'SUR 2', '12/02/2021', 'PAGADO', 'BBVA'),
+(6, '08/02/2021', 'Febrero', 'DE LA CRUZ', 'MARIN', 'BLAS', 'SUR 2', 'ITURBIDE ', '2000', '400.0', '2400.0', '400.0', 'SUR 2', '12/02/2021', 'PAGADO ', 'BBVA '),
+(7, '08/02/2021', 'Febrero', 'RANGEL ', 'HERNANDEZ', 'ISRAEL ', 'SUR1', 'COPILCO', '2000', '400.0', '2400.0', '400.0', 'SUR 1', '10/03/2021', 'PAGADO ', 'BBVA'),
+(8, '12/02/2021', 'Febrero', 'MONDRAGON', 'VILLEGAS', 'FERNANDO ', 'TOLUCA', 'SAN MATEO ', '2000', '500.0', '2500.0', '312.5', 'FORANEOS', '26/02/2021', 'PAGADO ', 'EFECTIVO '),
 (10, '22/02/2021', 'Febrero', 'JIMENEZ', 'JORGE', 'MIGUEL ', 'SUR 1', 'TLALPAN ', '2000', '400.0', '2400.0', '400.0', 'SUR 1', '23/04/2021', 'DEBE', 'BBVA'),
-(11, '24/02/2021', 'Febrero', 'GUERECA', 'CARDENAS', 'JUAN ANTONIO ', 'SUR 1', 'DESIERTO', '1000', '150.0', '1150.0', '287.5', 'SUR 1', '10/03/2021', 'PAGADO', 'BBVA '),
-(12, '22/02/2021', 'Febrero', 'JIMENEZ', 'JORGE', 'MIGUEL ', 'SUR 1', 'TLALPAN ', '2000', '400.0', '2400.0', '400.0', 'SUR 1', '23/04/2021', 'DEBE', 'BBVA'),
-(13, '24/02/2021', 'Febrero', 'GUERECA', 'CARDENAS ', 'JUAN ANTONIO ', 'SUR 1', 'DESIERTO', '1000', '150.0', '1150.0', '287.5', 'SUR 1 ', '10/03/2021', 'PAGADO', 'BBVA'),
-(14, '24/02/2021', 'Febrero', 'COLIN', 'ARENAS ', 'JOSE ALBERTO ', 'SUR 1', 'DESIERTO ', '1000', '150.0', '1150.0', '287.5', 'SUR 1 ', '10/03/2021', 'PAGADO', 'BBVA'),
-(15, '26/02/2021', 'Febrero', 'PADILLA', 'PARRADO', 'VICTORINO', 'PONIENTE', 'MARINA', '3000', '750.0', '3750.0', '468.75', 'PONIENTE', '10/03/2021', 'PAGADO', 'BBVA '),
-(16, '10/03/2021', 'Marzo', 'RAMOS', 'GARCIA ', 'MARIANO', 'SUR 2', 'POLANCO', '1000', '100.0', '1100.0', '550.0', 'SUR 2 ', '17/03/2021', 'PAGADO ', 'BBVA'),
-(17, '10/03/2021', 'Marzo', 'CARBAJAL ', 'MARTINEZ', 'GERMAN ', 'SANTANDER ', 'QUINCENAL ', '5000', '1000.0', '6000.0', '1000.0', 'SANTANDER', '26/03/2021', 'PAGADO', 'BBVA '),
-(18, '10/03/2021', 'Marzo', 'PADILLA', 'SIXTO', 'ISAIAS ', 'SUR 1', 'SUPERVISOR', '1000', '0.0', '1000', '0', 'SUR 1', '12/03/2021', 'PAGADO', 'BBVA'),
-(19, '23/03/2021', 'Marzo', 'ORTIZ', 'LAURIANO', 'PONCIANO', 'SUR 1', 'XOTEPINGO', '1500', '225.0', '1725.0', '431.25', 'SUR 1', '23/03/2021', 'PAGADO', 'BBVA'),
-(20, '29/03/2021', 'Enero', 'LOPEZ', 'ZEPEDA', 'AARON', 'SUR 2 ', 'TEHUANTEPEC', '3000', '300.0', '3300.0', '1650.0', 'SUR 2', '09/04/2021', 'PAGADO', 'SANTANDER'),
-(21, '08/04/2021', 'Abril', 'GARCIA', 'GUARNEROS', 'JOSE ANTONIO ', 'SUR 1', 'INSURGENTES', '2000', '400.0', '2400.0', '400.0', 'SUR 1', '14/04/2021', 'PAGADO', 'BBVA '),
-(22, '15/04/2021', 'Abril', 'GONZALEZ', 'GUTIERREZ ', 'JUAN CARLOS', 'SUR 2', 'PALMAS', '1000', '200.0', '1200.0', '200.0', 'SUR 2', '16/04/2021', 'PAGADO', 'BBVA '),
-(23, '16/04/2021', 'Abril', 'SANCHEZ', 'MORALES', 'ANA MINERVA', 'OFICINA', 'OFICINA', '1500', '300.0', '1800.0', '300.0', 'OFICINA', '28/04/2021', 'PAGADO', 'BBVA'),
-(24, '19/04/2021', 'Abril', 'VALENCIA ', 'VALENCIA', 'ANGEL ', 'PONIENTE', 'CANAL DEL NORTE', '1000', '150.0', '1150.0', '287.5', 'PONIENTE ', '28/04/2021', 'PAGADO', 'BBVA '),
-(25, '01/05/2021', 'Mayo', 'GONZALEZ', 'MUÑOZ', 'JESUS', 'PONIENTE', 'CABALLITO', '2000', '400.0', '2400.0', '400.0', 'PONIENTE', '07/05/2021', 'PAGADO', 'BBVA'),
-(26, '03/05/2021', 'Mayo', 'ORTIZ ', 'LAURIANO', 'PONCIANO', 'SUR 1', 'XOTEPINGO', '1500', '225.0', '1725.0', '431.25', 'SUR 1', '07/05/2021', 'PAGADO', 'BBVA '),
-(27, '11/05/2021', 'Mayo', 'GUERECA', 'CARDENAS', 'JUAN ANTONIO ', 'SUR 1', 'DESIERTO', '2000', '400.0', '2400.0', '400.0', 'SUR 1', '13/05/2021', 'PAGADO', 'BBVA '),
-(28, '21/05/2021', 'Mayo', 'GARCIA', 'RAMIREZ', 'ALFREDO', 'SUR 2', 'SUPERVISOR', '1500', '150.0', '1650.0', '825.0', 'SUR 2', '28/05/2021', 'SE QUEDA EN EXPEDIENTE', 'EFECTIVO'),
-(29, '24/05/2021', 'Mayo', 'DE LA CRUZ', 'MARIN', 'BLAS', 'SUR 1', 'ITURBIDE', '3000', '300.0', '3300.0', '1650.0', 'SUR 1', '28/05/2021', 'PAGADO', 'BBVA'),
-(30, '28/05/2021', 'Mayo', 'JIMEZ', 'GOMEZ', 'SILAS', 'SUR 2', 'PALMAS', '3000', '750.0', '3750.0', '468.75', 'SUR 2', '11/06/2021', 'DEBE', 'BBVA'),
-(31, '27/05/2021', 'Mayo', 'RANGEL', 'HERNANDEZ', 'ISRAEL', 'SUR 1', 'COPILCO', '2500', '500.0', '3000.0', '500.0', 'SUR 1', '11/06/2021', 'DEBE', 'BBVA'),
-(32, '07/06/2021', 'Junio', 'TORRES', 'REMEDIOS', 'JOSE LUIS', 'NORTE', 'LOMAS VERDES', '3000', '600.0', '3600.0', '600.0', 'NORTE', '23/06/2021', 'DEBE', 'BBVA'),
-(33, '15/06/2021', 'Junio', 'VALENCIA', 'VALENCIA', 'ANGEL', 'PO0NIENTE', 'CANAL DEL NORTE', '1000', '150.0', '1150.0', '287.5', 'PONIENTE', '28/06/2021', 'PAGADO', 'BBVA'),
-(34, '22/06/2021', 'Junio', 'GARCIA', 'CRUZ', 'HUMBERTO', 'SUR 2', 'NIZA', '2000', '300.0', '2300.0', '575.0', 'SUR 2', '23/06/2021', 'PAGADO', 'BBVA'),
-(35, '23/06/2021', 'Junio', 'RUIZ', 'LADRILLERO', 'ARTURO', 'NORTE', 'SUPERVISOR', '3000', '600.0', '3600.0', '600.0', 'NORTE', '23/06/2021', 'DEBE', 'BBVA'),
-(36, '12/07/2021', 'Julio', 'MELCHOR', 'FLORES', 'TERESA', 'OFICINA', 'OFICINA', '3000', '600.0', '3600.0', '600.0', 'OFICINA', '15/07/2021', 'DEBE', 'BBVA'),
-(37, '12/07/2021', 'Julio', 'SANCHEZ', 'MORALES', 'ANA MINERVA ', 'OFICINA ', 'OFICINA', '3000', '600.0', '3600.0', '600.0', 'OFICINA ', '15/07/2021', 'DEBE', 'BBVA '),
-(38, '12/07/2021', 'Julio', 'OLVERA', 'HERRERA', 'JOSE ALBERTO', 'SANTANDER', 'SEMANAL', '3000', '600.0', '3600.0', '600.0', 'SANTANDER', '15/07/2021', 'DEBE', 'BBVA'),
-(39, '21/07/2021', 'Julio', 'GOMEZ', 'CARRILLO', 'JUAN', 'SUR 1', 'OLIVO', '2000', '500.0', '2500.0', '312.5', 'SUR 1', '10/08/2021', 'DEBE', 'BBVA'),
-(40, '26/07/2021', 'Julio', 'LAURIANO ', 'ORTIZ ', 'PONCIANO', 'SUR 1', 'XOTEPINGO ', '1500', '225.0', '1725.0', '431.25', 'SUR 1 ', '10/08/2021', 'DEBE', 'BBVA'),
-(41, '03/08/2021', 'Agosto', 'PADILLA', 'PARRADO', 'VICTORINO', 'PONIENTE', 'SEMANAL', '2000', '400.0', '2400.0', '400.0', 'PONIENTE', '10/08/2021', 'DEBE ', 'BBVA'),
-(42, '05/08/2021', 'Agosto', 'DE LA CRUZ', 'MARIN ', 'BLAS', 'SUR 1', 'ITURBIDE', '1500', '225.0', '1725.0', '431.25', 'SUR 1', '26/08/21', 'DEBE', 'SANTANDER'),
-(43, '10/08/2021', 'Agosto', 'PEDROZA', 'ARGAEZ', 'JULIO CESAR ', 'SUR 2', 'KOWLAAN', '1000', '150.0', '1150.0', '287.5', 'SUR 2', '24/08/2021', 'PAGADO', 'EFECTIVO'),
-(44, '11/08/2021', 'Agosto', 'COLIN', 'ARENAS', 'JOSE ALBERTO', 'SUR 1', 'DESIERTO', '1500', '225.0', '1725.0', '431.25', 'SUR 1', '18/08/2021', 'DEBE', 'BBVA'),
-(45, '12/08/2021', 'Agosto', 'GONZALEZ', 'GUTIERREZ', 'JUAN CARLOS ', 'SUR 2', 'PALMAS', '1500', '225.0', '1725.0', '431.25', 'SUR 2', '27/08/2021', 'DEBE', 'BBVA');
+(12, '24/02/2021', 'Febrero', 'COLIN', 'ARENAS ', 'JOSE ALBERTO ', 'SUR 1', 'DESIERTO ', '1000', '150.0', '1150.0', '287.5', 'SUR 1 ', '10/03/2021', 'PAGADO', 'BBVA'),
+(14, '26/02/2021', 'Febrero', 'PADILLA', 'PARRADO', 'VICTORINO', 'PONIENTE', 'MARINA', '3000', '750.0', '3750.0', '468.75', 'PONIENTE', '10/03/2021', 'PAGADO', 'BBVA '),
+(15, '10/03/2021', 'Marzo', 'RAMOS', 'GARCIA ', 'MARIANO', 'SUR 2', 'POLANCO', '1000', '100.0', '1100.0', '550.0', 'SUR 2 ', '17/03/2021', 'PAGADO ', 'BBVA'),
+(16, '10/03/2021', 'Marzo', 'CARBAJAL ', 'MARTINEZ', 'GERMAN ', 'SANTANDER ', 'QUINCENAL ', '5000', '1000.0', '6000.0', '1000.0', 'SANTANDER', '26/03/2021', 'PAGADO', 'BBVA '),
+(17, '10/03/2021', 'Marzo', 'PADILLA', 'SIXTO', 'ISAIAS ', 'SUR 1', 'SUPERVISOR', '1000', '0.0', '1000', '0', 'SUR 1', '12/03/2021', 'PAGADO', 'BBVA'),
+(18, '23/03/2021', 'Marzo', 'ORTIZ', 'LAURIANO', 'PONCIANO', 'SUR 1', 'XOTEPINGO', '1500', '225.0', '1725.0', '431.25', 'SUR 1', '23/03/2021', 'PAGADO', 'BBVA'),
+(19, '29/03/2021', 'Enero', 'LOPEZ', 'ZEPEDA', 'AARON', 'SUR 2 ', 'TEHUANTEPEC', '3000', '300.0', '3300.0', '1650.0', 'SUR 2', '09/04/2021', 'PAGADO', 'SANTANDER'),
+(20, '08/04/2021', 'Abril', 'GARCIA', 'GUARNEROS', 'JOSE ANTONIO ', 'SUR 1', 'INSURGENTES', '2000', '400.0', '2400.0', '400.0', 'SUR 1', '14/04/2021', 'PAGADO', 'BBVA '),
+(21, '15/04/2021', 'Abril', 'GONZALEZ', 'GUTIERREZ ', 'JUAN CARLOS', 'SUR 2', 'PALMAS', '1000', '200.0', '1200.0', '200.0', 'SUR 2', '16/04/2021', 'PAGADO', 'BBVA '),
+(22, '16/04/2021', 'Abril', 'SANCHEZ', 'MORALES', 'ANA MINERVA', 'OFICINA', 'OFICINA', '1500', '300.0', '1800.0', '300.0', 'OFICINA', '28/04/2021', 'PAGADO', 'BBVA'),
+(23, '19/04/2021', 'Abril', 'VALENCIA ', 'VALENCIA', 'ANGEL ', 'PONIENTE', 'CANAL DEL NORTE', '1000', '150.0', '1150.0', '287.5', 'PONIENTE ', '28/04/2021', 'PAGADO', 'BBVA '),
+(24, '01/05/2021', 'Mayo', 'GONZALEZ', 'MUÑOZ', 'JESUS', 'PONIENTE', 'CABALLITO', '2000', '400.0', '2400.0', '400.0', 'PONIENTE', '07/05/2021', 'PAGADO', 'BBVA'),
+(25, '03/05/2021', 'Mayo', 'ORTIZ ', 'LAURIANO', 'PONCIANO', 'SUR 1', 'XOTEPINGO', '1500', '225.0', '1725.0', '431.25', 'SUR 1', '07/05/2021', 'PAGADO', 'BBVA '),
+(26, '11/05/2021', 'Mayo', 'GUERECA', 'CARDENAS', 'JUAN ANTONIO ', 'SUR 1', 'DESIERTO', '2000', '400.0', '2400.0', '400.0', 'SUR 1', '13/05/2021', 'PAGADO', 'BBVA '),
+(27, '21/05/2021', 'Mayo', 'GARCIA', 'RAMIREZ', 'ALFREDO', 'SUR 2', 'SUPERVISOR', '1500', '150.0', '1650.0', '825.0', 'SUR 2', '28/05/2021', 'SE QUEDA EN EXPEDIENTE', 'EFECTIVO'),
+(28, '24/05/2021', 'Mayo', 'DE LA CRUZ', 'MARIN', 'BLAS', 'SUR 1', 'ITURBIDE', '3000', '300.0', '3300.0', '1650.0', 'SUR 1', '28/05/2021', 'PAGADO', 'BBVA'),
+(29, '28/05/2021', 'Mayo', 'JIMEZ', 'GOMEZ', 'SILAS', 'SUR 2', 'PALMAS', '3000', '750.0', '3750.0', '468.75', 'SUR 2', '11/06/2021', 'DEBE', 'BBVA'),
+(30, '27/05/2021', 'Mayo', 'RANGEL', 'HERNANDEZ', 'ISRAEL', 'SUR 1', 'COPILCO', '2500', '500.0', '3000.0', '500.0', 'SUR 1', '11/06/2021', 'DEBE', 'BBVA'),
+(31, '07/06/2021', 'Junio', 'TORRES', 'REMEDIOS', 'JOSE LUIS', 'NORTE', 'LOMAS VERDES', '3000', '600.0', '3600.0', '600.0', 'NORTE', '23/06/2021', 'DEBE', 'BBVA'),
+(32, '15/06/2021', 'Junio', 'VALENCIA', 'VALENCIA', 'ANGEL', 'PO0NIENTE', 'CANAL DEL NORTE', '1000', '150.0', '1150.0', '287.5', 'PONIENTE', '28/06/2021', 'PAGADO', 'BBVA'),
+(33, '22/06/2021', 'Junio', 'GARCIA', 'CRUZ', 'HUMBERTO', 'SUR 2', 'NIZA', '2000', '300.0', '2300.0', '575.0', 'SUR 2', '23/06/2021', 'PAGADO', 'BBVA'),
+(34, '23/06/2021', 'Junio', 'RUIZ', 'LADRILLERO', 'ARTURO', 'NORTE', 'SUPERVISOR', '3000', '600.0', '3600.0', '600.0', 'NORTE', '23/06/2021', 'DEBE', 'BBVA'),
+(35, '12/07/2021', 'Julio', 'MELCHOR', 'FLORES', 'TERESA', 'OFICINA', 'OFICINA', '3000', '600.0', '3600.0', '600.0', 'OFICINA', '15/07/2021', 'DEBE', 'BBVA'),
+(36, '12/07/2021', 'Julio', 'SANCHEZ', 'MORALES', 'ANA MINERVA ', 'OFICINA ', 'OFICINA', '3000', '600.0', '3600.0', '600.0', 'OFICINA ', '15/07/2021', 'DEBE', 'BBVA '),
+(37, '12/07/2021', 'Julio', 'OLVERA', 'HERRERA', 'JOSE ALBERTO', 'SANTANDER', 'SEMANAL', '3000', '600.0', '3600.0', '600.0', 'SANTANDER', '15/07/2021', 'DEBE', 'BBVA'),
+(38, '21/07/2021', 'Julio', 'GOMEZ', 'CARRILLO', 'JUAN', 'SUR 1', 'OLIVO', '2000', '500.0', '2500.0', '312.5', 'SUR 1', '10/08/2021', 'DEBE', 'BBVA'),
+(39, '26/07/2021', 'Julio', 'LAURIANO ', 'ORTIZ ', 'PONCIANO', 'SUR 1', 'XOTEPINGO ', '1500', '225.0', '1725.0', '431.25', 'SUR 1 ', '10/08/2021', 'DEBE', 'BBVA'),
+(40, '03/08/2021', 'Agosto', 'PADILLA', 'PARRADO', 'VICTORINO', 'PONIENTE', 'SEMANAL', '2000', '400.0', '2400.0', '400.0', 'PONIENTE', '10/08/2021', 'DEBE ', 'BBVA'),
+(41, '05/08/2021', 'Agosto', 'DE LA CRUZ', 'MARIN ', 'BLAS', 'SUR 1', 'ITURBIDE', '1500', '225.0', '1725.0', '431.25', 'SUR 1', '26/08/21', 'DEBE', 'SANTANDER'),
+(42, '10/08/2021', 'Agosto', 'PEDROZA', 'ARGAEZ', 'JULIO CESAR ', 'SUR 2', 'KOWLAAN', '1000', '150.0', '1150.0', '287.5', 'SUR 2', '24/08/2021', 'PAGADO', 'EFECTIVO'),
+(43, '11/08/2021', 'Agosto', 'COLIN', 'ARENAS', 'JOSE ALBERTO', 'SUR 1', 'DESIERTO', '1500', '225.0', '1725.0', '431.25', 'SUR 1', '18/08/2021', 'DEBE', 'BBVA'),
+(44, '12/08/2021', 'Agosto', 'GONZALEZ', 'GUTIERREZ', 'JUAN CARLOS ', 'SUR 2', 'PALMAS', '1500', '225.0', '1725.0', '431.25', 'SUR 2', '27/08/2021', 'DEBE', 'BBVA'),
+(46, '24/02/2021', 'Febrero', 'GUERECA', 'CARDENAS', 'JUAN ANTONIO', 'SUR 1', 'DESIERTO', '1000', '150.0', '1150.0', '287.5', 'SUR 1', '10/03/2021', 'PAGADO', 'BBVA');
 
 -- --------------------------------------------------------
 
@@ -6652,103 +6650,104 @@ INSERT INTO `prestamos` (`idprestamos`, `Fecha de solicitud`, `Mes`, `Apellido P
 
 CREATE TABLE `servicio` (
   `idServ` int(11) NOT NULL,
-  `idZona` varchar(45) CHARACTER SET utf8 NOT NULL,
-  `Nombre Zona` varchar(45) CHARACTER SET utf8 NOT NULL,
-  `Supervisor` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `Servicio` varchar(80) CHARACTER SET utf8 NOT NULL,
-  `Horario` varchar(45) CHARACTER SET utf8 NOT NULL,
-  `Abre` varchar(45) CHARACTER SET utf8 NOT NULL,
-  `Cierra` varchar(45) CHARACTER SET utf8 NOT NULL,
-  `Sabado` varchar(45) CHARACTER SET utf8 NOT NULL,
-  `Domingo` varchar(45) CHARACTER SET utf8 NOT NULL,
-  `Otro` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `Tipo de valet` text COLLATE utf8_spanish_ci NOT NULL,
-  `Costo` text COLLATE utf8_spanish_ci NOT NULL
+  `idZona` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `Nombre Zona` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `Supervisor` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `Servicio` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `Horario` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Abre` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Cierra` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Sabado` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Domingo` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `Otro` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `Tipo de valet` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `Costo` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `Status` varchar(25) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `servicio`
 --
 
-INSERT INTO `servicio` (`idServ`, `idZona`, `Nombre Zona`, `Supervisor`, `Servicio`, `Horario`, `Abre`, `Cierra`, `Sabado`, `Domingo`, `Otro`, `Tipo de valet`, `Costo`) VALUES
-(1, '1', 'Sur 1', '', 'SANTANDER GUADALUPE', '', '', '', '', '', '', '', ''),
-(2, '1', 'Sur 1', '', 'SANTANDER INSURGENTES', '', '', '', '', '', '', '', ''),
-(3, '1', 'Sur 1', '', 'SANTANDER SAN JERONIMO', '', '', '', '', '', '', '', ''),
-(4, '1', 'Sur 1', '', 'SANTANDER XOLA', '', '', '', '', '', '', '', ''),
-(5, '1', 'Sur 1', '', 'SANTANDER TLALPAN', '', '', '', '', '', '', '', ''),
-(6, '1', 'Sur 1', '', 'SANTANDER FELIX CUEVAS', '', '', '', '', '', '', '', ''),
-(7, '1', 'Sur 1', '', 'SANTANDER COPILCO', '', '', '', '', '', '', '', ''),
-(8, '1', 'Sur 1', '', 'SANT. DESIERTO DE LOS LEONES', '', '', '', '', '', '', '', ''),
-(9, '1', 'Sur 1', '', 'EST. ITURBIDE $15 X HRA', '', '', '', '', '', '', '', ''),
-(10, '1', 'Sur 1', '', 'EST. PTE TITLA $18 X HRA', '', '', '', '', '', '', '', ''),
-(11, '1', 'Sur 1', '', 'CLUB KIDS $50 BOLETAJE', '', '', '', '', '', '', '', ''),
-(12, '1', 'Sur 1', '', 'PARTY SURPRISE $45 BOLETAJE', '', '', '', '', '', '', '', ''),
-(13, '1', 'Sur 1', '', 'CITY EXPRESS PERIFERICO', '', '', '', '', '', '', '', ''),
-(14, '1', 'Sur 1', '', 'XOTEPINGO', '', '', '', '', '', '', '', ''),
-(15, '1', 'Sur 1', '', 'EDIFICIO AGATHA', '', '', '', '', '', '', '', ''),
-(16, '2', 'Sur 2', '', 'SANTANDER MASARIK', '', '', '', '', '', '', '', ''),
-(17, '2', 'Sur 2', '', 'SANTANDER MISISIPI', '', '', '', '', '', '', '', ''),
-(18, '2', 'Sur 2', '', 'SANTANDER NEWTON', '', '', '', '', '', '', '', ''),
-(19, '2', 'Sur 2', '', 'SANTANDER PALMAS', '', '', '', '', '', '', '', ''),
-(20, '2', 'Sur 2', '', 'SANTANDER PLAZA REFORMA', '', '', '', '', '', '', '', ''),
-(21, '2', 'Sur 2', '', 'SANTANDER POLANCO', '', '', '', '', '', '', '', ''),
-(22, '2', 'Sur 2', '', 'SANTANDER L. DE CHAPULTEPEC', '', '', '', '', '', '', '', ''),
-(23, '2', 'Sur 2', '', 'SANTANDER NIZA', '', '', '', '', '', '', '', ''),
-(24, '2', 'Sur 2', '', 'NOTARIA EDIF. ROSSEAU', '', '', '', '', '', '', '', ''),
-(25, '2', 'Sur 2', '', 'GRUPO EXPANSION', '', '', '', '', '', '', '', ''),
-(26, '2', 'Sur 2', '', 'HONDA SAN ANTONIO', '', '', '', '', '', '', '', ''),
-(27, '2', 'Sur 2', '', 'BELMAR  $50 BOLETAJE', '', '', '', '', '', '', '', ''),
-(28, '2', 'Sur 2', '', 'EST. TEHUANTEPEC $22 X HRA', '', '', '', '', '', '', '', ''),
-(29, '3', 'Zona Norte', '', 'SANTANDER LOMAS VERDES', '', '', '', '', '', '', '', ''),
-(30, '3', 'Zona Norte', '', 'SANTANDER INTERLOMAS', '', '', '', '', '', '', '', ''),
-(31, '3', 'Zona Norte', '', 'ENTRE GAUCHOS S/BOLETAJE', '', '', '', '', '', '', '', ''),
-(32, '3', 'Zona Norte', '', 'LA ERA/LA ERA EST.', '', '', '', '', '', '', '', ''),
-(33, '3', 'Zona Norte', '', 'LA ERA SANTA CRUZ', '', '', '', '', '', '', '', ''),
-(34, '4', 'Foraneos Acapulco', '', 'SANTANDER RENACIMIENTO', '', '', '', '', '', '', '', ''),
-(35, '4', 'Foraneos Acapulco', '', 'SANTANDER PRINCIPAPL', '', '', '', '', '', '', '', ''),
-(36, '4', 'Foraneos Acapulco', '', 'SANTANDER COSTA AZUL', '', '', '', '', '', '', '', ''),
-(37, '5', 'Zona Poniente', '', 'SANTANDER MONTEVIDEO', '', '', '', '', '', '', '', ''),
-(38, '5', 'Zona Poniente', '', 'SANTANDER CANAL DEL NORTE', '', '', '', '', '', '', '', ''),
-(39, '5', 'Zona Poniente', '', 'SANTANDER AZCAPOTZALCO', '', '', '', '', '', '', '', ''),
-(40, '5', 'Zona Poniente', '', 'SANTANDER MARINA NACIONAL', '', '', '', '', '', '', '', ''),
-(41, '5', 'Zona Poniente', '', 'SANTANDER EL CABALLITO', '', '', '', '', '', '', '', ''),
-(42, '6', 'Foraneos Puebla', '', 'SANTANDER TEHUACAN', '', '', '', '', '', '', '', ''),
-(43, '7', 'Foraneos Toluca', '', 'SANTANDER MORELOS', '', '', '', '', '', '', '', ''),
-(44, '7', 'Foraneos Toluca', '', 'SANTANDER METEPEC', '', '', '', '', '', '', '', ''),
-(45, '7', 'Foraneos Toluca', '', 'EST. MORELOS', '', '', '', '', '', '', '', ''),
-(46, '7', 'Foraneos Toluca', '', 'EST. VITRALES', '', '', '', '', '', '', '', ''),
-(47, '7', 'Foraneos Toluca', '', 'EST. PROCURADORIA', '', '', '', '', '', '', '', ''),
-(48, '7', 'Foraneos Toluca', '', 'EST. SAN MATEO', '', '', '', '', '', '', '', ''),
-(49, '7', 'Foraneos Toluca', '', 'SALON DIAMANTE', '', '', '', '', '', '', '', ''),
-(50, '7', 'Foraneos Toluca', '', 'SALON HACIENDA LA BONITA', '', '', '', '', '', '', '', ''),
-(51, '7', 'Foraneos Toluca', '', 'SALON FINCA LAS JOYAS', '', '', '', '', '', '', '', ''),
-(52, '7', 'Foraneos Toluca', '', 'SALON ALCATRACES', '', '', '', '', '', '', '', ''),
-(53, '7', 'Foraneos Toluca', '', 'JARDIN ESMERALDA', '', '', '', '', '', '', '', ''),
-(54, '7', 'Foraneos Toluca', '', 'SALON MALLORCA', '', '', '', '', '', '', '', ''),
-(55, '7', 'Foraneos Toluca', '', 'SALON TARASCO', '', '', '', '', '', '', '', ''),
-(56, '7', 'Foraneos Toluca', '', 'SALON MAGYCAL PARTY', '', '', '', '', '', '', '', ''),
-(57, '1', 'Sur 1', '', 'SUPERVISOR', '', '', '', '', '', '', '', ''),
-(58, '2', 'Sur 2', '', 'SUPERVISOR', '', '', '', '', '', '', '', ''),
-(59, '3', 'Zona Norte', '', 'SUPERVISOR', '', '', '', '', '', '', '', ''),
-(60, '5', 'Zona Poniente', '', 'SUPERVISOR', '', '', '', '', '', '', '', ''),
-(61, '2', 'Sur 2', 'ARTURO LADRILLERO', 'KOWLAAN $30 BOLETAJE SS. $50', '', '', '', '', '', '08:00 AM HASTA EL CIERRE', '', ''),
-(62, '4', 'Foraneos Acapulco', 'Leonel garcia', 'Santander re-nacimiento', 'L a V', '8:30', '16:00', '10:00 - 14:00', 'OFF', '', 'Valet', 'Sin costo'),
-(63, '8', 'Oficina', '', 'Recepción', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(64, '8', 'Oficina', '', 'Aux contable', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(65, '8', 'Oficina', '', 'Sistemas', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(66, '8', 'Oficina', '', 'Ventas', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(67, '8', 'Oficina', '', 'Limpieza', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(68, '1', 'Sur 1', '', 'Comodin', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(69, '2', 'Sur 2', '', 'Comodin', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(70, '3', 'Norte', '', 'Comodin', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(71, '5', 'Poniente', '', 'Poniente', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(72, '5', 'Poniente', '', 'Cordinador', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(73, '3', 'Norte', '', 'Cordinador', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(74, '2', 'Sur 2', '', 'Cordinador', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(75, '1', 'Sur 1', '', 'Cordinador', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(76, '4', 'Foraneos Acapulco', '', 'Supervisor', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(77, '6', 'Foraneos Puebla', '', 'Supervisor', 'L a V', '', '', 'OFF', 'OFF', '', '.', ''),
-(78, '7', 'Foraneos Toluca', '', 'Supervisor', 'L a V', '', '', 'OFF', 'OFF', '', '.', '');
+INSERT INTO `servicio` (`idServ`, `idZona`, `Nombre Zona`, `Supervisor`, `Servicio`, `Horario`, `Abre`, `Cierra`, `Sabado`, `Domingo`, `Otro`, `Tipo de valet`, `Costo`, `Status`) VALUES
+(1, '1', 'Sur 1', 'ISAIAS PADILLA', 'OLIVO', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(2, '1', 'Sur 1', 'ISAIAS PADILLA', 'SANTANDER INSURGENTES', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(3, '1', 'Sur 1', 'ISAIAS PADILLA', 'SANTANDER SAN JERONIMO', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(4, '1', 'Sur 1', 'ISAIAS PADILLA', 'SANTANDER XOLA', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(5, '1', 'Sur 1', 'ISAIAS PADILLA', 'SANTANDER TLALPAN', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(6, '1', 'Sur 1', 'ISAIAS PADILLA', 'SANTANDER FELIX CUEVAS', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(7, '1', 'Sur 1', 'ISAIAS PADILLA', 'SANTANDER COPILCO', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(8, '1', 'Sur 1', 'ISAIAS PADILLA', 'SANT. DESIERTO DE LOS LEONES', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(9, '1', 'Sur 1', 'ISAIAS PADILLA', 'EST. ITURBIDE $15 X HRA', '24 HRS', '', '', '', '', '', 'ESTACIONAMIENTOS CDMX', '15', 'Abierto'),
+(10, '1', 'Sur 1', 'ISAIAS PADILLA', 'EST. PTE TITLA $18 X HRA', '24 HRS', '', '', '', '', '', 'ESTACIONAMIENTOS CDMX', '18', 'Abierto'),
+(11, '1', 'Sur 1', 'ISAIAS PADILLA', 'CLUB KIDS $50 BOLETAJE', '', '', '', '', '', '$50 X EVENTO', 'EVENTOS', '50', 'Cerrado por Contingencia'),
+(12, '1', 'Sur 1', 'ISAIAS PADILLA', 'PARTY SURPRISE $45 BOLETAJE', '', '', '', '', '', 'FIJO', 'EVENTOS', '45', 'Cerrado por Contingencia'),
+(13, '1', 'Sur 1', 'ISAIAS PADILLA', 'CITY EXPRESS PERIFERICO', '24 HRS', '', '', '', '', '', 'SERVICIOS VP', 'Sin costo', 'Cerrado por Contingencia'),
+(14, '1', 'Sur 1', 'ISAIAS PADILLA', 'XOTEPINGO', '', '', '', '', '', '12:45 PM HASTA EL CIERRE', 'SERVICIOS VP', 'Sin costo', 'Abierto'),
+(15, '1', 'Sur 1', 'ISAIAS PADILLA', 'EDIFICIO AGATHA', '24 HRS', '', '', '', '', '', 'SERVICIOS VP', 'Sin costo', 'Abierto'),
+(16, '2', 'Sur 2', 'ARTURO LADRILLERO', 'SANTANDER MASARIK', 'L a V', '08:30', '16:00', '10:00 A 14:00', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(17, '2', 'Sur 2', 'ARTURO LADRILLERO', 'SANTANDER MISISIPI', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(18, '2', 'Sur 2', 'ARTURO LADRILLERO', 'SANTANDER NEWTON', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(19, '2', 'Sur 2', 'ARTURO LADRILLERO', 'SANTANDER PALMAS', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(20, '2', 'Sur 2', 'ARTURO LADRILLERO', 'SANTANDER PLAZA REFORMA', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(21, '2', 'Sur 2', 'ARTURO LADRILLERO', 'SANTANDER POLANCO', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(22, '2', 'Sur 2', 'ARTURO LADRILLERO', 'SANTANDER L. DE CHAPULTEPEC', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(23, '2', 'Sur 2', 'ARTURO LADRILLERO', 'SANTANDER NIZA', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(24, '2', 'Sur 2', 'ARTURO LADRILLERO', 'NOTARIA EDIF. ROSSEAU', 'L a V', '09:00', '20:00', 'OFF', 'OFF', '', 'SERVICIOS VP', 'Sin costo', 'Abierto'),
+(25, '2', 'Sur 2', 'ARTURO LADRILLERO', 'GRUPO EXPANSION', 'L a V', '09:00', '19:00', 'OFF', 'OFF', '', 'SERVICIOS VP', 'Sin costo', 'Cerrado por Contingencia'),
+(26, '2', 'Sur 2', 'ARTURO LADRILLERO', 'HONDA SAN ANTONIO', 'L a V', '08:45', '19:00', '08:00 A 16:00', 'OFF', '', 'SERVICIOS VP', 'Sin costo', 'Abierto'),
+(27, '2', 'Sur 2', 'ARTURO LADRILLERO', 'BELMAR  $50 BOLETAJE', '', '', '', '', '', 'FIJO', 'EVENTOS', '50', 'Cerrado por Contingencia'),
+(28, '2', 'Sur 2', 'ARTURO LADRILLERO', 'EST. TEHUANTEPEC $22 X HRA', '24 HRS', '', '', '', '', '', 'ESTACIONAMIENTOS CDMX', '22', 'Abierto'),
+(29, '3', 'Zona Norte', 'ARTURO LADRILLERO', 'SANTANDER LOMAS VERDES', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(30, '3', 'Zona Norte', 'ARTURO LADRILLERO', 'SANTANDER INTERLOMAS', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(31, '3', 'Zona Norte', 'ARTURO LADRILLERO', 'ENTRE GAUCHOS S/BOLETAJE', '', '', '', '', '', '8:00 AM HASTA CIERRE', 'SERVICIOS VP', 'Sin costo', 'Abierto'),
+(32, '3', 'Zona Norte', 'ARTURO LADRILLERO', 'LA ERA/LA ERA EST.', 'L a V', '10:00', '22:30', '10:00 a 22:30', '10:00 a 22:30', '', 'SERVICIOS VP', 'Sin costo', 'Abierto'),
+(33, '3', 'Zona Norte', 'ARTURO LADRILLERO', 'LA ERA SANTA CRUZ', 'L a V', '10:00', '22:30', '10:00 a 22:30', '10:00 a 22:30', '', 'SERVICIOS VP', 'Sin costo', 'Abierto'),
+(34, '4', 'Foraneos Acapulco', 'LEONEL OLIVAR', 'SANTANDER RENACIMIENTO', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER FORANEOS', 'Sin costo', 'Abierto'),
+(35, '4', 'Foraneos Acapulco', 'LEONEL OLIVAR', 'SANTANDER PRINCIPAPL', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER FORANEOS', 'Sin costo', 'Abierto'),
+(36, '4', 'Foraneos Acapulco', 'LEONEL OLIVAR', 'SANTANDER COSTA AZUL', 'L a V', '08:30', '16:00', '9:00 A 16:00', 'OFF', '', 'SANTANDER FORANEOS', 'Sin costo', 'Abierto'),
+(37, '5', 'Zona Poniente', 'ARTURO LADRILLERO', 'SANTANDER MONTEVIDEO', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(38, '5', 'Zona Poniente', 'ARTURO LADRILLERO', 'SANTANDER CANAL DEL NORTE', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(39, '5', 'Zona Poniente', 'ARTURO LADRILLERO', 'SANTANDER AZCAPOTZALCO', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(40, '5', 'Zona Poniente', 'ARTURO LADRILLERO', 'SANTANDER MARINA NACIONAL', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(41, '5', 'Zona Poniente', 'ARTURO LADRILLERO', 'SANTANDER EL CABALLITO', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(42, '6', 'Foraneos Puebla', 'DELFINO DURAN', 'SANTANDER TEHUACAN', 'L a V', '08:30', '16:00', '9:00 A 16:00', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(43, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'SANTANDER MORELOS', 'L a V', '08:30', '16:00', '9:00 A 16:00', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(44, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'SANTANDER METEPEC', 'L a V', '08:30', '16:00', '9:00 A 16:00', 'OFF', '', 'SANTANDER CDMX', 'Sin costo', 'Abierto'),
+(45, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'EST. MORELOS', 'L a V', '08:00', '22:00', '8:00 A 22:00', 'OFF', '', 'ESTACIONAMIENTOS FORANEOS', 'Sin costo', 'Abierto'),
+(46, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'EST. VITRALES', '24 HRS', '', '', '', '', '', 'ESTACIONAMIENTOS FORANEOS', 'Sin costo', 'Abierto'),
+(47, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'EST. PROCURADORIA', '24 HRS', '', '', '', '', '', 'ESTACIONAMIENTOS FORANEOS', 'Sin costo', 'Abierto'),
+(48, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'EST. SAN MATEO', '24 HRS', '', '', '', '', '', 'ESTACIONAMIENTOS FORANEOS', 'Sin costo', 'Abierto'),
+(49, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'SALON DIAMANTE', '', '', '', '', '', 'EVENTUAL', 'EVENTOS', '', 'Abierto'),
+(50, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'SALON HACIENDA LA BONITA', '', '', '', '', '', 'EVENTUAL', 'EVENTOS', '', 'Abierto'),
+(51, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'SALON FINCA LAS JOYAS', '', '', '', '', '', 'EVENTUAL', 'EVENTOS', '', 'Abierto'),
+(52, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'SALON ALCATRACES', '', '', '', '', '', 'EVENTUAL', 'EVENTOS', '', 'Abierto'),
+(53, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'JARDIN ESMERALDA', '', '', '', '', '', 'EVENTUAL', 'EVENTOS', '', 'Abierto'),
+(54, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'SALON MALLORCA', '', '', '', '', '', 'L a V $650 X EVENTO DIA, S y D $1200 X EVENTO NOCHE', 'EVENTOS', 'L a V 650, S y D 1200', 'Abierto'),
+(55, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'SALON TARASCO', '', '', '', '', '', '$500 X EVENTO DÍA O NOCHE', 'EVENTOS', '500', 'Abierto'),
+(56, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'SALON MAGYCAL PARTY', '', '', '', '', '', '$800 X EVENTO', 'EVENTOS', '800', 'Abierto'),
+(57, '1', 'Sur 1', 'ISAIAS PADILLA', 'SUPERVISOR', 'L a V', '7:00 Hasta cierre', '7:00 Hasta cierre', '7:00 Hasta cierre', 'OFF', '', '.', '', '.'),
+(58, '2', 'Sur 2', 'ARTURO LADRILLERO', 'SUPERVISOR', 'L a V', '7:00 Hasta cierre', '7:00 Hasta cierre', '7:00 Hasta cierre', 'OFF', '', '.', '', '.'),
+(59, '3', 'Zona Norte', 'ARTURO LADRILLERO', 'SUPERVISOR', 'L a V', '7:00 Hasta cierre', '7:00 Hasta cierre', '7:00 Hasta cierre', 'OFF', '', '.', '', '.'),
+(60, '5', 'Zona Poniente', 'ARTURO LADRILLERO', 'SUPERVISOR', 'L a V', '7:00 Hasta cierre', '7:00 Hasta cierre', '7:00 Hasta cierre', 'OFF', '', '.', '', '.'),
+(61, '2', 'Sur 2', 'ARTURO LADRILLERO', 'KOWLAAN $30 BOLETAJE SS. $50', '', '', '', '', '', '08:00 AM HASTA EL CIERRE', 'SERVICIOS VP', '50', 'Abierto'),
+(62, '1', 'Sur 1', 'ISAIAS PADILLA', 'DIVISION DEL NORTE', 'L a V', '08:00', '20:00', 'OFF', 'OFF', '', 'SERVICIOS VP', 'Sin costo', 'Abierto'),
+(63, '8', 'Oficina', '', 'Recepcion', 'L a V', '08:20', '05:20', '10:00 a 14:00', 'OFF', '', '.', '', ''),
+(64, '8', 'Oficina', '', 'Aux contable', 'L a V', '08:20', '05:20', '10:00 a 14:00', 'OFF', '', '.', '', ''),
+(65, '8', 'Oficina', '', 'Sistemas', 'L a V', '08:20', '05:20', '10:00 a 14:00', 'OFF', '', '.', '', ''),
+(66, '8', 'Oficina', '', 'Ventas', 'L a V', '08:20', '05:20', '10:00 a 14:00', 'OFF', '', '.', '', ''),
+(67, '8', 'Oficina', '', 'Limpieza', 'L a V', '08:20', '05:20', '10:00 a 14:00', 'OFF', '', '.', '', ''),
+(68, '2', 'Sur 2', 'ARTURO LADRILLERO', 'Comodin', 'L a V', '08:00', '18:00', 'Rolado', 'Rolado', '', '.', '', '.'),
+(69, '1', 'Sur 1', 'ISAIAS PADILLA', 'Comodin', 'L a V', '08:30', '18:00', 'Rolado', 'Rolado', '', '.', '', '.'),
+(70, '3', 'Norte', 'ARTURO LADRILLERO', 'Comodin', 'L a V', '08:00', '18:00', 'Rolado', 'Rolado', '', '.', '', '.'),
+(71, '5', 'Poniente', 'ARTURO LADRILLERO', 'Comodin', 'L a V', '08:00', '18:00', 'Rolado', 'Rolado', '', '.', '', '.'),
+(72, '7', 'Foraneos Toluca', 'PEDRO GONZALEZ', 'SUPERVISOR', 'L a V', '7:00 Hasta cierre', '7:00 Hasta cierre', '7:00 Hasta cierre', 'OFF', '', '.', '', '.'),
+(73, '4', 'Foraneos Acapulco', 'LEONEL OLIVAR', 'SUPERVISOR', 'L a V', '7:00 Hasta cierre', '7:00 Hasta cierre', '7:00 Hasta cierre', 'OFF', '', '.', '', '.'),
+(74, '6', 'Foraneos Puebla', 'DELFINO DURAN', 'SUPERVISOR', 'L a V', '7:00 Hasta cierre', '7:00 Hasta cierre', '7:00 Hasta cierre', 'OFF', '', '.', '', '.'),
+(75, '1', 'Sur 1', 'ISAIAS PADILLA', 'Cordinador', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', '.', '', '.'),
+(76, '2', 'Sur 2', 'ARTURO LADRILLERO', 'Cordinador', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', '.', '', '.'),
+(77, '5', 'Poniente', 'ARTURO LADRILLERO', 'Cordinador', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', '.', '', '.'),
+(78, '3', 'Norte', 'ARTURO LADRILLERO ', 'Cordinador', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', '.', '', '.');
 
 -- --------------------------------------------------------
 
@@ -6769,7 +6768,7 @@ CREATE TABLE `taller` (
   `Placas` varchar(75) COLLATE utf8_spanish_ci NOT NULL,
   `Color` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `# de piezas` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `Daño` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Daño` varchar(1000) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `Costo total` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `Ingreso a taller` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `Status` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
@@ -6780,6 +6779,14 @@ CREATE TABLE `taller` (
   `Forma de pago` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `Observaciones` varchar(1000) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `taller`
+--
+
+INSERT INTO `taller` (`idTaller`, `Fecha de expedicion`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Marca`, `Modelo`, `Placas`, `Color`, `# de piezas`, `Daño`, `Costo total`, `Ingreso a taller`, `Status`, `Importe a descontar`, `Pagado`, `Pendiente`, `Por quincenas`, `Forma de pago`, `Observaciones`) VALUES
+(1, '19/03/2021', 'RANGEL', 'HERNANDEZ', 'ISRAEL ', 'SUR 1', 'COPILCO', 'MAZDA', '2020', 'NXV1020', 'ROJO', '2', 'REPARACION\nSALPICADERA, FACIA DELANTERA\nDERECHA, RESCATAR Y CUADRAR\n PUERTA DELANTERA SE ENVIOA REPARACION EL FARO', '1500', 'Si', 'Pago a taller', '1500.0', '15000', '-13500.0', '250.0', 'Deposito', '$4,200 TALLER+ \n$15000 DE FARO \nEXTRA LA EMPRESA\nABSORBERA EL 50%'),
+(2, '-', 'MARTINEZ', 'RAMIREZ', 'JESUS', 'SUR 1', 'DIVISION', 'NP 300', '2015', '-', 'BLANCO ', '1', 'REPOSICIÓN DE LLAVES ', '980', 'No', 'Pago a cerrajeria', '980.0', '980', '0.0', '140.0', 'Deposito', '');
 
 -- --------------------------------------------------------
 
@@ -6986,19 +6993,19 @@ ALTER TABLE `pago`
 -- AUTO_INCREMENT de la tabla `prestamos`
 --
 ALTER TABLE `prestamos`
-  MODIFY `idprestamos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `idprestamos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de la tabla `servicio`
 --
 ALTER TABLE `servicio`
-  MODIFY `idServ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `idServ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT de la tabla `taller`
 --
 ALTER TABLE `taller`
-  MODIFY `idTaller` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTaller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios_nomina`
