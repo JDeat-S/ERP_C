@@ -334,8 +334,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         SabadoT.setText("");
         DomingoT.setText("");
         Otrotxt.setText("");
-        Abre.setText("");
-        Cierra.setText("");
+        Abre.setText("08:30");
+        Cierra.setText("16:00");
         Sab.setSelected(false);
         Dom.setSelected(false);
         Allday.setSelected(false);
@@ -399,12 +399,12 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             modelo.addColumn("Sabado");//9
             modelo.addColumn("Domingo");
             modelo.addColumn("Otro horario");//11
-            modelo.addColumn("Tipo de valet");
-            modelo.addColumn("Costo");//
+            modelo.addColumn("Tipo de Servicio");
+            modelo.addColumn("Costo");//13
 
 //Anchos
-            int[] anchos = {10, 10, 50, 150, 150, 30, 15, 15, 15, 15, 100,
-                50, 50};
+            int[] anchos = {10, 10, 50, 150, 150, 30, 15, 15, 30, 30, 150,
+                65, 50};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -586,6 +586,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         Costo = new javax.swing.JTextField();
         Cbxcosto = new javax.swing.JComboBox<>();
         TDS = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane8 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
@@ -780,6 +782,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         });
 
         NS.setColumns(20);
+        NS.setLineWrap(true);
         NS.setRows(5);
         jScrollPane6.setViewportView(NS);
 
@@ -819,6 +822,10 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         jLabel11.setText("Cierra");
 
+        Abre.setText("08:30");
+
+        Cierra.setText("16:00");
+
         Allday.setText("24 Hrs");
         Allday.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -852,7 +859,11 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
 
-        TDS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Valet parking", "Estacionamiento", "Plaza" }));
+        TDS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "SANTANDER CDMX", "SANTANDER FORANEOS ", "EVENTOS", "SERVICIOS VP", "ESTACIONAMIENTOS CDMX", "ESTACIONAMIENTOS FORANEOS" }));
+
+        jLabel7.setText("Status:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Abierto", "Cerrado" }));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -864,15 +875,16 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel5)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel15)
                             .addComponent(jLabel14)))
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel16))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Supervisor, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -902,7 +914,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                         .addComponent(Cbxcosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Costo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(TDS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TDS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -945,7 +958,11 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(Costo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Cbxcosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -1131,10 +1148,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(87, 87, 87)
-                        .addComponent(Volver2)
-                        .addGap(0, 614, Short.MAX_VALUE))
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                        .addComponent(Volver2))
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 2241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1228,6 +1244,20 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             SabadoT.setText(String.valueOf(TServ.getValueAt(seleccionar, 8)));
             DomingoT.setText(String.valueOf(TServ.getValueAt(seleccionar, 9)));
             Otrotxt.setText(String.valueOf(TServ.getValueAt(seleccionar, 10)));
+            DefaultTableModel model = (DefaultTableModel) TServ.getModel();
+
+            String combo1 = model.getValueAt(seleccionar, 11).toString();
+            for (int i = 0; i < TDS.getItemCount(); i++) {
+                if (TDS.getItemAt(i).toString().equalsIgnoreCase(combo1)) {
+                    TDS.setSelectedIndex(i);
+                }
+            }
+            String combo2 = model.getValueAt(seleccionar, 12).toString();
+            for (int i = 0; i < Cbxcosto.getItemCount(); i++) {
+                if (Cbxcosto.getItemAt(i).toString().equalsIgnoreCase(combo2)) {
+                    Cbxcosto.setSelectedIndex(i);
+                }
+            }
 
             int id = Integer.parseInt(TServ.getValueAt(seleccionar, 0).toString());
             String SabadoB = SabadoT.getText();
@@ -1598,6 +1628,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JTable ZSh;
     private botones.BotonWeb botonWeb2;
     private javax.swing.JTextField idZona;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1609,6 +1640,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
