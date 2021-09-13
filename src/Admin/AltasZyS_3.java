@@ -75,13 +75,13 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         String Q = (String) Cbxcosto.getSelectedItem();
         if (Q.equals(",")) {
             Costov = "";
-        }
-        if (Q.equals("Con costo")) {
+        }if (Q.equals("Con costo")) {
             Costov = Costo.getText();
 
-        }
-        if (Q.equals("Sin costo")) {
+        }if (Q.equals("Sin costo")) {
             Costov = "Sin costo";
+        }if (Q.equals(".")) {
+            Costov = "";
         }
         String horarioSMOD;
         if (Sab.isSelected() == true) {
@@ -244,13 +244,12 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         String Q = (String) Cbxcosto.getSelectedItem();
         if (Q.equals(",")) {
             Costov = "";
-        }
-        if (Q.equals("Con costo")) {
+        }if (Q.equals("Con costo")) {
             Costov = Costo.getText();
-
-        }
-        if (Q.equals("Sin costo")) {
+        }if (Q.equals("Sin costo")) {
             Costov = "Sin costo";
+        }if (Q.equals(".")) {
+            Costov = "";
         }
         String horarioS;
         if (Sab.isSelected() == true) {
@@ -856,7 +855,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         jLabel6.setText("Costo:");
 
-        Cbxcosto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ",", "Con costo", "Sin costo" }));
+        Cbxcosto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Con costo", "Sin costo" }));
         Cbxcosto.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CbxcostoItemStateChanged(evt);
@@ -1346,8 +1345,11 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 }
                 if (rs.getString("Costo").equals("Sin costo")) {
                     Cbxcosto.setSelectedIndex(2);
-                    Costo.setEnabled(true);
+                    Costo.setEnabled(false);
                     Costo.setText("");
+                }else if (rs.getString("Costo").equals("")) {
+                    Cbxcosto.setSelectedIndex(0);
+                    Costo.setEnabled(false);
                 } else if (rs.getString("Costo").equals(CostoB)) {
                     Cbxcosto.setSelectedIndex(1);
                     Costo.setEnabled(true);
