@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableCellRenderer;
  *
  * @author JDeat
  */
-public class ColorFilas extends DefaultTableCellRenderer {
+public class ColorRH extends DefaultTableCellRenderer {
 
     Color RyB = new Color(255, 175, 175);
     Color imss = new Color(203, 0, 255);

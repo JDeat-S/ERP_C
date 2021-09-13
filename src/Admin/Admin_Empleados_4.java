@@ -3,7 +3,7 @@ package Admin;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
-import Funciones.ColorFilas;
+import Funciones.ColorRH;
 import Inicio.Login_2;
 import ZyS.Servicios;
 import ZyS.Zonas;
@@ -30,7 +30,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
-    ColorFilas colores = new ColorFilas();
+    ColorRH colores = new ColorRH();
 
     /**
      * Creates new form RH
