@@ -77,7 +77,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             Costov = "";
         }
         if (Q.equals("Con costo")) {
-            Costov = "";
+            Costov = Costo.getText();
 
         }
         if (Q.equals("Sin costo")) {
@@ -143,7 +143,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             pst.setString(9, horarioDMOD);
             pst.setString(10, OtroMOD);
             pst.setString(11, TDs);
-            pst.setString(12, Costov + Costo.getText());
+            pst.setString(12, Costov);
             pst.setInt(13, id);
 
             pst.executeUpdate();
@@ -245,7 +245,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             Costov = "";
         }
         if (Q.equals("Con costo")) {
-            Costov = "";
+            Costov = Costo.getText();
 
         }
         if (Q.equals("Sin costo")) {
@@ -311,7 +311,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             pst.setString(9, horarioD);
             pst.setString(10, OtroS);
             pst.setString(11, TDs);
-            pst.setString(12, Costov + Costo.getText());
+            pst.setString(12, Costov);
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Servicio agregado.");
@@ -405,7 +405,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
 //Anchos
             int[] anchos = {10, 10, 50, 150, 150, 30, 20, 20, 30, 30, 150,
-                65, 50, 50};
+                75, 50, 50};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1253,13 +1253,10 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                     TDS.setSelectedIndex(i);
                 }
             }
-            String combo2 = model.getValueAt(seleccionar, 12).toString();
-            for (int i = 0; i < Cbxcosto.getItemCount(); i++) {
-                if (Cbxcosto.getItemAt(i).toString().equalsIgnoreCase(combo2)) {
-                    Cbxcosto.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(seleccionar, 12).toString();
+            
+            Costo.setText(String.valueOf(TServ.getValueAt(seleccionar, 12)));
+
+            String combo3 = model.getValueAt(seleccionar, 13).toString();
             for (int i = 0; i < StatusServ.getItemCount(); i++) {
                 if (StatusServ.getItemAt(i).toString().equalsIgnoreCase(combo3)) {
                     StatusServ.setSelectedIndex(i);
@@ -1270,6 +1267,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             String SabadoB = SabadoT.getText();
             String DomingoB = DomingoT.getText();
             String OtroB = Otrotxt.getText();
+            String CostoB = Costo.getText();
+
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select * from servicio where idServ =?");
@@ -1342,6 +1341,15 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                     Abre.setEnabled(false);
                     Cierra.setEnabled(false);
                 }
+                if (rs.getString("Costo").equals("Sin costo")) {
+                    Cbxcosto.setSelectedIndex(2);
+                    Costo.setEnabled(true);
+                    Costo.setText("");
+                } else if (rs.getString("Costo").equals(CostoB)) {
+                    Cbxcosto.setSelectedIndex(1);
+                    Costo.setEnabled(true);
+                }
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(AltasZyS_3.class.getName()).log(Level.SEVERE, null, ex);
