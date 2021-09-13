@@ -1525,7 +1525,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         Serv.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "IMSS", "PENDIENTE", "EN ESPERA", "RECHAZADO", "TEMPORAL", "VIGENTE", "BOLETINADO" }));
+        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "IMSS", "PENDIENTE", "EN ESPERA", "RECHAZADO", "TEMPORAL", "VIGENTE", "BOLETINADO", "DEPURADO" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
