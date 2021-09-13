@@ -7,6 +7,7 @@ package Admin;
 
 import Conexion.ConexionSQL;
 import Filtros.FiltrosZonas;
+import Funciones.ColorZyS;
 import java.sql.ResultSetMetaData;
 import java.awt.HeadlessException;
 import java.sql.Connection;
@@ -30,12 +31,14 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     ButtonGroup Fil;
+    ColorZyS colores = new ColorZyS();
 
     /**
      * Creates new form AltasZyS_3
      */
     public AltasZyS_3() {
         initComponents();
+        TServ.setDefaultRenderer(TServ.getColumnClass(0), colores);
         this.setExtendedState(6);
         this.setLocationRelativeTo(null);
         IDS.setVisible(false);
@@ -75,12 +78,15 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         String Q = (String) Cbxcosto.getSelectedItem();
         if (Q.equals(",")) {
             Costov = "";
-        }if (Q.equals("Con costo")) {
+        }
+        if (Q.equals("Con costo")) {
             Costov = Costo.getText();
 
-        }if (Q.equals("Sin costo")) {
+        }
+        if (Q.equals("Sin costo")) {
             Costov = "Sin costo";
-        }if (Q.equals(".")) {
+        }
+        if (Q.equals(".")) {
             Costov = "";
         }
         String horarioSMOD;
@@ -244,11 +250,14 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         String Q = (String) Cbxcosto.getSelectedItem();
         if (Q.equals(",")) {
             Costov = "";
-        }if (Q.equals("Con costo")) {
+        }
+        if (Q.equals("Con costo")) {
             Costov = Costo.getText();
-        }if (Q.equals("Sin costo")) {
+        }
+        if (Q.equals("Sin costo")) {
             Costov = "Sin costo";
-        }if (Q.equals(".")) {
+        }
+        if (Q.equals(".")) {
             Costov = "";
         }
         String horarioS;
@@ -862,7 +871,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
 
-        TDS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "SANTANDER CDMX", "SANTANDER FORANEOS ", "EVENTOS", "SERVICIOS VP", "ESTACIONAMIENTOS CDMX", "ESTACIONAMIENTOS FORANEOS" }));
+        TDS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "SANTANDER CDMX", "SANTANDER FORANEOS", "EVENTOS", "SERVICIOS VP", "ESTACIONAMIENTOS CDMX", "ESTACIONAMIENTOS FORANEOS" }));
 
         jLabel7.setText("Status:");
 
@@ -1347,7 +1356,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                     Cbxcosto.setSelectedIndex(2);
                     Costo.setEnabled(false);
                     Costo.setText("");
-                }else if (rs.getString("Costo").equals("")) {
+                } else if (rs.getString("Costo").equals("")) {
                     Cbxcosto.setSelectedIndex(0);
                     Costo.setEnabled(false);
                 } else if (rs.getString("Costo").equals(CostoB)) {

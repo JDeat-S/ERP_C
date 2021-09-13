@@ -21,6 +21,7 @@ public class ColorZyS extends DefaultTableCellRenderer {
     Color SVP = new Color(248, 193, 253);
     Color EstCDMX = new Color(20, 255, 216);
     Color CPC = new Color(255, 201, 100);
+    Color LD = new Color(77, 255, 0);
 
     @Override
 
@@ -32,7 +33,9 @@ public class ColorZyS extends DefaultTableCellRenderer {
         super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         if (table.getValueAt(row, 11).toString().equals("SANTANDER CDMX")) {
             setBackground(SAN);
-        } else if (table.getValueAt(row, 11).toString().equals("SANTANDER FORANEOS")) {
+        } else if (table.getValueAt(row, 13).toString().equals("Cerrado por Contingencia")) {
+            setBackground(CPC);
+        }else if (table.getValueAt(row, 11).toString().equals("SANTANDER FORANEOS")) {
             setBackground(SAN);
         } else if (table.getValueAt(row, 11).toString().equals("EVENTOS")) {
             setBackground(Evn);
@@ -42,9 +45,10 @@ public class ColorZyS extends DefaultTableCellRenderer {
             setBackground(EstCDMX);
         } else if (table.getValueAt(row, 11).toString().equals("ESTACIONAMIENTOS CDMX")) {
             setBackground(EstCDMX);
-        } else if (table.getValueAt(row, 13).toString().equals("Cerrado por Contingencia")) {
-            setBackground(CPC);
+        } else {
+            setBackground(LD);
         }
+
         return this;
 
     }
