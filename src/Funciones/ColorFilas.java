@@ -20,7 +20,7 @@ public class ColorFilas extends DefaultTableCellRenderer {
     Color imss = new Color(203, 0, 255);
     Color Pen = new Color(146, 199, 255);
     Color EEs = new Color(152, 244, 147);
-
+    Color Dep = new Color(153, 51, 255);
     @Override
 
     public Component getTableCellRendererComponent(JTable table, Object value,
@@ -45,6 +45,8 @@ public class ColorFilas extends DefaultTableCellRenderer {
             setBackground(Pen);
         } else if (table.getValueAt(row, 20).toString().equals("BOLETINADO")) {
             setBackground(RyB);
+        }else if (table.getValueAt(row, 20).toString().equals("DEPURADO")) {
+            setBackground(Dep);
         }else{
             setBackground(Color.CYAN);
         }
