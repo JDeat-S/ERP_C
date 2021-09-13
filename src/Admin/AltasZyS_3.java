@@ -330,6 +330,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         NZS.setText("");
         Supervisor.setText("");
         Horario.setText("L a V");
+        TDS.setSelectedIndex(0);
         SabadoT.setText("");
         DomingoT.setText("");
         Otrotxt.setText("");
