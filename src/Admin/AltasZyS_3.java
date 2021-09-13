@@ -401,10 +401,11 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             modelo.addColumn("Otro horario");//11
             modelo.addColumn("Tipo de Servicio");
             modelo.addColumn("Costo");//13
+            modelo.addColumn("Status");
 
 //Anchos
             int[] anchos = {10, 10, 50, 150, 150, 30, 15, 15, 30, 30, 150,
-                65, 50};
+                65, 50, 50};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
