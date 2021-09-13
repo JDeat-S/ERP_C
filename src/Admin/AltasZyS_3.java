@@ -864,7 +864,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         jLabel7.setText("Status:");
 
-        StatusServ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Abierto", "Cerrado" }));
+        StatusServ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Abierto", "Cerrado por Contingencia" }));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);

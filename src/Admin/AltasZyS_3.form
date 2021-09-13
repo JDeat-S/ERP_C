@@ -717,7 +717,7 @@
                           <StringArray count="3">
                             <StringItem index="0" value="."/>
                             <StringItem index="1" value="Abierto"/>
-                            <StringItem index="2" value="Cerrado"/>
+                            <StringItem index="2" value="Cerrado por Contingencia"/>
                           </StringArray>
                         </Property>
                       </Properties>
