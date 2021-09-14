@@ -41,8 +41,8 @@ public class ColorNSD extends DefaultTableCellRenderer {
             setBackground(EstCDMX);
         } else if (table.getValueAt(row, 11).toString().equals("ESTACIONAMIENTOS CDMX")) {
             setBackground(EstCDMX);
-        } else if (table.getValueAt(row, 11).toString().equals("NO APLICA")) {
-            setBackground(LD);
+        } else if (table.getValueAt(row, 11).toString().equals("VARIADOS")) {
+            setBackground(Color.YELLOW);
         } else {
             setBackground(Color.GRAY);
         }

@@ -6,6 +6,7 @@
 package Admin;
 
 import ColoresT.ColorNSD;
+import ColoresT.ColorSDS;
 import Conexion.ConexionSQL;
 import Filtros.FiltrosZonas;
 import ColoresT.ColorZyS;
@@ -34,7 +35,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     ButtonGroup Fil;
     ColorZyS colores = new ColorZyS();
     ColorNSD colorNSD = new ColorNSD();
-    
+    ColorSDS colorSDS = new ColorSDS();
+
     /**
      * Creates new form AltasZyS_3
      */
@@ -42,7 +44,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         initComponents();
         TNDS.setDefaultRenderer(TNDS.getColumnClass(0), colorNSD);
         TServ.setDefaultRenderer(TServ.getColumnClass(0), colores);
-
+        TStatusServ.setDefaultRenderer(TStatusServ.getColumnClass(0), colorSDS);
         this.setExtendedState(6);
         this.setLocationRelativeTo(null);
         IDS.setVisible(false);
