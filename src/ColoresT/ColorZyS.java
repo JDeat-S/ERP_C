@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 public class ColorZyS extends DefaultTableCellRenderer {
 
     Color S1 = new Color(0, 255, 0);
-    Color FT = new Color(255, 80, 80);
+    Color FT = new Color(255, 112, 112);
     Color S2 = new Color(183, 244, 99);
     Color FA = new Color(248, 193, 253);
     Color ZP = new Color(20, 255, 206);
