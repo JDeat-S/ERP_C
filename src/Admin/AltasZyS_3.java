@@ -42,9 +42,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
      */
     public AltasZyS_3() {
         initComponents();
-        TNDS.setDefaultRenderer(TNDS.getColumnClass(0), colorNSD);
-        TServ.setDefaultRenderer(TServ.getColumnClass(0), colores);
-        TStatusServ.setDefaultRenderer(TStatusServ.getColumnClass(0), colorSDS);
+        
         this.setExtendedState(6);
         this.setLocationRelativeTo(null);
         IDS.setVisible(false);
@@ -70,6 +68,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         ContarServ();
         nds();
         SDS();
+        TNDS.setDefaultRenderer(TNDS.getColumnClass(0), colorNSD);
+        TServ.setDefaultRenderer(TServ.getColumnClass(0), colores);
+        TStatusServ.setDefaultRenderer(TStatusServ.getColumnClass(0), colorSDS);
         setIconImage(new ImageIcon(AltasZyS_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }

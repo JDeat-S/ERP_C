@@ -19,7 +19,7 @@ public class ColorNSD extends DefaultTableCellRenderer {
     Color SAN = new Color(203, 132, 255);
     Color Evn = new Color(183, 244, 99);
     Color SVP = new Color(248, 193, 253);
-    Color EstCDMX = new Color(20, 255, 216);
+    Color EstCDMX = new Color(20, 255, 206);
     Color LD = new Color(77, 255, 0);
     @Override
 
@@ -29,19 +29,19 @@ public class ColorNSD extends DefaultTableCellRenderer {
             int row,
             int column) {
         super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-        if (table.getValueAt(row, 1).toString().equals("SANTANDER CDMX")) {
+        if (table.getValueAt(row, 0).toString().equals("SANTANDER CDMX")) {
             setBackground(SAN);
-        } else if (table.getValueAt(row, 1).toString().equals("SANTANDER FORANEOS")) {
+        } else if (table.getValueAt(row, 0).toString().equals("SANTANDER FORANEOS")) {
             setBackground(SAN);
-        } else if (table.getValueAt(row, 1).toString().equals("EVENTOS")) {
+        } else if (table.getValueAt(row, 0).toString().equals("EVENTOS")) {
             setBackground(Evn);
-        } else if (table.getValueAt(row, 1).toString().equals("SERVICIOS VP")) {
+        } else if (table.getValueAt(row, 0).toString().equals("SERVICIOS VP")) {
             setBackground(SVP);
-        } else if (table.getValueAt(row, 1).toString().equals("ESTACIONAMIENTOS FORANEOS")) {
+        } else if (table.getValueAt(row, 0).toString().equals("ESTACIONAMIENTOS FORANEOS")) {
             setBackground(EstCDMX);
-        } else if (table.getValueAt(row, 1).toString().equals("ESTACIONAMIENTOS CDMX")) {
+        } else if (table.getValueAt(row, 0).toString().equals("ESTACIONAMIENTOS CDMX")) {
             setBackground(EstCDMX);
-        } else if (table.getValueAt(row, 1).toString().equals("VARIADOS")) {
+        } else if (table.getValueAt(row, 0).toString().equals("VARIADOS")) {
             setBackground(Color.YELLOW);
         } else {
             setBackground(Color.GRAY);

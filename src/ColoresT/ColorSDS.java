@@ -27,11 +27,11 @@ public class ColorSDS extends DefaultTableCellRenderer {
             int row,
             int column) {
         super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-        if (table.getValueAt(row, 1).toString().equals("Abierto")) {
+        if (table.getValueAt(row, 0).toString().equals("Abierto")) {
             setBackground(Abierto);
-        } else if (table.getValueAt(row, 1).toString().equals("VARIADOS")) {
+        } else if (table.getValueAt(row, 0).toString().equals("VARIADOS")) {
             setBackground(Color.YELLOW);
-        } else if (table.getValueAt(row, 1).toString().equals("Cerrado por Contingencia")) {
+        } else if (table.getValueAt(row, 0).toString().equals("Cerrado por Contingencia")) {
             setBackground(CPC);
         } else {
             setBackground(Color.white);

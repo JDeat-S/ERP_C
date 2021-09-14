@@ -45,8 +45,8 @@ public class ColorZyS extends DefaultTableCellRenderer {
             setBackground(EstCDMX);
         } else if (table.getValueAt(row, 11).toString().equals("ESTACIONAMIENTOS CDMX")) {
             setBackground(EstCDMX);
-        } else if (table.getValueAt(row, 11).toString().equals("NO APLICA")) {
-            setBackground(LD);
+        } else if (table.getValueAt(row, 11).toString().equals("VARIADOS")) {
+            setBackground(Color.yellow);
         } else {
             setBackground(Color.GRAY);
         }
