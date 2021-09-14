@@ -3,7 +3,7 @@ package RH;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
-import Funciones.ColorFilas;
+import ColoresT.ColorRH;
 import Inicio.Login_2;
 import ZyS.Servicios;
 import ZyS.Zonas;
@@ -30,7 +30,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
-    ColorFilas colores = new ColorFilas();
+    ColorRH colores = new ColorRH();
 
     /**
      * Creates new form RH
@@ -1518,7 +1518,7 @@ public final class RH_Empleados_4 extends javax.swing.JFrame {
 
         Serv.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "IMSS", "PENDIENTE", "RECHAZADO", "TEMPORAL", "VIGENTE", "BOLETINADO" }));
+        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "IMSS", "PENDIENTE", "RECHAZADO", "TEMPORAL", "VIGENTE", "BOLETINADO", "DEPURADO" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

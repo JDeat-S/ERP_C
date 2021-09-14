@@ -27,12 +27,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="0" pref="1014" max="32767" attributes="0"/>
+          <Component id="jTabbedPane1" alignment="0" pref="1260" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jTabbedPane1" alignment="0" pref="644" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -88,11 +88,11 @@
                                   <Component id="Volver1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <EmptySpace type="separate" pref="153" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" pref="376" max="32767" attributes="0"/>
                                   <Component id="jScrollPane4" min="-2" pref="334" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="237" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="270" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -126,7 +126,7 @@
                                   <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="108" max="32767" attributes="0"/>
+                          <EmptySpace pref="158" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -270,11 +270,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
@@ -297,8 +293,12 @@
                                       </Group>
                                   </Group>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace type="unrelated" pref="63" max="32767" attributes="0"/>
+                          <EmptySpace pref="298" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -347,7 +347,7 @@
                               </Group>
                               <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="98" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="121" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -415,6 +415,7 @@
                     <Component class="javax.swing.JTextArea" name="NS">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
+                        <Property name="lineWrap" type="boolean" value="true"/>
                         <Property name="rows" type="int" value="5"/>
                       </Properties>
                     </Component>
@@ -458,7 +459,8 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                       <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -508,6 +510,7 @@
                                       <Component id="Costo" min="-2" pref="100" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="TDS" min="-2" max="-2" attributes="0"/>
+                                  <Component id="StatusServ" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -560,7 +563,12 @@
                                   <Component id="Costo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="Cbxcosto" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="StatusServ" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -600,8 +608,14 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Abre">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="08:30"/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Cierra">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="16:00"/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="Allday">
                       <Properties>
@@ -661,7 +675,7 @@
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="3">
-                            <StringItem index="0" value=","/>
+                            <StringItem index="0" value="."/>
                             <StringItem index="1" value="Con costo"/>
                             <StringItem index="2" value="Sin costo"/>
                           </StringArray>
@@ -677,11 +691,35 @@
                     <Component class="javax.swing.JComboBox" name="TDS">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="8">
+                            <StringItem index="0" value="."/>
+                            <StringItem index="1" value="SANTANDER CDMX"/>
+                            <StringItem index="2" value="SANTANDER FORANEOS"/>
+                            <StringItem index="3" value="EVENTOS"/>
+                            <StringItem index="4" value="SERVICIOS VP"/>
+                            <StringItem index="5" value="ESTACIONAMIENTOS CDMX"/>
+                            <StringItem index="6" value="ESTACIONAMIENTOS FORANEOS"/>
+                            <StringItem index="7" value="NO APLICA"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel7">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Status:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="StatusServ">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="4">
                             <StringItem index="0" value="."/>
-                            <StringItem index="1" value="Valet parking"/>
-                            <StringItem index="2" value="Estacionamiento"/>
-                            <StringItem index="3" value="Plaza"/>
+                            <StringItem index="1" value="Abierto"/>
+                            <StringItem index="2" value="Cerrado por Contingencia"/>
+                            <StringItem index="3" value="NO APLICA"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -706,7 +744,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel3">
+            <Container class="javax.swing.JPanel" name="PNDS">
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -724,11 +762,25 @@
                                   <Component id="botonWeb2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                                   <Component id="Volver2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="614" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2051" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane9" alignment="1" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane7" alignment="0" pref="269" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane10" alignment="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                                          <Component id="TdServ" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane9" min="-2" pref="2726" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -747,9 +799,23 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jScrollPane9" pref="482" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jScrollPane7" min="-2" pref="149" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="TdServ" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane10" min="-2" pref="128" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="32767" attributes="0"/>
+                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="393" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jScrollPane9" min="-2" pref="520" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -975,6 +1041,70 @@
                     <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/Reporteservicios/EPCServicios.php"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="TdServ">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Total de servicios: "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel9">
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="TNDS">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="2" rowCount="4">
+                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                          </Table>
+                        </Property>
+                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                          <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                          </TableColumnModel>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane10">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="TStatusServ">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="4" rowCount="4">
+                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                          </Table>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
               </SubComponents>
             </Container>
           </SubComponents>
