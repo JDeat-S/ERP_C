@@ -29,19 +29,19 @@ public class ColorNSD extends DefaultTableCellRenderer {
             int row,
             int column) {
         super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-        if (table.getValueAt(row, 11).toString().equals("SANTANDER CDMX")) {
+        if (table.getValueAt(row, 1).toString().equals("SANTANDER CDMX")) {
             setBackground(SAN);
-        } else if (table.getValueAt(row, 11).toString().equals("SANTANDER FORANEOS")) {
+        } else if (table.getValueAt(row, 1).toString().equals("SANTANDER FORANEOS")) {
             setBackground(SAN);
-        } else if (table.getValueAt(row, 11).toString().equals("EVENTOS")) {
+        } else if (table.getValueAt(row, 1).toString().equals("EVENTOS")) {
             setBackground(Evn);
-        } else if (table.getValueAt(row, 11).toString().equals("SERVICIOS VP")) {
+        } else if (table.getValueAt(row, 1).toString().equals("SERVICIOS VP")) {
             setBackground(SVP);
-        } else if (table.getValueAt(row, 11).toString().equals("ESTACIONAMIENTOS FORANEOS")) {
+        } else if (table.getValueAt(row, 1).toString().equals("ESTACIONAMIENTOS FORANEOS")) {
             setBackground(EstCDMX);
-        } else if (table.getValueAt(row, 11).toString().equals("ESTACIONAMIENTOS CDMX")) {
+        } else if (table.getValueAt(row, 1).toString().equals("ESTACIONAMIENTOS CDMX")) {
             setBackground(EstCDMX);
-        } else if (table.getValueAt(row, 11).toString().equals("VARIADOS")) {
+        } else if (table.getValueAt(row, 1).toString().equals("VARIADOS")) {
             setBackground(Color.YELLOW);
         } else {
             setBackground(Color.GRAY);
