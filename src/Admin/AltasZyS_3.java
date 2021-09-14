@@ -375,7 +375,55 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         IDZ.setText("");
     }
 
-    //Mostrar nds
+    //Mostrar Status de servicios
+    private void SDS() {
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//Nombre de la tabla
+            TStatusServ.setModel(modelo);
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            String sql = "select `Status`, COUNT(`Status`) as sts FROM `servicio`"
+                    + " GROUP BY 1 HAVING COUNT(`Status`) > 1;";
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("Tipo de Servicio");
+            modelo.addColumn("#");
+
+//Anchos
+            int[] anchos = {210, 10};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TStatusServ.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos: " + e.getMessage());
+
+        }
+
+    }
+    
+    //Mostrar numero de servicios
     private void nds() {
         try {
             //Cargar datos
@@ -389,7 +437,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             PreparedStatement ps = null;
             ResultSet rs = null;
 
-            String sql = "select `Tipo de valet`, COUNT(`Tipo de valet`) as xd FROM `servicio` GROUP BY 1 HAVING COUNT(`Tipo de valet`) > 1;";
+            String sql = "select `Tipo de valet`, COUNT(`Tipo de valet`)"
+                    + " as xd FROM `servicio` GROUP BY 1 HAVING COUNT(`Tipo de valet`) > 1;";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
@@ -673,6 +722,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         TNDS = new javax.swing.JTable();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        TStatusServ = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Zonas y Servicios");
@@ -1043,9 +1094,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1061,8 +1109,11 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(ModS))
                                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(279, 279, 279)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 298, Short.MAX_VALUE)
+                                .addGap(279, 279, 279))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(jLabel3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 298, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4)
@@ -1218,6 +1269,19 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         ));
         jScrollPane7.setViewportView(TNDS);
 
+        TStatusServ.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane10.setViewportView(TStatusServ);
+
         javax.swing.GroupLayout PNDSLayout = new javax.swing.GroupLayout(PNDS);
         PNDS.setLayout(PNDSLayout);
         PNDSLayout.setHorizontalGroup(
@@ -1235,15 +1299,16 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                         .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(87, 87, 87)
                         .addComponent(Volver2)
-                        .addContainerGap(2069, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(PNDSLayout.createSequentialGroup()
-                        .addGroup(PNDSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PNDSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel9)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
                             .addGroup(PNDSLayout.createSequentialGroup()
                                 .addGap(82, 82, 82)
-                                .addComponent(TdServ)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TdServ))
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 2726, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         PNDSLayout.setVerticalGroup(
@@ -1264,7 +1329,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(TdServ)
-                        .addGap(21, 21, 21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(334, 334, 334)
                         .addComponent(jLabel9)
                         .addGap(393, 393, 393))
                     .addGroup(PNDSLayout.createSequentialGroup()
@@ -1744,6 +1811,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> TDS;
     private javax.swing.JTable TNDS;
     private javax.swing.JTable TServ;
+    private javax.swing.JTable TStatusServ;
     private javax.swing.JTable TablaZona;
     private javax.swing.JLabel TdServ;
     private javax.swing.JButton Volver;
@@ -1769,6 +1837,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
