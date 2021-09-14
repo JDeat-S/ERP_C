@@ -3,7 +3,7 @@ package Admin;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
-import Funciones.ColorRH;
+import ColoresT.ColorRH;
 import Inicio.Login_2;
 import ZyS.Servicios;
 import ZyS.Zonas;

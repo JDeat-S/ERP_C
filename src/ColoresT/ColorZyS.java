@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Funciones;
+package ColoresT;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -35,7 +35,7 @@ public class ColorZyS extends DefaultTableCellRenderer {
             setBackground(SAN);
         } else if (table.getValueAt(row, 13).toString().equals("Cerrado por Contingencia")) {
             setBackground(CPC);
-        }else if (table.getValueAt(row, 11).toString().equals("SANTANDER FORANEOS")) {
+        } else if (table.getValueAt(row, 11).toString().equals("SANTANDER FORANEOS")) {
             setBackground(SAN);
         } else if (table.getValueAt(row, 11).toString().equals("EVENTOS")) {
             setBackground(Evn);
@@ -45,8 +45,10 @@ public class ColorZyS extends DefaultTableCellRenderer {
             setBackground(EstCDMX);
         } else if (table.getValueAt(row, 11).toString().equals("ESTACIONAMIENTOS CDMX")) {
             setBackground(EstCDMX);
-        } else {
+        } else if (table.getValueAt(row, 11).toString().equals("NO APLICA")) {
             setBackground(LD);
+        } else {
+            setBackground(Color.GRAY);
         }
 
         return this;
