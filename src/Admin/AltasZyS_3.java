@@ -5,6 +5,7 @@
  */
 package Admin;
 
+import ColoresT.ColorNSD;
 import Conexion.ConexionSQL;
 import Filtros.FiltrosZonas;
 import ColoresT.ColorZyS;
@@ -32,13 +33,16 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     Connection con = cc.conexion();
     ButtonGroup Fil;
     ColorZyS colores = new ColorZyS();
-
+    ColorNSD colorNSD = new ColorNSD();
+    
     /**
      * Creates new form AltasZyS_3
      */
     public AltasZyS_3() {
         initComponents();
+        TNDS.setDefaultRenderer(TNDS.getColumnClass(0), colorNSD);
         TServ.setDefaultRenderer(TServ.getColumnClass(0), colores);
+
         this.setExtendedState(6);
         this.setLocationRelativeTo(null);
         IDS.setVisible(false);
@@ -423,7 +427,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         }
 
     }
-    
+
     //Mostrar numero de servicios
     private void nds() {
         try {
@@ -471,7 +475,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         }
 
     }
-    
+
 //Mostrar Servicios
     private void mostrarServicios() {
         //Buscar servicio
