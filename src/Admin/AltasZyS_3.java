@@ -934,7 +934,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         jLabel7.setText("Status:");
 
-        StatusServ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Abierto", "Cerrado por Contingencia" }));
+        StatusServ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Abierto", "Cerrado por Contingencia", "NO APLICA" }));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1284,7 +1284,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE)
         );
 
         pack();
