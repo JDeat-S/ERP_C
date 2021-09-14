@@ -16,11 +16,11 @@ import javax.swing.table.DefaultTableCellRenderer;
  */
 public class ColorNSD extends DefaultTableCellRenderer {
 
-    Color RyB = new Color(255, 175, 175);
-    Color imss = new Color(203, 0, 255);
-    Color Pen = new Color(146, 199, 255);
-    Color EEs = new Color(152, 244, 147);
-    Color Dep = new Color(153, 51, 255);
+    Color SAN = new Color(203, 132, 255);
+    Color Evn = new Color(183, 244, 99);
+    Color SVP = new Color(248, 193, 253);
+    Color EstCDMX = new Color(20, 255, 216);
+    Color LD = new Color(77, 255, 0);
     @Override
 
     public Component getTableCellRendererComponent(JTable table, Object value,
