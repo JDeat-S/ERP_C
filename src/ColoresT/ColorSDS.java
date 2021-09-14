@@ -14,10 +14,11 @@ import javax.swing.table.DefaultTableCellRenderer;
  *
  * @author CONFORT
  */
-public class ColorSDS  extends DefaultTableCellRenderer {
+public class ColorSDS extends DefaultTableCellRenderer {
 
     Color Abierto = new Color(0, 255, 0);
     Color CPC = new Color(255, 201, 100);
+
     @Override
 
     public Component getTableCellRendererComponent(JTable table, Object value,
@@ -30,8 +31,11 @@ public class ColorSDS  extends DefaultTableCellRenderer {
             setBackground(Abierto);
         } else if (table.getValueAt(row, 11).toString().equals("VARIADOS")) {
             setBackground(Color.YELLOW);
-        }else if (table.getValueAt(row, 13).toString().equals("Cerrado por Contingencia")) {
+        } else if (table.getValueAt(row, 13).toString().equals("Cerrado por Contingencia")) {
             setBackground(CPC);
-        }else{
+        } else {
             setBackground(Color.white);
         }
+        return this;
+    }
+}
