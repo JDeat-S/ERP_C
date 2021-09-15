@@ -42,7 +42,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
      */
     public AltasZyS_3() {
         initComponents();
-        
+
         this.setExtendedState(6);
         this.setLocationRelativeTo(null);
         IDS.setVisible(false);
@@ -172,6 +172,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Servicio Modificado");
             mostrarServicios();
             ContarServ();
+            nds();
+            SDS();
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar: " + e.getMessage());
         }
@@ -344,6 +346,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Servicio agregado.");
             mostrarServicios();
             clearServ();
+            nds();
+            SDS();
+            ContarServ();
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar: " + e.getMessage());
         }
