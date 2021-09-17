@@ -115,7 +115,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         sharetp();
         mostrardatos();
         pagos();
-        txtid.setVisible(false);
+        OcultoODT.setVisible(false);
         Bono.setVisible(false);
         MDP();
         IAT = new ButtonGroup();
@@ -185,7 +185,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         Ap.setText("");
         am.setText("");
         name.setText("");
-        txtid.setText("");
         Bono.setText("0");
         cta.setText("");
         ban.setText("");
@@ -745,37 +744,42 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             modelo.addColumn("Pendiente");//19
             modelo.addColumn("Pago por quincena");
             modelo.addColumn("Forma de pago");//21
-            modelo.addColumn("Observaciones");
+            modelo.addColumn("Detalles de pago");
+            modelo.addColumn("Observaciones");//23
 
 //Anchos
             int[] anchos = {/*ndo*/35, /*fde*/ 50, /*ap*/ 55, /*am*/ 55, /*nom*/ 150,
                 /*Zon*/ 60, /*serv*/ 75, /*Marca*/ 60, /*Modelo*/ 60, /*Placas*/ 60, /*Color*/ 60,
                 /*NDP*/ 50, /*Dano*/ 500,
                 /*CT*/ 55, /*IAT*/ 60, /*Status*/ 60, /*IAD*/ 60, /*PAGA*/ 55,
-                /*PENDIENTE*/ 55, /*PPQ*/ 70, /*FDP*/ 65,/*obs*/ 1000};
+                /*PENDIENTE*/ 55, /*PPQ*/ 70, /*FDP*/ 65, /*DDP*/ 1000, /*obs*/ 1000};
 
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                OdT.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
-            while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar datos de taller: " + e.getMessage());
+        for (int x = 0; x < cantidadColumnas; x++) {
+            //Nombre tabla
+            OdT.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
         }
 
+        while (rs.next()) {
+            Object[] filas = new Object[cantidadColumnas];
+            for (int i = 0; i < cantidadColumnas; i++) {
+                filas[i] = rs.getObject(i + 1);
+            }
+            modelo.addRow(filas);
+        }
     }
+    catch (SQLException e
+
+    
+        ) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de taller: " + e.getMessage());
+
+    }
+
+}
 //Editar orden de taller
 
-    public void editarT() {
+public void editarT() {
         int id = Integer.parseInt(Ndo.getText());
         String Item = Statustaller.getSelectedItem().toString();
         String Item1 = Fdp.getSelectedItem().toString();
@@ -1275,7 +1279,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }
 
     public void editarp() {
-        int id = Integer.parseInt(txtid.getText());
+        int id = Integer.parseInt(Num.getText());
         String Item = Quincenas.getSelectedItem().toString();
         String SQL = "UPDATE `confort`.`pago` SET `# Folio` = ?,`Apellido P` = ?, `Apellido M` = ?,"
                 + " `Nombre(s)` = ?, `Bono` = ?, `Cuenta` = ?, `Banco` = ?, `Zona` = ?,"
@@ -4105,7 +4109,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
         jLabel42.setText("Fecha solicitud");
 
-        jLabel43.setText("Numero:");
+        jLabel43.setText("# Prestamo");
 
         jLabel44.setText("Status:");
 
@@ -4895,9 +4899,9 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                             .addComponent(PQT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel72))
                         .addGap(1, 1, 1)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel55)
-                            .addComponent(jLabel58))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel58, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel55))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -5019,7 +5023,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                         .addComponent(CS7))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 4538, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 4964, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -6060,8 +6064,10 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
 
-        } catch (ParseException ex) {
-            Logger.getLogger(Admin_Nomina_5.class.getName()).log(Level.SEVERE, null, ex);
+} catch (ParseException ex) {
+            Logger.getLogger(Admin_Nomina_5.class  
+
+.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_pagoMouseClicked
 
@@ -6224,8 +6230,10 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             deposito.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
             obs.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
 
-        } catch (ParseException ex) {
-            Logger.getLogger(Admin_Nomina_5.class.getName()).log(Level.SEVERE, null, ex);
+} catch (ParseException ex) {
+            Logger.getLogger(Admin_Nomina_5.class  
+
+.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_TnomMouseClicked
 
@@ -10326,16 +10334,28 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin_Nomina_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin_Nomina_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin_Nomina_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_Nomina_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_Nomina_5.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Admin_Nomina_5.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Admin_Nomina_5.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Admin_Nomina_5.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
