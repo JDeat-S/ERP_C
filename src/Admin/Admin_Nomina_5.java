@@ -181,7 +181,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
     public void limpiarnom() {
         DAB.clearSelection();
-        fol.setText("");
+        NDL.setText("");
         Ap.setText("");
         am.setText("");
         name.setText("");
@@ -1255,7 +1255,7 @@ public void editarT() {
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, fol.getText());
+            pst.setString(1, NDL.getText());
             pst.setString(2, Ap.getText());
             pst.setString(3, am.getText());
             pst.setString(4, name.getText());
@@ -1288,7 +1288,7 @@ public void editarT() {
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, fol.getText());
+            pst.setString(1, NDL.getText());
             pst.setString(2, Ap.getText());
             pst.setString(3, am.getText());
             pst.setString(4, name.getText());
@@ -1313,7 +1313,7 @@ public void editarT() {
 //editar nomina
 
     public void editar() {
-        int id = Integer.parseInt(txtid.getText());
+        int id = Integer.parseInt(NDL.getText());
         String Item = Quincenas.getSelectedItem().toString();
         String Item2 = DT.getSelectedItem().toString();
         String Item3 = DT1.getSelectedItem().toString();
@@ -1346,7 +1346,7 @@ public void editarT() {
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, fol.getText());
+            pst.setString(1, NDL.getText());
             pst.setString(2, Ap.getText());
             pst.setString(3, am.getText());
             pst.setString(4, name.getText());
@@ -1445,6 +1445,7 @@ public void editarT() {
 
     }
 
+    //mostrar datos de nomina
     public void mostrardatos() {
         //Buscar empleado
         String FiltroN = Nominab.getText();
@@ -1491,61 +1492,60 @@ public void editarT() {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-            modelo.addColumn("ID BD");//1
-            modelo.addColumn("# Folio");
-            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("# de lista");//1
+            modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//5
+            modelo.addColumn("Nombre(s)");//4
             modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Banco");//7
+            modelo.addColumn("Banco");//6
             modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");//9
+            modelo.addColumn("Servicio");//8
             modelo.addColumn("Sueldo");
-            modelo.addColumn("Por dia");//11
+            modelo.addColumn("Por dia");//10
             modelo.addColumn("Quincena del mes");
-            modelo.addColumn("Año");//13
+            modelo.addColumn("Año");//12
             modelo.addColumn("Dia 1 o 16");
-            modelo.addColumn("Dia 2 o 17");//15
+            modelo.addColumn("Dia 2 o 17");//14
             modelo.addColumn("Dia 3 o 18");
-            modelo.addColumn("Dia 4 o 19");//17
+            modelo.addColumn("Dia 4 o 19");//16
             modelo.addColumn("Dia 5 o 20");
-            modelo.addColumn("Dia 6 o 21");//19
+            modelo.addColumn("Dia 6 o 21");//18
             modelo.addColumn("Dia 7 o 22");
-            modelo.addColumn("Dia 8 o 23");//21
+            modelo.addColumn("Dia 8 o 23");//20
             modelo.addColumn("Dia 9 o 24");
-            modelo.addColumn("Dia 10 o 25");//23
+            modelo.addColumn("Dia 10 o 25");//22
             modelo.addColumn("Dia 11 o 26");
-            modelo.addColumn("Dia 12 o 27");//25
+            modelo.addColumn("Dia 12 o 27");//24
             modelo.addColumn("Dia 13 o 28");
-            modelo.addColumn("Dia 14 o 29");//27
+            modelo.addColumn("Dia 14 o 29");//26
             modelo.addColumn("Dia 15 o 30");
-            modelo.addColumn("Dia 31");//29
+            modelo.addColumn("Dia 31");//28
             modelo.addColumn("Desc.  Varios");
-            modelo.addColumn("Desc. IMSS");//31
+            modelo.addColumn("Desc. IMSS");//30
             modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//33
+            modelo.addColumn("Lugar");//32
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Adicionales");//35
+            modelo.addColumn("Adicionales");//34
             modelo.addColumn("Bono");
-            modelo.addColumn("Faltantes de boleto");//37
+            modelo.addColumn("Faltantes de boleto");//36
             modelo.addColumn("Faltante de efectivo");
-            modelo.addColumn("Boleto Perdido");//39
+            modelo.addColumn("Boleto Perdido");//38
             modelo.addColumn("Sancion");
-            modelo.addColumn("Grua");//41
+            modelo.addColumn("Grua");//40
             modelo.addColumn("Playera");
-            modelo.addColumn("Chamarra");//43
+            modelo.addColumn("Chamarra");//42
             modelo.addColumn("Pantalon");
-            modelo.addColumn("Corbata");//45
+            modelo.addColumn("Corbata");//44
             modelo.addColumn("Chaleco");
-            modelo.addColumn("Credencial");//47
+            modelo.addColumn("Credencial");//46
             modelo.addColumn("Orden de taller");
-            modelo.addColumn("Prestamos");//49
+            modelo.addColumn("Prestamos");//48
             modelo.addColumn("Rembolso");
-            modelo.addColumn("Deposito");//51
+            modelo.addColumn("Deposito");//50
             modelo.addColumn("Observaciones");
 
 //Anchos hasta quincena
-            int[] anchos = {50, 50, 60, 60, 150, 60, 60, 60, 50, 35, 55, 150,
+            int[] anchos = {50, 60, 60, 150, 60, 60, 60, 50, 35, 55, 150,
                 //anchos hasta 9-24
                 25, 35, 35, 35, 35, 35, 35, 35, 35, 35,
                 //anchos hasta apoyo
@@ -1608,7 +1608,7 @@ public void editarT() {
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, fol.getText());
+            pst.setString(1, NDL.getText());
             pst.setString(2, Ap.getText());
             pst.setString(3, am.getText());
             pst.setString(4, name.getText());
@@ -1963,7 +1963,7 @@ public void editarT() {
         Modm = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        fol = new javax.swing.JTextField();
+        NDL = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel90 = new javax.swing.JLabel();
         Bono1 = new javax.swing.JTextField();
@@ -3393,9 +3393,9 @@ public void editarT() {
 
         jLabel1.setText("# Lista:");
 
-        fol.addActionListener(new java.awt.event.ActionListener() {
+        NDL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                folActionPerformed(evt);
+                NDLActionPerformed(evt);
             }
         });
 
@@ -3423,7 +3423,7 @@ public void editarT() {
                     .addComponent(jLabel90))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(fol, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(NDL, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(Ap)
                     .addComponent(am)
                     .addComponent(name)
@@ -3436,7 +3436,7 @@ public void editarT() {
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(fol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NDL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -6042,26 +6042,25 @@ public void editarT() {
             DefaultTableModel model = (DefaultTableModel) pago.getModel();
 
             int fila = pago.getSelectedRow();
-            txtid.setText(String.valueOf(pago.getValueAt(fila, 0)));
-            fol.setText(String.valueOf(pago.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(pago.getValueAt(fila, 2)));
-            am.setText(String.valueOf(pago.getValueAt(fila, 3)));
-            name.setText(String.valueOf(pago.getValueAt(fila, 4)));
-            Bono.setText(String.valueOf(pago.getValueAt(fila, 5)));
-            Bono.setText(String.valueOf(pago.getValueAt(fila, 5)));
-            cta.setText(String.valueOf(pago.getValueAt(fila, 6)));
-            ban.setText(String.valueOf(pago.getValueAt(fila, 7)));
-            Zon.setText(String.valueOf(pago.getValueAt(fila, 8)));
-            lug.setText(String.valueOf(pago.getValueAt(fila, 9)));
-            sueldo.setText(String.valueOf(pago.getValueAt(fila, 12)));
-            deposito.setText(String.valueOf(pago.getValueAt(fila, 13)));
-            String combo1 = model.getValueAt(fila, 10).toString();
+            NDL.setText(String.valueOf(pago.getValueAt(fila, 0)));
+            Ap.setText(String.valueOf(pago.getValueAt(fila, 1)));
+            am.setText(String.valueOf(pago.getValueAt(fila, 2)));
+            name.setText(String.valueOf(pago.getValueAt(fila, 3)));
+            Bono.setText(String.valueOf(pago.getValueAt(fila, 4)));
+            Bono.setText(String.valueOf(pago.getValueAt(fila, 4)));
+            cta.setText(String.valueOf(pago.getValueAt(fila, 5)));
+            ban.setText(String.valueOf(pago.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(pago.getValueAt(fila, 7)));
+            lug.setText(String.valueOf(pago.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(pago.getValueAt(fila, 11)));
+            deposito.setText(String.valueOf(pago.getValueAt(fila, 12)));
+            String combo1 = model.getValueAt(fila, 9).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(combo1)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 10));
             año.setDate(date);
 
 } catch (ParseException ex) {
@@ -6089,146 +6088,145 @@ public void editarT() {
             DefaultTableModel model = (DefaultTableModel) Tnom.getModel();
 
             int fila = Tnom.getSelectedRow();
-            txtid.setText(String.valueOf(Tnom.getValueAt(fila, 0)));
-            fol.setText(String.valueOf(Tnom.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(pago.getValueAt(fila, 2)));
-            am.setText(String.valueOf(pago.getValueAt(fila, 3)));
-            name.setText(String.valueOf(pago.getValueAt(fila, 4)));
-            cta.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
-            ban.setText(String.valueOf(Tnom.getValueAt(fila, 6)));
-            Zon.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
-            lug.setText(String.valueOf(Tnom.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 9)));
-            pd.setText(String.valueOf(Tnom.getValueAt(fila, 10)));
-            String combo1 = model.getValueAt(fila, 11).toString();
+            NDL.setText(String.valueOf(Tnom.getValueAt(fila, 0)));
+            Ap.setText(String.valueOf(pago.getValueAt(fila, 1)));
+            am.setText(String.valueOf(pago.getValueAt(fila, 2)));
+            name.setText(String.valueOf(pago.getValueAt(fila, 3)));
+            cta.setText(String.valueOf(Tnom.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
+            Zon.setText(String.valueOf(Tnom.getValueAt(fila, 6)));
+            lug.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
+            sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 8)));
+            pd.setText(String.valueOf(Tnom.getValueAt(fila, 9)));
+            String combo1 = model.getValueAt(fila, 10).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).toString().equalsIgnoreCase(combo1)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
 
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 12));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            String combo2 = model.getValueAt(fila, 13).toString();
+            String combo2 = model.getValueAt(fila, 12).toString();
             for (int i = 0; i < DT.getItemCount(); i++) {
                 if (DT.getItemAt(i).toString().equalsIgnoreCase(combo2)) {
                     DT.setSelectedIndex(i);
                 }
             }
-            String combo3 = model.getValueAt(fila, 14).toString();
+            String combo3 = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < DT1.getItemCount(); i++) {
                 if (DT1.getItemAt(i).toString().equalsIgnoreCase(combo3)) {
                     DT1.setSelectedIndex(i);
                 }
             }
-            String combo4 = model.getValueAt(fila, 15).toString();
+            String combo4 = model.getValueAt(fila, 14).toString();
             for (int i = 0; i < DT2.getItemCount(); i++) {
                 if (DT2.getItemAt(i).toString().equalsIgnoreCase(combo4)) {
                     DT2.setSelectedIndex(i);
                 }
             }
-            String combo5 = model.getValueAt(fila, 16).toString();
+            String combo5 = model.getValueAt(fila, 15).toString();
             for (int i = 0; i < DT3.getItemCount(); i++) {
                 if (DT3.getItemAt(i).toString().equalsIgnoreCase(combo5)) {
                     DT3.setSelectedIndex(i);
                 }
             }
-            String combo6 = model.getValueAt(fila, 17).toString();
+            String combo6 = model.getValueAt(fila, 16).toString();
             for (int i = 0; i < DT4.getItemCount(); i++) {
                 if (DT4.getItemAt(i).toString().equalsIgnoreCase(combo6)) {
                     DT4.setSelectedIndex(i);
                 }
             }
-            String combo7 = model.getValueAt(fila, 18).toString();
+            String combo7 = model.getValueAt(fila, 17).toString();
             for (int i = 0; i < DT5.getItemCount(); i++) {
                 if (DT5.getItemAt(i).toString().equalsIgnoreCase(combo7)) {
                     DT5.setSelectedIndex(i);
                 }
             }
-            String combo8 = model.getValueAt(fila, 19).toString();
+            String combo8 = model.getValueAt(fila, 18).toString();
             for (int i = 0; i < DT6.getItemCount(); i++) {
                 if (DT6.getItemAt(i).toString().equalsIgnoreCase(combo8)) {
                     DT6.setSelectedIndex(i);
                 }
             }
-            String combo9 = model.getValueAt(fila, 20).toString();
+            String combo9 = model.getValueAt(fila, 19).toString();
             for (int i = 0; i < DT7.getItemCount(); i++) {
                 if (DT7.getItemAt(i).toString().equalsIgnoreCase(combo9)) {
                     DT7.setSelectedIndex(i);
                 }
             }
-            String combo10 = model.getValueAt(fila, 21).toString();
+            String combo10 = model.getValueAt(fila, 20).toString();
             for (int i = 0; i < DT8.getItemCount(); i++) {
                 if (DT8.getItemAt(i).toString().equalsIgnoreCase(combo10)) {
                     DT8.setSelectedIndex(i);
                 }
             }
-            String combo11 = model.getValueAt(fila, 22).toString();
+            String combo11 = model.getValueAt(fila, 21).toString();
             for (int i = 0; i < DT9.getItemCount(); i++) {
                 if (DT9.getItemAt(i).toString().equalsIgnoreCase(combo11)) {
                     DT9.setSelectedIndex(i);
                 }
             }
-            String combo12 = model.getValueAt(fila, 23).toString();
+            String combo12 = model.getValueAt(fila, 22).toString();
             for (int i = 0; i < DT10.getItemCount(); i++) {
                 if (DT10.getItemAt(i).toString().equalsIgnoreCase(combo12)) {
                     DT10.setSelectedIndex(i);
                 }
             }
-            String combo13 = model.getValueAt(fila, 24).toString();
+            String combo13 = model.getValueAt(fila, 23).toString();
             for (int i = 0; i < DT11.getItemCount(); i++) {
                 if (DT11.getItemAt(i).toString().equalsIgnoreCase(combo13)) {
                     DT11.setSelectedIndex(i);
                 }
             }
-            String combo14 = model.getValueAt(fila, 25).toString();
+            String combo14 = model.getValueAt(fila, 24).toString();
             for (int i = 0; i < DT12.getItemCount(); i++) {
                 if (DT12.getItemAt(i).toString().equalsIgnoreCase(combo14)) {
                     DT12.setSelectedIndex(i);
                 }
             }
-            String combo15 = model.getValueAt(fila, 26).toString();
+            String combo15 = model.getValueAt(fila, 25).toString();
             for (int i = 0; i < DT13.getItemCount(); i++) {
                 if (DT13.getItemAt(i).toString().equalsIgnoreCase(combo15)) {
                     DT13.setSelectedIndex(i);
                 }
             }
-            String combo16 = model.getValueAt(fila, 27).toString();
+            String combo16 = model.getValueAt(fila, 26).toString();
             for (int i = 0; i < DT14.getItemCount(); i++) {
                 if (DT14.getItemAt(i).toString().equalsIgnoreCase(combo16)) {
                     DT14.setSelectedIndex(i);
                 }
             }
-            String combo17 = model.getValueAt(fila, 28).toString();
+            String combo17 = model.getValueAt(fila, 27).toString();
             for (int i = 0; i < DT15.getItemCount(); i++) {
                 if (DT15.getItemAt(i).toString().equalsIgnoreCase(combo17)) {
                     DT15.setSelectedIndex(i);
                 }
             }
-            DVT.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
-            DI.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
-            apy.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
-            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
-            cda.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
-            ADD.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
-            Bono.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
-            Bono1.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
-            Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
-            Fde.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
-            Bp.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
-            Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
-            Grua.setText(String.valueOf(Tnom.getValueAt(fila, 40)));
-            Playera.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
-            Chamarra.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
-            Pantalon.setText(String.valueOf(Tnom.getValueAt(fila, 43)));
-            Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 44)));
-            Chaleco.setText(String.valueOf(Tnom.getValueAt(fila, 45)));
-            Credencial.setText(String.valueOf(Tnom.getValueAt(fila, 46)));
-            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 47)));
-            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 48)));
-            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 49)));
-            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
-            obs.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
+            DVT.setText(String.valueOf(Tnom.getValueAt(fila, 28)));
+            DI.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
+            apy.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
+            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
+            cda.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
+            ADD.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
+            Bono.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            Bono1.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
+            Fde.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
+            Bp.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
+            Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
+            Grua.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
+            Playera.setText(String.valueOf(Tnom.getValueAt(fila, 40)));
+            Chamarra.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
+            Pantalon.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
+            Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 43)));
+            Chaleco.setText(String.valueOf(Tnom.getValueAt(fila, 44)));
+            Credencial.setText(String.valueOf(Tnom.getValueAt(fila, 45)));
+            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 46)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 47)));
+            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 48)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 49)));
+            obs.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
 
 } catch (ParseException ex) {
             Logger.getLogger(Admin_Nomina_5.class  
@@ -9487,9 +9485,9 @@ public void editarT() {
 
     }//GEN-LAST:event_shareMouseClicked
 
-    private void folActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folActionPerformed
+    private void NDLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NDLActionPerformed
 
-    }//GEN-LAST:event_folActionPerformed
+    }//GEN-LAST:event_NDLActionPerformed
 
     private void CS4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS4ActionPerformed
 
@@ -10605,6 +10603,7 @@ public void editarT() {
     private javax.swing.JTextField Modelo;
     private javax.swing.JButton Modificartaller;
     private javax.swing.JButton Modm;
+    private javax.swing.JTextField NDL;
     private javax.swing.JTextField NameTaller;
     private javax.swing.JTextField Namepres;
     private javax.swing.JTextField Ndo;
@@ -10740,7 +10739,6 @@ public void editarT() {
     private javax.swing.JLabel dt8;
     private javax.swing.JLabel dt9;
     private javax.swing.JTextField filtroNDFP;
-    private javax.swing.JTextField fol;
     private javax.swing.JTextField interes;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;

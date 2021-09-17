@@ -2612,7 +2612,7 @@
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="fol" pref="100" max="32767" attributes="0"/>
+                                  <Component id="NDL" pref="100" max="32767" attributes="0"/>
                                   <Component id="Ap" alignment="0" max="32767" attributes="0"/>
                                   <Component id="am" alignment="0" max="32767" attributes="0"/>
                                   <Component id="name" alignment="0" max="32767" attributes="0"/>
@@ -2628,7 +2628,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="fol" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NDL" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -2661,9 +2661,9 @@
                         <Property name="text" type="java.lang.String" value="# Lista:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="fol">
+                    <Component class="javax.swing.JTextField" name="NDL">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="folActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NDLActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel2">
