@@ -787,40 +787,42 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         } else {
             Iat = "Si";
         }
-        String SQL = "UPDATE `taller` SET `Fecha de expedicion` = ?,"
-                + " `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?,"
-                + " `Zona` = ?, `Servicio` = ?, `Marca` = ?, `Modelo` = ?,"
-                + " `Placas` = ?, `Color` = ?, `# de piezas` = ?, `Daño` = ?,"
-                + " `Costo total` = ?, `Ingreso a taller` = ?, `Status` = ?,"
-                + " `Importe a descontar` = ?, `Cobrado` = ?, `Pagado` = ?,"
-                + " `Pendiente` = ?, `Por quincenas` = ?, `Forma de pago` = ?,"
-                + " `Observaciones` = ? WHERE `taller`.`idTaller` = ?";
+        String SQL = "UPDATE `taller` SET `idTaller` = ?, "
+                + "`Fecha de expedicion` = ?, `Apellido P` = ?,"
+                + " `Apellido M` = ?, `Nombre(s)` = ?, `Zona` = ?,"
+                + " `Servicio` = ?, `Marca` = ?, `Modelo` = ?, `Placas` = ?,"
+                + " `Color` = ?, `# de piezas` = ?, `Daño` = ?, `Costo total` = ?,"
+                + " `Ingreso a taller` = ?, `Status` = ?, `Importe a descontar` = ?,"
+                + " `Pagado` = ?, `Pendiente` = ?, `Por quincenas` = ?, `Forma de pago` = ?,"
+                + " `Detalles de pago` = ?, `Observaciones` = ? WHERE `taller`.`idTaller` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, FE.getText());
-            pst.setString(2, ApTaller.getText());
-            pst.setString(3, Amtaller.getText());
-            pst.setString(4, NameTaller.getText());
-            pst.setString(5, Zona1.getText());
-            pst.setString(6, Serv1.getText());
-            pst.setString(7, Marca.getText());
-            pst.setString(8, Modelo.getText());
-            pst.setString(9, Placas.getText());
-            pst.setString(10, Color.getText());
-            pst.setString(11, ndp.getText());
-            pst.setString(12, Daño.getText());
-            pst.setString(13, CT.getText());
-            pst.setString(14, Iat);
-            pst.setString(15, Item);
-            pst.setString(16, Iad.getText());
-            pst.setString(17, Pagado.getText());
-            pst.setString(18, Pendiente.getText());
-            pst.setString(19, PQT.getText());
-            pst.setString(20, Item1);
-            pst.setString(21, Observaciones.getText());
-            pst.setInt(22, id);
+            pst.setInt(1, id);
+            pst.setString(2, FE.getText());
+            pst.setString(3, ApTaller.getText());
+            pst.setString(4, Amtaller.getText());
+            pst.setString(5, NameTaller.getText());
+            pst.setString(6, Zona1.getText());
+            pst.setString(7, Serv1.getText());
+            pst.setString(8, Marca.getText());
+            pst.setString(9, Modelo.getText());
+            pst.setString(10, Placas.getText());
+            pst.setString(11, Color.getText());
+            pst.setString(12, ndp.getText());
+            pst.setString(13, Daño.getText());
+            pst.setString(14, CT.getText());
+            pst.setString(15, Iat);
+            pst.setString(16, Item);
+            pst.setString(17, Iad.getText());
+            pst.setString(18, Pagado.getText());
+            pst.setString(19, Pendiente.getText());
+            pst.setString(20, PQT.getText());
+            pst.setString(21, Item1);
+            pst.setString(22, Detallespagoodt.getText());
+            pst.setString(23, Observaciones.getText());
+            pst.setInt(24, id);
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Orden Modificada");
@@ -903,7 +905,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            
+
             pst.setInt(1, ndo);
             pst.setString(2, FE.getText());
             pst.setString(3, ApTaller.getText());
