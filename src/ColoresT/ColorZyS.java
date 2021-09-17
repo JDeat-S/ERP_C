@@ -23,7 +23,7 @@ public class ColorZyS extends DefaultTableCellRenderer {
     Color ZP = new Color(20, 255, 206);
     Color CPC = new Color(255, 201, 100);
     Color FP = new Color(150, 114, 84);
-    Color Zn = new Color(203, 132, 255);
+    Color Zn = new Color(187, 94, 255);
 
     @Override
 
