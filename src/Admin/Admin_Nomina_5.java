@@ -189,7 +189,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         cta.setText("");
         ban.setText("");
         Zon.setText("");
-        lug.setText("");
+        ServN.setText("");
         sueldo.setText("0");
         pd.setText("0");
         Fdb.setText("0");
@@ -754,32 +754,28 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                 /*CT*/ 55, /*IAT*/ 60, /*Status*/ 60, /*IAD*/ 60, /*PAGA*/ 55,
                 /*PENDIENTE*/ 55, /*PPQ*/ 70, /*FDP*/ 65, /*DDP*/ 1000, /*obs*/ 1000};
 
-        for (int x = 0; x < cantidadColumnas; x++) {
-            //Nombre tabla
-            OdT.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                OdT.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
-        }
-
-        while (rs.next()) {
-            Object[] filas = new Object[cantidadColumnas];
-            for (int i = 0; i < cantidadColumnas; i++) {
-                filas[i] = rs.getObject(i + 1);
             }
-            modelo.addRow(filas);
-        }
-    }
-    catch (SQLException e
 
-    
-        ) {
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de taller: " + e.getMessage());
 
-    }
+        }
 
-}
+    }
 //Editar orden de taller
 
-public void editarT() {
+    public void editarT() {
         int id = Integer.parseInt(Ndo.getText());
         String Item = Statustaller.getSelectedItem().toString();
         String Item1 = Fdp.getSelectedItem().toString();
@@ -1263,7 +1259,7 @@ public void editarT() {
             pst.setString(6, cta.getText());
             pst.setString(7, ban.getText());
             pst.setString(8, Zon.getText());
-            pst.setString(9, lug.getText());
+            pst.setString(9, ServN.getText());
             pst.setString(10, Item);
             pst.setString(11, ((JTextField) año.getDateEditor().getUiComponent()).getText());
             pst.setString(12, sueldo.getText());
@@ -1296,7 +1292,7 @@ public void editarT() {
             pst.setString(6, cta.getText());
             pst.setString(7, ban.getText());
             pst.setString(8, Zon.getText());
-            pst.setString(9, lug.getText());
+            pst.setString(9, ServN.getText());
             pst.setString(10, Item);
             pst.setString(11, ((JTextField) año.getDateEditor().getUiComponent()).getText());
             pst.setString(12, sueldo.getText());
@@ -1353,7 +1349,7 @@ public void editarT() {
             pst.setString(5, cta.getText());
             pst.setString(6, ban.getText());
             pst.setString(7, Zon.getText());
-            pst.setString(8, lug.getText());
+            pst.setString(8, ServN.getText());
             pst.setString(9, sueldo.getText());
             pst.setString(10, pd.getText());
             pst.setString(11, Item);
@@ -1575,7 +1571,26 @@ public void editarT() {
 
     }
 
+//Agregar nomina
     public void AgregarN() {
+        int id = Integer.parseInt(NDL.getText());
+        String SQL;
+        if (!"".equals(id)) {
+            SQL = "INSERT INTO `nomina` (`idNomina`, `Apellido P`,"
+                + " `Apellido M`, `Nombre(s)`, `Cuenta_Nom`, `Banco_Nom`,"
+                + " `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`, `Pd`, `Quincena`,"
+                + " `Año`, `Dia 1 o 16`, `Dia 2 o 17`, `Dia 3 o 18`, `Dia 4 o 19`,"
+                + " `Dia 5 o 20`, `Dia 6 o 21`, `Dia 7 o 22`, `Dia 8 o 23`, "
+                + "`Dia 9 o 24`, `Dia 10 o 25`, `Dia 11 o 26`, `Dia 12 o 27`,"
+                + " `Dia 13 o 28`, `Dia 14 o 29`, `Dia 15 o 30`, `Dia 31`, `Desc_v`,"
+                + " `Desc_IMSS`, `Apoyo`, `Lugar`, `Caja`, `add`, `Bono`, `Faltantes de boleto`,"
+                + " `Faltante de efectivo`, `Boleto perdido`, `Sancion`, `Grua`, `Playera`, "
+                + "`Chamarra`, `Pantalon`, `Corbata`, `Chaleco`, `Credencial`, `Orden de taller`,"
+                + " `Prestamos`, `Rembolso`, `Deposito`, `Observaciones`) VALUES "
+                + "(NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        }
 
         String Item = Quincenas.getSelectedItem().toString();
         String Item2 = DT.getSelectedItem().toString();
@@ -1595,27 +1610,32 @@ public void editarT() {
         String Item16 = DT14.getSelectedItem().toString();
         String Item17 = DT15.getSelectedItem().toString();
 
-        String SQL = "Insert INTO `confort`.`nomina` (`#_Folio`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Cuenta_Nom`,"
-                + " `Banco_Nom`, `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`, `Pd`, `Quincena`, `Año`,"
-                + " `Dia 1 o 16`, `Dia 2 o 17`, `Dia 3 o 18`, `Dia 4 o 19`, `Dia 5 o 20`, `Dia 6 o 21`, `Dia 7 o 22`,"
-                + " `Dia 8 o 23`, `Dia 9 o 24`, `Dia 10 o 25`, `Dia 11 o 26`, `Dia 12 o 27`, `Dia 13 o 28`, `Dia 14 o 29`,"
-                + " `Dia 15 o 30`, `Dia 31`, `Desc_v`, `Desc_IMSS`, `Apoyo`, `Lugar`, `Caja`, `add`, `Bono`, `Faltantes de boleto`,"
-                + " `Faltante de efectivo`, `Boleto perdido`, `Sancion`, `Grua`, `Playera`, `Chamarra`, `Pantalon`, `Corbata`, `Chaleco`,"
-                + " `Credencial`, `Orden de taller`, `Prestamos`, `Rembolso`, `Deposito`, `Observaciones`) VALUES "
-                + "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        SQL = "INSERT INTO `nomina` (`idNomina`, `Apellido P`,"
+                + " `Apellido M`, `Nombre(s)`, `Cuenta_Nom`, `Banco_Nom`,"
+                + " `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`, `Pd`, `Quincena`,"
+                + " `Año`, `Dia 1 o 16`, `Dia 2 o 17`, `Dia 3 o 18`, `Dia 4 o 19`,"
+                + " `Dia 5 o 20`, `Dia 6 o 21`, `Dia 7 o 22`, `Dia 8 o 23`, "
+                + "`Dia 9 o 24`, `Dia 10 o 25`, `Dia 11 o 26`, `Dia 12 o 27`,"
+                + " `Dia 13 o 28`, `Dia 14 o 29`, `Dia 15 o 30`, `Dia 31`, `Desc_v`,"
+                + " `Desc_IMSS`, `Apoyo`, `Lugar`, `Caja`, `add`, `Bono`, `Faltantes de boleto`,"
+                + " `Faltante de efectivo`, `Boleto perdido`, `Sancion`, `Grua`, `Playera`, "
+                + "`Chamarra`, `Pantalon`, `Corbata`, `Chaleco`, `Credencial`, `Orden de taller`,"
+                + " `Prestamos`, `Rembolso`, `Deposito`, `Observaciones`) VALUES "
+                + "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, NDL.getText());
+            pst.setInt(1, id);
             pst.setString(2, Ap.getText());
             pst.setString(3, am.getText());
             pst.setString(4, name.getText());
             pst.setString(5, cta.getText());
             pst.setString(6, ban.getText());
             pst.setString(7, Zon.getText());
-            pst.setString(8, lug.getText());
+            pst.setString(8, ServN.getText());
             pst.setString(9, sueldo.getText());
             pst.setString(10, pd.getText());
             pst.setString(11, Item);
@@ -1977,7 +1997,7 @@ public void editarT() {
         jLabel7 = new javax.swing.JLabel();
         Zon = new javax.swing.JTextField();
         ban = new javax.swing.JTextField();
-        lug = new javax.swing.JTextField();
+        ServN = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         cta = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -2953,7 +2973,7 @@ public void editarT() {
 
         jPanel10.setBackground(new java.awt.Color(204, 255, 255));
 
-        jLabel75.setText("Faltantes de bolteto:");
+        jLabel75.setText("Faltantes de boleto:");
 
         jLabel23.setText("Desc. varios:");
 
@@ -3074,13 +3094,13 @@ public void editarT() {
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addComponent(Fde, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(24, 24, 24)
                                 .addComponent(jLabel80)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Grua, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addComponent(Bp, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(10, 10, 10)
                                 .addComponent(jLabel81)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Playera, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3090,6 +3110,7 @@ public void editarT() {
                                 .addComponent(jLabel79)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Sancion, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(6, 6, 6)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addGap(5, 5, 5)
@@ -3135,20 +3156,15 @@ public void editarT() {
                             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel75)
                                 .addComponent(Fdb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel79)
-                                .addComponent(Sancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel79))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel77)
-                                .addComponent(Fde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel80)
-                                .addComponent(Grua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Fde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel78)
-                                .addComponent(Bp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel81)
-                                .addComponent(Playera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Bp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel10Layout.createSequentialGroup()
                             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel85)
@@ -3164,15 +3180,20 @@ public void editarT() {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel82)
-                            .addComponent(Chamarra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Chamarra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Sancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel83)
-                            .addComponent(Pantalon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Pantalon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Grua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel80))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel84)
-                            .addComponent(Corbata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(Corbata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Playera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel81))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -3494,7 +3515,7 @@ public void editarT() {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lug, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ServN, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3519,7 +3540,7 @@ public void editarT() {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(lug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ServN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -6051,7 +6072,7 @@ public void editarT() {
             cta.setText(String.valueOf(pago.getValueAt(fila, 5)));
             ban.setText(String.valueOf(pago.getValueAt(fila, 6)));
             Zon.setText(String.valueOf(pago.getValueAt(fila, 7)));
-            lug.setText(String.valueOf(pago.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(pago.getValueAt(fila, 8)));
             sueldo.setText(String.valueOf(pago.getValueAt(fila, 11)));
             deposito.setText(String.valueOf(pago.getValueAt(fila, 12)));
             String combo1 = model.getValueAt(fila, 9).toString();
@@ -6063,10 +6084,9 @@ public void editarT() {
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 10));
             año.setDate(date);
 
-} catch (ParseException ex) {
-            Logger.getLogger(Admin_Nomina_5.class  
-
-.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_Nomina_5.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_pagoMouseClicked
 
@@ -6095,7 +6115,7 @@ public void editarT() {
             cta.setText(String.valueOf(Tnom.getValueAt(fila, 4)));
             ban.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
             Zon.setText(String.valueOf(Tnom.getValueAt(fila, 6)));
-            lug.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
             sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 8)));
             pd.setText(String.valueOf(Tnom.getValueAt(fila, 9)));
             String combo1 = model.getValueAt(fila, 10).toString();
@@ -6228,10 +6248,9 @@ public void editarT() {
             deposito.setText(String.valueOf(Tnom.getValueAt(fila, 49)));
             obs.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
 
-} catch (ParseException ex) {
-            Logger.getLogger(Admin_Nomina_5.class  
-
-.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_Nomina_5.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_TnomMouseClicked
 
@@ -9473,14 +9492,14 @@ public void editarT() {
         Ap.setText(String.valueOf(share.getValueAt(seleccionar, 0)));
         am.setText(String.valueOf(share.getValueAt(seleccionar, 1)));
         name.setText(String.valueOf(share.getValueAt(seleccionar, 2)));
-        cta.setText(String.valueOf(share.getValueAt(seleccionar, 3)));
-        ban.setText(String.valueOf(share.getValueAt(seleccionar, 4)));
-        Zon.setText(String.valueOf(share.getValueAt(seleccionar, 5)));
-        lug.setText(String.valueOf(share.getValueAt(seleccionar, 6)));
-        sueldo.setText(String.valueOf(share.getValueAt(seleccionar, 7)));
+        sueldo.setText(String.valueOf(share.getValueAt(seleccionar, 3)));
+        ServN.setText(String.valueOf(share.getValueAt(seleccionar, 4)));
+        cta.setText(String.valueOf(share.getValueAt(seleccionar, 5)));
+        ban.setText(String.valueOf(share.getValueAt(seleccionar, 6)));
+        Zon.setText(String.valueOf(share.getValueAt(seleccionar, 7)));
         cda.setText(String.valueOf(share.getValueAt(seleccionar, 8)));
         Bono.setText(String.valueOf(share.getValueAt(seleccionar, 9)));
-        Bono1.setText(String.valueOf(share.getValueAt(seleccionar, 10)));
+        Bono1.setText(String.valueOf(share.getValueAt(seleccionar, 9)));
 
 
     }//GEN-LAST:event_shareMouseClicked
@@ -10333,27 +10352,23 @@ public void editarT() {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
 
-}
+                }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin_Nomina_5.class  
+            java.util.logging.Logger.getLogger(Admin_Nomina_5.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Admin_Nomina_5.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin_Nomina_5.class  
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Admin_Nomina_5.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin_Nomina_5.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_Nomina_5.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Admin_Nomina_5.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -10677,6 +10692,7 @@ public void editarT() {
     private javax.swing.JTextField Sancion;
     private javax.swing.JTextField Serv;
     private javax.swing.JTextField Serv1;
+    private javax.swing.JTextField ServN;
     private javax.swing.JRadioButton Si;
     private javax.swing.JTextField Status;
     private javax.swing.JComboBox<String> Statustaller;
@@ -10865,7 +10881,6 @@ public void editarT() {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField lug;
     private javax.swing.JButton modP;
     private javax.swing.JButton modprestamo;
     private javax.swing.JTextField name;

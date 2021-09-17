@@ -2007,14 +2007,14 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="Fde" min="-2" pref="65" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                                               <Component id="jLabel80" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="Grua" min="-2" pref="65" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="Bp" min="-2" pref="65" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                               <Component id="jLabel81" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="Playera" min="-2" pref="65" max="-2" attributes="0"/>
@@ -2027,6 +2027,7 @@
                                               <Component id="Sancion" min="-2" pref="65" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
@@ -2087,21 +2088,16 @@
                                               <Component id="jLabel75" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="Fdb" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel79" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Sancion" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jLabel77" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="Fde" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel80" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Grua" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jLabel78" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="Bp" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel81" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Playera" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" attributes="0">
@@ -2125,16 +2121,21 @@
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel82" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Chamarra" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Sancion" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel83" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Pantalon" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Grua" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel80" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Corbata" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Playera" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel81" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -2146,7 +2147,7 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="jLabel75">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Faltantes de bolteto:"/>
+                        <Property name="text" type="java.lang.String" value="Faltantes de boleto:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel23">
@@ -2732,7 +2733,7 @@
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lug" min="-2" pref="107" max="-2" attributes="0"/>
+                                              <Component id="ServN" min="-2" pref="107" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -2767,7 +2768,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lug" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ServN" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -2794,7 +2795,7 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="ban">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="lug">
+                    <Component class="javax.swing.JTextField" name="ServN">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel14">
                       <Properties>
