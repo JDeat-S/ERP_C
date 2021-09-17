@@ -659,7 +659,7 @@ public final class Usuarios_RH_3 extends javax.swing.JFrame {
 
     private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
         // TODO add your handling code here:
-        Admin_Nomina_5 regr = new Admin_Nomina_5();
+        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Nomina1ActionPerformed

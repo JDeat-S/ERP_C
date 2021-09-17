@@ -35,7 +35,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class Admin_Nomina_5 extends javax.swing.JFrame {
+public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     int a = 1;
     int Pa = 10;
@@ -79,7 +79,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     /**
      * Creates new form Nomina_4
      */
-    public Admin_Nomina_5() {
+    public Admin_NominaQ_5() {
         initComponents();
         LabelPrestamos.setVisible(false);
         BE.setVisible(false);
@@ -169,7 +169,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         BAppag.setVisible(false);
         Bampag.setVisible(false);
         Volver.setVisible(false);
-        setIconImage(new ImageIcon(Admin_Nomina_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Admin_NominaQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
 
@@ -6150,7 +6150,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             año.setDate(date);
 
         } catch (ParseException ex) {
-            Logger.getLogger(Admin_Nomina_5.class
+            Logger.getLogger(Admin_NominaQ_5.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_pagoMouseClicked
@@ -6314,7 +6314,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             obs.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(Admin_Nomina_5.class
+            Logger.getLogger(Admin_NominaQ_5.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_TnomMouseClicked
@@ -10340,7 +10340,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
     private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
 
-        Admin_Nomina_5 regr = new Admin_Nomina_5();
+        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Nomina1ActionPerformed
@@ -10420,21 +10420,149 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin_Nomina_5.class
+            java.util.logging.Logger.getLogger(Admin_NominaQ_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin_Nomina_5.class
+            java.util.logging.Logger.getLogger(Admin_NominaQ_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin_Nomina_5.class
+            java.util.logging.Logger.getLogger(Admin_NominaQ_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_Nomina_5.class
+            java.util.logging.Logger.getLogger(Admin_NominaQ_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -10567,7 +10695,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Admin_Nomina_5().setVisible(true);
+                new Admin_NominaQ_5().setVisible(true);
             }
         });
     }

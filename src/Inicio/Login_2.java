@@ -5,7 +5,7 @@
  */
 package Inicio;
 
-import Nomina.Nomina_5;
+import Nomina.NominaQ_5;
 import RH.RH_Empleados_4;
 import Admin.Administradores_3;
 import Conexion.ConexionSQL;
@@ -104,7 +104,7 @@ public class Login_2 extends javax.swing.JFrame {
             if(rs.next()){
                 resultado=1;
                 if (resultado==1) {
-                    Nomina_5 Form = new Nomina_5();
+                    NominaQ_5 Form = new NominaQ_5();
                     Form.setVisible(true);
                     this.dispose();
                     

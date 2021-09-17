@@ -3368,7 +3368,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
     private void NominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NominaActionPerformed
 
-        Admin_Nomina_5 regr = new Admin_Nomina_5();
+        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NominaActionPerformed
