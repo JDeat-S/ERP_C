@@ -20,7 +20,7 @@ public class ColorNSD extends DefaultTableCellRenderer {
     Color Evn = new Color(183, 244, 99);
     Color SVP = new Color(248, 193, 253);
     Color EstCDMX = new Color(20, 255, 206);
-    Color LD = new Color(77, 255, 0);
+
     @Override
 
     public Component getTableCellRendererComponent(JTable table, Object value,
