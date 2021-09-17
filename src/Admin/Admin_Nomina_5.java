@@ -878,6 +878,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
     }
 
+    //agregar orden de taller
     public void AgregarT() {
         String Item = Statustaller.getSelectedItem().toString();
         String Item1 = Fdp.getSelectedItem().toString();
@@ -889,14 +890,12 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         } else {
             Iat = ".";
         }
-        String SQL = "INSERT INTO `taller` (`Fecha de expedicion`,"
-                + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
-                + " `Servicio`, `Marca`, `Modelo`, `Placas`, `Color`,"
-                + " `# de piezas`, `Daño`, `Costo total`, `Ingreso a taller`,"
-                + " `Status`, `Importe a descontar`, `Pagado`,"
-                + " `Pendiente`, `Por quincenas`, `Forma de pago`,"
-                + " `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO `taller` (`idTaller`, `Fecha de expedicion`,"
+                + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`,"
+                + " `Marca`, `Modelo`, `Placas`, `Color`, `# de piezas`, `Daño`,"
+                + " `Costo total`, `Ingreso a taller`, `Status`, `Importe a descontar`,"
+                + " `Pagado`, `Pendiente`, `Por quincenas`, `Forma de pago`, `Observaciones`) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -1944,7 +1943,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         Presp = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        txtid = new javax.swing.JTextField();
         jLabel87 = new javax.swing.JLabel();
         Rembolso = new javax.swing.JTextField();
         modP = new javax.swing.JButton();
@@ -2150,12 +2148,13 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         Busamshpre1 = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        Detallespagoodt = new javax.swing.JTextArea();
         jLabel58 = new javax.swing.JLabel();
         jLabel97 = new javax.swing.JLabel();
         jLabel98 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        DetallepagoNQodt = new javax.swing.JComboBox<>();
+        DetallepagoQodt = new javax.swing.JComboBox<>();
+        OcultoODT = new javax.swing.JTextField();
         TTalleres = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
         jLabel73 = new javax.swing.JLabel();
@@ -3315,9 +3314,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(Presp, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(181, 181, 181))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3350,7 +3347,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                     .addComponent(Presp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Odtp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29)
-                    .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel87)
                     .addComponent(Rembolso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -3382,7 +3378,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
         jPanel12.setBackground(new java.awt.Color(204, 255, 255));
 
-        jLabel1.setText("# Folio:");
+        jLabel1.setText("# Lista:");
 
         fol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3419,7 +3415,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                     .addComponent(am)
                     .addComponent(name)
                     .addComponent(Bono1))
-                .addGap(129, 129, 129))
+                .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3684,7 +3680,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         Nomina.setViewportView(jPanel1);
@@ -4717,10 +4713,10 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
         jLabel32.setText("Filtros:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Detallespagoodt.setColumns(20);
+        Detallespagoodt.setLineWrap(true);
+        Detallespagoodt.setRows(5);
+        jScrollPane1.setViewportView(Detallespagoodt);
 
         jLabel58.setText("Detalles de pagos:");
 
@@ -4728,9 +4724,16 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
         jLabel98.setText("Quincena:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        DetallepagoNQodt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" }));
+        DetallepagoQodt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        DetallepagoQodt.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                DetallepagoQodtItemStateChanged(evt);
+            }
+        });
+
+        OcultoODT.setText(" ");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -4804,15 +4807,18 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                                                 .addComponent(Pendiente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(34, 34, 34)
                                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(OcultoODT, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                             .addComponent(jLabel98)
                                                             .addComponent(jLabel97))
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                                            .addComponent(DetallepagoQodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(DetallepagoNQodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                                     .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addComponent(Iad, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4903,11 +4909,11 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel97)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(DetallepagoNQodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel98)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(DetallepagoQodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -4927,7 +4933,11 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                                 .addComponent(jLabel32)
                                 .addComponent(FshT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(197, 197, 197)
+                                .addComponent(OcultoODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(265, Short.MAX_VALUE))
         );
 
@@ -5099,7 +5109,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EliminarTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarTActionPerformed
-        // TODO add your handling code here:
+
         eliminarT();
         MDT();
         limpiarT();
@@ -5107,7 +5117,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
     private void OdTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OdTMouseClicked
 
-        // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) OdT.getModel();
         try {
 
@@ -5170,12 +5179,12 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_OdTMouseClicked
 
     private void BodtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BodtKeyReleased
-        // TODO add your handling code here:
+
 
     }//GEN-LAST:event_BodtKeyReleased
 
     private void QAPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_QAPItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) QAP.getSelectedItem();
         if (dt.equals(".")) {
             Q1.setText("0");
@@ -5832,26 +5841,25 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_QAPItemStateChanged
 
     private void ModificartallerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificartallerActionPerformed
-        // TODO add your handling code here:
+
         editarT();
         MDT();
         limpiarT();
     }//GEN-LAST:event_ModificartallerActionPerformed
 
     private void AgregartallerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregartallerActionPerformed
-        // TODO add your handling code here:
+
         AgregarT();
         MDT();
         limpiarT();
     }//GEN-LAST:event_AgregartallerActionPerformed
 
     private void BE1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BE1KeyReleased
-        // TODO add your handling code here:
+
         sharetp();
     }//GEN-LAST:event_BE1KeyReleased
 
     private void share2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_share2MouseClicked
-        // TODO add your handling code here:
 
         int seleccionar = share2.getSelectedRow();
         ApTaller.setText(String.valueOf(share2.getValueAt(seleccionar, 0)));
@@ -5862,24 +5870,24 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_share2MouseClicked
 
     private void PagadoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PagadoKeyReleased
-        // TODO add your handling code here:
+
         DAR1();
     }//GEN-LAST:event_PagadoKeyReleased
 
     private void CTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CTKeyReleased
-        // TODO add your handling code here:
+
         DAR();
     }//GEN-LAST:event_CTKeyReleased
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+
         eliminarpre();
         MDP();
         limpiarP();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void PreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PreMouseClicked
-        // TODO add your handling code here:
+
         DefaultTableModel model = (DefaultTableModel) Pre.getModel();
         int seleccionar = Pre.getSelectedRow();
         Num.setText(String.valueOf(Pre.getValueAt(seleccionar, 0)));
@@ -5908,30 +5916,29 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PreMouseClicked
 
     private void BPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BPKeyReleased
-        // TODO add your handling code here:
+
         MDP();
     }//GEN-LAST:event_BPKeyReleased
 
     private void FSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FSActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FSActionPerformed
 
     private void modprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modprestamoActionPerformed
-        // TODO add your handling code here:
+
         editarpre();
         MDP();
         limpiarP();
     }//GEN-LAST:event_modprestamoActionPerformed
 
     private void AgregarprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarprestamoActionPerformed
-        // TODO add your handling code here:
+
         AgregarPre();
         MDP();
         limpiarP();
     }//GEN-LAST:event_AgregarprestamoActionPerformed
 
     private void share1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_share1MouseClicked
-        // TODO add your handling code here:
 
         int seleccionar = share1.getSelectedRow();
         Appres.setText(String.valueOf(share1.getValueAt(seleccionar, 0)));
@@ -5942,12 +5949,12 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_share1MouseClicked
 
     private void BEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BEKeyReleased
-        // TODO add your handling code here:
+
         shareprestamo();
     }//GEN-LAST:event_BEKeyReleased
 
     private void InteresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_InteresItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) Interes.getSelectedItem();
         if (dt.equals(".")) {
             M1.setText("0");
@@ -6006,11 +6013,11 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_InteresItemStateChanged
 
     private void MesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MesActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_MesActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+
         eliminarp();
         pagos();
         limpiarnom();
@@ -6018,7 +6025,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
     private void pagoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pagoMouseClicked
         try {
-            // TODO add your handling code here:
+
             DefaultTableModel model = (DefaultTableModel) pago.getModel();
 
             int fila = pago.getSelectedRow();
@@ -6050,20 +6057,20 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_pagoMouseClicked
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-        // TODO add your handling code here:
+
         eliminarnom();
         mostrardatos();
         limpiarnom();
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void NominabKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NominabKeyReleased
-        // TODO add your handling code here:
+
         mostrardatos();
     }//GEN-LAST:event_NominabKeyReleased
 
     private void TnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TnomMouseClicked
         try {
-            // TODO add your handling code here:
+
             DefaultTableModel model = (DefaultTableModel) Tnom.getModel();
 
             int fila = Tnom.getSelectedRow();
@@ -6214,7 +6221,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_TnomMouseClicked
 
     private void ModmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModmActionPerformed
-        // TODO add your handling code here:
+
         editar();
         pagos();
         mostrardatos();
@@ -6222,7 +6229,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ModmActionPerformed
 
     private void AgregarNPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarNPActionPerformed
-        // TODO add your handling code here:
+
         agregarP();
         AgregarN();
         pagos();
@@ -6231,7 +6238,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_AgregarNPActionPerformed
 
     private void modPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modPActionPerformed
-        // TODO add your handling code here:
 
         editarp();
         pagos();
@@ -6240,125 +6246,125 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_modPActionPerformed
 
     private void RembolsoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RembolsoKeyReleased
-        // TODO add your handling code here:
+
         deposito();
     }//GEN-LAST:event_RembolsoKeyReleased
 
     private void PrespKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PrespKeyReleased
-        // TODO add your handling code here:
+
         deposito();
     }//GEN-LAST:event_PrespKeyReleased
 
     private void OdtpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OdtpKeyReleased
-        // TODO add your handling code here:
+
         deposito();
     }//GEN-LAST:event_OdtpKeyReleased
 
     private void apyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_apyKeyReleased
-        // TODO add your handling code here:
+
         deposito();
     }//GEN-LAST:event_apyKeyReleased
 
     private void cdaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cdaKeyReleased
-        // TODO add your handling code here:
+
         deposito();
     }//GEN-LAST:event_cdaKeyReleased
 
     private void cdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_cdaActionPerformed
 
     private void DIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DIKeyReleased
-        // TODO add your handling code here:
+
         deposito();
     }//GEN-LAST:event_DIKeyReleased
 
     private void DIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DIActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_DIActionPerformed
 
     private void ADDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADDKeyReleased
-        // TODO add your handling code here:
+
         deposito();
     }//GEN-LAST:event_ADDKeyReleased
 
     private void obsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obsActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_obsActionPerformed
 
     private void depositoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_depositoKeyReleased
-        // TODO add your handling code here:
+
         deposito();
     }//GEN-LAST:event_depositoKeyReleased
 
     private void CredencialKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CredencialKeyReleased
-        // TODO add your handling code here:
+
         dv();
         deposito();
     }//GEN-LAST:event_CredencialKeyReleased
 
     private void ChalecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ChalecoKeyReleased
-        // TODO add your handling code here:
+
         dv();
         deposito();
     }//GEN-LAST:event_ChalecoKeyReleased
 
     private void CorbataKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CorbataKeyReleased
-        // TODO add your handling code here:
+
         dv();
         deposito();
     }//GEN-LAST:event_CorbataKeyReleased
 
     private void PantalonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PantalonKeyReleased
-        // TODO add your handling code here:
+
         dv();
         deposito();
     }//GEN-LAST:event_PantalonKeyReleased
 
     private void ChamarraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ChamarraKeyReleased
-        // TODO add your handling code here:
+
         dv();
         deposito();
     }//GEN-LAST:event_ChamarraKeyReleased
 
     private void PlayeraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PlayeraKeyReleased
-        // TODO add your handling code here:
+
         dv();
         deposito();
     }//GEN-LAST:event_PlayeraKeyReleased
 
     private void SancionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SancionKeyReleased
-        // TODO add your handling code here:
+
         dv();
         deposito();
     }//GEN-LAST:event_SancionKeyReleased
 
     private void GruaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GruaKeyReleased
-        // TODO add your handling code here:
+
         dv();
         deposito();
     }//GEN-LAST:event_GruaKeyReleased
 
     private void BpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BpKeyReleased
-        // TODO add your handling code here:
+
         dv();
         deposito();
     }//GEN-LAST:event_BpKeyReleased
 
     private void FdeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FdeKeyReleased
-        // TODO add your handling code here:
+
         dv();
         deposito();
     }//GEN-LAST:event_FdeKeyReleased
 
     private void FdbKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FdbKeyReleased
-        // TODO add your handling code here:
+
         dv();
         deposito();
     }//GEN-LAST:event_FdbKeyReleased
 
     private void DT15ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT15ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT15.getSelectedItem();
         if (dt.equals(".")) {
             DL16.setText("0");
@@ -6470,7 +6476,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT15ItemStateChanged
 
     private void DT14ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT14ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT14.getSelectedItem();
         if (dt.equals(".")) {
             DL15.setText("0");
@@ -6582,7 +6588,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT14ItemStateChanged
 
     private void DT13ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT13ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT13.getSelectedItem();
         if (dt.equals(".")) {
             DL14.setText("0");
@@ -6694,7 +6700,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT13ItemStateChanged
 
     private void DT12ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT12ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT12.getSelectedItem();
         if (dt.equals(".")) {
             DL13.setText("0");
@@ -6806,7 +6812,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT12ItemStateChanged
 
     private void DT11ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT11ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT11.getSelectedItem();
         if (dt.equals(".")) {
             DL12.setText("0");
@@ -6918,7 +6924,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT11ItemStateChanged
 
     private void DT10ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT10ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT10.getSelectedItem();
         if (dt.equals(".")) {
             DL11.setText("0");
@@ -7030,7 +7036,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT10ItemStateChanged
 
     private void DT9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT9ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT9.getSelectedItem();
         if (dt.equals(".")) {
             DL10.setText("0");
@@ -7143,7 +7149,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT9ItemStateChanged
 
     private void DT8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT8ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT8.getSelectedItem();
         if (dt.equals(".")) {
             DL9.setText("0");
@@ -7256,7 +7262,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT8ItemStateChanged
 
     private void DT7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT7ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT7.getSelectedItem();
         if (dt.equals(".")) {
             DL8.setText("0");
@@ -7368,7 +7374,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT7ItemStateChanged
 
     private void DT6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT6ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT6.getSelectedItem();
         if (dt.equals(".")) {
             DL7.setText("0");
@@ -7480,7 +7486,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT6ItemStateChanged
 
     private void DT5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT5ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT5.getSelectedItem();
         if (dt.equals(".")) {
             DL6.setText("0");
@@ -7592,7 +7598,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT5ItemStateChanged
 
     private void DT4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT4ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT4.getSelectedItem();
         if (dt.equals(".")) {
             DL5.setText("0");
@@ -7704,7 +7710,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT4ItemStateChanged
 
     private void DT3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT3ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT3.getSelectedItem();
         if (dt.equals(".")) {
             DL4.setText("0");
@@ -7816,7 +7822,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT3ItemStateChanged
 
     private void DT2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT2ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT2.getSelectedItem();
         if (dt.equals(".")) {
             DL3.setText("0");
@@ -7928,7 +7934,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT2ItemStateChanged
 
     private void DT1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DT1ItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT1.getSelectedItem();
         if (dt.equals(".")) {
             DL2.setText("0");
@@ -8043,7 +8049,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DT1ItemStateChanged
 
     private void DTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DTItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) DT.getSelectedItem();
         if (dt.equals(".")) {
             DL1.setText("0");
@@ -8161,27 +8167,27 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DTItemStateChanged
 
     private void PagoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PagoKeyReleased
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_PagoKeyReleased
 
     private void PagoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PagoMouseClicked
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_PagoMouseClicked
 
     private void PagoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PagoMouseMoved
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_PagoMouseMoved
 
     private void DLKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DLKeyReleased
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_DLKeyReleased
 
     private void DLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DLMouseClicked
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_DLMouseClicked
 
     private void QuincenasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_QuincenasItemStateChanged
-        // TODO add your handling code here:
+
         String Q = (String) Quincenas.getSelectedItem();
         if (Q.equals("1ra Quincena de Enero")) {
             d.setText("1");
@@ -9442,12 +9448,12 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_QuincenasItemStateChanged
 
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyReleased
-        // TODO add your handling code here:
+
         shareN();
     }//GEN-LAST:event_searchKeyReleased
 
     private void shareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shareMouseClicked
-        // TODO add your handling code here:
+
         int seleccionar = share.getSelectedRow();
         Ap.setText(String.valueOf(share.getValueAt(seleccionar, 0)));
         am.setText(String.valueOf(share.getValueAt(seleccionar, 1)));
@@ -9465,11 +9471,11 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_shareMouseClicked
 
     private void folActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_folActionPerformed
 
     private void CS4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS4ActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -9479,7 +9485,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS4ActionPerformed
 
     private void CS6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS6ActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -9489,23 +9495,23 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS6ActionPerformed
 
     private void buspKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buspKeyReleased
-        // TODO add your handling code here:
+
         pagos();
     }//GEN-LAST:event_buspKeyReleased
 
     private void BsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsiActionPerformed
-        // TODO add your handling code here:
+
         String Bonosi = Bono1.getText();
         Bono.setText(Bonosi);
     }//GEN-LAST:event_BsiActionPerformed
 
     private void BnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BnoActionPerformed
-        // TODO add your handling code here:
+
         Bono.setText("0");
     }//GEN-LAST:event_BnoActionPerformed
 
     private void CSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -9515,7 +9521,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CSActionPerformed
 
     private void CS7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS7ActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -9525,7 +9531,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS7ActionPerformed
 
     private void CS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2ActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -9535,7 +9541,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS2ActionPerformed
 
     private void CS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS3ActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -9545,7 +9551,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS3ActionPerformed
 
     private void CS5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS5ActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -9555,12 +9561,12 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS5ActionPerformed
 
     private void FiltroQuincenanominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanominaItemStateChanged
-        // TODO add your handling code here:
+
         mostrardatos();
     }//GEN-LAST:event_FiltroQuincenanominaItemStateChanged
 
     private void FZservicioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicioItemStateChanged
-        // TODO add your handling code here:
+
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             FiltrosZonas zon = (FiltrosZonas) FZservicio.getSelectedItem();
             FiltroServ serv = new FiltroServ();
@@ -9571,17 +9577,17 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FZservicioItemStateChanged
 
     private void FiltroZnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnominaItemStateChanged
-        // TODO add your handling code here:
+
         mostrardatos();
     }//GEN-LAST:event_FiltroZnominaItemStateChanged
 
     private void FiltroSnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnominaItemStateChanged
-        // TODO add your handling code here:
+
         mostrardatos();
     }//GEN-LAST:event_FiltroSnominaItemStateChanged
 
     private void FiltrosTDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTDItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) FiltrosTD.getSelectedItem();
         if (dt.equals("Selecciona filtro")) {
             Nominab.setText("");
@@ -9789,7 +9795,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTDItemStateChanged
 
     private void FiltrosPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosPItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) FiltrosP.getSelectedItem();
         if (dt.equals("Selecciona filtro")) {
             busp.setVisible(false);
@@ -9999,7 +10005,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosPItemStateChanged
 
     private void FiltroSZPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZPItemStateChanged
-        // TODO add your handling code here:
+
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             FiltrosZonas zon = (FiltrosZonas) FiltroSZP.getSelectedItem();
             FiltroServ serv = new FiltroServ();
@@ -10010,42 +10016,42 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroSZPItemStateChanged
 
     private void FiltroZPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZPItemStateChanged
-        // TODO add your handling code here:
+
         pagos();
     }//GEN-LAST:event_FiltroZPItemStateChanged
 
     private void FiltroServPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServPItemStateChanged
-        // TODO add your handling code here:
+
         pagos();
     }//GEN-LAST:event_FiltroServPItemStateChanged
 
     private void FiltroQPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQPItemStateChanged
-        // TODO add your handling code here:
+
         pagos();
     }//GEN-LAST:event_FiltroQPItemStateChanged
 
     private void filtroNDFPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFPKeyReleased
-        // TODO add your handling code here:
+
         pagos();
     }//GEN-LAST:event_filtroNDFPKeyReleased
 
     private void FiltroNDFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDFKeyReleased
-        // TODO add your handling code here:
+
         mostrardatos();
     }//GEN-LAST:event_FiltroNDFKeyReleased
 
     private void BAPNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAPNomKeyReleased
-        // TODO add your handling code here:
+
         shareN();
     }//GEN-LAST:event_BAPNomKeyReleased
 
     private void BAMNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAMNomKeyReleased
-        // TODO add your handling code here:
+
         shareN();
     }//GEN-LAST:event_BAMNomKeyReleased
 
     private void FiltrosNomItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosNomItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) FiltrosNom.getSelectedItem();
         if (dt.equals("Selecciona filtro")) {
             Filtro1.setVisible(false);
@@ -10094,27 +10100,27 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosNomItemStateChanged
 
     private void FApTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApTKeyReleased
-        // TODO add your handling code here:
+
         mostrardatos();
     }//GEN-LAST:event_FApTKeyReleased
 
     private void FAmTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmTKeyReleased
-        // TODO add your handling code here:
+
         mostrardatos();
     }//GEN-LAST:event_FAmTKeyReleased
 
     private void BusapshpreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BusapshpreKeyReleased
-        // TODO add your handling code here:
+
         shareprestamo();
     }//GEN-LAST:event_BusapshpreKeyReleased
 
     private void BusamshpreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BusamshpreKeyReleased
-        // TODO add your handling code here:
+
         shareprestamo();
     }//GEN-LAST:event_BusamshpreKeyReleased
 
     private void FiltrosshpItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosshpItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) Filtrosshp.getSelectedItem();
         if (dt.equals("Selecciona filtro")) {
             LabelPrestamos.setVisible(false);
@@ -10163,7 +10169,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosshpItemStateChanged
 
     private void FshTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FshTItemStateChanged
-        // TODO add your handling code here:
+
         String dt = (String) FshT.getSelectedItem();
         if (dt.equals("Selecciona filtro")) {
             LabelPrestamos1.setVisible(false);
@@ -10212,27 +10218,27 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FshTItemStateChanged
 
     private void Busapshpre1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Busapshpre1KeyReleased
-        // TODO add your handling code here:
+
         sharetp();
     }//GEN-LAST:event_Busapshpre1KeyReleased
 
     private void Busamshpre1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Busamshpre1KeyReleased
-        // TODO add your handling code here:
+
         sharetp();
     }//GEN-LAST:event_Busamshpre1KeyReleased
 
     private void BAppagKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppagKeyReleased
-        // TODO add your handling code here:
+
         pagos();
     }//GEN-LAST:event_BAppagKeyReleased
 
     private void BampagKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BampagKeyReleased
-        // TODO add your handling code here:
+
         pagos();
     }//GEN-LAST:event_BampagKeyReleased
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-        // TODO add your handling code here:
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres a ventana administrador?");
         if (i == 0) {
             Administradores_3 regr = new Administradores_3();
@@ -10242,53 +10248,60 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_VolverActionPerformed
 
     private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
-        // TODO add your handling code here:
+
         Admin_Nomina_5 regr = new Admin_Nomina_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Nomina1ActionPerformed
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        // TODO add your handling code here:
+
         Administradores_3 regr = new Administradores_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed
 
     private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        // TODO add your handling code here:
+
         AltasZyS_3 regr = new AltasZyS_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-        // TODO add your handling code here:
+
         Usuarios_RH_3 regr = new Usuarios_RH_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_UsuariosRHActionPerformed
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        // TODO add your handling code here:
+
         Admin_Empleados_4 regr = new Admin_Empleados_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed
 
     private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
-        // TODO add your handling code here:
+
         Admin_Estadias_4 regr = new Admin_Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EstadiasActionPerformed
 
     private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        // TODO add your handling code here:
+
         Admin_Tortas_4 regr = new Admin_Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_TorteriaActionPerformed
+
+    private void DetallepagoQodtItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DetallepagoQodtItemStateChanged
+        String D1 = OcultoODT.getText();
+        String DPNQ = DetallepagoNQodt.getSelectedItem().toString();
+        String DPQODT = DetallepagoQodt.getSelectedItem().toString();
+        Detallespagoodt.setText(D1 + ", " + "Quincena "+ DPNQ + " " + DPQODT);
+    }//GEN-LAST:event_DetallepagoQodtItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -10469,6 +10482,9 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> DT9;
     private javax.swing.JTextField DVT;
     private javax.swing.JTextArea Daño;
+    private javax.swing.JComboBox<String> DetallepagoNQodt;
+    private javax.swing.JComboBox<String> DetallepagoQodt;
+    private javax.swing.JTextArea Detallespagoodt;
     private javax.swing.JButton Eliminar;
     private javax.swing.JButton EliminarT;
     private javax.swing.JMenuItem Estadias;
@@ -10568,6 +10584,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Nominab;
     private javax.swing.JTextField Num;
     private javax.swing.JTextArea Observaciones;
+    private javax.swing.JTextField OcultoODT;
     private javax.swing.JTable OdT;
     private javax.swing.JTextField Odtp;
     private javax.swing.JTextField PQ;
@@ -10698,8 +10715,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField interes;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -10823,7 +10838,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField lug;
     private javax.swing.JButton modP;
     private javax.swing.JButton modprestamo;
@@ -10838,6 +10852,5 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTable share1;
     private javax.swing.JTable share2;
     private javax.swing.JTextField sueldo;
-    private javax.swing.JTextField txtid;
     // End of variables declaration//GEN-END:variables
 }
