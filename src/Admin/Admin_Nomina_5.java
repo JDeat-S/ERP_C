@@ -84,6 +84,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         LabelPrestamos.setVisible(false);
         BE.setVisible(false);
         BE.setText("");
+        OcultoPre.setVisible(false);
         Busapshpre.setText("");
         Busapshpre.setVisible(false);
         Busamshpre.setText("");
@@ -181,7 +182,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
     public void limpiarnom() {
         DAB.clearSelection();
-        NDL.setText("");
+        NDL.setText("0");
         Ap.setText("");
         am.setText("");
         name.setText("");
@@ -833,7 +834,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }
 
     public void limpiarT() {
-        Ndo.setText("");
+        Ndo.setText("0");
         IAT.clearSelection();
         FE.setText("");
         NameTaller.setText("");
@@ -864,7 +865,11 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }
 
     public void limpiarP() {
-        Num.setText("");
+        DetallesPre.setText("");
+        OcultoPre.setText("");
+        NdQpre.setSelectedIndex(0);
+        DetallePQ.setSelectedIndex(0);
+        Num.setText("0");
         FS.setText("");
         Namepres.setText("");
         Appres.setText("");
@@ -886,9 +891,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
     //agregar orden de taller
     public void AgregarT() {
-        int ndo = Integer.parseInt(Ndo.getText());
-        String Item = Statustaller.getSelectedItem().toString();
-        String Item1 = Fdp.getSelectedItem().toString();
+
         String Iat;
         if (Si.isSelected() == true) {
             Iat = "Si";
@@ -902,11 +905,11 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                 + " `Marca`, `Modelo`, `Placas`, `Color`, `# de piezas`, `Daño`,"
                 + " `Costo total`, `Ingreso a taller`, `Status`, `Importe a descontar`,"
                 + " `Pagado`, `Pendiente`, `Por quincenas`, `Forma de pago`, `Detalles de pago`, `Observaciones`) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setInt(1, ndo);
+            pst.setInt(1, Integer.parseInt(Ndo.getText()));
             pst.setString(2, FE.getText());
             pst.setString(3, ApTaller.getText());
             pst.setString(4, Amtaller.getText());
@@ -921,12 +924,12 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             pst.setString(13, Daño.getText());
             pst.setString(14, CT.getText());
             pst.setString(15, Iat);
-            pst.setString(16, Item);
+            pst.setString(16, Statustaller.getSelectedItem().toString());
             pst.setString(17, Iad.getText());
             pst.setString(18, Pagado.getText());
             pst.setString(19, Pendiente.getText());
             pst.setString(20, PQT.getText());
-            pst.setString(21, Item1);
+            pst.setString(21, Fdp.getSelectedItem().toString());
             pst.setString(22, Detallespagoodt.getText());
             pst.setString(23, Observaciones.getText());
 
@@ -1000,17 +1003,21 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             modelo.addColumn("Zona");//7
             modelo.addColumn("Servicio");
             modelo.addColumn("Cantidad");//9
+            modelo.addColumn("Tiempo");
             modelo.addColumn("Interes");
-            modelo.addColumn("Monto total");//11
+            modelo.addColumn("Monto total");//12
             modelo.addColumn("Pago por quincena");
-            modelo.addColumn("Carpeta de descuentos");//13
+            modelo.addColumn("Carpeta de descuentos");//14
             modelo.addColumn("Fecha liberado");
-            modelo.addColumn("Status");//15
+            modelo.addColumn("Status");//16
             modelo.addColumn("Metodo");
+            modelo.addColumn("Detalles de pago");//18
 
 //Anchos
-            int[] anchos = {/*ndp*/35, /*fds*/ 50, /*mes*/ 45, /*ap*/ 55, /*am*/ 55, /*Nom*/ 125, /*zon*/ 65, /*Serv*/ 80, /*Cantidad*/ 55, /*inte*/ 50,
-                /*MT*/ 55, /*PQ*/ 75, /*CDD*/ 250, /*FL*/ 55, /*STATUS*/ 70, /*METODO*/ 60};
+            int[] anchos = {/*ndp*/35, /*fds*/ 50, /*mes*/ 45, /*ap*/ 55, /*am*/ 55,
+                /*Nom*/ 125, /*zon*/ 65, /*Serv*/ 80, /*Cantidad*/ 55,/*tiempo*/ 60, /*inte*/ 50,
+                /*MT*/ 55, /*PQ*/ 75, /*CDD*/ 250, /*FL*/ 55, /*STATUS*/ 70, /*METODO*/ 60,
+                /*DDP*/ 1000};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1026,7 +1033,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                 modelo.addRow(filas);
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar datos de taller: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de prestamos: " + e.getMessage());
 
         }
     }
@@ -1083,34 +1090,41 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         }
 
     }
+// modificar prestamo
 
     public void editarpre() {
+
         int id = Integer.parseInt(Num.getText());
-        String Item = Mes.getSelectedItem().toString();
-        String SQL = "UPDATE prestamos SET `Fecha de solicitud` = ?, `Mes` = ?, "
-                + "`Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Zona` = ?, "
-                + "`Servicio` = ?, `Cantidad` = ?, `Interes` = ?, `Monto total` = ?,"
+
+        String SQL = "UPDATE `prestamos` SET `idprestamos` = ?,"
+                + " `Fecha de solicitud` = ?, `Mes` = ?, `Apellido P` = ?,"
+                + " `Apellido M` = ?, `Nombre(s)` = ?, `Zona` = ?, `Servicio` = ?,"
+                + " `Cantidad` = ?, `Tiempo` = ?, `Interes` = ?, `Monto total` = ?,"
                 + " `Por quincena` = ?, `Carpeta de descuentos` = ?, `Fecha liberado` = ?,"
-                + " `Status` = ?, `Metodo` = ? WHERE (`idprestamos` = ?)";
+                + " `Status` = ?, `Metodo` = ?, `Detalles de pago` = ?"
+                + " WHERE `prestamos`.`idprestamos` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            pst.setString(1, FS.getText());
-            pst.setString(2, Item);
-            pst.setString(3, Appres.getText());
-            pst.setString(4, Ampres.getText());
-            pst.setString(5, Namepres.getText());
-            pst.setString(6, Zona.getText());
-            pst.setString(7, Serv.getText());
-            pst.setString(8, Cantidad.getText());
-            pst.setString(9, interes.getText());
-            pst.setString(10, MT.getText());
-            pst.setString(11, PQ.getText());
-            pst.setString(12, Carpeta.getText());
-            pst.setString(13, FL.getText());
-            pst.setString(14, Status.getText());
-            pst.setString(15, Metodo.getText());
-            pst.setInt(16, id);
+            pst.setInt(1, id);
+            pst.setString(2, FS.getText());
+            pst.setString(3, Mes.getSelectedItem().toString());
+            pst.setString(4, Appres.getText());
+            pst.setString(5, Ampres.getText());
+            pst.setString(6, Namepres.getText());
+            pst.setString(7, Zona.getText());
+            pst.setString(8, Serv.getText());
+            pst.setString(9, Cantidad.getText());
+            pst.setString(10, Interes.getSelectedItem().toString());
+            pst.setString(11, interes.getText());
+            pst.setString(12, MT.getText());
+            pst.setString(13, PQ.getText());
+            pst.setString(14, Carpeta.getText());
+            pst.setString(15, FL.getText());
+            pst.setString(16, Status.getText());
+            pst.setString(17, Metodo.getText());
+            pst.setString(18, DetallesPre.getText());
+            pst.setInt(19, id);
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Prestamo Modificado");
@@ -1122,30 +1136,35 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
     public void AgregarPre() {
 
-        String Item = Mes.getSelectedItem().toString();
-        String SQL = "insert into prestamos (`Fecha de solicitud`, `Mes`, `Apellido P`,"
-                + " `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Cantidad`,"
-                + " `Interes`, `Monto total`, `Por quincena`, `Carpeta de descuentos`,"
-                + " `Fecha liberado`, `Status`, `Metodo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?)";
+        int id = Integer.parseInt(Num.getText());
+
+        String SQL = "INSERT INTO `prestamos` (`idprestamos`, `Fecha de solicitud`,"
+                + " `Mes`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Zona`, `Servicio`, `Cantidad`, `Tiempo`, `Interes`,"
+                + " `Monto total`, `Por quincena`, `Carpeta de descuentos`,"
+                + " `Fecha liberado`, `Status`, `Metodo`, `Detalles de pago`)"
+                + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, FS.getText());
-            pst.setString(2, Item);
-            pst.setString(3, Appres.getText());
-            pst.setString(4, Ampres.getText());
-            pst.setString(5, Namepres.getText());
-            pst.setString(6, Zona.getText());
-            pst.setString(7, Serv.getText());
-            pst.setString(8, Cantidad.getText());
-            pst.setString(9, interes.getText());
-            pst.setString(10, MT.getText());
-            pst.setString(11, PQ.getText());
-            pst.setString(12, Carpeta.getText());
-            pst.setString(13, FL.getText());
-            pst.setString(14, Status.getText());
-            pst.setString(15, Metodo.getText());
+            pst.setInt(1, id);
+            pst.setString(2, FS.getText());
+            pst.setString(3, Mes.getSelectedItem().toString());
+            pst.setString(4, Appres.getText());
+            pst.setString(5, Ampres.getText());
+            pst.setString(6, Namepres.getText());
+            pst.setString(7, Zona.getText());
+            pst.setString(8, Serv.getText());
+            pst.setString(9, Cantidad.getText());
+            pst.setString(10, Interes.getSelectedItem().toString());
+            pst.setString(11, interes.getText());
+            pst.setString(12, MT.getText());
+            pst.setString(13, PQ.getText());
+            pst.setString(14, Carpeta.getText());
+            pst.setString(15, FL.getText());
+            pst.setString(16, Status.getText());
+            pst.setString(17, Metodo.getText());
+            pst.setString(18, DetallesPre.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Prestamo Agregado");
@@ -1201,23 +1220,22 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-            modelo.addColumn("ID BD");//1
-            modelo.addColumn("# Folio");
-            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//5
+            modelo.addColumn("Nombre(s)");//4
             modelo.addColumn("Bono");
-            modelo.addColumn("Cuenta de banco");//7
+            modelo.addColumn("Cuenta de banco");//6
             modelo.addColumn("Banco");
-            modelo.addColumn("Zona");//9
+            modelo.addColumn("Zona");//8
             modelo.addColumn("Servicio");
-            modelo.addColumn("Quincena del mes");//11
+            modelo.addColumn("Quincena del mes");//10
             modelo.addColumn("Año");
-            modelo.addColumn("Sueldo Quincenal");//13
+            modelo.addColumn("Sueldo Quincenal");//12
             modelo.addColumn("Deposito");
 
 //Anchos hasta año
-            int[] anchos = {50, 50, 50, 50, 150, 35, 65, 55, 60, 80, 150, 15,
+            int[] anchos = {50, 50, 50, 150, 35, 65, 55, 60, 80, 150, 15,
                 //anchos hasta Deposito
                 150, 75};
 
@@ -1241,17 +1259,20 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
     }
 
+    //agregar pago
     public void agregarP() {
+        int ndo = Integer.parseInt(NDL.getText());
+
         String Item = Quincenas.getSelectedItem().toString();
 
-        String SQL = "INSERT INTO `confort`.`pago` (`# Folio`, `Apellido P`, `Apellido M`, "
+        String SQL = "INSERT INTO `confort`.`pago` (`idPago`, `Apellido P`, `Apellido M`, "
                 + "`Nombre(s)`, `Bono`, `Cuenta`, `Banco`, `Zona`, `Servicio`, `Quincena`, `Año`, `Sueldo Quincenal`,"
                 + " `Deposito`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, NDL.getText());
+            pst.setInt(1, ndo);
             pst.setString(2, Ap.getText());
             pst.setString(3, am.getText());
             pst.setString(4, name.getText());
@@ -1275,16 +1296,15 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }
 
     public void editarp() {
-        int id = Integer.parseInt(Num.getText());
-        String Item = Quincenas.getSelectedItem().toString();
-        String SQL = "UPDATE `confort`.`pago` SET `# Folio` = ?,`Apellido P` = ?, `Apellido M` = ?,"
-                + " `Nombre(s)` = ?, `Bono` = ?, `Cuenta` = ?, `Banco` = ?, `Zona` = ?,"
-                + "`Servicio` = ?, `Quincena` = ?, `Año` = ?, `Sueldo Quincenal` = ?, `Deposito` = ? WHERE (`idPago` = ?)";
+
+        String SQL = "UPDATE `pago` SET `idPago` = ?, `Apellido P` = ?,"
+                + " `Apellido M` = ?, `Nombre(s)` = ?, `Bono` = ?, `Cuenta` = ?, `Banco` = ?, `Zona` = ?,"
+                + " `Servicio` = ?, `Quincena` = ?, `Año` = ?, `Sueldo Quincenal` = ?, `Deposito` = ? WHERE `pago`.`idPago` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, NDL.getText());
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
             pst.setString(2, Ap.getText());
             pst.setString(3, am.getText());
             pst.setString(4, name.getText());
@@ -1293,11 +1313,11 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             pst.setString(7, ban.getText());
             pst.setString(8, Zon.getText());
             pst.setString(9, ServN.getText());
-            pst.setString(10, Item);
+            pst.setString(10, Quincenas.getSelectedItem().toString());
             pst.setString(11, ((JTextField) año.getDateEditor().getUiComponent()).getText());
             pst.setString(12, sueldo.getText());
             pst.setString(13, deposito.getText());
-            pst.setInt(14, id);
+            pst.setInt(14, Integer.parseInt(NDL.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Pago Modificado");
@@ -1309,7 +1329,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 //editar nomina
 
     public void editar() {
-        int id = Integer.parseInt(NDL.getText());
         String Item = Quincenas.getSelectedItem().toString();
         String Item2 = DT.getSelectedItem().toString();
         String Item3 = DT1.getSelectedItem().toString();
@@ -1328,21 +1347,22 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         String Item16 = DT14.getSelectedItem().toString();
         String Item17 = DT15.getSelectedItem().toString();
 
-        String SQL = "UPDATE `confort`.`nomina` SET `#_Folio` = ?,`Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?,"
-                + "`Cuenta_Nom` = ?, `Banco_Nom` = ?, `Zona_Nom` = ?, `Servicio_Nom` = ?, "
-                + "`Sueldo_Nom` = ?, `Pd` = ?, `Quincena` = ?, `Año` = ?, `Dia 1 o 16` = ?, `Dia 2 o 17` = ?, `Dia 3 o 18` = ?,"
-                + " `Dia 4 o 19` = ?, `Dia 5 o 20` = ?, `Dia 6 o 21` = ?, `Dia 7 o 22` = ?, `Dia 8 o 23` = ?, `Dia 9 o 24` = ?,"
-                + " `Dia 10 o 25` = ?, `Dia 11 o 26` = ?, `Dia 12 o 27` = ?, `Dia 13 o 28` = ?, `Dia 14 o 29` = ?, `Dia 15 o 30` = ?, `Dia 31` = ?,"
-                + " `Observaciones` = ?, `Desc_v` = ?, `Desc_IMSS` = ?,"
-                + " `Apoyo` = ?, `Lugar` = ?, `Caja` = ?, `add` = ?, `Bono` = ?, `Faltantes de boleto` = ?,"
-                + " `Faltante de efectivo` = ?, `Boleto perdido` = ?, `Sancion` = ?, `Grua` = ?, `Playera` = ?, "
-                + "`Chamarra` = ?, `Pantalon` = ?, `Corbata` = ?, `Chaleco` = ?, `Credencial` = ?, `Orden de taller` = ?, "
-                + "`Prestamos` = ?, `Rembolso` = ?, `Deposito` = ? WHERE (`idNomina` = ?);";
+        String SQL = "UPDATE `nomina` SET `idNomina` = ?, `Apellido P` = ?,"
+                + " `Apellido M` = ?, `Nombre(s)` = ?, `Cuenta_Nom` = ?, `Banco_Nom` = ?,"
+                + " `Zona_Nom` = ?, `Servicio_Nom` = ?, `Sueldo_Nom` = ?, `Pd` = ?, `Quincena` = ?,"
+                + " `Año` = ?, `Dia 1 o 16` = ?, `Dia 2 o 17` = ?, `Dia 3 o 18` = ?, `Dia 4 o 19` = ?,"
+                + " `Dia 5 o 20` = ?, `Dia 6 o 21` = ?, `Dia 7 o 22` = ?, `Dia 8 o 23` = ?, `Dia 9 o 24` = ?,"
+                + " `Dia 10 o 25` = ?, `Dia 11 o 26` = ?, `Dia 12 o 27` = ?, `Dia 13 o 28` = ?, `Dia 14 o 29` = ?,"
+                + " `Dia 15 o 30` = ?, `Dia 31` = ?, `Desc_v` = ?, `Desc_IMSS` = ?, `Apoyo` = ?,"
+                + " `Lugar` = ?, `Caja` = ?, `add` = ?, `Bono` = ?, `Faltantes de boleto` = ?,"
+                + " `Faltante de efectivo` = ?, `Boleto perdido` = ?, `Sancion` = ?, `Grua` = ?, `Playera` = ?,"
+                + " `Chamarra` = ?, `Pantalon` = ?, `Corbata` = ?, `Chaleco` = ?, `Credencial` = ?, `Orden de taller` = ?,"
+                + " `Prestamos` = ?, `Rembolso` = ?, `Deposito` = ?, `Observaciones` = ? WHERE `nomina`.`idNomina` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, NDL.getText());
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
             pst.setString(2, Ap.getText());
             pst.setString(3, am.getText());
             pst.setString(4, name.getText());
@@ -1393,7 +1413,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             pst.setString(49, Rembolso.getText());
             pst.setString(50, deposito.getText());
             pst.setString(51, obs.getText());
-            pst.setInt(52, id);
+            pst.setInt(52, Integer.parseInt(NDL.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Modificada");
@@ -1573,24 +1593,8 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
 //Agregar nomina
     public void AgregarN() {
+
         int id = Integer.parseInt(NDL.getText());
-        String SQL;
-        if (!"".equals(id)) {
-            SQL = "INSERT INTO `nomina` (`idNomina`, `Apellido P`,"
-                + " `Apellido M`, `Nombre(s)`, `Cuenta_Nom`, `Banco_Nom`,"
-                + " `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`, `Pd`, `Quincena`,"
-                + " `Año`, `Dia 1 o 16`, `Dia 2 o 17`, `Dia 3 o 18`, `Dia 4 o 19`,"
-                + " `Dia 5 o 20`, `Dia 6 o 21`, `Dia 7 o 22`, `Dia 8 o 23`, "
-                + "`Dia 9 o 24`, `Dia 10 o 25`, `Dia 11 o 26`, `Dia 12 o 27`,"
-                + " `Dia 13 o 28`, `Dia 14 o 29`, `Dia 15 o 30`, `Dia 31`, `Desc_v`,"
-                + " `Desc_IMSS`, `Apoyo`, `Lugar`, `Caja`, `add`, `Bono`, `Faltantes de boleto`,"
-                + " `Faltante de efectivo`, `Boleto perdido`, `Sancion`, `Grua`, `Playera`, "
-                + "`Chamarra`, `Pantalon`, `Corbata`, `Chaleco`, `Credencial`, `Orden de taller`,"
-                + " `Prestamos`, `Rembolso`, `Deposito`, `Observaciones`) VALUES "
-                + "(NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        }
 
         String Item = Quincenas.getSelectedItem().toString();
         String Item2 = DT.getSelectedItem().toString();
@@ -1610,7 +1614,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         String Item16 = DT14.getSelectedItem().toString();
         String Item17 = DT15.getSelectedItem().toString();
 
-        SQL = "INSERT INTO `nomina` (`idNomina`, `Apellido P`,"
+        String SQL = "INSERT INTO `nomina` (`idNomina`, `Apellido P`,"
                 + " `Apellido M`, `Nombre(s)`, `Cuenta_Nom`, `Banco_Nom`,"
                 + " `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`, `Pd`, `Quincena`,"
                 + " `Año`, `Dia 1 o 16`, `Dia 2 o 17`, `Dia 3 o 18`, `Dia 4 o 19`,"
@@ -1624,7 +1628,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                 + "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -1978,7 +1981,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel87 = new javax.swing.JLabel();
         Rembolso = new javax.swing.JTextField();
-        modP = new javax.swing.JButton();
         AgregarNP = new javax.swing.JButton();
         Modm = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
@@ -2105,6 +2107,14 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         Ampres = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
         Namepres = new javax.swing.JTextField();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        DetallesPre = new javax.swing.JTextArea();
+        jLabel99 = new javax.swing.JLabel();
+        OcultoPre = new javax.swing.JTextField();
+        jLabel100 = new javax.swing.JLabel();
+        NdQpre = new javax.swing.JComboBox<>();
+        jLabel101 = new javax.swing.JLabel();
+        DetallePQ = new javax.swing.JComboBox<>();
         Tprestamos = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
@@ -3386,14 +3396,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        modP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
-        modP.setText("Modificar Pago");
-        modP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modPActionPerformed(evt);
-            }
-        });
-
         AgregarNP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/agregar.png"))); // NOI18N
         AgregarNP.setText("Agregar");
         AgregarNP.addActionListener(new java.awt.event.ActionListener() {
@@ -3403,7 +3405,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         });
 
         Modm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
-        Modm.setText("Modificar Nomina");
+        Modm.setText("Modificar Nomina y pago");
         Modm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ModmActionPerformed(evt);
@@ -3414,6 +3416,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
         jLabel1.setText("# Lista:");
 
+        NDL.setText("0");
         NDL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NDLActionPerformed(evt);
@@ -3445,10 +3448,10 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(NDL, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(Ap)
-                    .addComponent(am)
-                    .addComponent(name)
-                    .addComponent(Bono1))
+                    .addComponent(Ap, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(am, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(Bono1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
@@ -3626,9 +3629,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AgregarNP)
                         .addGap(49, 49, 49)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(Modm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(modP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(Modm))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3705,12 +3706,9 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                         .addComponent(Bono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Modm)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(modP)
-                            .addComponent(AgregarNP)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(AgregarNP)
+                        .addComponent(Modm))
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4136,6 +4134,8 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
         jLabel45.setText("Metodo:");
 
+        Num.setText("0");
+
         Mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
         Mes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -4238,6 +4238,26 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
 
         jLabel46.setText("Nombre(s):");
 
+        DetallesPre.setColumns(20);
+        DetallesPre.setLineWrap(true);
+        DetallesPre.setRows(5);
+        jScrollPane11.setViewportView(DetallesPre);
+
+        jLabel99.setText("Deatlles de pagos:");
+
+        jLabel100.setText("# de quincena");
+
+        NdQpre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" }));
+
+        jLabel101.setText("Quincena");
+
+        DetallePQ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        DetallePQ.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                DetallePQItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -4262,32 +4282,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                     .addComponent(jLabel33))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MT, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(Metodo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(49, 49, 49)
-                                .addComponent(Agregarprestamo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(modprestamo))
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Carpeta, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                                .addComponent(FL, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(86, 86, 86)
-                                .addComponent(jLabel47))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(Interes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(interes, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PQ, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 894, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(Namepres, javax.swing.GroupLayout.Alignment.LEADING)
@@ -4314,7 +4308,50 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                                 .addComponent(Busamshpre, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(CS4)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(Metodo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(49, 49, 49)
+                                .addComponent(Agregarprestamo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(modprestamo))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(86, 86, 86)
+                                .addComponent(jLabel47))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(Interes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(interes, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(PQ, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel99))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(MT, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(Carpeta, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                                        .addComponent(FL, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
+                                    .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(210, 210, 210)
+                                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel100))
+                                    .addComponent(jLabel101))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DetallePQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 302, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -4373,19 +4410,32 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                     .addComponent(jLabel37)
                     .addComponent(Interes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(interes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(MT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel39)
-                    .addComponent(Carpeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel40)
-                    .addComponent(FL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel99))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel38)
+                            .addComponent(MT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel39)
+                            .addComponent(Carpeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel40)
+                            .addComponent(FL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel100)
+                            .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel101)
+                            .addComponent(DetallePQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
@@ -4456,6 +4506,9 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 3137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel48)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4464,8 +4517,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonWeb3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CS5))
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 2401, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CS5)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -4539,6 +4591,8 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         Observaciones.setLineWrap(true);
         Observaciones.setRows(5);
         jScrollPane4.setViewportView(Observaciones);
+
+        Ndo.setText("0");
 
         share2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -5175,7 +5229,9 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             Pendiente.setText(String.valueOf(OdT.getValueAt(fila, 18)));
             PQT.setText(String.valueOf(OdT.getValueAt(fila, 19)));
             Odtp.setText(String.valueOf(OdT.getValueAt(fila, 19)));
-            Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 21)));
+            Detallespagoodt.setText(String.valueOf(OdT.getValueAt(fila, 21)));
+            OcultoODT.setText(String.valueOf(OdT.getValueAt(fila, 21)));
+            Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 22)));
 
             String combo1 = model.getValueAt(fila, 15).toString();
             for (int i = 0; i < Statustaller.getItemCount(); i++) {
@@ -5938,14 +5994,23 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         Zona.setText(String.valueOf(Pre.getValueAt(seleccionar, 6)));
         Serv.setText(String.valueOf(Pre.getValueAt(seleccionar, 7)));
         Cantidad.setText(String.valueOf(Pre.getValueAt(seleccionar, 8)));
-        interes.setText(String.valueOf(Pre.getValueAt(seleccionar, 9)));
-        MT.setText(String.valueOf(Pre.getValueAt(seleccionar, 10)));
-        PQ.setText(String.valueOf(Pre.getValueAt(seleccionar, 11)));
-        Presp.setText(String.valueOf(Pre.getValueAt(seleccionar, 11)));
-        Carpeta.setText(String.valueOf(Pre.getValueAt(seleccionar, 12)));
-        FL.setText(String.valueOf(Pre.getValueAt(seleccionar, 13)));
-        Status.setText(String.valueOf(Pre.getValueAt(seleccionar, 14)));
-        Metodo.setText(String.valueOf(Pre.getValueAt(seleccionar, 15)));
+
+        interes.setText(String.valueOf(Pre.getValueAt(seleccionar, 10)));
+        MT.setText(String.valueOf(Pre.getValueAt(seleccionar, 11)));
+        PQ.setText(String.valueOf(Pre.getValueAt(seleccionar, 12)));
+        Presp.setText(String.valueOf(Pre.getValueAt(seleccionar, 12)));
+        Carpeta.setText(String.valueOf(Pre.getValueAt(seleccionar, 13)));
+        FL.setText(String.valueOf(Pre.getValueAt(seleccionar, 14)));
+        Status.setText(String.valueOf(Pre.getValueAt(seleccionar, 15)));
+        Metodo.setText(String.valueOf(Pre.getValueAt(seleccionar, 16)));
+        DetallesPre.setText(String.valueOf(Pre.getValueAt(seleccionar, 17)));
+        OcultoPre.setText(String.valueOf(Pre.getValueAt(seleccionar, 17)));
+        String combo2 = model.getValueAt(seleccionar, 9).toString();
+        for (int i = 0; i < Mes.getItemCount(); i++) {
+            if (Interes.getItemAt(i).toString().equalsIgnoreCase(combo2)) {
+                Interes.setSelectedIndex(i);
+            }
+        }
         deposito();
     }//GEN-LAST:event_PreMouseClicked
 
@@ -6068,7 +6133,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             am.setText(String.valueOf(pago.getValueAt(fila, 2)));
             name.setText(String.valueOf(pago.getValueAt(fila, 3)));
             Bono.setText(String.valueOf(pago.getValueAt(fila, 4)));
-            Bono.setText(String.valueOf(pago.getValueAt(fila, 4)));
+            Bono1.setText(String.valueOf(pago.getValueAt(fila, 4)));
             cta.setText(String.valueOf(pago.getValueAt(fila, 5)));
             ban.setText(String.valueOf(pago.getValueAt(fila, 6)));
             Zon.setText(String.valueOf(pago.getValueAt(fila, 7)));
@@ -6255,7 +6320,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_TnomMouseClicked
 
     private void ModmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModmActionPerformed
-
+        editarp();
         editar();
         pagos();
         mostrardatos();
@@ -6270,14 +6335,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         mostrardatos();
         limpiarnom();
     }//GEN-LAST:event_AgregarNPActionPerformed
-
-    private void modPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modPActionPerformed
-
-        editarp();
-        pagos();
-        mostrardatos();
-        limpiarnom();
-    }//GEN-LAST:event_modPActionPerformed
 
     private void RembolsoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RembolsoKeyReleased
 
@@ -10337,6 +10394,14 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         Detallespagoodt.setText(D1 + ", " + "Quincena " + DPNQ + " " + DPQODT);
     }//GEN-LAST:event_DetallepagoQodtItemStateChanged
 
+    private void DetallePQItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DetallePQItemStateChanged
+        String D1 = OcultoPre.getText();
+        String DPNQ = NdQpre.getSelectedItem().toString();
+        String DPQODT = DetallePQ.getSelectedItem().toString();
+        DetallesPre.setText(D1 + ", " + "Quincena " + DPNQ + " " + DPQODT);
+
+    }//GEN-LAST:event_DetallePQItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -10370,6 +10435,102 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Admin_Nomina_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -10524,8 +10685,10 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> DT9;
     private javax.swing.JTextField DVT;
     private javax.swing.JTextArea Daño;
+    private javax.swing.JComboBox<String> DetallePQ;
     private javax.swing.JComboBox<String> DetallepagoNQodt;
     private javax.swing.JComboBox<String> DetallepagoQodt;
+    private javax.swing.JTextArea DetallesPre;
     private javax.swing.JTextArea Detallespagoodt;
     private javax.swing.JButton Eliminar;
     private javax.swing.JButton EliminarT;
@@ -10621,6 +10784,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField NDL;
     private javax.swing.JTextField NameTaller;
     private javax.swing.JTextField Namepres;
+    private javax.swing.JComboBox<String> NdQpre;
     private javax.swing.JTextField Ndo;
     private javax.swing.JScrollPane Nomina;
     private javax.swing.JMenuItem Nomina1;
@@ -10628,6 +10792,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Num;
     private javax.swing.JTextArea Observaciones;
     private javax.swing.JTextField OcultoODT;
+    private javax.swing.JTextField OcultoPre;
     private javax.swing.JTable OdT;
     private javax.swing.JTextField Odtp;
     private javax.swing.JTextField PQ;
@@ -10760,6 +10925,8 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -10856,6 +11023,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel96;
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -10872,6 +11040,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -10881,7 +11050,6 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JButton modP;
     private javax.swing.JButton modprestamo;
     private javax.swing.JTextField name;
     private javax.swing.JTextField ndp;
