@@ -855,6 +855,10 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
         Pendiente.setText("");
         Fdp.setSelectedIndex(0);
         Observaciones.setText("");
+        DetallepagoNQodt.setSelectedIndex(0);
+        DetallepagoQodt.setSelectedIndex(0);
+        Detallespagoodt.setText("");
+        OcultoODT.setText("");
     }
 
     public void limpiarP() {
@@ -899,6 +903,7 @@ public final class Admin_Nomina_5 extends javax.swing.JFrame {
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
+            
             pst.setInt(1, ndo);
             pst.setString(2, FE.getText());
             pst.setString(3, ApTaller.getText());
