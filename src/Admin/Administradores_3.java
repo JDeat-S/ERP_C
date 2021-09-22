@@ -650,7 +650,7 @@ public final class Administradores_3 extends javax.swing.JFrame {
 
     private void IDNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDNActionPerformed
         // TODO add your handling code here:
-        Admin_Nomina_5 kk = new Admin_Nomina_5();
+        Admin_NominaQ_5 kk = new Admin_NominaQ_5();
         kk.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_IDNActionPerformed
