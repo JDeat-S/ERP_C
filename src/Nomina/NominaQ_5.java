@@ -72,6 +72,23 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     int Q022 = 22;
     int Q023 = 23;
     int Q024 = 24;
+    double dd, in, dv;
+    double dd2, in2, dv2;
+    double dd3, in3, dv3;
+    double dd4, in4, dv4;
+    double dd5, in5, dv5;
+    double dd6, in6, dv6;
+    double dd7, in7, dv7;
+    double dd8, in8, dv8;
+    double dd9, in9, dv9;
+    double dd10, in10, dv10;
+    double dd11, in11, dv11;
+    double dd12, in12, dv12;
+    double dd13, in13, dv13;
+    double dd14, in14, dv14;
+    double dd15, in15, dv15;
+    double dd16, in16, dv16;
+
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
@@ -168,6 +185,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         BAMNom.setText("");
         BAppag.setVisible(false);
         Bampag.setVisible(false);
+        PendienteOC.setVisible(false);
+        PagadoOC.setVisible(false);
+        PDEQ.setVisible(false);
         setIconImage(new ImageIcon(NominaQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
@@ -235,19 +255,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 //Descuentos varios
 
     public void dv() {
-        double d1 = Double.parseDouble(this.Fdb.getText());
-        double d2 = Double.parseDouble(this.Fde.getText());
-        double d3 = Double.parseDouble(this.Bp.getText());
-        double d4 = Double.parseDouble(this.Sancion.getText());
-        double d5 = Double.parseDouble(this.Grua.getText());
-        double d6 = Double.parseDouble(this.Playera.getText());
-        double d7 = Double.parseDouble(this.Chamarra.getText());
-        double d8 = Double.parseDouble(this.Corbata.getText());
-        double d9 = Double.parseDouble(this.Pantalon.getText());
-        double d10 = Double.parseDouble(this.Chaleco.getText());
-        double d11 = Double.parseDouble(this.Credencial.getText());
+        double dv1 = Double.parseDouble(this.Fdb.getText());
+        double dv2 = Double.parseDouble(this.Fde.getText());
+        double dv3 = Double.parseDouble(this.Bp.getText());
+        double dv4 = Double.parseDouble(this.Sancion.getText());
+        double dv5 = Double.parseDouble(this.Grua.getText());
+        double dv6 = Double.parseDouble(this.Playera.getText());
+        double dv7 = Double.parseDouble(this.Chamarra.getText());
+        double dv8 = Double.parseDouble(this.Corbata.getText());
+        double dv9 = Double.parseDouble(this.Pantalon.getText());
+        double dv10 = Double.parseDouble(this.Chaleco.getText());
+        double dv11 = Double.parseDouble(this.Credencial.getText());
 
-        double total = d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11;
+        double total = dv1 + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8 + dv9 + dv10 + dv11;
         this.DVT.setText("" + total + "");
     }
 
@@ -262,18 +282,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         if (!"".equals(Share)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%'";
+                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
+                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
+                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }
 
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
@@ -330,13 +351,13 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         if (!"".equals(Share)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%'";
+                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
+                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
+                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }
 
         try {
@@ -380,8 +401,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al compartir datos con prestamos: " + e.getMessage());
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al compartir datos con prestamos: " + ex.getMessage());
 
         }
 
@@ -412,38 +433,22 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 // Dia laborado
 
     public void DL() {
-        String d1 = DL1.getText();
-        String d2 = DL2.getText();
-        String d3 = DL3.getText();
-        String d4 = DL4.getText();
-        String d5 = DL5.getText();
-        String d6 = DL6.getText();
-        String d7 = DL7.getText();
-        String d8 = DL8.getText();
-        String d9 = DL9.getText();
-        String d10 = DL10.getText();
-        String d11 = DL11.getText();
-        String d12 = DL12.getText();
-        String d13 = DL13.getText();
-        String d14 = DL14.getText();
-        String d15 = DL15.getText();
-        String d16 = DL16.getText();
-        int D1 = Integer.parseInt(d1);
-        int D2 = Integer.parseInt(d2);
-        int D3 = Integer.parseInt(d3);
-        int D4 = Integer.parseInt(d4);
-        int D5 = Integer.parseInt(d5);
-        int D6 = Integer.parseInt(d6);
-        int D7 = Integer.parseInt(d7);
-        int D8 = Integer.parseInt(d8);
-        int D9 = Integer.parseInt(d9);
-        int D10 = Integer.parseInt(d10);
-        int D11 = Integer.parseInt(d11);
-        int D12 = Integer.parseInt(d12);
-        int D13 = Integer.parseInt(d13);
-        int D14 = Integer.parseInt(d14);
-        int D15 = Integer.parseInt(d15);
-        int D16 = Integer.parseInt(d16);
+        int D1 = Integer.parseInt(DL1.getText());
+        int D2 = Integer.parseInt(DL2.getText());
+        int D3 = Integer.parseInt(DL3.getText());
+        int D4 = Integer.parseInt(DL4.getText());
+        int D5 = Integer.parseInt(DL5.getText());
+        int D6 = Integer.parseInt(DL6.getText());
+        int D7 = Integer.parseInt(DL7.getText());
+        int D8 = Integer.parseInt(DL8.getText());
+        int D9 = Integer.parseInt(DL9.getText());
+        int D10 = Integer.parseInt(DL10.getText());
+        int D11 = Integer.parseInt(DL11.getText());
+        int D12 = Integer.parseInt(DL12.getText());
+        int D13 = Integer.parseInt(DL13.getText());
+        int D14 = Integer.parseInt(DL14.getText());
+        int D15 = Integer.parseInt(DL15.getText());
+        int D16 = Integer.parseInt(DL16.getText());
         double total = D1 + D2 + D3 + D4 + D5 + D6 + D7 + D8 + D9 + D10 + D11 + D12 + D13 + D14 + D15 + D16;
         DL.setText("" + total + "");
 
@@ -574,13 +579,13 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         if (!"".equals(Share)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Sueldo`, `Servicio`, `Cuenta banco`, `Banco`, `Zona`, `Caja de ahorro`, `Bono` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%'";
+                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Sueldo`, `Servicio`, `Cuenta banco`, `Banco`, `Zona`, `Caja de ahorro`, `Bono` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
+                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Sueldo`, `Servicio`, `Cuenta banco`, `Banco`, `Zona`, `Caja de ahorro`, `Bono` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
+                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }
 
         try {
@@ -664,7 +669,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         double d24 = Double.parseDouble(this.Q24.getText());
         double d25 = Double.parseDouble(this.Iad.getText());
 
-        double total = d25 / (d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11 + d12 + d13 + d14 + d15 + d16 + d17 + d18 + d19 + d20 + d21 + d22 + d23 + d24);
+        double total = d25 / (d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11 + d12 + d13
+                + d14 + d15 + d16 + d17 + d18 + d19 + d20 + d21 + d22 + d23 + d24);
         this.PQT.setText("" + total + "");
     }
 
@@ -740,6 +746,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Ingreso a taller");//15
             modelo.addColumn("Status");
             modelo.addColumn("Importe a descontar");//17
+            modelo.addColumn("Quincenas a pagar");
             modelo.addColumn("Pagado");
             modelo.addColumn("Pendiente");//19
             modelo.addColumn("Pago por quincena");
@@ -751,7 +758,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             int[] anchos = {/*ndo*/35, /*fde*/ 50, /*ap*/ 55, /*am*/ 55, /*nom*/ 150,
                 /*Zon*/ 60, /*serv*/ 75, /*Marca*/ 60, /*Modelo*/ 60, /*Placas*/ 60, /*Color*/ 60,
                 /*NDP*/ 50, /*Dano*/ 500,
-                /*CT*/ 55, /*IAT*/ 60, /*Status*/ 60, /*IAD*/ 60, /*PAGA*/ 55,
+                /*CT*/ 55, /*IAT*/ 60, /*Status*/ 60, /*IAD*/ 60, /*QAP*/ 60, /*PAGA*/ 55,
                 /*PENDIENTE*/ 55, /*PPQ*/ 70, /*FDP*/ 65, /*DDP*/ 1000, /*obs*/ 1000};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -792,7 +799,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 + " `Apellido M` = ?, `Nombre(s)` = ?, `Zona` = ?,"
                 + " `Servicio` = ?, `Marca` = ?, `Modelo` = ?, `Placas` = ?,"
                 + " `Color` = ?, `# de piezas` = ?, `Daño` = ?, `Costo total` = ?,"
-                + " `Ingreso a taller` = ?, `Status` = ?, `Importe a descontar` = ?,"
+                + " `Ingreso a taller` = ?, `Status` = ?, `Importe a descontar` = ?, `Quincenas a pagar` = ?, "
                 + " `Pagado` = ?, `Pendiente` = ?, `Por quincenas` = ?, `Forma de pago` = ?,"
                 + " `Detalles de pago` = ?, `Observaciones` = ? WHERE `taller`.`idTaller` = ?";
 
@@ -816,13 +823,14 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             pst.setString(15, Iat);
             pst.setString(16, Item);
             pst.setString(17, Iad.getText());
-            pst.setString(18, Pagado.getText());
-            pst.setString(19, Pendiente.getText());
-            pst.setString(20, PQT.getText());
-            pst.setString(21, Item1);
-            pst.setString(22, Detallespagoodt.getText());
-            pst.setString(23, Observaciones.getText());
-            pst.setInt(24, id);
+            pst.setString(18, QAP.getSelectedItem().toString());
+            pst.setString(19, PagadoOC.getText());
+            pst.setString(20, PendienteOC.getText());
+            pst.setString(21, PQT.getText());
+            pst.setString(22, Item1);
+            pst.setString(23, Detallespagoodt.getText());
+            pst.setString(24, Observaciones.getText());
+            pst.setInt(25, id);
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Orden Modificada");
@@ -858,16 +866,18 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         Fdp.setSelectedIndex(0);
         Observaciones.setText("");
         DetallepagoNQodt.setSelectedIndex(0);
-        DetallepagoQodt.setSelectedIndex(0);
         Detallespagoodt.setText("");
         OcultoODT.setText("");
+        Detallespagoodt.setText("");
+        PagadoOC.setText("");
+        PendienteOC.setText("");
+        PDEQ.setText("");
     }
 
     public void limpiarP() {
         DetallesPre.setText("");
         OcultoPre.setText("");
         NdQpre.setSelectedIndex(0);
-        DetallePQ.setSelectedIndex(0);
         Num.setText("0");
         FS.setText("");
         Namepres.setText("");
@@ -885,7 +895,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         FL.setText("");
         Status.setText("");
         Metodo.setText("");
-
+        DetallesPre.setText("");
+        PDEQ.setText("");
     }
 
     //agregar orden de taller
@@ -902,9 +913,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         String SQL = "INSERT INTO `taller` (`idTaller`, `Fecha de expedicion`,"
                 + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`,"
                 + " `Marca`, `Modelo`, `Placas`, `Color`, `# de piezas`, `Daño`,"
-                + " `Costo total`, `Ingreso a taller`, `Status`, `Importe a descontar`,"
+                + " `Costo total`, `Ingreso a taller`, `Status`, `Importe a descontar`, `Quincenas a pagar`,"
                 + " `Pagado`, `Pendiente`, `Por quincenas`, `Forma de pago`, `Detalles de pago`, `Observaciones`) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, b?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -925,12 +936,13 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             pst.setString(15, Iat);
             pst.setString(16, Statustaller.getSelectedItem().toString());
             pst.setString(17, Iad.getText());
-            pst.setString(18, Pagado.getText());
-            pst.setString(19, Pendiente.getText());
-            pst.setString(20, PQT.getText());
-            pst.setString(21, Fdp.getSelectedItem().toString());
-            pst.setString(22, Detallespagoodt.getText());
-            pst.setString(23, Observaciones.getText());
+            pst.setString(18, QAP.getSelectedItem().toString());
+            pst.setString(19, Pagado.getText());
+            pst.setString(20, Pendiente.getText());
+            pst.setString(21, PQT.getText());
+            pst.setString(22, Fdp.getSelectedItem().toString());
+            pst.setString(23, Detallespagoodt.getText());
+            pst.setString(24, Observaciones.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Orden de Taller Agregada");
@@ -1178,48 +1190,48 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         String FiltroN = busp.getText();
         String FAPpago = BAppag.getText();
         String FAMpago = Bampag.getText();
-        String where = "select `Apellido P`, `Apellido M`, `Nombre(s)`, `Bono`,"
-                + " `Cuenta_Nom`, `Banco_Nom`, `Zona_Nom`, `Servicio_Nom`, "
-                + "`Quincena`, `Año`, `Sueldo_Nom`, `Deposito` FROM `nomina`";
+        String where = "select `idNomina`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
+                + " `Cuenta_Nom`, `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`, `Bono`,"
+                + " `Deposito`, `Quincena`, `Año` FROM `nomina`";
         String FiltroZpago = FiltroZP.getSelectedItem().toString();
         String FiltroSpago = FiltroServP.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP.getText();
 
         if (!"".equals(FiltroN)) {
-            where = "select `idNomina`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Bono`,"
-                    + " `Cuenta_Nom`, `Banco_Nom`, `Zona_Nom`, `Servicio_Nom`, "
-                    + "`Quincena`, `Año`, `Sueldo_Nom`, `Deposito` FROM `nomina`"
+            where = "select `idNomina`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
+                    + " `Cuenta_Nom`, `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`,"
+                    + " `Bono`, `Deposito`, `Quincena`, `Año` FROM `nomina`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            where = "select `idNomina`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Bono`,"
-                    + " `Cuenta_Nom`, `Banco_Nom`, `Zona_Nom`, `Servicio_Nom`, "
-                    + "`Quincena`, `Año`, `Sueldo_Nom`, `Deposito` FROM `nomina`"
+            where = "select `idNomina`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                    + "`Cuenta_Nom`, `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`,"
+                    + " `Bono`, `Deposito`, `Quincena`, `Año` FROM `nomina`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            where = "select `idNomina`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Bono`,"
-                    + " `Cuenta_Nom`, `Banco_Nom`, `Zona_Nom`, `Servicio_Nom`, "
-                    + "`Quincena`, `Año`, `Sueldo_Nom`, `Deposito` FROM `nomina`"
+            where = "select `idNomina`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
+                    + " `Cuenta_Nom`, `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`,"
+                    + " `Bono`, `Deposito`, `Quincena`, `Año` FROM `nomina`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            where = "select `idNomina`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Bono`,"
-                    + " `Cuenta_Nom`, `Banco_Nom`, `Zona_Nom`, `Servicio_Nom`, "
-                    + "`Quincena`, `Año`, `Sueldo_Nom`, `Deposito` FROM `nomina`"
+            where = "select `idNomina`, `Nombre(s)`, `Apellido P`, `Apellido M`"
+                    + ", `Cuenta_Nom`, `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`,"
+                    + " `Bono`, `Deposito`, `Quincena`, `Año` FROM `nomina`"
                     + " Where `idNomina` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroZpago)) {
-            where = "select `idNomina`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Bono`,"
-                    + " `Cuenta_Nom`, `Banco_Nom`, ``, `Servicio_Nom`, "
-                    + "`Quincena`, `Año`, `Sueldo_Nom`, `Deposito` FROM `nomina`"
+            where = "select `idNomina`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
+                    + " `Cuenta_Nom`, `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`,"
+                    + " `Bono`, `Deposito`, `Quincena`, `Año` FROM `nomina`"
                     + " where `Zona_Nom` LIKE '%" + FiltroZpago + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            where = "select `idNomina`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Bono`,"
-                    + " `Cuenta_Nom`, `Banco_Nom`, `Zona_Nom`, ``, "
-                    + "`Quincena`, `Año`, `Sueldo_Nom`, `Deposito` FROM `nomina`"
+            where = "select `idNomina`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
+                    + " `Cuenta_Nom`, `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`,"
+                    + " `Bono`, `Deposito`, `Quincena`, `Año` FROM `nomina`"
                     + " where `Servicio_Nom` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            where = "select `idNomina`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Bono`,"
-                    + " `Cuenta_Nom`, `Banco_Nom`, `Zona_Nom`, `Servicio_Nom`, "
-                    + "`Quincena`, `Año`, `Sueldo_Nom`, `Deposito` FROM `nomina`"
+            where = "select `idNomina`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
+                    + " `Cuenta_Nom`, `Zona_Nom`, `Servicio_Nom`, `Sueldo_Nom`,"
+                    + " `Bono`, `Deposito`, `Quincena`, `Año` FROM `nomina`"
                     + " Where `Quincena` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -1243,23 +1255,22 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Lista");
-            modelo.addColumn("Apellido P");//2
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//4
-            modelo.addColumn("Bono");
-            modelo.addColumn("Cuenta de banco");//6
-            modelo.addColumn("Banco");
-            modelo.addColumn("Zona");//8
+            modelo.addColumn("Cuenta de banco");//5
+            modelo.addColumn("Zona");//6
             modelo.addColumn("Servicio");
-            modelo.addColumn("Quincena del mes");//10
-            modelo.addColumn("Año");
-            modelo.addColumn("Sueldo Quincenal");//12
+            modelo.addColumn("Sueldo Quincenal");//8
+            modelo.addColumn("Bono");
             modelo.addColumn("Deposito");
-
-//Anchos hasta año
-            int[] anchos = {50, 50, 50, 150, 35, 65, 55, 60, 80, 150, 15,
-                //anchos hasta Deposito
-                150, 75};
+            modelo.addColumn("Quincena del mes");//11
+            modelo.addColumn("Año");//12
+            
+//ANCHOS
+            int[] anchos = {/*NL*/ 50, /*NAME*/150, /*AP*/50, /*AM*/50, /*CDB*/50,
+                /*ZONA*/50, /*SERV*/60, /*SQ*/60, /*BONO*/50, /*DEP*/60, /*QDM*/80,
+                /*AÑO*/40};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1627,18 +1638,39 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }
 
     public void pago() {
-        double d1 = Double.parseDouble(this.DL.getText());
-        double d2 = Double.parseDouble(this.dt.getText());
-        double d3 = Double.parseDouble(this.F.getText());
-        double d4 = Double.parseDouble(this.FJ.getText());
-        double d5 = Double.parseDouble(this.DO.getText());
-        double d6 = Double.parseDouble(this.R.getText());
-        double d7 = Double.parseDouble(this.pd.getText());
-        double d11 = Double.parseDouble(this.DSGS.getText());
-        double d8 = d6 * 50;
-        double d9 = d6 * d7;
-        double d10 = d9 - d8;
-        double total = ((-250 * d3) + (d7 * d1) + (0 * d11) + ((2 * d7) * (d2)) + (0 * d5) + (0 * d4) + (d10));
+
+        double PD = Double.parseDouble(this.pd.getText());
+
+        double dpi = Double.parseDouble(this.Dpi.getText());
+        double totaldpi = dpi * PD;
+        pds.setText("" + dpi * PD);
+
+        double DDV = Double.parseDouble(this.Ddv.getText());
+        double totalddv = DDV * PD;
+
+        double DID = Double.parseDouble(this.DD.getText());
+        double totaldd = DID * PD;
+
+        double DIAL = Double.parseDouble(this.DL.getText());
+        double totalDL = DIAL * PD;
+
+        double DEST = Double.parseDouble(this.dt.getText());
+        double totaldt = (2 * PD) * DEST;
+
+        double FAL = Double.parseDouble(this.F.getText());
+        double totalFAL = (-350 * FAL);
+
+        /*double FALJ = Double.parseDouble(this.FJ.getText());
+        double totalFALJ = (0 * FALJ);
+
+        double DesO = Double.parseDouble(this.DO.getText());
+        double totalDesO = (0 * DesO);*/
+        double RET = Double.parseDouble(this.R.getText());
+        double totalRET = (PD * RET) - (RET * 50);
+
+        /*double DESGS = Double.parseDouble(this.DSGS.getText());
+        double totalDESGS = */
+        double total = (totalddv + totaldd + totalDL + totaldt + totalFAL + totalRET);
         this.Pago.setText("" + total + "");
     }
 
@@ -1869,6 +1901,14 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         jLabel91 = new javax.swing.JLabel();
         año = new com.toedter.calendar.JDateChooser();
         Pago = new javax.swing.JLabel();
+        DD = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
+        Dpi = new javax.swing.JLabel();
+        jLabel105 = new javax.swing.JLabel();
+        Ddv = new javax.swing.JLabel();
+        jLabel107 = new javax.swing.JLabel();
+        pds = new javax.swing.JLabel();
+        jLabel104 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -2046,8 +2086,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         OcultoPre = new javax.swing.JTextField();
         jLabel100 = new javax.swing.JLabel();
         NdQpre = new javax.swing.JComboBox<>();
-        jLabel101 = new javax.swing.JLabel();
-        DetallePQ = new javax.swing.JComboBox<>();
         Tprestamos = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
@@ -2127,10 +2165,11 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         Detallespagoodt = new javax.swing.JTextArea();
         jLabel58 = new javax.swing.JLabel();
         jLabel97 = new javax.swing.JLabel();
-        jLabel98 = new javax.swing.JLabel();
         DetallepagoNQodt = new javax.swing.JComboBox<>();
-        DetallepagoQodt = new javax.swing.JComboBox<>();
         OcultoODT = new javax.swing.JTextField();
+        PDEQ = new javax.swing.JTextField();
+        PagadoOC = new javax.swing.JTextField();
+        PendienteOC = new javax.swing.JTextField();
         TTalleres = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
         jLabel73 = new javax.swing.JLabel();
@@ -2433,7 +2472,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         Q12.setText("0");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Nomina");
+        setTitle("Nomina Quincenal");
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -2500,16 +2539,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         d3.setText("0");
 
         DL.setText("0");
-        DL.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                DLMouseClicked(evt);
-            }
-        });
-        DL.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                DLKeyReleased(evt);
-            }
-        });
 
         d4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         d4.setText("0");
@@ -2687,21 +2716,22 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         Pago.setForeground(new java.awt.Color(255, 51, 51));
         Pago.setText("0");
-        Pago.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                PagoMouseMoved(evt);
-            }
-        });
-        Pago.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PagoMouseClicked(evt);
-            }
-        });
-        Pago.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                PagoKeyReleased(evt);
-            }
-        });
+
+        DD.setText("0");
+
+        jLabel103.setText("Dias descansados:");
+
+        Dpi.setText("0");
+
+        jLabel105.setText("Dias por incapacidad");
+
+        Ddv.setText("0");
+
+        jLabel107.setText("Dias de vacaciondes:");
+
+        pds.setText("0");
+
+        jLabel104.setText("Pago de seguro:");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -2743,15 +2773,37 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(d15, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(DT, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DT1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DT2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DT3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DT4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(DT, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(DT1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(DT2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(DT3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(DT4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addComponent(jLabel105)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Dpi))
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addComponent(jLabel107)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Ddv)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addComponent(jLabel103)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DD))
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addComponent(jLabel104)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(pds)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel9Layout.createSequentialGroup()
@@ -2785,9 +2837,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                                         .addComponent(DL))
                                     .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addComponent(jLabel16)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(dt)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel18)
                                     .addComponent(jLabel20))
@@ -2881,11 +2933,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
-                            .addComponent(DL))
+                            .addComponent(DL)
+                            .addComponent(Dpi)
+                            .addComponent(jLabel105)
+                            .addComponent(pds)
+                            .addComponent(jLabel104))
                         .addGap(5, 5, 5)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
-                            .addComponent(dt)))
+                            .addComponent(dt)
+                            .addComponent(DD)
+                            .addComponent(jLabel103)
+                            .addComponent(Ddv)
+                            .addComponent(jLabel107)))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel18)
@@ -3535,7 +3595,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(382, 382, 382)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Bsi)
                             .addComponent(Bno)
@@ -3628,7 +3688,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         Nomina.setViewportView(jPanel1);
@@ -3933,46 +3993,43 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jLabel64)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltrosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBEP)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(busp, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BAppag, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Bampag, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBZP)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroZP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelSZP)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroSZP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBSP)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroServP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelNDFP)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(filtroNDFP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBQP)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroQP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(CS3))
-                        .addGap(0, 188, Short.MAX_VALUE))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel64)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBEP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(busp, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BAppag, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Bampag, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBZP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroZP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSZP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBSP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroServP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelNDFP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(filtroNDFP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS3)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 2252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4150,15 +4207,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         NdQpre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" }));
 
-        jLabel101.setText("Quincena");
-
-        DetallePQ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        DetallePQ.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                DetallePQItemStateChanged(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -4242,17 +4290,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                                 .addGap(210, 210, 210)
                                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel100))
-                                    .addComponent(jLabel101))
+                                .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(DetallePQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 339, Short.MAX_VALUE)))
+                                .addComponent(jLabel100)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 486, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -4328,15 +4371,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                             .addComponent(jLabel40)
                             .addComponent(FL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel100)
-                            .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel101)
-                            .addComponent(DetallePQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel100)
+                        .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
@@ -4356,7 +4394,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel48.setText("Buscar prestamos:");
+        jLabel48.setText("Buscar prestamo por nombre:");
 
         BP.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -4711,18 +4749,15 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         jLabel97.setText("Numero de quincena:");
 
-        jLabel98.setText("Quincena:");
-
         DetallepagoNQodt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" }));
 
-        DetallepagoQodt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        DetallepagoQodt.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                DetallepagoQodtItemStateChanged(evt);
-            }
-        });
-
         OcultoODT.setText(" ");
+
+        PDEQ.setText("0");
+
+        PagadoOC.setText("0");
+
+        PendienteOC.setText("0");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -4766,7 +4801,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                                         .addComponent(Busamshpre1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(CS6)
-                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                        .addGap(0, 111, Short.MAX_VALUE)))
                                 .addGap(11, 11, 11))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(Fdp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4779,36 +4814,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addGap(106, 106, 106)
-                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                                .addGap(50, 50, 50)
-                                                .addComponent(jLabel55)
-                                                .addGap(217, 217, 217)
-                                                .addComponent(jLabel58))
-                                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                                .addComponent(jLabel59)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Pagado, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel60)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Pendiente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(34, 34, 34)
-                                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(OcultoODT, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                            .addComponent(jLabel98)
-                                                            .addComponent(jLabel97))
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(DetallepagoQodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(DetallepagoNQodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
                                         .addComponent(Iad, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel71)
@@ -4817,7 +4822,39 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel72)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(PQT, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(PQT, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                                .addGap(106, 106, 106)
+                                                .addComponent(jLabel59)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(Pagado, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                                    .addComponent(PDEQ))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel60)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(Pendiente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                                        .addComponent(PagadoOC)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(PendienteOC, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                                .addGap(156, 156, 156)
+                                                .addComponent(jLabel55)))
+                                        .addGap(34, 34, 34)
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel58)
+                                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(OcultoODT, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                                .addComponent(jLabel97)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(DetallepagoNQodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel57)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4826,7 +4863,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                                 .addComponent(Agregartaller)
                                 .addGap(51, 51, 51)
                                 .addComponent(Modificartaller)))
-                        .addContainerGap(144, Short.MAX_VALUE))))
+                        .addContainerGap(170, Short.MAX_VALUE))))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -4886,23 +4923,24 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                                     .addComponent(Pagado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel60)
                                     .addComponent(Pendiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(44, 44, 44)
+                                .addGap(2, 2, 2)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(PDEQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PagadoOC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PendienteOC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel57)
-                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(Agregartaller)
-                                        .addComponent(Modificartaller))))
+                                        .addComponent(Modificartaller))
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel97)
-                                    .addComponent(DetallepagoNQodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel98)
-                                    .addComponent(DetallepagoQodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(DetallepagoNQodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -4936,7 +4974,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 204, 204));
 
-        jLabel73.setText("Buscar Orden de taller:");
+        jLabel73.setText("Buscar Orden de taller por nombre:");
 
         Bodt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -5079,13 +5117,14 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             CT.setText(String.valueOf(OdT.getValueAt(fila, 13)));
             //ingreso a taller 14
             Iad.setText(String.valueOf(OdT.getValueAt(fila, 16)));
-            Pagado.setText(String.valueOf(OdT.getValueAt(fila, 17)));
-            Pendiente.setText(String.valueOf(OdT.getValueAt(fila, 18)));
-            PQT.setText(String.valueOf(OdT.getValueAt(fila, 19)));
-            Odtp.setText(String.valueOf(OdT.getValueAt(fila, 19)));
-            Detallespagoodt.setText(String.valueOf(OdT.getValueAt(fila, 21)));
-            OcultoODT.setText(String.valueOf(OdT.getValueAt(fila, 21)));
-            Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 22)));
+            Pagado.setText(String.valueOf(OdT.getValueAt(fila, 18)));
+            Pendiente.setText(String.valueOf(OdT.getValueAt(fila, 19)));
+            PQT.setText(String.valueOf(OdT.getValueAt(fila, 20)));
+            PDEQ.setText(String.valueOf(OdT.getValueAt(fila, 20)));
+            Odtp.setText(String.valueOf(OdT.getValueAt(fila, 20)));
+            Detallespagoodt.setText(String.valueOf(OdT.getValueAt(fila, 22)));
+            OcultoODT.setText(String.valueOf(OdT.getValueAt(fila, 22)));
+            Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 23)));
 
             String combo1 = model.getValueAt(fila, 15).toString();
             for (int i = 0; i < Statustaller.getItemCount(); i++) {
@@ -5094,7 +5133,13 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
             }
             //Combobo2
-            String combo2 = model.getValueAt(fila, 20).toString();
+            String combo3 = model.getValueAt(fila, 17).toString();
+            for (int i = 0; i < QAP.getItemCount(); i++) {
+                if (QAP.getItemAt(i).equalsIgnoreCase(combo3)) {
+                    QAP.setSelectedIndex(i);
+                }
+            }
+            String combo2 = model.getValueAt(fila, 21).toString();
             for (int i = 0; i < Fdp.getItemCount(); i++) {
                 if (Fdp.getItemAt(i).equalsIgnoreCase(combo2)) {
                     Fdp.setSelectedIndex(i);
@@ -5119,6 +5164,14 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e.toString());
 
         }
+        double pagado = Double.parseDouble(this.Pagado.getText());
+        double pendiente = Double.parseDouble(this.Pendiente.getText());
+        double PDEQ1 = Double.parseDouble(this.PDEQ.getText());
+        double totalpagado = (PDEQ1 + pagado);
+        PagadoOC.setText("" + totalpagado);
+        double totalpendiente = pendiente - PDEQ1;
+        PendienteOC.setText("" + totalpendiente);
+
         deposito();
     }//GEN-LAST:event_OdTMouseClicked
 
@@ -6138,6 +6191,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         pagos();
         mostrardatos();
         limpiarnom();
+        editarpre();
+        MDP();
+        limpiarP();
+        editarT();
+        MDT();
+        limpiarT();
     }//GEN-LAST:event_ModmActionPerformed
 
     private void AgregarNPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarNPActionPerformed
@@ -6277,6 +6336,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO16.setText("0");
             R16.setText("0");
             DSGS16.setText("0");
+            dv16 = 0;
+            dd16 = 0;
+            in16 = 0;
         }
         if (dt.equals("A")) {
             DL16.setText("" + a + "");
@@ -6286,24 +6348,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO16.setText("0");
             R16.setText("0");
             DSGS16.setText("0");
+            dv16 = 0;
+            dd16 = 0;
+            in16 = 0;
         }
         if (dt.equals("D")) {
-            DL16.setText("" + a + "");
+            DL16.setText("0");
             F16.setText("0");
             FJ16.setText("0");
             this.dt16.setText("0");
             DO16.setText("0");
             R16.setText("0");
             DSGS16.setText("0");
+            dv16 = 0;
+            dd16 = 1;
+            in16 = 0;
         }
         if (dt.equals("V")) {
-            DL16.setText("" + a + "");
+            DL16.setText("0");
             F16.setText("0");
             FJ16.setText("0");
             this.dt16.setText("0");
             DO16.setText("0");
             R16.setText("0");
             DSGS16.setText("0");
+            dv16 = 1;
+            dd16 = 0;
+            in16 = 0;
         }
         if (dt.equals("I")) {
             DL16.setText("0");
@@ -6313,6 +6384,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO16.setText("0");
             R16.setText("0");
             DSGS16.setText("0");
+            dv16 = 0;
+            dd16 = 0;
+            in16 = 1;
         }
         if (dt.equals("F")) {
             DL16.setText("0");
@@ -6322,6 +6396,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO16.setText("0");
             R16.setText("0");
             DSGS16.setText("0");
+            dv16 = 0;
+            dd16 = 0;
+            in16 = 0;
         }
         if (dt.equals("FJ")) {
             DL16.setText("0");
@@ -6331,6 +6408,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO16.setText("0");
             R16.setText("0");
             DSGS16.setText("0");
+            dv16 = 0;
+            dd16 = 0;
+            in16 = 0;
         }
         if (dt.equals("DT")) {
             DL16.setText("0");
@@ -6340,6 +6420,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO16.setText("0");
             R16.setText("0");
             DSGS16.setText("0");
+            dv16 = 0;
+            dd16 = 0;
+            in16 = 0;
         }
         if (dt.equals(" ")) {
             DL16.setText("0");
@@ -6349,6 +6432,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO16.setText("" + a + "");
             R16.setText("0");
             DSGS16.setText("0");
+            dv16 = 0;
+            dd16 = 0;
+            in16 = 0;
         }
         if (dt.equals("R")) {
             DL16.setText("0");
@@ -6358,6 +6444,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO16.setText("0");
             R16.setText("" + a + "");
             DSGS16.setText("0");
+            dv16 = 0;
+            dd16 = 0;
+            in16 = 0;
         }
         if (dt.equals("DSGS")) {
             DL16.setText("0");
@@ -6367,7 +6456,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO16.setText("0");
             R16.setText("0");
             DSGS16.setText("" + a + "");
+            dv16 = 0;
+            dd16 = 0;
+            in16 = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DSGS();
         DL();
         DT();
@@ -6389,6 +6490,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO15.setText("0");
             R15.setText("0");
             DSGS15.setText("0");
+            dv15 = 0;
+            dd15 = 0;
+            in15 = 0;
         }
         if (dt.equals("A")) {
             DL15.setText("" + a + "");
@@ -6398,24 +6502,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO15.setText("0");
             R15.setText("0");
             DSGS15.setText("0");
+            dv15 = 0;
+            dd15 = 0;
+            in15 = 0;
         }
         if (dt.equals("D")) {
-            DL15.setText("" + a + "");
+            DL15.setText("0");
             F15.setText("0");
             FJ15.setText("0");
             this.dt15.setText("0");
             DO15.setText("0");
             R15.setText("0");
             DSGS15.setText("0");
+            dv15 = 0;
+            dd15 = 1;
+            in15 = 0;
         }
         if (dt.equals("V")) {
-            DL15.setText("" + a + "");
+            DL15.setText("0");
             F15.setText("0");
             FJ15.setText("0");
             this.dt15.setText("0");
             DO15.setText("0");
             R15.setText("0");
             DSGS15.setText("0");
+            dv15 = 1;
+            dd15 = 0;
+            in15 = 0;
         }
         if (dt.equals("I")) {
             DL15.setText("0");
@@ -6425,6 +6538,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO15.setText("0");
             R15.setText("0");
             DSGS15.setText("0");
+            dv15 = 0;
+            dd15 = 0;
+            in15 = 1;
         }
         if (dt.equals("F")) {
             DL15.setText("0");
@@ -6434,6 +6550,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO15.setText("0");
             R15.setText("0");
             DSGS15.setText("0");
+            dv15 = 0;
+            dd15 = 0;
+            in15 = 0;
         }
         if (dt.equals("FJ")) {
             DL15.setText("0");
@@ -6443,6 +6562,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO15.setText("0");
             R15.setText("0");
             DSGS15.setText("0");
+            dv15 = 0;
+            dd15 = 0;
+            in15 = 0;
         }
         if (dt.equals("DT")) {
             DL15.setText("0");
@@ -6452,6 +6574,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO15.setText("0");
             R15.setText("0");
             DSGS15.setText("0");
+            dv15 = 0;
+            dd15 = 0;
+            in15 = 0;
         }
         if (dt.equals(" ")) {
             DL15.setText("0");
@@ -6461,6 +6586,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO15.setText("" + a + "");
             R15.setText("0");
             DSGS15.setText("0");
+            dv15 = 0;
+            dd15 = 0;
+            in15 = 0;
         }
         if (dt.equals("R")) {
             DL15.setText("0");
@@ -6470,6 +6598,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO15.setText("0");
             R15.setText("" + a + "");
             DSGS15.setText("0");
+            dv15 = 0;
+            dd15 = 0;
+            in15 = 0;
         }
         if (dt.equals("DSGS")) {
             DL15.setText("0");
@@ -6479,7 +6610,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO15.setText("0");
             R15.setText("0");
             DSGS15.setText("" + a + "");
+            dv15 = 0;
+            dd15 = 0;
+            in15 = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -6501,6 +6644,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO14.setText("0");
             R14.setText("0");
             DSGS14.setText("0");
+            dv14 = 0;
+            dd14 = 0;
+            in14 = 0;
         }
         if (dt.equals("A")) {
             DL14.setText("" + a + "");
@@ -6510,24 +6656,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO14.setText("0");
             R14.setText("0");
             DSGS14.setText("0");
+            dv14 = 0;
+            dd14 = 0;
+            in14 = 0;
         }
         if (dt.equals("D")) {
-            DL14.setText("" + a + "");
+            DL14.setText("0");
             F14.setText("0");
             FJ14.setText("0");
             this.dt14.setText("0");
             DO14.setText("0");
             R14.setText("0");
             DSGS14.setText("0");
+            dv14 = 0;
+            dd14 = 1;
+            in14 = 0;
         }
         if (dt.equals("V")) {
-            DL14.setText("" + a + "");
+            DL14.setText("0");
             F14.setText("0");
             FJ14.setText("0");
             this.dt14.setText("0");
             DO14.setText("0");
             R14.setText("0");
             DSGS14.setText("0");
+            dv14 = 1;
+            dd14 = 0;
+            in14 = 0;
         }
         if (dt.equals("I")) {
             DL14.setText("0");
@@ -6537,6 +6692,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO14.setText("0");
             R14.setText("0");
             DSGS14.setText("0");
+            dv14 = 0;
+            dd14 = 0;
+            in14 = 1;
         }
         if (dt.equals("F")) {
             DL14.setText("0");
@@ -6546,6 +6704,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO14.setText("0");
             R14.setText("0");
             DSGS14.setText("0");
+            dv14 = 0;
+            dd14 = 0;
+            in14 = 0;
         }
         if (dt.equals("FJ")) {
             DL14.setText("0");
@@ -6555,6 +6716,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO14.setText("0");
             R14.setText("0");
             DSGS14.setText("0");
+            dv14 = 0;
+            dd14 = 0;
+            in14 = 0;
         }
         if (dt.equals("DT")) {
             DL14.setText("0");
@@ -6564,6 +6728,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO14.setText("0");
             R14.setText("0");
             DSGS14.setText("0");
+            dv14 = 0;
+            dd14 = 0;
+            in14 = 0;
         }
         if (dt.equals(" ")) {
             DL14.setText("0");
@@ -6573,6 +6740,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO14.setText("" + a + "");
             R14.setText("0");
             DSGS14.setText("0");
+            dv14 = 0;
+            dd14 = 0;
+            in14 = 0;
         }
         if (dt.equals("R")) {
             DL14.setText("0");
@@ -6582,6 +6752,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO14.setText("0");
             R14.setText("" + a + "");
             DSGS14.setText("0");
+            dv14 = 0;
+            dd14 = 0;
+            in14 = 0;
         }
         if (dt.equals("DSGS")) {
             DL14.setText("0");
@@ -6591,7 +6764,20 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO14.setText("0");
             R14.setText("0");
             DSGS14.setText("" + a + "");
+            dv14 = 0;
+            dd14 = 0;
+            in14 = 0;
+
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -6613,6 +6799,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO13.setText("0");
             R13.setText("0");
             DSGS13.setText("0");
+            dv13 = 0;
+            dd13 = 0;
+            in13 = 0;
         }
         if (dt.equals("A")) {
             DL13.setText("" + a + "");
@@ -6622,24 +6811,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO13.setText("0");
             R13.setText("0");
             DSGS13.setText("0");
+            dv13 = 0;
+            dd13 = 0;
+            in13 = 0;
         }
         if (dt.equals("D")) {
-            DL13.setText("" + a + "");
+            DL13.setText("0");
             F13.setText("0");
             FJ13.setText("0");
             this.dt13.setText("0");
             DO13.setText("0");
             R13.setText("0");
             DSGS13.setText("0");
+            dv13 = 0;
+            dd13 = 1;
+            in13 = 0;
         }
         if (dt.equals("V")) {
-            DL13.setText("" + a + "");
+            DL13.setText("0");
             F13.setText("0");
             FJ13.setText("0");
             this.dt13.setText("0");
             DO13.setText("0");
             R13.setText("0");
             DSGS13.setText("0");
+            dv13 = 1;
+            dd13 = 0;
+            in13 = 0;
         }
         if (dt.equals("I")) {
             DL13.setText("0");
@@ -6649,6 +6847,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO13.setText("0");
             R13.setText("0");
             DSGS13.setText("0");
+            dv13 = 0;
+            dd13 = 0;
+            in13 = 1;
         }
         if (dt.equals("F")) {
             DL13.setText("0");
@@ -6658,6 +6859,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO13.setText("0");
             R13.setText("0");
             DSGS13.setText("0");
+            dv13 = 0;
+            dd13 = 0;
+            in13 = 0;
+
         }
         if (dt.equals("FJ")) {
             DL13.setText("0");
@@ -6667,6 +6872,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO13.setText("0");
             R13.setText("0");
             DSGS13.setText("0");
+            dv13 = 0;
+            dd13 = 0;
+            in13 = 0;
         }
         if (dt.equals("DT")) {
             DL13.setText("0");
@@ -6676,6 +6884,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO13.setText("0");
             R13.setText("0");
             DSGS13.setText("0");
+            dv13 = 0;
+            dd13 = 0;
+            in13 = 0;
         }
         if (dt.equals(" ")) {
             DL13.setText("0");
@@ -6685,6 +6896,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO13.setText("" + a + "");
             R13.setText("0");
             DSGS13.setText("0");
+            dv13 = 0;
+            dd13 = 0;
+            in13 = 0;
         }
         if (dt.equals("R")) {
             DL13.setText("0");
@@ -6694,6 +6908,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO13.setText("0");
             R13.setText("" + a + "");
             DSGS13.setText("0");
+            dv13 = 0;
+            dd13 = 0;
+            in13 = 0;
         }
         if (dt.equals("DSGS")) {
             DL13.setText("0");
@@ -6703,7 +6920,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO13.setText("0");
             R13.setText("0");
             DSGS13.setText("" + a + "");
+            dv13 = 0;
+            dd13 = 0;
+            in13 = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -6725,6 +6954,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO12.setText("0");
             R12.setText("0");
             DSGS12.setText("0");
+            dv12 = 0;
+            dd12 = 0;
+            in12 = 0;
         }
         if (dt.equals("A")) {
             DL12.setText("" + a + "");
@@ -6734,24 +6966,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO12.setText("0");
             R12.setText("0");
             DSGS12.setText("0");
+            dv12 = 0;
+            dd12 = 0;
+            in12 = 0;
         }
         if (dt.equals("D")) {
-            DL12.setText("" + a + "");
+            DL12.setText("0");
             F12.setText("0");
             FJ12.setText("0");
             this.dt12.setText("0");
             DO12.setText("0");
             R12.setText("0");
             DSGS12.setText("0");
+            dv12 = 0;
+            dd12 = 1;
+            in12 = 0;
         }
         if (dt.equals("V")) {
-            DL12.setText("" + a + "");
+            DL12.setText("0");
             F12.setText("0");
             FJ12.setText("0");
             this.dt12.setText("0");
             DO12.setText("0");
             R12.setText("0");
             DSGS12.setText("0");
+            dv12 = 1;
+            dd12 = 0;
+            in12 = 0;
         }
         if (dt.equals("I")) {
             DL12.setText("0");
@@ -6761,6 +7002,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO12.setText("0");
             R12.setText("0");
             DSGS12.setText("0");
+            dv12 = 0;
+            dd12 = 0;
+            in12 = 1;
         }
         if (dt.equals("F")) {
             DL12.setText("0");
@@ -6770,6 +7014,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO12.setText("0");
             R12.setText("0");
             DSGS12.setText("0");
+            dv12 = 0;
+            dd12 = 0;
+            in12 = 0;
         }
         if (dt.equals("FJ")) {
             DL12.setText("0");
@@ -6779,6 +7026,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO12.setText("0");
             R12.setText("0");
             DSGS12.setText("0");
+            dv12 = 0;
+            dd12 = 0;
+            in12 = 0;
         }
         if (dt.equals("DT")) {
             DL12.setText("0");
@@ -6788,6 +7038,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO12.setText("0");
             R12.setText("0");
             DSGS12.setText("0");
+            dv12 = 0;
+            dd12 = 0;
+            in12 = 0;
         }
         if (dt.equals(" ")) {
             DL12.setText("0");
@@ -6797,6 +7050,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO12.setText("" + a + "");
             R12.setText("0");
             DSGS12.setText("0");
+            dv12 = 0;
+            dd12 = 0;
+            in12 = 0;
         }
         if (dt.equals("R")) {
             DL12.setText("0");
@@ -6806,6 +7062,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO12.setText("0");
             R12.setText("" + a + "");
             DSGS12.setText("0");
+            dv12 = 0;
+            dd12 = 0;
+            in12 = 0;
         }
         if (dt.equals("DSGS")) {
             DL12.setText("0");
@@ -6815,7 +7074,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO12.setText("0");
             R12.setText("0");
             DSGS12.setText("" + a + "");
+            dv12 = 0;
+            dd12 = 0;
+            in12 = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -6837,6 +7108,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO11.setText("0");
             R11.setText("0");
             DSGS11.setText("0");
+            dv11 = 0;
+            dd11 = 0;
+            in11 = 0;
         }
         if (dt.equals("A")) {
             DL11.setText("" + a + "");
@@ -6846,24 +7120,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO11.setText("0");
             R11.setText("0");
             DSGS11.setText("0");
+            dv11 = 0;
+            dd11 = 0;
+            in11 = 0;
         }
         if (dt.equals("D")) {
-            DL11.setText("" + a + "");
+            DL11.setText("0");
             F11.setText("0");
             FJ11.setText("0");
             this.dt11.setText("0");
             DO11.setText("0");
             R11.setText("0");
             DSGS11.setText("0");
+            dv11 = 0;
+            dd11 = 1;
+            in11 = 0;
         }
         if (dt.equals("V")) {
-            DL11.setText("" + a + "");
+            DL11.setText("0");
             F11.setText("0");
             FJ11.setText("0");
             this.dt11.setText("0");
             DO11.setText("0");
             R11.setText("0");
             DSGS11.setText("0");
+            dv11 = 1;
+            dd11 = 0;
+            in11 = 0;
         }
         if (dt.equals("I")) {
             DL11.setText("0");
@@ -6873,6 +7156,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO11.setText("0");
             R11.setText("0");
             DSGS11.setText("0");
+            dv11 = 0;
+            dd11 = 0;
+            in11 = 1;
         }
         if (dt.equals("F")) {
             DL11.setText("0");
@@ -6882,6 +7168,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO11.setText("0");
             R11.setText("0");
             DSGS11.setText("0");
+            dv11 = 0;
+            dd11 = 0;
+            in11 = 0;
         }
         if (dt.equals("FJ")) {
             DL11.setText("0");
@@ -6891,6 +7180,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO11.setText("0");
             R11.setText("0");
             DSGS11.setText("0");
+            dv11 = 0;
+            dd11 = 0;
+            in11 = 0;
         }
         if (dt.equals("DT")) {
             DL11.setText("0");
@@ -6900,6 +7192,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO11.setText("0");
             R11.setText("0");
             DSGS11.setText("0");
+            dv11 = 0;
+            dd11 = 0;
+            in11 = 0;
         }
         if (dt.equals(" ")) {
             DL11.setText("0");
@@ -6909,6 +7204,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO11.setText("" + a + "");
             R11.setText("0");
             DSGS11.setText("0");
+            dv11 = 0;
+            dd11 = 0;
+            in11 = 0;
         }
         if (dt.equals("R")) {
             DL11.setText("0");
@@ -6918,6 +7216,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO11.setText("0");
             R11.setText("" + a + "");
             DSGS11.setText("0");
+            dv11 = 0;
+            dd11 = 0;
+            in11 = 0;
         }
         if (dt.equals("DSGS")) {
             DL11.setText("0");
@@ -6927,7 +7228,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO11.setText("0");
             R11.setText("0");
             DSGS11.setText("" + a + "");
+            dv11 = 0;
+            dd11 = 0;
+            in11 = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -6949,6 +7262,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO10.setText("0");
             R10.setText("0");
             DSGS10.setText("0");
+            dv10 = 0;
+            dd10 = 0;
+            in10 = 0;
         }
         if (dt.equals("A")) {
             DL10.setText("" + a + "");
@@ -6958,24 +7274,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO10.setText("0");
             R10.setText("0");
             DSGS10.setText("0");
+            dv10 = 0;
+            dd10 = 0;
+            in10 = 0;
         }
         if (dt.equals("D")) {
-            DL10.setText("" + a + "");
+            DL10.setText("0");
             F10.setText("0");
             FJ10.setText("0");
             this.dt10.setText("0");
             DO10.setText("0");
             R10.setText("0");
             DSGS10.setText("0");
+            dv10 = 0;
+            dd10 = 1;
+            in10 = 0;
         }
         if (dt.equals("V")) {
-            DL10.setText("" + a + "");
+            DL10.setText("0");
             F10.setText("0");
             FJ10.setText("0");
             this.dt10.setText("0");
             DO10.setText("0");
             R10.setText("0");
             DSGS10.setText("0");
+            dv10 = 1;
+            dd10 = 0;
+            in10 = 0;
         }
         if (dt.equals("I")) {
             DL10.setText("0");
@@ -6985,6 +7310,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO10.setText("0");
             R10.setText("0");
             DSGS10.setText("0");
+            dv10 = 0;
+            dd10 = 0;
+            in10 = 1;
         }
         if (dt.equals("F")) {
             DL10.setText("0");
@@ -6994,6 +7322,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO10.setText("0");
             R10.setText("0");
             DSGS10.setText("0");
+            dv10 = 0;
+            dd10 = 0;
+            in10 = 0;
         }
         if (dt.equals("FJ")) {
             DL10.setText("0");
@@ -7003,6 +7334,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO10.setText("0");
             R10.setText("0");
             DSGS10.setText("0");
+            dv10 = 0;
+            dd10 = 0;
+            in10 = 0;
         }
         if (dt.equals("DT")) {
             DL10.setText("0");
@@ -7012,6 +7346,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO10.setText("0");
             R10.setText("0");
             DSGS10.setText("0");
+            dv10 = 0;
+            dd10 = 0;
+            in10 = 0;
         }
         if (dt.equals(" ")) {
             DL10.setText("0");
@@ -7021,6 +7358,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO10.setText("" + a + "");
             R10.setText("0");
             DSGS10.setText("0");
+            dv10 = 0;
+            dd10 = 0;
+            in10 = 0;
         }
         if (dt.equals("R")) {
             DL10.setText("0");
@@ -7030,6 +7370,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO10.setText("0");
             R10.setText("" + a + "");
             DSGS10.setText("0");
+            dv10 = 0;
+            dd10 = 0;
+            in10 = 0;
         }
         if (dt.equals("DSGS")) {
             DL10.setText("0");
@@ -7039,8 +7382,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO10.setText("0");
             R10.setText("0");
             DSGS10.setText("" + a + "");
+            dv10 = 0;
+            dd10 = 0;
+            in10 = 0;
         }
-
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -7062,6 +7416,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO9.setText("0");
             R9.setText("0");
             DSGS9.setText("0");
+            dv9 = 0;
+            dd9 = 0;
+            in9 = 0;
         }
         if (dt.equals("A")) {
             DL9.setText("" + a + "");
@@ -7071,24 +7428,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO9.setText("0");
             R9.setText("0");
             DSGS9.setText("0");
+            dv9 = 0;
+            dd9 = 0;
+            in9 = 0;
         }
         if (dt.equals("D")) {
-            DL9.setText("" + a + "");
+            DL9.setText("0");
             F9.setText("0");
             FJ9.setText("0");
             this.dt9.setText("0");
             DO9.setText("0");
             R9.setText("0");
             DSGS9.setText("0");
+            dv9 = 0;
+            dd9 = 1;
+            in9 = 0;
         }
         if (dt.equals("V")) {
-            DL9.setText("" + a + "");
+            DL9.setText("0");
             F9.setText("0");
             FJ9.setText("0");
             this.dt9.setText("0");
             DO9.setText("0");
             R9.setText("0");
             DSGS9.setText("0");
+            dv9 = 1;
+            dd9 = 0;
+            in9 = 0;
         }
         if (dt.equals("I")) {
             DL9.setText("0");
@@ -7098,6 +7464,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO9.setText("0");
             R9.setText("0");
             DSGS9.setText("0");
+            dv9 = 0;
+            dd9 = 0;
+            in9 = 1;
         }
         if (dt.equals("F")) {
             DL9.setText("0");
@@ -7107,6 +7476,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO9.setText("0");
             R9.setText("0");
             DSGS9.setText("0");
+            dv9 = 0;
+            dd9 = 0;
+            in9 = 0;
         }
         if (dt.equals("FJ")) {
             DL9.setText("0");
@@ -7116,6 +7488,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO9.setText("0");
             R9.setText("0");
             DSGS9.setText("0");
+            dv9 = 0;
+            dd9 = 0;
+            in9 = 0;
         }
         if (dt.equals("DT")) {
             DL9.setText("0");
@@ -7125,6 +7500,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO9.setText("0");
             R9.setText("0");
             DSGS9.setText("0");
+            dv9 = 0;
+            dd9 = 0;
+            in9 = 0;
         }
         if (dt.equals(" ")) {
             DL9.setText("0");
@@ -7134,6 +7512,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO9.setText("" + a + "");
             R9.setText("0");
             DSGS9.setText("0");
+            dv9 = 0;
+            dd9 = 0;
+            in9 = 0;
         }
         if (dt.equals("R")) {
             DL9.setText("0");
@@ -7143,6 +7524,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO9.setText("0");
             R9.setText("" + a + "");
             DSGS9.setText("0");
+            dv9 = 0;
+            dd9 = 0;
+            in9 = 0;
         }
         if (dt.equals("DSGS")) {
             DL9.setText("0");
@@ -7152,8 +7536,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO9.setText("0");
             R9.setText("0");
             DSGS9.setText("" + a + "");
+            dv9 = 0;
+            dd9 = 0;
+            in9 = 0;
         }
-
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -7175,6 +7570,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO8.setText("0");
             R8.setText("0");
             DSGS8.setText("0");
+            dv8 = 0;
+            dd8 = 0;
+            in8 = 0;
         }
         if (dt.equals("A")) {
             DL8.setText("" + a + "");
@@ -7184,24 +7582,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO8.setText("0");
             R8.setText("0");
             DSGS8.setText("0");
+            dv8 = 0;
+            dd8 = 0;
+            in8 = 0;
         }
         if (dt.equals("D")) {
-            DL8.setText("" + a + "");
+            DL8.setText("0");
             F8.setText("0");
             FJ8.setText("0");
             this.dt8.setText("0");
             DO8.setText("0");
             R8.setText("0");
             DSGS8.setText("0");
+            dv8 = 0;
+            dd8 = 0;
+            in8 = 0;
         }
         if (dt.equals("V")) {
-            DL8.setText("" + a + "");
+            DL8.setText("0");
             F8.setText("0");
             FJ8.setText("0");
             this.dt8.setText("0");
             DO8.setText("0");
             R8.setText("0");
             DSGS8.setText("0");
+            dv8 = 1;
+            dd8 = 0;
+            in8 = 0;
         }
         if (dt.equals("I")) {
             DL8.setText("0");
@@ -7211,6 +7618,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO8.setText("0");
             R8.setText("0");
             DSGS8.setText("0");
+            dv8 = 0;
+            dd8 = 0;
+            in8 = 1;
         }
         if (dt.equals("F")) {
             DL8.setText("0");
@@ -7220,6 +7630,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO8.setText("0");
             R8.setText("0");
             DSGS8.setText("0");
+            dv8 = 0;
+            dd8 = 0;
+            in8 = 0;
         }
         if (dt.equals("FJ")) {
             DL8.setText("0");
@@ -7229,6 +7642,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO8.setText("0");
             R8.setText("0");
             DSGS8.setText("0");
+            dv8 = 0;
+            dd8 = 0;
+            in8 = 0;
         }
         if (dt.equals("DT")) {
             DL8.setText("0");
@@ -7238,6 +7654,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO8.setText("0");
             R8.setText("0");
             DSGS8.setText("0");
+            dv8 = 0;
+            dd8 = 0;
+            in8 = 0;
         }
         if (dt.equals(" ")) {
             DL8.setText("0");
@@ -7247,6 +7666,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO8.setText("" + a + "");
             R8.setText("0");
             DSGS8.setText("0");
+            dv8 = 0;
+            dd8 = 0;
+            in8 = 0;
         }
         if (dt.equals("R")) {
             DL8.setText("0");
@@ -7256,6 +7678,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO8.setText("0");
             R8.setText("" + a + "");
             DSGS8.setText("0");
+            dv8 = 0;
+            dd8 = 0;
+            in8 = 0;
         }
         if (dt.equals("DSGS")) {
             DL8.setText("0");
@@ -7265,7 +7690,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO8.setText("0");
             R8.setText("0");
             DSGS8.setText("" + a + "");
+            dv8 = 0;
+            dd8 = 0;
+            in8 = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -7287,6 +7724,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO7.setText("0");
             R7.setText("0");
             DSGS7.setText("0");
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
         }
         if (dt.equals("A")) {
             DL7.setText("" + a + "");
@@ -7296,24 +7736,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO7.setText("0");
             R7.setText("0");
             DSGS7.setText("0");
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
         }
         if (dt.equals("D")) {
-            DL7.setText("" + a + "");
+            DL7.setText("0");
             F7.setText("0");
             FJ7.setText("0");
             this.dt7.setText("0");
             DO7.setText("0");
             R7.setText("0");
             DSGS7.setText("0");
+            dv7 = 0;
+            dd7 = 1;
+            in7 = 0;
         }
         if (dt.equals("V")) {
-            DL7.setText("" + a + "");
+            DL7.setText("0");
             F7.setText("0");
             FJ7.setText("0");
             this.dt7.setText("0");
             DO7.setText("0");
             R7.setText("0");
             DSGS7.setText("0");
+            dv7 = 1;
+            dd7 = 0;
+            in7 = 0;
         }
         if (dt.equals("I")) {
             DL7.setText("0");
@@ -7323,6 +7772,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO7.setText("0");
             R7.setText("0");
             DSGS7.setText("0");
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 1;
         }
         if (dt.equals("F")) {
             DL7.setText("0");
@@ -7332,6 +7784,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO7.setText("0");
             R7.setText("0");
             DSGS7.setText("0");
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
         }
         if (dt.equals("FJ")) {
             DL7.setText("0");
@@ -7341,6 +7796,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO7.setText("0");
             R7.setText("0");
             DSGS7.setText("0");
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
         }
         if (dt.equals("DT")) {
             DL7.setText("0");
@@ -7350,6 +7808,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO7.setText("0");
             R7.setText("0");
             DSGS7.setText("0");
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
         }
         if (dt.equals(" ")) {
             DL7.setText("0");
@@ -7359,6 +7820,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO7.setText("" + a + "");
             R7.setText("0");
             DSGS7.setText("0");
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
         }
         if (dt.equals("R")) {
             DL7.setText("0");
@@ -7368,6 +7832,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO7.setText("0");
             R7.setText("" + a + "");
             DSGS7.setText("0");
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
         }
         if (dt.equals("DSGS")) {
             DL7.setText("0");
@@ -7377,7 +7844,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO7.setText("0");
             R7.setText("0");
             DSGS7.setText("" + a + "");
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -7399,6 +7878,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO6.setText("0");
             R6.setText("0");
             DSGS6.setText("0");
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
         }
         if (dt.equals("A")) {
             DL6.setText("" + a + "");
@@ -7408,24 +7890,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO6.setText("0");
             R6.setText("0");
             DSGS6.setText("0");
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
         }
         if (dt.equals("D")) {
-            DL6.setText("" + a + "");
+            DL6.setText("0");
             F6.setText("0");
             FJ6.setText("0");
             this.dt6.setText("0");
             DO6.setText("0");
             R6.setText("0");
             DSGS6.setText("0");
+            dv6 = 0;
+            dd6 = 1;
+            in6 = 0;
         }
         if (dt.equals("V")) {
-            DL6.setText("" + a + "");
+            DL6.setText("0");
             F6.setText("0");
             FJ6.setText("0");
             this.dt6.setText("0");
             DO6.setText("0");
             R6.setText("0");
             DSGS6.setText("0");
+            dv6 = 1;
+            dd6 = 0;
+            in6 = 0;
         }
         if (dt.equals("I")) {
             DL6.setText("0");
@@ -7435,6 +7926,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO6.setText("0");
             R6.setText("0");
             DSGS6.setText("0");
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 1;
         }
         if (dt.equals("F")) {
             DL6.setText("0");
@@ -7444,6 +7938,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO6.setText("0");
             R6.setText("0");
             DSGS6.setText("0");
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
         }
         if (dt.equals("FJ")) {
             DL6.setText("0");
@@ -7453,6 +7950,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO6.setText("0");
             R6.setText("0");
             DSGS6.setText("0");
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
         }
         if (dt.equals("DT")) {
             DL6.setText("0");
@@ -7471,6 +7971,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO6.setText("" + a + "");
             R6.setText("0");
             DSGS6.setText("0");
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
         }
         if (dt.equals("R")) {
             DL6.setText("0");
@@ -7480,6 +7983,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO6.setText("0");
             R6.setText("" + a + "");
             DSGS6.setText("0");
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
         }
         if (dt.equals("DSGS")) {
             DL6.setText("0");
@@ -7489,7 +7995,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO6.setText("0");
             R6.setText("0");
             DSGS6.setText("" + a + "");
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -7511,6 +8029,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO5.setText("0");
             R5.setText("0");
             DSGS5.setText("0");
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
         }
         if (dt.equals("A")) {
             DL5.setText("" + a + "");
@@ -7520,24 +8041,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO5.setText("0");
             R5.setText("0");
             DSGS5.setText("0");
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
         }
         if (dt.equals("D")) {
-            DL5.setText("" + a + "");
+            DL5.setText("0");
             F5.setText("0");
             FJ5.setText("0");
             this.dt5.setText("0");
             DO5.setText("0");
             R5.setText("0");
             DSGS5.setText("0");
+            dv5 = 0;
+            dd5 = 1;
+            in5 = 0;
         }
         if (dt.equals("V")) {
-            DL5.setText("" + a + "");
+            DL5.setText("0");
             F5.setText("0");
             FJ5.setText("0");
             this.dt5.setText("0");
             DO5.setText("0");
             R5.setText("0");
             DSGS5.setText("0");
+            dv5 = 1;
+            dd5 = 0;
+            in5 = 0;
         }
         if (dt.equals("I")) {
             DL5.setText("0");
@@ -7547,6 +8077,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO5.setText("0");
             R5.setText("0");
             DSGS5.setText("0");
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 1;
         }
         if (dt.equals("F")) {
             DL5.setText("0");
@@ -7556,6 +8089,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO5.setText("0");
             R5.setText("0");
             DSGS5.setText("0");
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
         }
         if (dt.equals("FJ")) {
             DL5.setText("0");
@@ -7565,6 +8101,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO5.setText("0");
             R5.setText("0");
             DSGS5.setText("0");
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
         }
         if (dt.equals("DT")) {
             DL5.setText("0");
@@ -7574,6 +8113,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO5.setText("0");
             R5.setText("0");
             DSGS5.setText("0");
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
         }
         if (dt.equals(" ")) {
             DL5.setText("0");
@@ -7583,6 +8125,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO5.setText("" + a + "");
             R5.setText("0");
             DSGS5.setText("0");
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
         }
         if (dt.equals("R")) {
             DL5.setText("0");
@@ -7592,6 +8137,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO5.setText("0");
             R5.setText("" + a + "");
             DSGS5.setText("0");
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
         }
         if (dt.equals("DSGS")) {
             DL5.setText("0");
@@ -7601,7 +8149,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO5.setText("0");
             R5.setText("0");
             DSGS5.setText("" + a + "");
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -7623,6 +8183,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO4.setText("0");
             R4.setText("0");
             DSGS4.setText("0");
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
         }
         if (dt.equals("A")) {
             DL4.setText("" + a + "");
@@ -7632,24 +8195,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO4.setText("0");
             R4.setText("0");
             DSGS4.setText("0");
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
         }
         if (dt.equals("D")) {
-            DL4.setText("" + a + "");
+            DL4.setText("0");
             F4.setText("0");
             FJ4.setText("0");
             this.dt4.setText("0");
             DO4.setText("0");
             R4.setText("0");
             DSGS4.setText("0");
+            dv4 = 0;
+            dd4 = 1;
+            in4 = 0;
         }
         if (dt.equals("V")) {
-            DL4.setText("" + a + "");
+            DL4.setText("0");
             F4.setText("0");
             FJ4.setText("0");
             this.dt4.setText("0");
             DO4.setText("0");
             R4.setText("0");
             DSGS4.setText("0");
+            dv4 = 1;
+            dd4 = 0;
+            in4 = 0;
         }
         if (dt.equals("I")) {
             DL4.setText("0");
@@ -7659,6 +8231,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO4.setText("0");
             R4.setText("0");
             DSGS4.setText("0");
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 1;
         }
         if (dt.equals("F")) {
             DL4.setText("0");
@@ -7668,6 +8243,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO4.setText("0");
             R4.setText("0");
             DSGS4.setText("0");
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
         }
         if (dt.equals("FJ")) {
             DL4.setText("0");
@@ -7677,6 +8255,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO4.setText("0");
             R4.setText("0");
             DSGS4.setText("0");
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
         }
         if (dt.equals("DT")) {
             DL4.setText("0");
@@ -7686,6 +8267,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO4.setText("0");
             R4.setText("0");
             DSGS4.setText("0");
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
         }
         if (dt.equals(" ")) {
             DL4.setText("0");
@@ -7695,6 +8279,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO4.setText("" + a + "");
             R4.setText("0");
             DSGS4.setText("0");
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
         }
         if (dt.equals("R")) {
             DL4.setText("0");
@@ -7704,6 +8291,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO4.setText("0");
             R4.setText("" + a + "");
             DSGS4.setText("0");
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
         }
         if (dt.equals("DSGS")) {
             DL4.setText("0");
@@ -7713,7 +8303,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO4.setText("0");
             R4.setText("0");
             DSGS4.setText("" + a + "");
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -7735,6 +8337,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO3.setText("0");
             R3.setText("0");
             DSGS3.setText("0");
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
+
         }
         if (dt.equals("A")) {
             DL3.setText("" + a + "");
@@ -7744,24 +8350,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO3.setText("0");
             R3.setText("0");
             DSGS3.setText("0");
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
         }
         if (dt.equals("D")) {
-            DL3.setText("" + a + "");
+            DL3.setText("0");
             F3.setText("0");
             FJ3.setText("0");
             this.dt1.setText("0");
             DO3.setText("0");
             R3.setText("0");
             DSGS3.setText("0");
+            dv3 = 0;
+            dd3 = 1;
+            in3 = 0;
         }
         if (dt.equals("V")) {
-            DL3.setText("" + a + "");
+            DL3.setText("0");
             F3.setText("0");
             FJ3.setText("0");
             this.dt3.setText("0");
             DO3.setText("0");
             R3.setText("0");
             DSGS3.setText("0");
+            dv3 = 1;
+            dd3 = 0;
+            in3 = 0;
         }
         if (dt.equals("I")) {
             DL3.setText("0");
@@ -7771,6 +8386,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO3.setText("0");
             R3.setText("0");
             DSGS3.setText("0");
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 1;
         }
         if (dt.equals("F")) {
             DL3.setText("0");
@@ -7780,6 +8398,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO3.setText("0");
             R3.setText("0");
             DSGS3.setText("0");
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
         }
         if (dt.equals("FJ")) {
             DL3.setText("0");
@@ -7789,6 +8410,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO3.setText("0");
             R3.setText("0");
             DSGS3.setText("0");
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
         }
         if (dt.equals("DT")) {
             DL3.setText("0");
@@ -7798,6 +8422,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO3.setText("0");
             R3.setText("0");
             DSGS3.setText("0");
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
         }
         if (dt.equals(" ")) {
             DL3.setText("0");
@@ -7807,6 +8434,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO3.setText("" + a + "");
             R3.setText("0");
             DSGS3.setText("0");
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
         }
         if (dt.equals("R")) {
             DL3.setText("0");
@@ -7816,6 +8446,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO3.setText("0");
             R3.setText("" + a + "");
             DSGS3.setText("0");
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
         }
         if (dt.equals("DSGS")) {
             DL3.setText("0");
@@ -7825,7 +8458,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO3.setText("0");
             R3.setText("0");
             DSGS3.setText("" + a + "");
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -7847,6 +8492,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO2.setText("0");
             R2.setText("0");
             DSGS2.setText("0");
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
         }
         if (dt.equals("A")) {
             DL2.setText("" + a + "");
@@ -7856,24 +8504,33 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO2.setText("0");
             R2.setText("0");
             DSGS2.setText("0");
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
         }
         if (dt.equals("D")) {
-            DL2.setText("" + a + "");
+            DL2.setText("0");
             F2.setText("0");
             FJ2.setText("0");
             this.dt2.setText("0");
             DO2.setText("0");
             R2.setText("0");
             DSGS2.setText("0");
+            dv2 = 0;
+            dd2 = 1;
+            in2 = 0;
         }
         if (dt.equals("V")) {
-            DL2.setText("" + a + "");
+            DL2.setText("0");
             F2.setText("0");
             FJ2.setText("0");
             this.dt2.setText("0");
             DO2.setText("0");
             R2.setText("0");
             DSGS2.setText("0");
+            dv2 = 1;
+            dd2 = 0;
+            in2 = 0;
         }
         if (dt.equals("I")) {
             DL2.setText("0");
@@ -7883,6 +8540,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO2.setText("0");
             R2.setText("0");
             DSGS2.setText("0");
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 1;
         }
         if (dt.equals("F")) {
             DL2.setText("0");
@@ -7892,6 +8552,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO2.setText("0");
             R2.setText("0");
             DSGS2.setText("0");
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
         }
         if (dt.equals("FJ")) {
             DL2.setText("0");
@@ -7901,6 +8564,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO2.setText("0");
             R2.setText("0");
             DSGS2.setText("0");
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
         }
         if (dt.equals("DT")) {
             DL2.setText("0");
@@ -7910,6 +8576,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO2.setText("0");
             R2.setText("0");
             DSGS2.setText("0");
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
 
         }
         if (dt.equals(" ")) {
@@ -7920,7 +8589,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO2.setText("" + a + "");
             R2.setText("0");
             DSGS2.setText("0");
-
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
         }
         if (dt.equals("R")) {
             DL2.setText("0");
@@ -7930,7 +8601,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO2.setText("0");
             R2.setText("" + a + "");
             DSGS2.setText("0");
-
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
         }
         if (dt.equals("DSGS")) {
             DL2.setText("0");
@@ -7940,7 +8613,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO2.setText("0");
             R2.setText("0");
             DSGS2.setText("" + a + "");
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -7962,6 +8647,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO1.setText("0");
             R1.setText("0");
             DSGS1.setText("0");
+            dv = 0;
+            dd = 0;
+            in = 0;
 
         }
         if (dt.equals("A")) {
@@ -7972,26 +8660,34 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO1.setText("0");
             R1.setText("0");
             DSGS1.setText("0");
+            dv = 0;
+            dd = 0;
+            in = 0;
 
         }
         if (dt.equals("D")) {
-            DL1.setText("" + a + "");
+            DL1.setText("0");
             F1.setText("0");
             FJ1.setText("0");
             this.dt1.setText("0");
             DO1.setText("0");
             R1.setText("0");
             DSGS1.setText("0");
-
+            dd = 1;
+            dd = 0;
+            in = 0;
         }
         if (dt.equals("V")) {
-            DL1.setText("" + a + "");
+            DL1.setText("0");
             F1.setText("0");
             FJ1.setText("0");
             this.dt1.setText("0");
             DO1.setText("0");
             R1.setText("0");
             DSGS1.setText("0");
+            dv = 1;
+            dd = 0;
+            in = 0;
         }
         if (dt.equals("I")) {
             DL1.setText("0");
@@ -8001,6 +8697,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO1.setText("0");
             R1.setText("0");
             DSGS1.setText("0");
+            dv = 0;
+            dd = 0;
+            in = 1;
 
         }
         if (dt.equals("F")) {
@@ -8010,6 +8709,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             this.dt1.setText("0");
             DO1.setText("0");
             R1.setText("0");
+            dv = 0;
+            dd = 0;
+            in = 0;
         }
         if (dt.equals("FJ")) {
             DL1.setText("0");
@@ -8019,6 +8721,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO1.setText("0");
             R1.setText("0");
             DSGS1.setText("0");
+            dv = 0;
+            dd = 0;
+            in = 0;
 
         }
         if (dt.equals("DT")) {
@@ -8029,6 +8734,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO1.setText("0");
             R1.setText("0");
             DSGS1.setText("0");
+            dv = 0;
+            dd = 0;
+            in = 0;
 
         }
         if (dt.equals(" ")) {
@@ -8039,6 +8747,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO1.setText("" + a + "");
             R1.setText("0");
             DSGS1.setText("0");
+            dv = 0;
+            dd = 0;
+            in = 0;
 
         }
         if (dt.equals("R")) {
@@ -8049,6 +8760,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO1.setText("0");
             R1.setText("" + a + "");
             DSGS1.setText("0");
+            dv = 0;
+            dd = 0;
+            in = 0;
         }
         if (dt.equals("DSGS")) {
             DL1.setText("0");
@@ -8058,7 +8772,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DO1.setText("0");
             R1.setText("0");
             DSGS1.setText("" + a + "");
+            dv = 0;
+            dd = 0;
+            in = 0;
         }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
+                + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7 + dd8
+                + dd9 + dd10 + dd11 + dd12 + dd13 + dd14 + dd15 + dd16;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7 + in8
+                + in9 + in10 + in11 + in12 + in13 + in14 + in15 + in16;
+        Dpi.setText(("" + totalin));
         DL();
         DT();
         F();
@@ -8068,26 +8794,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         DSGS();
         pago();
     }//GEN-LAST:event_DTItemStateChanged
-
-    private void PagoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PagoKeyReleased
-
-    }//GEN-LAST:event_PagoKeyReleased
-
-    private void PagoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PagoMouseClicked
-
-    }//GEN-LAST:event_PagoMouseClicked
-
-    private void PagoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PagoMouseMoved
-
-    }//GEN-LAST:event_PagoMouseMoved
-
-    private void DLKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DLKeyReleased
-
-    }//GEN-LAST:event_DLKeyReleased
-
-    private void DLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DLMouseClicked
-
-    }//GEN-LAST:event_DLMouseClicked
 
     private void QuincenasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_QuincenasItemStateChanged
 
@@ -9348,6 +10054,14 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             double total = d1 / b;
             pd.setText("" + total + "");
         }
+        String D1 = OcultoPre.getText();
+        String DPNQ = NdQpre.getSelectedItem().toString();
+        String DPQODT = Quincenas.getSelectedItem().toString();
+        DetallesPre.setText(D1 + ", " + "Quincena " + DPNQ + " " + DPQODT);
+        String D2 = OcultoODT.getText();
+        String DPNQ2 = DetallepagoNQodt.getSelectedItem().toString();
+        String DPQODT2 = Quincenas.getSelectedItem().toString();
+        Detallespagoodt.setText(D2 + ", " + "Quincena " + DPNQ2 + " " + DPQODT2);
     }//GEN-LAST:event_QuincenasItemStateChanged
 
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyReleased
@@ -10140,21 +10854,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         pagos();
     }//GEN-LAST:event_BampagKeyReleased
 
-    private void DetallepagoQodtItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DetallepagoQodtItemStateChanged
-        String D1 = OcultoODT.getText();
-        String DPNQ = DetallepagoNQodt.getSelectedItem().toString();
-        String DPQODT = DetallepagoQodt.getSelectedItem().toString();
-        Detallespagoodt.setText(D1 + ", " + "Quincena " + DPNQ + " " + DPQODT);
-    }//GEN-LAST:event_DetallepagoQodtItemStateChanged
-
-    private void DetallePQItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DetallePQItemStateChanged
-        String D1 = OcultoPre.getText();
-        String DPNQ = NdQpre.getSelectedItem().toString();
-        String DPQODT = DetallePQ.getSelectedItem().toString();
-        DetallesPre.setText(D1 + ", " + "Quincena " + DPNQ + " " + DPQODT);
-
-    }//GEN-LAST:event_DetallePQItemStateChanged
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         NominaS_5 regr = new NominaS_5();
         regr.setVisible(true);
@@ -10757,6 +11456,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Color;
     private javax.swing.JTextField Corbata;
     private javax.swing.JTextField Credencial;
+    private javax.swing.JLabel DD;
     private javax.swing.JTextField DI;
     private javax.swing.JLabel DL;
     private javax.swing.JLabel DL1;
@@ -10827,11 +11527,11 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> DT9;
     private javax.swing.JTextField DVT;
     private javax.swing.JTextArea Daño;
-    private javax.swing.JComboBox<String> DetallePQ;
+    private javax.swing.JLabel Ddv;
     private javax.swing.JComboBox<String> DetallepagoNQodt;
-    private javax.swing.JComboBox<String> DetallepagoQodt;
     private javax.swing.JTextArea DetallesPre;
     private javax.swing.JTextArea Detallespagoodt;
+    private javax.swing.JLabel Dpi;
     private javax.swing.JButton Eliminar;
     private javax.swing.JButton EliminarT;
     private javax.swing.JLabel F;
@@ -10933,12 +11633,15 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField OcultoPre;
     private javax.swing.JTable OdT;
     private javax.swing.JTextField Odtp;
+    private javax.swing.JTextField PDEQ;
     private javax.swing.JTextField PQ;
     private javax.swing.JTextField PQT;
     private javax.swing.JTextField Pagado;
+    private javax.swing.JTextField PagadoOC;
     private javax.swing.JLabel Pago;
     private javax.swing.JTextField Pantalon;
     private javax.swing.JTextField Pendiente;
+    private javax.swing.JTextField PendienteOC;
     private javax.swing.JTextField Placas;
     private javax.swing.JTextField Playera;
     private javax.swing.JTable Pre;
@@ -11059,7 +11762,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
-    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -11155,7 +11861,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
     private javax.swing.JLabel jLabel97;
-    private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
@@ -11192,6 +11897,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField obs;
     private javax.swing.JTable pago;
     private javax.swing.JTextField pd;
+    private javax.swing.JLabel pds;
     private javax.swing.JTextField search;
     private javax.swing.JTable share;
     private javax.swing.JTable share1;

@@ -314,8 +314,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         OcultoPre = new javax.swing.JTextField();
         jLabel100 = new javax.swing.JLabel();
         NdQpre = new javax.swing.JComboBox<>();
-        jLabel101 = new javax.swing.JLabel();
-        DetallePQ = new javax.swing.JComboBox<>();
         Tprestamos = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
@@ -338,6 +336,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Nomina Semanal");
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -1467,7 +1466,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         Cantidad.setText("0");
 
-        Interes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "4 Semanas 10%", "5 Semanas 10%", "6 Semanas 10%", "7 Semanas 10%", "8 Semanas 15%", "9 Semanas 15%", "10 Semanas 15%", "11 Semanas 15%", "12 Semanas 20%", "13 Semanas 20%", "14 Semanas 20%", "15 Semanas 20%", "16 Semanas 25%", "17 Semanas 25%", "18 Semanas 25%", "19 Semanas 25%", "20 Semanas 25%" }));
+        Interes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "4 Semanas 10%", "5 Semanas 15%", "6 Semanas 15%", "7 Semanas 15%", "8 Semanas 15%", "9 Semanas 20%", "10 Semanas 20%", "11 Semanas 20%", "12 Semanas 20%", "13 Semanas 25%", "14 Semanas 25%", "15 Semanas 25%", "16 Semanas 25%", "17 Semanas 25%", "18 Semanas 25%", "19 Semanas 25%", "20 Semanas 25%" }));
         Interes.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 InteresItemStateChanged(evt);
@@ -1571,15 +1570,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         NdQpre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" }));
 
-        jLabel101.setText("Semana");
-
-        DetallePQ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona semana", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre" }));
-        DetallePQ.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                DetallePQItemStateChanged(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -1663,17 +1653,12 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                                 .addGap(210, 210, 210)
                                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel100))
-                                    .addComponent(jLabel101))
+                                .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(DetallePQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 124, Short.MAX_VALUE)))
+                                .addComponent(jLabel100)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 247, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -1749,15 +1734,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                             .addComponent(jLabel40)
                             .addComponent(FL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel100)
-                            .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel101)
-                            .addComponent(DetallePQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel100)
+                        .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
@@ -1768,7 +1748,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                     .addComponent(Metodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Agregarprestamo)
                     .addComponent(modprestamo))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         Prestamos.setViewportView(jPanel5);
@@ -2022,7 +2002,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         DetallesPre.setText("");
         OcultoPre.setText("");
         NdQpre.setSelectedIndex(0);
-        DetallePQ.setSelectedIndex(0);
         Num.setText("0");
         FS.setText("");
         Namepres.setText("");
@@ -2824,6 +2803,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         pagos();
         mostrardatos();
         limpiarnom();
+        editarpre();
+        MDP();
+        limpiarP();
     }//GEN-LAST:event_AgregarNPActionPerformed
 
     private void ModmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModmActionPerformed
@@ -3532,6 +3514,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         pd.setText("" + Pordia + "");
         double Porhora = Pordia / 8;
         PH.setText("" + Porhora + "");
+        String D1 = OcultoPre.getText();
+        String DPNQ = NdQpre.getSelectedItem().toString();
+        String DPQODT = Semana.getSelectedItem().toString();
+        DetallesPre.setText(D1 + ", " + "Semana " + DPNQ + " " + DPQODT);
     }//GEN-LAST:event_SemanaItemStateChanged
 
     private void LSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LSActionPerformed
@@ -3562,51 +3548,52 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             Sem = 0;
             
         }
+
         if (dt.equals("4 Semanas 10%")) {
             inter = 10;
             Sem = 4;
         }
-        if (dt.equals("5 Semanas 10%")) {
-            inter = 10;
+        if (dt.equals("5 Semanas 15%")) {
+            inter = 15;
             Sem = 5;
         }
-        if (dt.equals("6 Semanas 10%")) {
-            inter = 10;
+        if (dt.equals("6 Semanas 15%")) {
+            inter = 15;
             Sem = 6;
         }
-        if (dt.equals("7 Semanas 10%")) {
-            inter = 10;
+        if (dt.equals("7 Semanas 15%")) {
+            inter = 15;
             Sem = 7;
         }
         if (dt.equals("8 Semanas 15%")) {
             inter = 15;
             Sem = 8;
         }
-        if (dt.equals("9 Semanas 15%")) {
-            inter = 15;
+        if (dt.equals("9 Semanas 20%")) {
+            inter = 20;
             Sem = 9;
         }
-        if (dt.equals("10 Semanas 15%")) {
-            inter = 15;
+        if (dt.equals("10 Semanas 20%")) {
+            inter = 20;
             Sem = 10;
         }
-        if (dt.equals("11 Semanas 15%")) {
+        if (dt.equals("11 Semanas 20%")) {
             inter = 15;
             Sem = 11;
         }if (dt.equals("12 Semanas 20%")) {
             inter = 20;
             Sem = 12;
         }
-        if (dt.equals("13 Semanas 20%")) {
-            inter = 20;
+        if (dt.equals("13 Semanas 25%")) {
+            inter = 25;
             Sem = 13;
         }
-        if (dt.equals("14 Semanas 20%")) {
-            inter = 20;
+        if (dt.equals("14 Semanas 25%")) {
+            inter = 25;
             Sem = 14;
         }
-        if (dt.equals("15 Semanas 20%")) {
-            inter = 20;
+        if (dt.equals("15 Semanas 25%")) {
+            inter = 25;
             Sem = 15;
         }
         if (dt.equals("16 Semanas 25%")) {
@@ -3748,13 +3735,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         shareprestamo();
     }//GEN-LAST:event_BusamshpreKeyReleased
-
-    private void DetallePQItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DetallePQItemStateChanged
-        String D1 = OcultoPre.getText();
-        String DPNQ = NdQpre.getSelectedItem().toString();
-        String DPQODT = DetallePQ.getSelectedItem().toString();
-        DetallesPre.setText(D1 + ", " + "Quincena " + DPNQ + " " + DPQODT);
-    }//GEN-LAST:event_DetallePQItemStateChanged
 
     private void BPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BPKeyReleased
 
@@ -4049,7 +4029,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Carpeta;
     private javax.swing.JLabel DDes;
     private javax.swing.JLabel DT;
-    private javax.swing.JComboBox<String> DetallePQ;
     private javax.swing.JTextArea DetallesPre;
     private javax.swing.JComboBox<String> DomT;
     private javax.swing.JButton Eliminar;
@@ -4151,7 +4130,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
-    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
