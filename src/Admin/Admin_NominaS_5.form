@@ -90,6 +90,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Nomina Semanal"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
@@ -250,57 +251,68 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fsab" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="FDom" min="-2" pref="140" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="LS" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jLabel25" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="DDes" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="DT" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Pago" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="año" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="Fsab" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                      <Component id="SabT" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="DomT" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="LS" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="FDom" min="-2" pref="140" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="DDes" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="DT" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="Pago" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="año" min="-2" pref="97" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                              <Component id="SabT" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="DomT" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="FLun" min="-2" pref="140" max="-2" attributes="0"/>
@@ -331,32 +343,19 @@
                                                       <Component id="VieT" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="Semana" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="Semana" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="FDP" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -381,7 +380,9 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Semana" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="FDP" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -451,13 +452,16 @@
                                                   <Component id="Pago" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                                      <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="año" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="año" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                                          <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="LS" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="LS" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
@@ -707,54 +711,54 @@
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="49">
                             <StringItem index="0" value="Selecciona semana"/>
-                            <StringItem index="1" value="Primer semana Enero"/>
-                            <StringItem index="2" value="Segunda semana Enero"/>
-                            <StringItem index="3" value="Tercer semana Enero"/>
-                            <StringItem index="4" value="Cuarta semana Enero"/>
-                            <StringItem index="5" value="Primer semana Febrero"/>
-                            <StringItem index="6" value="Segunda semana Febrero"/>
-                            <StringItem index="7" value="Tercer semana Febrero"/>
-                            <StringItem index="8" value="Cuarta semana Febrero"/>
-                            <StringItem index="9" value="Primer semana Marzo"/>
-                            <StringItem index="10" value="Segunda semana Marzo"/>
-                            <StringItem index="11" value="Tercer semana Marzo"/>
-                            <StringItem index="12" value="Cuarta semana Marzo"/>
-                            <StringItem index="13" value="Primer semana Abril"/>
-                            <StringItem index="14" value="Segunda semana Abril"/>
-                            <StringItem index="15" value="Tercer semana Abril"/>
-                            <StringItem index="16" value="Cuarta semana Abril"/>
-                            <StringItem index="17" value="Primer semana Mayo"/>
-                            <StringItem index="18" value="Segunda semana Mayo"/>
-                            <StringItem index="19" value="Tercer semana Mayo"/>
-                            <StringItem index="20" value="Cuarta semana Mayo"/>
-                            <StringItem index="21" value="Primer semana Junio"/>
-                            <StringItem index="22" value="Segunda semana Junio"/>
-                            <StringItem index="23" value="Tercer semana Junio"/>
-                            <StringItem index="24" value="Cuarta semana Junio"/>
-                            <StringItem index="25" value="Primer semana Julio"/>
-                            <StringItem index="26" value="Segunda semana Julio"/>
-                            <StringItem index="27" value="Tercer semana Julio"/>
-                            <StringItem index="28" value="Cuarta semana Julio"/>
-                            <StringItem index="29" value="Primer semana Agosto"/>
-                            <StringItem index="30" value="Segunda semana Agosto"/>
-                            <StringItem index="31" value="Tercer semana Agosto"/>
-                            <StringItem index="32" value="Cuarta semana Agosto"/>
-                            <StringItem index="33" value="Primer semana Septiembre"/>
-                            <StringItem index="34" value="Segunda semana Septiembre"/>
-                            <StringItem index="35" value="Tercer semana Septiembre"/>
-                            <StringItem index="36" value="Cuarta semana Septiembre"/>
-                            <StringItem index="37" value="Primer semana Octubre"/>
-                            <StringItem index="38" value="Segunda semana Octubre"/>
-                            <StringItem index="39" value="Tercer semana Octubre"/>
-                            <StringItem index="40" value="Cuarta semana Octubre"/>
-                            <StringItem index="41" value="Primer semana Noviembre"/>
-                            <StringItem index="42" value="Segunda semana Noviembre"/>
-                            <StringItem index="43" value="Tercer semana Noviembre"/>
-                            <StringItem index="44" value="Cuarta semana Noviembre"/>
-                            <StringItem index="45" value="Primer semana Diciembre"/>
-                            <StringItem index="46" value="Segunda semana Diciembre"/>
-                            <StringItem index="47" value="Tercer semana Diciembre"/>
-                            <StringItem index="48" value="Cuarta semana Diciembre"/>
+                            <StringItem index="1" value="1er semana Enero"/>
+                            <StringItem index="2" value="2da semana Enero"/>
+                            <StringItem index="3" value="3er semana Enero"/>
+                            <StringItem index="4" value="4ta semana Enero"/>
+                            <StringItem index="5" value="1er semana Febrero"/>
+                            <StringItem index="6" value="2da semana Febrero"/>
+                            <StringItem index="7" value="3er semana Febrero"/>
+                            <StringItem index="8" value="4ta semana Febrero"/>
+                            <StringItem index="9" value="1er semana Marzo"/>
+                            <StringItem index="10" value="2da semana Marzo"/>
+                            <StringItem index="11" value="3er semana Marzo"/>
+                            <StringItem index="12" value="4ta semana Marzo"/>
+                            <StringItem index="13" value="1er semana Abril"/>
+                            <StringItem index="14" value="2da semana Abril"/>
+                            <StringItem index="15" value="3er semana Abril"/>
+                            <StringItem index="16" value="4ta semana Abril"/>
+                            <StringItem index="17" value="1er semana Mayo"/>
+                            <StringItem index="18" value="2da semana Mayo"/>
+                            <StringItem index="19" value="3er semana Mayo"/>
+                            <StringItem index="20" value="4ta semana Mayo"/>
+                            <StringItem index="21" value="1er semana Junio"/>
+                            <StringItem index="22" value="2da semana Junio"/>
+                            <StringItem index="23" value="3er semana Junio"/>
+                            <StringItem index="24" value="4ta semana Junio"/>
+                            <StringItem index="25" value="1er semana Julio"/>
+                            <StringItem index="26" value="2da semana Julio"/>
+                            <StringItem index="27" value="3er semana Julio"/>
+                            <StringItem index="28" value="4ta semana Julio"/>
+                            <StringItem index="29" value="1er semana Agosto"/>
+                            <StringItem index="30" value="2da semana Agosto"/>
+                            <StringItem index="31" value="3er semana Agosto"/>
+                            <StringItem index="32" value="4ta semana Agosto"/>
+                            <StringItem index="33" value="1er semana Septiembre"/>
+                            <StringItem index="34" value="2da semana Septiembre"/>
+                            <StringItem index="35" value="3er semana Septiembre"/>
+                            <StringItem index="36" value="4ta semana Septiembre"/>
+                            <StringItem index="37" value="1er semana Octubre"/>
+                            <StringItem index="38" value="2da semana Octubre"/>
+                            <StringItem index="39" value="3er semana Octubre"/>
+                            <StringItem index="40" value="4ta semana Octubre"/>
+                            <StringItem index="41" value="1er semana Noviembre"/>
+                            <StringItem index="42" value="2da semana Noviembre"/>
+                            <StringItem index="43" value="3er semana Noviembre"/>
+                            <StringItem index="44" value="4ta semana Noviembre"/>
+                            <StringItem index="45" value="1er semana Diciembre"/>
+                            <StringItem index="46" value="2da semana Diciembre"/>
+                            <StringItem index="47" value="3er semana Diciembre"/>
+                            <StringItem index="48" value="4ta semana Diciembre"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -782,6 +786,13 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Dias descansados:"/>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel32">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Fecha de pago"/>
+                      </Properties>
+                    </Component>
+                    <Component class="com.toedter.calendar.JDateChooser" name="FDP">
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1722,49 +1733,45 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                                          <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltrosP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                          <Component id="botonWeb2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBEP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="busp" min="-2" pref="109" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="BAppag" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Bampag" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBZP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelSZP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroSZP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBSP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroServP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelNDFP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="filtroNDFP" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBQP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroQP" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="CS3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace pref="429" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="FiltrosP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                  <Component id="botonWeb2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="LabelBEP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="busp" min="-2" pref="109" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="BAppag" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Bampag" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="LabelBZP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="FiltroZP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="LabelSZP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="FiltroSZP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="LabelBSP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="FiltroServP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="LabelNDFP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="filtroNDFP" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="LabelBQP" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="FiltroQP" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane6" alignment="1" max="32767" attributes="0"/>
+                              <Component id="CS3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jScrollPane6" alignment="0" min="-2" pref="2511" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2112,8 +2119,8 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="interes" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="PS" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                                          <Component id="PS" min="-2" pref="163" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel99" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
@@ -2128,22 +2135,14 @@
                                           <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
                                           <Component id="jScrollPane11" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="OcultoPre" min="-2" pref="69" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jLabel100" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jLabel101" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="OcultoPre" min="-2" pref="69" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="NdQpre" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="DetallePQ" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="jLabel100" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="NdQpre" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="95" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="247" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -2240,17 +2239,10 @@
                                   </Group>
                               </Group>
                               <Component id="jScrollPane11" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="OcultoPre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel100" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="NdQpre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel101" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="DetallePQ" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="OcultoPre" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel100" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NdQpre" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
@@ -2265,7 +2257,7 @@
                               <Component id="Agregarprestamo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="modprestamo" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="25" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2372,12 +2364,25 @@
                 <Component class="javax.swing.JComboBox" name="Interes">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="5">
+                      <StringArray count="18">
                         <StringItem index="0" value="."/>
-                        <StringItem index="1" value="1 Mes 10%"/>
-                        <StringItem index="2" value="2 Meses 15%"/>
-                        <StringItem index="3" value="3 Meses 20%"/>
-                        <StringItem index="4" value="4 Meses 25%"/>
+                        <StringItem index="1" value="4 Semanas 10%"/>
+                        <StringItem index="2" value="5 Semanas 15%"/>
+                        <StringItem index="3" value="6 Semanas 15%"/>
+                        <StringItem index="4" value="7 Semanas 15%"/>
+                        <StringItem index="5" value="8 Semanas 15%"/>
+                        <StringItem index="6" value="9 Semanas 20%"/>
+                        <StringItem index="7" value="10 Semanas 20%"/>
+                        <StringItem index="8" value="11 Semanas 20%"/>
+                        <StringItem index="9" value="12 Semanas 20%"/>
+                        <StringItem index="10" value="13 Semanas 25%"/>
+                        <StringItem index="11" value="14 Semanas 25%"/>
+                        <StringItem index="12" value="15 Semanas 25%"/>
+                        <StringItem index="13" value="16 Semanas 25%"/>
+                        <StringItem index="14" value="17 Semanas 25%"/>
+                        <StringItem index="15" value="18 Semanas 25%"/>
+                        <StringItem index="16" value="19 Semanas 25%"/>
+                        <StringItem index="17" value="20 Semanas 25%"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -2551,14 +2556,14 @@
                 </Container>
                 <Component class="javax.swing.JLabel" name="jLabel99">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Deatlles de pagos:"/>
+                    <Property name="text" type="java.lang.String" value="Detalles de pagos:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="OcultoPre">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel100">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="# de quincena"/>
+                    <Property name="text" type="java.lang.String" value="# de semana"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="NdQpre">
@@ -2592,50 +2597,6 @@
                       </StringArray>
                     </Property>
                   </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel101">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Quincena"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="DetallePQ">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="25">
-                        <StringItem index="0" value="1ra Quincena de Enero"/>
-                        <StringItem index="1" value="2da Quincena de Enero"/>
-                        <StringItem index="2" value="1ra Quincena de Febrero"/>
-                        <StringItem index="3" value="2da Quincena de Febrero"/>
-                        <StringItem index="4" value="2da Quincena de Feb B"/>
-                        <StringItem index="5" value="1ra Quincena de Marzo"/>
-                        <StringItem index="6" value="2da Quincena de Marzo"/>
-                        <StringItem index="7" value="1ra Quincena de Abril"/>
-                        <StringItem index="8" value="2da Quincena de Abril"/>
-                        <StringItem index="9" value="1ra Quincena de Mayo"/>
-                        <StringItem index="10" value="2da Quincena de Mayo"/>
-                        <StringItem index="11" value="1ra Quincena de Junio"/>
-                        <StringItem index="12" value="2da Quincena de Junio"/>
-                        <StringItem index="13" value="1ra Quincena de Julio"/>
-                        <StringItem index="14" value="2da Quincena de Julio"/>
-                        <StringItem index="15" value="1ra Quincena de Agosto"/>
-                        <StringItem index="16" value="2da Quincena de Agosto"/>
-                        <StringItem index="17" value="1ra Quincena de Septiembre"/>
-                        <StringItem index="18" value="2da Quincena de Septiembre"/>
-                        <StringItem index="19" value="1ra Quincena de Octubre"/>
-                        <StringItem index="20" value="2da Quincena de Octubre"/>
-                        <StringItem index="21" value="1ra Quincena de Noviembre"/>
-                        <StringItem index="22" value="2da Quincena de Noviembre"/>
-                        <StringItem index="23" value="1ra Quincena de Diciembre"/>
-                        <StringItem index="24" value="2da Quincena de Diciembre"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="DetallePQItemStateChanged"/>
-                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>

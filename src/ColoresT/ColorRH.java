@@ -21,6 +21,7 @@ public class ColorRH extends DefaultTableCellRenderer {
     Color Pen = new Color(146, 199, 255);
     Color EEs = new Color(152, 244, 147);
     Color Dep = new Color(153, 51, 255);
+
     @Override
 
     public Component getTableCellRendererComponent(JTable table, Object value,
@@ -45,9 +46,15 @@ public class ColorRH extends DefaultTableCellRenderer {
             setBackground(Pen);
         } else if (table.getValueAt(row, 20).toString().equals("BOLETINADO")) {
             setBackground(RyB);
-        }else if (table.getValueAt(row, 20).toString().equals("DEPURADO")) {
+        } else if (table.getValueAt(row, 20).toString().equals("DEPURADO")) {
             setBackground(Dep);
-        }else{
+        } else if (table.getValueAt(row, 20).toString().equals("RECHAZADO/DEPURADO")) {
+            setBackground(Dep);
+        } else if (table.getValueAt(row, 20).toString().equals("NO CONTRATAR/DEPURADO")) {
+            setBackground(Dep);
+        } else if (table.getValueAt(row, 20).toString().equals("BOLETINADO/DEPURADO")) {
+            setBackground(Dep);
+        } else {
             setBackground(Color.CYAN);
         }
 

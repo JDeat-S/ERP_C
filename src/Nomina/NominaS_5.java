@@ -1,6 +1,5 @@
 package Nomina;
 
-import Admin.*;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
@@ -164,6 +163,8 @@ public final class NominaS_5 extends javax.swing.JFrame {
         LS = new javax.swing.JButton();
         DDes = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        FDP = new com.toedter.calendar.JDateChooser();
         jPanel12 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         NDL = new javax.swing.JTextField();
@@ -313,8 +314,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         OcultoPre = new javax.swing.JTextField();
         jLabel100 = new javax.swing.JLabel();
         NdQpre = new javax.swing.JComboBox<>();
-        jLabel101 = new javax.swing.JLabel();
-        DetallePQ = new javax.swing.JComboBox<>();
         Tprestamos = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
@@ -329,6 +328,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Nomina Semanal");
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -430,7 +430,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         jLabel29.setText("Semana");
 
-        Semana.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona semana", "Primer semana Enero", "Segunda semana Enero", "Tercer semana Enero", "Cuarta semana Enero", "Primer semana Febrero", "Segunda semana Febrero", "Tercer semana Febrero", "Cuarta semana Febrero", "Primer semana Marzo", "Segunda semana Marzo", "Tercer semana Marzo", "Cuarta semana Marzo", "Primer semana Abril", "Segunda semana Abril", "Tercer semana Abril", "Cuarta semana Abril", "Primer semana Mayo", "Segunda semana Mayo", "Tercer semana Mayo", "Cuarta semana Mayo", "Primer semana Junio", "Segunda semana Junio", "Tercer semana Junio", "Cuarta semana Junio", "Primer semana Julio", "Segunda semana Julio", "Tercer semana Julio", "Cuarta semana Julio", "Primer semana Agosto", "Segunda semana Agosto", "Tercer semana Agosto", "Cuarta semana Agosto", "Primer semana Septiembre", "Segunda semana Septiembre", "Tercer semana Septiembre", "Cuarta semana Septiembre", "Primer semana Octubre", "Segunda semana Octubre", "Tercer semana Octubre", "Cuarta semana Octubre", "Primer semana Noviembre", "Segunda semana Noviembre", "Tercer semana Noviembre", "Cuarta semana Noviembre", "Primer semana Diciembre", "Segunda semana Diciembre", "Tercer semana Diciembre", "Cuarta semana Diciembre" }));
+        Semana.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona semana", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre" }));
         Semana.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 SemanaItemStateChanged(evt);
@@ -448,55 +448,67 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         jLabel49.setText("Dias descansados:");
 
+        jLabel32.setText("Fecha de pago");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LS)
-                        .addGap(114, 114, 114)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel25)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel49)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DDes)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel21)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DT)
-                            .addComponent(Pago))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Fsab, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FDom, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel22)
+                        .addGap(50, 50, 50))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(SabT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(DomT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel1)
+                        .addGap(117, 117, 117)
+                        .addComponent(jLabel2)
+                        .addGap(97, 97, 97)
+                        .addComponent(jLabel3)
+                        .addGap(103, 103, 103)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addGap(56, 56, 56))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Fsab, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LS)
+                                .addGap(114, 114, 114)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel49))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FDom, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel22)
-                                .addGap(50, 50, 50))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(SabT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(DomT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(54, 54, 54)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(DDes)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel21)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DT))
+                                    .addComponent(Pago))
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel23)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(FLun, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -520,27 +532,17 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                         .addGap(115, 115, 115)
                                         .addComponent(JueT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(87, 87, 87)
-                                        .addComponent(VieT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(50, 50, 50)
-                                        .addComponent(jLabel1)
-                                        .addGap(117, 117, 117)
-                                        .addComponent(jLabel2)
-                                        .addGap(97, 97, 97))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel29)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Semana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(26, 26, 26)))
-                                .addComponent(jLabel3)
-                                .addGap(103, 103, 103)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel5)
-                                .addGap(56, 56, 56)))))
+                                        .addComponent(VieT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Semana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel32)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(214, 214, 214)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Bsi)
                     .addComponent(Bno)
@@ -558,7 +560,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel18)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel29)
-                        .addComponent(Semana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Semana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel32))
+                    .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -615,11 +619,13 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                     .addComponent(jLabel25)
                                     .addComponent(Pago)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel23)
-                                        .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(LS))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addGap(8, 8, 8)
+                                            .addComponent(jLabel23))
+                                        .addComponent(LS)))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
@@ -1347,45 +1353,43 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jLabel64)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltrosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBEP)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(busp, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BAppag, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Bampag, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBZP)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroZP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelSZP)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroSZP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBSP)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroServP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelNDFP)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(filtroNDFP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBQP)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroQP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(CS3))
-                        .addContainerGap(429, Short.MAX_VALUE))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel64)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBEP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(busp, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BAppag, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Bampag, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBZP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroZP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSZP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBSP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroServP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelNDFP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(filtroNDFP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS3)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 2511, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1454,7 +1458,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         Cantidad.setText("0");
 
-        Interes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "1 Mes 10%", "2 Meses 15%", "3 Meses 20%", "4 Meses 25%" }));
+        Interes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "4 Semanas 10%", "5 Semanas 15%", "6 Semanas 15%", "7 Semanas 15%", "8 Semanas 15%", "9 Semanas 20%", "10 Semanas 20%", "11 Semanas 20%", "12 Semanas 20%", "13 Semanas 25%", "14 Semanas 25%", "15 Semanas 25%", "16 Semanas 25%", "17 Semanas 25%", "18 Semanas 25%", "19 Semanas 25%", "20 Semanas 25%" }));
         Interes.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 InteresItemStateChanged(evt);
@@ -1552,20 +1556,11 @@ public final class NominaS_5 extends javax.swing.JFrame {
         DetallesPre.setRows(5);
         jScrollPane11.setViewportView(DetallesPre);
 
-        jLabel99.setText("Deatlles de pagos:");
+        jLabel99.setText("Detalles de pagos:");
 
-        jLabel100.setText("# de quincena");
+        jLabel100.setText("# de semana");
 
         NdQpre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" }));
-
-        jLabel101.setText("Quincena");
-
-        DetallePQ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        DetallePQ.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                DetallePQItemStateChanged(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1637,8 +1632,8 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(interes, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(83, 83, 83)
+                                .addComponent(PS, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel99))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1650,17 +1645,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                 .addGap(210, 210, 210)
                                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel100))
-                                    .addComponent(jLabel101))
+                                .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(DetallePQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 95, Short.MAX_VALUE)))
+                                .addComponent(jLabel100)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 247, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -1736,15 +1726,10 @@ public final class NominaS_5 extends javax.swing.JFrame {
                             .addComponent(jLabel40)
                             .addComponent(FL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel100)
-                            .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel101)
-                            .addComponent(DetallePQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(OcultoPre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel100)
+                        .addComponent(NdQpre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
@@ -1755,7 +1740,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(Metodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Agregarprestamo)
                     .addComponent(modprestamo))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         Prestamos.setViewportView(jPanel5);
@@ -1876,6 +1861,13 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    public void pago() {
+        double d1 = Double.parseDouble(this.DT.getText());
+        double d2 = Double.parseDouble(this.DDes.getText());
+        double d7 = Double.parseDouble(this.pd.getText());
+        double total = ((d7 * d1) + (d7 * d2));
+        this.Pago.setText("" + total + "");
+    }
 
     public void eliminarpre() {
 
@@ -1942,7 +1934,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         DetallesPre.setText("");
         OcultoPre.setText("");
         NdQpre.setSelectedIndex(0);
-        DetallePQ.setSelectedIndex(0);
         Num.setText("0");
         FS.setText("");
         Namepres.setText("");
@@ -2234,9 +2225,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# de lista");//1
-            modelo.addColumn("Apellido P");//2
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//4
             modelo.addColumn("Bono");
             modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Banco");//7
@@ -2261,6 +2252,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Miercoles");//26
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
+            modelo.addColumn("Fecha de pago");
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
@@ -2270,12 +2262,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Observaciones");
 
 //Anchos hasta quincena
-            int[] anchos = {50/*NL*/, 60/*AP*/, 60/*AM*/, 150/*NAME*/, 60/*Bono*/,
+            int[] anchos = {50/*NL*/, 150/*NAME*/, 60/*AP*/, 60/*AM*/, 60/*Bono*/,
                 60,/*Cdb*/ 60/*Banco*/, 50/*Zona*/, 35/*Serv*/, 55/*Suel*/, 150/*pd*/,
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -2303,46 +2295,46 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp.getText();
         String FAPpago = BAppag.getText();
         String FAMpago = Bampag.getText();
-        String where = "SELECT `#lista`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`,"
-                + " `año`, `Semana`, `Fecha sabado`, `Fecha viernes`, `Sueldo`,"
+        String where = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                + " `Cuenta de banco`, `Servicio`,"
+                + " `año`, `Semana`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
                 + " `Deposito`, `Observaciones`  FROM `nominasem`";
         String FiltroZpago = FiltroZP.getSelectedItem().toString();
         String FiltroSpago = FiltroServP.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP.getText();
 
         if (!"".equals(FiltroN)) {
-            where = "SELECT `#lista`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`,"
-                    + " `año`, `Semana`, `Fecha sabado`, `Fecha viernes`, `Sueldo`,"
+            where = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                    + " `Cuenta de banco`, `Servicio`,"
+                    + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
                     + " `Deposito`, `Observaciones`  FROM `nominasem` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            where = "SELECT `#lista`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Bono`,"
-                    + " `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `año`, `Semana`,"
-                    + " `Fecha sabado`, `Fecha viernes`, `Sueldo`, `Deposito`, `Observaciones` "
+            where = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
+                    + " `Cuenta de banco`,  `Servicio`, `Semana`, `año`,"
+                    + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` "
                     + " FROM `nominasem` Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            where = "SELECT `#lista`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
-                    + "`Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, "
-                    + "`año`, `Semana`, `Fecha sabado`, `Fecha viernes`, `Sueldo`, "
+            where = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                    + "`Cuenta de banco`, `Servicio`, "
+                    + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, "
                     + "`Deposito`, `Observaciones`  FROM `nominasem` Where "
                     + "`Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            where = "SELECT `#lista`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`,"
-                    + " `año`, `Semana`, `Fecha sabado`, `Fecha viernes`,"
+            where = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                    + " `Cuenta de banco`, `Servicio`,"
+                    + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`,"
                     + " `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroZpago)) {
-            where = "SELECT `#lista`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`,"
-                    + " `año`, `Semana`, `Fecha sabado`, `Fecha viernes`,"
-                    + " `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem`"
+            where = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                    + " `Cuenta de banco`, `Servicio`,"
+                    + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`,"
+                    + " `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem`"
                     + " where `Zona` LIKE '%" + FiltroZpago + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            where = "SELECT `#lista`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`,"
-                    + " `año`, `Semana`, `Fecha sabado`, `Fecha viernes`,"
+            where = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                    + "  `Cuenta de banco`, `Servicio`,"
+                    + "  `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`,"
                     + " `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         }
@@ -2367,25 +2359,23 @@ public final class NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Lista");
+            modelo.addColumn("Nombre(s)");//4
             modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//4
-            modelo.addColumn("Bono");
             modelo.addColumn("Cuenta de banco");//6
-            modelo.addColumn("Banco");
-            modelo.addColumn("Zona");//8
             modelo.addColumn("Servicio");
-            modelo.addColumn("Año");//10
-            modelo.addColumn("Semana");
+            modelo.addColumn("Año");
+            modelo.addColumn("Semana pagada");//10
             modelo.addColumn("Inicio semana");//12
             modelo.addColumn("Termino Semana");
+            modelo.addColumn("Fecha de pago");
             modelo.addColumn("Sueldo semanal");//14
             modelo.addColumn("Deposito");
             modelo.addColumn("Observaciones");//6
 
-            int[] anchos = {25/*Ndl*/, 50/*Ap*/, /*AM*/ 50, /*Name*/ 75, /*bono*/ 35,
-                /*CDB*/ 65, /*ban*/ 55, /*zon*/ 60, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
-                /*FV*/ 40, /*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
+            int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
+                /*CDB*/ 65, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
+                /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -2418,7 +2408,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 + " `Fecha lunes` = ?, `Fecha martes` = ?, `Fecha miercoles` = ?,"
                 + " `Fecha jueves` = ?, `Fecha viernes` = ?, `Sabado` = ?, "
                 + "`Domingo` = ?, `Lunes` = ?, `Martes` = ?, `Miercoles` = ?,"
-                + " `Jueves` = ?, `Viernes` = ?, `Horas extras` = ?,"
+                + " `Jueves` = ?, `Viernes` = ?, `Fecha de pago` = ?, `Horas extras` = ?,"
                 + " `Total horas extra` = ?, `Retencion infonavit` = ?, "
                 + "`Prestamos` = ?, `Rembolso` = ?, `Deposito` = ?, "
                 + "`Observaciones` = ? WHERE `nominasem`.`#lista` = ?";
@@ -2454,14 +2444,15 @@ public final class NominaS_5 extends javax.swing.JFrame {
             pst.setString(26, MierT.getSelectedItem().toString());
             pst.setString(27, JueT.getSelectedItem().toString());
             pst.setString(28, VieT.getSelectedItem().toString());
-            pst.setString(29, HE.getText());
-            pst.setString(30, THE.getText());
-            pst.setString(31, RI.getText());
-            pst.setString(32, Presp.getText());
-            pst.setString(33, Rembolso.getText());
-            pst.setString(34, deposito.getText());
-            pst.setString(35, obs.getText());
-            pst.setInt(36, Integer.parseInt(NDL.getText()));
+            pst.setString(29, ((JTextField) FDP.getDateEditor().getUiComponent()).getText());
+            pst.setString(30, HE.getText());
+            pst.setString(31, THE.getText());
+            pst.setString(32, RI.getText());
+            pst.setString(33, Presp.getText());
+            pst.setString(34, Rembolso.getText());
+            pst.setString(35, deposito.getText());
+            pst.setString(36, obs.getText());
+            pst.setInt(37, Integer.parseInt(NDL.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Modificada");
@@ -2479,9 +2470,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 + " `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,"
                 + " `Fecha sabado`, `Fecha domingo`, `Fecha lunes`, `Fecha martes`, "
                 + "`Fecha miercoles`, `Fecha jueves`, `Fecha viernes`, `Sabado`, `Domingo`, "
-                + "`Lunes`, `Martes`, `Miercoles`, `Jueves`, `Viernes`, `Horas extras`,"
+                + "`Lunes`, `Martes`, `Miercoles`, `Jueves`, `Viernes`, `Fecha de pago`, `Horas extras`,"
                 + " `Total horas extra`, `Retencion infonavit`, `Prestamos`, `Rembolso`, "
-                + "`Deposito`, `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + "`Deposito`, `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -2514,13 +2505,14 @@ public final class NominaS_5 extends javax.swing.JFrame {
             pst.setString(26, MierT.getSelectedItem().toString());
             pst.setString(27, JueT.getSelectedItem().toString());
             pst.setString(28, VieT.getSelectedItem().toString());
-            pst.setString(29, HE.getText());
-            pst.setString(30, THE.getText());
-            pst.setString(31, RI.getText());
-            pst.setString(32, Presp.getText());
-            pst.setString(33, Rembolso.getText());
-            pst.setString(34, deposito.getText());
-            pst.setString(35, obs.getText());
+            pst.setString(29, ((JTextField) FDP.getDateEditor().getUiComponent()).getText());
+            pst.setString(30, HE.getText());
+            pst.setString(31, THE.getText());
+            pst.setString(32, RI.getText());
+            pst.setString(33, Presp.getText());
+            pst.setString(34, Rembolso.getText());
+            pst.setString(35, deposito.getText());
+            pst.setString(36, obs.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Semanal Agregada");
@@ -2743,6 +2735,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
         pagos();
         mostrardatos();
         limpiarnom();
+        editarpre();
+        MDP();
+        limpiarP();
     }//GEN-LAST:event_AgregarNPActionPerformed
 
     private void ModmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModmActionPerformed
@@ -2847,14 +2842,15 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     VieT.setSelectedIndex(i);
                 }
             }
-
-            HE.setText(String.valueOf(Tnom.getValueAt(fila, 28)));
-            THE.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
-            RI.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
-            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
-            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
-            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
-            obs.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 28));
+            FDP.setDate(date9);
+            HE.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
+            THE.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
+            RI.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
+            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            obs.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_5.class
@@ -3408,6 +3404,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         DDes.setText("" + descanso);
         double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
         DT.setText("" + asistencia);
+        pago();
     }//GEN-LAST:event_DomTItemStateChanged
 
     private void SabTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SabTItemStateChanged
@@ -3430,6 +3427,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         DDes.setText("" + descanso);
         double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
         DT.setText("" + asistencia);
+        pago();
     }//GEN-LAST:event_SabTItemStateChanged
 
     private void FiltroQuincenanominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanominaItemStateChanged
@@ -3448,6 +3446,10 @@ public final class NominaS_5 extends javax.swing.JFrame {
         pd.setText("" + Pordia + "");
         double Porhora = Pordia / 8;
         PH.setText("" + Porhora + "");
+        String D1 = OcultoPre.getText();
+        String DPNQ = NdQpre.getSelectedItem().toString();
+        String DPQODT = Semana.getSelectedItem().toString();
+        DetallesPre.setText(D1 + ", " + "Semana " + DPNQ + " " + DPQODT);
     }//GEN-LAST:event_SemanaItemStateChanged
 
     private void LSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LSActionPerformed
@@ -3466,78 +3468,98 @@ public final class NominaS_5 extends javax.swing.JFrame {
         Fmier.setCalendar(null);
         FJuev.setCalendar(null);
         Fvier.setCalendar(null);
+        FDP.setCalendar(null);
     }//GEN-LAST:event_LSActionPerformed
 
     private void InteresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_InteresItemStateChanged
-        double M1 = 0, M2 = 0, M3 = 0, M4 = 0, S4 = 0, S8 = 0, S12 = 0, S16 = 0;
+        double inter = 0, Sem = 0;
 
         String dt = (String) Interes.getSelectedItem();
         if (dt.equals(".")) {
-            M1 = 0;
-            M2 = 0;
-            M3 = 0;
-            M4 = 0;
-            S4 = 0;
-            S8 = 0;
-            S12 = 0;
-            S16 = 0;
+            inter = 0;
+            Sem = 0;
+            
         }
-        if (dt.equals("1 Mes 10%")) {
-            M1 = 10;
-            M2 = 0;
-            M3 = 0;
-            M4 = 0;
-            S4 = 4;
-            S8 = 0;
-            S12 = 0;
-            S16 = 0;
+
+        if (dt.equals("4 Semanas 10%")) {
+            inter = 10;
+            Sem = 4;
         }
-        if (dt.equals("2 Meses 15%")) {
-            M2 = 15;
-            M1 = 0;
-            M3 = 0;
-            M4 = 0;
-            S4 = 0;
-            S8 = 8;
-            S12 = 0;
-            S16 = 0;
+        if (dt.equals("5 Semanas 15%")) {
+            inter = 15;
+            Sem = 5;
         }
-        if (dt.equals("3 Meses 20%")) {
-            M3 = 20;
-            M2 = 0;
-            M1 = 0;
-            M4 = 0;
-            S4 = 0;
-            S8 = 0;
-            S12 = 12;
-            S16 = 0;
+        if (dt.equals("6 Semanas 15%")) {
+            inter = 15;
+            Sem = 6;
         }
-//2
-        if (dt.equals("4 Meses 25%")) {
-            M4 = 25;
-            M2 = 0;
-            M3 = 0;
-            M1 = 0;
-            S4 = 0;
-            S8 = 0;
-            S12 = 12;
-            S16 = 16;
+        if (dt.equals("7 Semanas 15%")) {
+            inter = 15;
+            Sem = 7;
         }
-        //operacion div
+        if (dt.equals("8 Semanas 15%")) {
+            inter = 15;
+            Sem = 8;
+        }
+        if (dt.equals("9 Semanas 20%")) {
+            inter = 20;
+            Sem = 9;
+        }
+        if (dt.equals("10 Semanas 20%")) {
+            inter = 20;
+            Sem = 10;
+        }
+        if (dt.equals("11 Semanas 20%")) {
+            inter = 15;
+            Sem = 11;
+        }if (dt.equals("12 Semanas 20%")) {
+            inter = 20;
+            Sem = 12;
+        }
+        if (dt.equals("13 Semanas 25%")) {
+            inter = 25;
+            Sem = 13;
+        }
+        if (dt.equals("14 Semanas 25%")) {
+            inter = 25;
+            Sem = 14;
+        }
+        if (dt.equals("15 Semanas 25%")) {
+            inter = 25;
+            Sem = 15;
+        }
+        if (dt.equals("16 Semanas 25%")) {
+            inter = 25;
+            Sem = 16;
+        }
+        if (dt.equals("17 Semanas 25%")) {
+            inter = 25;
+            Sem = 17;
+        }
+        if (dt.equals("18 Semanas 25%")) {
+            inter = 25;
+            Sem = 18;
+        }
+        if (dt.equals("19 Semanas 25%")) {
+            inter = 25;
+            Sem = 19;
+        }
+        if (dt.equals("20 Semanas 25%")) {
+            inter = 25;
+            Sem = 20;
+        }
+        
+        
+        //operacion interes
         double CAN = Double.parseDouble(this.Cantidad.getText());
-        double MS1 = (M1 * CAN) / 100;
-        double MS2 = (M2 * CAN) / 100;
-        double MS3 = (M3 * CAN) / 100;
-        double MS4 = (M4 * CAN) / 100;
-        double total = (MS1 + MS2 + MS3 + MS4);
+        double total = (inter * CAN) / 100;
         this.interes.setText("" + total + "");
-        //operacion por quincenas
+        //operacion por semanas
 
         double d6 = Double.parseDouble(this.MT.getText());
-
-        double totalPS = d6 / (S4 + S8 + S12 + S16);
+        double totalPS = d6 / Sem ;
         this.PS.setText("" + totalPS + "");
-
+//monto total
         double d1 = Double.parseDouble(this.Cantidad.getText());
         double d2 = Double.parseDouble(this.interes.getText());
         double MTo = (d1 + d2);
@@ -3646,13 +3668,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         shareprestamo();
     }//GEN-LAST:event_BusamshpreKeyReleased
 
-    private void DetallePQItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DetallePQItemStateChanged
-        String D1 = OcultoPre.getText();
-        String DPNQ = NdQpre.getSelectedItem().toString();
-        String DPQODT = DetallePQ.getSelectedItem().toString();
-        DetallesPre.setText(D1 + ", " + "Quincena " + DPNQ + " " + DPQODT);
-    }//GEN-LAST:event_DetallePQItemStateChanged
-
     private void BPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BPKeyReleased
 
         MDP();
@@ -3737,6 +3752,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         DDes.setText("" + descanso);
         double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
         DT.setText("" + asistencia);
+        pago();
     }//GEN-LAST:event_LunTItemStateChanged
 
     private void MarTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MarTItemStateChanged
@@ -3759,6 +3775,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         DDes.setText("" + descanso);
         double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
         DT.setText("" + asistencia);
+        pago();
     }//GEN-LAST:event_MarTItemStateChanged
 
     private void MierTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MierTItemStateChanged
@@ -3781,6 +3798,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         DDes.setText("" + descanso);
         double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
         DT.setText("" + asistencia);
+        pago();
     }//GEN-LAST:event_MierTItemStateChanged
 
     private void JueTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JueTItemStateChanged
@@ -3799,6 +3817,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             AJ = 0;
 
         }
+        pago();
     }//GEN-LAST:event_JueTItemStateChanged
 
     private void VieTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_VieTItemStateChanged
@@ -3821,10 +3840,11 @@ public final class NominaS_5 extends javax.swing.JFrame {
         DDes.setText("" + descanso);
         double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
         DT.setText("" + asistencia);
+        pago();
     }//GEN-LAST:event_VieTItemStateChanged
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -3892,12 +3912,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Carpeta;
     private javax.swing.JLabel DDes;
     private javax.swing.JLabel DT;
-    private javax.swing.JComboBox<String> DetallePQ;
     private javax.swing.JTextArea DetallesPre;
     private javax.swing.JComboBox<String> DomT;
     private javax.swing.JButton Eliminar;
     private javax.swing.JTextField FAmT;
     private javax.swing.JTextField FApT;
+    private com.toedter.calendar.JDateChooser FDP;
     private com.toedter.calendar.JDateChooser FDom;
     private com.toedter.calendar.JDateChooser FJuev;
     private javax.swing.JTextField FL;
@@ -3986,7 +4006,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
-    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -4010,6 +4029,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
