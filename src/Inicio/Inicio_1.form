@@ -94,7 +94,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="BActualizaciones">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ver 1.6.2"/>
+            <Property name="text" type="java.lang.String" value="Ver 1.10.1"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BActualizacionesActionPerformed"/>

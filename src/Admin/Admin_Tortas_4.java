@@ -19,21 +19,19 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
 
     public Admin_Tortas_4() {
         initComponents();
-        MDT();
         LabelF1.setVisible(false);
         filap.setVisible(false);
         filam.setVisible(false);
         Filname.setVisible(false);
-        idbd.setVisible(false);
         this.setExtendedState(6);
         this.setLocationRelativeTo(null);
         setIconImage(new ImageIcon(Admin_Tortas_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        MDT();
 
     }
 
     public void clean() {
-        idbd.setText("");
-        NDEtor.setText("");
+        NDEtor.setText("0");
         Aptor.setText("");
         amtor.setText("");
         nametor.setText("");
@@ -84,7 +82,7 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, NDEtor.getText());
+            pst.setInt(1, Integer.parseInt(NDEtor.getText()));
             pst.setString(2, Aptor.getText());
             pst.setString(3, amtor.getText());
             pst.setString(4, nametor.getText());
@@ -124,9 +122,9 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
         }
     }
 
-    //Mostrardatostorteria
+    //Mostrar datostorteria
     public void MDT() {
-        //Buscar estadias
+        
         String FiltroNGe = Filname.getText();
         String FAP = filap.getText();
         String FAM = filam.getText();
@@ -142,6 +140,7 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
@@ -149,8 +148,8 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
             };
 //Nombre de la tabla
             TTortas.setModel(modelo);
-            PreparedStatement ps = null;
-            ResultSet rs = null;
+            PreparedStatement ps;
+            ResultSet rs;
 
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
@@ -217,7 +216,6 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
     }
 
     public void editar() {
-        int id = Integer.parseInt(idbd.getText());
         String Status = Statustor.getSelectedItem().toString();
         String BF = BFtor.getSelectedItem().toString();
         String Finiquito = Fintor.getSelectedItem().toString();
@@ -230,12 +228,12 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
                 + " `Ultimo dia laborado` = ?, `Fecha de firma baja` = ?, `Baja firmada` = ?,"
                 + " `Finiquito` = ?, `Fecha de Re-ingreso` = ?, `Ultimo dia laborado (re)` = ?,"
                 + " `Fecha firma baja (re)` = ?, `Fecha de Baja (re)` = ?, `Baja firmada (re)` = ?,"
-                + " `Cambio de Servicio` = ?, `# recepcion personal` = ?, `Observaciones` = ? WHERE `idTorteria` = ?";
+                + " `Cambio de Servicio` = ?, `# recepcion personal` = ?, `Observaciones` = ? WHERE `# Exp` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, NDEtor.getText());
+            pst.setInt(1, Integer.parseInt(NDEtor.getText()));
             pst.setString(2, Aptor.getText());
             pst.setString(3, amtor.getText());
             pst.setString(4, nametor.getText());
@@ -266,7 +264,7 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
             pst.setString(29, CdStor.getText());
             pst.setString(30, Nrptor.getText());
             pst.setString(31, obstor.getText());
-            pst.setInt(32, id);
+            pst.setInt(32, Integer.parseInt(NDEtor.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Empleado Modificado");
@@ -354,7 +352,6 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
         obstor = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        idbd = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -392,6 +389,8 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
         jLabel10.setText("CURP:");
 
         jLabel7.setText("# Celular:");
+
+        NDEtor.setText("0");
 
         jLabel1.setText("# Exp");
 
@@ -745,13 +744,8 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(idbd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -791,10 +785,7 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(idbd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -1060,58 +1051,57 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) TTortas.getModel();
 
         int fila = TTortas.getSelectedRow();
-        idbd.setText(String.valueOf(TTortas.getValueAt(fila, 0)));
-        NDEtor.setText(String.valueOf(TTortas.getValueAt(fila, 1)));
-        Aptor.setText(String.valueOf(TTortas.getValueAt(fila, 2)));
-        amtor.setText(String.valueOf(TTortas.getValueAt(fila, 3)));
-        nametor.setText(String.valueOf(TTortas.getValueAt(fila, 4)));
-        Ndctor.setText(String.valueOf(TTortas.getValueAt(fila, 5)));
-        Ndrtor.setText(String.valueOf(TTortas.getValueAt(fila, 6)));
-        Ndcel.setText(String.valueOf(TTortas.getValueAt(fila, 7)));
-        RFCtor.setText(String.valueOf(TTortas.getValueAt(fila, 8)));
-        nsstor.setText(String.valueOf(TTortas.getValueAt(fila, 9)));
-        curptor.setText(String.valueOf(TTortas.getValueAt(fila, 10)));
-        Dotor.setText(String.valueOf(TTortas.getValueAt(fila, 11)));
-        Dftor.setText(String.valueOf(TTortas.getValueAt(fila, 12)));
-        Detor.setText(String.valueOf(TTortas.getValueAt(fila, 13)));
-        Fdptor.setText(String.valueOf(TTortas.getValueAt(fila, 14)));
-        sueltor.setText(String.valueOf(TTortas.getValueAt(fila, 15)));
-        Bonotor.setText(String.valueOf(TTortas.getValueAt(fila, 16)));
-        String combo1 = model.getValueAt(fila, 17).toString();
+        NDEtor.setText(String.valueOf(TTortas.getValueAt(fila, 0)));
+        Aptor.setText(String.valueOf(TTortas.getValueAt(fila, 1)));
+        amtor.setText(String.valueOf(TTortas.getValueAt(fila, 2)));
+        nametor.setText(String.valueOf(TTortas.getValueAt(fila, 3)));
+        Ndctor.setText(String.valueOf(TTortas.getValueAt(fila, 4)));
+        Ndrtor.setText(String.valueOf(TTortas.getValueAt(fila, 5)));
+        Ndcel.setText(String.valueOf(TTortas.getValueAt(fila, 6)));
+        RFCtor.setText(String.valueOf(TTortas.getValueAt(fila, 7)));
+        nsstor.setText(String.valueOf(TTortas.getValueAt(fila, 8)));
+        curptor.setText(String.valueOf(TTortas.getValueAt(fila, 9)));
+        Dotor.setText(String.valueOf(TTortas.getValueAt(fila, 10)));
+        Dftor.setText(String.valueOf(TTortas.getValueAt(fila, 11)));
+        Detor.setText(String.valueOf(TTortas.getValueAt(fila, 12)));
+        Fdptor.setText(String.valueOf(TTortas.getValueAt(fila, 13)));
+        sueltor.setText(String.valueOf(TTortas.getValueAt(fila, 14)));
+        Bonotor.setText(String.valueOf(TTortas.getValueAt(fila, 15)));
+        String combo1 = model.getValueAt(fila, 16).toString();
         for (int i = 0; i < Statustor.getItemCount(); i++) {
             if (Statustor.getItemAt(i).equalsIgnoreCase(combo1)) {
                 Statustor.setSelectedIndex(i);
             }
         }
-        Fetor.setText(String.valueOf(TTortas.getValueAt(fila, 18)));
-        FItor.setText(String.valueOf(TTortas.getValueAt(fila, 19)));
-        UDLtor.setText(String.valueOf(TTortas.getValueAt(fila, 20)));
-        FdFBtor.setText(String.valueOf(TTortas.getValueAt(fila, 21)));
-        String combo2 = model.getValueAt(fila, 22).toString();
+        Fetor.setText(String.valueOf(TTortas.getValueAt(fila, 17)));
+        FItor.setText(String.valueOf(TTortas.getValueAt(fila, 18)));
+        UDLtor.setText(String.valueOf(TTortas.getValueAt(fila, 19)));
+        FdFBtor.setText(String.valueOf(TTortas.getValueAt(fila, 20)));
+        String combo2 = model.getValueAt(fila, 21).toString();
         for (int i = 0; i < BFtor.getItemCount(); i++) {
             if (BFtor.getItemAt(i).equalsIgnoreCase(combo2)) {
                 BFtor.setSelectedIndex(i);
             }
         }
-        String combo3 = model.getValueAt(fila, 23).toString();
+        String combo3 = model.getValueAt(fila, 22).toString();
         for (int i = 0; i < Fintor.getItemCount(); i++) {
             if (Fintor.getItemAt(i).equalsIgnoreCase(combo3)) {
                 Fintor.setSelectedIndex(i);
             }
         }
-        FREI.setText(String.valueOf(TTortas.getValueAt(fila, 24)));
-        UDLRE.setText(String.valueOf(TTortas.getValueAt(fila, 25)));
-        FFBRE.setText(String.valueOf(TTortas.getValueAt(fila, 26)));
-        FBRE.setText(String.valueOf(TTortas.getValueAt(fila, 27)));
-        String combo4 = model.getValueAt(fila, 28).toString();
+        FREI.setText(String.valueOf(TTortas.getValueAt(fila, 23)));
+        UDLRE.setText(String.valueOf(TTortas.getValueAt(fila, 24)));
+        FFBRE.setText(String.valueOf(TTortas.getValueAt(fila, 25)));
+        FBRE.setText(String.valueOf(TTortas.getValueAt(fila, 26)));
+        String combo4 = model.getValueAt(fila, 27).toString();
         for (int i = 0; i < Fintor.getItemCount(); i++) {
             if (Fintor.getItemAt(i).equalsIgnoreCase(combo4)) {
                 Fintor.setSelectedIndex(i);
             }
         }
-        CdStor.setText(String.valueOf(TTortas.getValueAt(fila, 29)));
-        Nrptor.setText(String.valueOf(TTortas.getValueAt(fila, 30)));
-        obstor.setText(String.valueOf(TTortas.getValueAt(fila, 31)));
+        CdStor.setText(String.valueOf(TTortas.getValueAt(fila, 28)));
+        Nrptor.setText(String.valueOf(TTortas.getValueAt(fila, 29)));
+        obstor.setText(String.valueOf(TTortas.getValueAt(fila, 30)));
 
     }//GEN-LAST:event_TTortasMouseClicked
 
@@ -1200,6 +1190,10 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1253,7 +1247,6 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JTextField curptor;
     private javax.swing.JTextField filam;
     private javax.swing.JTextField filap;
-    private javax.swing.JTextField idbd;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

@@ -1433,7 +1433,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
             String combo1 = model.getValueAt(seleccionar, 11).toString();
             for (int i = 0; i < TDS.getItemCount(); i++) {
-                if (TDS.getItemAt(i).toString().equalsIgnoreCase(combo1)) {
+                if (TDS.getItemAt(i).equalsIgnoreCase(combo1)) {
                     TDS.setSelectedIndex(i);
                 }
             }
@@ -1442,7 +1442,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
             String combo3 = model.getValueAt(seleccionar, 13).toString();
             for (int i = 0; i < StatusServ.getItemCount(); i++) {
-                if (StatusServ.getItemAt(i).toString().equalsIgnoreCase(combo3)) {
+                if (StatusServ.getItemAt(i).equalsIgnoreCase(combo3)) {
                     StatusServ.setSelectedIndex(i);
                 }
             }
