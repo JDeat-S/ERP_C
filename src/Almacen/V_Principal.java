@@ -15,6 +15,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
@@ -70,7 +71,7 @@ public final class V_Principal extends javax.swing.JFrame {
 
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             // NOTA: So hubo error muestra el error
             JOptionPane.showMessageDialog(null, e);
         }

@@ -28,14 +28,13 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
 
     public Admin_Estadias_4() {
         initComponents();
+        this.setExtendedState(6);
+        this.setLocationRelativeTo(null);
         LabelF1.setVisible(false);
         FilAP.setVisible(false);
         FilAM.setVisible(false);
         Filname.setVisible(false);
-        idest.setVisible(false);
         MDE();
-        this.setExtendedState(6);
-        this.setLocationRelativeTo(null);
         setIconImage(new ImageIcon(Admin_Estadias_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
@@ -54,7 +53,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         Ctest.setSelected(false);
         Adeest.setSelected(false);
         Evest.setSelected(false);
-        NexpEst.setText("");
+        NexpEst.setText("0");
         APEst.setText("");
         AMest.setText("");
         nameest.setText("");
@@ -64,12 +63,11 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         Fdiest.setText("");
         Fdtest.setText("");
         Obsest.setText("");
-        idest.setText("");
     }
 //editar
 
     private void EditarEst() {
-        int id = Integer.parseInt(idest.getText());
+
         String TDC = TDCest.getSelectedItem().toString();
         String STAT = Statusest.getSelectedItem().toString();
         String Cdp = null;
@@ -126,7 +124,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         } else if (Evest.isSelected() == false) {
             Ev = "";
         }
-        String SQL = " UPDATE `confort`.`estadia` SET `# Exp` = ?, "
+        String SQL = " UPDATE `confort`.`estadia` SET `idEstadias` = ?, "
                 + "`Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?,"
                 + " `# Celular` = ?, `Carrera` = ?, `Tipo de carrera` = ?, `CURP` = ?,"
                 + " `Status` = ?, `Fecha de ingreso` = ?, `Fecha de termino` = ?,"
@@ -137,7 +135,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
                 + " WHERE (`idEstadias` = ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            pst.setString(1, NexpEst.getText());
+            pst.setInt(1, Integer.parseInt(NexpEst.getText()));
             pst.setString(2, APEst.getText());
             pst.setString(3, AMest.getText());
             pst.setString(4, nameest.getText());
@@ -158,7 +156,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
             pst.setString(19, Ade);
             pst.setString(20, Ev);
             pst.setString(21, Obsest.getText());
-            pst.setInt(22, id);
+            pst.setInt(22, Integer.parseInt(NexpEst.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Estadia Modificada");
@@ -227,7 +225,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         } else if (Evest.isSelected() == false) {
             Ev = "";
         }
-        String SQL = "INSERT INTO `confort`.`estadia` (`# Exp`, `Apellido P`,"
+        String SQL = "INSERT INTO `confort`.`estadia` (`idEstadias`, `Apellido P`,"
                 + " `Apellido M`, `Nombre(s)`, `# Celular`, `Carrera`, "
                 + "`Tipo de carrera`, `CURP`, `Status`, `Fecha de ingreso`, "
                 + "`Fecha de termino`, `Carta de precentacion`, `Carta de aceptacion`,"
@@ -237,7 +235,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, NexpEst.getText());
+            pst.setInt(1, Integer.parseInt(NexpEst.getText()));
             pst.setString(2, APEst.getText());
             pst.setString(3, AMest.getText());
             pst.setString(4, nameest.getText());
@@ -285,6 +283,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
@@ -292,8 +291,8 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
             };
 //Nombre de la tabla
             Testadia.setModel(modelo);
-            PreparedStatement ps = null;
-            ResultSet rs = null;
+            PreparedStatement ps;
+            ResultSet rs;
 
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
@@ -301,7 +300,6 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-            modelo.addColumn("ID BD");//1
             modelo.addColumn("# Exp");
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -324,7 +322,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
             modelo.addColumn("Evaluacion");//20
             modelo.addColumn("Observaciones");
 
-            int[] anchos = {/*idbd*/35, /*Exp*/ 35, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*celular*/ 65,
+            int[] anchos = { /*Exp*/ 35, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*celular*/ 65,
                 /*Carr*/ 65, /*TDC*/ 65, /*Curp*/ 65, /*Status*/ 50,
                 /*FDI*/ 75, /*FDT*/ 75, /*CDP*/ 75, /*CDA*/ 75, /*PDA*/ 95, /*1*/ 40, /*2*/ 40, /*3*/ 40, /*CT*/ 40,
                 /*ADE*/ 100, /*Ev*/ 30, /*OBS*/ 1000};
@@ -395,7 +393,6 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         Obsest = new javax.swing.JTextArea();
         add = new javax.swing.JButton();
         mod = new javax.swing.JButton();
-        idest = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -433,6 +430,8 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         TDCest.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "TSU", "Licenciatura", "Ingenieria" }));
 
         jLabel1.setText("# Exp:");
+
+        NexpEst.setText("0");
 
         jLabel2.setText("Apellido P:");
 
@@ -644,10 +643,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23)
-                        .addComponent(idest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel13)
@@ -680,11 +676,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(idest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13)
@@ -744,6 +736,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         jScrollPane4.setViewportView(Testadia);
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb1.setToolTipText("");
         botonWeb1.setLink("http://192.168.3.10/Reportes/ReporteRH/EPCEstadia.php");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -906,30 +899,29 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         try {
 
             int fila = Testadia.getSelectedRow();
-            idest.setText(String.valueOf(Testadia.getValueAt(fila, 0)));
-            NexpEst.setText(String.valueOf(Testadia.getValueAt(fila, 1)));
-            APEst.setText(String.valueOf(Testadia.getValueAt(fila, 2)));
-            AMest.setText(String.valueOf(Testadia.getValueAt(fila, 3)));
-            nameest.setText(String.valueOf(Testadia.getValueAt(fila, 4)));
-            NCest.setText(String.valueOf(Testadia.getValueAt(fila, 5)));
-            Carrest.setText(String.valueOf(Testadia.getValueAt(fila, 6)));
-            String combo1 = model.getValueAt(fila, 7).toString();
+            NexpEst.setText(String.valueOf(Testadia.getValueAt(fila, 0)));
+            APEst.setText(String.valueOf(Testadia.getValueAt(fila, 1)));
+            AMest.setText(String.valueOf(Testadia.getValueAt(fila, 2)));
+            nameest.setText(String.valueOf(Testadia.getValueAt(fila, 3)));
+            NCest.setText(String.valueOf(Testadia.getValueAt(fila, 4)));
+            Carrest.setText(String.valueOf(Testadia.getValueAt(fila, 5)));
+            String combo1 = model.getValueAt(fila, 6).toString();
             for (int i = 0; i < TDCest.getItemCount(); i++) {
                 if (TDCest.getItemAt(i).equalsIgnoreCase(combo1)) {
                     TDCest.setSelectedIndex(i);
                 }
             }
-            Curpest.setText(String.valueOf(Testadia.getValueAt(fila, 8)));
+            Curpest.setText(String.valueOf(Testadia.getValueAt(fila, 7)));
             //Combobo2
-            String combo2 = model.getValueAt(fila, 9).toString();
+            String combo2 = model.getValueAt(fila, 8).toString();
             for (int i = 0; i < Statusest.getItemCount(); i++) {
                 if (Statusest.getItemAt(i).equalsIgnoreCase(combo2)) {
                     Statusest.setSelectedIndex(i);
                 }
             }
-            Obsest.setText(String.valueOf(Testadia.getValueAt(fila, 21)));
-            Fdiest.setText(String.valueOf(Testadia.getValueAt(fila, 10)));
-            Fdtest.setText(String.valueOf(Testadia.getValueAt(fila, 11)));
+            Obsest.setText(String.valueOf(Testadia.getValueAt(fila, 20)));
+            Fdiest.setText(String.valueOf(Testadia.getValueAt(fila, 9)));
+            Fdtest.setText(String.valueOf(Testadia.getValueAt(fila, 10)));
 
             int id = Integer.parseInt(Testadia.getValueAt(fila, 0).toString());
             PreparedStatement ps;
@@ -1130,6 +1122,10 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1176,7 +1172,6 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JButton add;
     private botones.BotonWeb botonWeb1;
-    private javax.swing.JTextField idest;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

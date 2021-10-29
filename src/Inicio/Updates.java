@@ -215,28 +215,24 @@ public class Updates extends javax.swing.JFrame {
     }
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
         LabelAll.setText("Buscando actualizacion...");
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    //5 segundos de busqueda
-                    Thread.sleep(5000);
-                    if (verificarConexion()) {
-                        if (version().equals("1.6.2")) {
-                            LabelAll.setText("La aplicacion esta actualizada.");
-                            btnDesc.setVisible(false);
-                        } else {
-                            LabelAll.setText("Version " + version() + " disponible.");
-                            btnDesc.setVisible(true);
-                        }
+        new Thread(() -> {
+            try {
+                //5 segundos de busqueda
+                Thread.sleep(5000);
+                if (verificarConexion()) {
+                    if (version().equals("1.8.0")) {
+                        LabelAll.setText("La aplicacion esta actualizada.");
+                        btnDesc.setVisible(false);
                     } else {
-                        LabelAll.setText("Verificar conexion internet.");
+                        LabelAll.setText("Version " + version() + " disponible.");
+                        btnDesc.setVisible(true);
                     }
-
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Updates.class.getName()).log(Level.SEVERE, null, ex);
+                } else {
+                    LabelAll.setText("Verificar conexion internet.");
                 }
 
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Updates.class.getName()).log(Level.SEVERE, null, ex);
             }
         }).start();
     }//GEN-LAST:event_SearchActionPerformed
@@ -279,10 +275,8 @@ public class Updates extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Updates().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Updates().setVisible(true);
         });
     }
 

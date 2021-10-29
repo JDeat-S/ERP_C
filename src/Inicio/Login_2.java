@@ -6,7 +6,7 @@
 package Inicio;
 
 import Nomina.NominaQ_5;
-import RH.RH_Empleados_4;
+import RH.Empleados_4;
 import Admin.Administradores_3;
 import Conexion.ConexionSQL;
 import java.sql.Connection;
@@ -77,7 +77,7 @@ public class Login_2 extends javax.swing.JFrame {
             if(rs.next()){
                 resultado=1;
                 if (resultado==1) {
-                    RH_Empleados_4 Form = new RH_Empleados_4();
+                    Empleados_4 Form = new Empleados_4();
                     Form.setVisible(true);
                     this.dispose();
                     

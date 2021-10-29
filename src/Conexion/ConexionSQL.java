@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Conexion;
 
 import java.sql.*;
@@ -20,16 +15,15 @@ public class ConexionSQL {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=(Connection) DriverManager.getConnection("jdbc:mysql://192.168.3.10:3306/confort","Servidor","Remoto08");
+            con=(Connection) DriverManager.getConnection("jdbc:mysql://192.168.3.10:3306/confort","Servidor","Confort1022");
 
-//            con = DriverManager.getConnection("jdbc:mysql://192.168.1.2:3306/confort", "JDeat", "JDeat5577");
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error de conexion: " + e.getMessage());
             con.close();
         } finally {
 
             return con;
-        }
+        } 
     }
 
     public Connection getConnection() {
