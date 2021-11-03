@@ -32,6 +32,8 @@ public class ColorRH extends DefaultTableCellRenderer {
         super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         if (table.getValueAt(row, 1).toString().equals("SI")) {
             setBackground(imss);
+        }else if (table.getValueAt(row, 1).toString().equals("Si")) {
+            setBackground(imss);
         } else if(table.getValueAt(row, 19).toString().equals("BAJA")) {
             setBackground(RyB);
         } else if (table.getValueAt(row, 19).toString().equals("VIGENTE (TEMPORAL)")) {
@@ -53,6 +55,8 @@ public class ColorRH extends DefaultTableCellRenderer {
         } else if (table.getValueAt(row, 19).toString().equals("NO CONTRATAR/DEPURADO")) {
             setBackground(Dep);
         } else if (table.getValueAt(row, 19).toString().equals("BOLETINADO/DEPURADO")) {
+            setBackground(Dep);
+        } else if (table.getValueAt(row, 19).toString().equals("BAJA/DEPURADO")) {
             setBackground(Dep);
         } else {
             setBackground(Color.CYAN);
