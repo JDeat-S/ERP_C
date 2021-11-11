@@ -1371,8 +1371,10 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FiltroNSSGen" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Filobs" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Cs2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="5579" max="32767" attributes="0"/>
+                                  <EmptySpace pref="5473" max="32767" attributes="0"/>
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane2" min="-2" pref="2118" max="-2" attributes="0"/>
@@ -1406,6 +1408,7 @@
                                   <Component id="Filtroam" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="botonWeb1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Filobs" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -1784,7 +1787,7 @@
                 <Component class="javax.swing.JComboBox" name="Filtros">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="10">
+                      <StringArray count="11">
                         <StringItem index="0" value="Selecciona Filtro"/>
                         <StringItem index="1" value="Apellido P"/>
                         <StringItem index="2" value="Apellido M"/>
@@ -1795,6 +1798,7 @@
                         <StringItem index="7" value="CURP"/>
                         <StringItem index="8" value="NSS"/>
                         <StringItem index="9" value="Estatus"/>
+                        <StringItem index="10" value="Observaciones"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -1930,6 +1934,12 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Observaciones:"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="Filobs">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FilobsActionPerformed"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FilobsKeyReleased"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -2446,11 +2456,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FDREimss">
-                  <Properties>
-                    <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                      <ComponentRef name="default"/>
-                    </Property>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel112">
                   <Properties>
@@ -2463,11 +2468,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="FBREimss">
-                  <Properties>
-                    <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                      <ComponentRef name="default"/>
-                    </Property>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

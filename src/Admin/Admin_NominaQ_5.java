@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -2699,6 +2700,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         double dpi = Double.parseDouble(this.Dpi.getText());
         double totaldpi = dpi * PD;
         pds.setText("" + totaldpi);
+
 //vacaciones
         double DDV = Double.parseDouble(this.Ddv.getText());
         double totalddv = DDV * PD;
@@ -2720,17 +2722,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         double totalFAL = (350 * FAL);
         DPF.setText("" + totalFAL);
 
-        /*double FALJ = Double.parseDouble(this.FJ.getText());
-        double totalFALJ = (0 * FALJ);
-
-        double DesO = Double.parseDouble(this.DO.getText());
-        double totalDesO = (0 * DesO);*/
         double RET = Double.parseDouble(this.R.getText());
         double totalRET = (PD * RET) - (RET * 50);
         PCR.setText("" + totalRET);
 
-        /*double DESGS = Double.parseDouble(this.DSGS.getText());
-        double totalDESGS = */
         //EGRESOS
         double EG1 = Double.parseDouble(this.DVT.getText());
         double EG2 = Double.parseDouble(this.DI.getText());
@@ -2751,8 +2746,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         double Ingresos = (IN13 + IN10 + IN9 + IN6 + IN3 + IN5 + IN14 + IN15 + IN1);
         double Egresos = (EG1 + EG2 + EG7 + EG8 + EG4 + EG16);
-        double total = Ingresos - Egresos;
-        this.deposito.setText("" + total + "");
+        DecimalFormat df = new DecimalFormat("#.00");
+        this.deposito.setText(df.format(Ingresos - Egresos));
+        /*String Totalform = String.format("%.3f", Ingresos - Egresos);
+        this.deposito.setText("" + Totalform + "");*/
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -3099,8 +3096,19 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         AgregarNP = new javax.swing.JButton();
         Modm = new javax.swing.JButton();
-        deposito = new javax.swing.JLabel();
+        deposito = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        jPanel21 = new javax.swing.JPanel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel126 = new javax.swing.JLabel();
+        jLabel154 = new javax.swing.JLabel();
+        jLabel156 = new javax.swing.JLabel();
+        jLabel158 = new javax.swing.JLabel();
+        jLabel163 = new javax.swing.JLabel();
+        jLabel164 = new javax.swing.JLabel();
+        jLabel165 = new javax.swing.JLabel();
+        jLabel166 = new javax.swing.JLabel();
         TDnomina = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -4995,7 +5003,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                                     .addComponent(Bp, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Playera, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Corbata, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5040,7 +5048,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel89)
                     .addComponent(DVT))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         obs.setColumns(20);
@@ -5082,8 +5090,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deposito)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(deposito))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(AgregarNP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
@@ -5096,8 +5103,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(deposito))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(deposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AgregarNP)
                     .addComponent(Modm))
@@ -5105,6 +5112,93 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         );
 
         jLabel12.setText("Observaciones:");
+
+        jPanel21.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel48.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel48.setText("Dias festivos.");
+
+        jLabel73.setText("- 1o. de enero.");
+
+        jLabel126.setText("- El primer lunes de febrero en conmemoración del 5 de febrero");
+
+        jLabel154.setText("- El tercer lunes de marzo en conmemoración del 21 de marzo");
+
+        jLabel156.setText("- 1o. de mayo");
+
+        jLabel158.setText("- 16 de septiembre");
+
+        jLabel163.setText("- El tercer lunes de noviembre en conmemoración del 20 de noviembre;");
+
+        jLabel164.setText("- El 1o. de diciembre de cada seis años, cuando corresponda a la transmisión del Poder Ejecutivo Federal");
+
+        jLabel165.setText("- 25 de diciembre");
+
+        jLabel166.setText("- El que determinen las leyes federales y locales electorales, en el caso de elecciones ordinarias, para efectuar la jornada electoral");
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel158))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addGap(218, 218, 218)
+                        .addComponent(jLabel48))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel73))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel126))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel164))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel156))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel154))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel163))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel165))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel166)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel48)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel73)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel126)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel154)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel156)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel158)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel163)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel164)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel165)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel166)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -5140,11 +5234,11 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                                         .addComponent(BAMNom, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(72, 72, 72)
                                         .addComponent(CS))
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1202, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel17Layout.createSequentialGroup()
                                         .addComponent(jLabel26)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1342, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel17Layout.createSequentialGroup()
                                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5169,10 +5263,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                                         .addGap(76, 76, 76)
                                         .addComponent(jLabel12))
                                     .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(6, 6, 6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
@@ -5213,7 +5309,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                             .addComponent(Bono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5223,7 +5318,11 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -9014,7 +9113,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             R8.setText("0");
             DSGS8.setText("0");
             dv8 = 0;
-            dd8 = 0;
+            dd8 = 1;
             in8 = 0;
         }
         if (dt.equals("V")) {
@@ -10101,7 +10200,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             R1.setText("0");
             DSGS1.setText("0");
             dd = 1;
-            dd = 0;
+            dv = 0;
             in = 0;
         }
         if (dt.equals("V")) {
@@ -10483,6 +10582,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
             pd.setText("" + total + "");
+
         }
         if (Q.equals("2da Quincena de Marzo")) {
             d.setText("16");
@@ -11382,7 +11482,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalene1 = String.format("%.2f", total);
+            pd.setText("" + Totalene1 + "");
 
         }
         if (Q.equals("2da Quincena de Enero")) {
@@ -11427,7 +11528,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 16;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalene2 = String.format("%.2f", total);
+            pd.setText("" + Totalene2 + "");
         }
         if (Q.equals("1ra Quincena de Febrero")) {
             d.setText("1");
@@ -11470,7 +11572,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalfeb1 = String.format("%.2f", total);
+            pd.setText("" + Totalfeb1 + "");
         }
         if (Q.equals("2da Quincena de Febrero")) {
             d.setText("16");
@@ -11511,7 +11614,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 13;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalfeb2 = String.format("%.2f", total);
+            pd.setText("" + Totalfeb2 + "");
         }
         if (Q.equals("2da Quincena de Feb B")) {
             d.setText("16");
@@ -11553,7 +11657,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 14;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalfeb2b = String.format("%.2f", total);
+            pd.setText("" + Totalfeb2b + "");
         }
         if (Q.equals("1ra Quincena de Marzo")) {
             d.setText("1");
@@ -11596,7 +11701,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalmarzo1 = String.format("%.2f", total);
+            pd.setText("" + Totalmarzo1 + "");
         }
         if (Q.equals("2da Quincena de Marzo")) {
             d.setText("16");
@@ -11640,7 +11746,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 16;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalmar2 = String.format("%.2f", total);
+            pd.setText("" + Totalmar2 + "");
         }
 
         if (Q.equals("1ra Quincena de Abril")) {
@@ -11684,7 +11791,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalabr1 = String.format("%.2f", total);
+            pd.setText("" + Totalabr1 + "");
         }
         if (Q.equals("2da Quincena de Abril")) {
             d.setText("16");
@@ -11727,7 +11835,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalabr2 = String.format("%.2f", total);
+            pd.setText("" + Totalabr2 + "");
         }
         if (Q.equals("1ra Quincena de Mayo")) {
             d.setText("1");
@@ -11770,7 +11879,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalmay1 = String.format("%.2f", total);
+            pd.setText("" + Totalmay1 + "");
         }
         if (Q.equals("2da Quincena de Mayo")) {
             d.setText("16");
@@ -11814,7 +11924,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 16;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalmay2 = String.format("%.2f", total);
+            pd.setText("" + Totalmay2 + "");
         }
 
         if (Q.equals("1ra Quincena de Junio")) {
@@ -11858,7 +11969,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totaljun1 = String.format("%.2f", total);
+            pd.setText("" + Totaljun1 + "");
         }
         if (Q.equals("2da Quincena de Junio")) {
             d.setText("16");
@@ -11902,7 +12014,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 16;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totaljun2 = String.format("%.2f", total);
+            pd.setText("" + Totaljun2 + "");
+
         }
         if (Q.equals("1ra Quincena de Julio")) {
             d.setText("1");
@@ -11945,7 +12059,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totaljul1 = String.format("%.2f", total);
+            pd.setText("" + Totaljul1 + "");
+
         }
         if (Q.equals("2da Quincena de Julio")) {
             d.setText("16");
@@ -11989,7 +12105,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 16;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totaljul2 = String.format("%.2f", total);
+            pd.setText("" + Totaljul2 + "");
         }
         if (Q.equals("1ra Quincena de Agosto")) {
             d.setText("1");
@@ -12032,7 +12149,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalago1 = String.format("%.2f", total);
+            pd.setText("" + Totalago1 + "");
+
         }
         if (Q.equals("2da Quincena de Agosto")) {
             d.setText("16");
@@ -12076,7 +12195,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 16;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalago2 = String.format("%.2f", total);
+            pd.setText("" + Totalago2 + "");
+
         }
         if (Q.equals("1ra Quincena de Septiembre")) {
             d.setText("1");
@@ -12119,7 +12240,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalsep1 = String.format("%.2f", total);
+            pd.setText("" + Totalsep1 + "");
+
         }
         if (Q.equals("2da Quincena de Septiembre")) {
             d.setText("16");
@@ -12162,7 +12285,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalsep2 = String.format("%.2f", total);
+            pd.setText("" + Totalsep2 + "");
+
         }
         if (Q.equals("1ra Quincena de Octubre")) {
             d.setText("1");
@@ -12205,7 +12330,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totaloct1 = String.format("%.2f", total);
+            pd.setText("" + Totaloct1 + "");
+
         }
         if (Q.equals("2da Quincena de Octubre")) {
             d.setText("16");
@@ -12249,7 +12376,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 16;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totaloct2 = String.format("%.2f", total);
+            pd.setText("" + Totaloct2 + "");
+
         }
         if (Q.equals("1ra Quincena de Noviembre")) {
             d.setText("1");
@@ -12292,7 +12421,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalnov1 = String.format("%.2f", total);
+            pd.setText("" + Totalnov1 + "");
+
         }
         if (Q.equals("2da Quincena de Noviembre")) {
             d.setText("16");
@@ -12335,7 +12466,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totalnov2 = String.format("%.2f", total);
+            pd.setText("" + Totalnov2 + "");
+
         }
         if (Q.equals("1ra Quincena de Diciembre")) {
             d.setText("1");
@@ -12378,7 +12511,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totaldic1 = String.format("%.2f", total);
+            pd.setText("" + Totaldic1 + "");
+
         }
         if (Q.equals("2da Quincena de Diciembre")) {
             d.setText("16");
@@ -12422,7 +12557,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double b = 16;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            pd.setText("" + total + "");
+            String Totaldic2 = String.format("%.2f", total);
+            pd.setText("" + Totaldic2 + "");
+
         }
         deposito();
     }//GEN-LAST:event_shareMouseClicked
@@ -15552,7 +15689,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel d7;
     private javax.swing.JLabel d8;
     private javax.swing.JLabel d9;
-    private javax.swing.JLabel deposito;
+    private javax.swing.JTextField deposito;
     private javax.swing.JLabel dt;
     private javax.swing.JLabel dt1;
     private javax.swing.JLabel dt10;
@@ -15604,6 +15741,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel124;
     private javax.swing.JLabel jLabel125;
+    private javax.swing.JLabel jLabel126;
     private javax.swing.JLabel jLabel127;
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
@@ -15634,13 +15772,20 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel151;
     private javax.swing.JLabel jLabel152;
     private javax.swing.JLabel jLabel153;
+    private javax.swing.JLabel jLabel154;
     private javax.swing.JLabel jLabel155;
+    private javax.swing.JLabel jLabel156;
     private javax.swing.JLabel jLabel157;
+    private javax.swing.JLabel jLabel158;
     private javax.swing.JLabel jLabel159;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel160;
     private javax.swing.JLabel jLabel161;
     private javax.swing.JLabel jLabel162;
+    private javax.swing.JLabel jLabel163;
+    private javax.swing.JLabel jLabel164;
+    private javax.swing.JLabel jLabel165;
+    private javax.swing.JLabel jLabel166;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -15675,6 +15820,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
@@ -15702,6 +15848,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
@@ -15746,6 +15893,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
