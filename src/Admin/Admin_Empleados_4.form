@@ -857,7 +857,7 @@
                                   <Component id="DO" min="-2" pref="145" max="-2" attributes="0"/>
                                   <Component id="DF" min="-2" pref="145" max="-2" attributes="0"/>
                                   <Component id="DE" min="-2" pref="145" max="-2" attributes="0"/>
-                                  <Component id="cbf" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bf" min="-2" max="-2" attributes="0"/>
                                   <Component id="cfin" min="-2" max="-2" attributes="0"/>
                                   <Component id="NRP" min="-2" pref="145" max="-2" attributes="0"/>
                                   <Component id="FE" min="-2" pref="145" max="-2" attributes="0"/>
@@ -916,7 +916,7 @@
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel69" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbf" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bf" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1000,7 +1000,7 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="DE">
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="cbf">
+                    <Component class="javax.swing.JComboBox" name="bf">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="7">
@@ -3271,11 +3271,10 @@
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="jLabel106" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel102" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel108" alignment="1" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel109" alignment="1" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel110" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -3283,7 +3282,6 @@
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="FDD" max="32767" attributes="0"/>
                                       <Component id="MDP" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ADN" alignment="0" max="32767" attributes="0"/>
                                       <Component id="FDP" min="-2" max="-2" attributes="0"/>
                                       <Component id="jScrollPane16" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -3297,7 +3295,7 @@
                                       <Component id="jPanel18" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jPanel14" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jPanel17" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="Adddeposito" min="-2" max="-2" attributes="0"/>
@@ -3305,7 +3303,7 @@
                                   <Component id="Adddeposito1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="25" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3316,79 +3314,67 @@
                           <Component id="jLabel133" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jPanel14" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="487" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jPanel18" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jPanel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jPanel15" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Quincenas" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jPanel15" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Quincenas" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel101" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="año" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Component id="Datgen2" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel89" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="pd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel123" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="deposito" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel101" min="-2" max="-2" attributes="0"/>
+                                              <Component id="año" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <Component id="Datgen2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel89" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="pd" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel123" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="deposito" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="jPanel17" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel102" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FDD" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel106" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="MDP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel109" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FDP" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="jLabel102" min="-2" max="-2" attributes="0"/>
-                                              <Component id="FDD" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel106" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="MDP" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel108" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="ADN" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel109" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="FDP" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel110" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jScrollPane16" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jPanel16" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="Adddeposito" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Adddeposito1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <Component id="jLabel110" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane16" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="191" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jPanel16" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Adddeposito" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Adddeposito1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
+                          <EmptySpace pref="207" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3803,283 +3789,6 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Container class="javax.swing.JPanel" name="jPanel14">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="cc" type="rgb"/>
-                    </Property>
-                  </Properties>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-                                      <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jLabel91" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel90" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel92" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel93" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel94" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel95" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Grua" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="Fde" min="-2" pref="65" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jLabel100" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="Chaleco" min="-2" pref="65" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jLabel99" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="Chamarra" min="-2" pref="65" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jLabel98" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="Sancion" min="-2" pref="65" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jLabel97" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="Fdb" min="-2" pref="65" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jLabel96" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="Pantalon" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <Component id="Credencial" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <Component id="Bp" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <Component id="Playera" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <Component id="Corbata" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace pref="14" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel90" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Fdb" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel96" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Pantalon" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel91" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Sancion" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel97" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Credencial" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel92" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Chamarra" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel98" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Bp" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel93" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Chaleco" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel99" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Playera" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel94" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Fde" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel100" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Corbata" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel95" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Grua" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel86">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Dialog" size="18" style="0"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Descuentos varios:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel90">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Faltantes de boleto:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Fdb">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FdbKeyReleased"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel91">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Sancion:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Sancion">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SancionKeyReleased"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel92">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Chamarra:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Chamarra">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ChamarraKeyReleased"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel93">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Chaleco:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Chaleco">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ChalecoKeyReleased"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel94">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Faltante de efectivo:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Fde">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FdeKeyReleased"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel95">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Grua:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Grua">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="GruaKeyReleased"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel96">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Pantalon:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Pantalon">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="PantalonKeyReleased"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel97">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Credencial:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Credencial">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CredencialKeyReleased"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel98">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Boleto perdido:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Bp">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="BpKeyReleased"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel99">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Playera:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Playera">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="PlayeraKeyReleased"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel100">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Corbata:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Corbata">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CorbataKeyReleased"/>
-                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -4556,11 +4265,6 @@
                     <Property name="text" type="java.lang.String" value="Mes de pago:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel108">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Adelanto de nomina:"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel109">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Forma de pago"/>
@@ -4596,8 +4300,6 @@
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
-                </Component>
-                <Component class="javax.swing.JTextField" name="ADN">
                 </Component>
                 <Component class="javax.swing.JComboBox" name="FDP">
                   <Properties>
@@ -4647,6 +4349,325 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Adddeposito1ActionPerformed"/>
                   </Events>
                 </Component>
+                <Container class="javax.swing.JPanel" name="jPanel17">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="cc" type="rgb"/>
+                    </Property>
+                  </Properties>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                                      <Component id="jLabel122" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel124" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DVT" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jLabel126" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel125" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel127" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel129" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel131" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel132" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="Grua" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel167" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="Fde" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel140" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="Chaleco" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel139" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="Chamarra" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel135" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="Sancion" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="Fdb" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel134" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="Pantalon" alignment="0" pref="65" max="32767" attributes="0"/>
+                                          <Component id="Credencial" alignment="0" pref="65" max="32767" attributes="0"/>
+                                          <Component id="Bp" alignment="0" pref="65" max="32767" attributes="0"/>
+                                          <Component id="Playera" alignment="0" pref="65" max="32767" attributes="0"/>
+                                          <Component id="Corbata" alignment="0" pref="65" max="32767" attributes="0"/>
+                                          <Component id="AdN" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel122" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel125" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Fdb" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel134" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pantalon" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel126" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Sancion" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel86" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Credencial" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel127" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Chamarra" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel135" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Bp" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel129" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Chaleco" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel139" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Playera" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel131" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Fde" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel140" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Corbata" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel132" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Grua" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel167" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AdN" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel124" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DVT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="jLabel122">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Dialog" size="18" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Descuentos varios:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel124">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Dialog" size="18" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Total de descuentos varios:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="DVT">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Dialog" size="18" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel125">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Faltantes de boleto:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="Fdb">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FdbKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel126">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Sancion:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="Sancion">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SancionKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel127">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Chamarra:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="Chamarra">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ChamarraKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel129">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Chaleco:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="Chaleco">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ChalecoKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel131">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Faltante de efectivo:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="Fde">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FdeKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel132">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Grua:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="Grua">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="GruaKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel134">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Pantalon:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="Pantalon">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="PantalonKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel86">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Credencial:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="Credencial">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CredencialKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel135">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Boleto perdido:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="Bp">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="BpKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel139">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Playera:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="Playera">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="PlayeraKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel140">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Corbata:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="Corbata">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CorbataKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel167">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Adelanto de nomina:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="AdN">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AdNKeyReleased"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
               </SubComponents>
             </Container>
           </SubComponents>

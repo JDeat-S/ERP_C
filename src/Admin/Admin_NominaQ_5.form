@@ -3099,48 +3099,49 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Grua" min="-2" pref="65" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="Fde" min="-2" pref="65" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="Chaleco" min="-2" pref="65" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jLabel81" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="Chamarra" min="-2" pref="65" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jLabel78" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="Sancion" min="-2" pref="65" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="Fdb" min="-2" pref="65" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="Pantalon" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <Component id="Credencial" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <Component id="Bp" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <Component id="Playera" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <Component id="Corbata" min="-2" pref="65" max="-2" attributes="0"/>
-                                              </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="Grua" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel167" min="-2" max="-2" attributes="0"/>
                                           </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="Fde" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="Chaleco" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel81" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="Chamarra" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel78" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="Sancion" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="Fdb" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="Pantalon" pref="65" max="32767" attributes="0"/>
+                                          <Component id="Credencial" pref="65" max="32767" attributes="0"/>
+                                          <Component id="Bp" pref="65" max="32767" attributes="0"/>
+                                          <Component id="Playera" pref="65" max="32767" attributes="0"/>
+                                          <Component id="Corbata" pref="65" max="32767" attributes="0"/>
+                                          <Component id="AdN" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -3188,6 +3189,8 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel80" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="Grua" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel167" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AdN" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -3365,6 +3368,19 @@
                       </Properties>
                       <Events>
                         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CorbataKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel167">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Adelanto de nomina:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="AdN">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AdNKeyReleased"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -6921,6 +6937,8 @@
                                           <Component id="FillAMCDA" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="botonWeb7" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Eliminarcda" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane14" min="-2" pref="2500" max="-2" attributes="0"/>
                                   </Group>
@@ -6992,7 +7010,10 @@
                                   <Component id="FilAPCDA" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="FillAMCDA" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="botonWeb7" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Component id="Eliminarcda" min="-2" max="-2" attributes="0"/>
+                                  <Component id="botonWeb7" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -7571,6 +7592,14 @@
                 <Component class="javax.swing.JTextField" name="FillAMCDA">
                   <Events>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FillAMCDAKeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="Eliminarcda">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Eliminar"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EliminarcdaActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
