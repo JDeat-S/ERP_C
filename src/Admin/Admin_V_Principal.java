@@ -174,8 +174,10 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
             Tablaarticulos.addColumn("Zona");
             Tablaarticulos.addColumn("Servicio");
             Tablaarticulos.addColumn("Cantidad");
+            Tablaarticulos.addColumn("Primer Folio Disponible");
+            Tablaarticulos.addColumn("Ultimo Folio Disponible");
 
-            int[] anchos = {/*#A*/10, /*Art*/ 50, /*Zona*/ 70, /*Serv*/ 70, /*Can*/ 25};
+            int[] anchos = {/*#A*/10, /*Art*/ 50, /*Zona*/ 70, /*Serv*/ 70, /*Can*/ 25, /*PFD*/ 100, /*UFD*/100};
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TArticulos.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
@@ -225,8 +227,10 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
             Tablaarticulos.addColumn("Zona");
             Tablaarticulos.addColumn("Servicio");
             Tablaarticulos.addColumn("Cantidad");
+            Tablaarticulos.addColumn("Primer Folio Disponible");
+            Tablaarticulos.addColumn("Ultimo Folio Disponible");
 
-            int[] anchos = {/*#A*/10, /*Art*/ 50, /*Zona*/ 70, /*Serv*/ 70, /*Can*/ 25};
+            int[] anchos = {/*#A*/10, /*Art*/ 50, /*Zona*/ 70, /*Serv*/ 70, /*Can*/ 25, /*PFD*/ 100, /*UFD*/100};
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TArticulos.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
@@ -276,8 +280,10 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
             Tablaarticulos.addColumn("Zona");
             Tablaarticulos.addColumn("Servicio");
             Tablaarticulos.addColumn("Cantidad");
+            Tablaarticulos.addColumn("Primer Folio Disponible");
+            Tablaarticulos.addColumn("Ultimo Folio Disponible");
 
-            int[] anchos = {/*#A*/10, /*Art*/ 50, /*Zona*/ 70, /*Serv*/ 70, /*Can*/ 25};
+            int[] anchos = {/*#A*/10, /*Art*/ 50, /*Zona*/ 70, /*Serv*/ 70, /*Can*/ 25, /*PFD*/ 100, /*UFD*/100};
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TArticulos.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
