@@ -4518,7 +4518,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         jLabel99.setText("Apellido M:");
 
-        jLabel100.setText("Nombres(s):");
+        jLabel100.setText("Nombre(s):");
 
         jLabel141.setText("# empleado:");
 

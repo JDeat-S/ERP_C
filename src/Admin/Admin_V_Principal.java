@@ -40,7 +40,17 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
         Zonas zz = new Zonas();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
         AgregarZ.setModel(modelzonas);
+        FiltrosZonas SeleccionZ = new FiltrosZonas();
+        DefaultComboBoxModel SZon = new DefaultComboBoxModel(SeleccionZ.mostrarzonas());
+        Zonacbx.setModel(SZon);
+        FiltrosZonas FilZ = new FiltrosZonas();
+        DefaultComboBoxModel Fzon = new DefaultComboBoxModel(FilZ.mostrarzonas());
+        FilZonAlm.setModel(Fzon);
         MDAlm();
+        Servart.setVisible(false);
+        Servcbx.setVisible(false);
+        Zonart.setVisible(false);
+        Zonacbx.setVisible(false);
 
     }
 
@@ -73,8 +83,8 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
 
         } catch (SQLException e) {
 
-            JOptionPane.showMessageDialog(null, "Error al mostrar cantidad de rollos termicos: " +e);
-            
+            JOptionPane.showMessageDialog(null, "Error al mostrar cantidad de rollos termicos: " + e);
+
         }
         String SQLBP = "SELECT `Cantidad` FROM `almacen.articulos` where `Articulo` LIKE '%Blocks Padrones%'";
         try {
@@ -88,10 +98,10 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
 
         } catch (SQLException e) {
 
-            JOptionPane.showMessageDialog(null, "Error al mostrar cantidad de Block de padrones: " +e);
-            
+            JOptionPane.showMessageDialog(null, "Error al mostrar cantidad de Block de padrones: " + e);
+
         }
-        
+
     }
 
     public void MDAlm() {
@@ -101,6 +111,10 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
             SQL = "select * from `almacen.articulos` where `Cantidad` LIKE '%" + Filcanart.getText() + "%'";
         } else if (!"".equals(FilArticulos.getSelectedItem().toString())) {
             SQL = "select * from `almacen.articulos` where `Articulo` LIKE '%" + FilArticulos.getSelectedItem().toString() + "%'";
+        } else if (!" ".equals(FilZonAlm.getSelectedItem().toString())) {
+            SQL = "select * from `almacen.articulos` where `Zona` LIKE '%" + FilZonAlm.getSelectedItem().toString() + "%'";
+        } else if (!" ".equals(FilServAlm.getSelectedItem().toString())) {
+            SQL = "select * from `almacen.articulos` where `Servicio` LIKE '%" + FilServAlm.getSelectedItem().toString() + "%'";
         }
         try {
             DefaultTableModel Tablaarticulos = new DefaultTableModel() {
@@ -122,9 +136,113 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
 
             Tablaarticulos.addColumn("# Articulo");//1
             Tablaarticulos.addColumn("Articulo");
+            Tablaarticulos.addColumn("Zona");
+            Tablaarticulos.addColumn("Servicio");
             Tablaarticulos.addColumn("Cantidad");
 
-            int[] anchos = {/*#A*/10, /*Art*/ 50, /*Can*/ 25};
+            int[] anchos = {/*#A*/10, /*Art*/ 50, /*Zona*/ 70, /*Serv*/ 70, /*Can*/ 25};
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TArticulos.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                Tablaarticulos.addRow(filas);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Articulos " + e.getMessage());
+
+        }
+    }
+
+    public void FilZonalm() {
+        String SQL = "Select * from `almacen.articulos`";
+
+        if (!"".equals(FilZonAlm.getSelectedItem().toString())) {
+            SQL = "select * from `almacen.articulos` where `Zona` LIKE '%" + FilZonAlm.getSelectedItem().toString() + "%'";
+        }
+        try {
+            DefaultTableModel Tablaarticulos = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+
+            TArticulos.setModel(Tablaarticulos);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            Tablaarticulos.addColumn("# Articulo");//1
+            Tablaarticulos.addColumn("Articulo");
+            Tablaarticulos.addColumn("Zona");
+            Tablaarticulos.addColumn("Servicio");
+            Tablaarticulos.addColumn("Cantidad");
+
+            int[] anchos = {/*#A*/10, /*Art*/ 50, /*Zona*/ 70, /*Serv*/ 70, /*Can*/ 25};
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TArticulos.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                Tablaarticulos.addRow(filas);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Articulos " + e.getMessage());
+
+        }
+    }
+
+    public void FilServalm() {
+        String SQL = "Select * from `almacen.articulos`";
+
+        if (!"".equals(FilServAlm.getSelectedItem().toString())) {
+            SQL = "select * from `almacen.articulos` where `Servicio` LIKE '%" + FilServAlm.getSelectedItem().toString() + "%'";
+        }
+        try {
+            DefaultTableModel Tablaarticulos = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+
+            TArticulos.setModel(Tablaarticulos);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            Tablaarticulos.addColumn("# Articulo");//1
+            Tablaarticulos.addColumn("Articulo");
+            Tablaarticulos.addColumn("Zona");
+            Tablaarticulos.addColumn("Servicio");
+            Tablaarticulos.addColumn("Cantidad");
+
+            int[] anchos = {/*#A*/10, /*Art*/ 50, /*Zona*/ 70, /*Serv*/ 70, /*Can*/ 25};
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TArticulos.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
@@ -146,14 +264,17 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
     }
 
     public void ModAr() {
-        String SQL = "UPDATE `almacen.articulos` SET `idArticulo` = ?, `Articulo` = ?, `Cantidad` = ? WHERE `almacen.articulos`.`idArticulo` = ?";
+        String SQL = "UPDATE `almacen.articulos` SET `idArticulo` = ?, `Articulo` = ?, `Zona` = ?, "
+                + "`Servicio` = ?, `Cantidad` = ? WHERE `almacen.articulos`.`idArticulo` = ?";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setInt(1, Integer.parseInt(NArt.getText()));
             pst.setString(2, SeleccionarArt.getSelectedItem().toString());
-            pst.setInt(3, Integer.parseInt(CanArt.getText()));
-            pst.setInt(4, Integer.parseInt(NArt.getText()));
+            pst.setString(3, Zonacbx.getSelectedItem().toString());
+            pst.setString(4, Servcbx.getSelectedItem().toString());
+            pst.setInt(5, Integer.parseInt(CanArt.getText()));
+            pst.setInt(6, Integer.parseInt(NArt.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Articulo Modificado");
@@ -161,6 +282,9 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
             NArt.setText("0");
             SeleccionarArt.setSelectedIndex(0);
             CanArt.setText("");
+            Zonacbx.setSelectedIndex(0);
+            Servcbx.setSelectedIndex(0);
+            MDAlm();
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar articulo: " + e);
@@ -171,20 +295,26 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
 
     public void AgregarAr() {
         String SQL = "INSERT INTO `confort`.`almacen.articulos` (`idArticulo`, `Articulo`,"
-                + "`Cantidad`) VALUES (?, ?, ?)";
+                + "`Zona`, `Servicio`, `Cantidad`) VALUES (?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setInt(1, Integer.parseInt(NArt.getText()));
             pst.setString(2, SeleccionarArt.getSelectedItem().toString());
-            pst.setInt(3, Integer.parseInt(CanArt.getText()));
+            pst.setString(3, Zonacbx.getSelectedItem().toString());
+            pst.setString(4, Servcbx.getSelectedItem().toString());
+            pst.setInt(5, Integer.parseInt(CanArt.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Articulo agregado");
 
+            /*limpiar*/
             NArt.setText("0");
             SeleccionarArt.setSelectedIndex(0);
             CanArt.setText("");
+            Zonacbx.setSelectedIndex(0);
+            Servcbx.setSelectedIndex(0);
+            MDAlm();
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar articulo: " + e);
@@ -207,16 +337,23 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel26 = new javax.swing.JLabel();
+        FilTalm = new javax.swing.JComboBox<>();
+        Filart = new javax.swing.JLabel();
         FilArticulos = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         TArticulos = new javax.swing.JTable();
         Filcanart = new javax.swing.JTextField();
+        LabelFilZon = new javax.swing.JLabel();
+        FilZonAlm = new javax.swing.JComboBox<>();
+        FilServAlm = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         NArt = new javax.swing.JTextField();
+        Zonart = new javax.swing.JLabel();
+        Zonacbx = new javax.swing.JComboBox<>();
+        Servart = new javax.swing.JLabel();
+        Servcbx = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -252,10 +389,21 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
         AgregarS = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         AgregarZ = new javax.swing.JComboBox<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jPanel6 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        SeleccionarArt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona Articulo", "Blocks Padrones", "Blocks RDV", "Blocks RDB", "Blocks Boletaje", "Rollo termico" }));
+        SeleccionarArt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona Articulo", "Blocks Boletaje", "Blocks Padrones", "Blocks RDV", "Blocks RDB", "Rollo termico" }));
         SeleccionarArt.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 SeleccionarArtItemStateChanged(evt);
@@ -270,9 +418,14 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
 
         jLabel25.setText("Filtrar por:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Articulo", "Cantidad" }));
+        FilTalm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Zona", "Servicio", "Articulo", "Cantidad" }));
+        FilTalm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FilTalmActionPerformed(evt);
+            }
+        });
 
-        jLabel26.setText("jLabel26");
+        Filart.setText("jLabel26");
 
         FilArticulos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Blocks Padrones", "Blocks RDV", "Blocks RDB", "Blocks Boletaje", "Rollo termico" }));
         FilArticulos.addItemListener(new java.awt.event.ItemListener() {
@@ -305,14 +458,26 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
             }
         });
 
+        LabelFilZon.setText("Selecciona Zona:");
+
+        FilZonAlm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        FilZonAlm.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FilZonAlmItemStateChanged(evt);
+            }
+        });
+
+        FilServAlm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FilServAlm.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FilServAlmItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(329, Short.MAX_VALUE)
-                .addComponent(jLabel24)
-                .addGap(370, 370, 370))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,30 +485,40 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FilTalm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel26)
+                        .addComponent(LabelFilZon)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FilZonAlm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Filart)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FilServAlm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FilArticulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Filcanart, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel24)
+                        .addGap(0, 99, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel26)
+                    .addComponent(FilTalm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Filart)
                     .addComponent(FilArticulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Filcanart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Filcanart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24)
+                    .addComponent(LabelFilZon)
+                    .addComponent(FilZonAlm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FilServAlm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -360,6 +535,19 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
 
         NArt.setText("0");
 
+        Zonart.setText("Zona:");
+
+        Zonacbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Zonacbx.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ZonacbxItemStateChanged(evt);
+            }
+        });
+
+        Servart.setText("Servicio:");
+
+        Servcbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -369,21 +557,32 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Zonart)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NArt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel22)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NArt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SeleccionarArt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CanArt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(SeleccionarArt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel23)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CanArt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Zonacbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Servart)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Servcbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -401,13 +600,19 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(NArt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Zonart)
+                    .addComponent(Zonacbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Servart)
+                    .addComponent(Servcbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jScrollPane2.setViewportView(jPanel2);
 
-        jTabbedPane1.addTab("Articulos almacen", jScrollPane2);
+        jTabbedPane1.addTab("Almacen", jScrollPane2);
 
         jLabel1.setText("Zona:");
 
@@ -652,6 +857,60 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Entradas", jScrollPane1);
 
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 805, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 598, Short.MAX_VALUE)
+        );
+
+        jScrollPane5.setViewportView(jPanel4);
+
+        jTabbedPane2.addTab("Entradas", jScrollPane5);
+        jTabbedPane2.addTab("Salidas", jScrollPane6);
+
+        jScrollPane4.setViewportView(jTabbedPane2);
+
+        jTabbedPane1.addTab("Blocks de voletaje", jScrollPane4);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 805, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 598, Short.MAX_VALUE)
+        );
+
+        jScrollPane8.setViewportView(jPanel5);
+
+        jTabbedPane3.addTab("Entradas", jScrollPane8);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 805, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 598, Short.MAX_VALUE)
+        );
+
+        jScrollPane9.setViewportView(jPanel6);
+
+        jTabbedPane3.addTab("Salidas", jScrollPane9);
+
+        jScrollPane7.setViewportView(jTabbedPane3);
+
+        jTabbedPane1.addTab("Blocks Padrones", jScrollPane7);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -677,7 +936,43 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_AgregarZItemStateChanged
 
     private void SeleccionarArtItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SeleccionarArtItemStateChanged
-        // TODO add your handling code here:
+        if (SeleccionarArt.getSelectedItem().toString().equals("Selecciona Articulo")) {
+            Servart.setVisible(false);
+            Servcbx.setVisible(false);
+            Zonart.setVisible(false);
+            Zonacbx.setVisible(false);
+        }
+        if (SeleccionarArt.getSelectedItem().toString().equals("Blocks Boletaje")) {
+            Servart.setVisible(true);
+            Servcbx.setVisible(true);
+            Zonart.setVisible(true);
+            Zonacbx.setVisible(true);
+        }
+        if (SeleccionarArt.getSelectedItem().toString().equals("Blocks Padrones")) {
+            Servart.setVisible(true);
+            Servcbx.setVisible(true);
+            Zonart.setVisible(true);
+            Zonacbx.setVisible(true);
+        }
+        if (SeleccionarArt.getSelectedItem().toString().equals("Blocks RDV")) {
+            Servart.setVisible(false);
+            Servcbx.setVisible(false);
+            Zonart.setVisible(false);
+            Zonacbx.setVisible(false);
+        }
+        if (SeleccionarArt.getSelectedItem().toString().equals("Blocks RDB")) {
+            Servart.setVisible(false);
+            Servcbx.setVisible(false);
+            Zonart.setVisible(false);
+            Zonacbx.setVisible(false);
+        }
+        if (SeleccionarArt.getSelectedItem().toString().equals("Rollo termico")) {
+            Servart.setVisible(false);
+            Servcbx.setVisible(false);
+            Zonart.setVisible(false);
+            Zonacbx.setVisible(false);
+        }
+
     }//GEN-LAST:event_SeleccionarArtItemStateChanged
 
     private void FEmpiezaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FEmpiezaKeyReleased
@@ -740,8 +1035,80 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
                 SeleccionarArt.setSelectedIndex(i);
             }
         }
-        CanArt.setText(String.valueOf(TArticulos.getValueAt(fila, 2)));
+
+        CanArt.setText(String.valueOf(TArticulos.getValueAt(fila, 4)));
     }//GEN-LAST:event_TArticulosMouseClicked
+
+    private void ZonacbxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ZonacbxItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) Zonacbx.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            Servcbx.setModel(modelServicio);
+        }
+    }//GEN-LAST:event_ZonacbxItemStateChanged
+
+    private void FilZonAlmItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FilZonAlmItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FilZonAlm.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FilServAlm.setModel(modelServicio);
+        }
+        FilZonalm();
+    }//GEN-LAST:event_FilZonAlmItemStateChanged
+
+    private void FilTalmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilTalmActionPerformed
+        if (FilTalm.getSelectedItem().toString().equals("Selecciona filtro")) {
+            LabelFilZon.setVisible(false);
+            FilZonAlm.setVisible(false);
+            Filart.setVisible(false);
+            FilServAlm.setVisible(false);
+            FilArticulos.setVisible(false);
+            Filcanart.setVisible(false);
+        }
+        if (FilTalm.getSelectedItem().toString().equals("Zona")) {
+            LabelFilZon.setVisible(true);
+            FilZonAlm.setVisible(true);
+            Filart.setVisible(false);
+            FilServAlm.setVisible(false);
+            FilArticulos.setVisible(false);
+            Filcanart.setVisible(false);
+        }
+        if (FilTalm.getSelectedItem().toString().equals("Servicio")) {
+            LabelFilZon.setVisible(true);
+            FilZonAlm.setVisible(true);
+            Filart.setVisible(true);
+            Filart.setText("Selecciona servicio:");
+            FilServAlm.setVisible(true);
+            FilArticulos.setVisible(false);
+            Filcanart.setVisible(false);
+        }
+        if (FilTalm.getSelectedItem().toString().equals("Articulo")) {
+            LabelFilZon.setVisible(false);
+            FilZonAlm.setVisible(false);
+            Filart.setVisible(true);
+            Filart.setText("Selecciona Articulo:");
+            FilServAlm.setVisible(false);
+            FilArticulos.setVisible(true);
+            Filcanart.setVisible(false);
+        }
+        if (FilTalm.getSelectedItem().toString().equals("Cantidad")) {
+            LabelFilZon.setVisible(false);
+            FilZonAlm.setVisible(false);
+            Filart.setVisible(true);
+            Filart.setText("Escribe cantidad:");
+            FilServAlm.setVisible(false);
+            FilArticulos.setVisible(false);
+            Filcanart.setVisible(true);
+        }
+
+    }//GEN-LAST:event_FilTalmActionPerformed
+
+    private void FilServAlmItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FilServAlmItemStateChanged
+        FilServalm();
+
+    }//GEN-LAST:event_FilServAlmItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -785,19 +1152,27 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
     private javax.swing.JTextField CanArt;
     private javax.swing.JTextField FEmpieza;
     private javax.swing.JComboBox<String> FilArticulos;
+    private javax.swing.JComboBox<String> FilServAlm;
+    private javax.swing.JComboBox<String> FilTalm;
+    private javax.swing.JComboBox<String> FilZonAlm;
+    private javax.swing.JLabel Filart;
     private javax.swing.JTextField Filcanart;
     private javax.swing.JTextField Ftermina;
     private javax.swing.JLabel LabelCDL;
+    private javax.swing.JLabel LabelFilZon;
     private javax.swing.JLabel LabelPD;
     private javax.swing.JLabel LabelRD;
     private javax.swing.JTextField NArt;
     private javax.swing.JComboBox<String> SeleccionarArt;
     private javax.swing.JComboBox<String> Serv;
+    private javax.swing.JLabel Servart;
+    private javax.swing.JComboBox<String> Servcbx;
     private javax.swing.JTable TArticulos;
+    private javax.swing.JComboBox<String> Zonacbx;
+    private javax.swing.JLabel Zonart;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox6;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
@@ -816,7 +1191,6 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -827,10 +1201,21 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> zona;
     // End of variables declaration//GEN-END:variables

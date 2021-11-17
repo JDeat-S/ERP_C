@@ -2912,7 +2912,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         PDDT.setText("" + totaldt);
 
         double FAL = Double.parseDouble(this.F.getText());
-        double totalFAL = (350 * FAL);
+        double totalFAL = ((350 * FAL) - (PD * FAL));
         DPF.setText("" + totalFAL);
 
         double RET = Double.parseDouble(this.R.getText());
@@ -3915,7 +3915,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel4.setText("Apellido M:");
 
-        jLabel27.setText("Nombres(s):");
+        jLabel27.setText("Nombre(s):");
 
         jLabel127.setText("# empleado:");
 
