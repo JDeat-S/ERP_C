@@ -674,24 +674,46 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
 //auto ODT
     public void PagoODT() {
+        String Otropagoodt = PenODTnom.getText();
 
-        String SQL = "UPDATE `taller` SET `Pagado` = ?, `Pendiente` = ?, "
-                + "`Quincenas pagadas` = ? WHERE `taller`.`idTaller` = ?";
+        if (Otropagoodt.equals("0.0")) {
+            String SQL = "UPDATE `taller` SET `Status` = 'Pagado', `Quincenas pagadas` = ?,"
+                    + " `Pagado` = ?, `Pendiente` = ? WHERE `taller`.`idTaller` = ?";
 
-        try {
-            PreparedStatement pst = con.prepareStatement(SQL);
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, PagODTnom.getText());
-            pst.setString(2, PenODTnom.getText());
-            pst.setString(3, NQODTnom.getText());
-            pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
+                pst.setString(1, NQprenom.getText());
+                pst.setString(2, Pagadoprenom.getText());
+                pst.setString(3, Pendienteprenom.getText());
+                pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
 
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Abono de orden de taller agregado.");
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Abono de taller agregado.");
 
-        } catch (HeadlessException | SQLException error_auto_odt) {
-            JOptionPane.showMessageDialog(null, "Error al abonar orden de taller: " + error_auto_odt.getMessage());
+            } catch (HeadlessException | SQLException error_auto_odt) {
+                JOptionPane.showMessageDialog(null, "Error al abonar orden de taller: " + error_auto_odt.getMessage());
+            }
+        } else if (Otropagoodt.equals(PenODTnom.getText())) {
+            String SQL = "UPDATE `taller` SET `Status` = 'Debe', `Pagado` = ?, `Pendiente` = ?, "
+                    + "`Quincenas pagadas` = ? WHERE `taller`.`idTaller` = ?";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setString(1, PagODTnom.getText());
+                pst.setString(2, PenODTnom.getText());
+                pst.setString(3, NQODTnom.getText());
+                pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Abono de orden de taller agregado.");
+
+            } catch (HeadlessException | SQLException error_auto_odt) {
+                JOptionPane.showMessageDialog(null, "Error al abonar orden de taller: " + error_auto_odt.getMessage());
+            }
         }
+
     }
 
     public void shareODTnom() {
@@ -699,20 +721,20 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         String FAP = BAPNom.getText();
         String FAM = BAMNom.getText();
         String where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Por quincenas`, `Quincenas pagadas`,`Pagado`, `Pendiente` FROM `taller`";
+                + " `Por quincenas`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `taller`";
 
         if (!"".equals(FiltroN)) {
             where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por quincenas`, `Quincenas pagadas`,`Pagado`, `Pendiente` FROM `taller`"
-                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+                    + " `Por quincenas`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `taller`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%' AND `Status` LIKE '%Debe%'";
         } else if (!"".equals(FAP)) {
             where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`, "
-                    + "`Por quincenas`, `Quincenas pagadas`,`Pagado`, `Pendiente` FROM `taller`"
-                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+                    + "`Por quincenas`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `taller`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%' AND `Status` LIKE '%Debe%'";
         } else if (!"".equals(FAM)) {
             where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Por quincenas`,"
-                    + " `Quincenas pagadas`,`Pagado`, `Pendiente` FROM `taller`"
-                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+                    + " `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `taller`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%' AND `Status` LIKE '%Debe%' ";
         }
 
         try {
@@ -770,24 +792,47 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
 //AUTO PRES
     public void Pagopres() {
+        String otroprestamo = Pendienteprenom.getText();
 
-        String SQL = "UPDATE `prestamos` SET  `Quincenas pagadas` = ?,"
-                + " `Pagado` = ?, `Pendiente` = ? WHERE `prestamos`.`idprestamos` = ?";
+        if (otroprestamo.equals("0.0")) {
+            String SQL = "UPDATE `prestamos` SET `Status` = 'Pagado', `Quincenas pagadas` = ?,"
+                    + " `Pagado` = ?, `Pendiente` = ? WHERE `prestamos`.`idprestamos` = ?";
 
-        try {
-            PreparedStatement pst = con.prepareStatement(SQL);
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, NQprenom.getText());
-            pst.setString(2, Pagadoprenom.getText());
-            pst.setString(3, Pendienteprenom.getText());
-            pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
+                pst.setString(1, NQprenom.getText());
+                pst.setString(2, Pagadoprenom.getText());
+                pst.setString(3, Pendienteprenom.getText());
+                pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
 
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Abono de prestamo agregado.");
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Abono de prestamo agregado.");
 
-        } catch (HeadlessException | SQLException error_auto_pres) {
-            JOptionPane.showMessageDialog(null, "Error al abonar prestamo: " + error_auto_pres.getMessage());
+            } catch (HeadlessException | SQLException error_auto_pres) {
+                JOptionPane.showMessageDialog(null, "Error al abonar prestamo: " + error_auto_pres.getMessage());
+            }
+        } else if (otroprestamo.equals(Pendienteprenom.getText())) {
+
+            String SQL = "UPDATE `prestamos` SET `Status` = 'Debe', `Quincenas pagadas` = ?,"
+                    + " `Pagado` = ?, `Pendiente` = ? WHERE `prestamos`.`idprestamos` = ?";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setString(1, NQprenom.getText());
+                pst.setString(2, Pagadoprenom.getText());
+                pst.setString(3, Pendienteprenom.getText());
+                pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Abono de prestamo agregado.");
+
+            } catch (HeadlessException | SQLException error_auto_pres) {
+                JOptionPane.showMessageDialog(null, "Error al abonar prestamo: " + error_auto_pres.getMessage());
+            }
         }
+
     }
 
     public void sharepresnom() {
@@ -800,15 +845,15 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         if (!"".equals(FiltroN)) {
             where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
                     + " `Por quincena`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `prestamos`"
-                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%' AND `Status` LIKE '%Debe%'";
         } else if (!"".equals(FAP)) {
             where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
                     + " `Por quincena`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `prestamos`"
-                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+                    + " Where `Apellido P` LIKE '%" + FAP + "%' AND `Status` LIKE '%Debe%'";
         } else if (!"".equals(FAM)) {
             where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
                     + " `Por quincena`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `prestamos`"
-                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+                    + " Where `Apellido M` LIKE '%" + FAM + "%' AND `Status` LIKE '%Debe%'";
         }
 
         try {
@@ -1804,6 +1849,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Costo total");
             modelo.addColumn("Ingreso a taller");//15
             modelo.addColumn("Status");
+            modelo.addColumn("Pago a");
             modelo.addColumn("Importe a descontar");//17
             modelo.addColumn("Quincenas a pagar");
             modelo.addColumn("Pagado");
@@ -1817,7 +1863,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             int[] anchos = {/*ndo*/35, /*fde*/ 50, /*ap*/ 55, /*am*/ 55, /*nom*/ 150,
                 /*Zon*/ 60, /*serv*/ 75, /*Marca*/ 60, /*Modelo*/ 60, /*Placas*/ 60, /*Color*/ 60,
                 /*NDP*/ 50, /*Daño*/ 500,
-                /*CT*/ 55, /*IAT*/ 60, /*Status*/ 60, /*IAD*/ 60, /*QAP*/ 60, /*PAGA*/ 55,
+                /*CT*/ 55, /*IAT*/ 60, /*Status*/ 60, /*pago a*/ 70, /*IAD*/ 60, /*QAP*/ 60, /*PAGA*/ 55,
                 /*PENDIENTE*/ 55, /*PPQ*/ 70, /*FDP*/ 65, /*QP*/ 50, /*obs*/ 1000};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -1856,7 +1902,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 + " `Apellido M` = ?, `Nombre(s)` = ?, `Zona` = ?,"
                 + " `Servicio` = ?, `Marca` = ?, `Modelo` = ?, `Placas` = ?,"
                 + " `Color` = ?, `# de piezas` = ?, `Daño` = ?, `Costo total` = ?,"
-                + " `Ingreso a taller` = ?, `Status` = ?, `Importe a descontar` = ?, `Quincenas a pagar` = ?, "
+                + " `Ingreso a taller` = ?, `Status` = ?, `Pago a` = ?, `Importe a descontar` = ?, `Quincenas a pagar` = ?, "
                 + " `Pagado` = ?, `Pendiente` = ?, `Por quincenas` = ?, `Forma de pago` = ?,"
                 + " `Quincenas pagadas` = ?, `Observaciones` = ? WHERE `taller`.`idTaller` = ?";
 
@@ -1878,16 +1924,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             pst.setString(13, Daño.getText());
             pst.setString(14, CT.getText());
             pst.setString(15, Iat);
-            pst.setString(16, Statustaller.getSelectedItem().toString());
-            pst.setString(17, Iad.getText());
-            pst.setString(18, QAP.getSelectedItem().toString());
-            pst.setString(19, Pagado.getText());
-            pst.setString(20, Pendiente.getText());
-            pst.setString(21, PQT.getText());
-            pst.setString(22, Fdp.getSelectedItem().toString());
-            pst.setString(23, QPodt.getText());
-            pst.setString(24, Observaciones.getText());
-            pst.setInt(25, id);
+            pst.setString(16, Statusodt.getSelectedItem().toString());
+            pst.setString(17, Paodt.getSelectedItem().toString());
+            pst.setString(18, Iad.getText());
+            pst.setString(19, QAP.getSelectedItem().toString());
+            pst.setString(20, Pagado.getText());
+            pst.setString(21, Pendiente.getText());
+            pst.setString(22, PQT.getText());
+            pst.setString(23, Fdp.getSelectedItem().toString());
+            pst.setString(24, QPodt.getText());
+            pst.setString(25, Observaciones.getText());
+            pst.setInt(26, id);
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Orden Modificada");
@@ -1910,7 +1957,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         ndp.setText("");
         Daño.setText("");
         CT.setText("0");
-        Statustaller.setSelectedIndex(0);
+        Statusodt.setSelectedIndex(0);
+        Paodt.setSelectedIndex(0);
         Iad.setText("0");
         QAP.setSelectedIndex(0);
         PQT.setText("");
@@ -1962,7 +2010,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         String SQL = "INSERT INTO `taller` (`idTaller`, `Fecha de expedicion`,"
                 + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`,"
                 + " `Marca`, `Modelo`, `Placas`, `Color`, `# de piezas`, `Daño`,"
-                + " `Costo total`, `Ingreso a taller`, `Status`, `Importe a descontar`, `Quincenas a pagar`,"
+                + " `Costo total`, `Ingreso a taller`, `Status`, `Pago a`, `Importe a descontar`, `Quincenas a pagar`,"
                 + " `Pagado`, `Pendiente`, `Por quincenas`, `Forma de pago`, `Quincenas pagadas`, `Observaciones`) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
@@ -1983,15 +2031,16 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             pst.setString(13, Daño.getText());
             pst.setString(14, CT.getText());
             pst.setString(15, Iat);
-            pst.setString(16, Statustaller.getSelectedItem().toString());
-            pst.setString(17, Iad.getText());
-            pst.setString(18, QAP.getSelectedItem().toString());
-            pst.setString(19, Pagado.getText());
-            pst.setString(20, Pendiente.getText());
-            pst.setString(21, PQT.getText());
-            pst.setString(22, Fdp.getSelectedItem().toString());
-            pst.setString(23, QPodt.getText());
-            pst.setString(24, Observaciones.getText());
+            pst.setString(16, Statusodt.getSelectedItem().toString());
+            pst.setString(17, Paodt.getSelectedItem().toString());
+            pst.setString(18, Iad.getText());
+            pst.setString(19, QAP.getSelectedItem().toString());
+            pst.setString(20, Pagado.getText());
+            pst.setString(21, Pendiente.getText());
+            pst.setString(22, PQT.getText());
+            pst.setString(23, Fdp.getSelectedItem().toString());
+            pst.setString(24, QPodt.getText());
+            pst.setString(25, Observaciones.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Orden de Taller Agregada");
@@ -2751,9 +2800,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         double IN14 = Double.parseDouble(this.PDDD.getText());
         double IN1 = Double.parseDouble(this.PDDL.getText());
         double IN6 = Double.parseDouble(this.PDDT.getText());
+        double IN2 = Double.parseDouble(this.PDDDV.getText());
         double IN13 = Double.parseDouble(this.PDDDDSGS.getText());
 
-        double Ingresos = (IN13 + IN10 + IN9 + IN6 + IN3 + IN5 + IN14 + IN15 + IN1);
+        double Ingresos = (IN13 + IN10 + IN9 + IN6 + IN3 + IN5 + IN14 + IN15 + IN1 + IN2);
         double Egresos = (EG1 + EG2 + EG7 + EG8 + EG4 + EG16);
         DecimalFormat df = new DecimalFormat("#.00");
         this.deposito.setText(df.format(Ingresos - Egresos));
@@ -3256,7 +3306,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         CT = new javax.swing.JTextField();
         Si = new javax.swing.JRadioButton();
         no = new javax.swing.JRadioButton();
-        Statustaller = new javax.swing.JComboBox<>();
+        Paodt = new javax.swing.JComboBox<>();
         Iad = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
         Pagado = new javax.swing.JTextField();
@@ -3310,6 +3360,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel151 = new javax.swing.JLabel();
         QPodt = new javax.swing.JTextField();
+        Statusodt = new javax.swing.JComboBox<>();
+        jLabel168 = new javax.swing.JLabel();
         TTalleres = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
         Labelfilodt = new javax.swing.JLabel();
@@ -6311,7 +6363,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         no.setText("No");
 
-        Statustaller.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Pago a cliente", "Pago a cerrajeria", "Vencida", "Pago a taller" }));
+        Paodt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Pago a cliente", "Pago a cerrajeria", "Vencida", "Pago a taller" }));
 
         Iad.setText("0");
 
@@ -6546,6 +6598,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         QPodt.setText("0");
 
+        Statusodt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Debe", "Pagado", "Baja" }));
+
+        jLabel168.setText("Pago a:");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -6603,7 +6659,11 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(QPodt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(Statustaller, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Statusodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel168)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Paodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel71)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -6686,9 +6746,11 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                                         .addComponent(jLabel71)
                                         .addComponent(QAP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel72)
-                                        .addComponent(Statustaller, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Paodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel53)
-                                        .addComponent(PQT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(PQT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Statusodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel168))))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel56)
@@ -12888,28 +12950,36 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             ndp.setText(String.valueOf(OdT.getValueAt(fila, 11)));
             Daño.setText(String.valueOf(OdT.getValueAt(fila, 12)));
             CT.setText(String.valueOf(OdT.getValueAt(fila, 13)));
-            //ingreso a taller 14
-            Iad.setText(String.valueOf(OdT.getValueAt(fila, 16)));
-            Pagado.setText(String.valueOf(OdT.getValueAt(fila, 18)));
-            Pendiente.setText(String.valueOf(OdT.getValueAt(fila, 19)));
-            PQT.setText(String.valueOf(OdT.getValueAt(fila, 20)));
-            Odtp.setText(String.valueOf(OdT.getValueAt(fila, 20)));
-            Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 23)));
+            
+            Iad.setText(String.valueOf(OdT.getValueAt(fila, 17)));
+            
+            Pagado.setText(String.valueOf(OdT.getValueAt(fila, 19)));
+            Pendiente.setText(String.valueOf(OdT.getValueAt(fila, 20)));
+            PQT.setText(String.valueOf(OdT.getValueAt(fila, 21)));
+            
+            Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 24)));
 
-            String combo1 = model.getValueAt(fila, 15).toString();
-            for (int i = 0; i < Statustaller.getItemCount(); i++) {
-                if (Statustaller.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Statustaller.setSelectedIndex(i);
+            String combo4 = model.getValueAt(fila, 15).toString();
+            for (int i = 0; i < Statusodt.getItemCount(); i++) {
+                if (Statusodt.getItemAt(i).equalsIgnoreCase(combo4)) {
+                    Statusodt.setSelectedIndex(i);
                 }
             }
-            //Combobo2
-            String combo3 = model.getValueAt(fila, 17).toString();
+
+            String combo1 = model.getValueAt(fila, 16).toString();
+            for (int i = 0; i < Paodt.getItemCount(); i++) {
+                if (Paodt.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Paodt.setSelectedIndex(i);
+                }
+            }
+            
+            String combo3 = model.getValueAt(fila, 18).toString();
             for (int i = 0; i < QAP.getItemCount(); i++) {
                 if (QAP.getItemAt(i).equalsIgnoreCase(combo3)) {
                     QAP.setSelectedIndex(i);
                 }
             }
-            String combo2 = model.getValueAt(fila, 21).toString();
+            String combo2 = model.getValueAt(fila, 22).toString();
             for (int i = 0; i < Fdp.getItemCount(); i++) {
                 if (Fdp.getItemAt(i).equalsIgnoreCase(combo2)) {
                     Fdp.setSelectedIndex(i);
@@ -13758,6 +13828,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FL.setText(String.valueOf(Pre.getValueAt(seleccionar, 14)));
             Status.setText(String.valueOf(Pre.getValueAt(seleccionar, 15)));
             Metodo.setText(String.valueOf(Pre.getValueAt(seleccionar, 16)));
+            QPprest.setText(String.valueOf(Pre.getValueAt(seleccionar, 17)));
+            PagadoPres.setText(String.valueOf(Pre.getValueAt(seleccionar, 18)));
+            Pendientepres.setText(String.valueOf(Pre.getValueAt(seleccionar, 19)));
 
             int id = Integer.parseInt(Pre.getValueAt(seleccionar, 0).toString());
             String Otrointeres = interes.getText();
@@ -14451,7 +14524,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             pd.setText(String.valueOf(Tnom.getValueAt(fila, 12)));
             String combo1 = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
-                if (Quincenas.getItemAt(i).toString().equalsIgnoreCase(combo1)) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(combo1)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
@@ -14460,127 +14533,106 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             año.setDate(date);
             String combo2 = model.getValueAt(fila, 15).toString();
             for (int i = 0; i < Dia1.getItemCount(); i++) {
-                if (Dia1.getItemAt(i).toString().equalsIgnoreCase(combo2)) {
+                if (Dia1.getItemAt(i).equalsIgnoreCase(combo2)) {
                     Dia1.setSelectedIndex(i);
                 }
             }
             String combo3 = model.getValueAt(fila, 16).toString();
             for (int i = 0; i < DIa2.getItemCount(); i++) {
-                if (DIa2.getItemAt(i).toString().equalsIgnoreCase(combo3)) {
+                if (DIa2.getItemAt(i).equalsIgnoreCase(combo3)) {
                     DIa2.setSelectedIndex(i);
                 }
             }
             String combo4 = model.getValueAt(fila, 17).toString();
             for (int i = 0; i < Dia3.getItemCount(); i++) {
-                if (Dia3.getItemAt(i).toString().equalsIgnoreCase(combo4)) {
+                if (Dia3.getItemAt(i).equalsIgnoreCase(combo4)) {
                     Dia3.setSelectedIndex(i);
                 }
             }
             String combo5 = model.getValueAt(fila, 18).toString();
             for (int i = 0; i < Dia4.getItemCount(); i++) {
-                if (Dia4.getItemAt(i).toString().equalsIgnoreCase(combo5)) {
+                if (Dia4.getItemAt(i).equalsIgnoreCase(combo5)) {
                     Dia4.setSelectedIndex(i);
                 }
             }
             String combo6 = model.getValueAt(fila, 19).toString();
             for (int i = 0; i < Dia5.getItemCount(); i++) {
-                if (Dia5.getItemAt(i).toString().equalsIgnoreCase(combo6)) {
+                if (Dia5.getItemAt(i).equalsIgnoreCase(combo6)) {
                     Dia5.setSelectedIndex(i);
                 }
             }
             String combo7 = model.getValueAt(fila, 20).toString();
             for (int i = 0; i < Dia6.getItemCount(); i++) {
-                if (Dia6.getItemAt(i).toString().equalsIgnoreCase(combo7)) {
+                if (Dia6.getItemAt(i).equalsIgnoreCase(combo7)) {
                     Dia6.setSelectedIndex(i);
                 }
             }
             String combo8 = model.getValueAt(fila, 21).toString();
             for (int i = 0; i < Dia7.getItemCount(); i++) {
-                if (Dia7.getItemAt(i).toString().equalsIgnoreCase(combo8)) {
+                if (Dia7.getItemAt(i).equalsIgnoreCase(combo8)) {
                     Dia7.setSelectedIndex(i);
                 }
             }
             String combo9 = model.getValueAt(fila, 22).toString();
             for (int i = 0; i < Dia8.getItemCount(); i++) {
-                if (Dia8.getItemAt(i).toString().equalsIgnoreCase(combo9)) {
+                if (Dia8.getItemAt(i).equalsIgnoreCase(combo9)) {
                     Dia8.setSelectedIndex(i);
                 }
             }
             String combo10 = model.getValueAt(fila, 23).toString();
             for (int i = 0; i < Dia9.getItemCount(); i++) {
-                if (Dia9.getItemAt(i).toString().equalsIgnoreCase(combo10)) {
+                if (Dia9.getItemAt(i).equalsIgnoreCase(combo10)) {
                     Dia9.setSelectedIndex(i);
                 }
             }
             String combo11 = model.getValueAt(fila, 24).toString();
             for (int i = 0; i < Dia10.getItemCount(); i++) {
-                if (Dia10.getItemAt(i).toString().equalsIgnoreCase(combo11)) {
+                if (Dia10.getItemAt(i).equalsIgnoreCase(combo11)) {
                     Dia10.setSelectedIndex(i);
                 }
             }
             String combo12 = model.getValueAt(fila, 25).toString();
             for (int i = 0; i < Dia11.getItemCount(); i++) {
-                if (Dia11.getItemAt(i).toString().equalsIgnoreCase(combo12)) {
+                if (Dia11.getItemAt(i).equalsIgnoreCase(combo12)) {
                     Dia11.setSelectedIndex(i);
                 }
             }
             String combo13 = model.getValueAt(fila, 26).toString();
             for (int i = 0; i < Dia12.getItemCount(); i++) {
-                if (Dia12.getItemAt(i).toString().equalsIgnoreCase(combo13)) {
+                if (Dia12.getItemAt(i).equalsIgnoreCase(combo13)) {
                     Dia12.setSelectedIndex(i);
                 }
             }
             String combo14 = model.getValueAt(fila, 27).toString();
             for (int i = 0; i < Dia13.getItemCount(); i++) {
-                if (Dia13.getItemAt(i).toString().equalsIgnoreCase(combo14)) {
+                if (Dia13.getItemAt(i).equalsIgnoreCase(combo14)) {
                     Dia13.setSelectedIndex(i);
                 }
             }
             String combo15 = model.getValueAt(fila, 28).toString();
             for (int i = 0; i < Dia14.getItemCount(); i++) {
-                if (Dia14.getItemAt(i).toString().equalsIgnoreCase(combo15)) {
+                if (Dia14.getItemAt(i).equalsIgnoreCase(combo15)) {
                     Dia14.setSelectedIndex(i);
                 }
             }
             String combo16 = model.getValueAt(fila, 29).toString();
             for (int i = 0; i < Dia15.getItemCount(); i++) {
-                if (Dia15.getItemAt(i).toString().equalsIgnoreCase(combo16)) {
+                if (Dia15.getItemAt(i).equalsIgnoreCase(combo16)) {
                     Dia15.setSelectedIndex(i);
                 }
             }
             String combo17 = model.getValueAt(fila, 30).toString();
             for (int i = 0; i < Dia16.getItemCount(); i++) {
-                if (Dia16.getItemAt(i).toString().equalsIgnoreCase(combo17)) {
+                if (Dia16.getItemAt(i).equalsIgnoreCase(combo17)) {
                     Dia16.setSelectedIndex(i);
                 }
             }
-            /*DVT.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
-            DI.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
-            apy.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
-            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
-            cda.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
-            ADD.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
-            Bono.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
-            Bono1.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
-            Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
-            Fde.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
-            Bp.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
-            Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
-            Grua.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
-            Playera.setText(String.valueOf(Tnom.getValueAt(fila, 40)));
-            Chamarra.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
-            Pantalon.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
-             */
+            
             PDDDDSGS.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
-            /*Chaleco.setText(String.valueOf(Tnom.getValueAt(fila, 44)));
-            Credencial.setText(String.valueOf(Tnom.getValueAt(fila, 45)));
-            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 46)));*/
             apy.setText(String.valueOf(Tnom.getValueAt(fila, 47)));
             Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 48)));
             Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 49)));
             ADD.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
-            /*Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
-            cda.setText(String.valueOf(Tnom.getValueAt(fila, 51)));*/
             DI.setText(String.valueOf(Tnom.getValueAt(fila, 53)));
             Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 54)));
             Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 55)));
@@ -14593,12 +14645,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             Bp.setText(String.valueOf(Tnom.getValueAt(fila, 62)));
             Playera.setText(String.valueOf(Tnom.getValueAt(fila, 63)));
             Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 64)));
-            DVT.setText(String.valueOf(Tnom.getValueAt(fila, 65)));
-            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 66)));
-            cda.setText(String.valueOf(Tnom.getValueAt(fila, 67)));
-            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 68)));
-            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 69)));
-            obs.setText(String.valueOf(Tnom.getValueAt(fila, 70)));
+            AdN.setText(String.valueOf(Tnom.getValueAt(fila, 65)));
+            DVT.setText(String.valueOf(Tnom.getValueAt(fila, 66)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 67)));
+            cda.setText(String.valueOf(Tnom.getValueAt(fila, 68)));
+            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 69)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 70)));
+            obs.setText(String.valueOf(Tnom.getValueAt(fila, 71)));
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQ_5.class
@@ -15619,6 +15672,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField PagadoPres;
     private javax.swing.JTextField Pagadoprenom;
     private javax.swing.JTextField Pantalon;
+    private javax.swing.JComboBox<String> Paodt;
     private javax.swing.JTextField PenODTnom;
     private javax.swing.JTextField Pendiente;
     private javax.swing.JTextField Pendienteprenom;
@@ -15693,7 +15747,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JCheckBox Sinteres;
     private javax.swing.JTextField Status;
     private javax.swing.JComboBox<String> Statuscda;
-    private javax.swing.JComboBox<String> Statustaller;
+    private javax.swing.JComboBox<String> Statusodt;
     private javax.swing.JTextField TACDANOM;
     private javax.swing.JTextField TArrado;
     private javax.swing.JScrollPane TDPODT;
@@ -15847,6 +15901,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel165;
     private javax.swing.JLabel jLabel166;
     private javax.swing.JLabel jLabel167;
+    private javax.swing.JLabel jLabel168;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;

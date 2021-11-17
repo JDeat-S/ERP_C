@@ -15,6 +15,8 @@ import java.sql.SQLException;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import java.sql.PreparedStatement;
+import java.sql.ResultSetMetaData;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,10 +36,11 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
         FiltrosZonas FZS = new FiltrosZonas();
         DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
         zona.setModel(MODELFZS);
-        RolloT();
+        Inventarionum();
         Zonas zz = new Zonas();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
         AgregarZ.setModel(modelzonas);
+        MDAlm();
 
     }
 
@@ -57,11 +60,11 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
         Ftermina.setText("" + total + "");
     }
 
-    public void RolloT() {
-        String sql = "SELECT `Cantidad` FROM `almacen.articulos` where `Articulo` LIKE '%Rollo termico%'";
+    public void Inventarionum() {
+        String SQLRT = "SELECT `Cantidad` FROM `almacen.articulos` where `Articulo` LIKE '%Rollo termico%'";
         try {
             java.sql.Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
+            ResultSet rs = st.executeQuery(SQLRT);
             while (rs.next()) {
 
                 LabelRD.setText(rs.getString("Cantidad"));
@@ -70,15 +73,102 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
 
         } catch (SQLException e) {
 
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "Error al mostrar cantidad de rollos termicos: " +e);
+            
+        }
+        String SQLBP = "SELECT `Cantidad` FROM `almacen.articulos` where `Articulo` LIKE '%Blocks Padrones%'";
+        try {
+            java.sql.Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(SQLBP);
+            while (rs.next()) {
+
+                LabelPD.setText(rs.getString("Cantidad"));
+
+            }
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Error al mostrar cantidad de Block de padrones: " +e);
+            
+        }
+        
+    }
+
+    public void MDAlm() {
+        String SQL = "Select * from `almacen.articulos`";
+
+        if (!"".equals(Filcanart.getText())) {
+            SQL = "select * from `almacen.articulos` where `Cantidad` LIKE '%" + Filcanart.getText() + "%'";
+        } else if (!"".equals(FilArticulos.getSelectedItem().toString())) {
+            SQL = "select * from `almacen.articulos` where `Articulo` LIKE '%" + FilArticulos.getSelectedItem().toString() + "%'";
+        }
+        try {
+            DefaultTableModel Tablaarticulos = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+
+            TArticulos.setModel(Tablaarticulos);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            Tablaarticulos.addColumn("# Articulo");//1
+            Tablaarticulos.addColumn("Articulo");
+            Tablaarticulos.addColumn("Cantidad");
+
+            int[] anchos = {/*#A*/10, /*Art*/ 50, /*Can*/ 25};
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TArticulos.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                Tablaarticulos.addRow(filas);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Articulos " + e.getMessage());
+
         }
     }
 
-    public void MDAlm(){
-        String Filcan = CanArt.getText();
-   //     String Articulos = 
+    public void ModAr() {
+        String SQL = "UPDATE `almacen.articulos` SET `idArticulo` = ?, `Articulo` = ?, `Cantidad` = ? WHERE `almacen.articulos`.`idArticulo` = ?";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setInt(1, Integer.parseInt(NArt.getText()));
+            pst.setString(2, SeleccionarArt.getSelectedItem().toString());
+            pst.setInt(3, Integer.parseInt(CanArt.getText()));
+            pst.setInt(4, Integer.parseInt(NArt.getText()));
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Articulo Modificado");
+
+            NArt.setText("0");
+            SeleccionarArt.setSelectedIndex(0);
+            CanArt.setText("");
+
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al modificar articulo: " + e);
+
+        }
+
     }
-    
+
     public void AgregarAr() {
         String SQL = "INSERT INTO `confort`.`almacen.articulos` (`idArticulo`, `Articulo`,"
                 + "`Cantidad`) VALUES (?, ?, ?)";
@@ -91,11 +181,11 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Articulo agregado");
-            
+
             NArt.setText("0");
             SeleccionarArt.setSelectedIndex(0);
             CanArt.setText("");
-            
+
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar articulo: " + e);
 
@@ -119,10 +209,10 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel26 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        FilArticulos = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField2 = new javax.swing.JTextField();
+        TArticulos = new javax.swing.JTable();
+        Filcanart = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
@@ -151,7 +241,7 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        LabelPD = new javax.swing.JLabel();
         LabelRD = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -184,9 +274,14 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
 
         jLabel26.setText("jLabel26");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        FilArticulos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Blocks Padrones", "Blocks RDV", "Blocks RDB", "Blocks Boletaje", "Rollo termico" }));
+        FilArticulos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FilArticulosItemStateChanged(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TArticulos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -197,7 +292,18 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable1);
+        TArticulos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TArticulosMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(TArticulos);
+
+        Filcanart.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FilcanartKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -218,9 +324,9 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel26)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FilArticulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Filcanart, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -234,8 +340,8 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
                     .addComponent(jLabel25)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FilArticulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Filcanart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
                 .addContainerGap())
@@ -358,9 +464,9 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
 
         jLabel18.setText("0");
 
-        jLabel19.setText("Blocks padrones Disponibles:");
+        jLabel19.setText("Blocks Padrones Disponibles:");
 
-        jLabel20.setText("0");
+        LabelPD.setText("0");
 
         LabelRD.setText("0");
 
@@ -419,7 +525,7 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel19)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel20))
+                                .addComponent(LabelPD))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel10)
@@ -456,11 +562,17 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
                                 .addComponent(LabelRD)))
                         .addGap(0, 614, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BlocksEboletaje, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel13)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BlocksEboletaje, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(146, 146, 146)
+                                .addComponent(AccionBR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel13)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AgregarZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -468,10 +580,6 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AgregarS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(200, 200, 200))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(152, 152, 152)
-                .addComponent(AccionBR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -524,7 +632,7 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jLabel20))
+                    .addComponent(LabelPD))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -610,10 +718,30 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_zonaItemStateChanged
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
         AgregarAr();
-        RolloT();
+
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void FilArticulosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FilArticulosItemStateChanged
+        MDAlm();
+    }//GEN-LAST:event_FilArticulosItemStateChanged
+
+    private void FilcanartKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilcanartKeyReleased
+        MDAlm();
+    }//GEN-LAST:event_FilcanartKeyReleased
+
+    private void TArticulosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TArticulosMouseClicked
+        DefaultTableModel model = (DefaultTableModel) TArticulos.getModel();
+        int fila = TArticulos.getSelectedRow();
+        NArt.setText(String.valueOf(TArticulos.getValueAt(fila, 0)));
+        String Artcbx = model.getValueAt(fila, 1).toString();
+        for (int i = 0; i < SeleccionarArt.getItemCount(); i++) {
+            if (SeleccionarArt.getItemAt(i).equalsIgnoreCase(Artcbx)) {
+                SeleccionarArt.setSelectedIndex(i);
+            }
+        }
+        CanArt.setText(String.valueOf(TArticulos.getValueAt(fila, 2)));
+    }//GEN-LAST:event_TArticulosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -656,17 +784,20 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
     private javax.swing.JTextField BlocksEboletaje;
     private javax.swing.JTextField CanArt;
     private javax.swing.JTextField FEmpieza;
+    private javax.swing.JComboBox<String> FilArticulos;
+    private javax.swing.JTextField Filcanart;
     private javax.swing.JTextField Ftermina;
     private javax.swing.JLabel LabelCDL;
+    private javax.swing.JLabel LabelPD;
     private javax.swing.JLabel LabelRD;
     private javax.swing.JTextField NArt;
     private javax.swing.JComboBox<String> SeleccionarArt;
     private javax.swing.JComboBox<String> Serv;
+    private javax.swing.JTable TArticulos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox6;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
@@ -680,7 +811,6 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -701,9 +831,7 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JComboBox<String> zona;
     // End of variables declaration//GEN-END:variables
 }

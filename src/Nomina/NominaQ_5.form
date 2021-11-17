@@ -5664,7 +5664,11 @@
                                                   <Component id="QPodt" min="-2" pref="80" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="Statustaller" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Statusodt" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jLabel168" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="Paodt" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
@@ -5766,9 +5770,11 @@
                                                   <Component id="jLabel71" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="QAP" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel72" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="Statustaller" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Paodt" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="PQT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Statusodt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel168" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -5866,7 +5872,7 @@
                     <Property name="text" type="java.lang.String" value="No"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="Statustaller">
+                <Component class="javax.swing.JComboBox" name="Paodt">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="5">
@@ -6316,6 +6322,26 @@
                 <Component class="javax.swing.JTextField" name="QPodt">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Statusodt">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="."/>
+                        <StringItem index="1" value="Debe"/>
+                        <StringItem index="2" value="Pagado"/>
+                        <StringItem index="3" value="Baja"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel168">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Pago a:"/>
                   </Properties>
                 </Component>
               </SubComponents>

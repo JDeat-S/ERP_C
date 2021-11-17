@@ -393,14 +393,15 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
             };
 //Nombre de la tabla
             TStatusServ.setModel(modelo);
-            PreparedStatement ps = null;
-            ResultSet rs = null;
+            PreparedStatement ps ;
+            ResultSet rs ;
 
             String sql = "select `Status`, COUNT(`Status`) as sts FROM `servicio`"
                     + " GROUP BY 1 HAVING COUNT(`Status`) > 1;";
@@ -500,14 +501,15 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
             };
 //Nombre de la tabla
             TServ.setModel(modelo);
-            PreparedStatement ps = null;
-            ResultSet rs = null;
+            PreparedStatement ps;
+            ResultSet rs;
 
             String sql = "select * from servicio" + where;
             ps = con.prepareStatement(sql);
