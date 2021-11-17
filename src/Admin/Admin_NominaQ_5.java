@@ -215,89 +215,89 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"unchecked", "empty-statement"})
 
     public void IOMTPres() {
         double inter = 0, Quincenasint = 0;
 
-        String dt = (String) Interes.getSelectedItem();
-        if (dt.equals(".")) {
+        String interespres = (String) Interes.getSelectedItem();
+        if (interespres.equals(".")) {
             inter = 0;
             Quincenasint = 0;
         }
-        if (dt.equals("2 Quincenas 10%")) {
+        if (interespres.equals("2 Quincenas 10%")) {
             inter = 10;
             Quincenasint = 2;
         }
-        if (dt.equals("3 Quincenas 15%")) {
+        if (interespres.equals("3 Quincenas 15%")) {
             inter = 15;
             Quincenasint = 3;
         }
-        if (dt.equals("4 Quincenas 15%")) {
+        if (interespres.equals("4 Quincenas 15%")) {
             inter = 15;
             Quincenasint = 4;
         }
-        if (dt.equals("5 Quincenas 20%")) {
+        if (interespres.equals("5 Quincenas 20%")) {
             inter = 20;
             Quincenasint = 5;
         }
-        if (dt.equals("6 Quincenas 20%")) {
+        if (interespres.equals("6 Quincenas 20%")) {
             inter = 20;
             Quincenasint = 6;
         }
-        if (dt.equals("7 Quincenas 25%")) {
+        if (interespres.equals("7 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 7;
         }
-        if (dt.equals("8 Quincenas 25%")) {
+        if (interespres.equals("8 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 8;
         }
-        if (dt.equals("9 Quincenas 25%")) {
+        if (interespres.equals("9 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 9;
         }
-        if (dt.equals("10 Quincenas 25%")) {
+        if (interespres.equals("10 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 10;
         }
-        if (dt.equals("11 Quincenas 25%")) {
+        if (interespres.equals("11 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 11;
         }
-        if (dt.equals("12 Quincenas 25%")) {
+        if (interespres.equals("12 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 12;
         }
-        if (dt.equals("13 Quincenas 25%")) {
+        if (interespres.equals("13 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 13;
         }
-        if (dt.equals("14 Quincenas 25%")) {
+        if (interespres.equals("14 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 14;
         }
-        if (dt.equals("15 Quincenas 25%")) {
+        if (interespres.equals("15 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 15;
         }
-        if (dt.equals("16 Quincenas 25%")) {
+        if (interespres.equals("16 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 16;
         }
-        if (dt.equals("17 Quincenas 25%")) {
+        if (interespres.equals("17 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 17;
         }
-        if (dt.equals("18 Quincenas 25%")) {
+        if (interespres.equals("18 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 18;
         }
-        if (dt.equals("19 Quincenas 25%")) {
+        if (interespres.equals("19 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 19;
         }
-        if (dt.equals("20 Quincenas 25%")) {
+        if (interespres.equals("20 Quincenas 25%")) {
             inter = 25;
             Quincenasint = 20;
         }
@@ -1009,7 +1009,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Suma de total ahorrado 
     public void sumaTA() {
         double t = 0;
-        double p = 0;
+        double p;
         if (Tablacda.getRowCount() > 0) {
             for (int i = 0; i < Tablacda.getRowCount(); i++) {
                 p = Double.parseDouble(Tablacda.getValueAt(i, 9).toString());
@@ -1059,6 +1059,27 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Caja de ahorro Modificada");
 
+            //limpiar campos
+            Numcda.setText("0");
+            numEcda.setText("0");
+            APcda.setText("");
+            AMcda.setText("");
+            namecda.setText("");
+            zonacda.setText("");
+            servcda.setText("");
+            APQ.setText("0");
+            QAdas.setText("0");
+            TArrado.setText("0");
+            CajaA.setText("0");
+            Totalap.setText("0");
+            PorcenIn.setText("0");
+            IAP.setText("0");
+            PPF.setText("0");
+            Obscda.setText("");
+            Statuscda.setSelectedIndex(0);
+            Obs1cda.setSelectedIndex(0);
+            CalIn.setSelected(false);
+
         } catch (HeadlessException | SQLException error_mod_cda) {
             JOptionPane.showMessageDialog(null, "Error modificar Caja de ahorro: " + error_mod_cda.getMessage());
         }
@@ -1097,6 +1118,27 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Caja de ahorro Agregada");
+
+            //limpiar
+            Numcda.setText("0");
+            numEcda.setText("0");
+            APcda.setText("");
+            AMcda.setText("");
+            namecda.setText("");
+            zonacda.setText("");
+            servcda.setText("");
+            APQ.setText("0");
+            QAdas.setText("0");
+            TArrado.setText("0");
+            CajaA.setText("0");
+            Totalap.setText("0");
+            PorcenIn.setText("0");
+            IAP.setText("0");
+            PPF.setText("0");
+            Obscda.setText("");
+            Statuscda.setSelectedIndex(0);
+            Obs1cda.setSelectedIndex(0);
+            CalIn.setSelected(false);
 
         } catch (HeadlessException | SQLException error_add_cda) {
             JOptionPane.showMessageDialog(null, "Error al agregar Caja de ahorro: " + error_add_cda.getMessage());
@@ -1253,105 +1295,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     }
 
-    //limpiar cda
-    public void limpiarcda() {
-        Numcda.setText("0");
-        numEcda.setText("0");
-        APcda.setText("");
-        AMcda.setText("");
-        namecda.setText("");
-        zonacda.setText("");
-        servcda.setText("");
-        APQ.setText("0");
-        QAdas.setText("0");
-        TArrado.setText("0");
-        CajaA.setText("0");
-        Totalap.setText("0");
-        PorcenIn.setText("0");
-        IAP.setText("0");
-        PPF.setText("0");
-        Obscda.setText("");
-        Statuscda.setSelectedIndex(0);
-        Obs1cda.setSelectedIndex(0);
-        CalIn.setSelected(false);
-    }
-
-    //limpiar nomina
-    public void limpiarnom() {
-        DAB.clearSelection();
-        NQprenom.setText("0");
-        AdN.setText("0");
-        QAcdanom.setText("0");
-        NODTnom.setText("0");
-        NCDANom.setText("0");
-        NCDANom.setText("0");
-        NFnom.setText("0");
-        NDL.setText("");
-        NEnom.setText("0");
-        NEnom.setText("0");
-        Ap.setText("");
-        am.setText("");
-        name.setText("");
-        Bono.setText("0");
-        Bono1.setText("0");
-        cta.setText("");
-        ban.setText("");
-        Zon.setText("");
-        ServN.setText("");
-        sueldo.setText("0");
-        pd.setText("0");
-        Fdb.setText("0");
-        Fde.setText("0");
-        Bp.setText("0");
-        Sancion.setText("0");
-        Grua.setText("0");
-        Playera.setText("0");
-        Chamarra.setText("0");
-        Pantalon.setText("0");
-        Corbata.setText("0");
-        Chaleco.setText("0");
-        Credencial.setText("0");
-        DVT.setText("0");
-        apy.setText("0");
-        Lugar.setText("");
-        DI.setText("26.98");
-        cda.setText("0");
-        Presp.setText("0");
-        obs.setText("");
-        ADD.setText("0");
-        Rembolso.setText("0");
-        deposito.setText("0");
-        Odtp.setText("0");
-        NumPrenom.setText("0");
-        NQprenom.setText("0");
-        Pagadoprenom.setText("0");
-        Pendienteprenom.setText("0");
-        TACDANOM.setText("0");
-        NODTnom.setText("0");
-        NQODTnom.setText("0");
-        PagODTnom.setText("0");
-        PenODTnom.setText("0");
-        QAcdanom.setText("0");
-        Dia1.setSelectedIndex(0);
-        DIa2.setSelectedIndex(0);
-        Dia3.setSelectedIndex(0);
-        Dia4.setSelectedIndex(0);
-        Dia5.setSelectedIndex(0);
-        Dia6.setSelectedIndex(0);
-        Dia7.setSelectedIndex(0);
-        Dia8.setSelectedIndex(0);
-        Dia9.setSelectedIndex(0);
-        Dia10.setSelectedIndex(0);
-        Dia11.setSelectedIndex(0);
-        Dia12.setSelectedIndex(0);
-        Dia13.setSelectedIndex(0);
-        Dia14.setSelectedIndex(0);
-        Dia15.setSelectedIndex(0);
-        Dia16.setSelectedIndex(0);
-
-    }
 //Descuentos varios
-
     public void desv() {
         double desv1 = Double.parseDouble(this.Fdb.getText());
         double desv2 = Double.parseDouble(this.Fde.getText());
@@ -1627,24 +1571,25 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //retardos
 
     public void R() {
-        double d1 = Double.parseDouble(this.R1.getText());
-        double d2 = Double.parseDouble(this.R2.getText());
-        double d3 = Double.parseDouble(this.R3.getText());
-        double d4 = Double.parseDouble(this.R4.getText());
-        double d5 = Double.parseDouble(this.R5.getText());
-        double d6 = Double.parseDouble(this.R6.getText());
-        double d7 = Double.parseDouble(this.R7.getText());
-        double d8 = Double.parseDouble(this.R8.getText());
-        double d9 = Double.parseDouble(this.R9.getText());
-        double d10 = Double.parseDouble(this.R10.getText());
-        double d11 = Double.parseDouble(this.R11.getText());
-        double d12 = Double.parseDouble(this.R12.getText());
-        double d13 = Double.parseDouble(this.R13.getText());
-        double d14 = Double.parseDouble(this.R14.getText());
-        double d15 = Double.parseDouble(this.R15.getText());
-        double d16 = Double.parseDouble(this.R16.getText());
+        double Ret = Double.parseDouble(this.R1.getText());
+        double Ret2 = Double.parseDouble(this.R2.getText());
+        double Ret3 = Double.parseDouble(this.R3.getText());
+        double Ret4 = Double.parseDouble(this.R4.getText());
+        double Ret5 = Double.parseDouble(this.R5.getText());
+        double Ret6 = Double.parseDouble(this.R6.getText());
+        double Ret7 = Double.parseDouble(this.R7.getText());
+        double Ret8 = Double.parseDouble(this.R8.getText());
+        double Ret9 = Double.parseDouble(this.R9.getText());
+        double Ret10 = Double.parseDouble(this.R10.getText());
+        double Ret11 = Double.parseDouble(this.R11.getText());
+        double Ret12 = Double.parseDouble(this.R12.getText());
+        double Ret13 = Double.parseDouble(this.R13.getText());
+        double Ret14 = Double.parseDouble(this.R14.getText());
+        double Ret15 = Double.parseDouble(this.R15.getText());
+        double Ret16 = Double.parseDouble(this.R16.getText());
 
-        double total = d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11 + d12 + d13 + d14 + d15 + d16;
+        double total = Ret + Ret2 + Ret3 + Ret4 + Ret5 + Ret6 + Ret7 + Ret8
+                + Ret9 + Ret10 + Ret11 + Ret12 + Ret13 + Ret14 + Ret15 + Ret16;
         this.R.setText("" + total + "");
     }
 //Descanso otorgado
@@ -1939,61 +1884,37 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Orden Modificada");
 
+            //limpiar campos
+            Ndo.setText("0");
+            IAT.clearSelection();
+            FE.setText("");
+            NameTaller.setText("");
+            ApTaller.setText("");
+            Amtaller.setText("");
+            Zona1.setText("");
+            Marca.setText("");
+            Serv1.setText("");
+            ndp.setText("");
+            Daño.setText("");
+            CT.setText("0");
+            Statusodt.setSelectedIndex(0);
+            Paodt.setSelectedIndex(0);
+            Iad.setText("0");
+            QAP.setSelectedIndex(0);
+            PQT.setText("");
+            Marca.setText("");
+            Modelo.setText("");
+            Color.setText("");
+            Placas.setText("");
+            Pagado.setText("");
+            Pendiente.setText("");
+            Fdp.setSelectedIndex(0);
+            Observaciones.setText("");
+            QPodt.setText("0");
+
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error modificar Orden" + e.getMessage());
         }
-    }
-
-    public void limpiarT() {
-        Ndo.setText("0");
-        IAT.clearSelection();
-        FE.setText("");
-        NameTaller.setText("");
-        ApTaller.setText("");
-        Amtaller.setText("");
-        Zona1.setText("");
-        Marca.setText("");
-        Serv1.setText("");
-        ndp.setText("");
-        Daño.setText("");
-        CT.setText("0");
-        Statusodt.setSelectedIndex(0);
-        Paodt.setSelectedIndex(0);
-        Iad.setText("0");
-        QAP.setSelectedIndex(0);
-        PQT.setText("");
-        Marca.setText("");
-        Modelo.setText("");
-        Color.setText("");
-        Placas.setText("");
-        Pagado.setText("");
-        Pendiente.setText("");
-        Fdp.setSelectedIndex(0);
-        Observaciones.setText("");
-        QPodt.setText("0");
-    }
-
-    public void limpiarP() {
-        Num.setText("0");
-        FS.setText("");
-        Namepres.setText("");
-        Appres.setText("");
-        Ampres.setText("");
-        Zona.setText("");
-        Serv.setText("");
-        Cantidad.setText("0");
-        interes.setText("0");
-        Interes.setSelectedIndex(0);
-        Mes.setSelectedIndex(0);
-        PQ.setText("0");
-        MT.setText("0");
-        Carpeta.setText("");
-        FL.setText("");
-        Status.setText("");
-        Metodo.setText("");
-        QPprest.setText("0");
-        PagadoPres.setText("0");
-        Pendientepres.setText("0");
     }
 
     //agregar orden de taller
@@ -2044,6 +1965,34 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Orden de Taller Agregada");
+
+            //limpiar campos
+            Ndo.setText("0");
+            IAT.clearSelection();
+            FE.setText("");
+            NameTaller.setText("");
+            ApTaller.setText("");
+            Amtaller.setText("");
+            Zona1.setText("");
+            Marca.setText("");
+            Serv1.setText("");
+            ndp.setText("");
+            Daño.setText("");
+            CT.setText("0");
+            Statusodt.setSelectedIndex(0);
+            Paodt.setSelectedIndex(0);
+            Iad.setText("0");
+            QAP.setSelectedIndex(0);
+            PQT.setText("");
+            Marca.setText("");
+            Modelo.setText("");
+            Color.setText("");
+            Placas.setText("");
+            Pagado.setText("");
+            Pendiente.setText("");
+            Fdp.setSelectedIndex(0);
+            Observaciones.setText("");
+            QPodt.setText("0");
 
         } catch (HeadlessException | SQLException Ex_Taller) {
             JOptionPane.showMessageDialog(null, "Error al agregar orden de taller: " + Ex_Taller.getMessage());
@@ -2208,6 +2157,27 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Prestamo Modificado");
 
+            Num.setText("0");
+            FS.setText("");
+            Namepres.setText("");
+            Appres.setText("");
+            Ampres.setText("");
+            Zona.setText("");
+            Serv.setText("");
+            Cantidad.setText("0");
+            interes.setText("0");
+            Interes.setSelectedIndex(0);
+            Mes.setSelectedIndex(0);
+            PQ.setText("0");
+            MT.setText("0");
+            Carpeta.setText("");
+            FL.setText("");
+            Status.setText("");
+            Metodo.setText("");
+            QPprest.setText("0");
+            PagadoPres.setText("0");
+            Pendientepres.setText("0");
+
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar Prestamo: " + e.getMessage());
         }
@@ -2249,6 +2219,27 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Prestamo Agregado");
+
+            Num.setText("0");
+            FS.setText("");
+            Namepres.setText("");
+            Appres.setText("");
+            Ampres.setText("");
+            Zona.setText("");
+            Serv.setText("");
+            Cantidad.setText("0");
+            interes.setText("0");
+            Interes.setSelectedIndex(0);
+            Mes.setSelectedIndex(0);
+            PQ.setText("0");
+            MT.setText("0");
+            Carpeta.setText("");
+            FL.setText("");
+            Status.setText("");
+            Metodo.setText("");
+            QPprest.setText("0");
+            PagadoPres.setText("0");
+            Pendientepres.setText("0");
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar prestamo: " + e.getMessage());
@@ -2467,6 +2458,78 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Modificada");
+
+            //limpiar campos
+            DAB.clearSelection();
+            NQprenom.setText("0");
+            AdN.setText("0");
+            QAcdanom.setText("0");
+            NODTnom.setText("0");
+            NCDANom.setText("0");
+            NCDANom.setText("0");
+            NFnom.setText("0");
+            NDL.setText("");
+            NEnom.setText("0");
+            NEnom.setText("0");
+            Ap.setText("");
+            am.setText("");
+            name.setText("");
+            Bono.setText("0");
+            Bono1.setText("0");
+            cta.setText("");
+            ban.setText("");
+            Zon.setText("");
+            ServN.setText("");
+            sueldo.setText("0");
+            pd.setText("0");
+            Fdb.setText("0");
+            Fde.setText("0");
+            Bp.setText("0");
+            Sancion.setText("0");
+            Grua.setText("0");
+            Playera.setText("0");
+            Chamarra.setText("0");
+            Pantalon.setText("0");
+            Corbata.setText("0");
+            Chaleco.setText("0");
+            Credencial.setText("0");
+            DVT.setText("0");
+            apy.setText("0");
+            Lugar.setText("");
+            DI.setText("26.98");
+            cda.setText("0");
+            Presp.setText("0");
+            obs.setText("");
+            ADD.setText("0");
+            Rembolso.setText("0");
+            deposito.setText("0");
+            Odtp.setText("0");
+            NumPrenom.setText("0");
+            NQprenom.setText("0");
+            Pagadoprenom.setText("0");
+            Pendienteprenom.setText("0");
+            TACDANOM.setText("0");
+            NODTnom.setText("0");
+            NQODTnom.setText("0");
+            PagODTnom.setText("0");
+            PenODTnom.setText("0");
+            QAcdanom.setText("0");
+            Dia1.setSelectedIndex(0);
+            DIa2.setSelectedIndex(0);
+            Dia3.setSelectedIndex(0);
+            Dia4.setSelectedIndex(0);
+            Dia5.setSelectedIndex(0);
+            Dia6.setSelectedIndex(0);
+            Dia7.setSelectedIndex(0);
+            Dia8.setSelectedIndex(0);
+            Dia9.setSelectedIndex(0);
+            Dia10.setSelectedIndex(0);
+            Dia11.setSelectedIndex(0);
+            Dia12.setSelectedIndex(0);
+            Dia13.setSelectedIndex(0);
+            Dia14.setSelectedIndex(0);
+            Dia15.setSelectedIndex(0);
+            Dia16.setSelectedIndex(0);
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar nomina: " + e.getMessage());
@@ -2744,6 +2807,78 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Agregada");
+
+            //limpiar campos
+            DAB.clearSelection();
+            NQprenom.setText("0");
+            AdN.setText("0");
+            QAcdanom.setText("0");
+            NODTnom.setText("0");
+            NCDANom.setText("0");
+            NCDANom.setText("0");
+            NFnom.setText("0");
+            NDL.setText("");
+            NEnom.setText("0");
+            NEnom.setText("0");
+            Ap.setText("");
+            am.setText("");
+            name.setText("");
+            Bono.setText("0");
+            Bono1.setText("0");
+            cta.setText("");
+            ban.setText("");
+            Zon.setText("");
+            ServN.setText("");
+            sueldo.setText("0");
+            pd.setText("0");
+            Fdb.setText("0");
+            Fde.setText("0");
+            Bp.setText("0");
+            Sancion.setText("0");
+            Grua.setText("0");
+            Playera.setText("0");
+            Chamarra.setText("0");
+            Pantalon.setText("0");
+            Corbata.setText("0");
+            Chaleco.setText("0");
+            Credencial.setText("0");
+            DVT.setText("0");
+            apy.setText("0");
+            Lugar.setText("");
+            DI.setText("26.98");
+            cda.setText("0");
+            Presp.setText("0");
+            obs.setText("");
+            ADD.setText("0");
+            Rembolso.setText("0");
+            deposito.setText("0");
+            Odtp.setText("0");
+            NumPrenom.setText("0");
+            NQprenom.setText("0");
+            Pagadoprenom.setText("0");
+            Pendienteprenom.setText("0");
+            TACDANOM.setText("0");
+            NODTnom.setText("0");
+            NQODTnom.setText("0");
+            PagODTnom.setText("0");
+            PenODTnom.setText("0");
+            QAcdanom.setText("0");
+            Dia1.setSelectedIndex(0);
+            DIa2.setSelectedIndex(0);
+            Dia3.setSelectedIndex(0);
+            Dia4.setSelectedIndex(0);
+            Dia5.setSelectedIndex(0);
+            Dia6.setSelectedIndex(0);
+            Dia7.setSelectedIndex(0);
+            Dia8.setSelectedIndex(0);
+            Dia9.setSelectedIndex(0);
+            Dia10.setSelectedIndex(0);
+            Dia11.setSelectedIndex(0);
+            Dia12.setSelectedIndex(0);
+            Dia13.setSelectedIndex(0);
+            Dia14.setSelectedIndex(0);
+            Dia15.setSelectedIndex(0);
+            Dia16.setSelectedIndex(0);
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al Agregar Nomina: " + e.getMessage());
@@ -7785,7 +7920,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         mostrarpagos();
         MDN();
         MDTPODT();
-        limpiarnom();
     }//GEN-LAST:event_ModmActionPerformed
 
     private void AgregarNPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarNPActionPerformed
@@ -7834,7 +7968,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         mostrarpagos();
         MDN();
         MDTPODT();
-        limpiarnom();
     }//GEN-LAST:event_AgregarNPActionPerformed
 
     private void SancionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SancionKeyReleased
@@ -12729,14 +12862,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void ModCDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModCDAActionPerformed
         editarCDA();
-        limpiarcda();
         MDCDA();
         sumaTA();
     }//GEN-LAST:event_ModCDAActionPerformed
 
     private void AgregarCDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCDAActionPerformed
         AgregarCDA();
-        limpiarcda();
         MDCDA();
         sumaTA();
     }//GEN-LAST:event_AgregarCDAActionPerformed
@@ -12927,7 +13058,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         eliminarT();
         MDT();
-        limpiarT();
     }//GEN-LAST:event_EliminarTActionPerformed
 
     private void OdTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OdTMouseClicked
@@ -12950,13 +13080,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             ndp.setText(String.valueOf(OdT.getValueAt(fila, 11)));
             Daño.setText(String.valueOf(OdT.getValueAt(fila, 12)));
             CT.setText(String.valueOf(OdT.getValueAt(fila, 13)));
-            
+
             Iad.setText(String.valueOf(OdT.getValueAt(fila, 17)));
-            
+
             Pagado.setText(String.valueOf(OdT.getValueAt(fila, 19)));
             Pendiente.setText(String.valueOf(OdT.getValueAt(fila, 20)));
             PQT.setText(String.valueOf(OdT.getValueAt(fila, 21)));
-            
+
             Observaciones.setText(String.valueOf(OdT.getValueAt(fila, 24)));
 
             String combo4 = model.getValueAt(fila, 15).toString();
@@ -12972,7 +13102,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     Paodt.setSelectedIndex(i);
                 }
             }
-            
+
             String combo3 = model.getValueAt(fila, 18).toString();
             for (int i = 0; i < QAP.getItemCount(); i++) {
                 if (QAP.getItemAt(i).equalsIgnoreCase(combo3)) {
@@ -13743,14 +13873,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         editarT();
         MDT();
-        limpiarT();
     }//GEN-LAST:event_ModificartallerActionPerformed
 
     private void AgregartallerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregartallerActionPerformed
 
         AgregarT();
         MDT();
-        limpiarT();
     }//GEN-LAST:event_AgregartallerActionPerformed
 
     private void BE1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BE1KeyReleased
@@ -13792,7 +13920,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         eliminarpre();
         MDP();
-        limpiarP();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void PreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PreMouseClicked
@@ -13936,14 +14063,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         editarpre();
         MDP();
-        limpiarP();
     }//GEN-LAST:event_modprestamoActionPerformed
 
     private void AgregarprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarprestamoActionPerformed
 
         AgregarPre();
         MDP();
-        limpiarP();
     }//GEN-LAST:event_AgregarprestamoActionPerformed
 
     private void share1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_share1MouseClicked
@@ -14494,7 +14619,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         eliminarnom();
         MDN();
-        limpiarnom();
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void NominabKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NominabKeyReleased
@@ -14627,7 +14751,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     Dia16.setSelectedIndex(i);
                 }
             }
-            
+
             PDDDDSGS.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
             apy.setText(String.valueOf(Tnom.getValueAt(fila, 47)));
             Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 48)));
