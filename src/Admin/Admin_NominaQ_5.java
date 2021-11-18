@@ -683,10 +683,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
 
-                pst.setString(1, NQprenom.getText());
-                pst.setString(2, Pagadoprenom.getText());
-                pst.setString(3, Pendienteprenom.getText());
-                pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
+                pst.setString(1, PagODTnom.getText());
+                pst.setString(2, PenODTnom.getText());
+                pst.setString(3, NQODTnom.getText());
+                pst.setInt(4, Integer.parseInt(NODTnom.getText()));
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Abono de taller agregado.");
@@ -704,7 +704,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 pst.setString(1, PagODTnom.getText());
                 pst.setString(2, PenODTnom.getText());
                 pst.setString(3, NQODTnom.getText());
-                pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
+                pst.setInt(4, Integer.parseInt(NODTnom.getText()));
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Abono de orden de taller agregado.");
@@ -3304,6 +3304,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         jLabel164 = new javax.swing.JLabel();
         jLabel165 = new javax.swing.JLabel();
         jLabel166 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         TDnomina = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -5411,6 +5412,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jButton2.setText("Limpiar campos");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
@@ -5448,7 +5456,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                                     .addGroup(jPanel17Layout.createSequentialGroup()
                                         .addComponent(jLabel26)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton2))
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1342, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel17Layout.createSequentialGroup()
                                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5504,7 +5514,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel26)
-                                    .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton2)))
                             .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(Datgen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -15213,6 +15224,79 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         deposito();
     }//GEN-LAST:event_AdNKeyReleased
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        DAB.clearSelection();
+        NQprenom.setText("0");
+        AdN.setText("0");
+        QAcdanom.setText("0");
+        NODTnom.setText("0");
+        NCDANom.setText("0");
+        NCDANom.setText("0");
+        NFnom.setText("0");
+        NDL.setText("");
+        NEnom.setText("0");
+        NEnom.setText("0");
+        Ap.setText("");
+        am.setText("");
+        name.setText("");
+        Bono.setText("0");
+        Bono1.setText("0");
+        cta.setText("");
+        ban.setText("");
+        Zon.setText("");
+        ServN.setText("");
+        sueldo.setText("0");
+        pd.setText("0");
+        Fdb.setText("0");
+        Fde.setText("0");
+        Bp.setText("0");
+        Sancion.setText("0");
+        Grua.setText("0");
+        Playera.setText("0");
+        Chamarra.setText("0");
+        Pantalon.setText("0");
+        Corbata.setText("0");
+        Chaleco.setText("0");
+        Credencial.setText("0");
+        DVT.setText("0");
+        apy.setText("0");
+        Lugar.setText("");
+        DI.setText("26.98");
+        cda.setText("0");
+        Presp.setText("0");
+        obs.setText("");
+        ADD.setText("0");
+        Rembolso.setText("0");
+        deposito.setText("0");
+        Odtp.setText("0");
+        NumPrenom.setText("0");
+        NQprenom.setText("0");
+        Pagadoprenom.setText("0");
+        Pendienteprenom.setText("0");
+        TACDANOM.setText("0");
+        NODTnom.setText("0");
+        NQODTnom.setText("0");
+        PagODTnom.setText("0");
+        PenODTnom.setText("0");
+        QAcdanom.setText("0");
+        Dia1.setSelectedIndex(0);
+        DIa2.setSelectedIndex(0);
+        Dia3.setSelectedIndex(0);
+        Dia4.setSelectedIndex(0);
+        Dia5.setSelectedIndex(0);
+        Dia6.setSelectedIndex(0);
+        Dia7.setSelectedIndex(0);
+        Dia8.setSelectedIndex(0);
+        Dia9.setSelectedIndex(0);
+        Dia10.setSelectedIndex(0);
+        Dia11.setSelectedIndex(0);
+        Dia12.setSelectedIndex(0);
+        Dia13.setSelectedIndex(0);
+        Dia14.setSelectedIndex(0);
+        Dia15.setSelectedIndex(0);
+        Dia16.setSelectedIndex(0);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -15948,6 +16032,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField filtroNDFP;
     private javax.swing.JTextField interes;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
