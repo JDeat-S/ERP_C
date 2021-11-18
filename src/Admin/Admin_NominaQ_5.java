@@ -208,7 +208,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         sharecdanom();
         sharepresnom();
         shareODTnom();
-        MDN();
+        MDNFA();
         MDTPCDA();
         MDTPODT();
         MDTPPres();
@@ -324,7 +324,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     //Agregar pago Pres
     public void AgregarPagoPres() {
 
-        String SQL = "INSERT INTO `nomina.pagos.prestamos` (`#Folio`, `#Lista`, `#prestamo`, "
+        String SQL = "INSERT INTO `nomina.pagos.prestamos." + Zon.getText() + "` (`#Folio`, `#Lista`, `#prestamo`, "
                 + "`#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
                 + " `Servicio`, `Quincena`, `# quincena`, `pagado`, `pendiente`, "
                 + "`Pago de prestamo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -434,7 +434,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     //Agregar pago ODT
     public void AgregarPagoODT() {
 
-        String SQL = "INSERT INTO `nomina.pagos.odt` (`#Folio`, `#Lista`, `# de orden`, "
+        String SQL = "INSERT INTO `nomina.pagos.odt." + Zon.getText() + "` (`#Folio`, `#Lista`, `# de orden`, "
                 + "`#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
                 + " `Servicio`, `Quincena`, `# quincena`, `pagado`, `pendiente`, "
                 + "`Pago de odt`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -642,7 +642,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     public void AgregarPagoCDA() {
 
-        String SQL = "INSERT INTO `nomina.pagos.cda` (`#Folio`, `#Lista`, `#caja`, `#empleado`, `Apellido P`,"
+        String SQL = "INSERT INTO `nomina.pagos.cda." + Zon.getText() + "` (`#Folio`, `#Lista`, `#caja`, `#empleado`, `Apellido P`,"
                 + " `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Quincena`, `Caja de ahorro`,"
                 + " `Observaciones`, `Qnas aportadas`, `# de recibo de pago`) VALUES (?, ?, ?, ?, ?,"
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -2359,7 +2359,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Modificar nomina
     public void MODN() {
 
-        String SQL = "UPDATE `nomina.detallada` SET `#Folio` = ?, `#lista` = ?, `#empleado` = ?,"
+        String SQL = "UPDATE `nomina.detallada." + Zon.getText() + "` SET `#Folio` = ?, `#lista` = ?, `#empleado` = ?,"
                 + " `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Banco` = ?, "
                 + "`Cuenta de banco` = ?, `Zona` = ?, `Servicio` = ?, `Sueldo` = ?, "
                 + "`Bono` = ?, `por dia` = ?, `quincena del mes` = ?, `año` = ?, `1/16` = ?, "
@@ -2556,10 +2556,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }
 
     //mostrar datos de nomina
-    public void MDN() {
+    public void MDNFA() {
         //Buscar empleado
         String FiltroN = Nominab.getText();
-        String where = "select * from `nomina.detallada`";
+        String where = "select * from `nomina.detallada.foraneos acapulco`";
         String FAPNom = FApT.getText();
         String FAMNom = FAmT.getText();
         String FiltroZnom = FiltroZnomina.getSelectedItem().toString();
@@ -2568,19 +2568,19 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF.getText();
 
         if (!"".equals(FiltroN)) {
-            where = "Select * from `nomina.detallada` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            where = "Select * from `nomina.detallada.foraneos acapulco` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            where = "select * from `nomina.detallada` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            where = "select * from `nomina.detallada.foraneos acapulco` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            where = "select * from `nomina.detallada` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            where = "select * from `nomina.detallada.foraneos acapulco` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            where = "select * from `nomina.detallada` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            where = "select * from `nomina.detallada.foraneos acapulco` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroZnom)) {
-            where = "select * from `nomina.detallada` where `Zona   ` LIKE '%" + FiltroZnom + "%'";
+            where = "select * from `nomina.detallada.foraneos acapulco` where `Zona` LIKE '%" + FiltroZnom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            where = "select * from nomina Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            where = "select * from `nomina.detallada.foraneos acapulco` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            where = "select * from `nomina.detallada` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            where = "select * from `nomina.detallada.foraneos acapulco` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -2704,16 +2704,20 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 modelo.addRow(filas);
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + e.getMessage());
 
         }
 
     }
 
+    
+    //18.11
+    
+
 //Agregar nomina
     public void AgregarN() {
 
-        String SQL = "INSERT INTO `nomina.detallada` (`#Folio`, `#lista`, `#empleado`, `Apellido P`, "
+        String SQL = "INSERT INTO `nomina.detallada." + Zon.getText() + "` (`#Folio`, `#lista`, `#empleado`, `Apellido P`, "
                 + "`Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, "
                 + "`Sueldo`, `Bono`, `por dia`, `quincena del mes`, `año`, `1/16`, `2/17`,"
                 + " `3/18`, `4/19`, `5/20`, `6/21`, `7/22`, `8/23`, `9/24`, `10/25`, `11/26`, "
@@ -3088,7 +3092,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         Q14 = new javax.swing.JLabel();
         Q13 = new javax.swing.JLabel();
         Q12 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        PestañasPrin = new javax.swing.JTabbedPane();
         Nomina = new javax.swing.JScrollPane();
         jPanel17 = new javax.swing.JPanel();
         jLabel133 = new javax.swing.JLabel();
@@ -3159,7 +3164,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         Bono = new javax.swing.JTextField();
         jPanel13 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        Zon = new javax.swing.JTextField();
         ServN = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel90 = new javax.swing.JLabel();
@@ -3170,6 +3174,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         sueldo = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         ban = new javax.swing.JTextField();
+        Zon = new javax.swing.JTextField();
         jPanel10 = new javax.swing.JPanel();
         jLabel134 = new javax.swing.JLabel();
         F = new javax.swing.JLabel();
@@ -3305,7 +3310,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         jLabel165 = new javax.swing.JLabel();
         jLabel166 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        TDnomina = new javax.swing.JScrollPane();
+        NomDetallada = new javax.swing.JScrollPane();
+        PestanañasND = new javax.swing.JTabbedPane();
+        TDFA = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         Tnom = new javax.swing.JTable();
@@ -3328,6 +3335,167 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         FApT = new javax.swing.JTextField();
         FAmT = new javax.swing.JTextField();
         botonWeb1 = new botones.BotonWeb();
+        TDFA1 = new javax.swing.JScrollPane();
+        jPanel22 = new javax.swing.JPanel();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        Tnom1 = new javax.swing.JTable();
+        LabelBE1 = new javax.swing.JLabel();
+        Nominab1 = new javax.swing.JTextField();
+        Eliminar1 = new javax.swing.JButton();
+        CS8 = new javax.swing.JButton();
+        LabelBZ1 = new javax.swing.JLabel();
+        FiltroZnomina1 = new javax.swing.JComboBox<>();
+        LabelBS1 = new javax.swing.JLabel();
+        FiltroSnomina1 = new javax.swing.JComboBox<>();
+        LabelBQ1 = new javax.swing.JLabel();
+        FiltroQuincenanomina1 = new javax.swing.JComboBox<>();
+        LabelSZ1 = new javax.swing.JLabel();
+        FZservicio1 = new javax.swing.JComboBox<>();
+        jLabel169 = new javax.swing.JLabel();
+        FiltrosTD1 = new javax.swing.JComboBox<>();
+        LabelBNDF1 = new javax.swing.JLabel();
+        FiltroNDF1 = new javax.swing.JTextField();
+        FApT1 = new javax.swing.JTextField();
+        FAmT1 = new javax.swing.JTextField();
+        botonWeb9 = new botones.BotonWeb();
+        TDFA2 = new javax.swing.JScrollPane();
+        jPanel23 = new javax.swing.JPanel();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        Tnom2 = new javax.swing.JTable();
+        LabelBE2 = new javax.swing.JLabel();
+        Nominab2 = new javax.swing.JTextField();
+        Eliminar2 = new javax.swing.JButton();
+        CS9 = new javax.swing.JButton();
+        LabelBZ2 = new javax.swing.JLabel();
+        FiltroZnomina2 = new javax.swing.JComboBox<>();
+        LabelBS2 = new javax.swing.JLabel();
+        FiltroSnomina2 = new javax.swing.JComboBox<>();
+        LabelBQ2 = new javax.swing.JLabel();
+        FiltroQuincenanomina2 = new javax.swing.JComboBox<>();
+        LabelSZ2 = new javax.swing.JLabel();
+        FZservicio2 = new javax.swing.JComboBox<>();
+        jLabel170 = new javax.swing.JLabel();
+        FiltrosTD2 = new javax.swing.JComboBox<>();
+        LabelBNDF2 = new javax.swing.JLabel();
+        FiltroNDF2 = new javax.swing.JTextField();
+        FApT2 = new javax.swing.JTextField();
+        FAmT2 = new javax.swing.JTextField();
+        botonWeb10 = new botones.BotonWeb();
+        TDFA3 = new javax.swing.JScrollPane();
+        jPanel24 = new javax.swing.JPanel();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        Tnom3 = new javax.swing.JTable();
+        LabelBE3 = new javax.swing.JLabel();
+        Nominab3 = new javax.swing.JTextField();
+        Eliminar3 = new javax.swing.JButton();
+        CS10 = new javax.swing.JButton();
+        LabelBZ3 = new javax.swing.JLabel();
+        FiltroZnomina3 = new javax.swing.JComboBox<>();
+        LabelBS3 = new javax.swing.JLabel();
+        FiltroSnomina3 = new javax.swing.JComboBox<>();
+        LabelBQ3 = new javax.swing.JLabel();
+        FiltroQuincenanomina3 = new javax.swing.JComboBox<>();
+        LabelSZ3 = new javax.swing.JLabel();
+        FZservicio3 = new javax.swing.JComboBox<>();
+        jLabel171 = new javax.swing.JLabel();
+        FiltrosTD3 = new javax.swing.JComboBox<>();
+        LabelBNDF3 = new javax.swing.JLabel();
+        FiltroNDF3 = new javax.swing.JTextField();
+        FApT3 = new javax.swing.JTextField();
+        FAmT3 = new javax.swing.JTextField();
+        botonWeb11 = new botones.BotonWeb();
+        TDFA4 = new javax.swing.JScrollPane();
+        jPanel25 = new javax.swing.JPanel();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        Tnom4 = new javax.swing.JTable();
+        LabelBE4 = new javax.swing.JLabel();
+        Nominab4 = new javax.swing.JTextField();
+        Eliminar4 = new javax.swing.JButton();
+        CS11 = new javax.swing.JButton();
+        LabelBZ4 = new javax.swing.JLabel();
+        FiltroZnomina4 = new javax.swing.JComboBox<>();
+        LabelBS4 = new javax.swing.JLabel();
+        FiltroSnomina4 = new javax.swing.JComboBox<>();
+        LabelBQ4 = new javax.swing.JLabel();
+        FiltroQuincenanomina4 = new javax.swing.JComboBox<>();
+        LabelSZ4 = new javax.swing.JLabel();
+        FZservicio4 = new javax.swing.JComboBox<>();
+        jLabel172 = new javax.swing.JLabel();
+        FiltrosTD4 = new javax.swing.JComboBox<>();
+        LabelBNDF4 = new javax.swing.JLabel();
+        FiltroNDF4 = new javax.swing.JTextField();
+        FApT4 = new javax.swing.JTextField();
+        FAmT4 = new javax.swing.JTextField();
+        botonWeb12 = new botones.BotonWeb();
+        TDFA5 = new javax.swing.JScrollPane();
+        jPanel26 = new javax.swing.JPanel();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        Tnom5 = new javax.swing.JTable();
+        LabelBE5 = new javax.swing.JLabel();
+        Nominab5 = new javax.swing.JTextField();
+        Eliminar5 = new javax.swing.JButton();
+        CS12 = new javax.swing.JButton();
+        LabelBZ5 = new javax.swing.JLabel();
+        FiltroZnomina5 = new javax.swing.JComboBox<>();
+        LabelBS5 = new javax.swing.JLabel();
+        FiltroSnomina5 = new javax.swing.JComboBox<>();
+        LabelBQ5 = new javax.swing.JLabel();
+        FiltroQuincenanomina5 = new javax.swing.JComboBox<>();
+        LabelSZ5 = new javax.swing.JLabel();
+        FZservicio5 = new javax.swing.JComboBox<>();
+        jLabel173 = new javax.swing.JLabel();
+        FiltrosTD5 = new javax.swing.JComboBox<>();
+        LabelBNDF5 = new javax.swing.JLabel();
+        FiltroNDF5 = new javax.swing.JTextField();
+        FApT5 = new javax.swing.JTextField();
+        FAmT5 = new javax.swing.JTextField();
+        botonWeb13 = new botones.BotonWeb();
+        TDFA6 = new javax.swing.JScrollPane();
+        jPanel27 = new javax.swing.JPanel();
+        jScrollPane26 = new javax.swing.JScrollPane();
+        Tnom6 = new javax.swing.JTable();
+        LabelBE6 = new javax.swing.JLabel();
+        Nominab6 = new javax.swing.JTextField();
+        Eliminar6 = new javax.swing.JButton();
+        CS13 = new javax.swing.JButton();
+        LabelBZ6 = new javax.swing.JLabel();
+        FiltroZnomina6 = new javax.swing.JComboBox<>();
+        LabelBS6 = new javax.swing.JLabel();
+        FiltroSnomina6 = new javax.swing.JComboBox<>();
+        LabelBQ6 = new javax.swing.JLabel();
+        FiltroQuincenanomina6 = new javax.swing.JComboBox<>();
+        LabelSZ6 = new javax.swing.JLabel();
+        FZservicio6 = new javax.swing.JComboBox<>();
+        jLabel174 = new javax.swing.JLabel();
+        FiltrosTD6 = new javax.swing.JComboBox<>();
+        LabelBNDF6 = new javax.swing.JLabel();
+        FiltroNDF6 = new javax.swing.JTextField();
+        FApT6 = new javax.swing.JTextField();
+        FAmT6 = new javax.swing.JTextField();
+        botonWeb14 = new botones.BotonWeb();
+        TDFA7 = new javax.swing.JScrollPane();
+        jPanel28 = new javax.swing.JPanel();
+        jScrollPane27 = new javax.swing.JScrollPane();
+        Tnom7 = new javax.swing.JTable();
+        LabelBE7 = new javax.swing.JLabel();
+        Nominab7 = new javax.swing.JTextField();
+        Eliminar7 = new javax.swing.JButton();
+        CS14 = new javax.swing.JButton();
+        LabelBZ7 = new javax.swing.JLabel();
+        FiltroZnomina7 = new javax.swing.JComboBox<>();
+        LabelBS7 = new javax.swing.JLabel();
+        FiltroSnomina7 = new javax.swing.JComboBox<>();
+        LabelBQ7 = new javax.swing.JLabel();
+        FiltroQuincenanomina7 = new javax.swing.JComboBox<>();
+        LabelSZ7 = new javax.swing.JLabel();
+        FZservicio7 = new javax.swing.JComboBox<>();
+        jLabel175 = new javax.swing.JLabel();
+        FiltrosTD7 = new javax.swing.JComboBox<>();
+        LabelBNDF7 = new javax.swing.JLabel();
+        FiltroNDF7 = new javax.swing.JTextField();
+        FApT7 = new javax.swing.JTextField();
+        FAmT7 = new javax.swing.JTextField();
+        botonWeb15 = new botones.BotonWeb();
         TPagos = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -4406,13 +4574,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                             .addComponent(jLabel7)
                             .addComponent(jLabel13))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(ServN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                .addComponent(Zon, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                .addComponent(sueldo, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
-                            .addComponent(cta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ban, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ServN, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(sueldo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(ban, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(cta, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(Zon))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
@@ -5550,7 +5717,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         Nomina.setViewportView(jPanel17);
 
-        jTabbedPane1.addTab("Nomina Quincenal", Nomina);
+        PestañasPrin.addTab("Nomina Quincenal", Nomina);
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -5741,9 +5908,1364 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 .addContainerGap(154, Short.MAX_VALUE))
         );
 
-        TDnomina.setViewportView(jPanel2);
+        TDFA.setViewportView(jPanel2);
 
-        jTabbedPane1.addTab("Tabla Detallada", TDnomina);
+        PestanañasND.addTab("Foraneos Acapulco", TDFA);
+
+        jPanel22.setBackground(new java.awt.Color(204, 255, 255));
+
+        Tnom1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom1MouseClicked(evt);
+            }
+        });
+        jScrollPane21.setViewportView(Tnom1);
+
+        LabelBE1.setText("Buscar Empleado:");
+
+        Nominab1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nominab1KeyReleased(evt);
+            }
+        });
+
+        Eliminar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
+        Eliminar1.setText("Eliminar");
+        Eliminar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar1ActionPerformed(evt);
+            }
+        });
+
+        CS8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS8.setText("Cerrar sesion");
+        CS8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS8ActionPerformed(evt);
+            }
+        });
+
+        LabelBZ1.setText("Buscar Zona");
+
+        FiltroZnomina1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroZnomina1ItemStateChanged(evt);
+            }
+        });
+
+        LabelBS1.setText("Buscar Servicio:");
+
+        FiltroSnomina1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FiltroSnomina1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroSnomina1ItemStateChanged(evt);
+            }
+        });
+
+        LabelBQ1.setText("Buscar Quincena:");
+
+        FiltroQuincenanomina1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQuincenanomina1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQuincenanomina1ItemStateChanged(evt);
+            }
+        });
+
+        LabelSZ1.setText("Selecciona Zona:");
+
+        FZservicio1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FZservicio1ItemStateChanged(evt);
+            }
+        });
+
+        jLabel169.setText("Filtros:");
+
+        FiltrosTD1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Zona", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosTD1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosTD1ItemStateChanged(evt);
+            }
+        });
+
+        LabelBNDF1.setText("Buscar por # Lista");
+
+        FiltroNDF1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroNDF1KeyReleased(evt);
+            }
+        });
+
+        FApT1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT1KeyReleased(evt);
+            }
+        });
+
+        FAmT1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT1KeyReleased(evt);
+            }
+        });
+
+        botonWeb9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addComponent(Eliminar1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel169)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBZ1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroZnomina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS8))
+                .addContainerGap(6745, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane21))
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelBE1)
+                    .addComponent(Nominab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Eliminar1)
+                    .addComponent(LabelBZ1)
+                    .addComponent(FiltroZnomina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBS1)
+                    .addComponent(FiltroSnomina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBQ1)
+                    .addComponent(FiltroQuincenanomina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZ1)
+                    .addComponent(FZservicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel169)
+                    .addComponent(FiltrosTD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBNDF1)
+                    .addComponent(FiltroNDF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FApT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FAmT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonWeb9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS8)
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+
+        TDFA1.setViewportView(jPanel22);
+
+        PestanañasND.addTab("Foraneos Puebla", TDFA1);
+
+        jPanel23.setBackground(new java.awt.Color(204, 255, 255));
+
+        Tnom2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom2MouseClicked(evt);
+            }
+        });
+        jScrollPane22.setViewportView(Tnom2);
+
+        LabelBE2.setText("Buscar Empleado:");
+
+        Nominab2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nominab2KeyReleased(evt);
+            }
+        });
+
+        Eliminar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
+        Eliminar2.setText("Eliminar");
+        Eliminar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar2ActionPerformed(evt);
+            }
+        });
+
+        CS9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS9.setText("Cerrar sesion");
+        CS9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS9ActionPerformed(evt);
+            }
+        });
+
+        LabelBZ2.setText("Buscar Zona");
+
+        FiltroZnomina2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroZnomina2ItemStateChanged(evt);
+            }
+        });
+
+        LabelBS2.setText("Buscar Servicio:");
+
+        FiltroSnomina2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FiltroSnomina2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroSnomina2ItemStateChanged(evt);
+            }
+        });
+
+        LabelBQ2.setText("Buscar Quincena:");
+
+        FiltroQuincenanomina2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQuincenanomina2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQuincenanomina2ItemStateChanged(evt);
+            }
+        });
+
+        LabelSZ2.setText("Selecciona Zona:");
+
+        FZservicio2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FZservicio2ItemStateChanged(evt);
+            }
+        });
+
+        jLabel170.setText("Filtros:");
+
+        FiltrosTD2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Zona", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosTD2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosTD2ItemStateChanged(evt);
+            }
+        });
+
+        LabelBNDF2.setText("Buscar por # Lista");
+
+        FiltroNDF2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroNDF2KeyReleased(evt);
+            }
+        });
+
+        FApT2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT2KeyReleased(evt);
+            }
+        });
+
+        FAmT2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT2KeyReleased(evt);
+            }
+        });
+
+        botonWeb10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addComponent(Eliminar2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel170)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBZ2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroZnomina2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS9))
+                .addContainerGap(6745, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane22))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelBE2)
+                    .addComponent(Nominab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Eliminar2)
+                    .addComponent(LabelBZ2)
+                    .addComponent(FiltroZnomina2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBS2)
+                    .addComponent(FiltroSnomina2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBQ2)
+                    .addComponent(FiltroQuincenanomina2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZ2)
+                    .addComponent(FZservicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel170)
+                    .addComponent(FiltrosTD2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBNDF2)
+                    .addComponent(FiltroNDF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FApT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FAmT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonWeb10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS9)
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+
+        TDFA2.setViewportView(jPanel23);
+
+        PestanañasND.addTab("Foraneos Toluca", TDFA2);
+
+        jPanel24.setBackground(new java.awt.Color(204, 255, 255));
+
+        Tnom3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom3MouseClicked(evt);
+            }
+        });
+        jScrollPane23.setViewportView(Tnom3);
+
+        LabelBE3.setText("Buscar Empleado:");
+
+        Nominab3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nominab3KeyReleased(evt);
+            }
+        });
+
+        Eliminar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
+        Eliminar3.setText("Eliminar");
+        Eliminar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar3ActionPerformed(evt);
+            }
+        });
+
+        CS10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS10.setText("Cerrar sesion");
+        CS10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS10ActionPerformed(evt);
+            }
+        });
+
+        LabelBZ3.setText("Buscar Zona");
+
+        FiltroZnomina3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroZnomina3ItemStateChanged(evt);
+            }
+        });
+
+        LabelBS3.setText("Buscar Servicio:");
+
+        FiltroSnomina3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FiltroSnomina3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroSnomina3ItemStateChanged(evt);
+            }
+        });
+
+        LabelBQ3.setText("Buscar Quincena:");
+
+        FiltroQuincenanomina3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQuincenanomina3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQuincenanomina3ItemStateChanged(evt);
+            }
+        });
+
+        LabelSZ3.setText("Selecciona Zona:");
+
+        FZservicio3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FZservicio3ItemStateChanged(evt);
+            }
+        });
+
+        jLabel171.setText("Filtros:");
+
+        FiltrosTD3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Zona", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosTD3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosTD3ItemStateChanged(evt);
+            }
+        });
+
+        LabelBNDF3.setText("Buscar por # Lista");
+
+        FiltroNDF3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroNDF3KeyReleased(evt);
+            }
+        });
+
+        FApT3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT3KeyReleased(evt);
+            }
+        });
+
+        FAmT3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT3KeyReleased(evt);
+            }
+        });
+
+        botonWeb11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb11.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addComponent(Eliminar3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel171)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBZ3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroZnomina3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS10))
+                .addContainerGap(6745, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane23))
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelBE3)
+                    .addComponent(Nominab3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Eliminar3)
+                    .addComponent(LabelBZ3)
+                    .addComponent(FiltroZnomina3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBS3)
+                    .addComponent(FiltroSnomina3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBQ3)
+                    .addComponent(FiltroQuincenanomina3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZ3)
+                    .addComponent(FZservicio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel171)
+                    .addComponent(FiltrosTD3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBNDF3)
+                    .addComponent(FiltroNDF3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FApT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FAmT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonWeb11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS10)
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+
+        TDFA3.setViewportView(jPanel24);
+
+        PestanañasND.addTab("Norte", TDFA3);
+
+        jPanel25.setBackground(new java.awt.Color(204, 255, 255));
+
+        Tnom4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom4MouseClicked(evt);
+            }
+        });
+        jScrollPane24.setViewportView(Tnom4);
+
+        LabelBE4.setText("Buscar Empleado:");
+
+        Nominab4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nominab4KeyReleased(evt);
+            }
+        });
+
+        Eliminar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
+        Eliminar4.setText("Eliminar");
+        Eliminar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar4ActionPerformed(evt);
+            }
+        });
+
+        CS11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS11.setText("Cerrar sesion");
+        CS11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS11ActionPerformed(evt);
+            }
+        });
+
+        LabelBZ4.setText("Buscar Zona");
+
+        FiltroZnomina4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroZnomina4ItemStateChanged(evt);
+            }
+        });
+
+        LabelBS4.setText("Buscar Servicio:");
+
+        FiltroSnomina4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FiltroSnomina4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroSnomina4ItemStateChanged(evt);
+            }
+        });
+
+        LabelBQ4.setText("Buscar Quincena:");
+
+        FiltroQuincenanomina4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQuincenanomina4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQuincenanomina4ItemStateChanged(evt);
+            }
+        });
+
+        LabelSZ4.setText("Selecciona Zona:");
+
+        FZservicio4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FZservicio4ItemStateChanged(evt);
+            }
+        });
+
+        jLabel172.setText("Filtros:");
+
+        FiltrosTD4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Zona", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosTD4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosTD4ItemStateChanged(evt);
+            }
+        });
+
+        LabelBNDF4.setText("Buscar por # Lista");
+
+        FiltroNDF4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroNDF4KeyReleased(evt);
+            }
+        });
+
+        FApT4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT4KeyReleased(evt);
+            }
+        });
+
+        FAmT4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT4KeyReleased(evt);
+            }
+        });
+
+        botonWeb12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb12.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addComponent(Eliminar4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel172)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBZ4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroZnomina4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS11))
+                .addContainerGap(6745, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane24))
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelBE4)
+                    .addComponent(Nominab4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Eliminar4)
+                    .addComponent(LabelBZ4)
+                    .addComponent(FiltroZnomina4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBS4)
+                    .addComponent(FiltroSnomina4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBQ4)
+                    .addComponent(FiltroQuincenanomina4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZ4)
+                    .addComponent(FZservicio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel172)
+                    .addComponent(FiltrosTD4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBNDF4)
+                    .addComponent(FiltroNDF4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FApT4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FAmT4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonWeb12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS11)
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+
+        TDFA4.setViewportView(jPanel25);
+
+        PestanañasND.addTab("Poniente", TDFA4);
+
+        jPanel26.setBackground(new java.awt.Color(204, 255, 255));
+
+        Tnom5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom5MouseClicked(evt);
+            }
+        });
+        jScrollPane25.setViewportView(Tnom5);
+
+        LabelBE5.setText("Buscar Empleado:");
+
+        Nominab5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nominab5KeyReleased(evt);
+            }
+        });
+
+        Eliminar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
+        Eliminar5.setText("Eliminar");
+        Eliminar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar5ActionPerformed(evt);
+            }
+        });
+
+        CS12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS12.setText("Cerrar sesion");
+        CS12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS12ActionPerformed(evt);
+            }
+        });
+
+        LabelBZ5.setText("Buscar Zona");
+
+        FiltroZnomina5.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroZnomina5ItemStateChanged(evt);
+            }
+        });
+
+        LabelBS5.setText("Buscar Servicio:");
+
+        FiltroSnomina5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FiltroSnomina5.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroSnomina5ItemStateChanged(evt);
+            }
+        });
+
+        LabelBQ5.setText("Buscar Quincena:");
+
+        FiltroQuincenanomina5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQuincenanomina5.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQuincenanomina5ItemStateChanged(evt);
+            }
+        });
+
+        LabelSZ5.setText("Selecciona Zona:");
+
+        FZservicio5.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FZservicio5ItemStateChanged(evt);
+            }
+        });
+
+        jLabel173.setText("Filtros:");
+
+        FiltrosTD5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Zona", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosTD5.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosTD5ItemStateChanged(evt);
+            }
+        });
+
+        LabelBNDF5.setText("Buscar por # Lista");
+
+        FiltroNDF5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroNDF5KeyReleased(evt);
+            }
+        });
+
+        FApT5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT5KeyReleased(evt);
+            }
+        });
+
+        FAmT5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT5KeyReleased(evt);
+            }
+        });
+
+        botonWeb13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb13.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel26Layout.createSequentialGroup()
+                        .addComponent(Eliminar5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel173)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBZ5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroZnomina5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS12))
+                .addContainerGap(6745, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane25))
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelBE5)
+                    .addComponent(Nominab5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Eliminar5)
+                    .addComponent(LabelBZ5)
+                    .addComponent(FiltroZnomina5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBS5)
+                    .addComponent(FiltroSnomina5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBQ5)
+                    .addComponent(FiltroQuincenanomina5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZ5)
+                    .addComponent(FZservicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel173)
+                    .addComponent(FiltrosTD5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBNDF5)
+                    .addComponent(FiltroNDF5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FApT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FAmT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonWeb13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS12)
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+
+        TDFA5.setViewportView(jPanel26);
+
+        PestanañasND.addTab("Sur 1", TDFA5);
+
+        jPanel27.setBackground(new java.awt.Color(204, 255, 255));
+
+        Tnom6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom6MouseClicked(evt);
+            }
+        });
+        jScrollPane26.setViewportView(Tnom6);
+
+        LabelBE6.setText("Buscar Empleado:");
+
+        Nominab6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nominab6KeyReleased(evt);
+            }
+        });
+
+        Eliminar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
+        Eliminar6.setText("Eliminar");
+        Eliminar6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar6ActionPerformed(evt);
+            }
+        });
+
+        CS13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS13.setText("Cerrar sesion");
+        CS13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS13ActionPerformed(evt);
+            }
+        });
+
+        LabelBZ6.setText("Buscar Zona");
+
+        FiltroZnomina6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroZnomina6ItemStateChanged(evt);
+            }
+        });
+
+        LabelBS6.setText("Buscar Servicio:");
+
+        FiltroSnomina6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FiltroSnomina6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroSnomina6ItemStateChanged(evt);
+            }
+        });
+
+        LabelBQ6.setText("Buscar Quincena:");
+
+        FiltroQuincenanomina6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQuincenanomina6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQuincenanomina6ItemStateChanged(evt);
+            }
+        });
+
+        LabelSZ6.setText("Selecciona Zona:");
+
+        FZservicio6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FZservicio6ItemStateChanged(evt);
+            }
+        });
+
+        jLabel174.setText("Filtros:");
+
+        FiltrosTD6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Zona", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosTD6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosTD6ItemStateChanged(evt);
+            }
+        });
+
+        LabelBNDF6.setText("Buscar por # Lista");
+
+        FiltroNDF6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroNDF6KeyReleased(evt);
+            }
+        });
+
+        FApT6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT6KeyReleased(evt);
+            }
+        });
+
+        FAmT6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT6KeyReleased(evt);
+            }
+        });
+
+        botonWeb14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb14.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel27Layout.createSequentialGroup()
+                        .addComponent(Eliminar6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel174)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBZ6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroZnomina6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS13))
+                .addContainerGap(6745, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel27Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane26))
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelBE6)
+                    .addComponent(Nominab6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Eliminar6)
+                    .addComponent(LabelBZ6)
+                    .addComponent(FiltroZnomina6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBS6)
+                    .addComponent(FiltroSnomina6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBQ6)
+                    .addComponent(FiltroQuincenanomina6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZ6)
+                    .addComponent(FZservicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel174)
+                    .addComponent(FiltrosTD6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBNDF6)
+                    .addComponent(FiltroNDF6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FApT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FAmT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonWeb14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS13)
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+
+        TDFA6.setViewportView(jPanel27);
+
+        PestanañasND.addTab("Sur 2", TDFA6);
+
+        jPanel28.setBackground(new java.awt.Color(204, 255, 255));
+
+        Tnom7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom7MouseClicked(evt);
+            }
+        });
+        jScrollPane27.setViewportView(Tnom7);
+
+        LabelBE7.setText("Buscar Empleado:");
+
+        Nominab7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nominab7KeyReleased(evt);
+            }
+        });
+
+        Eliminar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
+        Eliminar7.setText("Eliminar");
+        Eliminar7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar7ActionPerformed(evt);
+            }
+        });
+
+        CS14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS14.setText("Cerrar sesion");
+        CS14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS14ActionPerformed(evt);
+            }
+        });
+
+        LabelBZ7.setText("Buscar Zona");
+
+        FiltroZnomina7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroZnomina7ItemStateChanged(evt);
+            }
+        });
+
+        LabelBS7.setText("Buscar Servicio:");
+
+        FiltroSnomina7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FiltroSnomina7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroSnomina7ItemStateChanged(evt);
+            }
+        });
+
+        LabelBQ7.setText("Buscar Quincena:");
+
+        FiltroQuincenanomina7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQuincenanomina7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQuincenanomina7ItemStateChanged(evt);
+            }
+        });
+
+        LabelSZ7.setText("Selecciona Zona:");
+
+        FZservicio7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FZservicio7ItemStateChanged(evt);
+            }
+        });
+
+        jLabel175.setText("Filtros:");
+
+        FiltrosTD7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Zona", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosTD7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosTD7ItemStateChanged(evt);
+            }
+        });
+
+        LabelBNDF7.setText("Buscar por # Lista");
+
+        FiltroNDF7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroNDF7KeyReleased(evt);
+            }
+        });
+
+        FApT7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT7KeyReleased(evt);
+            }
+        });
+
+        FAmT7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT7KeyReleased(evt);
+            }
+        });
+
+        botonWeb15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb15.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+
+        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+        jPanel28.setLayout(jPanel28Layout);
+        jPanel28Layout.setHorizontalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addComponent(Eliminar7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel175)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBZ7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroZnomina7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS14))
+                .addContainerGap(6745, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel28Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane27))
+        );
+        jPanel28Layout.setVerticalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelBE7)
+                    .addComponent(Nominab7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Eliminar7)
+                    .addComponent(LabelBZ7)
+                    .addComponent(FiltroZnomina7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBS7)
+                    .addComponent(FiltroSnomina7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBQ7)
+                    .addComponent(FiltroQuincenanomina7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZ7)
+                    .addComponent(FZservicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel175)
+                    .addComponent(FiltrosTD7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBNDF7)
+                    .addComponent(FiltroNDF7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FApT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FAmT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonWeb15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS14)
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+
+        TDFA7.setViewportView(jPanel28);
+
+        PestanañasND.addTab("Oficina", TDFA7);
+
+        NomDetallada.setViewportView(PestanañasND);
+
+        PestañasPrin.addTab("Nominas detalladas", NomDetallada);
 
         jPanel3.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -5920,7 +7442,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         TPagos.setViewportView(jPanel3);
 
-        jTabbedPane1.addTab("Tabla Pagos", TPagos);
+        PestañasPrin.addTab("Tabla Pagos", TPagos);
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -6264,7 +7786,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         Prestamos.setViewportView(jPanel4);
 
-        jTabbedPane1.addTab("Prestamos", Prestamos);
+        PestañasPrin.addTab("Prestamos", Prestamos);
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -6383,7 +7905,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         Tprestamos.setViewportView(jPanel5);
 
-        jTabbedPane1.addTab("Tabla prestamos", Tprestamos);
+        PestañasPrin.addTab("Tabla prestamos", Tprestamos);
 
         TPPRES.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -6476,7 +7998,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         TPDP.setViewportView(jPanel20);
 
-        jTabbedPane1.addTab("Tabla pagos de prestamos", TPDP);
+        PestañasPrin.addTab("Tabla pagos de prestamos", TPDP);
 
         jPanel6.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -6921,7 +8443,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         Talleres.setViewportView(jPanel6);
 
-        jTabbedPane1.addTab("Talleres", Talleres);
+        PestañasPrin.addTab("Talleres", Talleres);
 
         jPanel8.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -7039,7 +8561,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         TTalleres.setViewportView(jPanel8);
 
-        jTabbedPane1.addTab("Tabla talleres", TTalleres);
+        PestañasPrin.addTab("Tabla talleres", TTalleres);
 
         TPODT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -7132,7 +8654,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         TDPODT.setViewportView(jPanel19);
 
-        jTabbedPane1.addTab("Tabla pagos de ODT", TDPODT);
+        PestañasPrin.addTab("Tabla pagos de ODT", TDPODT);
 
         jLabel98.setText("# empleado:");
 
@@ -7639,7 +9161,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         Cajadeahorro.setViewportView(jPanel14);
 
-        jTabbedPane1.addTab("Caja de ahorro", Cajadeahorro);
+        PestañasPrin.addTab("Caja de ahorro", Cajadeahorro);
 
         jLabel129.setText("# recibo entregado");
 
@@ -7784,7 +9306,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         TPDCDA.setViewportView(jPanel1);
 
-        jTabbedPane1.addTab("Tabla pagos de caja de ahorro", TPDCDA);
+        PestañasPrin.addTab("Tabla pagos de caja de ahorro", TPDCDA);
 
         Menuadm.setText("Todas las ventanas");
 
@@ -7865,11 +9387,11 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1379, Short.MAX_VALUE)
+            .addComponent(PestañasPrin, javax.swing.GroupLayout.DEFAULT_SIZE, 1379, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 897, Short.MAX_VALUE)
+            .addComponent(PestañasPrin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 897, Short.MAX_VALUE)
         );
 
         pack();
@@ -7929,7 +9451,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         MDTPCDA();
         MDTPPres();
         mostrarpagos();
-        MDN();
+        MDNFA();
         MDTPODT();
     }//GEN-LAST:event_ModmActionPerformed
 
@@ -7977,7 +9499,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         MDTPCDA();
         MDTPPres();
         mostrarpagos();
-        MDN();
+        MDNFA();
         MDTPODT();
     }//GEN-LAST:event_AgregarNPActionPerformed
 
@@ -11670,6 +13192,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void shareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shareMouseClicked
 
+        DefaultTableModel model = (DefaultTableModel) share.getModel();
+
         int seleccionar = share.getSelectedRow();
         NEnom.setText(String.valueOf(share.getValueAt(seleccionar, 0)));
         Ap.setText(String.valueOf(share.getValueAt(seleccionar, 1)));
@@ -14369,17 +15893,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void FAmTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmTKeyReleased
 
-        MDN();
+        MDNFA();
     }//GEN-LAST:event_FAmTKeyReleased
 
     private void FApTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApTKeyReleased
 
-        MDN();
+        MDNFA();
     }//GEN-LAST:event_FApTKeyReleased
 
     private void FiltroNDFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDFKeyReleased
 
-        MDN();
+        MDNFA();
     }//GEN-LAST:event_FiltroNDFKeyReleased
 
     private void FiltrosTDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTDItemStateChanged
@@ -14408,7 +15932,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroNDF.setText("");
             FiltroNDF.setVisible(false);
             LabelBNDF.setVisible(false);
-            MDN();
+            MDNFA();
 
         }
         if (dt.equals("Filtrar por Apellido P")) {
@@ -14434,7 +15958,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroNDF.setText("");
             FiltroNDF.setVisible(false);
             LabelBNDF.setVisible(false);
-            MDN();
+            MDNFA();
         }
         if (dt.equals("Filtrar por Apellido M")) {
             Nominab.setText("");
@@ -14460,7 +15984,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroNDF.setText("");
             FiltroNDF.setVisible(false);
             LabelBNDF.setVisible(false);
-            MDN();
+            MDNFA();
         }
         if (dt.equals("Filtrar por Nombre(s)")) {
             Nominab.setText("");
@@ -14486,7 +16010,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroNDF.setText("");
             FiltroNDF.setVisible(false);
             LabelBNDF.setVisible(false);
-            MDN();
+            MDNFA();
         }
         if (dt.equals("Filtrar por Zona")) {
             Nominab.setText("");
@@ -14511,7 +16035,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroNDF.setText("");
             FiltroNDF.setVisible(false);
             LabelBNDF.setVisible(false);
-            MDN();
+            MDNFA();
         }
         if (dt.equals("Filtrar por Servicio")) {
             Nominab.setText("");
@@ -14536,7 +16060,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroNDF.setText("");
             FiltroNDF.setVisible(false);
             LabelBNDF.setVisible(false);
-            MDN();
+            MDNFA();
         }
         if (dt.equals("Filtrar por quincena")) {
             Nominab.setText("");
@@ -14561,7 +16085,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroNDF.setText("");
             FiltroNDF.setVisible(false);
             LabelBNDF.setVisible(false);
-            MDN();
+            MDNFA();
         }
         if (dt.equals("Filtrar por # Lista")) {
             Nominab.setText("");
@@ -14586,7 +16110,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroNDF.setText("");
             FiltroNDF.setVisible(true);
             LabelBNDF.setVisible(true);
-            MDN();
+            MDNFA();
         }
     }//GEN-LAST:event_FiltrosTDItemStateChanged
 
@@ -14598,22 +16122,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
             FiltroSnomina.setModel(modelServicio);
         }
-        MDN();
+        MDNFA();
     }//GEN-LAST:event_FZservicioItemStateChanged
 
     private void FiltroQuincenanominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanominaItemStateChanged
 
-        MDN();
+        MDNFA();
     }//GEN-LAST:event_FiltroQuincenanominaItemStateChanged
 
     private void FiltroSnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnominaItemStateChanged
 
-        MDN();
+        MDNFA();
     }//GEN-LAST:event_FiltroSnominaItemStateChanged
 
     private void FiltroZnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnominaItemStateChanged
 
-        MDN();
+        MDNFA();
     }//GEN-LAST:event_FiltroZnominaItemStateChanged
 
     private void CS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2ActionPerformed
@@ -14629,12 +16153,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
 
         eliminarnom();
-        MDN();
+        MDNFA();
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void NominabKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NominabKeyReleased
 
-        MDN();
+        MDNFA();
     }//GEN-LAST:event_NominabKeyReleased
 
     private void TnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TnomMouseClicked
@@ -15297,6 +16821,342 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         Dia16.setSelectedIndex(0);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void Tnom1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tnom1MouseClicked
+
+    private void Nominab1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Nominab1KeyReleased
+
+    private void Eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Eliminar1ActionPerformed
+
+    private void CS8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CS8ActionPerformed
+
+    private void FiltroZnomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroZnomina1ItemStateChanged
+
+    private void FiltroSnomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroSnomina1ItemStateChanged
+
+    private void FiltroQuincenanomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroQuincenanomina1ItemStateChanged
+
+    private void FZservicio1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FZservicio1ItemStateChanged
+
+    private void FiltrosTD1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltrosTD1ItemStateChanged
+
+    private void FiltroNDF1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroNDF1KeyReleased
+
+    private void FApT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FApT1KeyReleased
+
+    private void FAmT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FAmT1KeyReleased
+
+    private void Tnom2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tnom2MouseClicked
+
+    private void Nominab2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab2KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Nominab2KeyReleased
+
+    private void Eliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Eliminar2ActionPerformed
+
+    private void CS9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CS9ActionPerformed
+
+    private void FiltroZnomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina2ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroZnomina2ItemStateChanged
+
+    private void FiltroSnomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina2ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroSnomina2ItemStateChanged
+
+    private void FiltroQuincenanomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina2ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroQuincenanomina2ItemStateChanged
+
+    private void FZservicio2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio2ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FZservicio2ItemStateChanged
+
+    private void FiltrosTD2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD2ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltrosTD2ItemStateChanged
+
+    private void FiltroNDF2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF2KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroNDF2KeyReleased
+
+    private void FApT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT2KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FApT2KeyReleased
+
+    private void FAmT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT2KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FAmT2KeyReleased
+
+    private void Tnom3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tnom3MouseClicked
+
+    private void Nominab3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab3KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Nominab3KeyReleased
+
+    private void Eliminar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Eliminar3ActionPerformed
+
+    private void CS10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CS10ActionPerformed
+
+    private void FiltroZnomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina3ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroZnomina3ItemStateChanged
+
+    private void FiltroSnomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina3ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroSnomina3ItemStateChanged
+
+    private void FiltroQuincenanomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina3ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroQuincenanomina3ItemStateChanged
+
+    private void FZservicio3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio3ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FZservicio3ItemStateChanged
+
+    private void FiltrosTD3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD3ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltrosTD3ItemStateChanged
+
+    private void FiltroNDF3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF3KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroNDF3KeyReleased
+
+    private void FApT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT3KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FApT3KeyReleased
+
+    private void FAmT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT3KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FAmT3KeyReleased
+
+    private void Tnom4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tnom4MouseClicked
+
+    private void Nominab4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab4KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Nominab4KeyReleased
+
+    private void Eliminar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Eliminar4ActionPerformed
+
+    private void CS11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CS11ActionPerformed
+
+    private void FiltroZnomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina4ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroZnomina4ItemStateChanged
+
+    private void FiltroSnomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina4ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroSnomina4ItemStateChanged
+
+    private void FiltroQuincenanomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina4ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroQuincenanomina4ItemStateChanged
+
+    private void FZservicio4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio4ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FZservicio4ItemStateChanged
+
+    private void FiltrosTD4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD4ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltrosTD4ItemStateChanged
+
+    private void FiltroNDF4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF4KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroNDF4KeyReleased
+
+    private void FApT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT4KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FApT4KeyReleased
+
+    private void FAmT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT4KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FAmT4KeyReleased
+
+    private void Tnom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tnom5MouseClicked
+
+    private void Nominab5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab5KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Nominab5KeyReleased
+
+    private void Eliminar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Eliminar5ActionPerformed
+
+    private void CS12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CS12ActionPerformed
+
+    private void FiltroZnomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina5ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroZnomina5ItemStateChanged
+
+    private void FiltroSnomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina5ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroSnomina5ItemStateChanged
+
+    private void FiltroQuincenanomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina5ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroQuincenanomina5ItemStateChanged
+
+    private void FZservicio5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio5ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FZservicio5ItemStateChanged
+
+    private void FiltrosTD5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD5ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltrosTD5ItemStateChanged
+
+    private void FiltroNDF5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF5KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroNDF5KeyReleased
+
+    private void FApT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT5KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FApT5KeyReleased
+
+    private void FAmT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT5KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FAmT5KeyReleased
+
+    private void Tnom6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tnom6MouseClicked
+
+    private void Nominab6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab6KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Nominab6KeyReleased
+
+    private void Eliminar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Eliminar6ActionPerformed
+
+    private void CS13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CS13ActionPerformed
+
+    private void FiltroZnomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina6ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroZnomina6ItemStateChanged
+
+    private void FiltroSnomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina6ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroSnomina6ItemStateChanged
+
+    private void FiltroQuincenanomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina6ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroQuincenanomina6ItemStateChanged
+
+    private void FZservicio6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio6ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FZservicio6ItemStateChanged
+
+    private void FiltrosTD6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD6ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltrosTD6ItemStateChanged
+
+    private void FiltroNDF6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF6KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroNDF6KeyReleased
+
+    private void FApT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT6KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FApT6KeyReleased
+
+    private void FAmT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT6KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FAmT6KeyReleased
+
+    private void Tnom7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tnom7MouseClicked
+
+    private void Nominab7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab7KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Nominab7KeyReleased
+
+    private void Eliminar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Eliminar7ActionPerformed
+
+    private void CS14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CS14ActionPerformed
+
+    private void FiltroZnomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina7ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroZnomina7ItemStateChanged
+
+    private void FiltroSnomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina7ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroSnomina7ItemStateChanged
+
+    private void FiltroQuincenanomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina7ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroQuincenanomina7ItemStateChanged
+
+    private void FZservicio7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio7ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FZservicio7ItemStateChanged
+
+    private void FiltrosTD7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD7ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltrosTD7ItemStateChanged
+
+    private void FiltroNDF7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF7KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroNDF7KeyReleased
+
+    private void FApT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT7KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FApT7KeyReleased
+
+    private void FAmT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT7KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FAmT7KeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -15630,12 +17490,19 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField BusnameCDA;
     private javax.swing.JTextField Busnamecdash;
     private javax.swing.JButton CS;
+    private javax.swing.JButton CS10;
+    private javax.swing.JButton CS11;
+    private javax.swing.JButton CS12;
+    private javax.swing.JButton CS13;
+    private javax.swing.JButton CS14;
     private javax.swing.JButton CS2;
     private javax.swing.JButton CS3;
     private javax.swing.JButton CS4;
     private javax.swing.JButton CS5;
     private javax.swing.JButton CS6;
     private javax.swing.JButton CS7;
+    private javax.swing.JButton CS8;
+    private javax.swing.JButton CS9;
     private javax.swing.JTextField CT;
     private javax.swing.JTextField CajaA;
     private javax.swing.JScrollPane Cajadeahorro;
@@ -15723,6 +17590,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Dia9;
     private javax.swing.JLabel Dpi;
     private javax.swing.JButton Eliminar;
+    private javax.swing.JButton Eliminar1;
+    private javax.swing.JButton Eliminar2;
+    private javax.swing.JButton Eliminar3;
+    private javax.swing.JButton Eliminar4;
+    private javax.swing.JButton Eliminar5;
+    private javax.swing.JButton Eliminar6;
+    private javax.swing.JButton Eliminar7;
     private javax.swing.JButton EliminarT;
     private javax.swing.JButton Eliminarcda;
     private javax.swing.JMenuItem Estadias;
@@ -15746,7 +17620,21 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FAMpres;
     private javax.swing.JTextField FAPpres;
     private javax.swing.JTextField FAmT;
+    private javax.swing.JTextField FAmT1;
+    private javax.swing.JTextField FAmT2;
+    private javax.swing.JTextField FAmT3;
+    private javax.swing.JTextField FAmT4;
+    private javax.swing.JTextField FAmT5;
+    private javax.swing.JTextField FAmT6;
+    private javax.swing.JTextField FAmT7;
     private javax.swing.JTextField FApT;
+    private javax.swing.JTextField FApT1;
+    private javax.swing.JTextField FApT2;
+    private javax.swing.JTextField FApT3;
+    private javax.swing.JTextField FApT4;
+    private javax.swing.JTextField FApT5;
+    private javax.swing.JTextField FApT6;
+    private javax.swing.JTextField FApT7;
     private javax.swing.JTextField FE;
     private javax.swing.JLabel FJ;
     private javax.swing.JLabel FJ1;
@@ -15769,6 +17657,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FNamepres;
     private javax.swing.JTextField FS;
     private javax.swing.JComboBox<String> FZservicio;
+    private javax.swing.JComboBox<String> FZservicio1;
+    private javax.swing.JComboBox<String> FZservicio2;
+    private javax.swing.JComboBox<String> FZservicio3;
+    private javax.swing.JComboBox<String> FZservicio4;
+    private javax.swing.JComboBox<String> FZservicio5;
+    private javax.swing.JComboBox<String> FZservicio6;
+    private javax.swing.JComboBox<String> FZservicio7;
     private javax.swing.JTextField Fdb;
     private javax.swing.JTextField Fde;
     private javax.swing.JComboBox<String> Fdp;
@@ -15789,17 +17684,52 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Filsharecda;
     private javax.swing.JLabel Filtro1;
     private javax.swing.JTextField FiltroNDF;
+    private javax.swing.JTextField FiltroNDF1;
+    private javax.swing.JTextField FiltroNDF2;
+    private javax.swing.JTextField FiltroNDF3;
+    private javax.swing.JTextField FiltroNDF4;
+    private javax.swing.JTextField FiltroNDF5;
+    private javax.swing.JTextField FiltroNDF6;
+    private javax.swing.JTextField FiltroNDF7;
     private javax.swing.JComboBox<String> FiltroQP;
     private javax.swing.JComboBox<String> FiltroQuincenanomina;
+    private javax.swing.JComboBox<String> FiltroQuincenanomina1;
+    private javax.swing.JComboBox<String> FiltroQuincenanomina2;
+    private javax.swing.JComboBox<String> FiltroQuincenanomina3;
+    private javax.swing.JComboBox<String> FiltroQuincenanomina4;
+    private javax.swing.JComboBox<String> FiltroQuincenanomina5;
+    private javax.swing.JComboBox<String> FiltroQuincenanomina6;
+    private javax.swing.JComboBox<String> FiltroQuincenanomina7;
     private javax.swing.JComboBox<String> FiltroSZP;
     private javax.swing.JComboBox<String> FiltroServP;
     private javax.swing.JComboBox<String> FiltroSnomina;
+    private javax.swing.JComboBox<String> FiltroSnomina1;
+    private javax.swing.JComboBox<String> FiltroSnomina2;
+    private javax.swing.JComboBox<String> FiltroSnomina3;
+    private javax.swing.JComboBox<String> FiltroSnomina4;
+    private javax.swing.JComboBox<String> FiltroSnomina5;
+    private javax.swing.JComboBox<String> FiltroSnomina6;
+    private javax.swing.JComboBox<String> FiltroSnomina7;
     private javax.swing.JComboBox<String> FiltroZP;
     private javax.swing.JComboBox<String> FiltroZnomina;
+    private javax.swing.JComboBox<String> FiltroZnomina1;
+    private javax.swing.JComboBox<String> FiltroZnomina2;
+    private javax.swing.JComboBox<String> FiltroZnomina3;
+    private javax.swing.JComboBox<String> FiltroZnomina4;
+    private javax.swing.JComboBox<String> FiltroZnomina5;
+    private javax.swing.JComboBox<String> FiltroZnomina6;
+    private javax.swing.JComboBox<String> FiltroZnomina7;
     private javax.swing.JComboBox<String> FiltrosNom;
     private javax.swing.JComboBox<String> FiltrosP;
     private javax.swing.JComboBox<String> FiltrosPDODT;
     private javax.swing.JComboBox<String> FiltrosTD;
+    private javax.swing.JComboBox<String> FiltrosTD1;
+    private javax.swing.JComboBox<String> FiltrosTD2;
+    private javax.swing.JComboBox<String> FiltrosTD3;
+    private javax.swing.JComboBox<String> FiltrosTD4;
+    private javax.swing.JComboBox<String> FiltrosTD5;
+    private javax.swing.JComboBox<String> FiltrosTD6;
+    private javax.swing.JComboBox<String> FiltrosTD7;
     private javax.swing.JComboBox<String> FiltrosTODT;
     private javax.swing.JComboBox<String> FiltrosTP;
     private javax.swing.JComboBox<String> FiltrosTPDP;
@@ -15813,13 +17743,48 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Iad;
     private javax.swing.JComboBox<String> Interes;
     private javax.swing.JLabel LabelBE;
+    private javax.swing.JLabel LabelBE1;
+    private javax.swing.JLabel LabelBE2;
+    private javax.swing.JLabel LabelBE3;
+    private javax.swing.JLabel LabelBE4;
+    private javax.swing.JLabel LabelBE5;
+    private javax.swing.JLabel LabelBE6;
+    private javax.swing.JLabel LabelBE7;
     private javax.swing.JLabel LabelBEP;
     private javax.swing.JLabel LabelBNDF;
+    private javax.swing.JLabel LabelBNDF1;
+    private javax.swing.JLabel LabelBNDF2;
+    private javax.swing.JLabel LabelBNDF3;
+    private javax.swing.JLabel LabelBNDF4;
+    private javax.swing.JLabel LabelBNDF5;
+    private javax.swing.JLabel LabelBNDF6;
+    private javax.swing.JLabel LabelBNDF7;
     private javax.swing.JLabel LabelBQ;
+    private javax.swing.JLabel LabelBQ1;
+    private javax.swing.JLabel LabelBQ2;
+    private javax.swing.JLabel LabelBQ3;
+    private javax.swing.JLabel LabelBQ4;
+    private javax.swing.JLabel LabelBQ5;
+    private javax.swing.JLabel LabelBQ6;
+    private javax.swing.JLabel LabelBQ7;
     private javax.swing.JLabel LabelBQP;
     private javax.swing.JLabel LabelBS;
+    private javax.swing.JLabel LabelBS1;
+    private javax.swing.JLabel LabelBS2;
+    private javax.swing.JLabel LabelBS3;
+    private javax.swing.JLabel LabelBS4;
+    private javax.swing.JLabel LabelBS5;
+    private javax.swing.JLabel LabelBS6;
+    private javax.swing.JLabel LabelBS7;
     private javax.swing.JLabel LabelBSP;
     private javax.swing.JLabel LabelBZ;
+    private javax.swing.JLabel LabelBZ1;
+    private javax.swing.JLabel LabelBZ2;
+    private javax.swing.JLabel LabelBZ3;
+    private javax.swing.JLabel LabelBZ4;
+    private javax.swing.JLabel LabelBZ5;
+    private javax.swing.JLabel LabelBZ6;
+    private javax.swing.JLabel LabelBZ7;
     private javax.swing.JLabel LabelBZP;
     private javax.swing.JLabel LabelDSGS;
     private javax.swing.JLabel LabelFPDP;
@@ -15827,6 +17792,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelPrestamos;
     private javax.swing.JLabel LabelPrestamos1;
     private javax.swing.JLabel LabelSZ;
+    private javax.swing.JLabel LabelSZ1;
+    private javax.swing.JLabel LabelSZ2;
+    private javax.swing.JLabel LabelSZ3;
+    private javax.swing.JLabel LabelSZ4;
+    private javax.swing.JLabel LabelSZ5;
+    private javax.swing.JLabel LabelSZ6;
+    private javax.swing.JLabel LabelSZ7;
     private javax.swing.JLabel LabelSZP;
     private javax.swing.JLabel Labelcda;
     private javax.swing.JLabel LabelfilPODT;
@@ -15855,9 +17827,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField NameTaller;
     private javax.swing.JTextField Namepres;
     private javax.swing.JTextField Ndo;
+    private javax.swing.JScrollPane NomDetallada;
     private javax.swing.JScrollPane Nomina;
     private javax.swing.JMenuItem Nomina1;
     private javax.swing.JTextField Nominab;
+    private javax.swing.JTextField Nominab1;
+    private javax.swing.JTextField Nominab2;
+    private javax.swing.JTextField Nominab3;
+    private javax.swing.JTextField Nominab4;
+    private javax.swing.JTextField Nominab5;
+    private javax.swing.JTextField Nominab6;
+    private javax.swing.JTextField Nominab7;
     private javax.swing.JTextField Num;
     private javax.swing.JTextField NumPrenom;
     private javax.swing.JTextField Numcda;
@@ -15885,6 +17865,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Pendiente;
     private javax.swing.JTextField Pendienteprenom;
     private javax.swing.JTextField Pendientepres;
+    private javax.swing.JTabbedPane PestanañasND;
+    private javax.swing.JTabbedPane PestañasPrin;
     private javax.swing.JTextField Placas;
     private javax.swing.JTextField Playera;
     private javax.swing.JTextField PorcenIn;
@@ -15958,8 +17940,15 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Statusodt;
     private javax.swing.JTextField TACDANOM;
     private javax.swing.JTextField TArrado;
+    private javax.swing.JScrollPane TDFA;
+    private javax.swing.JScrollPane TDFA1;
+    private javax.swing.JScrollPane TDFA2;
+    private javax.swing.JScrollPane TDFA3;
+    private javax.swing.JScrollPane TDFA4;
+    private javax.swing.JScrollPane TDFA5;
+    private javax.swing.JScrollPane TDFA6;
+    private javax.swing.JScrollPane TDFA7;
     private javax.swing.JScrollPane TDPODT;
-    private javax.swing.JScrollPane TDnomina;
     private javax.swing.JLabel TELC;
     private javax.swing.JTextField TIAP;
     private javax.swing.JTable TPCDA;
@@ -15972,6 +17961,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTable Tablacda;
     private javax.swing.JScrollPane Talleres;
     private javax.swing.JTable Tnom;
+    private javax.swing.JTable Tnom1;
+    private javax.swing.JTable Tnom2;
+    private javax.swing.JTable Tnom3;
+    private javax.swing.JTable Tnom4;
+    private javax.swing.JTable Tnom5;
+    private javax.swing.JTable Tnom6;
+    private javax.swing.JTable Tnom7;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JTextField Totalap;
     private javax.swing.JScrollPane Tprestamos;
@@ -15985,6 +17981,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser año;
     private javax.swing.JTextField ban;
     private botones.BotonWeb botonWeb1;
+    private botones.BotonWeb botonWeb10;
+    private botones.BotonWeb botonWeb11;
+    private botones.BotonWeb botonWeb12;
+    private botones.BotonWeb botonWeb13;
+    private botones.BotonWeb botonWeb14;
+    private botones.BotonWeb botonWeb15;
     private botones.BotonWeb botonWeb2;
     private botones.BotonWeb botonWeb3;
     private botones.BotonWeb botonWeb4;
@@ -15992,6 +17994,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private botones.BotonWeb botonWeb6;
     private botones.BotonWeb botonWeb7;
     private botones.BotonWeb botonWeb8;
+    private botones.BotonWeb botonWeb9;
     private javax.swing.JTextField busp;
     private javax.swing.JTextField cda;
     private javax.swing.JTextField cta;
@@ -16111,7 +18114,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel166;
     private javax.swing.JLabel jLabel167;
     private javax.swing.JLabel jLabel168;
+    private javax.swing.JLabel jLabel169;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel170;
+    private javax.swing.JLabel jLabel171;
+    private javax.swing.JLabel jLabel172;
+    private javax.swing.JLabel jLabel173;
+    private javax.swing.JLabel jLabel174;
+    private javax.swing.JLabel jLabel175;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -16219,6 +18229,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -16239,6 +18256,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
+    private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane26;
+    private javax.swing.JScrollPane jScrollPane27;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -16246,7 +18270,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JLabel labelpcda;
     private javax.swing.JButton modprestamo;
     private javax.swing.JTextField name;

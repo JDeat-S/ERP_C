@@ -16,7 +16,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import java.sql.PreparedStatement;
 import java.sql.ResultSetMetaData;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -66,6 +65,8 @@ public final class Admin_V_Principal extends javax.swing.JFrame {
 
     }
 
+    //mostrar entradas de la bd, cambiar .entradas.Bb, falta darle funcion y que muestre los folios disponibles revisar libreta
+    
     public void MDEntradasBb() {
         String SQL = "Select * from `almacen.articulos.entradas`";
 
