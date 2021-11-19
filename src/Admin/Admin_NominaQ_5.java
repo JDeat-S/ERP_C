@@ -324,33 +324,32 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     //Agregar pago Pres
     public void AgregarPagoPres() {
 
-        String SQL = "INSERT INTO `nomina.pagos.prestamos." + Zon.getText() + "` (`#Folio`, `#Lista`, `#prestamo`, "
+        String SQL = "INSERT INTO `nomina.pagos.prestamos." + Zon.getText() + "` (`#Lista`, `#prestamo`, "
                 + "`#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
                 + " `Servicio`, `Quincena`, `# quincena`, `pagado`, `pendiente`, "
-                + "`Pago de prestamo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "`Pago de prestamo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setInt(1, Integer.parseInt(NFnom.getText()));
-            pst.setString(2, NDL.getText());
-            pst.setInt(3, Integer.parseInt(NumPrenom.getText()));
-            pst.setInt(4, Integer.parseInt(NEnom.getText()));
-            pst.setString(5, Ap.getText());
-            pst.setString(6, am.getText());
-            pst.setString(7, name.getText());
-            pst.setString(8, Zon.getText());
-            pst.setString(9, ServN.getText());
-            pst.setString(10, Quincenas.getSelectedItem().toString());
-            pst.setString(11, NQprenom.getText());
-            pst.setString(12, Pagadoprenom.getText());
-            pst.setString(13, Pendienteprenom.getText());
-            pst.setString(14, Presp.getText());
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
+            pst.setInt(2, Integer.parseInt(NumPrenom.getText()));
+            pst.setInt(3, Integer.parseInt(NEnom.getText()));
+            pst.setString(4, Ap.getText());
+            pst.setString(5, am.getText());
+            pst.setString(6, name.getText());
+            pst.setString(7, Zon.getText());
+            pst.setString(8, ServN.getText());
+            pst.setString(9, Quincenas.getSelectedItem().toString());
+            pst.setString(10, NQprenom.getText());
+            pst.setString(11, Pagadoprenom.getText());
+            pst.setString(12, Pendienteprenom.getText());
+            pst.setString(13, Presp.getText());
 
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Pago de prestamo registrado");
+            JOptionPane.showMessageDialog(null, "Pago de prestamo en " + Zon.getText() + " registrado");
 
         } catch (HeadlessException | SQLException Error_PdPrestamo) {
-            JOptionPane.showMessageDialog(null, "Error al registrar pago de prestamo: " + Error_PdPrestamo.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al registrar pago de prestamo en " + Zon.getText() + " : " + Error_PdPrestamo.getMessage());
         }
     }
 
@@ -434,33 +433,32 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     //Agregar pago ODT
     public void AgregarPagoODT() {
 
-        String SQL = "INSERT INTO `nomina.pagos.odt." + Zon.getText() + "` (`#Folio`, `#Lista`, `# de orden`, "
+        String SQL = "INSERT INTO `nomina.pagos.odt." + Zon.getText() + "` (`#Lista`, `# de orden`, "
                 + "`#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
                 + " `Servicio`, `Quincena`, `# quincena`, `pagado`, `pendiente`, "
-                + "`Pago de odt`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "`Pago de odt`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setInt(1, Integer.parseInt(NFnom.getText()));
-            pst.setString(2, NDL.getText());
-            pst.setInt(3, Integer.parseInt(NODTnom.getText()));
-            pst.setInt(4, Integer.parseInt(NEnom.getText()));
-            pst.setString(5, Ap.getText());
-            pst.setString(6, am.getText());
-            pst.setString(7, name.getText());
-            pst.setString(8, Zon.getText());
-            pst.setString(9, ServN.getText());
-            pst.setString(10, Quincenas.getSelectedItem().toString());
-            pst.setString(11, NQODTnom.getText());
-            pst.setString(12, PagODTnom.getText());
-            pst.setString(13, PenODTnom.getText());
-            pst.setString(14, Odtp.getText());
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
+            pst.setInt(2, Integer.parseInt(NODTnom.getText()));
+            pst.setInt(3, Integer.parseInt(NEnom.getText()));
+            pst.setString(4, Ap.getText());
+            pst.setString(5, am.getText());
+            pst.setString(6, name.getText());
+            pst.setString(7, Zon.getText());
+            pst.setString(8, ServN.getText());
+            pst.setString(9, Quincenas.getSelectedItem().toString());
+            pst.setString(10, NQODTnom.getText());
+            pst.setString(11, PagODTnom.getText());
+            pst.setString(12, PenODTnom.getText());
+            pst.setString(13, Odtp.getText());
 
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Pago de orden agregado");
+            JOptionPane.showMessageDialog(null, "Pago de orden en " + Zon.getText() + " agregado");
 
         } catch (HeadlessException | SQLException error_agregar_pdodt) {
-            JOptionPane.showMessageDialog(null, "Error al agregar pago de orden: " + error_agregar_pdodt.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al agregar pago de orden " + Zon.getText() + " : " + error_agregar_pdodt.getMessage());
         }
     }
 
@@ -544,8 +542,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     //mod pagos cda
     public void MODPAGOCDA() {
 
-        String SQL = "UPDATE `nomina.pagos.cda` SET `Observaciones` = ?, `# de recibo de pago`"
-                + " = ? WHERE `nomina.pagos.cda`.`#Folio` = ?";
+        String SQL = "UPDATE `nomina.pagos.cda." + Zon.getText() + "` SET `Observaciones` = ?, `# de recibo de pago`"
+                + " = ? WHERE `nomina.pagos.cda." + Zon.getText() + "`.`#Lista` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -555,10 +553,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             pst.setInt(3, Integer.parseInt(NFpagocda.getText()));
 
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Pago de caja de ahorro modificado.");
+            JOptionPane.showMessageDialog(null, "Pago de caja de ahorro en " + Zon.getText() + " modificado.");
 
         } catch (HeadlessException | SQLException error_mod_pcda) {
-            JOptionPane.showMessageDialog(null, "Error al modificar pago de caja de ahorro: " + error_mod_pcda.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al modificar pago de caja de ahorro en " + Zon.getText() + " : " + error_mod_pcda.getMessage());
         }
     }
 
@@ -642,33 +640,32 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     public void AgregarPagoCDA() {
 
-        String SQL = "INSERT INTO `nomina.pagos.cda." + Zon.getText() + "` (`#Folio`, `#Lista`, `#caja`, `#empleado`, `Apellido P`,"
+        String SQL = "INSERT INTO `nomina.pagos.cda." + Zon.getText() + "` (`#Lista`, `#caja`, `#empleado`, `Apellido P`,"
                 + " `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Quincena`, `Caja de ahorro`,"
-                + " `Observaciones`, `Qnas aportadas`, `# de recibo de pago`) VALUES (?, ?, ?, ?, ?,"
+                + " `Observaciones`, `Qnas aportadas`, `# de recibo de pago`) VALUES (?, ?, ?, ?,"
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setInt(1, Integer.parseInt(NFnom.getText()));
-            pst.setString(2, NDL.getText());
-            pst.setInt(3, Integer.parseInt(NCDANom.getText()));
-            pst.setInt(4, Integer.parseInt(NEnom.getText()));
-            pst.setString(5, Ap.getText());
-            pst.setString(6, am.getText());
-            pst.setString(7, name.getText());
-            pst.setString(8, Zon.getText());
-            pst.setString(9, ServN.getText());
-            pst.setString(10, Quincenas.getSelectedItem().toString());
-            pst.setString(11, cda.getText());
-            pst.setString(12, obdpagocda.getText());
-            pst.setString(13, QAcdanom.getText());
-            pst.setString(14, NREcda.getText());
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
+            pst.setInt(2, Integer.parseInt(NCDANom.getText()));
+            pst.setInt(3, Integer.parseInt(NEnom.getText()));
+            pst.setString(4, Ap.getText());
+            pst.setString(5, am.getText());
+            pst.setString(6, name.getText());
+            pst.setString(7, Zon.getText());
+            pst.setString(8, ServN.getText());
+            pst.setString(9, Quincenas.getSelectedItem().toString());
+            pst.setString(10, cda.getText());
+            pst.setString(11, obdpagocda.getText());
+            pst.setString(12, QAcdanom.getText());
+            pst.setString(13, NREcda.getText());
 
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Pago de caja de ahorro agregado");
+            JOptionPane.showMessageDialog(null, "Pago de caja de ahorro en " + Zon.getText() + " agregado");
 
         } catch (HeadlessException | SQLException error_add_pdcda) {
-            JOptionPane.showMessageDialog(null, "Error al agregar pago de caja de ahorro: " + error_add_pdcda.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al agregar pago de caja de ahorro " + Zon.getText() + " : " + error_add_pdcda.getMessage());
         }
     }
 
@@ -677,8 +674,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         String Otropagoodt = PenODTnom.getText();
 
         if (Otropagoodt.equals("0.0")) {
-            String SQL = "UPDATE `taller` SET `Status` = 'Pagado', `Quincenas pagadas` = ?,"
-                    + " `Pagado` = ?, `Pendiente` = ? WHERE `taller`.`idTaller` = ?";
+            String SQL = "UPDATE `odt." + Zon.getText() + "` SET `Status` = 'Pagado', `Quincenas pagadas` = ?,"
+                    + " `Pagado` = ?, `Pendiente` = ? WHERE `odt." + Zon.getText() + "`.`idTaller` = ?";
 
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -689,14 +686,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 pst.setInt(4, Integer.parseInt(NODTnom.getText()));
 
                 pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Abono de taller agregado.");
+                JOptionPane.showMessageDialog(null, "Abono de taller en " + Zon.getText() + " agregado.");
 
             } catch (HeadlessException | SQLException error_auto_odt) {
-                JOptionPane.showMessageDialog(null, "Error al abonar orden de taller: " + error_auto_odt.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al abonar orden de taller en " + Zon.getText() + " : " + error_auto_odt.getMessage());
             }
         } else if (Otropagoodt.equals(PenODTnom.getText())) {
-            String SQL = "UPDATE `taller` SET `Status` = 'Debe', `Pagado` = ?, `Pendiente` = ?, "
-                    + "`Quincenas pagadas` = ? WHERE `taller`.`idTaller` = ?";
+            String SQL = "UPDATE `odt." + Zon.getText() + "` SET `Status` = 'Debe', `Pagado` = ?, `Pendiente` = ?, "
+                    + "`Quincenas pagadas` = ? WHERE `odt." + Zon.getText() + "`.`idTaller` = ?";
 
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -707,10 +704,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 pst.setInt(4, Integer.parseInt(NODTnom.getText()));
 
                 pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Abono de orden de taller agregado.");
+                JOptionPane.showMessageDialog(null, "Abono de orden de taller en " + Zon.getText() + " agregado.");
 
             } catch (HeadlessException | SQLException error_auto_odt) {
-                JOptionPane.showMessageDialog(null, "Error al abonar orden de taller: " + error_auto_odt.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al abonar orden de taller en " + Zon.getText() + " : " + error_auto_odt.getMessage());
             }
         }
 
@@ -795,8 +792,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         String otroprestamo = Pendienteprenom.getText();
 
         if (otroprestamo.equals("0.0")) {
-            String SQL = "UPDATE `prestamos` SET `Status` = 'Pagado', `Quincenas pagadas` = ?,"
-                    + " `Pagado` = ?, `Pendiente` = ? WHERE `prestamos`.`idprestamos` = ?";
+            String SQL = "UPDATE `prestamos." + Zon.getText() + "` SET `Status` = 'Pagado', `Quincenas pagadas` = ?,"
+                    + " `Pagado` = ?, `Pendiente` = ? WHERE `prestamos." + Zon.getText() + "`.`idprestamos` = ?";
 
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -807,15 +804,15 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
 
                 pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Abono de prestamo agregado.");
+                JOptionPane.showMessageDialog(null, "Abono de prestamo en " + Zon.getText() + " agregado.");
 
             } catch (HeadlessException | SQLException error_auto_pres) {
-                JOptionPane.showMessageDialog(null, "Error al abonar prestamo: " + error_auto_pres.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al abonar prestamo en " + Zon.getText() + " : " + error_auto_pres.getMessage());
             }
         } else if (otroprestamo.equals(Pendienteprenom.getText())) {
 
-            String SQL = "UPDATE `prestamos` SET `Status` = 'Debe', `Quincenas pagadas` = ?,"
-                    + " `Pagado` = ?, `Pendiente` = ? WHERE `prestamos`.`idprestamos` = ?";
+            String SQL = "UPDATE `prestamos." + Zon.getText() + "` SET `Status` = 'Debe', `Quincenas pagadas` = ?,"
+                    + " `Pagado` = ?, `Pendiente` = ? WHERE `prestamos." + Zon.getText() + "`.`idprestamos` = ?";
 
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -826,10 +823,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
 
                 pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Abono de prestamo agregado.");
+                JOptionPane.showMessageDialog(null, "Abono de prestamo en " + Zon.getText() + " agregado.");
 
             } catch (HeadlessException | SQLException error_auto_pres) {
-                JOptionPane.showMessageDialog(null, "Error al abonar prestamo: " + error_auto_pres.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al abonar prestamo en " + Zon.getText() + " : " + error_auto_pres.getMessage());
             }
         }
 
@@ -907,12 +904,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         }
 
     }
-//AUTO CDA
 
+//AUTO CDA
     public void editarCDAdnom() {
 
-        String SQL = "UPDATE `nomina.cajadeahorro` SET "
-                + " `Quincenas Ahorradas` = ?, `Total Ahorrado` = ? WHERE `nomina.cajadeahorro`.`#caja` = ?";
+        String SQL = "UPDATE `nomina.cajadeahorro." + Zon.getText() + "` SET "
+                + " `Quincenas Ahorradas` = ?, `Total Ahorrado` = ? WHERE `nomina.cajadeahorro." + Zon.getText() + "`.`#caja` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -922,10 +919,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             pst.setInt(3, Integer.parseInt(NCDANom.getText()));
 
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Abono de caja de ahorro agregado");
+            JOptionPane.showMessageDialog(null, "Abono de caja de ahorro en " + Zon.getText() + " agregado");
 
         } catch (HeadlessException | SQLException error_auto_cda) {
-            JOptionPane.showMessageDialog(null, "Error al abonar Caja de ahorro: " + error_auto_cda.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al abonar Caja de ahorro en " + Zon.getText() + " : " + error_auto_cda.getMessage());
         }
     }
 
@@ -1728,7 +1725,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         try {
 
             int filaseleccionada = OdT.getSelectedRow();
-            String sql = "delete from taller where idtaller=" + OdT.getValueAt(filaseleccionada, 0);
+            String sql = "delete from odt where idtaller=" + OdT.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
             int n = st.executeUpdate(sql);
             if (n >= 0) {
@@ -2359,7 +2356,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Modificar nomina
     public void MODN() {
 
-        String SQL = "UPDATE `nomina.detallada." + Zon.getText() + "` SET `#Folio` = ?, `#lista` = ?, `#empleado` = ?,"
+        String SQL = "UPDATE `nomina.detallada." + Zon.getText() + "` SET `#lista` = ?, `#empleado` = ?,"
                 + " `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Banco` = ?, "
                 + "`Cuenta de banco` = ?, `Zona` = ?, `Servicio` = ?, `Sueldo` = ?, "
                 + "`Bono` = ?, `por dia` = ?, `quincena del mes` = ?, `año` = ?, `1/16` = ?, "
@@ -2377,84 +2374,83 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 + "`Credencial` = ?, `Adelanto de nomina` = ?, `Boleto perdido` = ?, `Playera` = ?, `Corbata` = ?, "
                 + "`Total de DV` = ?, `Pago de prestamo` = ?, `Caja de ahorro` = ?, "
                 + "`Orden de taller` = ?, `Deposito` = ?, `Observaciones` = ? WHERE "
-                + "`nomina.detallada`.`#Folio` = ?";
+                + "`nomina.detallada" + Zon.getText() + "`.`#lista` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setInt(1, Integer.parseInt(NFnom.getText()));
-            pst.setString(2, NDL.getText());
-            pst.setInt(3, Integer.parseInt(NEnom.getText()));
-            pst.setString(4, Ap.getText());
-            pst.setString(5, am.getText());
-            pst.setString(6, name.getText());
-            pst.setString(7, ban.getText());
-            pst.setString(8, cta.getText());
-            pst.setString(9, Zon.getText());
-            pst.setString(10, ServN.getText());
-            pst.setString(11, sueldo.getText());
-            pst.setString(12, Bono1.getText());
-            pst.setString(13, pd.getText());
-            pst.setString(14, Quincenas.getSelectedItem().toString());
-            pst.setString(15, ((JTextField) año.getDateEditor().getUiComponent()).getText());
-            pst.setString(16, Dia1.getSelectedItem().toString());
-            pst.setString(17, DIa2.getSelectedItem().toString());
-            pst.setString(18, Dia3.getSelectedItem().toString());
-            pst.setString(19, Dia4.getSelectedItem().toString());
-            pst.setString(20, Dia5.getSelectedItem().toString());
-            pst.setString(21, Dia6.getSelectedItem().toString());
-            pst.setString(22, Dia7.getSelectedItem().toString());
-            pst.setString(23, Dia8.getSelectedItem().toString());
-            pst.setString(24, Dia9.getSelectedItem().toString());
-            pst.setString(25, Dia10.getSelectedItem().toString());
-            pst.setString(26, Dia11.getSelectedItem().toString());
-            pst.setString(27, Dia12.getSelectedItem().toString());
-            pst.setString(28, Dia13.getSelectedItem().toString());
-            pst.setString(29, Dia14.getSelectedItem().toString());
-            pst.setString(30, Dia15.getSelectedItem().toString());
-            pst.setString(31, Dia16.getSelectedItem().toString());
-            pst.setString(32, Dpi.getText());
-            pst.setString(33, pds.getText());
-            pst.setString(34, Ddv.getText());
-            pst.setString(35, PDDDV.getText());
-            pst.setString(36, DD.getText());
-            pst.setString(37, PDDD.getText());
-            pst.setString(38, DL.getText());
-            pst.setString(39, PDDL.getText());
-            pst.setString(40, dt.getText());
-            pst.setString(41, PDDT.getText());
-            pst.setString(42, DSGS.getText());
-            pst.setString(43, PDDDDSGS.getText());
-            pst.setString(44, FJ.getText());
-            pst.setString(45, DO.getText());
-            pst.setString(46, R.getText());
-            pst.setString(47, PCR.getText());
-            pst.setString(48, apy.getText());
-            pst.setString(49, Lugar.getText());
-            pst.setString(50, Rembolso.getText());
-            pst.setString(51, ADD.getText());
-            pst.setString(52, F.getText());
-            pst.setString(53, DPF.getText());
-            pst.setString(54, DI.getText());
-            pst.setString(55, Fdb.getText());
-            pst.setString(56, Sancion.getText());
-            pst.setString(57, Chamarra.getText());
-            pst.setString(58, Chaleco.getText());
-            pst.setString(59, Fde.getText());
-            pst.setString(60, Grua.getText());
-            pst.setString(61, Pantalon.getText());
-            pst.setString(62, Credencial.getText());
-            pst.setString(63, Bp.getText());
-            pst.setString(64, Playera.getText());
-            pst.setString(65, Corbata.getText());
-            pst.setString(66, DVT.getText());
-            pst.setString(67, AdN.getText());
-            pst.setString(68, Presp.getText());
-            pst.setString(69, cda.getText());
-            pst.setString(70, Odtp.getText());
-            pst.setString(71, deposito.getText());
-            pst.setString(72, obs.getText());
-            pst.setInt(73, Integer.parseInt(NFnom.getText()));
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
+            pst.setInt(2, Integer.parseInt(NEnom.getText()));
+            pst.setString(3, Ap.getText());
+            pst.setString(4, am.getText());
+            pst.setString(5, name.getText());
+            pst.setString(6, ban.getText());
+            pst.setString(7, cta.getText());
+            pst.setString(8, Zon.getText());
+            pst.setString(9, ServN.getText());
+            pst.setString(10, sueldo.getText());
+            pst.setString(11, Bono1.getText());
+            pst.setString(12, pd.getText());
+            pst.setString(13, Quincenas.getSelectedItem().toString());
+            pst.setString(14, ((JTextField) año.getDateEditor().getUiComponent()).getText());
+            pst.setString(15, Dia1.getSelectedItem().toString());
+            pst.setString(16, DIa2.getSelectedItem().toString());
+            pst.setString(17, Dia3.getSelectedItem().toString());
+            pst.setString(18, Dia4.getSelectedItem().toString());
+            pst.setString(19, Dia5.getSelectedItem().toString());
+            pst.setString(20, Dia6.getSelectedItem().toString());
+            pst.setString(21, Dia7.getSelectedItem().toString());
+            pst.setString(22, Dia8.getSelectedItem().toString());
+            pst.setString(23, Dia9.getSelectedItem().toString());
+            pst.setString(24, Dia10.getSelectedItem().toString());
+            pst.setString(25, Dia11.getSelectedItem().toString());
+            pst.setString(26, Dia12.getSelectedItem().toString());
+            pst.setString(27, Dia13.getSelectedItem().toString());
+            pst.setString(28, Dia14.getSelectedItem().toString());
+            pst.setString(29, Dia15.getSelectedItem().toString());
+            pst.setString(30, Dia16.getSelectedItem().toString());
+            pst.setString(31, Dpi.getText());
+            pst.setString(32, pds.getText());
+            pst.setString(33, Ddv.getText());
+            pst.setString(34, PDDDV.getText());
+            pst.setString(35, DD.getText());
+            pst.setString(36, PDDD.getText());
+            pst.setString(37, DL.getText());
+            pst.setString(38, PDDL.getText());
+            pst.setString(39, dt.getText());
+            pst.setString(40, PDDT.getText());
+            pst.setString(41, DSGS.getText());
+            pst.setString(42, PDDDDSGS.getText());
+            pst.setString(43, FJ.getText());
+            pst.setString(44, DO.getText());
+            pst.setString(45, R.getText());
+            pst.setString(46, PCR.getText());
+            pst.setString(47, apy.getText());
+            pst.setString(48, Lugar.getText());
+            pst.setString(49, Rembolso.getText());
+            pst.setString(50, ADD.getText());
+            pst.setString(51, F.getText());
+            pst.setString(52, DPF.getText());
+            pst.setString(53, DI.getText());
+            pst.setString(54, Fdb.getText());
+            pst.setString(55, Sancion.getText());
+            pst.setString(56, Chamarra.getText());
+            pst.setString(57, Chaleco.getText());
+            pst.setString(58, Fde.getText());
+            pst.setString(59, Grua.getText());
+            pst.setString(60, Pantalon.getText());
+            pst.setString(61, Credencial.getText());
+            pst.setString(62, Bp.getText());
+            pst.setString(63, Playera.getText());
+            pst.setString(64, Corbata.getText());
+            pst.setString(65, DVT.getText());
+            pst.setString(66, AdN.getText());
+            pst.setString(67, Presp.getText());
+            pst.setString(68, cda.getText());
+            pst.setString(69, Odtp.getText());
+            pst.setString(70, deposito.getText());
+            pst.setString(71, obs.getText());
+            pst.setInt(72, Integer.parseInt(NDL.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Modificada");
@@ -2603,7 +2599,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-            modelo.addColumn("# Folio");
             modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//2
             modelo.addColumn("Apellido P");
@@ -3108,8 +3103,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         name = new javax.swing.JTextField();
         jLabel127 = new javax.swing.JLabel();
         NEnom = new javax.swing.JTextField();
-        jLabel159 = new javax.swing.JLabel();
-        NFnom = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         BAMNom = new javax.swing.JTextField();
         FiltrosNom = new javax.swing.JComboBox<>();
@@ -4090,11 +4083,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         NEnom.setText("0");
 
-        jLabel159.setText("# Folio:");
-
-        NFnom.setText("0");
-        NFnom.setEnabled(false);
-
         javax.swing.GroupLayout DatgenLayout = new javax.swing.GroupLayout(Datgen);
         Datgen.setLayout(DatgenLayout);
         DatgenLayout.setHorizontalGroup(
@@ -4102,7 +4090,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             .addGroup(DatgenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(DatgenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel159)
                     .addComponent(jLabel127)
                     .addComponent(jLabel27)
                     .addComponent(jLabel4)
@@ -4114,18 +4101,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(Ap, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(am, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(NEnom, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(NFnom))
+                    .addComponent(NEnom, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
                 .addContainerGap())
         );
         DatgenLayout.setVerticalGroup(
             DatgenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DatgenLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(DatgenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel159)
-                    .addComponent(NFnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(DatgenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel127)
                     .addComponent(NEnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -5663,28 +5645,27 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Filtro1)
+                    .addComponent(BNameNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAPNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAMNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FiltrosNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28)
+                    .addComponent(CS)
+                    .addComponent(jLabel133))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Filtro1)
-                            .addComponent(BNameNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BAPNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BAMNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FiltrosNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel28)
-                            .addComponent(CS)
-                            .addComponent(jLabel133))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel26)
-                                    .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton2)))
-                            .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(Datgen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel26)
+                                .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton2)))
+                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Datgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -17818,7 +17799,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField NCDANom;
     private javax.swing.JTextField NDL;
     private javax.swing.JTextField NEnom;
-    private javax.swing.JTextField NFnom;
     private javax.swing.JTextField NFpagocda;
     private javax.swing.JTextField NODTnom;
     private javax.swing.JTextField NQODTnom;
@@ -18103,7 +18083,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel156;
     private javax.swing.JLabel jLabel157;
     private javax.swing.JLabel jLabel158;
-    private javax.swing.JLabel jLabel159;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel160;
     private javax.swing.JLabel jLabel161;

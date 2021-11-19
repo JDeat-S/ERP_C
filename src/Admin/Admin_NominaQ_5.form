@@ -946,33 +946,31 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="Filtro1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="BNameNom" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="BAPNom" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="BAMNom" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FiltrosNom" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="CS" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel133" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="Filtro1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="BNameNom" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="BAPNom" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="BAMNom" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltrosNom" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="CS" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel133" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jScrollPane2" pref="0" max="32767" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="pd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jScrollPane2" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="pd" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="Datgen" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="Datgen" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1036,7 +1034,6 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel159" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel127" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -1050,7 +1047,6 @@
                                   <Component id="am" alignment="0" pref="100" max="32767" attributes="0"/>
                                   <Component id="name" alignment="0" pref="100" max="32767" attributes="0"/>
                                   <Component id="NEnom" pref="100" max="32767" attributes="0"/>
-                                  <Component id="NFnom" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -1060,11 +1056,6 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel159" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="NFnom" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel127" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="NEnom" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1131,17 +1122,6 @@
                     <Component class="javax.swing.JTextField" name="NEnom">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel159">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="# Folio:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="NFnom">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                   </SubComponents>
