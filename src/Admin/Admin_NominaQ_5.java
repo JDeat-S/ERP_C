@@ -16765,7 +16765,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FZservicio1ItemStateChanged
 
     private void FiltrosTD1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD1ItemStateChanged
-    
+
         String FTD1 = (String) FiltrosTD1.getSelectedItem();
         if (FTD1.equals("Selecciona filtro")) {
             Nominab1.setText("");
@@ -16794,180 +16794,180 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         }
         if (FTD1.equals("Filtrar por Apellido P")) {
-            Nominab.setText("");
-            LabelBE.setVisible(true);
-            LabelBE.setText("Buscar Apellido P:");
-            FApT.setText("");
-            FApT.setVisible(true);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            FiltroZnomina.setVisible(false);
-            FiltroZnomina.setSelectedIndex(0);
-            LabelBZ.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
+            Nominab1.setText("");
+            LabelBE1.setVisible(true);
+            LabelBE1.setText("Buscar Apellido P:");
+            FApT1.setText("");
+            FApT1.setVisible(true);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            FiltroZnomina1.setVisible(false);
+            FiltroZnomina1.setSelectedIndex(0);
+            LabelBZ1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
             FunMD();
         }
         if (FTD1.equals("Filtrar por Apellido M")) {
-            Nominab.setText("");
-            LabelBE.setVisible(true);
-            LabelBE.setText("Buscar Apellido M:");
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(true);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroZnomina.setVisible(false);
-            FiltroZnomina.setSelectedIndex(0);
-            LabelBZ.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
+            Nominab1.setText("");
+            LabelBE1.setVisible(true);
+            LabelBE1.setText("Buscar Apellido M:");
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(true);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroZnomina1.setVisible(false);
+            FiltroZnomina1.setSelectedIndex(0);
+            LabelBZ1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
             FunMD();
         }
         if (FTD1.equals("Filtrar por Nombre(s)")) {
-            Nominab.setText("");
-            LabelBE.setVisible(true);
-            LabelBE.setText("Buscar Nombre(s):");
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(true);
-            FiltroZnomina.setVisible(false);
-            FiltroZnomina.setSelectedIndex(0);
-            LabelBZ.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
+            Nominab1.setText("");
+            LabelBE1.setVisible(true);
+            LabelBE1.setText("Buscar Nombre(s):");
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(true);
+            FiltroZnomina1.setVisible(false);
+            FiltroZnomina1.setSelectedIndex(0);
+            LabelBZ1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
             FunMD();
         }
         if (FTD1.equals("Filtrar por Zona")) {
-            Nominab.setText("");
-            LabelBE.setVisible(false);
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroZnomina.setVisible(true);
-            FiltroZnomina.setSelectedIndex(0);
-            LabelBZ.setVisible(true);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
+            Nominab1.setText("");
+            LabelBE1.setVisible(false);
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroZnomina1.setVisible(true);
+            FiltroZnomina1.setSelectedIndex(0);
+            LabelBZ1.setVisible(true);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
             FunMD();
         }
         if (FTD1.equals("Filtrar por Servicio")) {
-            Nominab.setText("");
-            LabelBE.setVisible(false);
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroZnomina.setVisible(false);
-            FiltroZnomina.setSelectedIndex(0);
-            LabelBZ.setVisible(false);
-            FiltroSnomina.setVisible(true);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(true);
-            FZservicio.setVisible(true);
-            LabelSZ.setVisible(true);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
+            Nominab1.setText("");
+            LabelBE1.setVisible(false);
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroZnomina1.setVisible(false);
+            FiltroZnomina1.setSelectedIndex(0);
+            LabelBZ1.setVisible(false);
+            FiltroSnomina1.setVisible(true);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(true);
+            FZservicio1.setVisible(true);
+            LabelSZ1.setVisible(true);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
             FunMD();
         }
         if (FTD1.equals("Filtrar por quincena")) {
-            Nominab.setText("");
-            LabelBE.setVisible(false);
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroZnomina.setVisible(false);
-            FiltroZnomina.setSelectedIndex(0);
-            LabelBZ.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(true);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(true);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
+            Nominab1.setText("");
+            LabelBE1.setVisible(false);
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroZnomina1.setVisible(false);
+            FiltroZnomina1.setSelectedIndex(0);
+            LabelBZ1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(true);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(true);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
             FunMD();
         }
         if (FTD1.equals("Filtrar por # Lista")) {
-            Nominab.setText("");
-            LabelBE.setVisible(false);
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroZnomina.setVisible(false);
-            FiltroZnomina.setSelectedIndex(0);
-            LabelBZ.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(true);
-            LabelBNDF.setVisible(true);
+            Nominab1.setText("");
+            LabelBE1.setVisible(false);
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroZnomina1.setVisible(false);
+            FiltroZnomina1.setSelectedIndex(0);
+            LabelBZ1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(true);
+            LabelBNDF1.setVisible(true);
             FunMD();
         }
     }//GEN-LAST:event_FiltrosTD1ItemStateChanged
@@ -17017,7 +17017,211 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FZservicio2ItemStateChanged
 
     private void FiltrosTD2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD2ItemStateChanged
-        // TODO add your handling code here:
+
+        String FTD2 = (String) FiltrosTD2.getSelectedItem();
+        if (FTD2.equals("Selecciona filtro")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroZnomina2.setVisible(false);
+            FiltroZnomina2.setSelectedIndex(0);
+            LabelBZ2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD2.equals("Filtrar por Apellido P")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(true);
+            LabelBE2.setText("Buscar Apellido P:");
+            FApT2.setText("");
+            FApT2.setVisible(true);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            FiltroZnomina2.setVisible(false);
+            FiltroZnomina2.setSelectedIndex(0);
+            LabelBZ2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por Apellido M")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(true);
+            LabelBE2.setText("Buscar Apellido M:");
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(true);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroZnomina2.setVisible(false);
+            FiltroZnomina2.setSelectedIndex(0);
+            LabelBZ2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por Nombre(s)")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(true);
+            LabelBE2.setText("Buscar Nombre(s):");
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(true);
+            FiltroZnomina2.setVisible(false);
+            FiltroZnomina2.setSelectedIndex(0);
+            LabelBZ2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por Zona")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroZnomina2.setVisible(true);
+            FiltroZnomina2.setSelectedIndex(0);
+            LabelBZ2.setVisible(true);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por Servicio")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroZnomina2.setVisible(false);
+            FiltroZnomina2.setSelectedIndex(0);
+            LabelBZ2.setVisible(false);
+            FiltroSnomina2.setVisible(true);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(true);
+            FZservicio2.setVisible(true);
+            LabelSZ2.setVisible(true);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por quincena")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroZnomina2.setVisible(false);
+            FiltroZnomina2.setSelectedIndex(0);
+            LabelBZ2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(true);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(true);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por # Lista")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroZnomina2.setVisible(false);
+            FiltroZnomina2.setSelectedIndex(0);
+            LabelBZ2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(true);
+            LabelBNDF2.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosTD2ItemStateChanged
 
     private void FiltroNDF2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF2KeyReleased
@@ -17065,7 +17269,211 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FZservicio3ItemStateChanged
 
     private void FiltrosTD3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD3ItemStateChanged
-        // TODO add your handling code here:
+
+        String FTD3 = (String) FiltrosTD3.getSelectedItem();
+        if (FTD3.equals("Selecciona filtro")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroZnomina3.setVisible(false);
+            FiltroZnomina3.setSelectedIndex(0);
+            LabelBZ3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD3.equals("Filtrar por Apellido P")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(true);
+            LabelBE3.setText("Buscar Apellido P:");
+            FApT3.setText("");
+            FApT3.setVisible(true);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            FiltroZnomina3.setVisible(false);
+            FiltroZnomina3.setSelectedIndex(0);
+            LabelBZ3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por Apellido M")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(true);
+            LabelBE3.setText("Buscar Apellido M:");
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(true);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroZnomina3.setVisible(false);
+            FiltroZnomina3.setSelectedIndex(0);
+            LabelBZ3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por Nombre(s)")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(true);
+            LabelBE3.setText("Buscar Nombre(s):");
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(true);
+            FiltroZnomina3.setVisible(false);
+            FiltroZnomina3.setSelectedIndex(0);
+            LabelBZ3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por Zona")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroZnomina3.setVisible(true);
+            FiltroZnomina3.setSelectedIndex(0);
+            LabelBZ3.setVisible(true);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por Servicio")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroZnomina3.setVisible(false);
+            FiltroZnomina3.setSelectedIndex(0);
+            LabelBZ3.setVisible(false);
+            FiltroSnomina3.setVisible(true);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(true);
+            FZservicio3.setVisible(true);
+            LabelSZ3.setVisible(true);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por quincena")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroZnomina3.setVisible(false);
+            FiltroZnomina3.setSelectedIndex(0);
+            LabelBZ3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(true);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(true);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por # Lista")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroZnomina3.setVisible(false);
+            FiltroZnomina3.setSelectedIndex(0);
+            LabelBZ3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(true);
+            LabelBNDF3.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosTD3ItemStateChanged
 
     private void FiltroNDF3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF3KeyReleased
@@ -17113,7 +17521,211 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FZservicio4ItemStateChanged
 
     private void FiltrosTD4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD4ItemStateChanged
-        // TODO add your handling code here:
+
+        String FTD4 = (String) FiltrosTD4.getSelectedItem();
+        if (FTD4.equals("Selecciona filtro")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroZnomina4.setVisible(false);
+            FiltroZnomina4.setSelectedIndex(0);
+            LabelBZ4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD4.equals("Filtrar por Apellido P")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(true);
+            LabelBE4.setText("Buscar Apellido P:");
+            FApT4.setText("");
+            FApT4.setVisible(true);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            FiltroZnomina4.setVisible(false);
+            FiltroZnomina4.setSelectedIndex(0);
+            LabelBZ4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por Apellido M")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(true);
+            LabelBE4.setText("Buscar Apellido M:");
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(true);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroZnomina4.setVisible(false);
+            FiltroZnomina4.setSelectedIndex(0);
+            LabelBZ4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por Nombre(s)")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(true);
+            LabelBE4.setText("Buscar Nombre(s):");
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(true);
+            FiltroZnomina4.setVisible(false);
+            FiltroZnomina4.setSelectedIndex(0);
+            LabelBZ4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por Zona")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroZnomina4.setVisible(true);
+            FiltroZnomina4.setSelectedIndex(0);
+            LabelBZ4.setVisible(true);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por Servicio")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroZnomina4.setVisible(false);
+            FiltroZnomina4.setSelectedIndex(0);
+            LabelBZ4.setVisible(false);
+            FiltroSnomina4.setVisible(true);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(true);
+            FZservicio4.setVisible(true);
+            LabelSZ4.setVisible(true);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por quincena")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroZnomina4.setVisible(false);
+            FiltroZnomina4.setSelectedIndex(0);
+            LabelBZ4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(true);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(true);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por # Lista")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroZnomina4.setVisible(false);
+            FiltroZnomina4.setSelectedIndex(0);
+            LabelBZ4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(true);
+            LabelBNDF4.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosTD4ItemStateChanged
 
     private void FiltroNDF4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF4KeyReleased
@@ -17161,7 +17773,212 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FZservicio5ItemStateChanged
 
     private void FiltrosTD5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD5ItemStateChanged
-        // TODO add your handling code here:
+        
+        String FTD5 = (String) FiltrosTD5.getSelectedItem();
+        if (FTD5.equals("Selecciona filtro")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroZnomina5.setVisible(false);
+            FiltroZnomina5.setSelectedIndex(0);
+            LabelBZ5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD5.equals("Filtrar por Apellido P")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(true);
+            LabelBE5.setText("Buscar Apellido P:");
+            FApT5.setText("");
+            FApT5.setVisible(true);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            FiltroZnomina5.setVisible(false);
+            FiltroZnomina5.setSelectedIndex(0);
+            LabelBZ5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por Apellido M")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(true);
+            LabelBE5.setText("Buscar Apellido M:");
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(true);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroZnomina5.setVisible(false);
+            FiltroZnomina5.setSelectedIndex(0);
+            LabelBZ5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por Nombre(s)")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(true);
+            LabelBE5.setText("Buscar Nombre(s):");
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(true);
+            FiltroZnomina5.setVisible(false);
+            FiltroZnomina5.setSelectedIndex(0);
+            LabelBZ5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por Zona")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroZnomina5.setVisible(true);
+            FiltroZnomina5.setSelectedIndex(0);
+            LabelBZ5.setVisible(true);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por Servicio")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroZnomina5.setVisible(false);
+            FiltroZnomina5.setSelectedIndex(0);
+            LabelBZ5.setVisible(false);
+            FiltroSnomina5.setVisible(true);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(true);
+            FZservicio5.setVisible(true);
+            LabelSZ5.setVisible(true);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por quincena")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroZnomina5.setVisible(false);
+            FiltroZnomina5.setSelectedIndex(0);
+            LabelBZ5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(true);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(true);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por # Lista")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroZnomina5.setVisible(false);
+            FiltroZnomina5.setSelectedIndex(0);
+            LabelBZ5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(true);
+            LabelBNDF5.setVisible(true);
+            FunMD();
+        }
+
     }//GEN-LAST:event_FiltrosTD5ItemStateChanged
 
     private void FiltroNDF5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF5KeyReleased
@@ -17209,7 +18026,211 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FZservicio6ItemStateChanged
 
     private void FiltrosTD6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD6ItemStateChanged
-        // TODO add your handling code here:
+       
+        String FTD6 = (String) FiltrosTD6.getSelectedItem();
+        if (FTD6.equals("Selecciona filtro")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroZnomina6.setVisible(false);
+            FiltroZnomina6.setSelectedIndex(0);
+            LabelBZ6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD6.equals("Filtrar por Apellido P")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(true);
+            LabelBE6.setText("Buscar Apellido P:");
+            FApT6.setText("");
+            FApT6.setVisible(true);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            FiltroZnomina6.setVisible(false);
+            FiltroZnomina6.setSelectedIndex(0);
+            LabelBZ6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por Apellido M")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(true);
+            LabelBE6.setText("Buscar Apellido M:");
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(true);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroZnomina6.setVisible(false);
+            FiltroZnomina6.setSelectedIndex(0);
+            LabelBZ6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por Nombre(s)")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(true);
+            LabelBE6.setText("Buscar Nombre(s):");
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(true);
+            FiltroZnomina6.setVisible(false);
+            FiltroZnomina6.setSelectedIndex(0);
+            LabelBZ6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por Zona")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroZnomina6.setVisible(true);
+            FiltroZnomina6.setSelectedIndex(0);
+            LabelBZ6.setVisible(true);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por Servicio")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroZnomina6.setVisible(false);
+            FiltroZnomina6.setSelectedIndex(0);
+            LabelBZ6.setVisible(false);
+            FiltroSnomina6.setVisible(true);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(true);
+            FZservicio6.setVisible(true);
+            LabelSZ6.setVisible(true);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por quincena")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroZnomina6.setVisible(false);
+            FiltroZnomina6.setSelectedIndex(0);
+            LabelBZ6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(true);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(true);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por # Lista")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroZnomina6.setVisible(false);
+            FiltroZnomina6.setSelectedIndex(0);
+            LabelBZ6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(true);
+            LabelBNDF6.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosTD6ItemStateChanged
 
     private void FiltroNDF6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF6KeyReleased
@@ -17257,7 +18278,211 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FZservicio7ItemStateChanged
 
     private void FiltrosTD7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD7ItemStateChanged
-        // TODO add your handling code here:
+        
+        String FTD7 = (String) FiltrosTD7.getSelectedItem();
+        if (FTD7.equals("Selecciona filtro")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroZnomina7.setVisible(false);
+            FiltroZnomina7.setSelectedIndex(0);
+            LabelBZ7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD7.equals("Filtrar por Apellido P")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(true);
+            LabelBE7.setText("Buscar Apellido P:");
+            FApT7.setText("");
+            FApT7.setVisible(true);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            FiltroZnomina7.setVisible(false);
+            FiltroZnomina7.setSelectedIndex(0);
+            LabelBZ7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por Apellido M")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(true);
+            LabelBE7.setText("Buscar Apellido M:");
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(true);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroZnomina7.setVisible(false);
+            FiltroZnomina7.setSelectedIndex(0);
+            LabelBZ7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por Nombre(s)")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(true);
+            LabelBE7.setText("Buscar Nombre(s):");
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(true);
+            FiltroZnomina7.setVisible(false);
+            FiltroZnomina7.setSelectedIndex(0);
+            LabelBZ7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por Zona")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroZnomina7.setVisible(true);
+            FiltroZnomina7.setSelectedIndex(0);
+            LabelBZ7.setVisible(true);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por Servicio")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroZnomina7.setVisible(false);
+            FiltroZnomina7.setSelectedIndex(0);
+            LabelBZ7.setVisible(false);
+            FiltroSnomina7.setVisible(true);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(true);
+            FZservicio7.setVisible(true);
+            LabelSZ7.setVisible(true);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por quincena")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroZnomina7.setVisible(false);
+            FiltroZnomina7.setSelectedIndex(0);
+            LabelBZ7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(true);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(true);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por # Lista")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroZnomina7.setVisible(false);
+            FiltroZnomina7.setSelectedIndex(0);
+            LabelBZ7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(true);
+            LabelBNDF7.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosTD7ItemStateChanged
 
     private void FiltroNDF7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF7KeyReleased
