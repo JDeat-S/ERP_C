@@ -108,7 +108,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         LabelBS.setVisible(false);
         LabelBZ.setVisible(false);
         LabelSZ.setVisible(false);
-        Nominab.setText("");
         Nominab.setVisible(false);
         FiltroZnomina.setVisible(false);
         FiltroZnomina.setSelectedIndex(0);
@@ -133,17 +132,83 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         LabelNDFP.setVisible(false);
         LabelBZP.setVisible(false);
         Filtro1.setVisible(false);
-        Filtro1.setText("");
         BNameNom.setVisible(false);
-        BNameNom.setText("");
-        BAPNom.setText("");
         BAPNom.setVisible(false);
         BAMNom.setVisible(false);
         FApT.setVisible(false);
         FAmT.setVisible(false);
-        BAMNom.setText("");
         BAppag.setVisible(false);
         Bampag.setVisible(false);
+        busp8.setVisible(false);
+        BAppag8.setVisible(false);
+        Bampag8.setVisible(false);
+        LabelBEP8.setVisible(false);
+        LabelBQP8.setVisible(false);
+        FiltroQP8.setVisible(false);
+        FiltroServP8.setVisible(false);
+        LabelBSP8.setVisible(false);
+        FiltroZP8.setVisible(false);
+        LabelBZP8.setVisible(false);
+        FiltroSZP8.setVisible(false);
+        LabelSZP8.setVisible(false);
+        filtroNDFP8.setVisible(false);
+        LabelNDFP8.setVisible(false);
+        busp7.setVisible(false);
+        BAppag7.setVisible(false);
+        Bampag7.setVisible(false);
+        LabelBEP7.setVisible(false);
+        LabelBQP7.setVisible(false);
+        FiltroQP7.setVisible(false);
+        FiltroServP7.setVisible(false);
+        LabelBSP7.setVisible(false);
+        FiltroZP7.setVisible(false);
+        LabelBZP7.setVisible(false);
+        FiltroSZP7.setVisible(false);
+        LabelSZP7.setVisible(false);
+        filtroNDFP7.setVisible(false);
+        LabelNDFP7.setVisible(false);
+        busp6.setVisible(false);
+        BAppag6.setVisible(false);
+        Bampag6.setVisible(false);
+        LabelBEP6.setVisible(false);
+        LabelBQP6.setVisible(false);
+        FiltroQP6.setVisible(false);
+        FiltroServP6.setVisible(false);
+        LabelBSP6.setVisible(false);
+        FiltroZP6.setVisible(false);
+        LabelBZP6.setVisible(false);
+        FiltroSZP6.setVisible(false);
+        LabelSZP6.setVisible(false);
+        filtroNDFP6.setVisible(false);
+        LabelNDFP6.setVisible(false);
+        busp5.setVisible(false);
+        BAppag5.setVisible(false);
+        Bampag5.setVisible(false);
+        LabelBEP5.setVisible(false);
+        LabelBQP5.setVisible(false);
+        FiltroQP5.setVisible(false);
+        FiltroServP5.setVisible(false);
+        LabelBSP5.setVisible(false);
+        FiltroZP5.setVisible(false);
+        LabelBZP5.setVisible(false);
+        FiltroSZP5.setVisible(false);
+        LabelSZP5.setVisible(false);
+        filtroNDFP5.setVisible(false);
+        LabelNDFP5.setVisible(false);
+        busp4.setVisible(false);
+        BAppag4.setVisible(false);
+        Bampag4.setVisible(false);
+        LabelBEP4.setVisible(false);
+        LabelBQP4.setVisible(false);
+        FiltroQP4.setVisible(false);
+        FiltroServP4.setVisible(false);
+        LabelBSP4.setVisible(false);
+        FiltroZP4.setVisible(false);
+        LabelBZP4.setVisible(false);
+        FiltroSZP4.setVisible(false);
+        LabelSZP4.setVisible(false);
+        filtroNDFP4.setVisible(false);
+        LabelNDFP4.setVisible(false);
         setIconImage(new ImageIcon(Admin_NominaQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         sharecdanom();
         sharepresnom();
@@ -15929,18 +15994,18 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void BampagKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BampagKeyReleased
 
-        MDPagosnomFA();
+        FunMD();
     }//GEN-LAST:event_BampagKeyReleased
 
     private void BAppagKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppagKeyReleased
 
-        MDPagosnomFA();
+        FunMD();
     }//GEN-LAST:event_BAppagKeyReleased
 
     private void FiltrosPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosPItemStateChanged
 
-        String dt = (String) FiltrosP.getSelectedItem();
-        if (dt.equals("Selecciona filtro")) {
+        String FP = (String) FiltrosP.getSelectedItem();
+        if (FP.equals("Selecciona filtro")) {
             busp.setVisible(false);
             BAppag.setVisible(false);
             BAppag.setText("");
@@ -15963,10 +16028,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             filtroNDFP.setVisible(false);
             filtroNDFP.setText("");
             LabelNDFP.setVisible(false);
-            MDPagosnomFA();
+            FunMD();
 
         }
-        if (dt.equals("Filtrar por Nombre(s)")) {
+        if (FP.equals("Filtrar por Nombre(s)")) {
             busp.setVisible(true);
             LabelBEP.setVisible(true);
             LabelBEP.setText("Buscar por nombre:");
@@ -15990,9 +16055,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             filtroNDFP.setVisible(false);
             filtroNDFP.setText("");
             LabelNDFP.setVisible(false);
-            MDPagosnomFA();
+            FunMD();
         }
-        if (dt.equals("Filtrar por Apellido P")) {
+        if (FP.equals("Filtrar por Apellido P")) {
             busp.setVisible(false);
             LabelBEP.setVisible(true);
             LabelBEP.setText("Buscar por apellido P:");
@@ -16016,9 +16081,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             filtroNDFP.setVisible(false);
             filtroNDFP.setText("");
             LabelNDFP.setVisible(false);
-            MDPagosnomFA();
+            FunMD();
         }
-        if (dt.equals("Filtrar por Apellido M")) {
+        if (FP.equals("Filtrar por Apellido M")) {
             busp.setVisible(false);
             LabelBEP.setVisible(true);
             LabelBEP.setText("Buscar por apellido M: ");
@@ -16042,9 +16107,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             filtroNDFP.setVisible(false);
             filtroNDFP.setText("");
             LabelNDFP.setVisible(false);
-            MDPagosnomFA();
+            FunMD();
         }
-        if (dt.equals("Filtrar por Zona")) {
+        if (FP.equals("Filtrar por Zona")) {
             busp.setVisible(false);
             LabelBEP.setVisible(false);
             BAppag.setVisible(false);
@@ -16067,9 +16132,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             filtroNDFP.setVisible(false);
             filtroNDFP.setText("");
             LabelNDFP.setVisible(false);
-            MDPagosnomFA();
+            FunMD();
         }
-        if (dt.equals("Filtrar por Servicio")) {
+        if (FP.equals("Filtrar por Servicio")) {
             busp.setVisible(false);
             LabelBEP.setVisible(false);
             BAppag.setVisible(false);
@@ -16092,9 +16157,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             filtroNDFP.setVisible(false);
             filtroNDFP.setText("");
             LabelNDFP.setVisible(false);
-            MDPagosnomFA();
+            FunMD();
         }
-        if (dt.equals("Filtrar por quincena")) {
+        if (FP.equals("Filtrar por quincena")) {
             busp.setVisible(false);
             LabelBEP.setVisible(false);
             BAppag.setVisible(false);
@@ -16117,9 +16182,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             filtroNDFP.setVisible(false);
             filtroNDFP.setText("");
             LabelNDFP.setVisible(false);
-            MDPagosnomFA();
+            FunMD();
         }
-        if (dt.equals("Filtrar por # Lista")) {
+        if (FP.equals("Filtrar por # Lista")) {
             busp.setVisible(false);
             LabelBEP.setVisible(false);
             BAppag.setVisible(false);
@@ -16142,22 +16207,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             filtroNDFP.setVisible(true);
             filtroNDFP.setText("");
             LabelNDFP.setVisible(true);
-            MDPagosnomFA();
+            FunMD();
         }
     }//GEN-LAST:event_FiltrosPItemStateChanged
 
     private void FiltroQPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQPItemStateChanged
 
-        MDPagosnomFA();
+        FunMD();
     }//GEN-LAST:event_FiltroQPItemStateChanged
 
     private void filtroNDFPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFPKeyReleased
 
-        MDPagosnomFA();
+        FunMD();
     }//GEN-LAST:event_filtroNDFPKeyReleased
 
     private void FiltroServPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServPItemStateChanged
-
+        FunMD();
         MDPagosnomFA();
     }//GEN-LAST:event_FiltroServPItemStateChanged
 
@@ -16169,12 +16234,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
             FiltroServP.setModel(modelServicio);
         }
-        MDPagosnomFA();
+        FunMD();
     }//GEN-LAST:event_FiltroSZPItemStateChanged
 
     private void FiltroZPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZPItemStateChanged
 
-        MDPagosnomFA();
+        FunMD();
     }//GEN-LAST:event_FiltroZPItemStateChanged
 
     private void CS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS3ActionPerformed
@@ -16189,22 +16254,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void buspKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buspKeyReleased
 
-        MDPagosnomFA();
+        FunMD();
     }//GEN-LAST:event_buspKeyReleased
 
     private void FAmTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmTKeyReleased
 
-        MDNFA();
+        FunMD();
     }//GEN-LAST:event_FAmTKeyReleased
 
     private void FApTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApTKeyReleased
 
-        MDNFA();
+        FunMD();
     }//GEN-LAST:event_FApTKeyReleased
 
     private void FiltroNDFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDFKeyReleased
 
-        MDNFA();
+        FunMD();
     }//GEN-LAST:event_FiltroNDFKeyReleased
 
     private void FiltrosTDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTDItemStateChanged
@@ -16423,22 +16488,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
             FiltroSnomina.setModel(modelServicio);
         }
-        MDNFA();
+        FunMD();
     }//GEN-LAST:event_FZservicioItemStateChanged
 
     private void FiltroQuincenanominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanominaItemStateChanged
 
-        MDNFA();
+        FunMD();
     }//GEN-LAST:event_FiltroQuincenanominaItemStateChanged
 
     private void FiltroSnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnominaItemStateChanged
 
-        MDNFA();
+        FunMD();
     }//GEN-LAST:event_FiltroSnominaItemStateChanged
 
     private void FiltroZnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnominaItemStateChanged
 
-        MDNFA();
+        FunMD();
     }//GEN-LAST:event_FiltroZnominaItemStateChanged
 
     private void CS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2ActionPerformed
@@ -16454,12 +16519,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
 
         eliminarnom();
-        MDNFA();
+        FunMD();
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void NominabKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NominabKeyReleased
 
-        MDNFA();
+        FunMD();
     }//GEN-LAST:event_NominabKeyReleased
 
     private void TnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TnomMouseClicked
@@ -16737,7 +16802,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tnom1MouseClicked
 
     private void Nominab1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab1KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Nominab1KeyReleased
 
     private void Eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar1ActionPerformed
@@ -16749,19 +16814,23 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS8ActionPerformed
 
     private void FiltroZnomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina1ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FiltroZnomina1ItemStateChanged
 
     private void FiltroSnomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina1ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FiltroSnomina1ItemStateChanged
 
     private void FiltroQuincenanomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina1ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FiltroQuincenanomina1ItemStateChanged
 
     private void FZservicio1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio1ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FZservicio1ItemStateChanged
 
     private void FiltrosTD1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD1ItemStateChanged
@@ -16973,15 +17042,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD1ItemStateChanged
 
     private void FiltroNDF1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF1KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FiltroNDF1KeyReleased
 
     private void FApT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT1KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FApT1KeyReleased
 
     private void FAmT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT1KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FAmT1KeyReleased
 
     private void Tnom2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom2MouseClicked
@@ -16989,7 +17060,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tnom2MouseClicked
 
     private void Nominab2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab2KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_Nominab2KeyReleased
 
     private void Eliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar2ActionPerformed
@@ -17001,19 +17073,23 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS9ActionPerformed
 
     private void FiltroZnomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina2ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FiltroZnomina2ItemStateChanged
 
     private void FiltroSnomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina2ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FiltroSnomina2ItemStateChanged
 
     private void FiltroQuincenanomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina2ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FiltroQuincenanomina2ItemStateChanged
 
     private void FZservicio2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio2ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FZservicio2ItemStateChanged
 
     private void FiltrosTD2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD2ItemStateChanged
@@ -17225,15 +17301,18 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD2ItemStateChanged
 
     private void FiltroNDF2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF2KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FiltroNDF2KeyReleased
 
     private void FApT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT2KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FApT2KeyReleased
 
     private void FAmT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT2KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FAmT2KeyReleased
 
     private void Tnom3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom3MouseClicked
@@ -17241,7 +17320,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tnom3MouseClicked
 
     private void Nominab3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab3KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_Nominab3KeyReleased
 
     private void Eliminar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar3ActionPerformed
@@ -17253,19 +17333,23 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS10ActionPerformed
 
     private void FiltroZnomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina3ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FiltroZnomina3ItemStateChanged
 
     private void FiltroSnomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina3ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FiltroSnomina3ItemStateChanged
 
     private void FiltroQuincenanomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina3ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FiltroQuincenanomina3ItemStateChanged
 
     private void FZservicio3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio3ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FZservicio3ItemStateChanged
 
     private void FiltrosTD3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD3ItemStateChanged
@@ -17481,11 +17565,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroNDF3KeyReleased
 
     private void FApT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT3KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FApT3KeyReleased
 
     private void FAmT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT3KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_FAmT3KeyReleased
 
     private void Tnom4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom4MouseClicked
@@ -17493,7 +17579,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tnom4MouseClicked
 
     private void Nominab4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab4KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+
     }//GEN-LAST:event_Nominab4KeyReleased
 
     private void Eliminar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar4ActionPerformed
@@ -17505,19 +17592,19 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS11ActionPerformed
 
     private void FiltroZnomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina4ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZnomina4ItemStateChanged
 
     private void FiltroSnomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina4ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSnomina4ItemStateChanged
 
     private void FiltroQuincenanomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina4ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQuincenanomina4ItemStateChanged
 
     private void FZservicio4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio4ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FZservicio4ItemStateChanged
 
     private void FiltrosTD4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD4ItemStateChanged
@@ -17729,15 +17816,15 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD4ItemStateChanged
 
     private void FiltroNDF4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF4KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroNDF4KeyReleased
 
     private void FApT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT4KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FApT4KeyReleased
 
     private void FAmT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT4KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FAmT4KeyReleased
 
     private void Tnom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom5MouseClicked
@@ -17745,7 +17832,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tnom5MouseClicked
 
     private void Nominab5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab5KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Nominab5KeyReleased
 
     private void Eliminar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar5ActionPerformed
@@ -17757,23 +17844,23 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS12ActionPerformed
 
     private void FiltroZnomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina5ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZnomina5ItemStateChanged
 
     private void FiltroSnomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina5ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSnomina5ItemStateChanged
 
     private void FiltroQuincenanomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina5ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQuincenanomina5ItemStateChanged
 
     private void FZservicio5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio5ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FZservicio5ItemStateChanged
 
     private void FiltrosTD5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD5ItemStateChanged
-        
+
         String FTD5 = (String) FiltrosTD5.getSelectedItem();
         if (FTD5.equals("Selecciona filtro")) {
             Nominab5.setText("");
@@ -17982,15 +18069,15 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD5ItemStateChanged
 
     private void FiltroNDF5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF5KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroNDF5KeyReleased
 
     private void FApT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT5KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FApT5KeyReleased
 
     private void FAmT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT5KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FAmT5KeyReleased
 
     private void Tnom6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom6MouseClicked
@@ -17998,7 +18085,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tnom6MouseClicked
 
     private void Nominab6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab6KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Nominab6KeyReleased
 
     private void Eliminar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar6ActionPerformed
@@ -18010,23 +18097,23 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS13ActionPerformed
 
     private void FiltroZnomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina6ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZnomina6ItemStateChanged
 
     private void FiltroSnomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina6ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSnomina6ItemStateChanged
 
     private void FiltroQuincenanomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina6ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQuincenanomina6ItemStateChanged
 
     private void FZservicio6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio6ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FZservicio6ItemStateChanged
 
     private void FiltrosTD6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD6ItemStateChanged
-       
+
         String FTD6 = (String) FiltrosTD6.getSelectedItem();
         if (FTD6.equals("Selecciona filtro")) {
             Nominab6.setText("");
@@ -18234,15 +18321,15 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD6ItemStateChanged
 
     private void FiltroNDF6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF6KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroNDF6KeyReleased
 
     private void FApT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT6KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FApT6KeyReleased
 
     private void FAmT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT6KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FAmT6KeyReleased
 
     private void Tnom7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom7MouseClicked
@@ -18250,7 +18337,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tnom7MouseClicked
 
     private void Nominab7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab7KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Nominab7KeyReleased
 
     private void Eliminar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar7ActionPerformed
@@ -18262,23 +18349,23 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS14ActionPerformed
 
     private void FiltroZnomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina7ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZnomina7ItemStateChanged
 
     private void FiltroSnomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina7ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSnomina7ItemStateChanged
 
     private void FiltroQuincenanomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina7ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQuincenanomina7ItemStateChanged
 
     private void FZservicio7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio7ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FZservicio7ItemStateChanged
 
     private void FiltrosTD7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD7ItemStateChanged
-        
+
         String FTD7 = (String) FiltrosTD7.getSelectedItem();
         if (FTD7.equals("Selecciona filtro")) {
             Nominab7.setText("");
@@ -18486,19 +18573,19 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD7ItemStateChanged
 
     private void FiltroNDF7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF7KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroNDF7KeyReleased
 
     private void FApT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT7KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FApT7KeyReleased
 
     private void FAmT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT7KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FAmT7KeyReleased
 
     private void busp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp1KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_busp1KeyReleased
 
     private void CS15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS15ActionPerformed
@@ -18506,39 +18593,243 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS15ActionPerformed
 
     private void FiltroZP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZP1ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZP1ItemStateChanged
 
     private void FiltroSZP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZP1ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSZP1ItemStateChanged
 
     private void FiltroServP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP1ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroServP1ItemStateChanged
 
     private void filtroNDFP1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP1KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_filtroNDFP1KeyReleased
 
     private void FiltroQP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP1ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQP1ItemStateChanged
 
     private void FiltrosP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP1ItemStateChanged
-        // TODO add your handling code here:
+        String FP = (String) FiltrosP1.getSelectedItem();
+        if (FP.equals("Selecciona filtro")) {
+            busp1.setVisible(false);
+            BAppag1.setVisible(false);
+            BAppag1.setText("");
+            Bampag1.setVisible(false);
+            Bampag1.setText("");
+            LabelBEP1.setVisible(false);
+            busp1.setText("");
+            LabelBQP1.setVisible(false);
+            FiltroQP1.setVisible(false);
+            FiltroQP1.setSelectedIndex(0);
+            FiltroServP1.setVisible(false);
+            FiltroServP1.setSelectedIndex(0);
+            LabelBSP1.setVisible(false);
+            FiltroZP1.setVisible(false);
+            FiltroZP1.setSelectedIndex(0);
+            LabelBZP1.setVisible(false);
+            FiltroSZP1.setVisible(false);
+            FiltroSZP1.setSelectedIndex(0);
+            LabelSZP1.setVisible(false);
+            filtroNDFP1.setVisible(false);
+            filtroNDFP1.setText("");
+            LabelNDFP1.setVisible(false);
+            FunMD();
+
+        }
+        if (FP.equals("Filtrar por Nombre(s)")) {
+            busp1.setVisible(true);
+            LabelBEP1.setVisible(true);
+            LabelBEP1.setText("Buscar por nombre:");
+            BAppag1.setVisible(false);
+            BAppag1.setText("");
+            Bampag1.setVisible(false);
+            Bampag1.setText("");
+            busp1.setText("");
+            LabelBQP1.setVisible(false);
+            FiltroQP1.setVisible(false);
+            FiltroQP1.setSelectedIndex(0);
+            FiltroServP1.setVisible(false);
+            FiltroServP1.setSelectedIndex(0);
+            LabelBSP1.setVisible(false);
+            FiltroZP1.setVisible(false);
+            FiltroZP1.setSelectedIndex(0);
+            LabelBZP1.setVisible(false);
+            FiltroSZP1.setVisible(false);
+            FiltroSZP1.setSelectedIndex(0);
+            LabelSZP1.setVisible(false);
+            filtroNDFP1.setVisible(false);
+            filtroNDFP1.setText("");
+            LabelNDFP1.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido P")) {
+            busp1.setVisible(false);
+            LabelBEP1.setVisible(true);
+            LabelBEP1.setText("Buscar por apellido P:");
+            BAppag1.setVisible(true);
+            BAppag1.setText("");
+            Bampag1.setVisible(false);
+            Bampag1.setText("");
+            busp1.setText("");
+            LabelBQP1.setVisible(false);
+            FiltroQP1.setVisible(false);
+            FiltroQP1.setSelectedIndex(0);
+            FiltroServP1.setVisible(false);
+            FiltroServP1.setSelectedIndex(0);
+            LabelBSP1.setVisible(false);
+            FiltroZP1.setVisible(false);
+            FiltroZP1.setSelectedIndex(0);
+            LabelBZP1.setVisible(false);
+            FiltroSZP1.setVisible(false);
+            FiltroSZP1.setSelectedIndex(0);
+            LabelSZP1.setVisible(false);
+            filtroNDFP1.setVisible(false);
+            filtroNDFP1.setText("");
+            LabelNDFP1.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido M")) {
+            busp1.setVisible(false);
+            LabelBEP1.setVisible(true);
+            LabelBEP1.setText("Buscar por apellido M: ");
+            BAppag1.setVisible(false);
+            BAppag1.setText("");
+            Bampag1.setVisible(true);
+            Bampag1.setText("");
+            busp1.setText("");
+            LabelBQP1.setVisible(false);
+            FiltroQP1.setVisible(false);
+            FiltroQP1.setSelectedIndex(0);
+            FiltroServP1.setVisible(false);
+            FiltroServP1.setSelectedIndex(0);
+            LabelBSP1.setVisible(false);
+            FiltroZP1.setVisible(false);
+            FiltroZP1.setSelectedIndex(0);
+            LabelBZP1.setVisible(false);
+            FiltroSZP1.setVisible(false);
+            FiltroSZP1.setSelectedIndex(0);
+            LabelSZP1.setVisible(false);
+            filtroNDFP1.setVisible(false);
+            filtroNDFP1.setText("");
+            LabelNDFP1.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Zona")) {
+            busp1.setVisible(false);
+            LabelBEP1.setVisible(false);
+            BAppag1.setVisible(false);
+            BAppag1.setText("");
+            Bampag1.setVisible(false);
+            Bampag1.setText("");
+            busp1.setText("");
+            LabelBQP1.setVisible(false);
+            FiltroQP1.setVisible(false);
+            FiltroQP1.setSelectedIndex(0);
+            FiltroServP1.setVisible(false);
+            FiltroServP1.setSelectedIndex(0);
+            LabelBSP1.setVisible(false);
+            FiltroZP1.setVisible(true);
+            FiltroZP1.setSelectedIndex(0);
+            LabelBZP1.setVisible(true);
+            FiltroSZP1.setVisible(false);
+            FiltroSZP1.setSelectedIndex(0);
+            LabelSZP1.setVisible(false);
+            filtroNDFP1.setVisible(false);
+            filtroNDFP1.setText("");
+            LabelNDFP1.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Servicio")) {
+            busp1.setVisible(false);
+            LabelBEP1.setVisible(false);
+            BAppag1.setVisible(false);
+            BAppag1.setText("");
+            Bampag1.setVisible(false);
+            Bampag1.setText("");
+            busp1.setText("");
+            LabelBQP1.setVisible(false);
+            FiltroQP1.setVisible(false);
+            FiltroQP1.setSelectedIndex(0);
+            FiltroServP1.setVisible(true);
+            FiltroServP1.setSelectedIndex(0);
+            LabelBSP1.setVisible(true);
+            FiltroZP1.setVisible(false);
+            FiltroZP1.setSelectedIndex(0);
+            LabelBZP1.setVisible(false);
+            FiltroSZP1.setVisible(true);
+            FiltroSZP1.setSelectedIndex(0);
+            LabelSZP1.setVisible(true);
+            filtroNDFP1.setVisible(false);
+            filtroNDFP1.setText("");
+            LabelNDFP1.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por quincena")) {
+            busp1.setVisible(false);
+            LabelBEP1.setVisible(false);
+            BAppag1.setVisible(false);
+            BAppag1.setText("");
+            Bampag1.setVisible(false);
+            Bampag1.setText("");
+            busp1.setText("");
+            LabelBQP1.setVisible(true);
+            FiltroQP1.setVisible(true);
+            FiltroQP1.setSelectedIndex(0);
+            FiltroServP1.setVisible(false);
+            FiltroServP1.setSelectedIndex(0);
+            LabelBSP1.setVisible(false);
+            FiltroZP1.setVisible(false);
+            FiltroZP1.setSelectedIndex(0);
+            LabelBZP1.setVisible(false);
+            FiltroSZP1.setVisible(false);
+            FiltroSZP1.setSelectedIndex(0);
+            LabelSZP1.setVisible(false);
+            filtroNDFP1.setVisible(false);
+            filtroNDFP1.setText("");
+            LabelNDFP1.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por # Lista")) {
+            busp1.setVisible(false);
+            LabelBEP1.setVisible(false);
+            BAppag1.setVisible(false);
+            BAppag1.setText("");
+            Bampag1.setVisible(false);
+            Bampag1.setText("");
+            busp1.setText("");
+            LabelBQP1.setVisible(false);
+            FiltroQP1.setVisible(false);
+            FiltroQP1.setSelectedIndex(0);
+            FiltroServP1.setVisible(false);
+            FiltroServP1.setSelectedIndex(0);
+            LabelBSP1.setVisible(false);
+            FiltroZP1.setVisible(false);
+            FiltroZP1.setSelectedIndex(0);
+            LabelBZP1.setVisible(false);
+            FiltroSZP1.setVisible(false);
+            FiltroSZP1.setSelectedIndex(0);
+            LabelSZP1.setVisible(false);
+            filtroNDFP1.setVisible(true);
+            filtroNDFP1.setText("");
+            LabelNDFP1.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosP1ItemStateChanged
 
     private void BAppag1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag1KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_BAppag1KeyReleased
 
     private void Bampag1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag1KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Bampag1KeyReleased
 
     private void busp2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp2KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_busp2KeyReleased
 
     private void CS16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS16ActionPerformed
@@ -18546,39 +18837,244 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS16ActionPerformed
 
     private void FiltroZP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZP2ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZP2ItemStateChanged
 
     private void FiltroSZP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZP2ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSZP2ItemStateChanged
 
     private void FiltroServP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP2ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroServP2ItemStateChanged
 
     private void filtroNDFP2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP2KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_filtroNDFP2KeyReleased
 
     private void FiltroQP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP2ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQP2ItemStateChanged
 
     private void FiltrosP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP2ItemStateChanged
-        // TODO add your handling code here:
+
+        String FP2 = (String) FiltrosP2.getSelectedItem();
+        if (FP2.equals("Selecciona filtro")) {
+            busp2.setVisible(false);
+            BAppag2.setVisible(false);
+            BAppag2.setText("");
+            Bampag2.setVisible(false);
+            Bampag2.setText("");
+            LabelBEP2.setVisible(false);
+            busp2.setText("");
+            LabelBQP2.setVisible(false);
+            FiltroQP2.setVisible(false);
+            FiltroQP2.setSelectedIndex(0);
+            FiltroServP2.setVisible(false);
+            FiltroServP2.setSelectedIndex(0);
+            LabelBSP2.setVisible(false);
+            FiltroZP2.setVisible(false);
+            FiltroZP2.setSelectedIndex(0);
+            LabelBZP2.setVisible(false);
+            FiltroSZP2.setVisible(false);
+            FiltroSZP2.setSelectedIndex(0);
+            LabelSZP2.setVisible(false);
+            filtroNDFP2.setVisible(false);
+            filtroNDFP2.setText("");
+            LabelNDFP2.setVisible(false);
+            FunMD();
+
+        }
+        if (FP2.equals("Filtrar por Nombre(s)")) {
+            busp2.setVisible(true);
+            LabelBEP2.setVisible(true);
+            LabelBEP2.setText("Buscar por nombre:");
+            BAppag2.setVisible(false);
+            BAppag2.setText("");
+            Bampag2.setVisible(false);
+            Bampag2.setText("");
+            busp2.setText("");
+            LabelBQP2.setVisible(false);
+            FiltroQP2.setVisible(false);
+            FiltroQP2.setSelectedIndex(0);
+            FiltroServP2.setVisible(false);
+            FiltroServP2.setSelectedIndex(0);
+            LabelBSP2.setVisible(false);
+            FiltroZP2.setVisible(false);
+            FiltroZP2.setSelectedIndex(0);
+            LabelBZP2.setVisible(false);
+            FiltroSZP2.setVisible(false);
+            FiltroSZP2.setSelectedIndex(0);
+            LabelSZP2.setVisible(false);
+            filtroNDFP2.setVisible(false);
+            filtroNDFP2.setText("");
+            LabelNDFP2.setVisible(false);
+            FunMD();
+        }
+        if (FP2.equals("Filtrar por Apellido P")) {
+            busp2.setVisible(false);
+            LabelBEP2.setVisible(true);
+            LabelBEP2.setText("Buscar por apellido P:");
+            BAppag2.setVisible(true);
+            BAppag2.setText("");
+            Bampag2.setVisible(false);
+            Bampag2.setText("");
+            busp2.setText("");
+            LabelBQP2.setVisible(false);
+            FiltroQP2.setVisible(false);
+            FiltroQP2.setSelectedIndex(0);
+            FiltroServP2.setVisible(false);
+            FiltroServP2.setSelectedIndex(0);
+            LabelBSP2.setVisible(false);
+            FiltroZP2.setVisible(false);
+            FiltroZP2.setSelectedIndex(0);
+            LabelBZP2.setVisible(false);
+            FiltroSZP2.setVisible(false);
+            FiltroSZP2.setSelectedIndex(0);
+            LabelSZP2.setVisible(false);
+            filtroNDFP2.setVisible(false);
+            filtroNDFP2.setText("");
+            LabelNDFP2.setVisible(false);
+            FunMD();
+        }
+        if (FP2.equals("Filtrar por Apellido M")) {
+            busp2.setVisible(false);
+            LabelBEP2.setVisible(true);
+            LabelBEP2.setText("Buscar por apellido M: ");
+            BAppag2.setVisible(false);
+            BAppag2.setText("");
+            Bampag2.setVisible(true);
+            Bampag2.setText("");
+            busp2.setText("");
+            LabelBQP2.setVisible(false);
+            FiltroQP2.setVisible(false);
+            FiltroQP2.setSelectedIndex(0);
+            FiltroServP2.setVisible(false);
+            FiltroServP2.setSelectedIndex(0);
+            LabelBSP2.setVisible(false);
+            FiltroZP2.setVisible(false);
+            FiltroZP2.setSelectedIndex(0);
+            LabelBZP2.setVisible(false);
+            FiltroSZP2.setVisible(false);
+            FiltroSZP2.setSelectedIndex(0);
+            LabelSZP2.setVisible(false);
+            filtroNDFP2.setVisible(false);
+            filtroNDFP2.setText("");
+            LabelNDFP2.setVisible(false);
+            FunMD();
+        }
+        if (FP2.equals("Filtrar por Zona")) {
+            busp2.setVisible(false);
+            LabelBEP2.setVisible(false);
+            BAppag2.setVisible(false);
+            BAppag2.setText("");
+            Bampag2.setVisible(false);
+            Bampag2.setText("");
+            busp2.setText("");
+            LabelBQP2.setVisible(false);
+            FiltroQP2.setVisible(false);
+            FiltroQP2.setSelectedIndex(0);
+            FiltroServP2.setVisible(false);
+            FiltroServP2.setSelectedIndex(0);
+            LabelBSP2.setVisible(false);
+            FiltroZP2.setVisible(true);
+            FiltroZP2.setSelectedIndex(0);
+            LabelBZP2.setVisible(true);
+            FiltroSZP2.setVisible(false);
+            FiltroSZP2.setSelectedIndex(0);
+            LabelSZP2.setVisible(false);
+            filtroNDFP2.setVisible(false);
+            filtroNDFP2.setText("");
+            LabelNDFP2.setVisible(false);
+            FunMD();
+        }
+        if (FP2.equals("Filtrar por Servicio")) {
+            busp2.setVisible(false);
+            LabelBEP2.setVisible(false);
+            BAppag2.setVisible(false);
+            BAppag2.setText("");
+            Bampag2.setVisible(false);
+            Bampag2.setText("");
+            busp2.setText("");
+            LabelBQP2.setVisible(false);
+            FiltroQP2.setVisible(false);
+            FiltroQP2.setSelectedIndex(0);
+            FiltroServP2.setVisible(true);
+            FiltroServP2.setSelectedIndex(0);
+            LabelBSP2.setVisible(true);
+            FiltroZP2.setVisible(false);
+            FiltroZP2.setSelectedIndex(0);
+            LabelBZP2.setVisible(false);
+            FiltroSZP2.setVisible(true);
+            FiltroSZP2.setSelectedIndex(0);
+            LabelSZP2.setVisible(true);
+            filtroNDFP2.setVisible(false);
+            filtroNDFP2.setText("");
+            LabelNDFP2.setVisible(false);
+            FunMD();
+        }
+        if (FP2.equals("Filtrar por quincena")) {
+            busp2.setVisible(false);
+            LabelBEP2.setVisible(false);
+            BAppag2.setVisible(false);
+            BAppag2.setText("");
+            Bampag2.setVisible(false);
+            Bampag2.setText("");
+            busp2.setText("");
+            LabelBQP2.setVisible(true);
+            FiltroQP2.setVisible(true);
+            FiltroQP2.setSelectedIndex(0);
+            FiltroServP2.setVisible(false);
+            FiltroServP2.setSelectedIndex(0);
+            LabelBSP2.setVisible(false);
+            FiltroZP2.setVisible(false);
+            FiltroZP2.setSelectedIndex(0);
+            LabelBZP2.setVisible(false);
+            FiltroSZP2.setVisible(false);
+            FiltroSZP2.setSelectedIndex(0);
+            LabelSZP2.setVisible(false);
+            filtroNDFP2.setVisible(false);
+            filtroNDFP2.setText("");
+            LabelNDFP2.setVisible(false);
+            FunMD();
+        }
+        if (FP2.equals("Filtrar por # Lista")) {
+            busp2.setVisible(false);
+            LabelBEP2.setVisible(false);
+            BAppag2.setVisible(false);
+            BAppag2.setText("");
+            Bampag2.setVisible(false);
+            Bampag2.setText("");
+            busp2.setText("");
+            LabelBQP2.setVisible(false);
+            FiltroQP2.setVisible(false);
+            FiltroQP2.setSelectedIndex(0);
+            FiltroServP2.setVisible(false);
+            FiltroServP2.setSelectedIndex(0);
+            LabelBSP2.setVisible(false);
+            FiltroZP2.setVisible(false);
+            FiltroZP2.setSelectedIndex(0);
+            LabelBZP2.setVisible(false);
+            FiltroSZP2.setVisible(false);
+            FiltroSZP2.setSelectedIndex(0);
+            LabelSZP2.setVisible(false);
+            filtroNDFP2.setVisible(true);
+            filtroNDFP2.setText("");
+            LabelNDFP2.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosP2ItemStateChanged
 
     private void BAppag2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag2KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_BAppag2KeyReleased
 
     private void Bampag2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag2KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Bampag2KeyReleased
 
     private void busp3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp3KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_busp3KeyReleased
 
     private void CS17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS17ActionPerformed
@@ -18586,39 +19082,244 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS17ActionPerformed
 
     private void FiltroZP3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZP3ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZP3ItemStateChanged
 
     private void FiltroSZP3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZP3ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSZP3ItemStateChanged
 
     private void FiltroServP3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP3ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroServP3ItemStateChanged
 
     private void filtroNDFP3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP3KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_filtroNDFP3KeyReleased
 
     private void FiltroQP3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP3ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQP3ItemStateChanged
 
     private void FiltrosP3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP3ItemStateChanged
-        // TODO add your handling code here:
+
+        String FP3 = (String) FiltrosP3.getSelectedItem();
+        if (FP3.equals("Selecciona filtro")) {
+            busp3.setVisible(false);
+            BAppag3.setVisible(false);
+            BAppag3.setText("");
+            Bampag3.setVisible(false);
+            Bampag3.setText("");
+            LabelBEP3.setVisible(false);
+            busp3.setText("");
+            LabelBQP3.setVisible(false);
+            FiltroQP3.setVisible(false);
+            FiltroQP3.setSelectedIndex(0);
+            FiltroServP3.setVisible(false);
+            FiltroServP3.setSelectedIndex(0);
+            LabelBSP3.setVisible(false);
+            FiltroZP3.setVisible(false);
+            FiltroZP3.setSelectedIndex(0);
+            LabelBZP3.setVisible(false);
+            FiltroSZP3.setVisible(false);
+            FiltroSZP3.setSelectedIndex(0);
+            LabelSZP3.setVisible(false);
+            filtroNDFP3.setVisible(false);
+            filtroNDFP3.setText("");
+            LabelNDFP3.setVisible(false);
+            FunMD();
+
+        }
+        if (FP3.equals("Filtrar por Nombre(s)")) {
+            busp3.setVisible(true);
+            LabelBEP3.setVisible(true);
+            LabelBEP3.setText("Buscar por nombre:");
+            BAppag3.setVisible(false);
+            BAppag3.setText("");
+            Bampag3.setVisible(false);
+            Bampag3.setText("");
+            busp3.setText("");
+            LabelBQP3.setVisible(false);
+            FiltroQP3.setVisible(false);
+            FiltroQP3.setSelectedIndex(0);
+            FiltroServP3.setVisible(false);
+            FiltroServP3.setSelectedIndex(0);
+            LabelBSP3.setVisible(false);
+            FiltroZP3.setVisible(false);
+            FiltroZP3.setSelectedIndex(0);
+            LabelBZP3.setVisible(false);
+            FiltroSZP3.setVisible(false);
+            FiltroSZP3.setSelectedIndex(0);
+            LabelSZP3.setVisible(false);
+            filtroNDFP3.setVisible(false);
+            filtroNDFP3.setText("");
+            LabelNDFP3.setVisible(false);
+            FunMD();
+        }
+        if (FP3.equals("Filtrar por Apellido P")) {
+            busp3.setVisible(false);
+            LabelBEP3.setVisible(true);
+            LabelBEP3.setText("Buscar por apellido P:");
+            BAppag3.setVisible(true);
+            BAppag3.setText("");
+            Bampag3.setVisible(false);
+            Bampag3.setText("");
+            busp3.setText("");
+            LabelBQP3.setVisible(false);
+            FiltroQP3.setVisible(false);
+            FiltroQP3.setSelectedIndex(0);
+            FiltroServP3.setVisible(false);
+            FiltroServP3.setSelectedIndex(0);
+            LabelBSP3.setVisible(false);
+            FiltroZP3.setVisible(false);
+            FiltroZP3.setSelectedIndex(0);
+            LabelBZP3.setVisible(false);
+            FiltroSZP3.setVisible(false);
+            FiltroSZP3.setSelectedIndex(0);
+            LabelSZP3.setVisible(false);
+            filtroNDFP3.setVisible(false);
+            filtroNDFP3.setText("");
+            LabelNDFP3.setVisible(false);
+            FunMD();
+        }
+        if (FP3.equals("Filtrar por Apellido M")) {
+            busp3.setVisible(false);
+            LabelBEP3.setVisible(true);
+            LabelBEP3.setText("Buscar por apellido M: ");
+            BAppag3.setVisible(false);
+            BAppag3.setText("");
+            Bampag3.setVisible(true);
+            Bampag3.setText("");
+            busp3.setText("");
+            LabelBQP3.setVisible(false);
+            FiltroQP3.setVisible(false);
+            FiltroQP3.setSelectedIndex(0);
+            FiltroServP3.setVisible(false);
+            FiltroServP3.setSelectedIndex(0);
+            LabelBSP3.setVisible(false);
+            FiltroZP3.setVisible(false);
+            FiltroZP3.setSelectedIndex(0);
+            LabelBZP3.setVisible(false);
+            FiltroSZP3.setVisible(false);
+            FiltroSZP3.setSelectedIndex(0);
+            LabelSZP3.setVisible(false);
+            filtroNDFP3.setVisible(false);
+            filtroNDFP3.setText("");
+            LabelNDFP3.setVisible(false);
+            FunMD();
+        }
+        if (FP3.equals("Filtrar por Zona")) {
+            busp3.setVisible(false);
+            LabelBEP3.setVisible(false);
+            BAppag3.setVisible(false);
+            BAppag3.setText("");
+            Bampag3.setVisible(false);
+            Bampag3.setText("");
+            busp3.setText("");
+            LabelBQP3.setVisible(false);
+            FiltroQP3.setVisible(false);
+            FiltroQP3.setSelectedIndex(0);
+            FiltroServP3.setVisible(false);
+            FiltroServP3.setSelectedIndex(0);
+            LabelBSP3.setVisible(false);
+            FiltroZP3.setVisible(true);
+            FiltroZP3.setSelectedIndex(0);
+            LabelBZP3.setVisible(true);
+            FiltroSZP3.setVisible(false);
+            FiltroSZP3.setSelectedIndex(0);
+            LabelSZP3.setVisible(false);
+            filtroNDFP3.setVisible(false);
+            filtroNDFP3.setText("");
+            LabelNDFP3.setVisible(false);
+            FunMD();
+        }
+        if (FP3.equals("Filtrar por Servicio")) {
+            busp3.setVisible(false);
+            LabelBEP3.setVisible(false);
+            BAppag3.setVisible(false);
+            BAppag3.setText("");
+            Bampag3.setVisible(false);
+            Bampag3.setText("");
+            busp3.setText("");
+            LabelBQP3.setVisible(false);
+            FiltroQP3.setVisible(false);
+            FiltroQP3.setSelectedIndex(0);
+            FiltroServP3.setVisible(true);
+            FiltroServP3.setSelectedIndex(0);
+            LabelBSP3.setVisible(true);
+            FiltroZP3.setVisible(false);
+            FiltroZP3.setSelectedIndex(0);
+            LabelBZP3.setVisible(false);
+            FiltroSZP3.setVisible(true);
+            FiltroSZP3.setSelectedIndex(0);
+            LabelSZP3.setVisible(true);
+            filtroNDFP3.setVisible(false);
+            filtroNDFP3.setText("");
+            LabelNDFP3.setVisible(false);
+            FunMD();
+        }
+        if (FP3.equals("Filtrar por quincena")) {
+            busp3.setVisible(false);
+            LabelBEP3.setVisible(false);
+            BAppag3.setVisible(false);
+            BAppag3.setText("");
+            Bampag3.setVisible(false);
+            Bampag3.setText("");
+            busp3.setText("");
+            LabelBQP3.setVisible(true);
+            FiltroQP3.setVisible(true);
+            FiltroQP3.setSelectedIndex(0);
+            FiltroServP3.setVisible(false);
+            FiltroServP3.setSelectedIndex(0);
+            LabelBSP3.setVisible(false);
+            FiltroZP3.setVisible(false);
+            FiltroZP3.setSelectedIndex(0);
+            LabelBZP3.setVisible(false);
+            FiltroSZP3.setVisible(false);
+            FiltroSZP3.setSelectedIndex(0);
+            LabelSZP3.setVisible(false);
+            filtroNDFP3.setVisible(false);
+            filtroNDFP3.setText("");
+            LabelNDFP3.setVisible(false);
+            FunMD();
+        }
+        if (FP3.equals("Filtrar por # Lista")) {
+            busp3.setVisible(false);
+            LabelBEP3.setVisible(false);
+            BAppag3.setVisible(false);
+            BAppag3.setText("");
+            Bampag3.setVisible(false);
+            Bampag3.setText("");
+            busp3.setText("");
+            LabelBQP3.setVisible(false);
+            FiltroQP3.setVisible(false);
+            FiltroQP3.setSelectedIndex(0);
+            FiltroServP3.setVisible(false);
+            FiltroServP3.setSelectedIndex(0);
+            LabelBSP3.setVisible(false);
+            FiltroZP3.setVisible(false);
+            FiltroZP3.setSelectedIndex(0);
+            LabelBZP3.setVisible(false);
+            FiltroSZP3.setVisible(false);
+            FiltroSZP3.setSelectedIndex(0);
+            LabelSZP3.setVisible(false);
+            filtroNDFP3.setVisible(true);
+            filtroNDFP3.setText("");
+            LabelNDFP3.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosP3ItemStateChanged
 
     private void BAppag3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag3KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_BAppag3KeyReleased
 
     private void Bampag3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag3KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Bampag3KeyReleased
 
     private void busp4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp4KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_busp4KeyReleased
 
     private void CS18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS18ActionPerformed
@@ -18626,39 +19327,244 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS18ActionPerformed
 
     private void FiltroZP4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZP4ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZP4ItemStateChanged
 
     private void FiltroSZP4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZP4ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSZP4ItemStateChanged
 
     private void FiltroServP4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP4ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroServP4ItemStateChanged
 
     private void filtroNDFP4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP4KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_filtroNDFP4KeyReleased
 
     private void FiltroQP4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP4ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQP4ItemStateChanged
 
     private void FiltrosP4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP4ItemStateChanged
-        // TODO add your handling code here:
+
+        String FP = (String) FiltrosP4.getSelectedItem();
+        if (FP.equals("Selecciona filtro")) {
+            busp4.setVisible(false);
+            BAppag4.setVisible(false);
+            BAppag4.setText("");
+            Bampag4.setVisible(false);
+            Bampag4.setText("");
+            LabelBEP4.setVisible(false);
+            busp4.setText("");
+            LabelBQP4.setVisible(false);
+            FiltroQP4.setVisible(false);
+            FiltroQP4.setSelectedIndex(0);
+            FiltroServP4.setVisible(false);
+            FiltroServP4.setSelectedIndex(0);
+            LabelBSP4.setVisible(false);
+            FiltroZP4.setVisible(false);
+            FiltroZP4.setSelectedIndex(0);
+            LabelBZP4.setVisible(false);
+            FiltroSZP4.setVisible(false);
+            FiltroSZP4.setSelectedIndex(0);
+            LabelSZP4.setVisible(false);
+            filtroNDFP4.setVisible(false);
+            filtroNDFP4.setText("");
+            LabelNDFP4.setVisible(false);
+            FunMD();
+
+        }
+        if (FP.equals("Filtrar por Nombre(s)")) {
+            busp4.setVisible(true);
+            LabelBEP4.setVisible(true);
+            LabelBEP4.setText("Buscar por nombre:");
+            BAppag4.setVisible(false);
+            BAppag4.setText("");
+            Bampag4.setVisible(false);
+            Bampag4.setText("");
+            busp4.setText("");
+            LabelBQP4.setVisible(false);
+            FiltroQP4.setVisible(false);
+            FiltroQP4.setSelectedIndex(0);
+            FiltroServP4.setVisible(false);
+            FiltroServP4.setSelectedIndex(0);
+            LabelBSP4.setVisible(false);
+            FiltroZP4.setVisible(false);
+            FiltroZP4.setSelectedIndex(0);
+            LabelBZP4.setVisible(false);
+            FiltroSZP4.setVisible(false);
+            FiltroSZP4.setSelectedIndex(0);
+            LabelSZP4.setVisible(false);
+            filtroNDFP4.setVisible(false);
+            filtroNDFP4.setText("");
+            LabelNDFP4.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido P")) {
+            busp4.setVisible(false);
+            LabelBEP4.setVisible(true);
+            LabelBEP4.setText("Buscar por apellido P:");
+            BAppag4.setVisible(true);
+            BAppag4.setText("");
+            Bampag4.setVisible(false);
+            Bampag4.setText("");
+            busp4.setText("");
+            LabelBQP4.setVisible(false);
+            FiltroQP4.setVisible(false);
+            FiltroQP4.setSelectedIndex(0);
+            FiltroServP4.setVisible(false);
+            FiltroServP4.setSelectedIndex(0);
+            LabelBSP4.setVisible(false);
+            FiltroZP4.setVisible(false);
+            FiltroZP4.setSelectedIndex(0);
+            LabelBZP4.setVisible(false);
+            FiltroSZP4.setVisible(false);
+            FiltroSZP4.setSelectedIndex(0);
+            LabelSZP4.setVisible(false);
+            filtroNDFP4.setVisible(false);
+            filtroNDFP4.setText("");
+            LabelNDFP4.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido M")) {
+            busp4.setVisible(false);
+            LabelBEP4.setVisible(true);
+            LabelBEP4.setText("Buscar por apellido M: ");
+            BAppag4.setVisible(false);
+            BAppag4.setText("");
+            Bampag4.setVisible(true);
+            Bampag4.setText("");
+            busp4.setText("");
+            LabelBQP4.setVisible(false);
+            FiltroQP4.setVisible(false);
+            FiltroQP4.setSelectedIndex(0);
+            FiltroServP4.setVisible(false);
+            FiltroServP4.setSelectedIndex(0);
+            LabelBSP4.setVisible(false);
+            FiltroZP4.setVisible(false);
+            FiltroZP4.setSelectedIndex(0);
+            LabelBZP4.setVisible(false);
+            FiltroSZP4.setVisible(false);
+            FiltroSZP4.setSelectedIndex(0);
+            LabelSZP4.setVisible(false);
+            filtroNDFP4.setVisible(false);
+            filtroNDFP4.setText("");
+            LabelNDFP4.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Zona")) {
+            busp4.setVisible(false);
+            LabelBEP4.setVisible(false);
+            BAppag4.setVisible(false);
+            BAppag4.setText("");
+            Bampag4.setVisible(false);
+            Bampag4.setText("");
+            busp4.setText("");
+            LabelBQP4.setVisible(false);
+            FiltroQP4.setVisible(false);
+            FiltroQP4.setSelectedIndex(0);
+            FiltroServP4.setVisible(false);
+            FiltroServP4.setSelectedIndex(0);
+            LabelBSP4.setVisible(false);
+            FiltroZP4.setVisible(true);
+            FiltroZP4.setSelectedIndex(0);
+            LabelBZP4.setVisible(true);
+            FiltroSZP4.setVisible(false);
+            FiltroSZP4.setSelectedIndex(0);
+            LabelSZP4.setVisible(false);
+            filtroNDFP4.setVisible(false);
+            filtroNDFP4.setText("");
+            LabelNDFP4.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Servicio")) {
+            busp4.setVisible(false);
+            LabelBEP4.setVisible(false);
+            BAppag4.setVisible(false);
+            BAppag4.setText("");
+            Bampag4.setVisible(false);
+            Bampag4.setText("");
+            busp4.setText("");
+            LabelBQP4.setVisible(false);
+            FiltroQP4.setVisible(false);
+            FiltroQP4.setSelectedIndex(0);
+            FiltroServP4.setVisible(true);
+            FiltroServP4.setSelectedIndex(0);
+            LabelBSP4.setVisible(true);
+            FiltroZP4.setVisible(false);
+            FiltroZP4.setSelectedIndex(0);
+            LabelBZP4.setVisible(false);
+            FiltroSZP4.setVisible(true);
+            FiltroSZP4.setSelectedIndex(0);
+            LabelSZP4.setVisible(true);
+            filtroNDFP4.setVisible(false);
+            filtroNDFP4.setText("");
+            LabelNDFP4.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por quincena")) {
+            busp4.setVisible(false);
+            LabelBEP4.setVisible(false);
+            BAppag4.setVisible(false);
+            BAppag4.setText("");
+            Bampag4.setVisible(false);
+            Bampag4.setText("");
+            busp4.setText("");
+            LabelBQP4.setVisible(true);
+            FiltroQP4.setVisible(true);
+            FiltroQP4.setSelectedIndex(0);
+            FiltroServP4.setVisible(false);
+            FiltroServP4.setSelectedIndex(0);
+            LabelBSP4.setVisible(false);
+            FiltroZP4.setVisible(false);
+            FiltroZP4.setSelectedIndex(0);
+            LabelBZP4.setVisible(false);
+            FiltroSZP4.setVisible(false);
+            FiltroSZP4.setSelectedIndex(0);
+            LabelSZP4.setVisible(false);
+            filtroNDFP4.setVisible(false);
+            filtroNDFP4.setText("");
+            LabelNDFP4.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por # Lista")) {
+            busp4.setVisible(false);
+            LabelBEP4.setVisible(false);
+            BAppag4.setVisible(false);
+            BAppag4.setText("");
+            Bampag4.setVisible(false);
+            Bampag4.setText("");
+            busp4.setText("");
+            LabelBQP4.setVisible(false);
+            FiltroQP4.setVisible(false);
+            FiltroQP4.setSelectedIndex(0);
+            FiltroServP4.setVisible(false);
+            FiltroServP4.setSelectedIndex(0);
+            LabelBSP4.setVisible(false);
+            FiltroZP4.setVisible(false);
+            FiltroZP4.setSelectedIndex(0);
+            LabelBZP4.setVisible(false);
+            FiltroSZP4.setVisible(false);
+            FiltroSZP4.setSelectedIndex(0);
+            LabelSZP4.setVisible(false);
+            filtroNDFP4.setVisible(true);
+            filtroNDFP4.setText("");
+            LabelNDFP4.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosP4ItemStateChanged
 
     private void BAppag4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag4KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_BAppag4KeyReleased
 
     private void Bampag4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag4KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Bampag4KeyReleased
 
     private void busp5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp5KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_busp5KeyReleased
 
     private void CS19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS19ActionPerformed
@@ -18666,39 +19572,243 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS19ActionPerformed
 
     private void FiltroZP5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZP5ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZP5ItemStateChanged
 
     private void FiltroSZP5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZP5ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSZP5ItemStateChanged
 
     private void FiltroServP5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP5ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroServP5ItemStateChanged
 
     private void filtroNDFP5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP5KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_filtroNDFP5KeyReleased
 
     private void FiltroQP5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP5ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQP5ItemStateChanged
 
     private void FiltrosP5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP5ItemStateChanged
-        // TODO add your handling code here:
+        String FP = (String) FiltrosP5.getSelectedItem();
+        if (FP.equals("Selecciona filtro")) {
+            busp5.setVisible(false);
+            BAppag5.setVisible(false);
+            BAppag5.setText("");
+            Bampag5.setVisible(false);
+            Bampag5.setText("");
+            LabelBEP5.setVisible(false);
+            busp5.setText("");
+            LabelBQP5.setVisible(false);
+            FiltroQP5.setVisible(false);
+            FiltroQP5.setSelectedIndex(0);
+            FiltroServP5.setVisible(false);
+            FiltroServP5.setSelectedIndex(0);
+            LabelBSP5.setVisible(false);
+            FiltroZP5.setVisible(false);
+            FiltroZP5.setSelectedIndex(0);
+            LabelBZP5.setVisible(false);
+            FiltroSZP5.setVisible(false);
+            FiltroSZP5.setSelectedIndex(0);
+            LabelSZP5.setVisible(false);
+            filtroNDFP5.setVisible(false);
+            filtroNDFP5.setText("");
+            LabelNDFP5.setVisible(false);
+            FunMD();
+
+        }
+        if (FP.equals("Filtrar por Nombre(s)")) {
+            busp5.setVisible(true);
+            LabelBEP5.setVisible(true);
+            LabelBEP5.setText("Buscar por nombre:");
+            BAppag5.setVisible(false);
+            BAppag5.setText("");
+            Bampag5.setVisible(false);
+            Bampag5.setText("");
+            busp5.setText("");
+            LabelBQP5.setVisible(false);
+            FiltroQP5.setVisible(false);
+            FiltroQP5.setSelectedIndex(0);
+            FiltroServP5.setVisible(false);
+            FiltroServP5.setSelectedIndex(0);
+            LabelBSP5.setVisible(false);
+            FiltroZP5.setVisible(false);
+            FiltroZP5.setSelectedIndex(0);
+            LabelBZP5.setVisible(false);
+            FiltroSZP5.setVisible(false);
+            FiltroSZP5.setSelectedIndex(0);
+            LabelSZP5.setVisible(false);
+            filtroNDFP5.setVisible(false);
+            filtroNDFP5.setText("");
+            LabelNDFP5.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido P")) {
+            busp5.setVisible(false);
+            LabelBEP5.setVisible(true);
+            LabelBEP5.setText("Buscar por apellido P:");
+            BAppag5.setVisible(true);
+            BAppag5.setText("");
+            Bampag5.setVisible(false);
+            Bampag5.setText("");
+            busp5.setText("");
+            LabelBQP5.setVisible(false);
+            FiltroQP5.setVisible(false);
+            FiltroQP5.setSelectedIndex(0);
+            FiltroServP5.setVisible(false);
+            FiltroServP5.setSelectedIndex(0);
+            LabelBSP5.setVisible(false);
+            FiltroZP5.setVisible(false);
+            FiltroZP5.setSelectedIndex(0);
+            LabelBZP5.setVisible(false);
+            FiltroSZP5.setVisible(false);
+            FiltroSZP5.setSelectedIndex(0);
+            LabelSZP5.setVisible(false);
+            filtroNDFP5.setVisible(false);
+            filtroNDFP5.setText("");
+            LabelNDFP5.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido M")) {
+            busp5.setVisible(false);
+            LabelBEP5.setVisible(true);
+            LabelBEP5.setText("Buscar por apellido M: ");
+            BAppag5.setVisible(false);
+            BAppag5.setText("");
+            Bampag5.setVisible(true);
+            Bampag5.setText("");
+            busp5.setText("");
+            LabelBQP5.setVisible(false);
+            FiltroQP5.setVisible(false);
+            FiltroQP5.setSelectedIndex(0);
+            FiltroServP5.setVisible(false);
+            FiltroServP5.setSelectedIndex(0);
+            LabelBSP5.setVisible(false);
+            FiltroZP5.setVisible(false);
+            FiltroZP5.setSelectedIndex(0);
+            LabelBZP5.setVisible(false);
+            FiltroSZP5.setVisible(false);
+            FiltroSZP5.setSelectedIndex(0);
+            LabelSZP5.setVisible(false);
+            filtroNDFP5.setVisible(false);
+            filtroNDFP5.setText("");
+            LabelNDFP5.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Zona")) {
+            busp5.setVisible(false);
+            LabelBEP5.setVisible(false);
+            BAppag5.setVisible(false);
+            BAppag5.setText("");
+            Bampag5.setVisible(false);
+            Bampag5.setText("");
+            busp5.setText("");
+            LabelBQP5.setVisible(false);
+            FiltroQP5.setVisible(false);
+            FiltroQP5.setSelectedIndex(0);
+            FiltroServP5.setVisible(false);
+            FiltroServP5.setSelectedIndex(0);
+            LabelBSP5.setVisible(false);
+            FiltroZP5.setVisible(true);
+            FiltroZP5.setSelectedIndex(0);
+            LabelBZP5.setVisible(true);
+            FiltroSZP5.setVisible(false);
+            FiltroSZP5.setSelectedIndex(0);
+            LabelSZP5.setVisible(false);
+            filtroNDFP5.setVisible(false);
+            filtroNDFP5.setText("");
+            LabelNDFP.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Servicio")) {
+            busp5.setVisible(false);
+            LabelBEP5.setVisible(false);
+            BAppag5.setVisible(false);
+            BAppag5.setText("");
+            Bampag5.setVisible(false);
+            Bampag5.setText("");
+            busp5.setText("");
+            LabelBQP5.setVisible(false);
+            FiltroQP5.setVisible(false);
+            FiltroQP5.setSelectedIndex(0);
+            FiltroServP5.setVisible(true);
+            FiltroServP5.setSelectedIndex(0);
+            LabelBSP5.setVisible(true);
+            FiltroZP5.setVisible(false);
+            FiltroZP5.setSelectedIndex(0);
+            LabelBZP5.setVisible(false);
+            FiltroSZP5.setVisible(true);
+            FiltroSZP5.setSelectedIndex(0);
+            LabelSZP5.setVisible(true);
+            filtroNDFP5.setVisible(false);
+            filtroNDFP5.setText("");
+            LabelNDFP5.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por quincena")) {
+            busp5.setVisible(false);
+            LabelBEP5.setVisible(false);
+            BAppag5.setVisible(false);
+            BAppag5.setText("");
+            Bampag5.setVisible(false);
+            Bampag5.setText("");
+            busp5.setText("");
+            LabelBQP5.setVisible(true);
+            FiltroQP5.setVisible(true);
+            FiltroQP5.setSelectedIndex(0);
+            FiltroServP5.setVisible(false);
+            FiltroServP5.setSelectedIndex(0);
+            LabelBSP5.setVisible(false);
+            FiltroZP5.setVisible(false);
+            FiltroZP5.setSelectedIndex(0);
+            LabelBZP5.setVisible(false);
+            FiltroSZP5.setVisible(false);
+            FiltroSZP5.setSelectedIndex(0);
+            LabelSZP5.setVisible(false);
+            filtroNDFP5.setVisible(false);
+            filtroNDFP5.setText("");
+            LabelNDFP5.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por # Lista")) {
+            busp5.setVisible(false);
+            LabelBEP5.setVisible(false);
+            BAppag5.setVisible(false);
+            BAppag5.setText("");
+            Bampag5.setVisible(false);
+            Bampag5.setText("");
+            busp5.setText("");
+            LabelBQP5.setVisible(false);
+            FiltroQP5.setVisible(false);
+            FiltroQP5.setSelectedIndex(0);
+            FiltroServP5.setVisible(false);
+            FiltroServP5.setSelectedIndex(0);
+            LabelBSP5.setVisible(false);
+            FiltroZP5.setVisible(false);
+            FiltroZP5.setSelectedIndex(0);
+            LabelBZP5.setVisible(false);
+            FiltroSZP5.setVisible(false);
+            FiltroSZP5.setSelectedIndex(0);
+            LabelSZP5.setVisible(false);
+            filtroNDFP5.setVisible(true);
+            filtroNDFP5.setText("");
+            LabelNDFP5.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosP5ItemStateChanged
 
     private void BAppag5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag5KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_BAppag5KeyReleased
 
     private void Bampag5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag5KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Bampag5KeyReleased
 
     private void busp6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp6KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_busp6KeyReleased
 
     private void CS20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS20ActionPerformed
@@ -18706,39 +19816,244 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS20ActionPerformed
 
     private void FiltroZP6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZP6ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZP6ItemStateChanged
 
     private void FiltroSZP6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZP6ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSZP6ItemStateChanged
 
     private void FiltroServP6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP6ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroServP6ItemStateChanged
 
     private void filtroNDFP6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP6KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_filtroNDFP6KeyReleased
 
     private void FiltroQP6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP6ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQP6ItemStateChanged
 
     private void FiltrosP6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP6ItemStateChanged
-        // TODO add your handling code here:
+
+        String FP6 = (String) FiltrosP6.getSelectedItem();
+        if (FP6.equals("Selecciona filtro")) {
+            busp6.setVisible(false);
+            BAppag6.setVisible(false);
+            BAppag6.setText("");
+            Bampag6.setVisible(false);
+            Bampag6.setText("");
+            LabelBEP6.setVisible(false);
+            busp6.setText("");
+            LabelBQP6.setVisible(false);
+            FiltroQP6.setVisible(false);
+            FiltroQP6.setSelectedIndex(0);
+            FiltroServP6.setVisible(false);
+            FiltroServP6.setSelectedIndex(0);
+            LabelBSP6.setVisible(false);
+            FiltroZP6.setVisible(false);
+            FiltroZP6.setSelectedIndex(0);
+            LabelBZP6.setVisible(false);
+            FiltroSZP6.setVisible(false);
+            FiltroSZP6.setSelectedIndex(0);
+            LabelSZP6.setVisible(false);
+            filtroNDFP6.setVisible(false);
+            filtroNDFP6.setText("");
+            LabelNDFP6.setVisible(false);
+            FunMD();
+
+        }
+        if (FP6.equals("Filtrar por Nombre(s)")) {
+            busp6.setVisible(true);
+            LabelBEP6.setVisible(true);
+            LabelBEP6.setText("Buscar por nombre:");
+            BAppag6.setVisible(false);
+            BAppag6.setText("");
+            Bampag6.setVisible(false);
+            Bampag6.setText("");
+            busp6.setText("");
+            LabelBQP6.setVisible(false);
+            FiltroQP6.setVisible(false);
+            FiltroQP6.setSelectedIndex(0);
+            FiltroServP6.setVisible(false);
+            FiltroServP6.setSelectedIndex(0);
+            LabelBSP6.setVisible(false);
+            FiltroZP6.setVisible(false);
+            FiltroZP6.setSelectedIndex(0);
+            LabelBZP6.setVisible(false);
+            FiltroSZP6.setVisible(false);
+            FiltroSZP6.setSelectedIndex(0);
+            LabelSZP6.setVisible(false);
+            filtroNDFP6.setVisible(false);
+            filtroNDFP6.setText("");
+            LabelNDFP6.setVisible(false);
+            FunMD();
+        }
+        if (FP6.equals("Filtrar por Apellido P")) {
+            busp6.setVisible(false);
+            LabelBEP6.setVisible(true);
+            LabelBEP6.setText("Buscar por apellido P:");
+            BAppag6.setVisible(true);
+            BAppag6.setText("");
+            Bampag6.setVisible(false);
+            Bampag6.setText("");
+            busp6.setText("");
+            LabelBQP6.setVisible(false);
+            FiltroQP6.setVisible(false);
+            FiltroQP6.setSelectedIndex(0);
+            FiltroServP6.setVisible(false);
+            FiltroServP6.setSelectedIndex(0);
+            LabelBSP6.setVisible(false);
+            FiltroZP6.setVisible(false);
+            FiltroZP6.setSelectedIndex(0);
+            LabelBZP6.setVisible(false);
+            FiltroSZP6.setVisible(false);
+            FiltroSZP6.setSelectedIndex(0);
+            LabelSZP6.setVisible(false);
+            filtroNDFP6.setVisible(false);
+            filtroNDFP6.setText("");
+            LabelNDFP6.setVisible(false);
+            FunMD();
+        }
+        if (FP6.equals("Filtrar por Apellido M")) {
+            busp6.setVisible(false);
+            LabelBEP6.setVisible(true);
+            LabelBEP6.setText("Buscar por apellido M: ");
+            BAppag6.setVisible(false);
+            BAppag6.setText("");
+            Bampag6.setVisible(true);
+            Bampag6.setText("");
+            busp6.setText("");
+            LabelBQP6.setVisible(false);
+            FiltroQP6.setVisible(false);
+            FiltroQP6.setSelectedIndex(0);
+            FiltroServP6.setVisible(false);
+            FiltroServP6.setSelectedIndex(0);
+            LabelBSP6.setVisible(false);
+            FiltroZP6.setVisible(false);
+            FiltroZP6.setSelectedIndex(0);
+            LabelBZP6.setVisible(false);
+            FiltroSZP6.setVisible(false);
+            FiltroSZP6.setSelectedIndex(0);
+            LabelSZP6.setVisible(false);
+            filtroNDFP6.setVisible(false);
+            filtroNDFP6.setText("");
+            LabelNDFP6.setVisible(false);
+            FunMD();
+        }
+        if (FP6.equals("Filtrar por Zona")) {
+            busp6.setVisible(false);
+            LabelBEP6.setVisible(false);
+            BAppag6.setVisible(false);
+            BAppag6.setText("");
+            Bampag6.setVisible(false);
+            Bampag6.setText("");
+            busp6.setText("");
+            LabelBQP6.setVisible(false);
+            FiltroQP6.setVisible(false);
+            FiltroQP6.setSelectedIndex(0);
+            FiltroServP6.setVisible(false);
+            FiltroServP6.setSelectedIndex(0);
+            LabelBSP6.setVisible(false);
+            FiltroZP6.setVisible(true);
+            FiltroZP6.setSelectedIndex(0);
+            LabelBZP6.setVisible(true);
+            FiltroSZP6.setVisible(false);
+            FiltroSZP6.setSelectedIndex(0);
+            LabelSZP6.setVisible(false);
+            filtroNDFP6.setVisible(false);
+            filtroNDFP6.setText("");
+            LabelNDFP6.setVisible(false);
+            FunMD();
+        }
+        if (FP6.equals("Filtrar por Servicio")) {
+            busp6.setVisible(false);
+            LabelBEP6.setVisible(false);
+            BAppag6.setVisible(false);
+            BAppag6.setText("");
+            Bampag6.setVisible(false);
+            Bampag6.setText("");
+            busp6.setText("");
+            LabelBQP6.setVisible(false);
+            FiltroQP6.setVisible(false);
+            FiltroQP6.setSelectedIndex(0);
+            FiltroServP6.setVisible(true);
+            FiltroServP6.setSelectedIndex(0);
+            LabelBSP6.setVisible(true);
+            FiltroZP6.setVisible(false);
+            FiltroZP6.setSelectedIndex(0);
+            LabelBZP6.setVisible(false);
+            FiltroSZP6.setVisible(true);
+            FiltroSZP6.setSelectedIndex(0);
+            LabelSZP6.setVisible(true);
+            filtroNDFP6.setVisible(false);
+            filtroNDFP6.setText("");
+            LabelNDFP6.setVisible(false);
+            FunMD();
+        }
+        if (FP6.equals("Filtrar por quincena")) {
+            busp6.setVisible(false);
+            LabelBEP6.setVisible(false);
+            BAppag6.setVisible(false);
+            BAppag6.setText("");
+            Bampag6.setVisible(false);
+            Bampag6.setText("");
+            busp6.setText("");
+            LabelBQP6.setVisible(true);
+            FiltroQP6.setVisible(true);
+            FiltroQP6.setSelectedIndex(0);
+            FiltroServP6.setVisible(false);
+            FiltroServP6.setSelectedIndex(0);
+            LabelBSP6.setVisible(false);
+            FiltroZP6.setVisible(false);
+            FiltroZP6.setSelectedIndex(0);
+            LabelBZP6.setVisible(false);
+            FiltroSZP6.setVisible(false);
+            FiltroSZP6.setSelectedIndex(0);
+            LabelSZP6.setVisible(false);
+            filtroNDFP6.setVisible(false);
+            filtroNDFP6.setText("");
+            LabelNDFP6.setVisible(false);
+            FunMD();
+        }
+        if (FP6.equals("Filtrar por # Lista")) {
+            busp6.setVisible(false);
+            LabelBEP6.setVisible(false);
+            BAppag6.setVisible(false);
+            BAppag6.setText("");
+            Bampag6.setVisible(false);
+            Bampag6.setText("");
+            busp6.setText("");
+            LabelBQP6.setVisible(false);
+            FiltroQP6.setVisible(false);
+            FiltroQP6.setSelectedIndex(0);
+            FiltroServP6.setVisible(false);
+            FiltroServP6.setSelectedIndex(0);
+            LabelBSP6.setVisible(false);
+            FiltroZP6.setVisible(false);
+            FiltroZP6.setSelectedIndex(0);
+            LabelBZP6.setVisible(false);
+            FiltroSZP6.setVisible(false);
+            FiltroSZP6.setSelectedIndex(0);
+            LabelSZP6.setVisible(false);
+            filtroNDFP6.setVisible(true);
+            filtroNDFP6.setText("");
+            LabelNDFP6.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosP6ItemStateChanged
 
     private void BAppag6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag6KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_BAppag6KeyReleased
 
     private void Bampag6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag6KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Bampag6KeyReleased
 
     private void busp7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp7KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_busp7KeyReleased
 
     private void CS21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS21ActionPerformed
@@ -18746,83 +20061,494 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS21ActionPerformed
 
     private void FiltroZP7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZP7ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZP7ItemStateChanged
 
     private void FiltroSZP7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZP7ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSZP7ItemStateChanged
 
     private void FiltroServP7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP7ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroServP7ItemStateChanged
 
     private void filtroNDFP7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP7KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_filtroNDFP7KeyReleased
 
     private void FiltroQP7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP7ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQP7ItemStateChanged
 
     private void FiltrosP7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP7ItemStateChanged
-        // TODO add your handling code here:
+
+        String FP = (String) FiltrosP7.getSelectedItem();
+        if (FP.equals("Selecciona filtro")) {
+            busp7.setVisible(false);
+            BAppag7.setVisible(false);
+            BAppag7.setText("");
+            Bampag7.setVisible(false);
+            Bampag7.setText("");
+            LabelBEP7.setVisible(false);
+            busp7.setText("");
+            LabelBQP7.setVisible(false);
+            FiltroQP7.setVisible(false);
+            FiltroQP7.setSelectedIndex(0);
+            FiltroServP7.setVisible(false);
+            FiltroServP7.setSelectedIndex(0);
+            LabelBSP7.setVisible(false);
+            FiltroZP7.setVisible(false);
+            FiltroZP7.setSelectedIndex(0);
+            LabelBZP7.setVisible(false);
+            FiltroSZP7.setVisible(false);
+            FiltroSZP7.setSelectedIndex(0);
+            LabelSZP7.setVisible(false);
+            filtroNDFP7.setVisible(false);
+            filtroNDFP7.setText("");
+            LabelNDFP7.setVisible(false);
+            FunMD();
+
+        }
+        if (FP.equals("Filtrar por Nombre(s)")) {
+            busp7.setVisible(true);
+            LabelBEP7.setVisible(true);
+            LabelBEP7.setText("Buscar por nombre:");
+            BAppag7.setVisible(false);
+            BAppag7.setText("");
+            Bampag7.setVisible(false);
+            Bampag7.setText("");
+            busp7.setText("");
+            LabelBQP7.setVisible(false);
+            FiltroQP7.setVisible(false);
+            FiltroQP7.setSelectedIndex(0);
+            FiltroServP7.setVisible(false);
+            FiltroServP7.setSelectedIndex(0);
+            LabelBSP7.setVisible(false);
+            FiltroZP7.setVisible(false);
+            FiltroZP7.setSelectedIndex(0);
+            LabelBZP7.setVisible(false);
+            FiltroSZP7.setVisible(false);
+            FiltroSZP7.setSelectedIndex(0);
+            LabelSZP7.setVisible(false);
+            filtroNDFP7.setVisible(false);
+            filtroNDFP7.setText("");
+            LabelNDFP7.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido P")) {
+            busp7.setVisible(false);
+            LabelBEP7.setVisible(true);
+            LabelBEP7.setText("Buscar por apellido P:");
+            BAppag7.setVisible(true);
+            BAppag7.setText("");
+            Bampag7.setVisible(false);
+            Bampag7.setText("");
+            busp7.setText("");
+            LabelBQP7.setVisible(false);
+            FiltroQP7.setVisible(false);
+            FiltroQP7.setSelectedIndex(0);
+            FiltroServP7.setVisible(false);
+            FiltroServP7.setSelectedIndex(0);
+            LabelBSP7.setVisible(false);
+            FiltroZP7.setVisible(false);
+            FiltroZP7.setSelectedIndex(0);
+            LabelBZP7.setVisible(false);
+            FiltroSZP7.setVisible(false);
+            FiltroSZP7.setSelectedIndex(0);
+            LabelSZP7.setVisible(false);
+            filtroNDFP7.setVisible(false);
+            filtroNDFP7.setText("");
+            LabelNDFP7.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido M")) {
+            busp7.setVisible(false);
+            LabelBEP7.setVisible(true);
+            LabelBEP7.setText("Buscar por apellido M: ");
+            BAppag7.setVisible(false);
+            BAppag7.setText("");
+            Bampag7.setVisible(true);
+            Bampag7.setText("");
+            busp7.setText("");
+            LabelBQP7.setVisible(false);
+            FiltroQP7.setVisible(false);
+            FiltroQP7.setSelectedIndex(0);
+            FiltroServP7.setVisible(false);
+            FiltroServP7.setSelectedIndex(0);
+            LabelBSP7.setVisible(false);
+            FiltroZP7.setVisible(false);
+            FiltroZP7.setSelectedIndex(0);
+            LabelBZP7.setVisible(false);
+            FiltroSZP7.setVisible(false);
+            FiltroSZP7.setSelectedIndex(0);
+            LabelSZP7.setVisible(false);
+            filtroNDFP7.setVisible(false);
+            filtroNDFP7.setText("");
+            LabelNDFP7.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Zona")) {
+            busp7.setVisible(false);
+            LabelBEP7.setVisible(false);
+            BAppag7.setVisible(false);
+            BAppag7.setText("");
+            Bampag7.setVisible(false);
+            Bampag7.setText("");
+            busp7.setText("");
+            LabelBQP7.setVisible(false);
+            FiltroQP7.setVisible(false);
+            FiltroQP7.setSelectedIndex(0);
+            FiltroServP7.setVisible(false);
+            FiltroServP7.setSelectedIndex(0);
+            LabelBSP7.setVisible(false);
+            FiltroZP7.setVisible(true);
+            FiltroZP7.setSelectedIndex(0);
+            LabelBZP7.setVisible(true);
+            FiltroSZP7.setVisible(false);
+            FiltroSZP7.setSelectedIndex(0);
+            LabelSZP7.setVisible(false);
+            filtroNDFP7.setVisible(false);
+            filtroNDFP7.setText("");
+            LabelNDFP7.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Servicio")) {
+            busp7.setVisible(false);
+            LabelBEP7.setVisible(false);
+            BAppag7.setVisible(false);
+            BAppag7.setText("");
+            Bampag7.setVisible(false);
+            Bampag7.setText("");
+            busp7.setText("");
+            LabelBQP7.setVisible(false);
+            FiltroQP7.setVisible(false);
+            FiltroQP7.setSelectedIndex(0);
+            FiltroServP7.setVisible(true);
+            FiltroServP7.setSelectedIndex(0);
+            LabelBSP7.setVisible(true);
+            FiltroZP7.setVisible(false);
+            FiltroZP7.setSelectedIndex(0);
+            LabelBZP7.setVisible(false);
+            FiltroSZP7.setVisible(true);
+            FiltroSZP7.setSelectedIndex(0);
+            LabelSZP7.setVisible(true);
+            filtroNDFP7.setVisible(false);
+            filtroNDFP7.setText("");
+            LabelNDFP7.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por quincena")) {
+            busp7.setVisible(false);
+            LabelBEP7.setVisible(false);
+            BAppag7.setVisible(false);
+            BAppag7.setText("");
+            Bampag7.setVisible(false);
+            Bampag7.setText("");
+            busp7.setText("");
+            LabelBQP7.setVisible(true);
+            FiltroQP7.setVisible(true);
+            FiltroQP7.setSelectedIndex(0);
+            FiltroServP7.setVisible(false);
+            FiltroServP7.setSelectedIndex(0);
+            LabelBSP7.setVisible(false);
+            FiltroZP7.setVisible(false);
+            FiltroZP7.setSelectedIndex(0);
+            LabelBZP7.setVisible(false);
+            FiltroSZP7.setVisible(false);
+            FiltroSZP7.setSelectedIndex(0);
+            LabelSZP7.setVisible(false);
+            filtroNDFP7.setVisible(false);
+            filtroNDFP7.setText("");
+            LabelNDFP7.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por # Lista")) {
+            busp7.setVisible(false);
+            LabelBEP7.setVisible(false);
+            BAppag7.setVisible(false);
+            BAppag7.setText("");
+            Bampag7.setVisible(false);
+            Bampag7.setText("");
+            busp7.setText("");
+            LabelBQP7.setVisible(false);
+            FiltroQP7.setVisible(false);
+            FiltroQP7.setSelectedIndex(0);
+            FiltroServP7.setVisible(false);
+            FiltroServP7.setSelectedIndex(0);
+            LabelBSP7.setVisible(false);
+            FiltroZP7.setVisible(false);
+            FiltroZP7.setSelectedIndex(0);
+            LabelBZP7.setVisible(false);
+            FiltroSZP7.setVisible(false);
+            FiltroSZP7.setSelectedIndex(0);
+            LabelSZP7.setVisible(false);
+            filtroNDFP7.setVisible(true);
+            filtroNDFP7.setText("");
+            LabelNDFP7.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosP7ItemStateChanged
 
     private void BAppag7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag7KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_BAppag7KeyReleased
 
     private void Bampag7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag7KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Bampag7KeyReleased
 
     private void busp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp8KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_busp8KeyReleased
 
     private void CS22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS22ActionPerformed
-        // TODO add your handling code here:
+
+
     }//GEN-LAST:event_CS22ActionPerformed
 
     private void FiltroZP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZP8ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZP8ItemStateChanged
 
     private void FiltroSZP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZP8ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSZP8ItemStateChanged
 
     private void FiltroServP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP8ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroServP8ItemStateChanged
 
     private void filtroNDFP8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP8KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_filtroNDFP8KeyReleased
 
     private void FiltroQP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP8ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQP8ItemStateChanged
 
     private void FiltrosP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP8ItemStateChanged
-        // TODO add your handling code here:
+
+        String FP = (String) FiltrosP8.getSelectedItem();
+        if (FP.equals("Selecciona filtro")) {
+            busp8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            LabelBEP8.setVisible(false);
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroZP8.setVisible(false);
+            FiltroZP8.setSelectedIndex(0);
+            LabelBZP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+
+        }
+        if (FP.equals("Filtrar por Nombre(s)")) {
+            busp8.setVisible(true);
+            LabelBEP8.setVisible(true);
+            LabelBEP8.setText("Buscar por nombre:");
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroZP8.setVisible(false);
+            FiltroZP8.setSelectedIndex(0);
+            LabelBZP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido P")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(true);
+            LabelBEP8.setText("Buscar por apellido P:");
+            BAppag8.setVisible(true);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroZP8.setVisible(false);
+            FiltroZP8.setSelectedIndex(0);
+            LabelBZP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido M")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(true);
+            LabelBEP8.setText("Buscar por apellido M: ");
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(true);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroZP8.setVisible(false);
+            FiltroZP8.setSelectedIndex(0);
+            LabelBZP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Zona")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroZP8.setVisible(true);
+            FiltroZP8.setSelectedIndex(0);
+            LabelBZP8.setVisible(true);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Servicio")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(true);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(true);
+            FiltroZP8.setVisible(false);
+            FiltroZP8.setSelectedIndex(0);
+            LabelBZP8.setVisible(false);
+            FiltroSZP8.setVisible(true);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(true);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por quincena")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(true);
+            FiltroQP8.setVisible(true);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroZP8.setVisible(false);
+            FiltroZP8.setSelectedIndex(0);
+            LabelBZP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por # Lista")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroZP8.setVisible(false);
+            FiltroZP8.setSelectedIndex(0);
+            LabelBZP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(true);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosP8ItemStateChanged
 
     private void BAppag8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag8KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_BAppag8KeyReleased
 
     private void Bampag8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag8KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Bampag8KeyReleased
 
     private void Tnom8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom8MouseClicked
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Tnom8MouseClicked
 
     private void Nominab8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab8KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_Nominab8KeyReleased
 
     private void Eliminar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar8ActionPerformed
@@ -18834,35 +20560,238 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS24ActionPerformed
 
     private void FiltroZnomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZnomina8ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroZnomina8ItemStateChanged
 
     private void FiltroSnomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina8ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroSnomina8ItemStateChanged
 
     private void FiltroQuincenanomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina8ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroQuincenanomina8ItemStateChanged
 
     private void FZservicio8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio8ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FZservicio8ItemStateChanged
 
     private void FiltrosTD8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD8ItemStateChanged
-        // TODO add your handling code here:
+        String FTD8 = (String) FiltrosTD8.getSelectedItem();
+        if (FTD8.equals("Selecciona filtro")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroZnomina8.setVisible(false);
+            FiltroZnomina8.setSelectedIndex(0);
+            LabelBZ8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD8.equals("Filtrar por Apellido P")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Apellido P:");
+            FApT8.setText("");
+            FApT8.setVisible(true);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            FiltroZnomina8.setVisible(false);
+            FiltroZnomina8.setSelectedIndex(0);
+            LabelBZ8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Apellido M")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Apellido M:");
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(true);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroZnomina8.setVisible(false);
+            FiltroZnomina8.setSelectedIndex(0);
+            LabelBZ8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Nombre(s)")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Nombre(s):");
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(true);
+            FiltroZnomina8.setVisible(false);
+            FiltroZnomina8.setSelectedIndex(0);
+            LabelBZ8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Zona")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroZnomina8.setVisible(true);
+            FiltroZnomina8.setSelectedIndex(0);
+            LabelBZ8.setVisible(true);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Servicio")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroZnomina8.setVisible(false);
+            FiltroZnomina8.setSelectedIndex(0);
+            LabelBZ8.setVisible(false);
+            FiltroSnomina8.setVisible(true);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(true);
+            FZservicio8.setVisible(true);
+            LabelSZ8.setVisible(true);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por quincena")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroZnomina8.setVisible(false);
+            FiltroZnomina8.setSelectedIndex(0);
+            LabelBZ8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(true);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(true);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por # Lista")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroZnomina8.setVisible(false);
+            FiltroZnomina8.setSelectedIndex(0);
+            LabelBZ8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(true);
+            LabelBNDF8.setVisible(true);
+            FunMD();
+        }
     }//GEN-LAST:event_FiltrosTD8ItemStateChanged
 
     private void FiltroNDF8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF8KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FiltroNDF8KeyReleased
 
     private void FApT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT8KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FApT8KeyReleased
 
     private void FAmT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT8KeyReleased
-        // TODO add your handling code here:
+        FunMD();
     }//GEN-LAST:event_FAmT8KeyReleased
 
     /**
