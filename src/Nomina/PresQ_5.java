@@ -238,7 +238,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
                 + " `Monto total` = ?, `Por quincena` = ?, `Carpeta de descuentos` = ?,"
                 + " `Fecha liberado` = ?, `Status` = ?, `Metodo` = ?,"
                 + " `Quincenas pagadas` = ?, `Pagado` = ?, `Pendiente` = ? WHERE"
-                + " `prestamos`.`idprestamos` = ?";
+                + " `nomina.prestamos`.`idprestamos` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -620,6 +620,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
         CNQ = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Prestamos");
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -665,6 +666,11 @@ public final class PresQ_5 extends javax.swing.JFrame {
         interes.setText("0");
 
         MT.setText("0");
+        MT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                MTKeyReleased(evt);
+            }
+        });
 
         LabelPrestamos.setText("Buscar empleado:");
 
@@ -963,7 +969,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
 
         Prestamos.setViewportView(jPanel4);
 
-        PestañasPrin.addTab("Prestamos", Prestamos);
+        PestañasPrin.addTab("Registro/Modificacion", Prestamos);
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -1246,6 +1252,8 @@ public final class PresQ_5 extends javax.swing.JFrame {
     private void InteresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_InteresItemStateChanged
 
         IOMTPres();
+        String mt = MT.getText();
+        Pendientepres.setText(mt);
     }//GEN-LAST:event_InteresItemStateChanged
 
     private void BEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BEKeyReleased
@@ -1397,7 +1405,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
             String Otrointeres = interes.getText();
             PreparedStatement ps;
             ResultSet rs;
-            ps = con.prepareStatement("select * from prestamos where idprestamos =?");
+            ps = con.prepareStatement("select * from `nomina.prestamos` where idprestamos =?");
             ps.setInt(1, id);
             rs = ps.executeQuery();
             java.sql.Statement st = con.createStatement();
@@ -1565,6 +1573,11 @@ public final class PresQ_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CNQActionPerformed
+
+    private void MTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_MTKeyReleased
+        String mt = MT.getText();
+        Pendientepres.setText(mt);
+    }//GEN-LAST:event_MTKeyReleased
 
     /**
      * @param args the command line arguments

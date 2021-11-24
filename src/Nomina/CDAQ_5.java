@@ -532,6 +532,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         PRESQ = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Caja de ahorro");
 
         jLabel98.setText("# empleado:");
 
