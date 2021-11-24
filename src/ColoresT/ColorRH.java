@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 public class ColorRH extends DefaultTableCellRenderer {
 
     Color RyB = new Color(255, 175, 175);
-    Color imss = new Color(203, 0, 255);
+    Color imss = new Color(248, 136, 255);
     Color Pen = new Color(146, 199, 255);
     Color EEs = new Color(152, 244, 147);
     Color Dep = new Color(153, 51, 255);
@@ -31,6 +31,8 @@ public class ColorRH extends DefaultTableCellRenderer {
             int column) {
         super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         if (table.getValueAt(row, 1).toString().equals("SI")) {
+            setBackground(imss);
+        }else if (table.getValueAt(row, 1).toString().equals("Si")) {
             setBackground(imss);
         } else if(table.getValueAt(row, 19).toString().equals("BAJA")) {
             setBackground(RyB);
@@ -53,6 +55,8 @@ public class ColorRH extends DefaultTableCellRenderer {
         } else if (table.getValueAt(row, 19).toString().equals("NO CONTRATAR/DEPURADO")) {
             setBackground(Dep);
         } else if (table.getValueAt(row, 19).toString().equals("BOLETINADO/DEPURADO")) {
+            setBackground(Dep);
+        } else if (table.getValueAt(row, 19).toString().equals("BAJA/DEPURADO")) {
             setBackground(Dep);
         } else {
             setBackground(Color.CYAN);

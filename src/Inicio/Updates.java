@@ -220,7 +220,7 @@ public class Updates extends javax.swing.JFrame {
                 //5 segundos de busqueda
                 Thread.sleep(5000);
                 if (verificarConexion()) {
-                    if (version().equals("1.8.0")) {
+                    if (version().equals("1.10.6")) {
                         LabelAll.setText("La aplicacion esta actualizada.");
                         btnDesc.setVisible(false);
                     } else {

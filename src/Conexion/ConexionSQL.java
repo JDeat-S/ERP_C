@@ -15,15 +15,12 @@ public class ConexionSQL {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=(Connection) DriverManager.getConnection("jdbc:mysql://192.168.3.10:3306/confort","Servidor","Confort1022");
+            con = (Connection) DriverManager.getConnection("jdbc:mysql://192.168.1.170:3306/confort", "Servidor", "Confort1022");
 
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error de conexion: " + e.getMessage());
-            con.close();
-        } finally {
-
-            return con;
-        } 
+        }
+        return con;
     }
 
     public Connection getConnection() {

@@ -8,7 +8,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Connection;
 import javax.swing.ImageIcon;
-
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
