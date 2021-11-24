@@ -1705,10 +1705,8 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Admin_PresQ_5().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Admin_PresQ_5().setVisible(true);
         });
     }
 
