@@ -20,12 +20,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class Admin_prestamosQ_5 extends javax.swing.JFrame {
+public final class Admin_PresQ_5 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
 
-    public Admin_prestamosQ_5() {
+    public Admin_PresQ_5() {
         initComponents();
         shareprestamo();
         MDP();
@@ -618,9 +618,9 @@ public final class Admin_prestamosQ_5 extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        ODT = new javax.swing.JMenuItem();
+        CDA = new javax.swing.JMenuItem();
+        CNQ = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1253,17 +1253,32 @@ public final class Admin_prestamosQ_5 extends javax.swing.JFrame {
 
         jMenu2.setText("Nomina quincenal");
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem2.setText("Ordenes de taller");
-        jMenu2.add(jMenuItem2);
+        ODT.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        ODT.setText("Ordenes de taller");
+        ODT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODTActionPerformed(evt);
+            }
+        });
+        jMenu2.add(ODT);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem3.setText("Caja de ahorro");
-        jMenu2.add(jMenuItem3);
+        CDA.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CDA.setText("Caja de ahorro");
+        CDA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDAActionPerformed(evt);
+            }
+        });
+        jMenu2.add(CDA);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem4.setText("Captura de nomina");
-        jMenu2.add(jMenuItem4);
+        CNQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CNQ.setText("Captura de nomina");
+        CNQ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CNQActionPerformed(evt);
+            }
+        });
+        jMenu2.add(CNQ);
 
         jMenu1.add(jMenu2);
 
@@ -1642,6 +1657,24 @@ public final class Admin_prestamosQ_5 extends javax.swing.JFrame {
         MDTPPres();
     }//GEN-LAST:event_FilPDPAmKeyReleased
 
+    private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
+Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODTActionPerformed
+
+    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
+ Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDAActionPerformed
+
+    private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
+ Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CNQActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1659,20 +1692,21 @@ public final class Admin_prestamosQ_5 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin_prestamosQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_PresQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin_prestamosQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_PresQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin_prestamosQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_PresQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_prestamosQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_PresQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Admin_prestamosQ_5().setVisible(true);
+                new Admin_PresQ_5().setVisible(true);
             }
         });
     }
@@ -1685,6 +1719,8 @@ public final class Admin_prestamosQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField BE;
     private javax.swing.JTextField Busamshpre;
     private javax.swing.JTextField Busapshpre;
+    private javax.swing.JMenuItem CDA;
+    private javax.swing.JMenuItem CNQ;
     private javax.swing.JButton CS4;
     private javax.swing.JButton CS5;
     private javax.swing.JTextField Cantidad;
@@ -1713,6 +1749,7 @@ public final class Admin_prestamosQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Namepres;
     private javax.swing.JMenuItem Nomina1;
     private javax.swing.JTextField Num;
+    private javax.swing.JMenuItem ODT;
     private javax.swing.JTextField PQ;
     private javax.swing.JTextField PagadoPres;
     private javax.swing.JTextField Pendientepres;
@@ -1761,9 +1798,6 @@ public final class Admin_prestamosQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

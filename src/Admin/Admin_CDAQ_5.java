@@ -534,9 +534,9 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        ODT = new javax.swing.JMenuItem();
+        CNQ = new javax.swing.JMenuItem();
+        PRESQ = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1265,17 +1265,22 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
 
         jMenu2.setText("Nomina quincenal");
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem2.setText("Ordenes de taller");
-        jMenu2.add(jMenuItem2);
+        ODT.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        ODT.setText("Ordenes de taller");
+        jMenu2.add(ODT);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem3.setText("Captura de nomina");
-        jMenu2.add(jMenuItem3);
+        CNQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CNQ.setText("Captura de nomina");
+        jMenu2.add(CNQ);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem4.setText("Prestamos");
-        jMenu2.add(jMenuItem4);
+        PRESQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        PRESQ.setText("Prestamos");
+        PRESQ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PRESQActionPerformed(evt);
+            }
+        });
+        jMenu2.add(PRESQ);
 
         jMenu1.add(jMenu2);
 
@@ -1678,6 +1683,12 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         MDTPCDA();
     }//GEN-LAST:event_FilAMPCDAKeyReleased
 
+    private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
+Admin_PresQ_5 regr = new Admin_PresQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PRESQActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1723,6 +1734,7 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField BusAPcdash;
     private javax.swing.JTextField BusnameCDA;
     private javax.swing.JTextField Busnamecdash;
+    private javax.swing.JMenuItem CNQ;
     private javax.swing.JTextField CajaA;
     private javax.swing.JScrollPane Cajadeahorro;
     private javax.swing.JCheckBox CalIn;
@@ -1746,9 +1758,11 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField NREcda;
     private javax.swing.JMenuItem Nomina1;
     private javax.swing.JTextField Numcda;
+    private javax.swing.JMenuItem ODT;
     private javax.swing.JComboBox<String> Obs1cda;
     private javax.swing.JTextArea Obscda;
     private javax.swing.JTextField PPF;
+    private javax.swing.JMenuItem PRESQ;
     private javax.swing.JTabbedPane PestañasPrin;
     private javax.swing.JTextField PorcenIn;
     private javax.swing.JTextField QAdas;
@@ -1798,9 +1812,6 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;

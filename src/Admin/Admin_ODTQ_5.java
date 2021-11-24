@@ -659,9 +659,9 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        CNQ = new javax.swing.JMenuItem();
+        CDA = new javax.swing.JMenuItem();
+        PRESQ = new javax.swing.JMenuItem();
 
         Q11.setText("0");
 
@@ -1442,17 +1442,32 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
 
         jMenu2.setText("Nomina quincenal");
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem2.setText("Captura de nomina");
-        jMenu2.add(jMenuItem2);
+        CNQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CNQ.setText("Captura de nomina");
+        CNQ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CNQActionPerformed(evt);
+            }
+        });
+        jMenu2.add(CNQ);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem3.setText("Caja de ahorro");
-        jMenu2.add(jMenuItem3);
+        CDA.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CDA.setText("Caja de ahorro");
+        CDA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDAActionPerformed(evt);
+            }
+        });
+        jMenu2.add(CDA);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem4.setText("Prestamos");
-        jMenu2.add(jMenuItem4);
+        PRESQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        PRESQ.setText("Prestamos");
+        PRESQ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PRESQActionPerformed(evt);
+            }
+        });
+        jMenu2.add(PRESQ);
 
         jMenu1.add(jMenu2);
 
@@ -2503,6 +2518,24 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
         MDTPODT();
     }//GEN-LAST:event_FilAmPODTKeyReleased
 
+    private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
+        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CNQActionPerformed
+
+    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
+        Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDAActionPerformed
+
+    private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
+        Admin_PresQ_5 regr = new Admin_PresQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PRESQActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2531,10 +2564,8 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Admin_ODTQ_5().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Admin_ODTQ_5().setVisible(true);
         });
     }
 
@@ -2546,6 +2577,8 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField BusamshODT;
     private javax.swing.JTextField BusapshODT;
     private javax.swing.JTextField BusnameODT;
+    private javax.swing.JMenuItem CDA;
+    private javax.swing.JMenuItem CNQ;
     private javax.swing.JButton CS6;
     private javax.swing.JButton CS7;
     private javax.swing.JTextField CT;
@@ -2579,6 +2612,7 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextArea Observaciones;
     private javax.swing.JTable OdT;
     private javax.swing.JTextField PQT;
+    private javax.swing.JMenuItem PRESQ;
     private javax.swing.JTextField Pagado;
     private javax.swing.JComboBox<String> Paodt;
     private javax.swing.JTextField Pendiente;
@@ -2658,9 +2692,6 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
