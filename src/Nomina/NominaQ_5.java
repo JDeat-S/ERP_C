@@ -1047,7 +1047,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         double d15 = Double.parseDouble(this.DO15.getText());
         double d16 = Double.parseDouble(this.DO16.getText());
 
-        double total = d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11 + d12 + d13 + d14 + d15 + d16;
+        double total = d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9
+                + d10 + d11 + d12 + d13 + d14 + d15 + d16;
         this.DO.setText("" + total + "");
     }
 
@@ -14570,8 +14571,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            String Totalene1 = String.format("%.2f", total);
-            pd.setText("" + Totalene1 + "");
+            pd.setText("" + total + "");
 
         }
         if (Q.equals("2da Quincena de Enero")) {
@@ -14616,8 +14616,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             double b = 16;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            String Totalene2 = String.format("%.2f", total);
-            pd.setText("" + Totalene2 + "");
+            pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Febrero")) {
             d.setText("1");
@@ -14660,8 +14659,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            String Totalfeb1 = String.format("%.2f", total);
-            pd.setText("" + Totalfeb1 + "");
+            pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Febrero")) {
             d.setText("16");
@@ -14702,8 +14700,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             double b = 13;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            String Totalfeb2 = String.format("%.2f", total);
-            pd.setText("" + Totalfeb2 + "");
+            pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Feb B")) {
             d.setText("16");
@@ -14745,8 +14742,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             double b = 14;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            String Totalfeb2b = String.format("%.2f", total);
-            pd.setText("" + Totalfeb2b + "");
+            pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Marzo")) {
             d.setText("1");
@@ -14789,8 +14785,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            String Totalmarzo1 = String.format("%.2f", total);
-            pd.setText("" + Totalmarzo1 + "");
+            pd.setText("" + total + "");
+
         }
         if (Q.equals("2da Quincena de Marzo")) {
             d.setText("16");
@@ -14834,8 +14830,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             double b = 16;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            String Totalmar2 = String.format("%.2f", total);
-            pd.setText("" + Totalmar2 + "");
+            pd.setText("" + total + "");
+
         }
 
         if (Q.equals("1ra Quincena de Abril")) {
@@ -14879,8 +14875,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             double b = 15;
             double d1 = Double.parseDouble(sueldo.getText());
             double total = d1 / b;
-            String Totalabr1 = String.format("%.2f", total);
-            pd.setText("" + Totalabr1 + "");
+            pd.setText("" + total + "");
+
         }
         if (Q.equals("2da Quincena de Abril")) {
             d.setText("16");
