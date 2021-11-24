@@ -158,7 +158,7 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
         } else {
             Iat = ".";
         }
-        String SQL = "INSERT INTO `taller` (`idTaller`, `Fecha de expedicion`,"
+        String SQL = "INSERT INTO `nomina.odt` (`idTaller`, `Fecha de expedicion`,"
                 + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`,"
                 + " `Marca`, `Modelo`, `Placas`, `Color`, `# de piezas`, `Daño`,"
                 + " `Costo total`, `Ingreso a taller`, `Status`, `Pago a`, `Importe a descontar`, `Quincenas a pagar`,"
@@ -239,14 +239,14 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
         } else {
             Iat = "Si";
         }
-        String SQL = "UPDATE `taller` SET `idTaller` = ?, "
+        String SQL = "UPDATE `nomina.odt` SET `idTaller` = ?, "
                 + "`Fecha de expedicion` = ?, `Apellido P` = ?,"
                 + " `Apellido M` = ?, `Nombre(s)` = ?, `Zona` = ?,"
                 + " `Servicio` = ?, `Marca` = ?, `Modelo` = ?, `Placas` = ?,"
                 + " `Color` = ?, `# de piezas` = ?, `Daño` = ?, `Costo total` = ?,"
                 + " `Ingreso a taller` = ?, `Status` = ?, `Pago a` = ?, `Importe a descontar` = ?, `Quincenas a pagar` = ?, "
                 + " `Pagado` = ?, `Pendiente` = ?, `Por quincenas` = ?, `Forma de pago` = ?,"
-                + " `Quincenas pagadas` = ?, `Observaciones` = ? WHERE `taller`.`idTaller` = ?";
+                + " `Quincenas pagadas` = ?, `Observaciones` = ? WHERE `nomina.odt`.`idTaller` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);

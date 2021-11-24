@@ -1047,7 +1047,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         double d15 = Double.parseDouble(this.DO15.getText());
         double d16 = Double.parseDouble(this.DO16.getText());
 
-        double total = d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9 + d10 + d11 + d12 + d13 + d14 + d15 + d16;
+        double total = d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9
+                + d10 + d11 + d12 + d13 + d14 + d15 + d16;
         this.DO.setText("" + total + "");
     }
 
