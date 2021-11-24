@@ -709,6 +709,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         Q4.setText("0");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ordenes de taller");
 
         jPanel6.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -1153,7 +1154,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
 
         Talleres.setViewportView(jPanel6);
 
-        PestañasPrin.addTab("Talleres", Talleres);
+        PestañasPrin.addTab("Registro/Modificacion", Talleres);
 
         jPanel8.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -2257,7 +2258,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             int id = Integer.parseInt(OdT.getValueAt(fila, 0).toString());
             PreparedStatement ps;
             ResultSet rs;
-            ps = con.prepareStatement("select * from taller where idTaller =?");
+            ps = con.prepareStatement("select * from `nomina.odt` where idTaller =?");
             ps.setInt(1, id);
             rs = ps.executeQuery();
             java.sql.Statement st = con.createStatement();

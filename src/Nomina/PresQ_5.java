@@ -620,6 +620,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
         CNQ = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Prestamos");
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -963,7 +964,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
 
         Prestamos.setViewportView(jPanel4);
 
-        PestañasPrin.addTab("Prestamos", Prestamos);
+        PestañasPrin.addTab("Registro/Modificacion", Prestamos);
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -1397,7 +1398,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
             String Otrointeres = interes.getText();
             PreparedStatement ps;
             ResultSet rs;
-            ps = con.prepareStatement("select * from prestamos where idprestamos =?");
+            ps = con.prepareStatement("select * from `nomina.prestamos` where idprestamos =?");
             ps.setInt(1, id);
             rs = ps.executeQuery();
             java.sql.Statement st = con.createStatement();
