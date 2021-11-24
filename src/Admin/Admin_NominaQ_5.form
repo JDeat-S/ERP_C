@@ -3680,10 +3680,6 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelBZ" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZnomina" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio" min="-2" max="-2" attributes="0"/>
@@ -3702,7 +3698,7 @@
                                       </Group>
                                       <Component id="CS2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6745" max="32767" attributes="0"/>
+                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -3718,8 +3714,6 @@
                                       <Component id="LabelBE" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Nominab" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Eliminar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZ" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZnomina" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBS" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSnomina" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBQ" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -4100,24 +4094,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS2ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZ">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Zona"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZnomina">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="0"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZnominaItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
@@ -4209,15 +4185,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -4301,10 +4276,6 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT1" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelBZ1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZnomina1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio1" min="-2" max="-2" attributes="0"/>
@@ -4323,7 +4294,7 @@
                                       </Group>
                                       <Component id="CS8" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6745" max="32767" attributes="0"/>
+                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4339,8 +4310,6 @@
                                       <Component id="LabelBE1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Nominab1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Eliminar1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZ1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZnomina1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBS1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSnomina1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBQ1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -4721,24 +4690,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS8ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZ1">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Zona"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZnomina1">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="0"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZnomina1ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS1">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
@@ -4830,15 +4781,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD1">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -4922,10 +4872,6 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT2" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelBZ2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZnomina2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio2" min="-2" max="-2" attributes="0"/>
@@ -4944,7 +4890,7 @@
                                       </Group>
                                       <Component id="CS9" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6745" max="32767" attributes="0"/>
+                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4960,8 +4906,6 @@
                                       <Component id="LabelBE2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Nominab2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Eliminar2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZ2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZnomina2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBS2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSnomina2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBQ2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -5342,24 +5286,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS9ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZ2">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Zona"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZnomina2">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="0"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZnomina2ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS2">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
@@ -5451,15 +5377,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD2">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -5543,10 +5468,6 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT3" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelBZ3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZnomina3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio3" min="-2" max="-2" attributes="0"/>
@@ -5565,7 +5486,7 @@
                                       </Group>
                                       <Component id="CS10" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6745" max="32767" attributes="0"/>
+                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -5581,8 +5502,6 @@
                                       <Component id="LabelBE3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Nominab3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Eliminar3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZ3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZnomina3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBS3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSnomina3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBQ3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -5963,24 +5882,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS10ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZ3">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Zona"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZnomina3">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="0"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZnomina3ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS3">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
@@ -6072,15 +5973,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD3">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -6164,10 +6064,6 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT4" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelBZ4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZnomina4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio4" min="-2" max="-2" attributes="0"/>
@@ -6186,7 +6082,7 @@
                                       </Group>
                                       <Component id="CS11" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6745" max="32767" attributes="0"/>
+                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -6202,8 +6098,6 @@
                                       <Component id="LabelBE4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Nominab4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Eliminar4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZ4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZnomina4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBS4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSnomina4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBQ4" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -6584,24 +6478,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS11ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZ4">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Zona"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZnomina4">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="0"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZnomina4ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS4">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
@@ -6693,15 +6569,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD4">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -6785,10 +6660,6 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT5" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelBZ5" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZnomina5" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio5" min="-2" max="-2" attributes="0"/>
@@ -6807,7 +6678,7 @@
                                       </Group>
                                       <Component id="CS12" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6745" max="32767" attributes="0"/>
+                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -6823,8 +6694,6 @@
                                       <Component id="LabelBE5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Nominab5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Eliminar5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZ5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZnomina5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBS5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSnomina5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBQ5" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -7205,24 +7074,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS12ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZ5">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Zona"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZnomina5">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="0"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZnomina5ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS5">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
@@ -7314,15 +7165,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD5">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -7406,10 +7256,6 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT6" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelBZ6" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZnomina6" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio6" min="-2" max="-2" attributes="0"/>
@@ -7428,7 +7274,7 @@
                                       </Group>
                                       <Component id="CS13" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6745" max="32767" attributes="0"/>
+                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -7444,8 +7290,6 @@
                                       <Component id="LabelBE6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Nominab6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Eliminar6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZ6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZnomina6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBS6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSnomina6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBQ6" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -7826,24 +7670,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS13ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZ6">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Zona"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZnomina6">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="0"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZnomina6ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS6">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
@@ -7935,15 +7761,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD6">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -8027,10 +7852,6 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT7" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelBZ7" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZnomina7" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio7" min="-2" max="-2" attributes="0"/>
@@ -8049,7 +7870,7 @@
                                       </Group>
                                       <Component id="CS14" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6745" max="32767" attributes="0"/>
+                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -8065,8 +7886,6 @@
                                       <Component id="LabelBE7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Nominab7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Eliminar7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZ7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZnomina7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBS7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSnomina7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBQ7" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -8447,24 +8266,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS14ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZ7">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Zona"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZnomina7">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="0"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZnomina7ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS7">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
@@ -8556,15 +8357,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD7">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -8648,10 +8448,6 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT8" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelBZ8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZnomina8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio8" min="-2" max="-2" attributes="0"/>
@@ -8659,7 +8455,7 @@
                                           <Component id="LabelBS8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSnomina8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="LabelBQ8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroQuincenanomina8" min="-2" max="-2" attributes="0"/>
@@ -8668,9 +8464,13 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroNDF8" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="CS24" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="CS24" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="709" max="-2" attributes="0"/>
+                                          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace pref="6745" max="32767" attributes="0"/>
+                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -8686,14 +8486,8 @@
                                       <Component id="LabelBE8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Nominab8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Eliminar8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZ8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZnomina8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBS8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroSnomina8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBQ8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroQuincenanomina8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelSZ8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FZservicio8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel188" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltrosTD8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBNDF8" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -8701,11 +8495,20 @@
                                       <Component id="FApT8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb25" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FZservicio8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBS8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroSnomina8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelSZ8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane28" min="-2" pref="627" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  <Component id="CS24" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jScrollPane28" min="-2" pref="627" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                          <Component id="CS24" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace pref="154" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -9068,44 +8871,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS24ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZ8">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Zona"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZnomina8">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="0"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZnomina8ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBS8">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroSnomina8">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value=""/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroSnomina8ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQ8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Quincena:"/>
@@ -9151,24 +8916,6 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelSZ8">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Selecciona Zona:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FZservicio8">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="0"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FZservicio8ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="jLabel188">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Filtros:"/>
@@ -9177,15 +8924,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD8">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -9222,6 +8968,56 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
+                          </Properties>
+                        </Component>
+                        <Container class="javax.swing.JPanel" name="jPanel1">
+
+                          <Layout>
+                            <DimensionLayout dim="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+                              </Group>
+                            </DimensionLayout>
+                            <DimensionLayout dim="1">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+                              </Group>
+                            </DimensionLayout>
+                          </Layout>
+                        </Container>
+                        <Component class="javax.swing.JComboBox" name="FZservicio8">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="0"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FZservicio8ItemStateChanged"/>
+                          </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="LabelBS8">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FiltroSnomina8">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="1">
+                                <StringItem index="0" value=""/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="LabelSZ8">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Selecciona Zona:"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -9285,11 +9081,7 @@
                                           <Component id="BAppag" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBZP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZP" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="LabelSZP" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP" min="-2" max="-2" attributes="0"/>
@@ -9320,8 +9112,6 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="LabelBEP" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="busp" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZP" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZP" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZP" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSZP" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBSP" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -9463,26 +9253,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS3ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZP">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar zona:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZP">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value=""/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZPItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelSZP">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Seleccionar zona:"/>
@@ -9584,15 +9354,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -9664,11 +9433,7 @@
                                           <Component id="BAppag1" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag1" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBZP1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZP1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="LabelSZP1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP1" min="-2" max="-2" attributes="0"/>
@@ -9699,8 +9464,6 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="LabelBEP1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="busp1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZP1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZP1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZP1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSZP1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBSP1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -9842,26 +9605,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS15ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZP1">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar zona:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZP1">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value=""/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZP1ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelSZP1">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Seleccionar zona:"/>
@@ -9963,15 +9706,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP1">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -10043,11 +9785,7 @@
                                           <Component id="BAppag2" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag2" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBZP2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZP2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="LabelSZP2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP2" min="-2" max="-2" attributes="0"/>
@@ -10078,8 +9816,6 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="LabelBEP2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="busp2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZP2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZP2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZP2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSZP2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBSP2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -10221,26 +9957,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS16ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZP2">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar zona:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZP2">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value=""/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZP2ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelSZP2">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Seleccionar zona:"/>
@@ -10342,15 +10058,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP2">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -10422,11 +10137,7 @@
                                           <Component id="BAppag3" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag3" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBZP3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZP3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="LabelSZP3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP3" min="-2" max="-2" attributes="0"/>
@@ -10457,8 +10168,6 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="LabelBEP3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="busp3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZP3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZP3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZP3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSZP3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBSP3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -10600,26 +10309,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS17ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZP3">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar zona:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZP3">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value=""/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZP3ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelSZP3">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Seleccionar zona:"/>
@@ -10721,15 +10410,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP3">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -10801,11 +10489,7 @@
                                           <Component id="BAppag4" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag4" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBZP4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZP4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="LabelSZP4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP4" min="-2" max="-2" attributes="0"/>
@@ -10836,8 +10520,6 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="LabelBEP4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="busp4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZP4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZP4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZP4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSZP4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBSP4" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -10979,26 +10661,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS18ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZP4">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar zona:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZP4">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value=""/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZP4ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelSZP4">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Seleccionar zona:"/>
@@ -11100,15 +10762,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP4">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11180,11 +10841,7 @@
                                           <Component id="BAppag5" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag5" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBZP5" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZP5" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="LabelSZP5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP5" min="-2" max="-2" attributes="0"/>
@@ -11215,8 +10872,6 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="LabelBEP5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="busp5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZP5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZP5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZP5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSZP5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBSP5" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -11358,26 +11013,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS19ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZP5">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar zona:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZP5">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value=""/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZP5ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelSZP5">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Seleccionar zona:"/>
@@ -11479,15 +11114,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP5">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11559,11 +11193,7 @@
                                           <Component id="BAppag6" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag6" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBZP6" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZP6" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="LabelSZP6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP6" min="-2" max="-2" attributes="0"/>
@@ -11594,8 +11224,6 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="LabelBEP6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="busp6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZP6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZP6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZP6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSZP6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBSP6" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -11737,26 +11365,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS20ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZP6">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar zona:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZP6">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value=""/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZP6ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelSZP6">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Seleccionar zona:"/>
@@ -11858,15 +11466,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP6">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11938,11 +11545,7 @@
                                           <Component id="BAppag7" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag7" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBZP7" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZP7" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="LabelSZP7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP7" min="-2" max="-2" attributes="0"/>
@@ -11973,8 +11576,6 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="LabelBEP7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="busp7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZP7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZP7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZP7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSZP7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBSP7" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -12116,26 +11717,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS21ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZP7">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar zona:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZP7">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value=""/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZP7ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelSZP7">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Seleccionar zona:"/>
@@ -12237,15 +11818,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP7">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -12317,11 +11897,7 @@
                                           <Component id="BAppag8" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag8" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBZP8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroZP8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="LabelSZP8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP8" min="-2" max="-2" attributes="0"/>
@@ -12352,8 +11928,6 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="LabelBEP8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="busp8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBZP8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroZP8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZP8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSZP8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBSP8" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -12495,26 +12069,6 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS22ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBZP8">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar zona:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroZP8">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value=""/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZP8ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelSZP8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Seleccionar zona:"/>
@@ -12616,15 +12170,14 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP8">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
+                              <StringArray count="7">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Zona"/>
-                                <StringItem index="5" value="Filtrar por Servicio"/>
-                                <StringItem index="6" value="Filtrar por quincena"/>
-                                <StringItem index="7" value="Filtrar por # Lista"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
                           </Properties>
