@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Admin;
+
+package Nomina;
 
 import Conexion.ConexionSQL;
 import java.awt.HeadlessException;
@@ -20,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class Admin_CDAQ_5 extends javax.swing.JFrame {
+public final class CDAQ_5 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
 
-    public Admin_CDAQ_5() {
+    public CDAQ_5() {
         initComponents();
         MDCDA();
         sumaTA();
@@ -45,7 +41,7 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         FilAMPCDA.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        setIconImage(new ImageIcon(Admin_CDAQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(CDAQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
 
@@ -528,14 +524,6 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         FilAMPCDA = new javax.swing.JTextField();
         botonWeb8 = new botones.BotonWeb();
         jMenuBar1 = new javax.swing.JMenuBar();
-        Menuadm = new javax.swing.JMenu();
-        Nomina1 = new javax.swing.JMenuItem();
-        Administradores = new javax.swing.JMenuItem();
-        ZYS = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
-        General = new javax.swing.JMenuItem();
-        Estadias = new javax.swing.JMenuItem();
-        Torteria = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -1191,66 +1179,6 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
 
         PestañasPrin.addTab("Tabla pagos de caja de ahorro", TPDCDA);
 
-        Menuadm.setText("Todas las ventanas");
-
-        Nomina1.setText("Ventana Nomina");
-        Nomina1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nomina1ActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Nomina1);
-
-        Administradores.setText("Administradores");
-        Administradores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdministradoresActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Administradores);
-
-        ZYS.setText("Zonas y Servicios");
-        ZYS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ZYSActionPerformed(evt);
-            }
-        });
-        Menuadm.add(ZYS);
-
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
-
-        General.setText("Empleados General");
-        General.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GeneralActionPerformed(evt);
-            }
-        });
-        Menuadm.add(General);
-
-        Estadias.setText("Alumno de estadia");
-        Estadias.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EstadiasActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Estadias);
-
-        Torteria.setText("Empleados Torteria");
-        Torteria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TorteriaActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Torteria);
-
-        jMenuBar1.add(Menuadm);
-
         jMenu1.setText("Cambiar a:");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
@@ -1311,50 +1239,8 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_Nomina1ActionPerformed
-
-    private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        Administradores_3 regr = new Administradores_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_AdministradoresActionPerformed
-
-    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        AltasZyS_3 regr = new AltasZyS_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ZYSActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
-
-    private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        Admin_Empleados_4 regr = new Admin_Empleados_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_GeneralActionPerformed
-
-    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
-        Admin_Estadias_4 regr = new Admin_Estadias_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_EstadiasActionPerformed
-
-    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_TorteriaActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Admin_NominaS_5 regr = new Admin_NominaS_5();
+        NominaS_5 regr = new NominaS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -1685,19 +1571,19 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FilAMPCDAKeyReleased
 
     private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
-        Admin_PresQ_5 regr = new Admin_PresQ_5();
+        PresQ_5 regr = new PresQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESQActionPerformed
 
     private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CNQActionPerformed
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODTActionPerformed
@@ -1719,19 +1605,20 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin_CDAQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CDAQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin_CDAQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CDAQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin_CDAQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CDAQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_CDAQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CDAQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Admin_CDAQ_5().setVisible(true);
+            new CDAQ_5().setVisible(true);
         });
     }
 
@@ -1739,7 +1626,6 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField AMcda;
     private javax.swing.JTextField APQ;
     private javax.swing.JTextField APcda;
-    private javax.swing.JMenuItem Administradores;
     private javax.swing.JButton AgregarCDA;
     private javax.swing.JTextField BusAMcdash;
     private javax.swing.JTextField BusAPcdash;
@@ -1750,7 +1636,6 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane Cajadeahorro;
     private javax.swing.JCheckBox CalIn;
     private javax.swing.JButton Eliminarcda;
-    private javax.swing.JMenuItem Estadias;
     private javax.swing.JTextField FilAMPCDA;
     private javax.swing.JTextField FilAPCDA;
     private javax.swing.JTextField FilAPPCDA;
@@ -1759,15 +1644,12 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FilnamePCDA;
     private javax.swing.JComboBox<String> Filsharecda;
     private javax.swing.JComboBox<String> Filtroscda;
-    private javax.swing.JMenuItem General;
     private javax.swing.JTextField IAP;
     private javax.swing.JLabel Labelcda;
     private javax.swing.JLabel Labelfilcda;
-    private javax.swing.JMenu Menuadm;
     private javax.swing.JButton ModCDA;
     private javax.swing.JTextField NFpagocda;
     private javax.swing.JTextField NREcda;
-    private javax.swing.JMenuItem Nomina1;
     private javax.swing.JTextField Numcda;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JComboBox<String> Obs1cda;
@@ -1785,10 +1667,7 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JTable TPCDA;
     private javax.swing.JScrollPane TPDCDA;
     private javax.swing.JTable Tablacda;
-    private javax.swing.JMenuItem Torteria;
     private javax.swing.JTextField Totalap;
-    private javax.swing.JMenuItem UsuariosRH;
-    private javax.swing.JMenuItem ZYS;
     private botones.BotonWeb botonWeb7;
     private botones.BotonWeb botonWeb8;
     private javax.swing.JButton jButton1;
