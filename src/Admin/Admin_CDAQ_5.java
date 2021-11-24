@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -42,6 +43,10 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         FilnamePCDA.setVisible(false);
         FilAPPCDA.setVisible(false);
         FilAMPCDA.setVisible(false);
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(6);
+        setIconImage(new ImageIcon(Admin_CDAQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+
     }
 
     //compartr con caja de ahorro
@@ -431,7 +436,7 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -996,7 +1001,7 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
                             .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel102)
                                 .addComponent(AMcda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Labelfilcda)
@@ -1267,10 +1272,20 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
 
         ODT.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         ODT.setText("Ordenes de taller");
+        ODT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODTActionPerformed(evt);
+            }
+        });
         jMenu2.add(ODT);
 
         CNQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         CNQ.setText("Captura de nomina");
+        CNQ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CNQActionPerformed(evt);
+            }
+        });
         jMenu2.add(CNQ);
 
         PRESQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -1292,15 +1307,11 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PestañasPrin, javax.swing.GroupLayout.PREFERRED_SIZE, 1640, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(PestañasPrin, javax.swing.GroupLayout.DEFAULT_SIZE, 1640, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PestañasPrin, javax.swing.GroupLayout.PREFERRED_SIZE, 863, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(PestañasPrin, javax.swing.GroupLayout.DEFAULT_SIZE, 863, Short.MAX_VALUE)
         );
 
         pack();
@@ -1684,10 +1695,22 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FilAMPCDAKeyReleased
 
     private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
-Admin_PresQ_5 regr = new Admin_PresQ_5();
+        Admin_PresQ_5 regr = new Admin_PresQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESQActionPerformed
+
+    private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
+        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CNQActionPerformed
+
+    private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
+        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1717,10 +1740,8 @@ Admin_PresQ_5 regr = new Admin_PresQ_5();
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Admin_CDAQ_5().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Admin_CDAQ_5().setVisible(true);
         });
     }
 

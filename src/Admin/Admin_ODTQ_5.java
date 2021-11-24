@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -56,6 +57,10 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
         FilAmPODT.setVisible(false);
         MDTPODT();
         sharetp();
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(6);
+                setIconImage(new ImageIcon(Admin_ODTQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+
     }
 
     public void sharetp() {
@@ -1072,7 +1077,7 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
                                         .addComponent(BusamshODT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(CS6)
-                                        .addGap(0, 368, Short.MAX_VALUE))
+                                        .addGap(0, 381, Short.MAX_VALUE))
                                     .addComponent(jScrollPane5)))))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
@@ -1151,7 +1156,7 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel57)
                                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap(319, Short.MAX_VALUE))
         );
 
         Talleres.setViewportView(jPanel6);
@@ -1479,15 +1484,11 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PestañasPrin, javax.swing.GroupLayout.PREFERRED_SIZE, 1640, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(PestañasPrin, javax.swing.GroupLayout.DEFAULT_SIZE, 1640, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PestañasPrin, javax.swing.GroupLayout.PREFERRED_SIZE, 863, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(PestañasPrin, javax.swing.GroupLayout.DEFAULT_SIZE, 863, Short.MAX_VALUE)
         );
 
         pack();
