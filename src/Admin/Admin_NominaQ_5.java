@@ -1435,41 +1435,34 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         String FAPpago = BAppag1.getText();
         String FAMpago = Bampag1.getText();
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Zona`, `Servicio`,"
-                + " `Sueldo`, `Bono`, `Deposito` `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`";
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`";
         String FiltroSpago = FiltroServP1.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP1.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP1.getText();
 
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`"
+                    + " `Cuenta de banco`,`Sueldo`,  `Deposito`, FROM `nomina.detallada.foraneos puebla`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`,"
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "` `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, "
-                    + "  `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "`Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
         String FP = FiltrosP1.getSelectedItem().toString();
@@ -1513,18 +1506,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Apellido M");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Zona");//6
-            modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo Quincenal");//8
-            modelo.addColumn("Bono");
             modelo.addColumn("Deposito");
-            modelo.addColumn("Quincena del mes");//11
-            modelo.addColumn("Año");//12
 
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
-                /*AÑO*/ 40};
+                 /*SQ*/ 60,  /*DEP*/ 60};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -2150,8 +2137,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
-                /*AÑO*/ 40};
+                 /*SQ*/ 60, /*DEP*/ 60};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -21821,7 +21807,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void ImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirActionPerformed
         DecimalFormat df = new DecimalFormat("#.00");
-        utilJTablePrint(pago4, getTitle(), "Monto total en foraneos acapulco: " + df.format(Double.parseDouble(this.MTDsum.getText())), true);
+        utilJTablePrint(pago, getTitle(), "Monto total en foraneos acapulco: " + df.format(Double.parseDouble(this.MTDsum.getText())), true);
     }//GEN-LAST:event_ImprimirActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -21834,7 +21820,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void Imprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir1ActionPerformed
-        // TODO add your handling code here:
+       DecimalFormat df = new DecimalFormat("#.00");
+        utilJTablePrint(pago1, getTitle(), "Monto total en foraneos puebla: " + df.format(Double.parseDouble(this.MTDsum1.getText())), true);
     }//GEN-LAST:event_Imprimir1ActionPerformed
 
     private void Imprimir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir3ActionPerformed
