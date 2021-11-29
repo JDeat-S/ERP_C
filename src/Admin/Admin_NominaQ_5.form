@@ -9849,7 +9849,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="MTDsum3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Imprimir3" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -9887,7 +9887,7 @@
                                       <Component id="CS16" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="3" groupAlignment="3" attributes="0">
                                           <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MTDsum3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum2" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Imprimir3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -10157,7 +10157,7 @@
                             <Property name="text" type="java.lang.String" value="Monto total en fila deposito:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="MTDsum3">
+                        <Component class="javax.swing.JLabel" name="MTDsum2">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
@@ -10234,7 +10234,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="MTDsum4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Imprimir4" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -10272,7 +10272,7 @@
                                       <Component id="CS17" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="3" groupAlignment="3" attributes="0">
                                           <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MTDsum4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum3" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Imprimir4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -10544,7 +10544,7 @@
                             <Property name="text" type="java.lang.String" value="Monto total en fila deposito:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="MTDsum4">
+                        <Component class="javax.swing.JLabel" name="MTDsum3">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
@@ -10621,7 +10621,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="MTDsum5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Imprimir5" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -10659,7 +10659,7 @@
                                       <Component id="CS18" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="3" groupAlignment="3" attributes="0">
                                           <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MTDsum5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum4" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Imprimir5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -10907,7 +10907,7 @@
                             <Property name="text" type="java.lang.String" value="Monto total en fila deposito:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="MTDsum5">
+                        <Component class="javax.swing.JLabel" name="MTDsum4">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
@@ -10984,7 +10984,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="MTDsum6" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Imprimir6" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -11022,7 +11022,7 @@
                                       <Component id="CS19" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="3" groupAlignment="3" attributes="0">
                                           <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MTDsum6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum5" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Imprimir6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -11300,7 +11300,7 @@
                             <Property name="text" type="java.lang.String" value="Monto total en fila deposito:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="MTDsum6">
+                        <Component class="javax.swing.JLabel" name="MTDsum5">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
@@ -11369,7 +11369,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="MTDsum7" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Imprimir7" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -11407,7 +11407,7 @@
                                       <Component id="CS20" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="3" groupAlignment="3" attributes="0">
                                           <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MTDsum7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum6" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Imprimir7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -11677,7 +11677,7 @@
                             <Property name="text" type="java.lang.String" value="Monto total en fila deposito:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="MTDsum7">
+                        <Component class="javax.swing.JLabel" name="MTDsum6">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
@@ -11754,7 +11754,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="MTDsum8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Imprimir8" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -11792,7 +11792,7 @@
                                       <Component id="CS21" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="3" groupAlignment="3" attributes="0">
                                           <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MTDsum8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum7" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Imprimir8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -12062,7 +12062,7 @@
                             <Property name="text" type="java.lang.String" value="Monto total en fila deposito:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="MTDsum8">
+                        <Component class="javax.swing.JLabel" name="MTDsum7">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
@@ -12139,7 +12139,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="MTDsum9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Imprimir9" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -12177,7 +12177,7 @@
                                       <Component id="CS22" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="3" groupAlignment="3" attributes="0">
                                           <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MTDsum9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MTDsum8" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Imprimir9" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -12447,7 +12447,7 @@
                             <Property name="text" type="java.lang.String" value="Monto total en fila deposito:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="MTDsum9">
+                        <Component class="javax.swing.JLabel" name="MTDsum8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>

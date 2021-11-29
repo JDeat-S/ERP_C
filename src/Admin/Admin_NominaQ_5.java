@@ -471,15 +471,87 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     public void sumaDep() {
         double t = 0;
         double p;
-        if (pago4.getRowCount() > 0) {
-            for (int i = 0; i < pago4.getRowCount(); i++) {
-                p = Double.parseDouble(pago4.getValueAt(i, 7).toString());
+        if (pago.getRowCount() > 0) {
+            for (int i = 0; i < pago.getRowCount(); i++) {
+                p = Double.parseDouble(pago.getValueAt(i, 7).toString());
                 t += p;
             }
             MTDsum.setText("" + t);
         } else {
 
         }
+        if (pago1.getRowCount() > 0) {
+            for (int i = 0; i < pago1.getRowCount(); i++) {
+                p = Double.parseDouble(pago1.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum1.setText("" + t);
+        } else {
+
+        }
+        if (pago2.getRowCount() > 0) {
+            for (int i = 0; i < pago2.getRowCount(); i++) {
+                p = Double.parseDouble(pago2.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum2.setText("" + t);
+        } else {
+
+        }/*
+        if (pago3.getRowCount() > 0) {
+            for (int i = 0; i < pago3.getRowCount(); i++) {
+                p = Double.parseDouble(pago3.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum3.setText("" + t);
+        } else {
+
+        }
+        if (pago4.getRowCount() > 0) {
+            for (int i = 0; i < pago4.getRowCount(); i++) {
+                p = Double.parseDouble(pago4.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum4.setText("" + t);
+        } else {
+
+        }
+        if (pago5.getRowCount() > 0) {
+            for (int i = 0; i < pago5.getRowCount(); i++) {
+                p = Double.parseDouble(pago5.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum5.setText("" + t);
+        } else {
+
+        }
+        if (pago6.getRowCount() > 0) {
+            for (int i = 0; i < pago6.getRowCount(); i++) {
+                p = Double.parseDouble(pago6.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum6.setText("" + t);
+        } else {
+
+        }
+        if (pago7.getRowCount() > 0) {
+            for (int i = 0; i < pago7.getRowCount(); i++) {
+                p = Double.parseDouble(pago7.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum7.setText("" + t);
+        } else {
+
+        }
+        if (pago8.getRowCount() > 0) {
+            for (int i = 0; i < pago8.getRowCount(); i++) {
+                p = Double.parseDouble(pago8.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum8.setText("" + t);
+        } else {
+
+        }*/
     }
 
     public void utilJTablePrint(JTable jTable, String header, String footer, boolean showPrintDialog) {
@@ -4578,7 +4650,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         Bampag2 = new javax.swing.JTextField();
         botonWeb17 = new botones.BotonWeb();
         jLabel33 = new javax.swing.JLabel();
-        MTDsum3 = new javax.swing.JLabel();
+        MTDsum2 = new javax.swing.JLabel();
         Imprimir3 = new javax.swing.JButton();
         TPagos3 = new javax.swing.JScrollPane();
         jPanel31 = new javax.swing.JPanel();
@@ -4601,7 +4673,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         Bampag3 = new javax.swing.JTextField();
         botonWeb18 = new botones.BotonWeb();
         jLabel34 = new javax.swing.JLabel();
-        MTDsum4 = new javax.swing.JLabel();
+        MTDsum3 = new javax.swing.JLabel();
         Imprimir4 = new javax.swing.JButton();
         TPagos4 = new javax.swing.JScrollPane();
         jPanel32 = new javax.swing.JPanel();
@@ -4624,7 +4696,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         Bampag4 = new javax.swing.JTextField();
         botonWeb19 = new botones.BotonWeb();
         jLabel35 = new javax.swing.JLabel();
-        MTDsum5 = new javax.swing.JLabel();
+        MTDsum4 = new javax.swing.JLabel();
         Imprimir5 = new javax.swing.JButton();
         TPagos5 = new javax.swing.JScrollPane();
         jPanel33 = new javax.swing.JPanel();
@@ -4648,7 +4720,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         botonWeb20 = new botones.BotonWeb();
         Imprimir6 = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
-        MTDsum6 = new javax.swing.JLabel();
+        MTDsum5 = new javax.swing.JLabel();
         TPagos6 = new javax.swing.JScrollPane();
         jPanel34 = new javax.swing.JPanel();
         jScrollPane34 = new javax.swing.JScrollPane();
@@ -4670,7 +4742,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         Bampag6 = new javax.swing.JTextField();
         botonWeb21 = new botones.BotonWeb();
         jLabel37 = new javax.swing.JLabel();
-        MTDsum7 = new javax.swing.JLabel();
+        MTDsum6 = new javax.swing.JLabel();
         Imprimir7 = new javax.swing.JButton();
         TPagos7 = new javax.swing.JScrollPane();
         jPanel35 = new javax.swing.JPanel();
@@ -4693,7 +4765,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         Bampag7 = new javax.swing.JTextField();
         botonWeb22 = new botones.BotonWeb();
         jLabel38 = new javax.swing.JLabel();
-        MTDsum8 = new javax.swing.JLabel();
+        MTDsum7 = new javax.swing.JLabel();
         Imprimir8 = new javax.swing.JButton();
         TPagos8 = new javax.swing.JScrollPane();
         jPanel36 = new javax.swing.JPanel();
@@ -4716,7 +4788,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         Bampag8 = new javax.swing.JTextField();
         botonWeb23 = new botones.BotonWeb();
         jLabel39 = new javax.swing.JLabel();
-        MTDsum9 = new javax.swing.JLabel();
+        MTDsum8 = new javax.swing.JLabel();
         Imprimir9 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
@@ -8724,7 +8796,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel33.setText("Monto total en fila deposito:");
 
-        MTDsum3.setText("0");
+        MTDsum2.setText("0");
 
         Imprimir3.setText("Imprimir tabla");
         Imprimir3.addActionListener(new java.awt.event.ActionListener() {
@@ -8775,7 +8847,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel33)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MTDsum3)
+                        .addComponent(MTDsum2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir3))
                     .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -8808,7 +8880,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(CS16)
                     .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel33)
-                        .addComponent(MTDsum3)
+                        .addComponent(MTDsum2)
                         .addComponent(Imprimir3)))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -8909,7 +8981,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel34.setText("Monto total en fila deposito:");
 
-        MTDsum4.setText("0");
+        MTDsum3.setText("0");
 
         Imprimir4.setText("Imprimir tabla");
         Imprimir4.addActionListener(new java.awt.event.ActionListener() {
@@ -8960,7 +9032,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MTDsum4)
+                        .addComponent(MTDsum3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir4))
                     .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -8993,7 +9065,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(CS17)
                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel34)
-                        .addComponent(MTDsum4)
+                        .addComponent(MTDsum3)
                         .addComponent(Imprimir4)))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -9094,7 +9166,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel35.setText("Monto total en fila deposito:");
 
-        MTDsum5.setText("0");
+        MTDsum4.setText("0");
 
         Imprimir5.setText("Imprimir tabla");
         Imprimir5.addActionListener(new java.awt.event.ActionListener() {
@@ -9145,7 +9217,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel35)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MTDsum5)
+                        .addComponent(MTDsum4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir5))
                     .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -9178,7 +9250,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(CS18)
                     .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel35)
-                        .addComponent(MTDsum5)
+                        .addComponent(MTDsum4)
                         .addComponent(Imprimir5)))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -9286,7 +9358,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel36.setText("Monto total en fila deposito:");
 
-        MTDsum6.setText("0");
+        MTDsum5.setText("0");
 
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
@@ -9330,7 +9402,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MTDsum6)
+                        .addComponent(MTDsum5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir6))
                     .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -9363,7 +9435,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(CS19)
                     .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel36)
-                        .addComponent(MTDsum6)
+                        .addComponent(MTDsum5)
                         .addComponent(Imprimir6)))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -9464,7 +9536,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel37.setText("Monto total en fila deposito:");
 
-        MTDsum7.setText("0");
+        MTDsum6.setText("0");
 
         Imprimir7.setText("Imprimir tabla");
         Imprimir7.addActionListener(new java.awt.event.ActionListener() {
@@ -9515,7 +9587,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel37)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MTDsum7)
+                        .addComponent(MTDsum6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir7))
                     .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -9548,7 +9620,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(CS20)
                     .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel37)
-                        .addComponent(MTDsum7)
+                        .addComponent(MTDsum6)
                         .addComponent(Imprimir7)))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -9649,7 +9721,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel38.setText("Monto total en fila deposito:");
 
-        MTDsum8.setText("0");
+        MTDsum7.setText("0");
 
         Imprimir8.setText("Imprimir tabla");
         Imprimir8.addActionListener(new java.awt.event.ActionListener() {
@@ -9700,7 +9772,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel38)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MTDsum8)
+                        .addComponent(MTDsum7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir8))
                     .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -9733,7 +9805,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(CS21)
                     .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel38)
-                        .addComponent(MTDsum8)
+                        .addComponent(MTDsum7)
                         .addComponent(Imprimir8)))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -9834,7 +9906,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel39.setText("Monto total en fila deposito:");
 
-        MTDsum9.setText("0");
+        MTDsum8.setText("0");
 
         Imprimir9.setText("Imprimir tabla");
         Imprimir9.addActionListener(new java.awt.event.ActionListener() {
@@ -9885,7 +9957,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MTDsum9)
+                        .addComponent(MTDsum8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir9))
                     .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -9918,7 +9990,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(CS22)
                     .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel39)
-                        .addComponent(MTDsum9)
+                        .addComponent(MTDsum8)
                         .addComponent(Imprimir9)))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -22340,13 +22412,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Lugar;
     private javax.swing.JLabel MTDsum;
     private javax.swing.JLabel MTDsum1;
+    private javax.swing.JLabel MTDsum2;
     private javax.swing.JLabel MTDsum3;
     private javax.swing.JLabel MTDsum4;
     private javax.swing.JLabel MTDsum5;
     private javax.swing.JLabel MTDsum6;
     private javax.swing.JLabel MTDsum7;
     private javax.swing.JLabel MTDsum8;
-    private javax.swing.JLabel MTDsum9;
     private javax.swing.JMenu Menuadm;
     private javax.swing.JButton Modm;
     private javax.swing.JTextField NCDANom;
