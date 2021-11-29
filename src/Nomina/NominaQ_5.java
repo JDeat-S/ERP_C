@@ -1,19 +1,19 @@
 package Nomina;
 
-import java.awt.print.PrinterException;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
 import Inicio.Login_2;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
+import java.awt.print.PrinterException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.text.DecimalFormat;
 import java.text.MessageFormat;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -23,9 +23,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTable;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -88,6 +88,30 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         FiltrosZonas zz = new FiltrosZonas();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
         FZservicio.setModel(modelzonas);
+        FiltrosZonas FSZP8 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP8 = new DefaultComboBoxModel(FSZP8.mostrarzonas());
+        FiltroSZP8.setModel(modelFSZP8);
+        FiltrosZonas FSZP7 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP7 = new DefaultComboBoxModel(FSZP7.mostrarzonas());
+        FiltroSZP7.setModel(modelFSZP7);
+        FiltrosZonas FSZP6 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP6 = new DefaultComboBoxModel(FSZP6.mostrarzonas());
+        FiltroSZP6.setModel(modelFSZP6);
+        FiltrosZonas FSZP5 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP5 = new DefaultComboBoxModel(FSZP5.mostrarzonas());
+        FiltroSZP5.setModel(modelFSZP5);
+        FiltrosZonas FSZP4 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP4 = new DefaultComboBoxModel(FSZP4.mostrarzonas());
+        FiltroSZP4.setModel(modelFSZP4);
+        FiltrosZonas FSZP3 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP3 = new DefaultComboBoxModel(FSZP3.mostrarzonas());
+        FiltroSZP3.setModel(modelFSZP3);
+        FiltrosZonas FSZP2 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP2 = new DefaultComboBoxModel(FSZP2.mostrarzonas());
+        FiltroSZP2.setModel(modelFSZP2);
+        FiltrosZonas FSZP1 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP1 = new DefaultComboBoxModel(FSZP1.mostrarzonas());
+        FiltroSZP1.setModel(modelFSZP1);
         FiltrosZonas FSZP = new FiltrosZonas();
         DefaultComboBoxModel modelFSZP = new DefaultComboBoxModel(FSZP.mostrarzonas());
         FiltroSZP.setModel(modelFSZP);
@@ -439,9 +463,131 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         sharecdanom();
         sharepresnom();
         shareODTnom();
+        sumaDep();
     }
 
-    @SuppressWarnings({"unchecked", "empty-statement"})
+    @SuppressWarnings("unchecked")
+
+    public void sumaDep() {
+        //habilitar cuando tengan nominas
+        double t = 0;
+        double p;
+        if (pago.getRowCount() > 0) {
+            for (int i = 0; i < pago.getRowCount(); i++) {
+                p = Double.parseDouble(pago.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum.setText("" + t);
+        } else {
+
+        }
+        if (pago1.getRowCount() > 0) {
+            for (int i = 0; i < pago1.getRowCount(); i++) {
+                p = Double.parseDouble(pago1.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum1.setText("" + t);
+        } else {
+
+        }
+        if (pago2.getRowCount() > 0) {
+            for (int i = 0; i < pago2.getRowCount(); i++) {
+                p = Double.parseDouble(pago2.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum2.setText("" + t);
+        } else {
+
+        }/*
+        if (pago3.getRowCount() > 0) {
+            for (int i = 0; i < pago3.getRowCount(); i++) {
+                p = Double.parseDouble(pago3.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum3.setText("" + t);
+        } else {
+
+        }
+        if (pago4.getRowCount() > 0) {
+            for (int i = 0; i < pago4.getRowCount(); i++) {
+                p = Double.parseDouble(pago4.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum4.setText("" + t);
+        } else {
+
+        }
+        if (pago5.getRowCount() > 0) {
+            for (int i = 0; i < pago5.getRowCount(); i++) {
+                p = Double.parseDouble(pago5.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum5.setText("" + t);
+        } else {
+
+        }
+        if (pago6.getRowCount() > 0) {
+            for (int i = 0; i < pago6.getRowCount(); i++) {
+                p = Double.parseDouble(pago6.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum6.setText("" + t);
+        } else {
+
+        }
+        if (pago7.getRowCount() > 0) {
+            for (int i = 0; i < pago7.getRowCount(); i++) {
+                p = Double.parseDouble(pago7.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum7.setText("" + t);
+        } else {
+
+        }
+        if (pago8.getRowCount() > 0) {
+            for (int i = 0; i < pago8.getRowCount(); i++) {
+                p = Double.parseDouble(pago8.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum8.setText("" + t);
+        } else {
+
+        }*/
+    }
+
+    public void utilJTablePrint(JTable jTable, String header, String footer, boolean showPrintDialog) {
+        boolean fitWidth = true;
+        boolean interactive = true;
+        // We define the print mode (Definimos el modo de impresión)
+        JTable.PrintMode mode = fitWidth ? JTable.PrintMode.FIT_WIDTH : JTable.PrintMode.NORMAL;
+        try {
+            // Print the table (Imprimo la tabla)             
+            boolean complete = jTable.print(mode,
+                    new MessageFormat(header),
+                    new MessageFormat(footer),
+                    showPrintDialog,
+                    null,
+                    interactive);
+            if (complete) {
+                // Mostramos el mensaje de impresión existosa
+                JOptionPane.showMessageDialog(jTable,
+                        "Print complete (Impresión completa)",
+                        "Print result (Resultado de la impresión)",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                // Mostramos un mensaje indicando que la impresión fue cancelada                 
+                JOptionPane.showMessageDialog(jTable,
+                        "Print canceled (Impresión cancelada)",
+                        "Print result (Resultado de la impresión)",
+                        JOptionPane.WARNING_MESSAGE);
+            }
+        } catch (PrinterException pe) {
+            JOptionPane.showMessageDialog(jTable,
+                    "Print fail (Fallo de impresión): " + pe.getMessage(),
+                    "Print result (Resultado de la impresión)",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
 
     //Agregar pago Pres
     public void AgregarPagoPres() {
@@ -1033,25 +1179,25 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 //Descanso otorgado
 
     public void DO() {
-        double d1 = Double.parseDouble(this.DO1.getText());
-        double d2 = Double.parseDouble(this.DO2.getText());
-        double d3 = Double.parseDouble(this.DO3.getText());
-        double d4 = Double.parseDouble(this.DO4.getText());
-        double d5 = Double.parseDouble(this.DO5.getText());
-        double d6 = Double.parseDouble(this.DO6.getText());
-        double d7 = Double.parseDouble(this.DO7.getText());
-        double d8 = Double.parseDouble(this.DO8.getText());
-        double d9 = Double.parseDouble(this.DO9.getText());
-        double d10 = Double.parseDouble(this.DO10.getText());
-        double d11 = Double.parseDouble(this.DO11.getText());
-        double d12 = Double.parseDouble(this.DO12.getText());
-        double d13 = Double.parseDouble(this.DO13.getText());
-        double d14 = Double.parseDouble(this.DO14.getText());
-        double d15 = Double.parseDouble(this.DO15.getText());
-        double d16 = Double.parseDouble(this.DO16.getText());
+        double DesO1 = Double.parseDouble(this.DO1.getText());
+        double DesO2 = Double.parseDouble(this.DO2.getText());
+        double DesO3 = Double.parseDouble(this.DO3.getText());
+        double DesO4 = Double.parseDouble(this.DO4.getText());
+        double DesO5 = Double.parseDouble(this.DO5.getText());
+        double DesO6 = Double.parseDouble(this.DO6.getText());
+        double DesO7 = Double.parseDouble(this.DO7.getText());
+        double DesO8 = Double.parseDouble(this.DO8.getText());
+        double DesO9 = Double.parseDouble(this.DO9.getText());
+        double DesO10 = Double.parseDouble(this.DO10.getText());
+        double DesO11 = Double.parseDouble(this.DO11.getText());
+        double DesO12 = Double.parseDouble(this.DO12.getText());
+        double DesO13 = Double.parseDouble(this.DO13.getText());
+        double DesO14 = Double.parseDouble(this.DO14.getText());
+        double DesO15 = Double.parseDouble(this.DO15.getText());
+        double DesO16 = Double.parseDouble(this.DO16.getText());
 
-        double total = d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8 + d9
-                + d10 + d11 + d12 + d13 + d14 + d15 + d16;
+        double total = DesO1 + DesO2 + DesO3 + DesO4 + DesO5 + DesO6 + DesO7 + DesO8 + DesO9
+                + DesO10 + DesO11 + DesO12 + DesO13 + DesO14 + DesO15 + DesO16;
         this.DO.setText("" + total + "");
     }
 
@@ -1122,45 +1268,11 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + e.getMessage());
+        } catch (SQLException error_sharenom) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
 
         }
 
-    }
-
-    public void utilJTablePrint(JTable jTable, String header, String footer, boolean showPrintDialog) {
-        boolean fitWidth = true;
-        boolean interactive = true;
-        // We define the print mode (Definimos el modo de impresión)
-        JTable.PrintMode mode = fitWidth ? JTable.PrintMode.FIT_WIDTH : JTable.PrintMode.NORMAL;
-        try {
-            // Print the table (Imprimo la tabla)             
-            boolean complete = jTable.print(mode,
-                    new MessageFormat(header),
-                    new MessageFormat(footer),
-                    showPrintDialog,
-                    null,
-                    interactive);
-            if (complete) {
-                // Mostramos el mensaje de impresión existosa
-                JOptionPane.showMessageDialog(jTable,
-                        "Print complete (Impresión completa)",
-                        "Print result (Resultado de la impresión)",
-                        JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                // Mostramos un mensaje indicando que la impresión fue cancelada                 
-                JOptionPane.showMessageDialog(jTable,
-                        "Print canceled (Impresión cancelada)",
-                        "Print result (Resultado de la impresión)",
-                        JOptionPane.WARNING_MESSAGE);
-            }
-        } catch (PrinterException pe) {
-            JOptionPane.showMessageDialog(jTable,
-                    "Print fail (Fallo de impresión): " + pe.getMessage(),
-                    "Print result (Resultado de la impresión)",
-                    JOptionPane.ERROR_MESSAGE);
-        }
     }
 
     public void FunMD() {
@@ -1171,7 +1283,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         MDPagosnomS1();
         MDPagosnomPon();
         MDPagosnomS2();
-        MDPagosnomnNor();
+        MDPagosnomNor();
         MDNFA();
         MDNFP();
         MDNFT();
@@ -1192,42 +1304,48 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         String FAPpago = BAppag8.getText();
         String FAMpago = Bampag8.getText();
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Zona`, `Servicio`,"
-                + " `Sueldo`, `Bono`, `Deposito` `quincena del mes`, `año` FROM `nomina.detallada.corporativo santander quincenal`";
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`";
         String FiltroSpago = FiltroServP8.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP8.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP8.getText();
 
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`,"
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + " `Cuenta de banco`, `Sueldo`,  `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "` `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, "
-                    + "  `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "`Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.corporativo santander quincenal`"
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+
+        String FP = FiltrosP8.getSelectedItem().toString();
+        if (FP.equals("Filttrar con IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + " Where `Desc IMSS` LIKE '%26.98%'";
+
+        }
+        if (FP.equals("Filtrar sin IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + " Where `Desc IMSS` LIKE '%0.0%'";
         }
 
         try {
@@ -1256,18 +1374,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Apellido M");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Zona");//6
-            modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo Quincenal");//8
-            modelo.addColumn("Bono");
             modelo.addColumn("Deposito");
-            modelo.addColumn("Quincena del mes");//11
-            modelo.addColumn("Año");//12
 
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
-                /*AÑO*/ 40};
+                /*SQ*/ 60, /*DEP*/ 60};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1282,8 +1394,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Corporativo quincenal: " + e.getMessage());
+        } catch (SQLException error_pagos_SCQ) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Corporativo quincenal: " + error_pagos_SCQ.getMessage());
 
         }
 
@@ -1295,42 +1407,46 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         String FAPpago = BAppag.getText();
         String FAMpago = Bampag.getText();
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Zona`, `Servicio`,"
-                + " `Sueldo`, `Bono`, `Deposito` `quincena del mes`, `año` FROM `nomina.detallada.foraneos acapulco`";
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco`";
         String FiltroSpago = FiltroServP.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP.getText();
 
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos acapulco`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`,"
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos acapulco`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "` `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos acapulco`"
+                    + "`Cuenta de banco`,  `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos acapulco`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, "
-                    + "  `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos acapulco`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "`Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos acapulco`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+        String FP = FiltrosP.getSelectedItem().toString();
+        if (FP.equals("Filttrar con IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco`"
+                    + " Where `Desc IMSS` LIKE '%26.98%'";
+        }
+        if (FP.equals("Filtrar sin IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco`"
+                    + " Where `Desc IMSS` LIKE '%0.0%'";
         }
 
         try {
@@ -1359,18 +1475,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Apellido M");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Zona");//6
-            modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo Quincenal");//8
-            modelo.addColumn("Bono");
             modelo.addColumn("Deposito");
-            modelo.addColumn("Quincena del mes");//11
-            modelo.addColumn("Año");//12
 
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
-                /*AÑO*/ 40};
+                /*SQ*/ 60, /*DEP*/ 60};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1385,8 +1495,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos acapulco: " + e.getMessage());
+        } catch (SQLException error_pagos_FA) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos acapulco: " + error_pagos_FA.getMessage());
 
         }
 
@@ -1398,42 +1508,47 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         String FAPpago = BAppag1.getText();
         String FAMpago = Bampag1.getText();
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Zona`, `Servicio`,"
-                + " `Sueldo`, `Bono`, `Deposito` `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`";
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`";
         String FiltroSpago = FiltroServP1.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP1.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP1.getText();
 
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`"
+                    + " `Cuenta de banco`,`Sueldo`, `Deposito`, FROM `nomina.detallada.foraneos puebla`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`,"
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "` `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, "
-                    + "  `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "`Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos puebla`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+        String FP = FiltrosP1.getSelectedItem().toString();
+        if (FP.equals("Filttrar con IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`"
+                    + " Where `Desc IMSS` LIKE '%26.98%'";
+
+        }
+        if (FP.equals("Filtrar sin IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla`"
+                    + " Where `Desc IMSS` LIKE '%0.0%'";
         }
 
         try {
@@ -1462,18 +1577,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Apellido M");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Zona");//6
-            modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo Quincenal");//8
-            modelo.addColumn("Bono");
             modelo.addColumn("Deposito");
-            modelo.addColumn("Quincena del mes");//11
-            modelo.addColumn("Año");//12
 
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
-                /*AÑO*/ 40};
+                /*SQ*/ 60, /*DEP*/ 60};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1488,8 +1597,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos puebla: " + e.getMessage());
+        } catch (SQLException error_pagos_FA) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos puebla: " + error_pagos_FA.getMessage());
 
         }
 
@@ -1501,44 +1610,48 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         String FAPpago = BAppag2.getText();
         String FAMpago = Bampag2.getText();
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Zona`, `Servicio`,"
-                + " `Sueldo`, `Bono`, `Deposito` `quincena del mes`, `año` FROM `nomina.detallada.foraneos toluca`";
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca`";
         String FiltroSpago = FiltroServP2.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP2.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP2.getText();
 
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos toluca`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`,"
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos toluca`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "` `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos toluca`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos toluca`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, "
-                    + "  `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos toluca`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "`Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.foraneos toluca`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
+        String FP = FiltrosP2.getSelectedItem().toString();
+        if (FP.equals("Filttrar con IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca`"
+                    + " Where `Desc IMSS` LIKE '%26.98%'";
 
+        }
+        if (FP.equals("Filtrar sin IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca`"
+                    + " Where `Desc IMSS` LIKE '%0.0%'";
+        }
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1591,57 +1704,61 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos toluca: " + e.getMessage());
+        } catch (SQLException error_pagos_FT) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos toluca: " + error_pagos_FT.getMessage());
 
         }
 
     }
 
-    public void MDPagosnomnNor() {
+    public void MDPagosnomNor() {
         //Nombre persona del pago
         String FiltroN = busp3.getText();
         String FAPpago = BAppag3.getText();
         String FAMpago = Bampag3.getText();
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Zona`, `Servicio`,"
-                + " `Sueldo`, `Bono`, `Deposito` `quincena del mes`, `año` FROM `nomina.detallada.norte`";
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte`";
         String FiltroSpago = FiltroServP3.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP3.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP3.getText();
 
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.norte`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`,"
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.norte`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "` `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.norte`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.norte`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, "
-                    + "  `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.norte`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "`Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.norte`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
+        String FP = FiltrosP3.getSelectedItem().toString();
+        if (FP.equals("Filttrar con IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte`"
+                    + " Where `Desc IMSS` LIKE '%26.98%'";
 
+        }
+        if (FP.equals("Filtrar sin IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte`"
+                    + " Where `Desc IMSS` LIKE '%0.0%'";
+        }
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1668,18 +1785,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Apellido M");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Zona");//6
-            modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo Quincenal");//8
-            modelo.addColumn("Bono");
             modelo.addColumn("Deposito");
-            modelo.addColumn("Quincena del mes");//11
-            modelo.addColumn("Año");//12
 
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
-                /*AÑO*/ 40};
+                /*SQ*/ 60, /*DEP*/ 60};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1694,8 +1805,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en norte: " + e.getMessage());
+        } catch (SQLException error_pagos_norte) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en norte: " + error_pagos_norte.getMessage());
 
         }
 
@@ -1707,42 +1818,47 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         String FAPpago = BAppag4.getText();
         String FAMpago = Bampag4.getText();
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Zona`, `Servicio`,"
-                + " `Sueldo`, `Bono`, `Deposito` `quincena del mes`, `año` FROM `nomina.detallada.poniente`";
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente`";
         String FiltroSpago = FiltroServP4.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP4.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP4.getText();
 
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.poniente`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`,"
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.poniente`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "` `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.poniente`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.poniente`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, "
-                    + "  `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.poniente`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "`Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.poniente`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+        String FP = FiltrosP4.getSelectedItem().toString();
+        if (FP.equals("Filttrar con IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente`"
+                    + " Where `Desc IMSS` LIKE '%26.98%'";
+
+        }
+        if (FP.equals("Filtrar sin IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente`"
+                    + " Where `Desc IMSS` LIKE '%0.0%'";
         }
 
         try {
@@ -1771,18 +1887,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Apellido M");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Zona");//6
-            modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo Quincenal");//8
-            modelo.addColumn("Bono");
             modelo.addColumn("Deposito");
-            modelo.addColumn("Quincena del mes");//11
-            modelo.addColumn("Año");//12
 
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
-                /*AÑO*/ 40};
+                /*SQ*/ 60, /*DEP*/ 60};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1797,10 +1907,11 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Poniente: " + e.getMessage());
+        } catch (SQLException error_pagos_poniente) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Poniente: " + error_pagos_poniente.getMessage());
 
         }
+        sumaDep();
 
     }
 
@@ -1810,42 +1921,47 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         String FAPpago = BAppag5.getText();
         String FAMpago = Bampag5.getText();
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Zona`, `Servicio`,"
-                + " `Sueldo`, `Bono`, `Deposito` `quincena del mes`, `año` FROM `nomina.detallada.oficina`";
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina`";
         String FiltroSpago = FiltroServP5.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP5.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP5.getText();
 
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.oficina`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`,"
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.oficina`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "` `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.oficina`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.oficina`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, "
-                    + "  `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.oficina`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "`Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.oficina`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+        String FP = FiltrosP5.getSelectedItem().toString();
+        if (FP.equals("Filttrar con IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina`"
+                    + " Where `Desc IMSS` LIKE '%26.98%'";
+
+        }
+        if (FP.equals("Filtrar sin IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina`"
+                    + " Where `Desc IMSS` LIKE '%0.0%'";
         }
 
         try {
@@ -1874,18 +1990,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Apellido M");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Zona");//6
-            modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo Quincenal");//8
-            modelo.addColumn("Bono");
             modelo.addColumn("Deposito");
-            modelo.addColumn("Quincena del mes");//11
-            modelo.addColumn("Año");//12
 
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
-                /*AÑO*/ 40};
+                /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1900,8 +2010,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en oficina: " + e.getMessage());
+        } catch (SQLException error_pagos_oficina) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en oficina: " + error_pagos_oficina.getMessage());
 
         }
 
@@ -1913,42 +2023,47 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         String FAPpago = BAppag6.getText();
         String FAMpago = Bampag6.getText();
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Zona`, `Servicio`,"
-                + " `Sueldo`, `Bono`, `Deposito` `quincena del mes`, `año` FROM `nomina.detallada.sur 1`";
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 1`";
         String FiltroSpago = FiltroServP6.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP6.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP6.getText();
 
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.sur 1`"
+                    + " `Cuenta de banco`, `Sueldo`, `Bono`, `Deposito` FROM `nomina.detallada.sur 1`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`,"
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.sur 1`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito`` FROM `nomina.detallada.sur 1`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "` `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.sur 1`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 1`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.sur 1`"
+                    + "`Cuenta de banco`, `Sueldo`, `Bono`, `Deposito` FROM `nomina.detallada.sur 1`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, "
-                    + "  `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.sur 1`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 1`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "`Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.sur 1`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 1`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+        String FP = FiltrosP6.getSelectedItem().toString();
+        if (FP.equals("Filttrar con IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 1`"
+                    + " Where `Desc IMSS` LIKE '%26.98%'";
+
+        }
+        if (FP.equals("Filtrar sin IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 1`"
+                    + " Where `Desc IMSS` LIKE '%0.0%'";
         }
 
         try {
@@ -1977,18 +2092,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Apellido M");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Zona");//6
-            modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo Quincenal");//8
-            modelo.addColumn("Bono");
             modelo.addColumn("Deposito");
-            modelo.addColumn("Quincena del mes");//11
-            modelo.addColumn("Año");//12
 
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
-                /*AÑO*/ 40};
+                /*SQ*/ 60, /*DEP*/ 60};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -2003,8 +2112,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 1: " + e.getMessage());
+        } catch (SQLException error_pagos_sur1) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 1: " + error_pagos_sur1.getMessage());
 
         }
 
@@ -2016,42 +2125,47 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         String FAPpago = BAppag7.getText();
         String FAMpago = Bampag7.getText();
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Zona`, `Servicio`,"
-                + " `Sueldo`, `Bono`, `Deposito` `quincena del mes`, `año` FROM `nomina.detallada.sur 2`";
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 2`";
         String FiltroSpago = FiltroServP7.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP7.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP7.getText();
 
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.sur 2`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 2`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`,"
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.sur 2`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 2`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "` `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.sur 2`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 2`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Zona`, `Servicio`, "
-                    + " `Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.sur 2`"
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 2`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, "
-                    + "  `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.sur 2`"
+                    + " `Cuenta de banco`,`Sueldo`, `Deposito` FROM `nomina.detallada.sur 2`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Zona`, `Servicio`, "
-                    + "`Sueldo`, `Bono`, `Deposito`, `quincena del mes`, `año` FROM `nomina.detallada.sur 2`"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 2`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+        String FP = FiltrosP7.getSelectedItem().toString();
+        if (FP.equals("Filttrar con IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 2`"
+                    + " Where `Desc IMSS` LIKE '%26.98%'";
+
+        }
+        if (FP.equals("Filtrar sin IMSS")) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 2`"
+                    + " Where `Desc IMSS` LIKE '%0.0%'";
         }
 
         try {
@@ -2080,18 +2194,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Apellido M");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Zona");//6
-            modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo Quincenal");//8
-            modelo.addColumn("Bono");
             modelo.addColumn("Deposito");
-            modelo.addColumn("Quincena del mes");//11
-            modelo.addColumn("Año");//12
 
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
-                /*AÑO*/ 40};
+                /*SQ*/ 60, /*DEP*/ 60};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -2106,8 +2214,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 2: " + e.getMessage());
+        } catch (SQLException error_pagos_sur2) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 2: " + error_pagos_sur2.getMessage());
 
         }
 
@@ -2290,8 +2398,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
 
-        } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al modificar nomina en: " + e.getMessage());
+        } catch (HeadlessException | SQLException error_add_nom) {
+            JOptionPane.showMessageDialog(null, "Error al modificar nomina en: " + error_add_nom.getMessage());
         }
     }
 
@@ -2443,8 +2551,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + e.getMessage());
+        } catch (SQLException error_ND_SCQ) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Santader corp quincenal: " + error_ND_SCQ.getMessage());
 
         }
 
@@ -2597,8 +2705,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + e.getMessage());
+        } catch (SQLException error_ND_FA) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + error_ND_FA.getMessage());
 
         }
 
@@ -2751,8 +2859,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos puebla: " + e.getMessage());
+        } catch (SQLException error_ND_FP) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos puebla: " + error_ND_FP.getMessage());
 
         }
 
@@ -2905,8 +3013,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos toluca: " + e.getMessage());
+        } catch (SQLException error_ND_FT) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos toluca: " + error_ND_FT.getMessage());
 
         }
 
@@ -3059,8 +3167,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de norte: " + e.getMessage());
+        } catch (SQLException error_ND_norte) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de norte: " + error_ND_norte.getMessage());
 
         }
 
@@ -3213,8 +3321,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Oficina: " + e.getMessage());
+        } catch (SQLException error_ND_ofi) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Oficina: " + error_ND_ofi.getMessage());
 
         }
 
@@ -3367,8 +3475,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Poniente: " + e.getMessage());
+        } catch (SQLException error_ND_pon) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Poniente: " + error_ND_pon.getMessage());
 
         }
 
@@ -3521,8 +3629,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 1: " + e.getMessage());
+        } catch (SQLException error_ND_S1) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 1: " + error_ND_S1.getMessage());
 
         }
 
@@ -3675,8 +3783,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 2: " + e.getMessage());
+        } catch (SQLException error_ND_S2) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 2: " + error_ND_S2.getMessage());
 
         }
 
@@ -3864,8 +3972,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
 
-        } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al Agregar Nomina: " + e.getMessage());
+        } catch (HeadlessException | SQLException error_add_ND) {
+            JOptionPane.showMessageDialog(null, "Error al Agregar Nomina: " + error_add_ND.getMessage());
         }
     }
 
@@ -3938,8 +4046,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         double Ingresos = (IN13 + IN10 + IN9 + IN6 + IN3 + IN5 + IN14 + IN15 + IN8 + IN7 + +IN1 + IN2);
         double Egresos = (EG1 + EG2 + EG7 + EG8 + EG4 + EG16);
-        DecimalFormat df = new DecimalFormat("#.00");
-        this.deposito.setText(df.format(Ingresos - Egresos));
+        DecimalFormat dDeposito = new DecimalFormat("#.00");
+        this.deposito.setText(dDeposito.format(Ingresos - Egresos));
 
     }
 
@@ -4184,6 +4292,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         NQprenom = new javax.swing.JTextField();
         jLabel149 = new javax.swing.JLabel();
         NQODTnom = new javax.swing.JTextField();
+        jCheckBox1 = new javax.swing.JCheckBox();
         jPanel18 = new javax.swing.JPanel();
         Dpi = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
@@ -4410,8 +4519,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         FApT5 = new javax.swing.JTextField();
         FAmT5 = new javax.swing.JTextField();
         botonWeb13 = new botones.BotonWeb();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         TDFA6 = new javax.swing.JScrollPane();
         jPanel27 = new javax.swing.JPanel();
         jScrollPane26 = new javax.swing.JScrollPane();
@@ -4497,6 +4604,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         BAppag = new javax.swing.JTextField();
         Bampag = new javax.swing.JTextField();
         botonWeb2 = new botones.BotonWeb();
+        jLabel8 = new javax.swing.JLabel();
+        MTDsum = new javax.swing.JLabel();
+        Imprimir = new javax.swing.JButton();
         TPagos1 = new javax.swing.JScrollPane();
         jPanel29 = new javax.swing.JPanel();
         jScrollPane29 = new javax.swing.JScrollPane();
@@ -4517,6 +4627,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         BAppag1 = new javax.swing.JTextField();
         Bampag1 = new javax.swing.JTextField();
         botonWeb16 = new botones.BotonWeb();
+        jLabel30 = new javax.swing.JLabel();
+        MTDsum1 = new javax.swing.JLabel();
+        Imprimir1 = new javax.swing.JButton();
         TPagos2 = new javax.swing.JScrollPane();
         jPanel30 = new javax.swing.JPanel();
         jScrollPane30 = new javax.swing.JScrollPane();
@@ -4537,6 +4650,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         BAppag2 = new javax.swing.JTextField();
         Bampag2 = new javax.swing.JTextField();
         botonWeb17 = new botones.BotonWeb();
+        jLabel33 = new javax.swing.JLabel();
+        MTDsum2 = new javax.swing.JLabel();
+        Imprimir3 = new javax.swing.JButton();
         TPagos3 = new javax.swing.JScrollPane();
         jPanel31 = new javax.swing.JPanel();
         jScrollPane31 = new javax.swing.JScrollPane();
@@ -4557,6 +4673,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         BAppag3 = new javax.swing.JTextField();
         Bampag3 = new javax.swing.JTextField();
         botonWeb18 = new botones.BotonWeb();
+        jLabel34 = new javax.swing.JLabel();
+        MTDsum3 = new javax.swing.JLabel();
+        Imprimir4 = new javax.swing.JButton();
         TPagos4 = new javax.swing.JScrollPane();
         jPanel32 = new javax.swing.JPanel();
         jScrollPane32 = new javax.swing.JScrollPane();
@@ -4577,6 +4696,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         BAppag4 = new javax.swing.JTextField();
         Bampag4 = new javax.swing.JTextField();
         botonWeb19 = new botones.BotonWeb();
+        jLabel35 = new javax.swing.JLabel();
+        MTDsum4 = new javax.swing.JLabel();
+        Imprimir5 = new javax.swing.JButton();
         TPagos5 = new javax.swing.JScrollPane();
         jPanel33 = new javax.swing.JPanel();
         jScrollPane33 = new javax.swing.JScrollPane();
@@ -4597,6 +4719,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         BAppag5 = new javax.swing.JTextField();
         Bampag5 = new javax.swing.JTextField();
         botonWeb20 = new botones.BotonWeb();
+        Imprimir6 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
+        MTDsum5 = new javax.swing.JLabel();
         TPagos6 = new javax.swing.JScrollPane();
         jPanel34 = new javax.swing.JPanel();
         jScrollPane34 = new javax.swing.JScrollPane();
@@ -4617,6 +4742,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         BAppag6 = new javax.swing.JTextField();
         Bampag6 = new javax.swing.JTextField();
         botonWeb21 = new botones.BotonWeb();
+        jLabel37 = new javax.swing.JLabel();
+        MTDsum6 = new javax.swing.JLabel();
+        Imprimir7 = new javax.swing.JButton();
         TPagos7 = new javax.swing.JScrollPane();
         jPanel35 = new javax.swing.JPanel();
         jScrollPane35 = new javax.swing.JScrollPane();
@@ -4637,6 +4765,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         BAppag7 = new javax.swing.JTextField();
         Bampag7 = new javax.swing.JTextField();
         botonWeb22 = new botones.BotonWeb();
+        jLabel38 = new javax.swing.JLabel();
+        MTDsum7 = new javax.swing.JLabel();
+        Imprimir8 = new javax.swing.JButton();
         TPagos8 = new javax.swing.JScrollPane();
         jPanel36 = new javax.swing.JPanel();
         jScrollPane36 = new javax.swing.JScrollPane();
@@ -4657,6 +4788,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         BAppag8 = new javax.swing.JTextField();
         Bampag8 = new javax.swing.JTextField();
         botonWeb23 = new botones.BotonWeb();
+        jLabel39 = new javax.swing.JLabel();
+        MTDsum8 = new javax.swing.JLabel();
+        Imprimir9 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -5585,6 +5719,14 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         NQODTnom.setText("0");
 
+        jCheckBox1.setSelected(true);
+        jCheckBox1.setText("Con IMSS");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -5627,7 +5769,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                                         .addGap(22, 22, 22)
                                         .addComponent(jLabel24)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jCheckBox1))
                                     .addGroup(jPanel10Layout.createSequentialGroup()
                                         .addComponent(jLabel132)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5701,7 +5845,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
-                    .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel144)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -6510,7 +6655,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7568,15 +7713,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         botonWeb13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb13.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
 
-        jButton1.setText("Imprimir por impresora");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("jButton3");
-
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
         jPanel26Layout.setHorizontalGroup(
@@ -7616,12 +7752,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(LabelBNDF5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel26Layout.createSequentialGroup()
-                        .addComponent(CS12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)))
+                    .addComponent(CS12))
                 .addContainerGap(6872, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
@@ -7651,10 +7782,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CS12)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
+                .addComponent(CS12)
                 .addContainerGap(154, Short.MAX_VALUE))
         );
 
@@ -8202,13 +8330,13 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         pago.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
             }
         ));
         jScrollPane6.setViewportView(pago);
@@ -8265,7 +8393,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         jLabel64.setText("Filtrar:");
 
-        FiltrosP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filttrar con IMSS", "Filtrar sin IMSS" }));
         FiltrosP.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosPItemStateChanged(evt);
@@ -8287,6 +8415,17 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb2.setToolTipText("");
         botonWeb2.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+
+        jLabel8.setText("Monto total en fila deposito:");
+
+        MTDsum.setText("0");
+
+        Imprimir.setText("Imprimir tabla");
+        Imprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImprimirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -8325,9 +8464,16 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(LabelBQP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroQP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CS3)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 2252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(CS3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MTDsum)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Imprimir))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(930, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8352,7 +8498,11 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CS3)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CS3)
+                    .addComponent(jLabel8)
+                    .addComponent(MTDsum)
+                    .addComponent(Imprimir))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
@@ -8361,6 +8511,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         PestañasPagos.addTab("Foraneos Acapulco", TPagos);
 
         jPanel29.setBackground(new java.awt.Color(204, 255, 255));
+
+        jScrollPane29.setToolTipText("");
 
         pago1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -8450,6 +8602,17 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         botonWeb16.setToolTipText("");
         botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
 
+        jLabel30.setText("Monto total en fila deposito:");
+
+        MTDsum1.setText("0");
+
+        Imprimir1.setText("Imprimir tabla");
+        Imprimir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Imprimir1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
         jPanel29Layout.setHorizontalGroup(
@@ -8487,9 +8650,16 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(LabelBQP1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroQP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CS15)
-                    .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 2252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel29Layout.createSequentialGroup()
+                        .addComponent(CS15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MTDsum1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Imprimir1))
+                    .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(930, Short.MAX_VALUE))
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8514,7 +8684,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CS15)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel30)
+                        .addComponent(MTDsum1)
+                        .addComponent(Imprimir1))
+                    .addComponent(CS15))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
@@ -8612,6 +8787,17 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         botonWeb17.setToolTipText("");
         botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
 
+        jLabel33.setText("Monto total en fila deposito:");
+
+        MTDsum2.setText("0");
+
+        Imprimir3.setText("Imprimir tabla");
+        Imprimir3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Imprimir3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
@@ -8649,9 +8835,16 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(LabelBQP2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroQP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CS16)
-                    .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 2252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel30Layout.createSequentialGroup()
+                        .addComponent(CS16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MTDsum2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Imprimir3))
+                    .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(930, Short.MAX_VALUE))
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8676,7 +8869,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CS16)
+                .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel33)
+                        .addComponent(MTDsum2)
+                        .addComponent(Imprimir3))
+                    .addComponent(CS16))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
@@ -8751,7 +8949,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         jLabel177.setText("Filtrar:");
 
-        FiltrosP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar con IMSS", "Filtrar sin IMSS" }));
         FiltrosP3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP3ItemStateChanged(evt);
@@ -8773,6 +8971,17 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         botonWeb18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb18.setToolTipText("");
         botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+
+        jLabel34.setText("Monto total en fila deposito:");
+
+        MTDsum3.setText("0");
+
+        Imprimir4.setText("Imprimir tabla");
+        Imprimir4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Imprimir4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -8811,9 +9020,16 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(LabelBQP3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroQP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CS17)
-                    .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 2252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel31Layout.createSequentialGroup()
+                        .addComponent(CS17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MTDsum3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Imprimir4))
+                    .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(930, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8838,7 +9054,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CS17)
+                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel34)
+                        .addComponent(MTDsum3)
+                        .addComponent(Imprimir4))
+                    .addComponent(CS17))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
@@ -8850,13 +9071,13 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         pago4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
             }
         ));
         jScrollPane32.setViewportView(pago4);
@@ -8913,7 +9134,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         jLabel178.setText("Filtrar:");
 
-        FiltrosP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filttrar con IMSS", "Filtrar sin IMSS" }));
         FiltrosP4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP4ItemStateChanged(evt);
@@ -8935,6 +9156,17 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         botonWeb19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb19.setToolTipText("");
         botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+
+        jLabel35.setText("Monto total en fila deposito:");
+
+        MTDsum4.setText("0");
+
+        Imprimir5.setText("Imprimir tabla");
+        Imprimir5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Imprimir5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
@@ -8973,9 +9205,16 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(LabelBQP4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroQP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CS18)
-                    .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 2252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel32Layout.createSequentialGroup()
+                        .addComponent(CS18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MTDsum4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Imprimir5))
+                    .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(930, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9000,7 +9239,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CS18)
+                .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel35)
+                        .addComponent(MTDsum4)
+                        .addComponent(Imprimir5))
+                    .addComponent(CS18))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
@@ -9098,6 +9342,17 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         botonWeb20.setToolTipText("");
         botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
 
+        Imprimir6.setText("Imprimir tabla");
+        Imprimir6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Imprimir6ActionPerformed(evt);
+            }
+        });
+
+        jLabel36.setText("Monto total en fila deposito:");
+
+        MTDsum5.setText("0");
+
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
         jPanel33Layout.setHorizontalGroup(
@@ -9135,9 +9390,16 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(LabelBQP5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroQP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CS19)
-                    .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 2252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel33Layout.createSequentialGroup()
+                        .addComponent(CS19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel36)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MTDsum5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Imprimir6))
+                    .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(930, Short.MAX_VALUE))
         );
         jPanel33Layout.setVerticalGroup(
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9162,7 +9424,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CS19)
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel36)
+                        .addComponent(MTDsum5)
+                        .addComponent(Imprimir6))
+                    .addComponent(CS19))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
@@ -9260,6 +9527,17 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         botonWeb21.setToolTipText("");
         botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
 
+        jLabel37.setText("Monto total en fila deposito:");
+
+        MTDsum6.setText("0");
+
+        Imprimir7.setText("Imprimir tabla");
+        Imprimir7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Imprimir7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
         jPanel34Layout.setHorizontalGroup(
@@ -9297,9 +9575,16 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(LabelBQP6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroQP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CS20)
-                    .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 2252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel34Layout.createSequentialGroup()
+                        .addComponent(CS20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MTDsum6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Imprimir7))
+                    .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(930, Short.MAX_VALUE))
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9324,7 +9609,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CS20)
+                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel37)
+                        .addComponent(MTDsum6)
+                        .addComponent(Imprimir7))
+                    .addComponent(CS20))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
@@ -9422,6 +9712,17 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         botonWeb22.setToolTipText("");
         botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
 
+        jLabel38.setText("Monto total en fila deposito:");
+
+        MTDsum7.setText("0");
+
+        Imprimir8.setText("Imprimir tabla");
+        Imprimir8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Imprimir8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
         jPanel35Layout.setHorizontalGroup(
@@ -9459,9 +9760,16 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(LabelBQP7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroQP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CS21)
-                    .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 2252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel35Layout.createSequentialGroup()
+                        .addComponent(CS21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel38)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MTDsum7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Imprimir8))
+                    .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(930, Short.MAX_VALUE))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9486,7 +9794,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CS21)
+                .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel38)
+                        .addComponent(MTDsum7)
+                        .addComponent(Imprimir8))
+                    .addComponent(CS21))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
@@ -9584,6 +9897,17 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         botonWeb23.setToolTipText("");
         botonWeb23.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
 
+        jLabel39.setText("Monto total en fila deposito:");
+
+        MTDsum8.setText("0");
+
+        Imprimir9.setText("Imprimir tabla");
+        Imprimir9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Imprimir9ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
         jPanel36Layout.setHorizontalGroup(
@@ -9621,9 +9945,16 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(LabelBQP8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroQP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CS22)
-                    .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 2252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel36Layout.createSequentialGroup()
+                        .addComponent(CS22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MTDsum8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Imprimir9))
+                    .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(930, Short.MAX_VALUE))
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9648,7 +9979,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CS22)
+                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel39)
+                        .addComponent(MTDsum8)
+                        .addComponent(Imprimir9))
+                    .addComponent(CS22))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
 
@@ -9709,7 +10045,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PestañasPrin, javax.swing.GroupLayout.DEFAULT_SIZE, 1379, Short.MAX_VALUE)
+            .addComponent(PestañasPrin, javax.swing.GroupLayout.DEFAULT_SIZE, 2356, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -13507,9 +13843,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
             pd.setText("" + total + "");
 
         }
@@ -13552,9 +13888,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
             pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Febrero")) {
@@ -13595,9 +13931,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Febrero")) {
@@ -13636,9 +13972,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 13;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Feb B")) {
@@ -13678,9 +14014,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 14;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
             pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Marzo")) {
@@ -13721,9 +14057,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
             pd.setText("" + total + "");
 
         }
@@ -13766,9 +14102,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
             pd.setText("" + total + "");
         }
 
@@ -13810,9 +14146,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Abril")) {
@@ -13853,9 +14189,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
             pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Mayo")) {
@@ -13896,9 +14232,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Mayo")) {
@@ -13940,9 +14276,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
             pd.setText("" + total + "");
         }
 
@@ -13984,9 +14320,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Junio")) {
@@ -14028,9 +14364,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
             pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Julio")) {
@@ -14071,9 +14407,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Julio")) {
@@ -14115,9 +14451,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
             pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Agosto")) {
@@ -14158,9 +14494,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Agosto")) {
@@ -14202,9 +14538,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
             pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Septiembre")) {
@@ -14245,9 +14581,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Septiembre")) {
@@ -14288,9 +14624,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
             pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Octubre")) {
@@ -14331,9 +14667,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Octubre")) {
@@ -14375,9 +14711,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
             pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Noviembre")) {
@@ -14418,9 +14754,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Noviembre")) {
@@ -14461,9 +14797,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
             pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Diciembre")) {
@@ -14504,9 +14840,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Diciembre")) {
@@ -14548,9 +14884,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
             pd.setText("" + total + "");
         }
 
@@ -14572,7 +14908,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
     private void shareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shareMouseClicked
 
-        DefaultTableModel model = (DefaultTableModel) share.getModel();
 
         int seleccionar = share.getSelectedRow();
         NEnom.setText(String.valueOf(share.getValueAt(seleccionar, 0)));
@@ -14585,7 +14920,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         ServN.setText(String.valueOf(share.getValueAt(seleccionar, 7)));
         sueldo.setText(String.valueOf(share.getValueAt(seleccionar, 8)));
         Bono1.setText(String.valueOf(share.getValueAt(seleccionar, 9)));
-        String Q = (String) Quincenas.getSelectedItem();
+       String Q = (String) Quincenas.getSelectedItem();
         if (Q.equals("1ra Quincena de Enero")) {
             d.setText("1");
             d1.setText("2");
@@ -14624,9 +14959,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
             pd.setText("" + total + "");
 
         }
@@ -14669,9 +15004,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
             pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Febrero")) {
@@ -14712,9 +15047,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Febrero")) {
@@ -14753,9 +15088,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 13;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
             pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Feb B")) {
@@ -14795,9 +15130,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 14;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
             pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Marzo")) {
@@ -14838,9 +15173,9 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
             pd.setText("" + total + "");
 
         }
@@ -14883,11 +15218,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
             pd.setText("" + total + "");
-
         }
 
         if (Q.equals("1ra Quincena de Abril")) {
@@ -14928,11 +15262,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
             pd.setText("" + total + "");
-
         }
         if (Q.equals("2da Quincena de Abril")) {
             d.setText("16");
@@ -14972,11 +15305,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totalabr2 = String.format("%.2f", total);
-            pd.setText("" + Totalabr2 + "");
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Mayo")) {
             d.setText("1");
@@ -15016,11 +15348,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totalmay1 = String.format("%.2f", total);
-            pd.setText("" + Totalmay1 + "");
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Mayo")) {
             d.setText("16");
@@ -15061,11 +15392,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totalmay2 = String.format("%.2f", total);
-            pd.setText("" + Totalmay2 + "");
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
         }
 
         if (Q.equals("1ra Quincena de Junio")) {
@@ -15106,11 +15436,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totaljun1 = String.format("%.2f", total);
-            pd.setText("" + Totaljun1 + "");
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Junio")) {
             d.setText("16");
@@ -15151,12 +15480,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totaljun2 = String.format("%.2f", total);
-            pd.setText("" + Totaljun2 + "");
-
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Julio")) {
             d.setText("1");
@@ -15196,12 +15523,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totaljul1 = String.format("%.2f", total);
-            pd.setText("" + Totaljul1 + "");
-
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Julio")) {
             d.setText("16");
@@ -15242,11 +15567,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totaljul2 = String.format("%.2f", total);
-            pd.setText("" + Totaljul2 + "");
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Agosto")) {
             d.setText("1");
@@ -15286,12 +15610,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totalago1 = String.format("%.2f", total);
-            pd.setText("" + Totalago1 + "");
-
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Agosto")) {
             d.setText("16");
@@ -15332,12 +15654,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totalago2 = String.format("%.2f", total);
-            pd.setText("" + Totalago2 + "");
-
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Septiembre")) {
             d.setText("1");
@@ -15377,12 +15697,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totalsep1 = String.format("%.2f", total);
-            pd.setText("" + Totalsep1 + "");
-
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Septiembre")) {
             d.setText("16");
@@ -15422,12 +15740,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totalsep2 = String.format("%.2f", total);
-            pd.setText("" + Totalsep2 + "");
-
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Octubre")) {
             d.setText("1");
@@ -15467,12 +15783,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totaloct1 = String.format("%.2f", total);
-            pd.setText("" + Totaloct1 + "");
-
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Octubre")) {
             d.setText("16");
@@ -15513,12 +15827,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totaloct2 = String.format("%.2f", total);
-            pd.setText("" + Totaloct2 + "");
-
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Noviembre")) {
             d.setText("1");
@@ -15558,12 +15870,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totalnov1 = String.format("%.2f", total);
-            pd.setText("" + Totalnov1 + "");
-
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Noviembre")) {
             d.setText("16");
@@ -15603,12 +15913,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totalnov2 = String.format("%.2f", total);
-            pd.setText("" + Totalnov2 + "");
-
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
         }
         if (Q.equals("1ra Quincena de Diciembre")) {
             d.setText("1");
@@ -15648,12 +15956,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 15;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totaldic1 = String.format("%.2f", total);
-            pd.setText("" + Totaldic1 + "");
-
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
         }
         if (Q.equals("2da Quincena de Diciembre")) {
             d.setText("16");
@@ -15694,12 +16000,10 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-            double b = 16;
-            double d1 = Double.parseDouble(sueldo.getText());
-            double total = d1 / b;
-            String Totaldic2 = String.format("%.2f", total);
-            pd.setText("" + Totaldic2 + "");
-
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
         }
         deposito();
     }//GEN-LAST:event_shareMouseClicked
@@ -15940,6 +16244,52 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             filtroNDFP.setText("");
             LabelNDFP.setVisible(true);
             FunMD();
+        }
+        if (FP.equals("Filttrar con IMSS")) {
+            busp.setVisible(false);
+            BAppag.setVisible(false);
+            BAppag.setText("");
+            Bampag.setVisible(false);
+            Bampag.setText("");
+            LabelBEP.setVisible(false);
+            busp.setText("");
+            LabelBQP.setVisible(false);
+            FiltroQP.setVisible(false);
+            FiltroQP.setSelectedIndex(0);
+            FiltroServP.setVisible(false);
+            FiltroServP.setSelectedIndex(0);
+            LabelBSP.setVisible(false);
+            FiltroSZP.setVisible(false);
+            FiltroSZP.setSelectedIndex(0);
+            LabelSZP.setVisible(false);
+            filtroNDFP.setVisible(false);
+            filtroNDFP.setText("");
+            LabelNDFP.setVisible(false);
+            FunMD();
+
+        }
+        if (FP.equals("Filtrar sin IMSS")) {
+            busp.setVisible(false);
+            BAppag.setVisible(false);
+            BAppag.setText("");
+            Bampag.setVisible(false);
+            Bampag.setText("");
+            LabelBEP.setVisible(false);
+            busp.setText("");
+            LabelBQP.setVisible(false);
+            FiltroQP.setVisible(false);
+            FiltroQP.setSelectedIndex(0);
+            FiltroServP.setVisible(false);
+            FiltroServP.setSelectedIndex(0);
+            LabelBSP.setVisible(false);
+            FiltroSZP.setVisible(false);
+            FiltroSZP.setSelectedIndex(0);
+            LabelSZP.setVisible(false);
+            filtroNDFP.setVisible(false);
+            filtroNDFP.setText("");
+            LabelNDFP.setVisible(false);
+            FunMD();
+
         }
     }//GEN-LAST:event_FiltrosPItemStateChanged
 
@@ -16774,6 +17124,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             filtroNDFP4.setVisible(false);
             filtroNDFP4.setText("");
             LabelNDFP4.setVisible(false);
+
             FunMD();
 
         }
@@ -16912,6 +17263,53 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             LabelNDFP4.setVisible(true);
             FunMD();
         }
+        if (FP.equals("Filttrar con IMSS")) {
+            busp4.setVisible(false);
+            LabelBEP4.setVisible(false);
+            BAppag4.setVisible(false);
+            BAppag4.setText("");
+            Bampag4.setVisible(false);
+            Bampag4.setText("");
+            busp4.setText("");
+            LabelBQP4.setVisible(false);
+            FiltroQP4.setVisible(false);
+            FiltroQP4.setSelectedIndex(0);
+            FiltroServP4.setVisible(false);
+            FiltroServP4.setSelectedIndex(0);
+            LabelBSP4.setVisible(false);
+            FiltroSZP4.setVisible(false);
+            FiltroSZP4.setSelectedIndex(0);
+            LabelSZP4.setVisible(false);
+            filtroNDFP4.setVisible(false);
+            filtroNDFP4.setText("");
+            LabelNDFP4.setVisible(false);
+            FunMD();
+
+        }
+        if (FP.equals("Filtrar sin IMSS")) {
+            busp4.setVisible(false);
+            LabelBEP4.setVisible(false);
+            BAppag4.setVisible(false);
+            BAppag4.setText("");
+            Bampag4.setVisible(false);
+            Bampag4.setText("");
+            busp4.setText("");
+            LabelBQP4.setVisible(false);
+            FiltroQP4.setVisible(false);
+            FiltroQP4.setSelectedIndex(0);
+            FiltroServP4.setVisible(false);
+            FiltroServP4.setSelectedIndex(0);
+            LabelBSP4.setVisible(false);
+            FiltroSZP4.setVisible(false);
+            FiltroSZP4.setSelectedIndex(0);
+            LabelSZP4.setVisible(false);
+            filtroNDFP4.setVisible(false);
+            filtroNDFP4.setText("");
+            LabelNDFP4.setVisible(false);
+            FunMD();
+        }
+
+
     }//GEN-LAST:event_FiltrosP4ItemStateChanged
 
     private void BAppag4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag4KeyReleased
@@ -21178,9 +21576,52 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_PRESActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        utilJTablePrint(pago4, getTitle(), "Código Xules", true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void ImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirActionPerformed
+        DecimalFormat dimp = new DecimalFormat("#.00");
+        utilJTablePrint(pago, getTitle(), "Monto total en foraneos acapulco: " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+    }//GEN-LAST:event_ImprimirActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        if (jCheckBox1.isSelected() == true) {
+            DI.setText("26.98");
+        } else if (jCheckBox1.isSelected() == false) {
+            DI.setText("0.0");
+
+        }
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void Imprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir1ActionPerformed
+        DecimalFormat df = new DecimalFormat("#.00");
+        utilJTablePrint(pago1, getTitle(), "Monto total en foraneos puebla: " + df.format(Double.parseDouble(this.MTDsum1.getText())), true);
+    }//GEN-LAST:event_Imprimir1ActionPerformed
+
+    private void Imprimir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Imprimir3ActionPerformed
+
+    private void Imprimir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Imprimir4ActionPerformed
+
+    private void Imprimir5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Imprimir5ActionPerformed
+
+    private void Imprimir6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Imprimir6ActionPerformed
+
+    private void Imprimir7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Imprimir7ActionPerformed
+
+    private void Imprimir8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Imprimir8ActionPerformed
+
+    private void Imprimir9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Imprimir9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -22012,6 +22453,15 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltrosTD7;
     private javax.swing.JComboBox<String> FiltrosTD8;
     private javax.swing.JTextField Grua;
+    private javax.swing.JButton Imprimir;
+    private javax.swing.JButton Imprimir1;
+    private javax.swing.JButton Imprimir3;
+    private javax.swing.JButton Imprimir4;
+    private javax.swing.JButton Imprimir5;
+    private javax.swing.JButton Imprimir6;
+    private javax.swing.JButton Imprimir7;
+    private javax.swing.JButton Imprimir8;
+    private javax.swing.JButton Imprimir9;
     private javax.swing.JLabel LabelBE;
     private javax.swing.JLabel LabelBE1;
     private javax.swing.JLabel LabelBE2;
@@ -22104,6 +22554,15 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelSZP7;
     private javax.swing.JLabel LabelSZP8;
     private javax.swing.JTextField Lugar;
+    private javax.swing.JLabel MTDsum;
+    private javax.swing.JLabel MTDsum1;
+    private javax.swing.JLabel MTDsum2;
+    private javax.swing.JLabel MTDsum3;
+    private javax.swing.JLabel MTDsum4;
+    private javax.swing.JLabel MTDsum5;
+    private javax.swing.JLabel MTDsum6;
+    private javax.swing.JLabel MTDsum7;
+    private javax.swing.JLabel MTDsum8;
     private javax.swing.JButton Modm;
     private javax.swing.JTextField NCDANom;
     private javax.swing.JTextField NDL;
@@ -22275,9 +22734,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField filtroNDFP6;
     private javax.swing.JTextField filtroNDFP7;
     private javax.swing.JTextField filtroNDFP8;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel103;
@@ -22356,7 +22814,15 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
@@ -22371,6 +22837,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;

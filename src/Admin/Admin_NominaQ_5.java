@@ -469,6 +469,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
 
     public void sumaDep() {
+        //habilitar cuando tengan nominas
         double t = 0;
         double p;
         if (pago.getRowCount() > 0) {
