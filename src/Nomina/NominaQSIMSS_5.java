@@ -61,6 +61,7 @@ public final class NominaQSIMSS_5 extends javax.swing.JFrame {
 
     public NominaQSIMSS_5() {
         initComponents();
+        // <editor-fold defaultstate="collapsed" desc="Filtros">
         FiltrosZonas zz8 = new FiltrosZonas();
         DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
         FZservicio8.setModel(modelzonas8);
@@ -118,6 +119,7 @@ public final class NominaQSIMSS_5 extends javax.swing.JFrame {
         FiltrosZonas FZS = new FiltrosZonas();
         DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
         FZservicio.setModel(MODELFZS);
+        // </editor-fold>                        
         año.setCalendar(fecha_actual);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
@@ -127,6 +129,7 @@ public final class NominaQSIMSS_5 extends javax.swing.JFrame {
         DAB = new ButtonGroup();
         DAB.add(Bsi);
         DAB.add(Bno);
+        // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         LabelBE.setVisible(false);
         LabelBQ.setVisible(false);
         LabelBS.setVisible(false);
@@ -459,6 +462,7 @@ public final class NominaQSIMSS_5 extends javax.swing.JFrame {
         LabelBQ8.setVisible(false);
         FiltroNDF8.setVisible(false);
         LabelBNDF8.setVisible(false);
+        // </editor-fold>                        
         setIconImage(new ImageIcon(NominaQSIMSS_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         sharecdanom();
         sharepresnom();

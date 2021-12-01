@@ -1,5 +1,13 @@
 package Admin;
 
+import Conexion.ConexionSQL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author JDeat
@@ -9,6 +17,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     /**
      * Creates new form Admin_Sem_4
      */
+    ConexionSQL cc = new ConexionSQL();
+    Connection con = cc.conexion();
+    Calendar fecha_actual = new GregorianCalendar();
+
     public Admin_Sem_4() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
@@ -86,7 +98,50 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         this.TDIMDS.setText("" + total + "");
     }
 
+    public void AgregarMT() {
+        if (Mas.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`) VALUES (?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setString(2, Fecha.getDate().toString());
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "ERROR" + error_semanal);
+
+            }
+        }
+        if (Mas1.isVisible() || Menos.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`) VALUES (?, ?, ?, ?), (?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setString(2, Fecha.getDate().toString());
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setInt(5, Integer.parseInt(Folio1.getText()));
+                pst.setString(6, Fecha1.getDate().toString());
+                pst.setString(7, Servicio1.getSelectedItem().toString());
+                pst.setString(8, Importe1.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "ERROR" + error_semanal);
+
+            }
+        }
+
+    }
+
     @SuppressWarnings("unchecked")
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -159,6 +214,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Menos6 = new javax.swing.JButton();
         Menos7 = new javax.swing.JButton();
         Menos8 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -171,6 +227,11 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         jLabel10.setText("SERVICIOS C/COBRO ITURBIDE");
 
         Importe.setText("0");
+        Importe.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ImporteKeyReleased(evt);
+            }
+        });
 
         Servicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
@@ -199,18 +260,33 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         });
 
         Importe1.setText("0");
+        Importe1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe1KeyReleased(evt);
+            }
+        });
 
         Servicio1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
         Folio1.setText("0");
 
         Importe2.setText("0");
+        Importe2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe2KeyReleased(evt);
+            }
+        });
 
         Servicio2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
         Folio2.setText("0");
 
         Importe3.setText("0");
+        Importe3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe3KeyReleased(evt);
+            }
+        });
 
         Servicio3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
@@ -251,6 +327,11 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Servicio4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
         Importe4.setText("0");
+        Importe4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe4KeyReleased(evt);
+            }
+        });
 
         Folio4.setText("0");
 
@@ -259,14 +340,29 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Folio5.setText("0");
 
         Importe5.setText("0");
+        Importe5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe5KeyReleased(evt);
+            }
+        });
 
         Servicio6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
         Folio6.setText("0");
 
         Importe6.setText("0");
+        Importe6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe6KeyReleased(evt);
+            }
+        });
 
         Importe7.setText("0");
+        Importe7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Importe7KeyPressed(evt);
+            }
+        });
 
         Folio7.setText("0");
 
@@ -275,10 +371,20 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Folio8.setText("0");
 
         Importe8.setText("0");
+        Importe8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe8KeyReleased(evt);
+            }
+        });
 
         Servicio8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
         Importe9.setText("0");
+        Importe9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe9KeyReleased(evt);
+            }
+        });
 
         Folio9.setText("0");
 
@@ -636,21 +742,35 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(Panel);
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(432, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addComponent(jButton1)
+                .addContainerGap(389, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jButton1)))
+                .addContainerGap(435, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -668,13 +788,13 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1052, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1186, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 673, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -881,6 +1001,58 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         //Mas9.setVisible(false);
     }//GEN-LAST:event_Menos8ActionPerformed
 
+    private void ImporteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyReleased
+        Imtotal();
+    }//GEN-LAST:event_ImporteKeyReleased
+
+    private void Importe1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe1KeyReleased
+        Imtotal();
+    }//GEN-LAST:event_Importe1KeyReleased
+
+    private void Importe2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe2KeyReleased
+        Imtotal();
+
+    }//GEN-LAST:event_Importe2KeyReleased
+
+    private void Importe3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe3KeyReleased
+        Imtotal();
+
+    }//GEN-LAST:event_Importe3KeyReleased
+
+    private void Importe4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe4KeyReleased
+        Imtotal();
+
+    }//GEN-LAST:event_Importe4KeyReleased
+
+    private void Importe5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe5KeyReleased
+        Imtotal();
+
+    }//GEN-LAST:event_Importe5KeyReleased
+
+    private void Importe6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe6KeyReleased
+        Imtotal();
+
+    }//GEN-LAST:event_Importe6KeyReleased
+
+    private void Importe7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe7KeyPressed
+        Imtotal();
+
+    }//GEN-LAST:event_Importe7KeyPressed
+
+    private void Importe8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe8KeyReleased
+        Imtotal();
+
+    }//GEN-LAST:event_Importe8KeyReleased
+
+    private void Importe9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe9KeyReleased
+        Imtotal();
+
+    }//GEN-LAST:event_Importe9KeyReleased
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AgregarMT();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -975,6 +1147,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Servicio8;
     private javax.swing.JComboBox<String> Servicio9;
     private javax.swing.JLabel TDIMDS;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
