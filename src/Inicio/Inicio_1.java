@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Inicio;
 
 import java.awt.Graphics;
@@ -58,7 +54,7 @@ public class Inicio_1 extends javax.swing.JFrame {
             }
         });
 
-        BActualizaciones.setText("Ver 1.14.0");
+        BActualizaciones.setText("Ver 1.15.0");
         BActualizaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BActualizacionesActionPerformed(evt);
@@ -154,10 +150,8 @@ public class Inicio_1 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Inicio_1().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Inicio_1().setVisible(true);
         });
     }
 
