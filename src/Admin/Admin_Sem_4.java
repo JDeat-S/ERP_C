@@ -114,7 +114,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
 
             } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "ERROR" + error_semanal);
+                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
 
             }
         }
@@ -137,7 +137,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
 
             } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "ERROR" + error_semanal);
+                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
 
             }
         }
@@ -166,11 +166,127 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
 
             } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "ERROR" + error_semanal);
+                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
 
             }
         }
+        if (Mas3.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+                pst.setInt(11, Integer.parseInt(Folio.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
+                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(14, Importe2.getText());
+                pst.setString(15, TDIDS.getText());
+                pst.setInt(16, Integer.parseInt(Folio3.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
+                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(19, Importe3.getText());
+                pst.setString(20, TDIDS.getText());
 
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal:  " + error_semanal);
+
+            }
+        }
+        if (Mas4.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+                pst.setInt(11, Integer.parseInt(Folio.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
+                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(14, Importe2.getText());
+                pst.setString(15, TDIDS.getText());
+                pst.setInt(16, Integer.parseInt(Folio3.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
+                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(19, Importe3.getText());
+                pst.setString(20, TDIDS.getText());
+                pst.setInt(21, Integer.parseInt(Folio4.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
+                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(24, Importe4.getText());
+                pst.setString(25, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
+
+            }
+        }
+        if (Mas5.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+                pst.setInt(11, Integer.parseInt(Folio.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
+                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(14, Importe2.getText());
+                pst.setString(15, TDIDS.getText());
+                pst.setInt(16, Integer.parseInt(Folio3.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
+                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(19, Importe3.getText());
+                pst.setString(20, TDIDS.getText());
+                pst.setInt(21, Integer.parseInt(Folio4.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
+                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(24, Importe4.getText());
+                pst.setString(25, TDIDS.getText());
+                pst.setInt(26, Integer.parseInt(Folio.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
+                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(29, Importe5.getText());
+                pst.setString(30, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
+
+            }
+        }
     }
 
     @SuppressWarnings("unchecked")
