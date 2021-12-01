@@ -4,6 +4,7 @@ import Conexion.ConexionSQL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
@@ -95,18 +96,19 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
         double total = Imtotal1 + Imtotal2 + Imtotal3 + Imtotal4 + Imtotal5 + Imtotal6 + Imtotal7
                 + Imtotal8 + Imtotal9 + Imtotal10;
-        this.TDIMDS.setText("" + total + "");
+        this.TDIDS.setText("" + total + "");
     }
 
     public void AgregarMT() {
         if (Mas.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`) VALUES (?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(Folio.getText()));
-                pst.setString(2, Fecha.getDate().toString());
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
                 pst.setString(3, Servicio.getSelectedItem().toString());
                 pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
@@ -116,18 +118,49 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
             }
         }
-        if (Mas1.isVisible() || Menos.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`) VALUES (?, ?, ?, ?), (?, ?, ?, ?)";
+        if (Mas1.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(Folio.getText()));
-                pst.setString(2, Fecha.getDate().toString());
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
                 pst.setString(3, Servicio.getSelectedItem().toString());
                 pst.setString(4, Importe.getText());
-                pst.setInt(5, Integer.parseInt(Folio1.getText()));
-                pst.setString(6, Fecha1.getDate().toString());
-                pst.setString(7, Servicio1.getSelectedItem().toString());
-                pst.setString(8, Importe1.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "ERROR" + error_semanal);
+
+            }
+        }
+        if (Mas2.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+                pst.setInt(11, Integer.parseInt(Folio.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
+                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(14, Importe2.getText());
+                pst.setString(15, TDIDS.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
@@ -173,7 +206,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Servicio3 = new javax.swing.JComboBox<>();
         Folio3 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        TDIMDS = new javax.swing.JLabel();
+        TDIDS = new javax.swing.JLabel();
         Mas1 = new javax.swing.JButton();
         Mas2 = new javax.swing.JButton();
         Menos1 = new javax.swing.JButton();
@@ -226,6 +259,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setText("SERVICIOS C/COBRO ITURBIDE");
 
+        Fecha.setDateFormatString("dd MMM yyyy ");
+
         Importe.setText("0");
         Importe.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -266,6 +301,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
+        Fecha1.setDateFormatString("dd MMM yyyy ");
+
         Servicio1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
         Folio1.setText("0");
@@ -276,6 +313,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 Importe2KeyReleased(evt);
             }
         });
+
+        Fecha2.setDateFormatString("dd MMM yyyy ");
 
         Servicio2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
@@ -288,13 +327,15 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
+        Fecha3.setDateFormatString("dd MMM yyyy ");
+
         Servicio3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
         Folio3.setText("0");
 
         jLabel5.setText("Total de importe de servicios:");
 
-        TDIMDS.setText("0");
+        TDIDS.setText("0");
 
         Mas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/37770.png"))); // NOI18N
         Mas1.addActionListener(new java.awt.event.ActionListener() {
@@ -326,6 +367,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
         Servicio4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
+        Fecha4.setDateFormatString("dd MMM yyyy ");
+
         Importe4.setText("0");
         Importe4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -346,6 +389,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
+        Fecha5.setDateFormatString("dd MMM yyyy ");
+
         Servicio6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
         Folio6.setText("0");
@@ -356,6 +401,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 Importe6KeyReleased(evt);
             }
         });
+
+        Fecha6.setDateFormatString("dd MMM yyyy ");
+
+        Fecha7.setDateFormatString("dd MMM yyyy ");
 
         Importe7.setText("0");
         Importe7.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -377,6 +426,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
+        Fecha8.setDateFormatString("dd MMM yyyy ");
+
         Servicio8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
         Importe9.setText("0");
@@ -389,6 +440,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Folio9.setText("0");
 
         Servicio9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+
+        Fecha9.setDateFormatString("dd MMM yyyy ");
 
         Mas3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/37770.png"))); // NOI18N
         Mas3.addActionListener(new java.awt.event.ActionListener() {
@@ -490,7 +543,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                 .addGroup(PanelLayout.createSequentialGroup()
                                     .addComponent(Folio4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(Servicio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -498,7 +551,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                 .addGroup(PanelLayout.createSequentialGroup()
                                     .addComponent(Folio3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(Servicio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -506,7 +559,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(Folio1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Servicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -535,7 +588,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                     .addComponent(jLabel1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -566,7 +619,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(Folio2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Servicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -574,12 +627,12 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TDIMDS))))
+                                .addComponent(TDIDS))))
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(Folio5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Servicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -588,7 +641,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(Folio6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Servicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -597,7 +650,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(Folio7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Servicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -606,7 +659,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(Folio8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Servicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -615,7 +668,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(Folio9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Servicio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -685,7 +738,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                 .addComponent(Importe2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel5)
-                                .addComponent(TDIMDS))
+                                .addComponent(TDIDS))
                             .addComponent(Folio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1146,7 +1199,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Servicio7;
     private javax.swing.JComboBox<String> Servicio8;
     private javax.swing.JComboBox<String> Servicio9;
-    private javax.swing.JLabel TDIMDS;
+    private javax.swing.JLabel TDIDS;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

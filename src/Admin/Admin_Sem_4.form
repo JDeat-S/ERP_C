@@ -120,7 +120,7 @@
                                               <Group type="102" attributes="0">
                                                   <Component id="Folio4" min="-2" pref="60" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Fecha4" min="-2" pref="122" max="-2" attributes="0"/>
+                                                  <Component id="Fecha4" min="-2" pref="150" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="Servicio4" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
@@ -129,7 +129,7 @@
                                               <Group type="102" attributes="0">
                                                   <Component id="Folio3" min="-2" pref="60" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Fecha3" min="-2" pref="122" max="-2" attributes="0"/>
+                                                  <Component id="Fecha3" min="-2" pref="150" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="Servicio3" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
@@ -139,7 +139,7 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="Folio1" min="-2" pref="60" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="Fecha1" min="-2" pref="122" max="-2" attributes="0"/>
+                                              <Component id="Fecha1" min="-2" pref="150" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="Servicio1" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
@@ -170,7 +170,7 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="Fecha" min="-2" pref="122" max="-2" attributes="0"/>
+                                                  <Component id="Fecha" min="-2" pref="150" max="-2" attributes="0"/>
                                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
@@ -205,7 +205,7 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="Folio2" min="-2" pref="60" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="Fecha2" min="-2" pref="122" max="-2" attributes="0"/>
+                                              <Component id="Fecha2" min="-2" pref="150" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="Servicio2" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
@@ -213,7 +213,7 @@
                                               <EmptySpace min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="TDIMDS" min="-2" max="-2" attributes="0"/>
+                                              <Component id="TDIDS" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -221,7 +221,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Folio5" min="-2" pref="60" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="Fecha5" min="-2" pref="122" max="-2" attributes="0"/>
+                                      <Component id="Fecha5" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Servicio5" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -231,7 +231,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Folio6" min="-2" pref="60" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="Fecha6" min="-2" pref="122" max="-2" attributes="0"/>
+                                      <Component id="Fecha6" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Servicio6" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -241,7 +241,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Folio7" min="-2" pref="60" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="Fecha7" min="-2" pref="122" max="-2" attributes="0"/>
+                                      <Component id="Fecha7" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Servicio7" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -251,7 +251,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Folio8" min="-2" pref="60" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="Fecha8" min="-2" pref="122" max="-2" attributes="0"/>
+                                      <Component id="Fecha8" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Servicio8" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -261,7 +261,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Folio9" min="-2" pref="60" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="Fecha9" min="-2" pref="122" max="-2" attributes="0"/>
+                                      <Component id="Fecha9" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Servicio9" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -349,7 +349,7 @@
                                               <Component id="Importe2" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="Servicio2" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="TDIMDS" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="TDIDS" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="Folio2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -434,6 +434,9 @@
                       </Properties>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha">
+                      <Properties>
+                        <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Importe">
                       <Properties>
@@ -515,6 +518,9 @@
                       </Events>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha1">
+                      <Properties>
+                        <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="Servicio1">
                       <Properties>
@@ -548,6 +554,9 @@
                       </Events>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha2">
+                      <Properties>
+                        <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="Servicio2">
                       <Properties>
@@ -581,6 +590,9 @@
                       </Events>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha3">
+                      <Properties>
+                        <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="Servicio3">
                       <Properties>
@@ -610,7 +622,7 @@
                         <Property name="text" type="java.lang.String" value="Total de importe de servicios:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="TDIMDS">
+                    <Component class="javax.swing.JLabel" name="TDIDS">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
@@ -674,6 +686,9 @@
                       </AuxValues>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha4">
+                      <Properties>
+                        <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Importe4">
                       <Properties>
@@ -720,6 +735,9 @@
                       </Events>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha5">
+                      <Properties>
+                        <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="Servicio6">
                       <Properties>
@@ -753,8 +771,14 @@
                       </Events>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha6">
+                      <Properties>
+                        <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                      </Properties>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha7">
+                      <Properties>
+                        <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Importe7">
                       <Properties>
@@ -801,6 +825,9 @@
                       </Events>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha8">
+                      <Properties>
+                        <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="Servicio8">
                       <Properties>
@@ -852,6 +879,9 @@
                       </AuxValues>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha9">
+                      <Properties>
+                        <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="Mas3">
                       <Properties>
