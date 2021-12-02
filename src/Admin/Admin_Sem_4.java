@@ -100,7 +100,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         this.TDIDS.setText("" + TotalServ + "");
         //</editor-fold>
         
-        // <editor-fold defaultstate="collapsed" desc="Suma pensiones">
+        // <editor-fold defaultstate="collapsed" desc="Suma Pensiones">
         double ImPen1 = Double.parseDouble(Importe10.getText());
         double ImPen2 = Double.parseDouble(Importe11.getText());
         double ImPen3 = Double.parseDouble(Importe12.getText());
@@ -2053,47 +2053,53 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void Importe10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe10KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe10KeyReleased
 
     private void Importe11KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe11KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe11KeyReleased
 
     private void Importe12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe12KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe12KeyReleased
 
     private void Importe13KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe13KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe13KeyReleased
 
     private void Importe14KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe14KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe14KeyReleased
 
     private void Importe15KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe15KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe15KeyReleased
 
     private void Importe16KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe16KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe16KeyReleased
 
     private void Importe17KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe17KeyPressed
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe17KeyPressed
 
     private void Importe18KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe18KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe18KeyReleased
 
     private void Importe19KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe19KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe19KeyReleased
 
     private void Mas9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas9ActionPerformed
-        // TODO add your handling code here:
+        Folio1.setVisible(true);
+        Fecha1.setVisible(true);
+        Servicio1.setVisible(true);
+        Importe1.setVisible(true);
+        Menos.setVisible(true);
+        Mas.setVisible(false);
+        Mas1.setVisible(true);
     }//GEN-LAST:event_Mas9ActionPerformed
 
     private void Menos11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos11ActionPerformed
