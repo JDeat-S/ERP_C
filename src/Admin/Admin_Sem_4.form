@@ -73,8 +73,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane2" min="-2" pref="628" max="-2" attributes="0"/>
                           <Component id="jScrollPane3" min="-2" pref="686" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" pref="636" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -288,7 +288,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="30" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -402,11 +402,13 @@
                                           <Component id="Fecha8" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="Folio9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Servicio9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Importe9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="Fecha9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="Folio9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Servicio9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Importe9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -1059,7 +1061,7 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jTextField1" min="-2" pref="160" max="-2" attributes="0"/>
+                                                  <Component id="Servicio10" min="-2" pref="160" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -1070,39 +1072,39 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="Folio11" min="-2" pref="60" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="Fecha21" min="-2" pref="150" max="-2" attributes="0"/>
+                                              <Component id="Fecha11" min="-2" pref="150" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="Folio12" min="-2" pref="60" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="Fecha22" min="-2" pref="150" max="-2" attributes="0"/>
+                                                      <Component id="Fecha12" min="-2" pref="150" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="Folio13" min="-2" pref="60" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="Fecha23" min="-2" pref="150" max="-2" attributes="0"/>
+                                                      <Component id="Fecha13" min="-2" pref="150" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="Folio16" min="-2" pref="60" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="Fecha26" min="-2" pref="150" max="-2" attributes="0"/>
+                                                      <Component id="Fecha16" min="-2" pref="150" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="Folio17" min="-2" pref="60" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="Fecha27" min="-2" pref="150" max="-2" attributes="0"/>
+                                                      <Component id="Fecha17" min="-2" pref="150" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="Folio18" min="-2" pref="60" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="Fecha28" min="-2" pref="150" max="-2" attributes="0"/>
+                                                      <Component id="Fecha18" min="-2" pref="150" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="Folio19" min="-2" pref="60" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="Fecha29" min="-2" pref="150" max="-2" attributes="0"/>
+                                                      <Component id="Fecha19" min="-2" pref="150" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1111,27 +1113,27 @@
                                                       </Group>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="Fecha24" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                                                          <Component id="Fecha25" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                                          <Component id="Fecha14" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                                          <Component id="Fecha15" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jTextField2" min="-2" pref="160" max="-2" attributes="0"/>
+                                                      <Component id="Servicio11" min="-2" pref="160" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="Importe11" min="-2" pref="71" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jTextField3" min="-2" pref="160" max="-2" attributes="0"/>
+                                                      <Component id="Servicio12" min="-2" pref="160" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="Importe12" min="-2" pref="71" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jTextField4" min="-2" pref="160" max="-2" attributes="0"/>
-                                                          <Component id="jTextField5" min="-2" pref="160" max="-2" attributes="0"/>
+                                                          <Component id="Servicio13" min="-2" pref="160" max="-2" attributes="0"/>
+                                                          <Component id="Servicio14" min="-2" pref="160" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1141,11 +1143,11 @@
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jTextField6" min="-2" pref="160" max="-2" attributes="0"/>
-                                                          <Component id="jTextField7" min="-2" pref="160" max="-2" attributes="0"/>
-                                                          <Component id="jTextField8" min="-2" pref="160" max="-2" attributes="0"/>
-                                                          <Component id="jTextField9" min="-2" pref="160" max="-2" attributes="0"/>
-                                                          <Component id="jTextField10" min="-2" pref="160" max="-2" attributes="0"/>
+                                                          <Component id="Servicio15" min="-2" pref="160" max="-2" attributes="0"/>
+                                                          <Component id="Servicio16" min="-2" pref="160" max="-2" attributes="0"/>
+                                                          <Component id="Servicio17" min="-2" pref="160" max="-2" attributes="0"/>
+                                                          <Component id="Servicio18" min="-2" pref="160" max="-2" attributes="0"/>
+                                                          <Component id="Servicio19" min="-2" pref="160" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1246,7 +1248,7 @@
                                   <Component id="Fecha10" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                       <Component id="Importe10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Servicio10" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="Folio10" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1283,44 +1285,44 @@
                                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                               <Component id="Folio11" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="Importe11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Servicio11" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="Fecha21" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Fecha11" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                               <Component id="Folio12" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="Importe12" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Servicio12" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="Fecha22" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Fecha12" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                               <Component id="Folio13" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="Importe13" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Servicio13" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="Fecha23" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Fecha13" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                               <Component id="Folio14" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="Importe14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Servicio14" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="Fecha24" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Fecha14" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Fecha25" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Fecha15" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                               <Component id="Folio15" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="Importe15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Servicio15" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
@@ -1328,34 +1330,36 @@
                                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                               <Component id="Folio16" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="Importe16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Servicio16" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="Fecha26" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Fecha16" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                               <Component id="Folio17" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="Importe17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Servicio17" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="Fecha27" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Fecha17" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                               <Component id="Folio18" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="Importe18" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Servicio18" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="Fecha28" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Fecha18" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="Folio19" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Importe19" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Fecha29" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="Fecha19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="Folio19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Importe19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Servicio19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
@@ -1578,47 +1582,47 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Mas10ActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha21">
+                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha11">
                       <Properties>
                         <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
                       </Properties>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha22">
+                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha12">
                       <Properties>
                         <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
                       </Properties>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha23">
+                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha13">
                       <Properties>
                         <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
                       </Properties>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha24">
+                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha14">
                       <Properties>
                         <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
                       </Properties>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha25">
+                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha15">
                       <Properties>
                         <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
                       </Properties>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha26">
+                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha16">
                       <Properties>
                         <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
                       </Properties>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha27">
+                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha17">
                       <Properties>
                         <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
                       </Properties>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha28">
+                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha18">
                       <Properties>
                         <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
                       </Properties>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha29">
+                    <Component class="com.toedter.calendar.JDateChooser" name="Fecha19">
                       <Properties>
                         <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
                       </Properties>
@@ -1763,25 +1767,25 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Mas17ActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField1">
+                    <Component class="javax.swing.JTextField" name="Servicio10">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField2">
+                    <Component class="javax.swing.JTextField" name="Servicio11">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField3">
+                    <Component class="javax.swing.JTextField" name="Servicio12">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField4">
+                    <Component class="javax.swing.JTextField" name="Servicio13">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField5">
+                    <Component class="javax.swing.JTextField" name="Servicio14">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField6">
+                    <Component class="javax.swing.JTextField" name="Servicio15">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField7">
+                    <Component class="javax.swing.JTextField" name="Servicio16">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField8">
+                    <Component class="javax.swing.JTextField" name="Servicio17">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField9">
+                    <Component class="javax.swing.JTextField" name="Servicio18">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField10">
+                    <Component class="javax.swing.JTextField" name="Servicio19">
                     </Component>
                   </SubComponents>
                 </Container>

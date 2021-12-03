@@ -78,6 +78,23 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha4.setVisible(false);
         Servicio4.setVisible(false);
         Importe4.setVisible(false);
+        Menos9.setVisible(false);
+        Menos10.setVisible(false);
+        Menos11.setVisible(false);
+        Menos12.setVisible(false);
+        Menos13.setVisible(false);
+        Menos14.setVisible(false);
+        Menos15.setVisible(false);
+        Menos16.setVisible(false);
+        Menos17.setVisible(false);
+        Mas10.setVisible(false);
+        Mas11.setVisible(false);
+        Mas12.setVisible(false);
+        Mas13.setVisible(false);
+        Mas14.setVisible(false);
+        Mas15.setVisible(false);
+        Mas16.setVisible(false);
+        Mas17.setVisible(false);
         // </editor-fold>                        
 
     }
@@ -99,7 +116,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 + ImServ8 + ImServ9 + ImServ10;
         this.TDIDS.setText("" + TotalServ + "");
         //</editor-fold>
-        
+
         // <editor-fold defaultstate="collapsed" desc="Suma Pensiones">
         double ImPen1 = Double.parseDouble(Importe10.getText());
         double ImPen2 = Double.parseDouble(Importe11.getText());
@@ -111,12 +128,12 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         double ImPen8 = Double.parseDouble(Importe17.getText());
         double ImPen9 = Double.parseDouble(Importe18.getText());
         double ImPen10 = Double.parseDouble(Importe19.getText());
-        
+
         double TotalPen = ImPen1 + ImPen2 + ImPen3 + ImPen4 + ImPen5 + ImPen6 + ImPen7 + ImPen8
                 + ImPen9 + ImPen10;
         TDIDP.setText("" + TotalPen);
         //</editor-fold>
-        
+
     }
 
     public void AddEst() {
@@ -401,7 +418,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 pst.setString(38, Servicio7.getSelectedItem().toString());
                 pst.setString(39, Importe7.getText());
                 pst.setString(40, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
 
@@ -460,7 +477,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 pst.setString(43, Servicio8.getSelectedItem().toString());
                 pst.setString(44, Importe8.getText());
                 pst.setString(45, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
 
@@ -525,7 +542,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 pst.setString(48, Servicio9.getSelectedItem().toString());
                 pst.setString(49, Importe9.getText());
                 pst.setString(50, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
 
@@ -535,8 +552,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         }
     }
-    
-    
 
     @SuppressWarnings("unchecked")
 
@@ -647,15 +662,15 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Menos11 = new javax.swing.JButton();
         Menos10 = new javax.swing.JButton();
         Mas10 = new javax.swing.JButton();
-        Fecha21 = new com.toedter.calendar.JDateChooser();
-        Fecha22 = new com.toedter.calendar.JDateChooser();
-        Fecha23 = new com.toedter.calendar.JDateChooser();
-        Fecha24 = new com.toedter.calendar.JDateChooser();
-        Fecha25 = new com.toedter.calendar.JDateChooser();
-        Fecha26 = new com.toedter.calendar.JDateChooser();
-        Fecha27 = new com.toedter.calendar.JDateChooser();
-        Fecha28 = new com.toedter.calendar.JDateChooser();
-        Fecha29 = new com.toedter.calendar.JDateChooser();
+        Fecha11 = new com.toedter.calendar.JDateChooser();
+        Fecha12 = new com.toedter.calendar.JDateChooser();
+        Fecha13 = new com.toedter.calendar.JDateChooser();
+        Fecha14 = new com.toedter.calendar.JDateChooser();
+        Fecha15 = new com.toedter.calendar.JDateChooser();
+        Fecha16 = new com.toedter.calendar.JDateChooser();
+        Fecha17 = new com.toedter.calendar.JDateChooser();
+        Fecha18 = new com.toedter.calendar.JDateChooser();
+        Fecha19 = new com.toedter.calendar.JDateChooser();
         Menos9 = new javax.swing.JButton();
         Mas11 = new javax.swing.JButton();
         Mas12 = new javax.swing.JButton();
@@ -670,16 +685,16 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Mas16 = new javax.swing.JButton();
         Menos17 = new javax.swing.JButton();
         Mas17 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        Servicio10 = new javax.swing.JTextField();
+        Servicio11 = new javax.swing.JTextField();
+        Servicio12 = new javax.swing.JTextField();
+        Servicio13 = new javax.swing.JTextField();
+        Servicio14 = new javax.swing.JTextField();
+        Servicio15 = new javax.swing.JTextField();
+        Servicio16 = new javax.swing.JTextField();
+        Servicio17 = new javax.swing.JTextField();
+        Servicio18 = new javax.swing.JTextField();
+        Servicio19 = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -1104,7 +1119,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                         .addComponent(Menos7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Menos8)))))))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1192,11 +1207,12 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                 .addComponent(Importe8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Folio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Servicio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Importe9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(Folio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Servicio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Importe9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1367,23 +1383,23 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        Fecha21.setDateFormatString("dd MMM yyyy ");
+        Fecha11.setDateFormatString("dd MMM yyyy ");
 
-        Fecha22.setDateFormatString("dd MMM yyyy ");
+        Fecha12.setDateFormatString("dd MMM yyyy ");
 
-        Fecha23.setDateFormatString("dd MMM yyyy ");
+        Fecha13.setDateFormatString("dd MMM yyyy ");
 
-        Fecha24.setDateFormatString("dd MMM yyyy ");
+        Fecha14.setDateFormatString("dd MMM yyyy ");
 
-        Fecha25.setDateFormatString("dd MMM yyyy ");
+        Fecha15.setDateFormatString("dd MMM yyyy ");
 
-        Fecha26.setDateFormatString("dd MMM yyyy ");
+        Fecha16.setDateFormatString("dd MMM yyyy ");
 
-        Fecha27.setDateFormatString("dd MMM yyyy ");
+        Fecha17.setDateFormatString("dd MMM yyyy ");
 
-        Fecha28.setDateFormatString("dd MMM yyyy ");
+        Fecha18.setDateFormatString("dd MMM yyyy ");
 
-        Fecha29.setDateFormatString("dd MMM yyyy ");
+        Fecha19.setDateFormatString("dd MMM yyyy ");
 
         Menos9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
         Menos9.addActionListener(new java.awt.event.ActionListener() {
@@ -1503,7 +1519,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel16)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Servicio10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel17)
@@ -1511,66 +1527,66 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                             .addGroup(Panel2Layout.createSequentialGroup()
                                 .addComponent(Folio11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha21, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(Panel2Layout.createSequentialGroup()
                                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(Panel2Layout.createSequentialGroup()
                                         .addComponent(Folio12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha22, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(Panel2Layout.createSequentialGroup()
                                         .addComponent(Folio13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha23, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(Panel2Layout.createSequentialGroup()
                                         .addComponent(Folio16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha26, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(Panel2Layout.createSequentialGroup()
                                         .addComponent(Folio17, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha27, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Fecha17, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(Panel2Layout.createSequentialGroup()
                                         .addComponent(Folio18, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha28, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Fecha18, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(Panel2Layout.createSequentialGroup()
                                         .addComponent(Folio19, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha29, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Fecha19, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(Panel2Layout.createSequentialGroup()
                                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(Folio14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(Folio15, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Fecha24, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Fecha25, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(Panel2Layout.createSequentialGroup()
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Servicio11, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Importe11, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(Panel2Layout.createSequentialGroup()
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Servicio12, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Importe12, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(Panel2Layout.createSequentialGroup()
                                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(Servicio13, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Servicio14, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(Importe14, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(Importe13, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(Panel2Layout.createSequentialGroup()
                                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(Servicio15, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Servicio16, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Servicio17, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Servicio18, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Servicio19, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(Importe19, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1650,7 +1666,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                     .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Importe10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Servicio10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Folio10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel2Layout.createSequentialGroup()
@@ -1682,63 +1698,64 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Folio11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Fecha21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Servicio11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Folio12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Fecha22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Servicio12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Folio13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Fecha23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Servicio13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Folio14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Fecha24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Servicio14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Fecha25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Folio15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Servicio15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(7, 7, 7)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Folio16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Fecha26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Servicio16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Folio17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Fecha27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Servicio17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Fecha17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Folio18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Fecha28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Servicio18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Fecha18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
-                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Folio19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Importe19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Fecha19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(Folio19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Importe19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Servicio19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -1751,8 +1768,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(117, 117, 117)
                 .addComponent(jButton1)
                 .addContainerGap(317, Short.MAX_VALUE))
@@ -2093,81 +2110,195 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Importe19KeyReleased
 
     private void Mas9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas9ActionPerformed
-        Folio1.setVisible(true);
-        Fecha1.setVisible(true);
-        Servicio1.setVisible(true);
-        Importe1.setVisible(true);
-        Menos.setVisible(true);
-        Mas.setVisible(false);
-        Mas1.setVisible(true);
+        Folio11.setVisible(true);
+        Fecha11.setVisible(true);
+        Servicio11.setVisible(true);
+        Importe11.setVisible(true);
+        Menos9.setVisible(true);
+        Mas9.setVisible(false);
+        Mas10.setVisible(true);
     }//GEN-LAST:event_Mas9ActionPerformed
 
     private void Menos11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos11ActionPerformed
-        // TODO add your handling code here:
+        Folio13.setVisible(false);
+        Fecha13.setVisible(false);
+        Servicio13.setVisible(false);
+        Importe13.setVisible(false);
+        Menos10.setVisible(true);
+        Menos11.setVisible(false);
+        Mas11.setVisible(true);
+        Mas12.setVisible(false);
     }//GEN-LAST:event_Menos11ActionPerformed
 
     private void Menos10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos10ActionPerformed
-        // TODO add your handling code here:
+        Folio12.setVisible(false);
+        Fecha12.setVisible(false);
+        Servicio12.setVisible(false);
+        Importe12.setVisible(false);
+        Menos9.setVisible(true);
+        Menos10.setVisible(false);
+        Mas10.setVisible(true);
+        Mas11.setVisible(false);
     }//GEN-LAST:event_Menos10ActionPerformed
 
     private void Mas10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas10ActionPerformed
-        // TODO add your handling code here:
+        Folio12.setVisible(true);
+        Fecha12.setVisible(true);
+        Servicio12.setVisible(true);
+        Importe12.setVisible(true);
+        Menos10.setVisible(false);
+        Menos11.setVisible(true);
+        Mas11.setVisible(false);
+        Mas12.setVisible(true);
     }//GEN-LAST:event_Mas10ActionPerformed
 
     private void Menos9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos9ActionPerformed
-        // TODO add your handling code here:
+        Folio11.setVisible(false);
+        Fecha11.setVisible(false);
+        Servicio11.setVisible(false);
+        Importe11.setVisible(false);
+        Menos9.setVisible(false);
+        Mas9.setVisible(true);
+        Mas10.setVisible(false);
     }//GEN-LAST:event_Menos9ActionPerformed
 
     private void Mas11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas11ActionPerformed
-        // TODO add your handling code here:
+        Folio13.setVisible(true);
+        Fecha13.setVisible(true);
+        Servicio13.setVisible(true);
+        Importe13.setVisible(true);
+        Menos11.setVisible(false);
+        Menos12.setVisible(true);
+        Mas12.setVisible(false);
+        Mas13.setVisible(true);
     }//GEN-LAST:event_Mas11ActionPerformed
 
     private void Mas12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas12ActionPerformed
-        // TODO add your handling code here:
+        Folio14.setVisible(true);
+        Fecha14.setVisible(true);
+        Servicio14.setVisible(true);
+        Importe14.setVisible(true);
+        Menos12.setVisible(false);
+        Menos13.setVisible(true);
+        Mas13.setVisible(false);
+        Mas14.setVisible(true);
     }//GEN-LAST:event_Mas12ActionPerformed
 
     private void Menos12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos12ActionPerformed
-        // TODO add your handling code here:
+        Folio14.setVisible(false);
+        Fecha14.setVisible(false);
+        Servicio14.setVisible(false);
+        Importe14.setVisible(false);
+        Menos11.setVisible(true);
+        Menos12.setVisible(false);
+        Mas12.setVisible(true);
+        Mas13.setVisible(false);
     }//GEN-LAST:event_Menos12ActionPerformed
 
     private void Menos13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos13ActionPerformed
-        // TODO add your handling code here:
+        Folio15.setVisible(false);
+        Fecha15.setVisible(false);
+        Servicio15.setVisible(false);
+        Importe15.setVisible(false);
+        Menos12.setVisible(true);
+        Menos13.setVisible(false);
+        Mas13.setVisible(true);
+        Mas14.setVisible(false);
     }//GEN-LAST:event_Menos13ActionPerformed
 
     private void Mas13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas13ActionPerformed
-        // TODO add your handling code here:
+        Folio15.setVisible(true);
+        Fecha15.setVisible(true);
+        Servicio15.setVisible(true);
+        Importe15.setVisible(true);
+        Menos13.setVisible(false);
+        Menos14.setVisible(true);
+        Mas14.setVisible(false);
+        Mas15.setVisible(true);
     }//GEN-LAST:event_Mas13ActionPerformed
 
     private void Mas14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas14ActionPerformed
-        // TODO add your handling code here:
+        Folio16.setVisible(true);
+        Fecha16.setVisible(true);
+        Servicio16.setVisible(true);
+        Importe16.setVisible(true);
+        Menos14.setVisible(true);
+        Mas14.setVisible(false);
+        Mas15.setVisible(true);
     }//GEN-LAST:event_Mas14ActionPerformed
 
     private void Menos15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos15ActionPerformed
-        // TODO add your handling code here:
+        Folio17.setVisible(false);
+        Fecha17.setVisible(false);
+        Servicio17.setVisible(false);
+        Importe17.setVisible(false);
+        Menos14.setVisible(true);
+        Menos15.setVisible(false);
+        Mas15.setVisible(true);
+        Mas16.setVisible(false);
     }//GEN-LAST:event_Menos15ActionPerformed
 
     private void Mas15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas15ActionPerformed
-        // TODO add your handling code here:
+        Folio17.setVisible(true);
+        Fecha17.setVisible(true);
+        Servicio17.setVisible(true);
+        Importe17.setVisible(true);
+        Menos15.setVisible(true);
+        Mas15.setVisible(false);
+        Mas16.setVisible(true);
     }//GEN-LAST:event_Mas15ActionPerformed
 
     private void Menos16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos16ActionPerformed
-        // TODO add your handling code here:
+        Folio18.setVisible(false);
+        Fecha18.setVisible(false);
+        Servicio18.setVisible(false);
+        Importe18.setVisible(false);
+        Menos14.setVisible(true);
+        Menos15.setVisible(false);
+        Mas15.setVisible(true);
+        Mas16.setVisible(false);
     }//GEN-LAST:event_Menos16ActionPerformed
 
     private void Menos14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos14ActionPerformed
-        // TODO add your handling code here:
+        Folio16.setVisible(false);
+        Fecha16.setVisible(false);
+        Servicio16.setVisible(false);
+        Importe16.setVisible(false);
+        Menos13.setVisible(true);
+        Menos14.setVisible(false);
+        Mas14.setVisible(true);
+        Mas15.setVisible(false);
     }//GEN-LAST:event_Menos14ActionPerformed
 
     private void Mas16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas16ActionPerformed
-        // TODO add your handling code here:
+        Folio18.setVisible(true);
+        Fecha18.setVisible(true);
+        Servicio18.setVisible(true);
+        Importe18.setVisible(true);
+        Menos16.setVisible(true);
+        Mas16.setVisible(false);
+        Mas17.setVisible(true);
     }//GEN-LAST:event_Mas16ActionPerformed
 
     private void Menos17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos17ActionPerformed
-        // TODO add your handling code here:
+        Folio19.setVisible(false);
+        Fecha19.setVisible(false);
+        Servicio19.setVisible(false);
+        Importe19.setVisible(false);
+        Menos16.setVisible(true);
+        Menos16.setVisible(false);
+        Mas17.setVisible(true);
+        //Mas18.setVisible(false);
     }//GEN-LAST:event_Menos17ActionPerformed
 
     private void Mas17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas17ActionPerformed
-        // TODO add your handling code here:
+        Folio19.setVisible(true);
+        Fecha19.setVisible(true);
+        Servicio19.setVisible(true);
+        Importe19.setVisible(true);
+        Menos17.setVisible(true);
+        Mas17.setVisible(false);
+        //Mas18.setVisible(true);
     }//GEN-LAST:event_Mas17ActionPerformed
 
     /**
@@ -2207,16 +2338,16 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser Fecha;
     private com.toedter.calendar.JDateChooser Fecha1;
     private com.toedter.calendar.JDateChooser Fecha10;
+    private com.toedter.calendar.JDateChooser Fecha11;
+    private com.toedter.calendar.JDateChooser Fecha12;
+    private com.toedter.calendar.JDateChooser Fecha13;
+    private com.toedter.calendar.JDateChooser Fecha14;
+    private com.toedter.calendar.JDateChooser Fecha15;
+    private com.toedter.calendar.JDateChooser Fecha16;
+    private com.toedter.calendar.JDateChooser Fecha17;
+    private com.toedter.calendar.JDateChooser Fecha18;
+    private com.toedter.calendar.JDateChooser Fecha19;
     private com.toedter.calendar.JDateChooser Fecha2;
-    private com.toedter.calendar.JDateChooser Fecha21;
-    private com.toedter.calendar.JDateChooser Fecha22;
-    private com.toedter.calendar.JDateChooser Fecha23;
-    private com.toedter.calendar.JDateChooser Fecha24;
-    private com.toedter.calendar.JDateChooser Fecha25;
-    private com.toedter.calendar.JDateChooser Fecha26;
-    private com.toedter.calendar.JDateChooser Fecha27;
-    private com.toedter.calendar.JDateChooser Fecha28;
-    private com.toedter.calendar.JDateChooser Fecha29;
     private com.toedter.calendar.JDateChooser Fecha3;
     private com.toedter.calendar.JDateChooser Fecha4;
     private com.toedter.calendar.JDateChooser Fecha5;
@@ -2304,6 +2435,16 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JPanel Panel2;
     private javax.swing.JComboBox<String> Servicio;
     private javax.swing.JComboBox<String> Servicio1;
+    private javax.swing.JTextField Servicio10;
+    private javax.swing.JTextField Servicio11;
+    private javax.swing.JTextField Servicio12;
+    private javax.swing.JTextField Servicio13;
+    private javax.swing.JTextField Servicio14;
+    private javax.swing.JTextField Servicio15;
+    private javax.swing.JTextField Servicio16;
+    private javax.swing.JTextField Servicio17;
+    private javax.swing.JTextField Servicio18;
+    private javax.swing.JTextField Servicio19;
     private javax.swing.JComboBox<String> Servicio2;
     private javax.swing.JComboBox<String> Servicio3;
     private javax.swing.JComboBox<String> Servicio4;
@@ -2334,15 +2475,5 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
