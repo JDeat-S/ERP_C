@@ -2136,7 +2136,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
                 + "`Credencial` = ?, `Adelanto de nomina` = ?, `Boleto perdido` = ?, `Playera` = ?, `Corbata` = ?, "
                 + "`Total de DV` = ?, `Pago de prestamo` = ?, `Caja de ahorro` = ?, "
                 + "`Orden de taller` = ?, `Deposito` = ?, `Observaciones` = ? WHERE "
-                + "`nomina.detallada." + Zon.getText() + "`.simss.`#lista` = ?";
+                + "`nomina.detallada." + Zon.getText() + ".simss`.`#lista` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
