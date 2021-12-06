@@ -131,6 +131,68 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha14.setVisible(false);
         Servicio14.setVisible(false);
         Importe14.setVisible(false);
+        Menos18.setVisible(false);
+        Menos19.setVisible(false);
+        Menos20.setVisible(false);
+        Menos21.setVisible(false);
+        Menos22.setVisible(false);
+        Menos23.setVisible(false);
+        Menos24.setVisible(false);
+        Menos25.setVisible(false);
+        Menos26.setVisible(false);
+        Mas19.setVisible(false);
+        Mas20.setVisible(false);
+        Mas21.setVisible(false);
+        Mas22.setVisible(false);
+        Mas23.setVisible(false);
+        Mas24.setVisible(false);
+        Mas25.setVisible(false);
+        Mas26.setVisible(false);
+        Folio21.setVisible(false);
+        Fecha21.setVisible(false);
+        Servicio21.setVisible(false);
+        Importe21.setVisible(false);
+        Folio22.setVisible(false);
+        Fecha22.setVisible(false);
+        Servicio22.setVisible(false);
+        Importe22.setVisible(false);
+        Folio23.setVisible(false);
+        Fecha23.setVisible(false);
+        Servicio23.setVisible(false);
+        Importe23.setVisible(false);
+        Folio29.setVisible(false);
+        Fecha29.setVisible(false);
+        Servicio29.setVisible(false);
+        Importe29.setVisible(false);
+        Folio28.setVisible(false);
+        Fecha28.setVisible(false);
+        Servicio28.setVisible(false);
+        Importe28.setVisible(false);
+        Folio27.setVisible(false);
+        Fecha27.setVisible(false);
+        Servicio27.setVisible(false);
+        Importe27.setVisible(false);
+        Folio26.setVisible(false);
+        Fecha26.setVisible(false);
+        Servicio26.setVisible(false);
+        Importe26.setVisible(false);
+        Folio25.setVisible(false);
+        Fecha25.setVisible(false);
+        Servicio25.setVisible(false);
+        Importe25.setVisible(false);
+        Folio24.setVisible(false);
+        Fecha24.setVisible(false);
+        Servicio24.setVisible(false);
+        Importe24.setVisible(false);
+        LDA1.setVisible(false);
+        LDA2.setVisible(false);
+        LDA3.setVisible(false);
+        LDA4.setVisible(false);
+        LDA5.setVisible(false);
+        LDA6.setVisible(false);
+        LDA7.setVisible(false);
+        LDA8.setVisible(false);
+        LDA9.setVisible(false);
         // </editor-fold>                        
 
     }
@@ -168,6 +230,23 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         double TotalPen = ImPen1 + ImPen2 + ImPen3 + ImPen4 + ImPen5 + ImPen6 + ImPen7 + ImPen8
                 + ImPen9 + ImPen10;
         TDIDP.setText("" + TotalPen);
+        //</editor-fold>
+        
+        // <editor-fold defaultstate="collapsed" desc="Suma Gastos">
+        double Gasto1 = Double.parseDouble(Importe20.getText());
+        double Gasto2 = Double.parseDouble(Importe21.getText());
+        double Gasto3 = Double.parseDouble(Importe22.getText());
+        double Gasto4 = Double.parseDouble(Importe23.getText());
+        double Gasto5 = Double.parseDouble(Importe24.getText());
+        double Gasto6 = Double.parseDouble(Importe25.getText());
+        double Gasto7 = Double.parseDouble(Importe26.getText());
+        double Gasto8 = Double.parseDouble(Importe27.getText());
+        double Gasto9 = Double.parseDouble(Importe28.getText());
+        double Gasto10 = Double.parseDouble(Importe29.getText());
+
+        double TotalGas = Gasto1 + Gasto2 + Gasto3 + Gasto4 + Gasto5 + Gasto6 + Gasto7 + Gasto8
+                + Gasto9 + Gasto10;
+        TDIDP.setText("" + TotalGas);
         //</editor-fold>
 
     }
@@ -2145,13 +2224,17 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                     .addComponent(Importe24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(Fecha24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Servicio25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Fecha25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(Folio25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Servicio25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Fecha25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(Importe25)
+                                .addGap(6, 6, 6)))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Folio26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
