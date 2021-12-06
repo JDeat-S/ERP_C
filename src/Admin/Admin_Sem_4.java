@@ -3069,6 +3069,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha21.setVisible(false);
         Servicio21.setVisible(false);
         Importe21.setVisible(false);
+        LDA1.setVisible(false);
         Menos18.setVisible(false);
         Mas18.setVisible(true);
         Mas19.setVisible(false);
@@ -3079,6 +3080,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha21.setVisible(true);
         Servicio21.setVisible(true);
         Importe21.setVisible(true);
+        LDA1.setVisible(true);
         Menos18.setVisible(true);
         Mas18.setVisible(false);
         Mas19.setVisible(true);
@@ -3195,7 +3197,14 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas23ActionPerformed
 
     private void Menos24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos24ActionPerformed
-        // TODO add your handling code here:
+        Folio27.setVisible(false);
+        Fecha27.setVisible(false);
+        Servicio27.setVisible(false);
+        Importe27.setVisible(false);
+        Menos23.setVisible(true);
+        Menos24.setVisible(false);
+        Mas24.setVisible(true);
+        Mas25.setVisible(false);
     }//GEN-LAST:event_Menos24ActionPerformed
 
     private void Mas24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas24ActionPerformed
@@ -3221,11 +3230,25 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas25ActionPerformed
 
     private void Menos25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos25ActionPerformed
-        // TODO add your handling code here:
+        Folio28.setVisible(false);
+        Fecha28.setVisible(false);
+        Servicio28.setVisible(false);
+        Importe28.setVisible(false);
+        Menos24.setVisible(true);
+        Menos25.setVisible(false);
+        Mas25.setVisible(true);
+        Mas26.setVisible(false);
     }//GEN-LAST:event_Menos25ActionPerformed
 
     private void Menos26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos26ActionPerformed
-        // TODO add your handling code here:
+        Folio29.setVisible(false);
+        Fecha29.setVisible(false);
+        Servicio29.setVisible(false);
+        Importe29.setVisible(false);
+        Menos25.setVisible(true);
+        Menos26.setVisible(false);
+        Mas26.setVisible(true);
+        //Mas27.setVisible(false);
     }//GEN-LAST:event_Menos26ActionPerformed
 
     private void Mas26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas26ActionPerformed
