@@ -2375,7 +2375,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                         .addGap(35, 35, 35)
                                         .addComponent(jLabel6))))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -2414,7 +2414,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                         .addComponent(Menos22)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Menos24)))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2425,7 +2425,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel7)
                         .addComponent(jLabel8)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
@@ -2452,7 +2451,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                        .addGap(34, 34, 34)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Mas25)
                             .addComponent(Mas26)
@@ -2474,7 +2473,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                             .addComponent(Menos22)
                             .addComponent(Menos23)
                             .addComponent(Menos24))))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jScrollPane4.setViewportView(jPanel3);
@@ -3091,6 +3090,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha22.setVisible(true);
         Servicio22.setVisible(true);
         Importe22.setVisible(true);
+        LDA2.setVisible(true);
         Menos18.setVisible(false);
         Menos19.setVisible(true);
         Mas19.setVisible(false);
@@ -3102,6 +3102,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha22.setVisible(false);
         Servicio22.setVisible(false);
         Importe22.setVisible(false);
+        LDA2.setVisible(false);
         Menos18.setVisible(true);
         Menos19.setVisible(false);
         Mas19.setVisible(true);
@@ -3113,6 +3114,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha23.setVisible(false);
         Servicio23.setVisible(false);
         Importe23.setVisible(false);
+        LDA3.setVisible(false);
         Menos19.setVisible(true);
         Menos20.setVisible(false);
         Mas20.setVisible(true);
@@ -3124,6 +3126,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha23.setVisible(true);
         Servicio23.setVisible(true);
         Importe23.setVisible(true);
+        LDA3.setVisible(true);
         Menos19.setVisible(false);
         Menos20.setVisible(true);
         Mas20.setVisible(false);
@@ -3135,6 +3138,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha24.setVisible(true);
         Servicio24.setVisible(true);
         Importe24.setVisible(true);
+        LDA4.setVisible(true);
         Menos20.setVisible(false);
         Menos21.setVisible(true);
         Mas21.setVisible(false);
@@ -3146,6 +3150,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha24.setVisible(false);
         Servicio24.setVisible(false);
         Importe24.setVisible(false);
+        LDA4.setVisible(false);
         Menos20.setVisible(true);
         Menos21.setVisible(false);
         Mas21.setVisible(true);
@@ -3157,6 +3162,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha25.setVisible(true);
         Servicio25.setVisible(true);
         Importe25.setVisible(true);
+        LDA5.setVisible(true);
         Menos21.setVisible(false);
         Menos22.setVisible(true);
         Mas22.setVisible(false);
@@ -3168,6 +3174,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha25.setVisible(false);
         Servicio25.setVisible(false);
         Importe25.setVisible(false);
+        LDA5.setVisible(false);
         Menos21.setVisible(true);
         Menos22.setVisible(false);
         Mas22.setVisible(true);
@@ -3179,6 +3186,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha26.setVisible(false);
         Servicio26.setVisible(false);
         Importe26.setVisible(false);
+        LDA6.setVisible(false);
         Menos22.setVisible(true);
         Menos23.setVisible(false);
         Mas23.setVisible(true);
@@ -3190,6 +3198,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha26.setVisible(true);
         Servicio26.setVisible(true);
         Importe26.setVisible(true);
+        LDA6.setVisible(true);
         Menos22.setVisible(false);
         Menos23.setVisible(true);
         Mas23.setVisible(false);
@@ -3201,6 +3210,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha27.setVisible(false);
         Servicio27.setVisible(false);
         Importe27.setVisible(false);
+        LDA7.setVisible(false);
         Menos23.setVisible(true);
         Menos24.setVisible(false);
         Mas24.setVisible(true);
@@ -3212,6 +3222,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha27.setVisible(true);
         Servicio27.setVisible(true);
         Importe27.setVisible(true);
+        LDA7.setVisible(true);
         Menos23.setVisible(false);
         Menos24.setVisible(true);
         Mas24.setVisible(false);
@@ -3223,6 +3234,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha28.setVisible(true);
         Servicio28.setVisible(true);
         Importe28.setVisible(true);
+        LDA8.setVisible(true);
         Menos24.setVisible(false);
         Menos25.setVisible(true);
         Mas25.setVisible(false);
@@ -3234,6 +3246,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha28.setVisible(false);
         Servicio28.setVisible(false);
         Importe28.setVisible(false);
+        LDA8.setVisible(false);
         Menos24.setVisible(true);
         Menos25.setVisible(false);
         Mas25.setVisible(true);
@@ -3245,6 +3258,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha29.setVisible(false);
         Servicio29.setVisible(false);
         Importe29.setVisible(false);
+        LDA9.setVisible(false);
         Menos25.setVisible(true);
         Menos26.setVisible(false);
         Mas26.setVisible(true);
@@ -3256,6 +3270,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha29.setVisible(true);
         Servicio29.setVisible(true);
         Importe29.setVisible(true);
+        LDA9.setVisible(true);
         Menos25.setVisible(false);
         Menos26.setVisible(true);
         Mas26.setVisible(false);
