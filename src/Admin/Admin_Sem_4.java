@@ -231,7 +231,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 + ImPen9 + ImPen10;
         TDIDP.setText("" + TotalPen);
         //</editor-fold>
-        
+
         // <editor-fold defaultstate="collapsed" desc="Suma Gastos">
         double Gasto1 = Double.parseDouble(Importe20.getText());
         double Gasto2 = Double.parseDouble(Importe21.getText());
@@ -246,7 +246,23 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
         double TotalGas = Gasto1 + Gasto2 + Gasto3 + Gasto4 + Gasto5 + Gasto6 + Gasto7 + Gasto8
                 + Gasto9 + Gasto10;
-        TDIDP.setText("" + TotalGas);
+        TDG.setText("" + TotalGas);
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Total SYP">
+        double TDSYP1 = Double.parseDouble(TDIDS.getText());
+        double TDSYP2 = Double.parseDouble(TDIDP.getText());
+
+        double TotalSYP = TDSYP1 + TDSYP2;
+        TDSYP.setText("" + TotalSYP);
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Diferencia TG y Gastos">
+        double DIF1 = Double.parseDouble(TDSYP.getText());
+        double DIF2 = Double.parseDouble(TDG.getText());
+
+        double TotalDif = DIF1 - DIF2;
+        DE.setText("" + TotalDif);
         //</editor-fold>
 
     }
@@ -889,7 +905,11 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Menos26 = new javax.swing.JButton();
         Mas26 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        TDG = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        TDSYP = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        DE = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -922,8 +942,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
         jLabel4.setText("Importe");
 
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel5.setText("Total de importe de servicios:");
 
+        TDIDS.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         TDIDS.setText("0");
 
         Folio1.setText("0");
@@ -1465,8 +1487,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
         jLabel17.setText("Importe");
 
+        jLabel18.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel18.setText("Total de importe de pensiones:");
 
+        TDIDP.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         TDIDP.setText("0");
 
         Mas9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/37770.png"))); // NOI18N
@@ -1873,7 +1897,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel17)
                                     .addComponent(Importe10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel2Layout.createSequentialGroup()
@@ -2415,9 +2439,11 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel7.setText("Total de Gastos:");
 
-        jLabel8.setText("0");
+        TDG.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        TDG.setText("0");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -2448,7 +2474,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel8))
+                                        .addComponent(TDG))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(Importe20, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2507,7 +2533,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                     .addComponent(jLabel19)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel7)
-                        .addComponent(jLabel8)))
+                        .addComponent(TDG)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
@@ -2561,6 +2587,14 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
         jScrollPane4.setViewportView(jPanel3);
 
+        jLabel8.setText("Total Servicios y Pensiones:");
+
+        TDSYP.setText("0");
+
+        jLabel9.setText("Debe entregar.");
+
+        DE.setText("0");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -2573,21 +2607,39 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
-                .addContainerGap(478, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TDSYP))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(DE)))))
+                .addContainerGap(440, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(TDSYP))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(DE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(310, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -2611,7 +2663,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 673, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -3107,43 +3159,43 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas17ActionPerformed
 
     private void Importe20KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe20KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe20KeyReleased
 
     private void Importe21KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe21KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe21KeyReleased
 
     private void Importe22KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe22KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe22KeyReleased
 
     private void Importe23KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe23KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe23KeyReleased
 
     private void Importe24KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe24KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe24KeyReleased
 
     private void Importe25KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe25KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe25KeyReleased
 
     private void Importe26KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe26KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe26KeyReleased
 
     private void Importe27KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe27KeyPressed
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe27KeyPressed
 
     private void Importe28KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe28KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe28KeyReleased
 
     private void Importe29KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe29KeyReleased
-        // TODO add your handling code here:
+        Imtotal();
     }//GEN-LAST:event_Importe29KeyReleased
 
     private void Menos18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos18ActionPerformed
@@ -3394,6 +3446,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel DE;
     private com.toedter.calendar.JDateChooser Fecha;
     private com.toedter.calendar.JDateChooser Fecha1;
     private com.toedter.calendar.JDateChooser Fecha10;
@@ -3580,8 +3633,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Servicio7;
     private javax.swing.JComboBox<String> Servicio8;
     private javax.swing.JComboBox<String> Servicio9;
+    private javax.swing.JLabel TDG;
     private javax.swing.JLabel TDIDP;
     private javax.swing.JLabel TDIDS;
+    private javax.swing.JLabel TDSYP;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -3603,6 +3658,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
