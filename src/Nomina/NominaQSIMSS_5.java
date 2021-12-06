@@ -3835,7 +3835,7 @@ public final class NominaQSIMSS_5 extends javax.swing.JFrame {
             DVT.setText("0");
             apy.setText("0");
             Lugar.setText("");
-            DI.setText("26.98");
+            DI.setText("0");
             cda.setText("0");
             Presp.setText("0");
             obs.setText("");
@@ -16263,7 +16263,7 @@ public final class NominaQSIMSS_5 extends javax.swing.JFrame {
         DVT.setText("0");
         apy.setText("0");
         Lugar.setText("");
-        DI.setText("26.98");
+        DI.setText("0");
         cda.setText("0");
         Presp.setText("0");
         obs.setText("");
