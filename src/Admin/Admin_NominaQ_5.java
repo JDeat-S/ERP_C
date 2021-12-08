@@ -3016,7 +3016,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Adicionales");//48
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
-            modelo.addColumn("Desc b");
+            modelo.addColumn("Desc IMSS");
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -4557,7 +4557,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         botonWeb17 = new botones.BotonWeb();
         jLabel33 = new javax.swing.JLabel();
         MTDsum2 = new javax.swing.JLabel();
-        Imprimir3 = new javax.swing.JButton();
+        Imprimir2 = new javax.swing.JButton();
         FFDPpag2 = new javax.swing.JComboBox<>();
         TPagos3 = new javax.swing.JScrollPane();
         jPanel31 = new javax.swing.JPanel();
@@ -4581,7 +4581,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         botonWeb18 = new botones.BotonWeb();
         jLabel34 = new javax.swing.JLabel();
         MTDsum3 = new javax.swing.JLabel();
-        Imprimir4 = new javax.swing.JButton();
+        Imprimir3 = new javax.swing.JButton();
         FFDPpag3 = new javax.swing.JComboBox<>();
         TPagos4 = new javax.swing.JScrollPane();
         jPanel32 = new javax.swing.JPanel();
@@ -4605,7 +4605,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         botonWeb19 = new botones.BotonWeb();
         jLabel35 = new javax.swing.JLabel();
         MTDsum4 = new javax.swing.JLabel();
-        Imprimir5 = new javax.swing.JButton();
+        Imprimir4 = new javax.swing.JButton();
         FFDPpag4 = new javax.swing.JComboBox<>();
         TPagos5 = new javax.swing.JScrollPane();
         jPanel33 = new javax.swing.JPanel();
@@ -4627,7 +4627,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         BAppag5 = new javax.swing.JTextField();
         Bampag5 = new javax.swing.JTextField();
         botonWeb20 = new botones.BotonWeb();
-        Imprimir6 = new javax.swing.JButton();
+        Imprimir5 = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         MTDsum5 = new javax.swing.JLabel();
         FFDPpag5 = new javax.swing.JComboBox<>();
@@ -4653,7 +4653,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         botonWeb21 = new botones.BotonWeb();
         jLabel37 = new javax.swing.JLabel();
         MTDsum6 = new javax.swing.JLabel();
-        Imprimir7 = new javax.swing.JButton();
+        Imprimir6 = new javax.swing.JButton();
         FFDPpag6 = new javax.swing.JComboBox<>();
         TPagos7 = new javax.swing.JScrollPane();
         jPanel35 = new javax.swing.JPanel();
@@ -4677,7 +4677,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         botonWeb22 = new botones.BotonWeb();
         jLabel38 = new javax.swing.JLabel();
         MTDsum7 = new javax.swing.JLabel();
-        Imprimir8 = new javax.swing.JButton();
+        Imprimir7 = new javax.swing.JButton();
         FFDPpag7 = new javax.swing.JComboBox<>();
         TPagos8 = new javax.swing.JScrollPane();
         jPanel36 = new javax.swing.JPanel();
@@ -4701,7 +4701,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         botonWeb23 = new botones.BotonWeb();
         jLabel39 = new javax.swing.JLabel();
         MTDsum8 = new javax.swing.JLabel();
-        Imprimir9 = new javax.swing.JButton();
+        Imprimir8 = new javax.swing.JButton();
         jComboBox18 = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
@@ -8756,10 +8756,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         MTDsum2.setText("0");
 
-        Imprimir3.setText("Imprimir tabla");
-        Imprimir3.addActionListener(new java.awt.event.ActionListener() {
+        Imprimir2.setText("Imprimir tabla");
+        Imprimir2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Imprimir3ActionPerformed(evt);
+                Imprimir2ActionPerformed(evt);
             }
         });
 
@@ -8811,7 +8811,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MTDsum2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Imprimir3))
+                        .addComponent(Imprimir2))
                     .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(1898, Short.MAX_VALUE))
         );
@@ -8843,7 +8843,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel33)
                         .addComponent(MTDsum2)
-                        .addComponent(Imprimir3))
+                        .addComponent(Imprimir2))
                     .addComponent(CS16))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -8946,10 +8946,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         MTDsum3.setText("0");
 
-        Imprimir4.setText("Imprimir tabla");
-        Imprimir4.addActionListener(new java.awt.event.ActionListener() {
+        Imprimir3.setText("Imprimir tabla");
+        Imprimir3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Imprimir4ActionPerformed(evt);
+                Imprimir3ActionPerformed(evt);
             }
         });
 
@@ -9001,7 +9001,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MTDsum3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Imprimir4))
+                        .addComponent(Imprimir3))
                     .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(1898, Short.MAX_VALUE))
         );
@@ -9033,7 +9033,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel34)
                         .addComponent(MTDsum3)
-                        .addComponent(Imprimir4))
+                        .addComponent(Imprimir3))
                     .addComponent(CS17))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -9136,10 +9136,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         MTDsum4.setText("0");
 
-        Imprimir5.setText("Imprimir tabla");
-        Imprimir5.addActionListener(new java.awt.event.ActionListener() {
+        Imprimir4.setText("Imprimir tabla");
+        Imprimir4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Imprimir5ActionPerformed(evt);
+                Imprimir4ActionPerformed(evt);
             }
         });
 
@@ -9191,7 +9191,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MTDsum4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Imprimir5))
+                        .addComponent(Imprimir4))
                     .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(1898, Short.MAX_VALUE))
         );
@@ -9223,7 +9223,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel35)
                         .addComponent(MTDsum4)
-                        .addComponent(Imprimir5))
+                        .addComponent(Imprimir4))
                     .addComponent(CS18))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -9322,10 +9322,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         botonWeb20.setToolTipText("");
         botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
 
-        Imprimir6.setText("Imprimir tabla");
-        Imprimir6.addActionListener(new java.awt.event.ActionListener() {
+        Imprimir5.setText("Imprimir tabla");
+        Imprimir5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Imprimir6ActionPerformed(evt);
+                Imprimir5ActionPerformed(evt);
             }
         });
 
@@ -9381,7 +9381,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MTDsum5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Imprimir6))
+                        .addComponent(Imprimir5))
                     .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(1898, Short.MAX_VALUE))
         );
@@ -9413,7 +9413,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel36)
                         .addComponent(MTDsum5)
-                        .addComponent(Imprimir6))
+                        .addComponent(Imprimir5))
                     .addComponent(CS19))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -9516,10 +9516,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         MTDsum6.setText("0");
 
-        Imprimir7.setText("Imprimir tabla");
-        Imprimir7.addActionListener(new java.awt.event.ActionListener() {
+        Imprimir6.setText("Imprimir tabla");
+        Imprimir6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Imprimir7ActionPerformed(evt);
+                Imprimir6ActionPerformed(evt);
             }
         });
 
@@ -9571,7 +9571,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MTDsum6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Imprimir7))
+                        .addComponent(Imprimir6))
                     .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(1898, Short.MAX_VALUE))
         );
@@ -9603,7 +9603,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel37)
                         .addComponent(MTDsum6)
-                        .addComponent(Imprimir7))
+                        .addComponent(Imprimir6))
                     .addComponent(CS20))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -9706,10 +9706,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         MTDsum7.setText("0");
 
-        Imprimir8.setText("Imprimir tabla");
-        Imprimir8.addActionListener(new java.awt.event.ActionListener() {
+        Imprimir7.setText("Imprimir tabla");
+        Imprimir7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Imprimir8ActionPerformed(evt);
+                Imprimir7ActionPerformed(evt);
             }
         });
 
@@ -9761,7 +9761,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MTDsum7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Imprimir8))
+                        .addComponent(Imprimir7))
                     .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(1898, Short.MAX_VALUE))
         );
@@ -9793,7 +9793,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel38)
                         .addComponent(MTDsum7)
-                        .addComponent(Imprimir8))
+                        .addComponent(Imprimir7))
                     .addComponent(CS21))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -9896,10 +9896,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         MTDsum8.setText("0");
 
-        Imprimir9.setText("Imprimir tabla");
-        Imprimir9.addActionListener(new java.awt.event.ActionListener() {
+        Imprimir8.setText("Imprimir tabla");
+        Imprimir8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Imprimir9ActionPerformed(evt);
+                Imprimir8ActionPerformed(evt);
             }
         });
 
@@ -9951,7 +9951,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MTDsum8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Imprimir9))
+                        .addComponent(Imprimir8))
                     .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(1898, Short.MAX_VALUE))
         );
@@ -9983,7 +9983,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel39)
                         .addComponent(MTDsum8)
-                        .addComponent(Imprimir9))
+                        .addComponent(Imprimir8))
                     .addComponent(CS22))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -21712,74 +21712,302 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         int FP = FiltrosP.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total: " +
-                    dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total: "
+                    + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 1) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Apellido P " +
-                    BAppag.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Apellido P "
+                    + BAppag.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 2) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Apellido M " +
-                    Bampag.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Apellido M "
+                    + Bampag.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 3) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Nombre(s) " +
-                    busp.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Nombre(s) "
+                    + busp.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 4) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total del servicio " +
-                    FiltroServP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total del servicio "
+                    + FiltroServP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 5) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total de la " +
-                    FiltroQP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total de la "
+                    + FiltroQP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
-
+        if (FP == 6) {
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro # Lista "
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+        }
     }//GEN-LAST:event_ImprimirActionPerformed
 
     private void Imprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir1ActionPerformed
-        DecimalFormat df = new DecimalFormat("#.00");
-        utilJTablePrint(pago1, getTitle(), "Monto total de la " + FiltroQP1.getSelectedItem().toString() + " en foraneos puebla: " + df.format(Double.parseDouble(this.MTDsum1.getText())), true);
+        int FP = FiltrosP1.getSelectedIndex();
+        DecimalFormat dimp = new DecimalFormat("#.00");
+        if (FP == 0) {
+            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total: "
+                    + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+        }
+        if (FP == 1) {
+            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro Apellido P "
+                    + BAppag1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+        }
+        if (FP == 2) {
+            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro Apellido M "
+                    + Bampag1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+        }
+        if (FP == 3) {
+            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro Nombre(s) "
+                    + busp1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+        }
+        if (FP == 4) {
+            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total del servicio "
+                    + FiltroServP1.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+        }
+        if (FP == 5) {
+            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total de la "
+                    + FiltroQP1.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+        }
+        if (FP == 6) {
+            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro # Lista "
+                    + filtroNDFP1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+        }
     }//GEN-LAST:event_Imprimir1ActionPerformed
 
+    private void Imprimir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir2ActionPerformed
+        int FP = FiltrosP2.getSelectedIndex();
+        DecimalFormat dimp = new DecimalFormat("#.00");
+        if (FP == 0) {
+            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total: "
+                    + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+        }
+        if (FP == 1) {
+            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro Apellido P "
+                    + BAppag2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+        }
+        if (FP == 2) {
+            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro Apellido M "
+                    + Bampag2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+        }
+        if (FP == 3) {
+            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro Nombre(s) "
+                    + busp2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+        }
+        if (FP == 4) {
+            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total del servicio "
+                    + FiltroServP2.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+        }
+        if (FP == 5) {
+            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total de la "
+                    + FiltroQP2.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+        }
+        if (FP == 6) {
+            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro # Lista "
+                    + filtroNDFP2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+        }
+    }//GEN-LAST:event_Imprimir2ActionPerformed
+
     private void Imprimir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir3ActionPerformed
-        DecimalFormat df = new DecimalFormat("#.00");
-        utilJTablePrint(pago2, getTitle(), "Monto total de la " + FiltroQP2.getSelectedItem().toString() + " en foraneos toluca: " + df.format(Double.parseDouble(this.MTDsum2.getText())), true);
+        int FP = FiltrosP3.getSelectedIndex();
+        DecimalFormat dimp = new DecimalFormat("#.00");
+        if (FP == 0) {
+            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total: "
+                    + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+        }
+        if (FP == 1) {
+            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total con filtro Apellido P "
+                    + BAppag3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+        }
+        if (FP == 2) {
+            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total con filtro Apellido M "
+                    + Bampag3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+        }
+        if (FP == 3) {
+            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total con filtro Nombre(s) "
+                    + busp3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+        }
+        if (FP == 4) {
+            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total del servicio "
+                    + FiltroServP3.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+        }
+        if (FP == 5) {
+            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total de la "
+                    + FiltroQP3.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+        }
+        if (FP == 6) {
+            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total con filtro # Lista "
+                    + filtroNDFP3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+        }
     }//GEN-LAST:event_Imprimir3ActionPerformed
 
     private void Imprimir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir4ActionPerformed
+        
+        int FP = FiltrosP4.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago3, getTitle(), "Monto total de la " + FiltroQP3.getSelectedItem().toString() + " en norte: " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+        if (FP == 0) {
+            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total: "
+                    + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+        }
+        if (FP == 1) {
+            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total con filtro Apellido P "
+                    + BAppag4.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+        }
+        if (FP == 2) {
+            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total con filtro Apellido M "
+                    + Bampag4.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+        }
+        if (FP == 3) {
+            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total con filtro Nombre(s) "
+                    + busp4.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+        }
+        if (FP == 4) {
+            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total del servicio "
+                    + FiltroServP4.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+        }
+        if (FP == 5) {
+            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total de la "
+                    + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+        }
+        if (FP == 6) {
+            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total con filtro # Lista "
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+        }
     }//GEN-LAST:event_Imprimir4ActionPerformed
 
     private void Imprimir5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir5ActionPerformed
+        int FP = FiltrosP5.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago4, getTitle(), "Monto total de la " + FiltroQP4.getSelectedItem().toString() + " en poniente: " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+        if (FP == 0) {
+            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total: "
+                    + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+        }
+        if (FP == 1) {
+            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total con filtro Apellido P "
+                    + BAppag5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+        }
+        if (FP == 2) {
+            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total con filtro Apellido M "
+                    + Bampag5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+        }
+        if (FP == 3) {
+            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total con filtro Nombre(s) "
+                    + busp5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+        }
+        if (FP == 4) {
+            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total del servicio "
+                    + FiltroServP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+        }
+        if (FP == 5) {
+            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total de la "
+                    + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+        }
+        if (FP == 6) {
+            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total con filtro # Lista "
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+        }
     }//GEN-LAST:event_Imprimir5ActionPerformed
 
     private void Imprimir6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir6ActionPerformed
+        int FP = FiltrosP6.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago5, getTitle(), "Monto total de la " + FiltroQP5.getSelectedItem().toString() + " en oficina: " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+        if (FP == 0) {
+            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total: "
+                    + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+        }
+        if (FP == 1) {
+            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total con filtro Apellido P "
+                    + BAppag6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+        }
+        if (FP == 2) {
+            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total con filtro Apellido M "
+                    + Bampag6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+        }
+        if (FP == 3) {
+            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total con filtro Nombre(s) "
+                    + busp6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+        }
+        if (FP == 4) {
+            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total del servicio "
+                    + FiltroServP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+        }
+        if (FP == 5) {
+            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total de la "
+                    + FiltroQP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+        }
+        if (FP == 6) {
+            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total con filtro # Lista "
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+        }
     }//GEN-LAST:event_Imprimir6ActionPerformed
 
     private void Imprimir7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir7ActionPerformed
+       int FP = FiltrosP7.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago6, getTitle(), "Monto total de la " + FiltroQP6.getSelectedItem().toString() + " en sur 1: " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+        if (FP == 0) {
+            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total: "
+                    + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+        }
+        if (FP == 1) {
+            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total con filtro Apellido P "
+                    + BAppag7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+        }
+        if (FP == 2) {
+            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total con filtro Apellido M "
+                    + Bampag7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+        }
+        if (FP == 3) {
+            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total con filtro Nombre(s) "
+                    + busp7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+        }
+        if (FP == 4) {
+            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total del servicio "
+                    + FiltroServP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+        }
+        if (FP == 5) {
+            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total de la "
+                    + FiltroQP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+        }
+        if (FP == 6) {
+            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total con filtro # Lista "
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+        }
     }//GEN-LAST:event_Imprimir7ActionPerformed
 
     private void Imprimir8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir8ActionPerformed
+        int FP = FiltrosP8.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago7, getTitle(), "Monto total de la " + FiltroQP7.getSelectedItem().toString() + " en Sur 2: " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+        if (FP == 0) {
+            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total: "
+                    + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+        }
+        if (FP == 1) {
+            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Apellido P "
+                    + BAppag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+        }
+        if (FP == 2) {
+            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Apellido M "
+                    + Bampag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+        }
+        if (FP == 3) {
+            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Nombre(s) "
+                    + busp8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+        }
+        if (FP == 4) {
+            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total del servicio "
+                    + FiltroServP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+        }
+        if (FP == 5) {
+            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total de la "
+                    + FiltroQP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+        }
+        if (FP == 6) {
+            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro # Lista "
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+        }
     }//GEN-LAST:event_Imprimir8ActionPerformed
 
-    private void Imprimir9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir9ActionPerformed
-        DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago8, getTitle(), "Monto total de la " + FiltroQP8.getSelectedItem().toString() + " en Santander corporativo quincenal: " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
-    }//GEN-LAST:event_Imprimir9ActionPerformed
-
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Admin_NominaQSIMSS_5 regr = new Admin_NominaQSIMSS_5();
+        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -22380,13 +22608,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Grua;
     private javax.swing.JButton Imprimir;
     private javax.swing.JButton Imprimir1;
+    private javax.swing.JButton Imprimir2;
     private javax.swing.JButton Imprimir3;
     private javax.swing.JButton Imprimir4;
     private javax.swing.JButton Imprimir5;
     private javax.swing.JButton Imprimir6;
     private javax.swing.JButton Imprimir7;
     private javax.swing.JButton Imprimir8;
-    private javax.swing.JButton Imprimir9;
     private javax.swing.JLabel LabelBE;
     private javax.swing.JLabel LabelBE1;
     private javax.swing.JLabel LabelBE2;

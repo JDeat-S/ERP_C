@@ -10080,7 +10080,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir2" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane30" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
@@ -10117,7 +10117,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS16" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -10393,12 +10393,12 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir3">
+                        <Component class="javax.swing.JButton" name="Imprimir2">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir3ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir2ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FFDPpag2">
@@ -10486,7 +10486,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane31" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
@@ -10523,7 +10523,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS17" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -10799,12 +10799,12 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir4">
+                        <Component class="javax.swing.JButton" name="Imprimir3">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir4ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir3ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FFDPpag3">
@@ -10892,7 +10892,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir4" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane32" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
@@ -10929,7 +10929,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS18" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -11181,12 +11181,12 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir5">
+                        <Component class="javax.swing.JButton" name="Imprimir4">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir5ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir4ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FFDPpag4">
@@ -11274,7 +11274,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir6" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir5" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane33" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
@@ -11311,7 +11311,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS19" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -11577,12 +11577,12 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir6">
+                        <Component class="javax.swing.JButton" name="Imprimir5">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir6ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir5ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel36">
@@ -11680,7 +11680,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir7" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir6" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane34" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
@@ -11717,7 +11717,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS20" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -11993,12 +11993,12 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir7">
+                        <Component class="javax.swing.JButton" name="Imprimir6">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir7ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir6ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FFDPpag6">
@@ -12086,7 +12086,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir7" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane35" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
@@ -12123,7 +12123,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS21" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -12399,12 +12399,12 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir8">
+                        <Component class="javax.swing.JButton" name="Imprimir7">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir8ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir7ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FFDPpag7">
@@ -12492,7 +12492,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir8" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane36" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
@@ -12529,7 +12529,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS22" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -12805,12 +12805,12 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir9">
+                        <Component class="javax.swing.JButton" name="Imprimir8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir9ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir8ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="jComboBox18">
