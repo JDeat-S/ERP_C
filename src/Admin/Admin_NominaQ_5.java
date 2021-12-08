@@ -8383,11 +8383,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         });
 
         FFDPpag8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-        FFDPpag8.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FFDPpag8ItemStateChanged(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -8579,11 +8574,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         });
 
         FFDPpag1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-        FFDPpag1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FFDPpag1ItemStateChanged(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -16197,13 +16187,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void BampagKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BampagKeyReleased
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_BampagKeyReleased
 
     private void BAppagKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppagKeyReleased
 
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_BAppagKeyReleased
 
     private void FiltrosPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosPItemStateChanged
@@ -16371,17 +16361,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void FiltroQPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQPItemStateChanged
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_FiltroQPItemStateChanged
 
     private void filtroNDFPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFPKeyReleased
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_filtroNDFPKeyReleased
 
     private void FiltroServPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServPItemStateChanged
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_FiltroServPItemStateChanged
 
     private void FiltroSZPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZPItemStateChanged
@@ -16526,7 +16516,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void busp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp1KeyReleased
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_busp1KeyReleased
 
     private void CS15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS15ActionPerformed
@@ -16546,22 +16536,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroServP1.setModel(modelServicio);
         }
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_FiltroSZP1ItemStateChanged
 
     private void FiltroServP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP1ItemStateChanged
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_FiltroServP1ItemStateChanged
 
     private void filtroNDFP1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP1KeyReleased
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_filtroNDFP1KeyReleased
 
     private void FiltroQP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP1ItemStateChanged
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_FiltroQP1ItemStateChanged
 
     private void FiltrosP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP1ItemStateChanged
@@ -16728,17 +16718,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void BAppag1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag1KeyReleased
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_BAppag1KeyReleased
 
     private void Bampag1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag1KeyReleased
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_Bampag1KeyReleased
 
     private void busp2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp2KeyReleased
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_busp2KeyReleased
 
     private void CS16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS16ActionPerformed
@@ -16758,22 +16748,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroServP2.setModel(modelServicio);
         }
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_FiltroSZP2ItemStateChanged
 
     private void FiltroServP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP2ItemStateChanged
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_FiltroServP2ItemStateChanged
 
     private void filtroNDFP2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP2KeyReleased
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_filtroNDFP2KeyReleased
 
     private void FiltroQP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP2ItemStateChanged
         FunMD();
-        sumaDep();        
+        sumaDep();
     }//GEN-LAST:event_FiltroQP2ItemStateChanged
 
     private void FiltrosP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP2ItemStateChanged
@@ -16942,14 +16932,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void BAppag2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag2KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_BAppag2KeyReleased
 
     private void Bampag2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag2KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Bampag2KeyReleased
 
     private void busp3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp3KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_busp3KeyReleased
 
     private void CS17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS17ActionPerformed
@@ -16969,18 +16962,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroServP3.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSZP3ItemStateChanged
 
     private void FiltroServP3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP3ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroServP3ItemStateChanged
 
     private void filtroNDFP3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP3KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_filtroNDFP3KeyReleased
 
     private void FiltroQP3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP3ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQP3ItemStateChanged
 
     private void FiltrosP3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP3ItemStateChanged
@@ -17148,14 +17145,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void BAppag3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag3KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_BAppag3KeyReleased
 
     private void Bampag3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag3KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Bampag3KeyReleased
 
     private void busp4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp4KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_busp4KeyReleased
 
     private void CS18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS18ActionPerformed
@@ -17175,18 +17175,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroServP4.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSZP4ItemStateChanged
 
     private void FiltroServP4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP4ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroServP4ItemStateChanged
 
     private void filtroNDFP4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP4KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_filtroNDFP4KeyReleased
 
     private void FiltroQP4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP4ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQP4ItemStateChanged
 
     private void FiltrosP4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP4ItemStateChanged
@@ -17355,14 +17359,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void BAppag4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag4KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_BAppag4KeyReleased
 
     private void Bampag4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag4KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Bampag4KeyReleased
 
     private void busp5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp5KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_busp5KeyReleased
 
     private void CS19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS19ActionPerformed
@@ -17382,18 +17389,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroServP5.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSZP5ItemStateChanged
 
     private void FiltroServP5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP5ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroServP5ItemStateChanged
 
     private void filtroNDFP5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP5KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_filtroNDFP5KeyReleased
 
     private void FiltroQP5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP5ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQP5ItemStateChanged
 
     private void FiltrosP5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP5ItemStateChanged
@@ -17560,14 +17571,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void BAppag5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag5KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_BAppag5KeyReleased
 
     private void Bampag5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag5KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Bampag5KeyReleased
 
     private void busp6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp6KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_busp6KeyReleased
 
     private void CS20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS20ActionPerformed
@@ -17587,18 +17601,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroServP6.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSZP6ItemStateChanged
 
     private void FiltroServP6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP6ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroServP6ItemStateChanged
 
     private void filtroNDFP6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP6KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_filtroNDFP6KeyReleased
 
     private void FiltroQP6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP6ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQP6ItemStateChanged
 
     private void FiltrosP6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP6ItemStateChanged
@@ -17766,14 +17784,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void BAppag6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag6KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_BAppag6KeyReleased
 
     private void Bampag6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag6KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Bampag6KeyReleased
 
     private void busp7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp7KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_busp7KeyReleased
 
     private void CS21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS21ActionPerformed
@@ -17793,18 +17814,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroServP7.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSZP7ItemStateChanged
 
     private void FiltroServP7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP7ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroServP7ItemStateChanged
 
     private void filtroNDFP7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP7KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_filtroNDFP7KeyReleased
 
     private void FiltroQP7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP7ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQP7ItemStateChanged
 
     private void FiltrosP7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP7ItemStateChanged
@@ -17972,14 +17997,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void BAppag7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag7KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_BAppag7KeyReleased
 
     private void Bampag7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag7KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Bampag7KeyReleased
 
     private void busp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp8KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_busp8KeyReleased
 
     private void CS22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS22ActionPerformed
@@ -18000,18 +18028,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroServP8.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSZP8ItemStateChanged
 
     private void FiltroServP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP8ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroServP8ItemStateChanged
 
     private void filtroNDFP8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP8KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_filtroNDFP8KeyReleased
 
     private void FiltroQP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP8ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQP8ItemStateChanged
 
     private void FiltrosP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP8ItemStateChanged
@@ -18179,22 +18211,27 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void BAppag8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag8KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_BAppag8KeyReleased
 
     private void Bampag8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag8KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Bampag8KeyReleased
 
     private void FAmT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT8KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT8KeyReleased
 
     private void FApT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT8KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT8KeyReleased
 
     private void FiltroNDF8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF8KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF8KeyReleased
 
     private void FiltrosTD8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD8ItemStateChanged
@@ -18360,6 +18397,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void FiltroQuincenanomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina8ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina8ItemStateChanged
 
     private void CS24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS24ActionPerformed
@@ -18391,6 +18429,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void Nominab8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab8KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab8KeyReleased
 
     private void Tnom8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom8MouseClicked
@@ -18551,14 +18590,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void FAmT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT7KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT7KeyReleased
 
     private void FApT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT7KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT7KeyReleased
 
     private void FiltroNDF7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF7KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF7KeyReleased
 
     private void FiltrosTD7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD7ItemStateChanged
@@ -18731,14 +18773,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroSnomina7.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FZservicio7ItemStateChanged
 
     private void FiltroQuincenanomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina7ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina7ItemStateChanged
 
     private void FiltroSnomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina7ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina7ItemStateChanged
 
     private void CS14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS14ActionPerformed
@@ -18766,10 +18811,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Eliminar7ActionPerformed
 
     private void Nominab7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab7KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab7KeyReleased
 
     private void Tnom7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom7MouseClicked
@@ -18930,14 +18977,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void FAmT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT6KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT6KeyReleased
 
     private void FApT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT6KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT6KeyReleased
 
     private void FiltroNDF6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF6KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF6KeyReleased
 
     private void FiltrosTD6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD6ItemStateChanged
@@ -19110,14 +19160,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroSnomina6.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FZservicio6ItemStateChanged
 
     private void FiltroQuincenanomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina6ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina6ItemStateChanged
 
     private void FiltroSnomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina6ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina6ItemStateChanged
 
     private void CS13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS13ActionPerformed
@@ -19144,10 +19197,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Eliminar6ActionPerformed
 
     private void Nominab6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab6KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab6KeyReleased
 
     private void Tnom6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom6MouseClicked
@@ -19308,14 +19363,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void FAmT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT5KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT5KeyReleased
 
     private void FApT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT5KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT5KeyReleased
 
     private void FiltroNDF5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF5KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF5KeyReleased
 
     private void FiltrosTD5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD5ItemStateChanged
@@ -19488,14 +19546,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroSnomina5.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FZservicio5ItemStateChanged
 
     private void FiltroQuincenanomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina5ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina5ItemStateChanged
 
     private void FiltroSnomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina5ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina5ItemStateChanged
 
     private void CS12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS12ActionPerformed
@@ -19523,6 +19584,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Eliminar5ActionPerformed
 
     private void Nominab5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab5KeyReleased
@@ -19687,14 +19749,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void FAmT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT4KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT4KeyReleased
 
     private void FApT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT4KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT4KeyReleased
 
     private void FiltroNDF4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF4KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF4KeyReleased
 
     private void FiltrosTD4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD4ItemStateChanged
@@ -19867,14 +19932,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroSnomina4.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FZservicio4ItemStateChanged
 
     private void FiltroQuincenanomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina4ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina4ItemStateChanged
 
     private void FiltroSnomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina4ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina4ItemStateChanged
 
     private void CS11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS11ActionPerformed
@@ -19906,6 +19974,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void Nominab4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab4KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab4KeyReleased
 
     private void Tnom4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom4MouseClicked
@@ -20066,14 +20135,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void FAmT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT3KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT3KeyReleased
 
     private void FApT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT3KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT3KeyReleased
 
     private void FiltroNDF3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF3KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF3KeyReleased
 
     private void FiltrosTD3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD3ItemStateChanged
@@ -20246,14 +20318,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroSnomina3.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FZservicio3ItemStateChanged
 
     private void FiltroQuincenanomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina3ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina3ItemStateChanged
 
     private void FiltroSnomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina3ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina3ItemStateChanged
 
     private void CS10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS10ActionPerformed
@@ -20285,6 +20360,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void Nominab3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab3KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab3KeyReleased
 
     private void Tnom3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom3MouseClicked
@@ -20445,14 +20521,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void FAmT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT2KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT2KeyReleased
 
     private void FApT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT2KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT2KeyReleased
 
     private void FiltroNDF2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF2KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF2KeyReleased
 
     private void FiltrosTD2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD2ItemStateChanged
@@ -20625,14 +20704,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroSnomina2.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FZservicio2ItemStateChanged
 
     private void FiltroQuincenanomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina2ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina2ItemStateChanged
 
     private void FiltroSnomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina2ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina2ItemStateChanged
 
     private void CS9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS9ActionPerformed
@@ -20660,10 +20742,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Eliminar2ActionPerformed
 
     private void Nominab2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab2KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab2KeyReleased
 
     private void Tnom2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom2MouseClicked
@@ -20824,14 +20908,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void FAmT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT1KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT1KeyReleased
 
     private void FApT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT1KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT1KeyReleased
 
     private void FiltroNDF1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF1KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF1KeyReleased
 
     private void FiltrosTD1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD1ItemStateChanged
@@ -21004,14 +21091,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroSnomina1.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FZservicio1ItemStateChanged
 
     private void FiltroQuincenanomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina1ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina1ItemStateChanged
 
     private void FiltroSnomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina1ItemStateChanged
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina1ItemStateChanged
 
     private void CS8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS8ActionPerformed
@@ -21043,6 +21133,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void Nominab1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab1KeyReleased
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab1KeyReleased
 
     private void Tnom1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom1MouseClicked
@@ -21202,18 +21293,18 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tnom1MouseClicked
 
     private void FAmTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmTKeyReleased
-
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmTKeyReleased
 
     private void FApTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApTKeyReleased
-
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApTKeyReleased
 
     private void FiltroNDFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDFKeyReleased
-
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDFKeyReleased
 
     private void FiltrosTDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTDItemStateChanged
@@ -21390,13 +21481,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FZservicioItemStateChanged
 
     private void FiltroQuincenanominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanominaItemStateChanged
-
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanominaItemStateChanged
 
     private void FiltroSnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnominaItemStateChanged
-
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnominaItemStateChanged
 
     private void CS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2ActionPerformed
@@ -21618,8 +21709,33 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PRESActionPerformed
 
     private void ImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirActionPerformed
+        int FP = FiltrosP.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en foraneos acapulco: " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+        if (FP == 0) {
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total: " +
+                    dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+        }
+        if (FP == 1) {
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Apellido P " +
+                    BAppag.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+        }
+        if (FP == 2) {
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Apellido M " +
+                    Bampag.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+        }
+        if (FP == 3) {
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Nombre(s) " +
+                    busp.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+        }
+        if (FP == 4) {
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total del servicio " +
+                    FiltroServP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+        }
+        if (FP == 5) {
+            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total de la " +
+                    FiltroQP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+        }
+
     }//GEN-LAST:event_ImprimirActionPerformed
 
     private void Imprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir1ActionPerformed
@@ -21667,16 +21783,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void FFDPpag8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FFDPpag8ItemStateChanged
-        FunMD();
-        sumaDep();        
-    }//GEN-LAST:event_FFDPpag8ItemStateChanged
-
-    private void FFDPpag1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FFDPpag1ItemStateChanged
-        FunMD();
-        sumaDep();        
-    }//GEN-LAST:event_FFDPpag1ItemStateChanged
 
     /**
      * @param args the command line arguments
