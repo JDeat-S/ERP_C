@@ -463,20 +463,18 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         FiltroNDF8.setVisible(false);
         LabelBNDF8.setVisible(false);
         //</editor-fold>
-
+        sumaDep();
         setIconImage(new ImageIcon(Admin_NominaQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         sharecdanom();
         sharepresnom();
         shareODTnom();
-        sumaDep();
     }
 
     @SuppressWarnings("unchecked")
 
     public void sumaDep() {
-        //habilitar cuando tengan nominas
-        double t = 0;
-        double p;
+        double t = 0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t5 = 0, t6 = 0, t7 = 0, t8 = 0;
+        double p, p1, p2, p3, p4, p5, p6, p7, p8;
         if (pago.getRowCount() > 0) {
             for (int i = 0; i < pago.getRowCount(); i++) {
                 p = Double.parseDouble(pago.getValueAt(i, 7).toString());
@@ -488,76 +486,76 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         }
         if (pago1.getRowCount() > 0) {
             for (int i = 0; i < pago1.getRowCount(); i++) {
-                p = Double.parseDouble(pago1.getValueAt(i, 7).toString());
-                t += p;
+                p1 = Double.parseDouble(pago1.getValueAt(i, 7).toString());
+                t1 += p1;
             }
-            MTDsum1.setText("" + t);
+            MTDsum1.setText("" + t1);
         } else {
 
         }
         if (pago2.getRowCount() > 0) {
             for (int i = 0; i < pago2.getRowCount(); i++) {
-                p = Double.parseDouble(pago2.getValueAt(i, 7).toString());
-                t += p;
+                p2 = Double.parseDouble(pago2.getValueAt(i, 7).toString());
+                t2 += p2;
             }
-            MTDsum2.setText("" + t);
+            MTDsum2.setText("" + t2);
         } else {
 
-        }/*
+        }
         if (pago3.getRowCount() > 0) {
             for (int i = 0; i < pago3.getRowCount(); i++) {
-                p = Double.parseDouble(pago3.getValueAt(i, 7).toString());
-                t += p;
+                p3 = Double.parseDouble(pago3.getValueAt(i, 7).toString());
+                t3 += p3;
             }
-            MTDsum3.setText("" + t);
+            MTDsum3.setText("" + t3);
         } else {
 
         }
         if (pago4.getRowCount() > 0) {
             for (int i = 0; i < pago4.getRowCount(); i++) {
-                p = Double.parseDouble(pago4.getValueAt(i, 7).toString());
-                t += p;
+                p4 = Double.parseDouble(pago4.getValueAt(i, 7).toString());
+                t4 += p4;
             }
-            MTDsum4.setText("" + t);
+            MTDsum4.setText("" + t4);
         } else {
 
         }
         if (pago5.getRowCount() > 0) {
             for (int i = 0; i < pago5.getRowCount(); i++) {
-                p = Double.parseDouble(pago5.getValueAt(i, 7).toString());
-                t += p;
+                p5 = Double.parseDouble(pago5.getValueAt(i, 7).toString());
+                t5 += p5;
             }
-            MTDsum5.setText("" + t);
+            MTDsum5.setText("" + t5);
         } else {
 
         }
         if (pago6.getRowCount() > 0) {
             for (int i = 0; i < pago6.getRowCount(); i++) {
-                p = Double.parseDouble(pago6.getValueAt(i, 7).toString());
-                t += p;
+                p6 = Double.parseDouble(pago6.getValueAt(i, 7).toString());
+                t6 += p6;
             }
-            MTDsum6.setText("" + t);
+            MTDsum6.setText("" + t6);
         } else {
 
         }
         if (pago7.getRowCount() > 0) {
             for (int i = 0; i < pago7.getRowCount(); i++) {
-                p = Double.parseDouble(pago7.getValueAt(i, 7).toString());
-                t += p;
+                p7 = Double.parseDouble(pago7.getValueAt(i, 7).toString());
+                t7 += p7;
             }
-            MTDsum7.setText("" + t);
+            MTDsum7.setText("" + t7);
         } else {
 
         }
         if (pago8.getRowCount() > 0) {
             for (int i = 0; i < pago8.getRowCount(); i++) {
-                p = Double.parseDouble(pago8.getValueAt(i, 7).toString());
-                t += p;
+                p8 = Double.parseDouble(pago8.getValueAt(i, 7).toString());
+                t8 += p8;
             }
-            MTDsum8.setText("" + t);
+            MTDsum8.setText("" + t8);
         } else {
 
-        }*/
+        }
     }
 
     public void utilJTablePrint(JTable jTable, String header, String footer, boolean showPrintDialog) {
@@ -1846,7 +1844,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Poniente: " + error_pagos_poniente.getMessage());
 
         }
-        sumaDep();
 
     }
 
@@ -7100,11 +7097,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
 
         FFDP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-        FFDP2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FFDP2ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -8391,6 +8383,11 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         });
 
         FFDPpag8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
+        FFDPpag8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FFDPpag8ItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -16194,13 +16191,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_BAMNomKeyReleased
 
     private void BampagKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BampagKeyReleased
-
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_BampagKeyReleased
 
     private void BAppagKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppagKeyReleased
 
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_BAppagKeyReleased
 
     private void FiltrosPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosPItemStateChanged
@@ -16367,18 +16365,18 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosPItemStateChanged
 
     private void FiltroQPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQPItemStateChanged
-
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_FiltroQPItemStateChanged
 
     private void filtroNDFPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFPKeyReleased
-
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_filtroNDFPKeyReleased
 
     private void FiltroServPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServPItemStateChanged
         FunMD();
-        MDPagosnomFA();
+        sumaDep();        
     }//GEN-LAST:event_FiltroServPItemStateChanged
 
     private void FiltroSZPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZPItemStateChanged
@@ -16403,8 +16401,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS3ActionPerformed
 
     private void buspKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buspKeyReleased
-
         FunMD();
+        sumaDep();
     }//GEN-LAST:event_buspKeyReleased
 
     private void SHCDAnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHCDAnomMouseClicked
@@ -21609,42 +21607,42 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void Imprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir1ActionPerformed
         DecimalFormat df = new DecimalFormat("#.00");
-        utilJTablePrint(pago1, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en foraneos puebla: " + df.format(Double.parseDouble(this.MTDsum1.getText())), true);
+        utilJTablePrint(pago1, getTitle(), "Monto total de la " + FiltroQP1.getSelectedItem().toString() + " en foraneos puebla: " + df.format(Double.parseDouble(this.MTDsum1.getText())), true);
     }//GEN-LAST:event_Imprimir1ActionPerformed
 
     private void Imprimir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir3ActionPerformed
         DecimalFormat df = new DecimalFormat("#.00");
-        utilJTablePrint(pago2, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en foraneos toluca: " + df.format(Double.parseDouble(this.MTDsum2.getText())), true);
+        utilJTablePrint(pago2, getTitle(), "Monto total de la " + FiltroQP2.getSelectedItem().toString() + " en foraneos toluca: " + df.format(Double.parseDouble(this.MTDsum2.getText())), true);
     }//GEN-LAST:event_Imprimir3ActionPerformed
 
     private void Imprimir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir4ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago3, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en norte: " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+        utilJTablePrint(pago3, getTitle(), "Monto total de la " + FiltroQP3.getSelectedItem().toString() + " en norte: " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
     }//GEN-LAST:event_Imprimir4ActionPerformed
 
     private void Imprimir5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir5ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago4, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en poniente: " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+        utilJTablePrint(pago4, getTitle(), "Monto total de la " + FiltroQP4.getSelectedItem().toString() + " en poniente: " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
     }//GEN-LAST:event_Imprimir5ActionPerformed
 
     private void Imprimir6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir6ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago5, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en oficina: " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+        utilJTablePrint(pago5, getTitle(), "Monto total de la " + FiltroQP5.getSelectedItem().toString() + " en oficina: " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
     }//GEN-LAST:event_Imprimir6ActionPerformed
 
     private void Imprimir7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir7ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago6, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en sur 1: " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+        utilJTablePrint(pago6, getTitle(), "Monto total de la " + FiltroQP6.getSelectedItem().toString() + " en sur 1: " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
     }//GEN-LAST:event_Imprimir7ActionPerformed
 
     private void Imprimir8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir8ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago7, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en Sur 2: " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+        utilJTablePrint(pago7, getTitle(), "Monto total de la " + FiltroQP7.getSelectedItem().toString() + " en Sur 2: " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
     }//GEN-LAST:event_Imprimir8ActionPerformed
 
     private void Imprimir9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir9ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago8, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en Santander corporativo quincenal: " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+        utilJTablePrint(pago8, getTitle(), "Monto total de la " + FiltroQP8.getSelectedItem().toString() + " en Santander corporativo quincenal: " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
     }//GEN-LAST:event_Imprimir9ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -21653,10 +21651,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void FFDP2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FFDP2ActionPerformed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FFDP2ActionPerformed
+    private void FFDPpag8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FFDPpag8ItemStateChanged
+        FunMD();
+        sumaDep();        
+    }//GEN-LAST:event_FFDPpag8ItemStateChanged
 
     /**
      * @param args the command line arguments
