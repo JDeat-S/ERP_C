@@ -3719,7 +3719,7 @@
                                       </Group>
                                       <Component id="CS2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4207,7 +4207,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -4215,6 +4215,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -4257,12 +4258,12 @@
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="6">
-                                <StringItem index="0" value="  "/>
+                                <StringItem index="0" value=" "/>
                                 <StringItem index="1" value="Santander"/>
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -4335,7 +4336,7 @@
                                       </Group>
                                       <Component id="CS8" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4823,7 +4824,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD1">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -4831,6 +4832,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -4878,7 +4880,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -4951,7 +4953,7 @@
                                       </Group>
                                       <Component id="CS9" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -5439,7 +5441,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD2">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -5447,6 +5449,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -5494,7 +5497,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -5567,7 +5570,7 @@
                                       </Group>
                                       <Component id="CS10" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -6055,7 +6058,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD3">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -6063,6 +6066,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -6110,7 +6114,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -6183,7 +6187,7 @@
                                       </Group>
                                       <Component id="CS11" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -6671,7 +6675,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD4">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -6679,6 +6683,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -6726,7 +6731,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -6799,7 +6804,7 @@
                                       </Group>
                                       <Component id="CS12" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -7287,7 +7292,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD5">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -7295,6 +7300,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -7342,7 +7348,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -7415,7 +7421,7 @@
                                       </Group>
                                       <Component id="CS13" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -7903,7 +7909,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD6">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -7911,6 +7917,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -7958,7 +7965,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -8031,7 +8038,7 @@
                                       </Group>
                                       <Component id="CS14" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -8519,7 +8526,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD7">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -8527,6 +8534,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -8574,7 +8582,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -8647,7 +8655,7 @@
                                       </Group>
                                       <Component id="CS24" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -9097,7 +9105,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD8">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -9105,6 +9113,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -9187,7 +9196,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -9286,7 +9295,7 @@
                                       </Group>
                                       <Component id="jScrollPane6" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -9521,7 +9530,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -9529,6 +9538,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -9585,7 +9595,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -9665,7 +9675,7 @@
                                       </Group>
                                       <Component id="jScrollPane29" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -9929,7 +9939,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP1">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -9937,6 +9947,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -9993,7 +10004,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -10073,7 +10084,7 @@
                                       </Group>
                                       <Component id="jScrollPane30" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10334,7 +10345,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP2">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -10342,6 +10353,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -10398,7 +10410,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -10478,7 +10490,7 @@
                                       </Group>
                                       <Component id="jScrollPane31" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10739,7 +10751,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP3">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -10747,6 +10759,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -10803,7 +10816,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -10883,7 +10896,7 @@
                                       </Group>
                                       <Component id="jScrollPane32" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -11120,7 +11133,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP4">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -11128,6 +11141,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11184,7 +11198,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11264,7 +11278,7 @@
                                       </Group>
                                       <Component id="jScrollPane33" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -11525,7 +11539,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP5">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -11533,6 +11547,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11589,7 +11604,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11669,7 +11684,7 @@
                                       </Group>
                                       <Component id="jScrollPane34" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -11930,7 +11945,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP6">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -11938,6 +11953,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11994,7 +12010,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -12074,7 +12090,7 @@
                                       </Group>
                                       <Component id="jScrollPane35" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -12335,7 +12351,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP7">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -12343,6 +12359,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -12399,7 +12416,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -12479,7 +12496,7 @@
                                       </Group>
                                       <Component id="jScrollPane36" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -12740,7 +12757,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP8">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -12748,6 +12765,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -12804,7 +12822,7 @@
                                 <StringItem index="2" value="Bancomer"/>
                                 <StringItem index="3" value="Efectivo"/>
                                 <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenidas"/>
+                                <StringItem index="5" value="Retenida"/>
                               </StringArray>
                             </Property>
                           </Properties>
