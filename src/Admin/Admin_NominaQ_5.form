@@ -3698,7 +3698,9 @@
                                           <Component id="FApT" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio" min="-2" max="-2" attributes="0"/>
@@ -3717,7 +3719,7 @@
                                       </Group>
                                       <Component id="CS2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -3746,6 +3748,7 @@
                                       <Component id="FApT" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane3" min="-2" pref="627" max="-2" attributes="0"/>
@@ -4250,6 +4253,23 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox1">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value="  "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -4294,7 +4314,9 @@
                                           <Component id="FApT1" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT1" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio1" min="-2" max="-2" attributes="0"/>
@@ -4313,7 +4335,7 @@
                                       </Group>
                                       <Component id="CS8" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4342,6 +4364,7 @@
                                       <Component id="FApT1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane21" min="-2" pref="627" max="-2" attributes="0"/>
@@ -4846,6 +4869,23 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox2">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -4890,7 +4930,9 @@
                                           <Component id="FApT2" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT2" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio2" min="-2" max="-2" attributes="0"/>
@@ -4909,7 +4951,7 @@
                                       </Group>
                                       <Component id="CS9" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4938,6 +4980,7 @@
                                       <Component id="FApT2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane22" min="-2" pref="627" max="-2" attributes="0"/>
@@ -5442,6 +5485,23 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox3">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -5486,7 +5546,9 @@
                                           <Component id="FApT3" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT3" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox4" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio3" min="-2" max="-2" attributes="0"/>
@@ -5505,7 +5567,7 @@
                                       </Group>
                                       <Component id="CS10" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -5534,6 +5596,7 @@
                                       <Component id="FApT3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane23" min="-2" pref="627" max="-2" attributes="0"/>
@@ -6038,6 +6101,23 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox4">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -6082,7 +6162,9 @@
                                           <Component id="FApT4" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT4" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio4" min="-2" max="-2" attributes="0"/>
@@ -6101,7 +6183,7 @@
                                       </Group>
                                       <Component id="CS11" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -6130,6 +6212,7 @@
                                       <Component id="FApT4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox5" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane24" min="-2" pref="627" max="-2" attributes="0"/>
@@ -6634,6 +6717,23 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox5">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -6678,7 +6778,9 @@
                                           <Component id="FApT5" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT5" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox6" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio5" min="-2" max="-2" attributes="0"/>
@@ -6697,7 +6799,7 @@
                                       </Group>
                                       <Component id="CS12" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -6726,6 +6828,7 @@
                                       <Component id="FApT5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox6" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane25" min="-2" pref="627" max="-2" attributes="0"/>
@@ -7230,6 +7333,23 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox6">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -7274,7 +7394,9 @@
                                           <Component id="FApT6" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT6" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox7" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio6" min="-2" max="-2" attributes="0"/>
@@ -7293,7 +7415,7 @@
                                       </Group>
                                       <Component id="CS13" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -7322,6 +7444,7 @@
                                       <Component id="FApT6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane26" min="-2" pref="627" max="-2" attributes="0"/>
@@ -7826,6 +7949,23 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox7">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -7870,7 +8010,9 @@
                                           <Component id="FApT7" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT7" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox8" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio7" min="-2" max="-2" attributes="0"/>
@@ -7889,7 +8031,7 @@
                                       </Group>
                                       <Component id="CS14" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -7918,6 +8060,7 @@
                                       <Component id="FApT7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane27" min="-2" pref="627" max="-2" attributes="0"/>
@@ -8422,6 +8565,23 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox8">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -8466,7 +8626,9 @@
                                           <Component id="FApT8" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT8" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox9" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio8" min="-2" max="-2" attributes="0"/>
@@ -8485,7 +8647,7 @@
                                       </Group>
                                       <Component id="CS24" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7616" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -8514,6 +8676,7 @@
                                       <Component id="LabelBS8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSnomina8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZ8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox9" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane28" min="-2" pref="627" max="-2" attributes="0"/>
@@ -9015,6 +9178,23 @@
                             <Property name="text" type="java.lang.String" value="Selecciona Zona:"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox9">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -9076,7 +9256,9 @@
                                           <Component id="BAppag" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox10" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP" min="-2" max="-2" attributes="0"/>
@@ -9104,7 +9286,7 @@
                                       </Group>
                                       <Component id="jScrollPane6" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -9128,6 +9310,7 @@
                                       <Component id="BAppag" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox10" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane6" min="-2" pref="604" max="-2" attributes="0"/>
@@ -9393,6 +9576,23 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImprimirActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox10">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -9435,7 +9635,9 @@
                                           <Component id="BAppag1" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag1" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox11" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP1" min="-2" max="-2" attributes="0"/>
@@ -9463,7 +9665,7 @@
                                       </Group>
                                       <Component id="jScrollPane29" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -9487,6 +9689,7 @@
                                       <Component id="BAppag1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox11" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane29" min="-2" pref="604" max="-2" attributes="0"/>
@@ -9781,6 +9984,23 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir1ActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox11">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -9823,7 +10043,9 @@
                                           <Component id="BAppag2" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag2" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox12" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP2" min="-2" max="-2" attributes="0"/>
@@ -9851,7 +10073,7 @@
                                       </Group>
                                       <Component id="jScrollPane30" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -9875,6 +10097,7 @@
                                       <Component id="BAppag2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox12" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane30" min="-2" pref="604" max="-2" attributes="0"/>
@@ -10166,6 +10389,23 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir3ActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox12">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -10208,7 +10448,9 @@
                                           <Component id="BAppag3" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag3" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox13" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP3" min="-2" max="-2" attributes="0"/>
@@ -10236,7 +10478,7 @@
                                       </Group>
                                       <Component id="jScrollPane31" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10260,6 +10502,7 @@
                                       <Component id="BAppag3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox13" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane31" min="-2" pref="604" max="-2" attributes="0"/>
@@ -10551,6 +10794,23 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir4ActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox13">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -10593,7 +10853,9 @@
                                           <Component id="BAppag4" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag4" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox14" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP4" min="-2" max="-2" attributes="0"/>
@@ -10621,7 +10883,7 @@
                                       </Group>
                                       <Component id="jScrollPane32" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10645,6 +10907,7 @@
                                       <Component id="BAppag4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox14" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane32" min="-2" pref="604" max="-2" attributes="0"/>
@@ -10912,6 +11175,23 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir5ActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox14">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -10954,7 +11234,9 @@
                                           <Component id="BAppag5" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag5" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox15" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP5" min="-2" max="-2" attributes="0"/>
@@ -10982,7 +11264,7 @@
                                       </Group>
                                       <Component id="jScrollPane33" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -11006,6 +11288,7 @@
                                       <Component id="BAppag5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb20" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox15" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane33" min="-2" pref="604" max="-2" attributes="0"/>
@@ -11297,6 +11580,23 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox15">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -11339,7 +11639,9 @@
                                           <Component id="BAppag6" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag6" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox16" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP6" min="-2" max="-2" attributes="0"/>
@@ -11367,7 +11669,7 @@
                                       </Group>
                                       <Component id="jScrollPane34" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -11391,6 +11693,7 @@
                                       <Component id="BAppag6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb21" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox16" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane34" min="-2" pref="604" max="-2" attributes="0"/>
@@ -11682,6 +11985,23 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir7ActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox16">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -11724,7 +12044,9 @@
                                           <Component id="BAppag7" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag7" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox17" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP7" min="-2" max="-2" attributes="0"/>
@@ -11752,7 +12074,7 @@
                                       </Group>
                                       <Component id="jScrollPane35" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -11776,6 +12098,7 @@
                                       <Component id="BAppag7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb22" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox17" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane35" min="-2" pref="604" max="-2" attributes="0"/>
@@ -12067,6 +12390,23 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir8ActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox17">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -12109,7 +12449,9 @@
                                           <Component id="BAppag8" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag8" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox18" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP8" min="-2" max="-2" attributes="0"/>
@@ -12137,7 +12479,7 @@
                                       </Group>
                                       <Component id="jScrollPane36" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1674" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -12161,6 +12503,7 @@
                                       <Component id="BAppag8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb23" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox18" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane36" min="-2" pref="604" max="-2" attributes="0"/>
@@ -12451,6 +12794,23 @@
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir9ActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox18">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenidas"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
