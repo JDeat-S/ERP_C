@@ -21376,47 +21376,47 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
     private void ImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago, getTitle(), "Monto total en foraneos acapulco: " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+        utilJTablePrint(pago, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en foraneos acapulco: " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
     }//GEN-LAST:event_ImprimirActionPerformed
 
     private void Imprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir1ActionPerformed
         DecimalFormat df = new DecimalFormat("#.00");
-        utilJTablePrint(pago1, getTitle(), "Monto total en foraneos puebla: " + df.format(Double.parseDouble(this.MTDsum1.getText())), true);
+        utilJTablePrint(pago1, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en foraneos puebla: " + df.format(Double.parseDouble(this.MTDsum1.getText())), true);
     }//GEN-LAST:event_Imprimir1ActionPerformed
 
     private void Imprimir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir3ActionPerformed
         DecimalFormat df = new DecimalFormat("#.00");
-        utilJTablePrint(pago2, getTitle(), "Monto total en foraneos puebla: " + df.format(Double.parseDouble(this.MTDsum2.getText())), true);
+        utilJTablePrint(pago2, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en foraneos puebla: " + df.format(Double.parseDouble(this.MTDsum2.getText())), true);
     }//GEN-LAST:event_Imprimir3ActionPerformed
 
     private void Imprimir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir4ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago3, getTitle(), "Monto total en foraneos acapulco: " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+        utilJTablePrint(pago3, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en foraneos toluca: " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
     }//GEN-LAST:event_Imprimir4ActionPerformed
 
     private void Imprimir5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir5ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago4, getTitle(), "Monto total en foraneos acapulco: " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+        utilJTablePrint(pago4, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en Norte: " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
     }//GEN-LAST:event_Imprimir5ActionPerformed
 
     private void Imprimir6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir6ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago5, getTitle(), "Monto total en foraneos acapulco: " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+        utilJTablePrint(pago5, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en Poniente: " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
     }//GEN-LAST:event_Imprimir6ActionPerformed
 
     private void Imprimir7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir7ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago6, getTitle(), "Monto total en foraneos acapulco: " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+        utilJTablePrint(pago6, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en Sur 1: " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
     }//GEN-LAST:event_Imprimir7ActionPerformed
 
     private void Imprimir8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir8ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago7, getTitle(), "Monto total en foraneos acapulco: " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+        utilJTablePrint(pago7, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en Sur 2: " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
     }//GEN-LAST:event_Imprimir8ActionPerformed
 
     private void Imprimir9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir9ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
-        utilJTablePrint(pago8, getTitle(), "Monto total en foraneos acapulco: " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+        utilJTablePrint(pago8, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en Santander corporativo quincenal: " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
     }//GEN-LAST:event_Imprimir9ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
