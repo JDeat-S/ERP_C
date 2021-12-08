@@ -8579,6 +8579,11 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         });
 
         FFDPpag1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
+        FFDPpag1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FFDPpag1ItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -16521,6 +16526,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void busp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp1KeyReleased
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_busp1KeyReleased
 
     private void CS15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS15ActionPerformed
@@ -16540,18 +16546,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroServP1.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_FiltroSZP1ItemStateChanged
 
     private void FiltroServP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP1ItemStateChanged
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_FiltroServP1ItemStateChanged
 
     private void filtroNDFP1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP1KeyReleased
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_filtroNDFP1KeyReleased
 
     private void FiltroQP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP1ItemStateChanged
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_FiltroQP1ItemStateChanged
 
     private void FiltrosP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP1ItemStateChanged
@@ -16718,14 +16728,17 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void BAppag1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag1KeyReleased
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_BAppag1KeyReleased
 
     private void Bampag1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag1KeyReleased
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_Bampag1KeyReleased
 
     private void busp2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp2KeyReleased
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_busp2KeyReleased
 
     private void CS16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS16ActionPerformed
@@ -16745,18 +16758,22 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             FiltroServP2.setModel(modelServicio);
         }
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_FiltroSZP2ItemStateChanged
 
     private void FiltroServP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP2ItemStateChanged
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_FiltroServP2ItemStateChanged
 
     private void filtroNDFP2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP2KeyReleased
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_filtroNDFP2KeyReleased
 
     private void FiltroQP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP2ItemStateChanged
         FunMD();
+        sumaDep();        
     }//GEN-LAST:event_FiltroQP2ItemStateChanged
 
     private void FiltrosP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP2ItemStateChanged
@@ -21655,6 +21672,11 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         FunMD();
         sumaDep();        
     }//GEN-LAST:event_FFDPpag8ItemStateChanged
+
+    private void FFDPpag1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FFDPpag1ItemStateChanged
+        FunMD();
+        sumaDep();        
+    }//GEN-LAST:event_FFDPpag1ItemStateChanged
 
     /**
      * @param args the command line arguments
