@@ -6725,7 +6725,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         FFDP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
         FFDP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -6910,7 +6910,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         FFDP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
 
@@ -7094,7 +7094,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         FFDP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
 
@@ -7278,7 +7278,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb11.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb11.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         FFDP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
 
@@ -7462,7 +7462,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb12.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb12.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         FFDP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
 
@@ -7646,7 +7646,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb13.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb13.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         FFDP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
 
@@ -7830,7 +7830,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb14.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb14.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         FFDP6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
 
@@ -8014,7 +8014,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb15.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb15.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         FFDP7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
 
@@ -8181,7 +8181,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb25.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb25.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         FZservicio8.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -8369,7 +8369,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
 
         botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb2.setToolTipText("");
-        botonWeb2.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb2.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel8.setText("Monto total en fila deposito:");
 
@@ -8560,7 +8560,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
 
         botonWeb16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb16.setToolTipText("");
-        botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel30.setText("Monto total en fila deposito:");
 
@@ -8750,7 +8750,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
 
         botonWeb17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb17.setToolTipText("");
-        botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel33.setText("Monto total en fila deposito:");
 
@@ -8940,7 +8940,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
 
         botonWeb18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb18.setToolTipText("");
-        botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel34.setText("Monto total en fila deposito:");
 
@@ -9130,7 +9130,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
 
         botonWeb19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb19.setToolTipText("");
-        botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel35.setText("Monto total en fila deposito:");
 
@@ -9320,7 +9320,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
 
         botonWeb20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb20.setToolTipText("");
-        botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         Imprimir6.setText("Imprimir tabla");
         Imprimir6.addActionListener(new java.awt.event.ActionListener() {
@@ -9510,7 +9510,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
 
         botonWeb21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb21.setToolTipText("");
-        botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel37.setText("Monto total en fila deposito:");
 
@@ -9700,7 +9700,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
 
         botonWeb22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb22.setToolTipText("");
-        botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel38.setText("Monto total en fila deposito:");
 
@@ -9890,7 +9890,7 @@ public final class Admin_NominaQSIMSS_5 extends javax.swing.JFrame {
 
         botonWeb23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb23.setToolTipText("");
-        botonWeb23.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb23.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel39.setText("Monto total en fila deposito:");
 
