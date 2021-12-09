@@ -5,7 +5,6 @@ import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
 import ColoresT.ColorRH;
 import Inicio.Login_2;
-import ZyS.Zonas;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.sql.Connection;
@@ -39,6 +38,155 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
     public Admin_Depositos_4() {
         initComponents();
+        FunMD();
+        // <editor-fold defaultstate="collapsed" desc="Fil Servicios">
+        FiltrosZonas zz8 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
+        FZservicio8.setModel(modelzonas8);
+        FiltrosZonas zz7 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas7 = new DefaultComboBoxModel(zz7.mostrarzonas());
+        FZservicio7.setModel(modelzonas7);
+        FiltrosZonas zz6 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas6 = new DefaultComboBoxModel(zz6.mostrarzonas());
+        FZservicio6.setModel(modelzonas6);
+        FiltrosZonas zz5 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas5 = new DefaultComboBoxModel(zz5.mostrarzonas());
+        FZservicio5.setModel(modelzonas5);
+        FiltrosZonas zz4 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas4 = new DefaultComboBoxModel(zz4.mostrarzonas());
+        FZservicio4.setModel(modelzonas4);
+        FiltrosZonas zz3 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas3 = new DefaultComboBoxModel(zz3.mostrarzonas());
+        FZservicio3.setModel(modelzonas3);
+        FiltrosZonas zz2 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas2 = new DefaultComboBoxModel(zz2.mostrarzonas());
+        FZservicio2.setModel(modelzonas2);
+        FiltrosZonas zz1 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas1 = new DefaultComboBoxModel(zz1.mostrarzonas());
+        FZservicio1.setModel(modelzonas1);
+        FiltrosZonas zz = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
+        FZservicio.setModel(modelzonas);
+        FiltrosZonas FZS = new FiltrosZonas();
+        DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
+        FZservicio.setModel(MODELFZS);
+        //</editor-fold>
+        año.setCalendar(fecha_actual);
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(6);
+        // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        LabelBE.setVisible(false);
+        LabelBQ.setVisible(false);
+        LabelBS.setVisible(false);
+        LabelSZ.setVisible(false);
+        Nominab.setVisible(false);
+        FiltroSnomina.setVisible(false);
+        FiltroSnomina.setSelectedIndex(0);
+        FZservicio.setVisible(false);
+        FZservicio.setSelectedIndex(0);
+        FiltroQuincenanomina.setVisible(false);
+        FiltroQuincenanomina.setSelectedIndex(0);
+        FiltroNDF.setVisible(false);
+        LabelBNDF.setVisible(false);
+        LabelBE1.setVisible(false);
+        LabelSZ1.setVisible(false);
+        FApT1.setVisible(false);
+        FAmT1.setVisible(false);
+        Nominab1.setVisible(false);
+        FiltroSnomina1.setVisible(false);
+        LabelBS1.setVisible(false);
+        FZservicio1.setVisible(false);
+        LabelSZ.setVisible(false);
+        FiltroQuincenanomina1.setVisible(false);
+        LabelBQ1.setVisible(false);
+        FiltroNDF1.setVisible(false);
+        LabelBNDF1.setVisible(false);
+        LabelBE2.setVisible(false);
+        FApT2.setVisible(false);
+        FAmT2.setVisible(false);
+        Nominab2.setVisible(false);
+        FiltroSnomina2.setVisible(false);
+        LabelBS2.setVisible(false);
+        FZservicio2.setVisible(false);
+        LabelSZ2.setVisible(false);
+        FiltroQuincenanomina2.setVisible(false);
+        LabelBQ2.setVisible(false);
+        FiltroNDF2.setVisible(false);
+        LabelBNDF2.setVisible(false);
+        LabelBE3.setVisible(false);
+        FApT3.setVisible(false);
+        FAmT3.setVisible(false);
+        Nominab3.setVisible(false);
+        FiltroSnomina3.setVisible(false);
+        LabelBS3.setVisible(false);
+        FZservicio3.setVisible(false);
+        LabelSZ3.setVisible(false);
+        FiltroQuincenanomina3.setVisible(false);
+        LabelBQ3.setVisible(false);
+        FiltroNDF3.setVisible(false);
+        LabelBNDF3.setVisible(false);
+        LabelBE4.setVisible(false);
+        FApT4.setVisible(false);
+        FAmT4.setVisible(false);
+        Nominab4.setVisible(false);
+        FiltroSnomina4.setVisible(false);
+        LabelBS4.setVisible(false);
+        FZservicio4.setVisible(false);
+        LabelSZ4.setVisible(false);
+        FiltroQuincenanomina4.setVisible(false);
+        LabelBQ4.setVisible(false);
+        FiltroNDF4.setVisible(false);
+        LabelBNDF4.setVisible(false);
+        LabelBE5.setVisible(false);
+        FApT5.setVisible(false);
+        FAmT5.setVisible(false);
+        Nominab5.setVisible(false);
+        FiltroSnomina5.setVisible(false);
+        LabelBS5.setVisible(false);
+        FZservicio5.setVisible(false);
+        LabelSZ5.setVisible(false);
+        FiltroQuincenanomina5.setVisible(false);
+        LabelBQ5.setVisible(false);
+        FiltroNDF5.setVisible(false);
+        LabelBNDF5.setVisible(false);
+        LabelBE6.setVisible(false);
+        FApT6.setVisible(false);
+        FAmT6.setVisible(false);
+        Nominab6.setVisible(false);
+        FiltroSnomina6.setVisible(false);
+        LabelBS6.setVisible(false);
+        FZservicio6.setVisible(false);
+        LabelSZ6.setVisible(false);
+        FiltroQuincenanomina6.setVisible(false);
+        LabelBQ6.setVisible(false);
+        FiltroNDF6.setVisible(false);
+        LabelBNDF6.setVisible(false);
+        LabelBE7.setVisible(false);
+        FApT7.setVisible(false);
+        FAmT7.setVisible(false);
+        Nominab7.setVisible(false);
+        FiltroSnomina7.setVisible(false);
+        LabelBS7.setVisible(false);
+        FZservicio7.setVisible(false);
+        LabelSZ7.setVisible(false);
+        FiltroQuincenanomina7.setVisible(false);
+        LabelBQ7.setVisible(false);
+        FiltroNDF7.setVisible(false);
+        LabelBNDF7.setVisible(false);
+        LabelBE8.setVisible(false);
+        FApT8.setVisible(false);
+        FAmT8.setVisible(false);
+        Nominab8.setVisible(false);
+        FiltroSnomina8.setVisible(false);
+        LabelBS8.setVisible(false);
+        FZservicio8.setVisible(false);
+        LabelSZ8.setVisible(false);
+        FiltroQuincenanomina8.setVisible(false);
+        LabelBQ8.setVisible(false);
+        FiltroNDF8.setVisible(false);
+        LabelBNDF8.setVisible(false);
+        //</editor-fold>
+        setIconImage(new ImageIcon(Admin_NominaQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         this.setExtendedState(6);
         año.setCalendar(fecha_actual);
         FiltrosZonas FZNomdep = new FiltrosZonas();
@@ -62,7 +210,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         FiltroNDF1.setVisible(false);
         LabelBNDF1.setVisible(false);
         setIconImage(new ImageIcon(Admin_Depositos_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
-        MDN();
         MDDep();
     }
 
@@ -171,7 +318,18 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     public void MDNCSQ() {
         //Buscar empleado
         String FiltroN = Nominab8.getText();
-        String SQL = "select * from `nomina.corporativo santander quincenal`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.corporativo santander quincenal`";
         String FAPNom = FApT8.getText();
         String FAMNom = FAmT8.getText();
         String FiltroSnom = FiltroSnomina8.getSelectedItem().toString();
@@ -179,17 +337,83 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF8.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nomina.detallada.corporativo santander quincenal` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -217,90 +441,63 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");//4
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");//6
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");//8
+            modelo.addColumn("Zona");//6
             modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Sueldo");//8
             modelo.addColumn("Bono");
-            modelo.addColumn("Por dia");//12
-            modelo.addColumn("Quincena del mes");
-            modelo.addColumn("Año");//14
-            modelo.addColumn("Dia 1 o 16");
-            modelo.addColumn("Dia 2 o 17");//16
-            modelo.addColumn("Dia 3 o 18");
-            modelo.addColumn("Dia 4 o 19");//18
-            modelo.addColumn("Dia 5 o 20");
-            modelo.addColumn("Dia 6 o 21");//20
-            modelo.addColumn("Dia 7 o 22");
-            modelo.addColumn("Dia 8 o 23");//22
-            modelo.addColumn("Dia 9 o 24");
-            modelo.addColumn("Dia 10 o 25");//24
-            modelo.addColumn("Dia 11 o 26");
-            modelo.addColumn("Dia 12 o 27");//26
-            modelo.addColumn("Dia 13 o 28");
-            modelo.addColumn("Dia 14 o 29");//28
-            modelo.addColumn("Dia 15 o 30");
-            modelo.addColumn("Dia 31");//30
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
-            modelo.addColumn("Dias descansados");
-            modelo.addColumn("Pago de dias descansados");//36
-            modelo.addColumn("Dias Laborados");
-            modelo.addColumn("Pago de dias laborados");//38
-            modelo.addColumn("Descansos Trabajados");
-            modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
-            modelo.addColumn("Pago de dias de DSGS");//42
-            modelo.addColumn("Faltas Justificadas");
-            modelo.addColumn("Descanso Otorgado");//44
-            modelo.addColumn("Dias festivos");
-            modelo.addColumn("Pago por dias festivos");//46
-            modelo.addColumn("Dias festivos trabajados");
-            modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
-            modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
-            modelo.addColumn("Rembolso");
-            modelo.addColumn("Adicionales");//48
-            modelo.addColumn("Faltas");
-            modelo.addColumn("Descuento por faltas");//50
-            modelo.addColumn("Desc IMSS");
-            modelo.addColumn("Faltantes de boleto");//54
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");//56
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");//58
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");//60 
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");//62
-            modelo.addColumn("Playera");
-            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Quincena del mes");//10
+            modelo.addColumn("Año");
+            modelo.addColumn("Dias de incapacidad");//12
+            modelo.addColumn("Pago de seguro");
+            modelo.addColumn("Dias de vacaciones");//14
+            modelo.addColumn("Pago de dias de vacaciones");
+            modelo.addColumn("Dias descansados");//16
+            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Dias Laborados");//18
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Descansos Trabajados");//20
+            modelo.addColumn("Pago de descansos trabajados");
+            modelo.addColumn("Descanso sin goce de sueldo");//22
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Faltas Justificadas");//24
+            modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Retardos");//26
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Apoyo");//28
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("Faltas");//32
+            modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Desc IMSS");//34
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Sancion");//36
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Chaleco");//38
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Grua");//40
+            modelo.addColumn("Pantalon");
+            modelo.addColumn("Credencial");//42
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Playera");//44
+            modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
-            modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//70
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
-                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
-                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
-                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
-                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+                /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
+                /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, 100,/*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
-                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+                /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -325,7 +522,18 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     public void MDNFA() {
         //Buscar empleado
         String FiltroN = Nominab.getText();
-        String SQL = "select * from `nomina.detallada.foraneos acapulco`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco`";
         String FAPNom = FApT.getText();
         String FAMNom = FAmT.getText();
         String FiltroSnom = FiltroSnomina.getSelectedItem().toString();
@@ -333,17 +541,83 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nomina.detallada.foraneos acapulco` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nomina.detallada.foraneos acapulco` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nomina.detallada.foraneos acapulco` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nomina.detallada.foraneos acapulco` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nomina.detallada.foraneos acapulco` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nomina.detallada.foraneos acapulco` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -371,90 +645,63 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");//4
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");//6
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");//8
+            modelo.addColumn("Zona");//6
             modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Sueldo");//8
             modelo.addColumn("Bono");
-            modelo.addColumn("Por dia");//12
-            modelo.addColumn("Quincena del mes");
-            modelo.addColumn("Año");//14
-            modelo.addColumn("Dia 1 o 16");
-            modelo.addColumn("Dia 2 o 17");//16
-            modelo.addColumn("Dia 3 o 18");
-            modelo.addColumn("Dia 4 o 19");//18
-            modelo.addColumn("Dia 5 o 20");
-            modelo.addColumn("Dia 6 o 21");//20
-            modelo.addColumn("Dia 7 o 22");
-            modelo.addColumn("Dia 8 o 23");//22
-            modelo.addColumn("Dia 9 o 24");
-            modelo.addColumn("Dia 10 o 25");//24
-            modelo.addColumn("Dia 11 o 26");
-            modelo.addColumn("Dia 12 o 27");//26
-            modelo.addColumn("Dia 13 o 28");
-            modelo.addColumn("Dia 14 o 29");//28
-            modelo.addColumn("Dia 15 o 30");
-            modelo.addColumn("Dia 31");//30
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
-            modelo.addColumn("Dias descansados");
-            modelo.addColumn("Pago de dias descansados");//36
-            modelo.addColumn("Dias Laborados");
-            modelo.addColumn("Pago de dias laborados");//38
-            modelo.addColumn("Descansos Trabajados");
-            modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
-            modelo.addColumn("Pago de dias de DSGS");//42
-            modelo.addColumn("Faltas Justificadas");
-            modelo.addColumn("Descanso Otorgado");//44
-            modelo.addColumn("Dias festivos");
-            modelo.addColumn("Pago por dias festivos");//46
-            modelo.addColumn("Dias festivos trabajados");
-            modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
-            modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
-            modelo.addColumn("Rembolso");
-            modelo.addColumn("Adicionales");//48
-            modelo.addColumn("Faltas");
-            modelo.addColumn("Descuento por faltas");//50
-            modelo.addColumn("Desc IMSS");
-            modelo.addColumn("Faltantes de boleto");//54
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");//56
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");//58
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");//60 
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");//62
-            modelo.addColumn("Playera");
-            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Quincena del mes");//10
+            modelo.addColumn("Año");
+            modelo.addColumn("Dias de incapacidad");//12
+            modelo.addColumn("Pago de seguro");
+            modelo.addColumn("Dias de vacaciones");//14
+            modelo.addColumn("Pago de dias de vacaciones");
+            modelo.addColumn("Dias descansados");//16
+            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Dias Laborados");//18
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Descansos Trabajados");//20
+            modelo.addColumn("Pago de descansos trabajados");
+            modelo.addColumn("Descanso sin goce de sueldo");//22
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Faltas Justificadas");//24
+            modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Retardos");//26
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Apoyo");//28
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("Faltas");//32
+            modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Desc IMSS");//34
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Sancion");//36
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Chaleco");//38
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Grua");//40
+            modelo.addColumn("Pantalon");
+            modelo.addColumn("Credencial");//42
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Playera");//44
+            modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
-            modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//70
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
-                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
-                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
-                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
-                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+                /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
+                /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, 100,/*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
-                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+                /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -479,7 +726,18 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     public void MDNFP() {
         //Buscar empleado
         String FiltroN = Nominab1.getText();
-        String SQL = "select * from `nomina.detallada.foraneos puebla`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla`";
         String FAPNom = FApT1.getText();
         String FAMNom = FAmT1.getText();
         String FiltroSnom = FiltroSnomina1.getSelectedItem().toString();
@@ -487,17 +745,83 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF1.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nomina.detallada.foraneos puebla` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nomina.detallada.foraneos puebla` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nomina.detallada.foraneos puebla` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nomina.detallada.foraneos puebla` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nomina.detallada.foraneos puebla` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nomina.detallada.foraneos puebla` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -525,90 +849,63 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");//4
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");//6
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");//8
+            modelo.addColumn("Zona");//6
             modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Sueldo");//8
             modelo.addColumn("Bono");
-            modelo.addColumn("Por dia");//12
-            modelo.addColumn("Quincena del mes");
-            modelo.addColumn("Año");//14
-            modelo.addColumn("Dia 1 o 16");
-            modelo.addColumn("Dia 2 o 17");//16
-            modelo.addColumn("Dia 3 o 18");
-            modelo.addColumn("Dia 4 o 19");//18
-            modelo.addColumn("Dia 5 o 20");
-            modelo.addColumn("Dia 6 o 21");//20
-            modelo.addColumn("Dia 7 o 22");
-            modelo.addColumn("Dia 8 o 23");//22
-            modelo.addColumn("Dia 9 o 24");
-            modelo.addColumn("Dia 10 o 25");//24
-            modelo.addColumn("Dia 11 o 26");
-            modelo.addColumn("Dia 12 o 27");//26
-            modelo.addColumn("Dia 13 o 28");
-            modelo.addColumn("Dia 14 o 29");//28
-            modelo.addColumn("Dia 15 o 30");
-            modelo.addColumn("Dia 31");//30
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
-            modelo.addColumn("Dias descansados");
-            modelo.addColumn("Pago de dias descansados");//36
-            modelo.addColumn("Dias Laborados");
-            modelo.addColumn("Pago de dias laborados");//38
-            modelo.addColumn("Descansos Trabajados");
-            modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
-            modelo.addColumn("Pago de dias de DSGS");//42
-            modelo.addColumn("Faltas Justificadas");
-            modelo.addColumn("Descanso Otorgado");//44
-            modelo.addColumn("Dias festivos");
-            modelo.addColumn("Pago por dias festivos");//46
-            modelo.addColumn("Dias festivos trabajados");
-            modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
-            modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
-            modelo.addColumn("Rembolso");
-            modelo.addColumn("Adicionales");//48
-            modelo.addColumn("Faltas");
-            modelo.addColumn("Descuento por faltas");//50
-            modelo.addColumn("Desc IMSS");
-            modelo.addColumn("Faltantes de boleto");//54
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");//56
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");//58
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");//60 
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");//62
-            modelo.addColumn("Playera");
-            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Quincena del mes");//10
+            modelo.addColumn("Año");
+            modelo.addColumn("Dias de incapacidad");//12
+            modelo.addColumn("Pago de seguro");
+            modelo.addColumn("Dias de vacaciones");//14
+            modelo.addColumn("Pago de dias de vacaciones");
+            modelo.addColumn("Dias descansados");//16
+            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Dias Laborados");//18
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Descansos Trabajados");//20
+            modelo.addColumn("Pago de descansos trabajados");
+            modelo.addColumn("Descanso sin goce de sueldo");//22
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Faltas Justificadas");//24
+            modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Retardos");//26
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Apoyo");//28
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("Faltas");//32
+            modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Desc IMSS");//34
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Sancion");//36
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Chaleco");//38
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Grua");//40
+            modelo.addColumn("Pantalon");
+            modelo.addColumn("Credencial");//42
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Playera");//44
+            modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
-            modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//70
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
-                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
-                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
-                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
-                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+                /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
+                /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
-                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+                /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -633,7 +930,18 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     public void MDNFT() {
         //Buscar empleado
         String FiltroN = Nominab2.getText();
-        String SQL = "select * from `nomina.detallada.foraneos toluca`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca`";
         String FAPNom = FApT2.getText();
         String FAMNom = FAmT2.getText();
         String FiltroSnom = FiltroSnomina2.getSelectedItem().toString();
@@ -641,17 +949,83 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF2.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nomina.detallada.foraneos toluca` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nomina.detallada.foraneos toluca` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nomina.detallada.foraneos toluca` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nomina.detallada.foraneos toluca` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nomina.detallada.foraneos toluca` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nomina.detallada.foraneos toluca` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -679,91 +1053,63 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");//4
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");//6
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");//8
+            modelo.addColumn("Zona");//6
             modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Sueldo");//8
             modelo.addColumn("Bono");
-            modelo.addColumn("Por dia");//12
-            modelo.addColumn("Quincena del mes");
-            modelo.addColumn("Año");//14
-            modelo.addColumn("Dia 1 o 16");
-            modelo.addColumn("Dia 2 o 17");//16
-            modelo.addColumn("Dia 3 o 18");
-            modelo.addColumn("Dia 4 o 19");//18
-            modelo.addColumn("Dia 5 o 20");
-            modelo.addColumn("Dia 6 o 21");//20
-            modelo.addColumn("Dia 7 o 22");
-            modelo.addColumn("Dia 8 o 23");//22
-            modelo.addColumn("Dia 9 o 24");
-            modelo.addColumn("Dia 10 o 25");//24
-            modelo.addColumn("Dia 11 o 26");
-            modelo.addColumn("Dia 12 o 27");//26
-            modelo.addColumn("Dia 13 o 28");
-            modelo.addColumn("Dia 14 o 29");//28
-            modelo.addColumn("Dia 15 o 30");
-            modelo.addColumn("Dia 31");//30
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
-            modelo.addColumn("Dias descansados");
-            modelo.addColumn("Pago de dias descansados");//36
-            modelo.addColumn("Dias Laborados");
-            modelo.addColumn("Pago de dias laborados");//38
-            modelo.addColumn("Descansos Trabajados");
-            modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
-            modelo.addColumn("Pago de dias de DSGS");//42
-            modelo.addColumn("Faltas Justificadas");
-            modelo.addColumn("Descanso Otorgado");//44
-            modelo.addColumn("Dias festivos");
-            modelo.addColumn("Pago por dias festivos");//46
-            modelo.addColumn("Dias festivos trabajados");
-            modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
-            modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
-            modelo.addColumn("Rembolso");
-            modelo.addColumn("Adicionales");//48
-            modelo.addColumn("Faltas");
-            modelo.addColumn("Descuento por faltas");//50
-            modelo.addColumn("Desc IMSS");
-            modelo.addColumn("Faltantes de boleto");//54
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");//56
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");//58
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");//60 
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");//62
-            modelo.addColumn("Playera");
-            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Quincena del mes");//10
+            modelo.addColumn("Año");
+            modelo.addColumn("Dias de incapacidad");//12
+            modelo.addColumn("Pago de seguro");
+            modelo.addColumn("Dias de vacaciones");//14
+            modelo.addColumn("Pago de dias de vacaciones");
+            modelo.addColumn("Dias descansados");//16
+            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Dias Laborados");//18
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Descansos Trabajados");//20
+            modelo.addColumn("Pago de descansos trabajados");
+            modelo.addColumn("Descanso sin goce de sueldo");//22
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Faltas Justificadas");//24
+            modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Retardos");//26
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Apoyo");//28
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("Faltas");//32
+            modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Desc IMSS");//34
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Sancion");//36
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Chaleco");//38
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Grua");//40
+            modelo.addColumn("Pantalon");
+            modelo.addColumn("Credencial");//42
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Playera");//44
+            modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
-            modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//70
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
-                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
-                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
-                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
-                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+                /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
+                /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
-                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
-
+                /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
@@ -787,7 +1133,18 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     public void MDNNor() {
         //Buscar empleado
         String FiltroN = Nominab3.getText();
-        String where = "select * from `nomina.detallada.norte`";
+        String where = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte`";
         String FAPNom = FApT3.getText();
         String FAMNom = FAmT3.getText();
         String FiltroSnom = FiltroSnomina3.getSelectedItem().toString();
@@ -795,17 +1152,83 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF3.getText();
 
         if (!"".equals(FiltroN)) {
-            where = "Select * from `nomina.detallada.norte` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            where = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            where = "select * from `nomina.detallada.norte` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            where = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            where = "select * from `nomina.detallada.norte` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            where = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            where = "select * from `nomina.detallada.norte` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            where = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            where = "select * from `nomina.detallada.norte` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            where = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            where = "select * from `nomina.detallada.norte` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            where = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -833,90 +1256,63 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");//4
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");//6
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");//8
+            modelo.addColumn("Zona");//6
             modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Sueldo");//8
             modelo.addColumn("Bono");
-            modelo.addColumn("Por dia");//12
-            modelo.addColumn("Quincena del mes");
-            modelo.addColumn("Año");//14
-            modelo.addColumn("Dia 1 o 16");
-            modelo.addColumn("Dia 2 o 17");//16
-            modelo.addColumn("Dia 3 o 18");
-            modelo.addColumn("Dia 4 o 19");//18
-            modelo.addColumn("Dia 5 o 20");
-            modelo.addColumn("Dia 6 o 21");//20
-            modelo.addColumn("Dia 7 o 22");
-            modelo.addColumn("Dia 8 o 23");//22
-            modelo.addColumn("Dia 9 o 24");
-            modelo.addColumn("Dia 10 o 25");//24
-            modelo.addColumn("Dia 11 o 26");
-            modelo.addColumn("Dia 12 o 27");//26
-            modelo.addColumn("Dia 13 o 28");
-            modelo.addColumn("Dia 14 o 29");//28
-            modelo.addColumn("Dia 15 o 30");
-            modelo.addColumn("Dia 31");//30
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
-            modelo.addColumn("Dias descansados");
-            modelo.addColumn("Pago de dias descansados");//36
-            modelo.addColumn("Dias Laborados");
-            modelo.addColumn("Pago de dias laborados");//38
-            modelo.addColumn("Descansos Trabajados");
-            modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
-            modelo.addColumn("Pago de dias de DSGS");//42
-            modelo.addColumn("Faltas Justificadas");
-            modelo.addColumn("Descanso Otorgado");//44
-            modelo.addColumn("Dias festivos");
-            modelo.addColumn("Pago por dias festivos");//46
-            modelo.addColumn("Dias festivos trabajados");
-            modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
-            modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
-            modelo.addColumn("Rembolso");
-            modelo.addColumn("Adicionales");//48
-            modelo.addColumn("Faltas");
-            modelo.addColumn("Descuento por faltas");//50
-            modelo.addColumn("Desc IMSS");
-            modelo.addColumn("Faltantes de boleto");//54
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");//56
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");//58
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");//60 
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");//62
-            modelo.addColumn("Playera");
-            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Quincena del mes");//10
+            modelo.addColumn("Año");
+            modelo.addColumn("Dias de incapacidad");//12
+            modelo.addColumn("Pago de seguro");
+            modelo.addColumn("Dias de vacaciones");//14
+            modelo.addColumn("Pago de dias de vacaciones");
+            modelo.addColumn("Dias descansados");//16
+            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Dias Laborados");//18
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Descansos Trabajados");//20
+            modelo.addColumn("Pago de descansos trabajados");
+            modelo.addColumn("Descanso sin goce de sueldo");//22
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Faltas Justificadas");//24
+            modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Retardos");//26
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Apoyo");//28
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("Faltas");//32
+            modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Desc IMSS");//34
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Sancion");//36
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Chaleco");//38
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Grua");//40
+            modelo.addColumn("Pantalon");
+            modelo.addColumn("Credencial");//42
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Playera");//44
+            modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
-            modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//70
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
-                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
-                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
-                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
-                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+                /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
+                /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
-                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+                /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -941,7 +1337,18 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     public void MDNOfi() {
         //Buscar empleado
         String FiltroN = Nominab4.getText();
-        String SQL = "select * from `nomina.detallada.oficina`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina`";
         String FAPNom = FApT4.getText();
         String FAMNom = FAmT4.getText();
         String FiltroSnom = FiltroSnomina4.getSelectedItem().toString();
@@ -949,17 +1356,83 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF4.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nomina.detallada.oficina` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nomina.detallada.oficina` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nomina.detallada.oficina` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nomina.detallada.oficina` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nomina.detallada.oficina` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nomina.detallada.oficina` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -987,90 +1460,63 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");//4
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");//6
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");//8
+            modelo.addColumn("Zona");//6
             modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Sueldo");//8
             modelo.addColumn("Bono");
-            modelo.addColumn("Por dia");//12
-            modelo.addColumn("Quincena del mes");
-            modelo.addColumn("Año");//14
-            modelo.addColumn("Dia 1 o 16");
-            modelo.addColumn("Dia 2 o 17");//16
-            modelo.addColumn("Dia 3 o 18");
-            modelo.addColumn("Dia 4 o 19");//18
-            modelo.addColumn("Dia 5 o 20");
-            modelo.addColumn("Dia 6 o 21");//20
-            modelo.addColumn("Dia 7 o 22");
-            modelo.addColumn("Dia 8 o 23");//22
-            modelo.addColumn("Dia 9 o 24");
-            modelo.addColumn("Dia 10 o 25");//24
-            modelo.addColumn("Dia 11 o 26");
-            modelo.addColumn("Dia 12 o 27");//26
-            modelo.addColumn("Dia 13 o 28");
-            modelo.addColumn("Dia 14 o 29");//28
-            modelo.addColumn("Dia 15 o 30");
-            modelo.addColumn("Dia 31");//30
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
-            modelo.addColumn("Dias descansados");
-            modelo.addColumn("Pago de dias descansados");//36
-            modelo.addColumn("Dias Laborados");
-            modelo.addColumn("Pago de dias laborados");//38
-            modelo.addColumn("Descansos Trabajados");
-            modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
-            modelo.addColumn("Pago de dias de DSGS");//42
-            modelo.addColumn("Faltas Justificadas");
-            modelo.addColumn("Descanso Otorgado");//44
-            modelo.addColumn("Dias festivos");
-            modelo.addColumn("Pago por dias festivos");//46
-            modelo.addColumn("Dias festivos trabajados");
-            modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
-            modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
-            modelo.addColumn("Rembolso");
-            modelo.addColumn("Adicionales");//48
-            modelo.addColumn("Faltas");
-            modelo.addColumn("Descuento por faltas");//50
-            modelo.addColumn("Desc IMSS");
-            modelo.addColumn("Faltantes de boleto");//54
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");//56
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");//58
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");//60 
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");//62
-            modelo.addColumn("Playera");
-            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Quincena del mes");//10
+            modelo.addColumn("Año");
+            modelo.addColumn("Dias de incapacidad");//12
+            modelo.addColumn("Pago de seguro");
+            modelo.addColumn("Dias de vacaciones");//14
+            modelo.addColumn("Pago de dias de vacaciones");
+            modelo.addColumn("Dias descansados");//16
+            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Dias Laborados");//18
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Descansos Trabajados");//20
+            modelo.addColumn("Pago de descansos trabajados");
+            modelo.addColumn("Descanso sin goce de sueldo");//22
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Faltas Justificadas");//24
+            modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Retardos");//26
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Apoyo");//28
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("Faltas");//32
+            modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Desc IMSS");//34
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Sancion");//36
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Chaleco");//38
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Grua");//40
+            modelo.addColumn("Pantalon");
+            modelo.addColumn("Credencial");//42
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Playera");//44
+            modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
-            modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//70
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
-                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
-                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
-                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
-                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+                /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
+                /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
-                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+                /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1095,7 +1541,18 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     public void MDNPon() {
         //Buscar empleado
         String FiltroN = Nominab5.getText();
-        String SQL = "select * from `nomina.detallada.poniente`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente`";
         String FAPNom = FApT5.getText();
         String FAMNom = FAmT5.getText();
         String FiltroSnom = FiltroSnomina5.getSelectedItem().toString();
@@ -1103,17 +1560,83 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF5.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nomina.detallada.poniente` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nomina.detallada.poniente` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nomina.detallada.poniente` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nomina.detallada.poniente` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nomina.detallada.poniente` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nomina.detallada.poniente` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1141,90 +1664,63 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");//4
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");//6
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");//8
+            modelo.addColumn("Zona");//6
             modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Sueldo");//8
             modelo.addColumn("Bono");
-            modelo.addColumn("Por dia");//12
-            modelo.addColumn("Quincena del mes");
-            modelo.addColumn("Año");//14
-            modelo.addColumn("Dia 1 o 16");
-            modelo.addColumn("Dia 2 o 17");//16
-            modelo.addColumn("Dia 3 o 18");
-            modelo.addColumn("Dia 4 o 19");//18
-            modelo.addColumn("Dia 5 o 20");
-            modelo.addColumn("Dia 6 o 21");//20
-            modelo.addColumn("Dia 7 o 22");
-            modelo.addColumn("Dia 8 o 23");//22
-            modelo.addColumn("Dia 9 o 24");
-            modelo.addColumn("Dia 10 o 25");//24
-            modelo.addColumn("Dia 11 o 26");
-            modelo.addColumn("Dia 12 o 27");//26
-            modelo.addColumn("Dia 13 o 28");
-            modelo.addColumn("Dia 14 o 29");//28
-            modelo.addColumn("Dia 15 o 30");
-            modelo.addColumn("Dia 31");//30
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
-            modelo.addColumn("Dias descansados");
-            modelo.addColumn("Pago de dias descansados");//36
-            modelo.addColumn("Dias Laborados");
-            modelo.addColumn("Pago de dias laborados");//38
-            modelo.addColumn("Descansos Trabajados");
-            modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
-            modelo.addColumn("Pago de dias de DSGS");//42
-            modelo.addColumn("Faltas Justificadas");
-            modelo.addColumn("Descanso Otorgado");//44
-            modelo.addColumn("Dias festivos");
-            modelo.addColumn("Pago por dias festivos");//46
-            modelo.addColumn("Dias festivos trabajados");
-            modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
-            modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
-            modelo.addColumn("Rembolso");
-            modelo.addColumn("Adicionales");//48
-            modelo.addColumn("Faltas");
-            modelo.addColumn("Descuento por faltas");//50
-            modelo.addColumn("Desc IMSS");
-            modelo.addColumn("Faltantes de boleto");//54
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");//56
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");//58
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");//60 
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");//62
-            modelo.addColumn("Playera");
-            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Quincena del mes");//10
+            modelo.addColumn("Año");
+            modelo.addColumn("Dias de incapacidad");//12
+            modelo.addColumn("Pago de seguro");
+            modelo.addColumn("Dias de vacaciones");//14
+            modelo.addColumn("Pago de dias de vacaciones");
+            modelo.addColumn("Dias descansados");//16
+            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Dias Laborados");//18
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Descansos Trabajados");//20
+            modelo.addColumn("Pago de descansos trabajados");
+            modelo.addColumn("Descanso sin goce de sueldo");//22
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Faltas Justificadas");//24
+            modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Retardos");//26
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Apoyo");//28
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("Faltas");//32
+            modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Desc IMSS");//34
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Sancion");//36
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Chaleco");//38
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Grua");//40
+            modelo.addColumn("Pantalon");
+            modelo.addColumn("Credencial");//42
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Playera");//44
+            modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
-            modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//70
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
-                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
-                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
-                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
-                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+                /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
+                /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
-                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+                /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1249,7 +1745,18 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     public void MDNS1() {
         //Buscar empleado
         String FiltroN = Nominab6.getText();
-        String SQL = "select * from `nomina.detallada.sur 1`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1`";
         String FAPNom = FApT6.getText();
         String FAMNom = FAmT6.getText();
         String FiltroSnom = FiltroSnomina6.getSelectedItem().toString();
@@ -1257,17 +1764,83 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF6.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nomina.detallada.sur 1` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nomina.detallada.sur 1` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nomina.detallada.sur 1` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nomina.detallada.sur 1` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nomina.detallada.sur 1` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nomina.detallada.sur 1` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1295,90 +1868,63 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");//4
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");//6
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");//8
+            modelo.addColumn("Zona");//6
             modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Sueldo");//8
             modelo.addColumn("Bono");
-            modelo.addColumn("Por dia");//12
-            modelo.addColumn("Quincena del mes");
-            modelo.addColumn("Año");//14
-            modelo.addColumn("Dia 1 o 16");
-            modelo.addColumn("Dia 2 o 17");//16
-            modelo.addColumn("Dia 3 o 18");
-            modelo.addColumn("Dia 4 o 19");//18
-            modelo.addColumn("Dia 5 o 20");
-            modelo.addColumn("Dia 6 o 21");//20
-            modelo.addColumn("Dia 7 o 22");
-            modelo.addColumn("Dia 8 o 23");//22
-            modelo.addColumn("Dia 9 o 24");
-            modelo.addColumn("Dia 10 o 25");//24
-            modelo.addColumn("Dia 11 o 26");
-            modelo.addColumn("Dia 12 o 27");//26
-            modelo.addColumn("Dia 13 o 28");
-            modelo.addColumn("Dia 14 o 29");//28
-            modelo.addColumn("Dia 15 o 30");
-            modelo.addColumn("Dia 31");//30
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
-            modelo.addColumn("Dias descansados");
-            modelo.addColumn("Pago de dias descansados");//36
-            modelo.addColumn("Dias Laborados");
-            modelo.addColumn("Pago de dias laborados");//38
-            modelo.addColumn("Descansos Trabajados");
-            modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
-            modelo.addColumn("Pago de dias de DSGS");//42
-            modelo.addColumn("Faltas Justificadas");
-            modelo.addColumn("Descanso Otorgado");//44
-            modelo.addColumn("Dias festivos");
-            modelo.addColumn("Pago por dias festivos");//46
-            modelo.addColumn("Dias festivos trabajados");
-            modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
-            modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
-            modelo.addColumn("Rembolso");
-            modelo.addColumn("Adicionales");//48
-            modelo.addColumn("Faltas");
-            modelo.addColumn("Descuento por faltas");//50
-            modelo.addColumn("Desc IMSS");
-            modelo.addColumn("Faltantes de boleto");//54
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");//56
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");//58
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");//60 
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");//62
-            modelo.addColumn("Playera");
-            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Quincena del mes");//10
+            modelo.addColumn("Año");
+            modelo.addColumn("Dias de incapacidad");//12
+            modelo.addColumn("Pago de seguro");
+            modelo.addColumn("Dias de vacaciones");//14
+            modelo.addColumn("Pago de dias de vacaciones");
+            modelo.addColumn("Dias descansados");//16
+            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Dias Laborados");//18
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Descansos Trabajados");//20
+            modelo.addColumn("Pago de descansos trabajados");
+            modelo.addColumn("Descanso sin goce de sueldo");//22
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Faltas Justificadas");//24
+            modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Retardos");//26
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Apoyo");//28
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("Faltas");//32
+            modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Desc IMSS");//34
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Sancion");//36
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Chaleco");//38
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Grua");//40
+            modelo.addColumn("Pantalon");
+            modelo.addColumn("Credencial");//42
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Playera");//44
+            modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
-            modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//70
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
-                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
-                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
-                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
-                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+                /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
+                /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
-                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+                /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1403,7 +1949,18 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     public void MDNS2() {
         //Buscar empleado
         String FiltroN = Nominab7.getText();
-        String SQL = "select * from `nomina.detallada.sur 2`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2`";
         String FAPNom = FApT7.getText();
         String FAMNom = FAmT7.getText();
         String FiltroSnom = FiltroSnomina7.getSelectedItem().toString();
@@ -1411,17 +1968,83 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF7.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nomina.detallada.sur 2` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nomina.detallada.sur 2` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nomina.detallada.sur 2` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nomina.detallada.sur 2` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nomina.detallada.sur 2` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nomina.detallada.sur 2` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
+                    + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
+                    + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
+                    + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
+                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
+                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
+                    + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
+                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
+                    + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
+                    + " `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1449,90 +2072,63 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");//4
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");//6
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");//8
+            modelo.addColumn("Zona");//6
             modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Sueldo");//8
             modelo.addColumn("Bono");
-            modelo.addColumn("Por dia");//12
-            modelo.addColumn("Quincena del mes");
-            modelo.addColumn("Año");//14
-            modelo.addColumn("Dia 1 o 16");
-            modelo.addColumn("Dia 2 o 17");//16
-            modelo.addColumn("Dia 3 o 18");
-            modelo.addColumn("Dia 4 o 19");//18
-            modelo.addColumn("Dia 5 o 20");
-            modelo.addColumn("Dia 6 o 21");//20
-            modelo.addColumn("Dia 7 o 22");
-            modelo.addColumn("Dia 8 o 23");//22
-            modelo.addColumn("Dia 9 o 24");
-            modelo.addColumn("Dia 10 o 25");//24
-            modelo.addColumn("Dia 11 o 26");
-            modelo.addColumn("Dia 12 o 27");//26
-            modelo.addColumn("Dia 13 o 28");
-            modelo.addColumn("Dia 14 o 29");//28
-            modelo.addColumn("Dia 15 o 30");
-            modelo.addColumn("Dia 31");//30
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
-            modelo.addColumn("Dias descansados");
-            modelo.addColumn("Pago de dias descansados");//36
-            modelo.addColumn("Dias Laborados");
-            modelo.addColumn("Pago de dias laborados");//38
-            modelo.addColumn("Descansos Trabajados");
-            modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
-            modelo.addColumn("Pago de dias de DSGS");//42
-            modelo.addColumn("Faltas Justificadas");
-            modelo.addColumn("Descanso Otorgado");//44
-            modelo.addColumn("Dias festivos");
-            modelo.addColumn("Pago por dias festivos");//46
-            modelo.addColumn("Dias festivos trabajados");
-            modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
-            modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
-            modelo.addColumn("Rembolso");
-            modelo.addColumn("Adicionales");//48
-            modelo.addColumn("Faltas");
-            modelo.addColumn("Descuento por faltas");//50
-            modelo.addColumn("Desc IMSS");
-            modelo.addColumn("Faltantes de boleto");//54
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");//56
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");//58
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");//60 
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");//62
-            modelo.addColumn("Playera");
-            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Quincena del mes");//10
+            modelo.addColumn("Año");
+            modelo.addColumn("Dias de incapacidad");//12
+            modelo.addColumn("Pago de seguro");
+            modelo.addColumn("Dias de vacaciones");//14
+            modelo.addColumn("Pago de dias de vacaciones");
+            modelo.addColumn("Dias descansados");//16
+            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Dias Laborados");//18
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Descansos Trabajados");//20
+            modelo.addColumn("Pago de descansos trabajados");
+            modelo.addColumn("Descanso sin goce de sueldo");//22
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Faltas Justificadas");//24
+            modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Retardos");//26
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Apoyo");//28
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("Faltas");//32
+            modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Desc IMSS");//34
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Sancion");//36
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Chaleco");//38
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Grua");//40
+            modelo.addColumn("Pantalon");
+            modelo.addColumn("Credencial");//42
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Playera");//44
+            modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
-            modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//70
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
-                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
-                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
-                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
-                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+                /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
+                /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100,/*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
-                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+                /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1767,7 +2363,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-            modelo.addColumn("# Folio");//1
             modelo.addColumn("# Lista");
             modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");
@@ -1879,221 +2474,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         double Egresos = (EG2 + EG7 + EG8 + EG4 + EG16);
         double total = Ingresos - Egresos;
         this.deposito.setText("" + total + "");
-    }
-
-    public void MDN() {
-        //Buscar empleado
-        String SQL = "SELECT `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`,  `quincena del mes`, `año`, `Dias de incapacidad`,"
-                + " `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`,"
-                + " `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`,"
-                + " `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`,"
-                + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
-                + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`,"
-                + " `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
-                + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
-                + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`,"
-                + " `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`,"
-                + " `Caja de ahorro`, `Orden de taller`, `Deposito` FROM `nomina.detallada`";
-
-        String FiltroN = Nominab.getText();
-        String FAPNom = FApT.getText();
-        String FAMNom = FAmT.getText();
-        String FiltroSnom = FiltroSnomina.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina.getSelectedItem().toString();
-        String FiltroFol = FiltroNDF.getText();
-
-        if (!"".equals(FiltroN)) {
-            SQL = "Select `#Folio`, `#lista`, `#empleado`, `Apellido P`, `Apellido M`,"
-                    + " `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `quincena del mes`, "
-                    + "`año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, "
-                    + "`Pago de dias de vacaciones`, `Dias descansados`, "
-                    + "`Pago de dias descansados`, `Dias Laborados`,"
-                    + " `Pago de dias laborados`, `Descansos Trabajados`, "
-                    + "`Pago de dias trabajados`, `Descanso sin goce de sueldo`, "
-                    + "`Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`,"
-                    + " `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, "
-                    + "`Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`,"
-                    + " `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
-                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, "
-                    + "`Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`, "
-                    + "`Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada`"
-                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
-        } else if (!"".equals(FiltroFol)) {
-            SQL = "select `#Folio`, `#lista`, `#empleado`, `Apellido P`, `Apellido M`,"
-                    + " `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `quincena del mes`, `año`,"
-                    + "`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`,"
-                    + " `Pago de dias de vacaciones`, `Dias descansados`, "
-                    + "`Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, "
-                    + "`Descansos Trabajados`, `Pago de dias trabajados`,"
-                    + " `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, "
-                    + "`Faltas Justificadas`, `Descanso Otorgado`, `Retardos`, "
-                    + "`Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, "
-                    + "`Faltas`, `Descuento por faltas`, `Desc IMSS`, `Faltantes de boleto`, "
-                    + "`Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, "
-                    + "`Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, "
-                    + "`Corbata`, `Adelanto de nomina`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`,"
-                    + " `Deposito` from `nomina.detallada` Where `#lista` LIKE '%" + FiltroFol + "%'";
-        } else if (!"".equals(FAPNom)) {
-            SQL = "select `#Folio`, `#lista`, `#empleado`, `Apellido P`, `Apellido M`,"
-                    + " `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`,  `por dia`, `quincena del mes`,`año`,"
-                    + "`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`,"
-                    + " `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`,"
-                    + " `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, "
-                    + "`Pago de dias trabajados`, `Descanso sin goce de sueldo`,"
-                    + " `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`,"
-                    + " `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, "
-                    + "`Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, "
-                    + "`Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`,"
-                    + " `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, "
-                    + "`Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from "
-                    + "`nomina.detallada` Where `Apellido P` LIKE '%" + FAPNom + "%'";
-        } else if (!"".equals(FAMNom)) {
-            SQL = "select `#Folio`, `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
-                    + "`Zona`, `Servicio`, `Sueldo`, `Bono`,  `por dia`, `quincena del mes`,`año`,`Dias de incapacidad`, "
-                    + "`Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, "
-                    + "`Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, "
-                    + "`Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, "
-                    + "`Descanso sin goce de sueldo`, `Pago de dias de DSGS`, "
-                    + "`Faltas Justificadas`, `Descanso Otorgado`, `Retardos`, "
-                    + "`Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, "
-                    + "`Faltas`, `Descuento por faltas`, `Desc IMSS`, `Faltantes de boleto`, "
-                    + "`Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, "
-                    + "`Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, "
-                    + "`Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` "
-                    + "from `nomina.detallada` Where `Apellido M` LIKE '%" + FAMNom + "%'";
-
-        } else if (!"".equals(FiltroSnom)) {
-            SQL = "select `#Folio`, `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
-                    + " `Servicio`, `Sueldo`, `Bono`, `por dia`, `quincena del mes`, `año`, `Dias de incapacidad`, `Pago de seguro`, "
-                    + "`Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, "
-                    + "`Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, "
-                    + "`Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, "
-                    + "`Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`,"
-                    + " `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`,"
-                    + " `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`,"
-                    + " `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
-                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, "
-                    + "`Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`, "
-                    + "`Caja de ahorro`, `Orden de taller`, `Deposito` from nomina"
-                    + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
-        } else if (!"".equals(FiltroQuin)) {
-            SQL = "select  `#Folio`, `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `quincena del mes`,`año`,`Dias de incapacidad`, "
-                    + "`Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, "
-                    + "`Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, "
-                    + "`Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, "
-                    + "`Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, "
-                    + "`Descanso Otorgado`, `Retardos`, `Pago con retardos`, `Apoyo`, "
-                    + "`Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, "
-                    + "`Desc IMSS`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
-                    + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`,"
-                    + " `Playera`, `Corbata`, `Adelanto de nomina`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, "
-                    + "`Deposito` from `nomina.detallada` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
-        }
-
-        try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            Tnom.setModel(modelo);
-            PreparedStatement ps;
-            ResultSet rs;
-
-            ps = con.prepareStatement(SQL);
-            rs = ps.executeQuery();
-
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Folio");
-            modelo.addColumn("# lista");//1
-            modelo.addColumn("# Empleado");//2
-            modelo.addColumn("Apellido P");
-            modelo.addColumn("Apellido M");//4
-            modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Zona");//6
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");//8
-            modelo.addColumn("Bono");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Quincena del mes");//10
-            modelo.addColumn("Año");
-            modelo.addColumn("Dias de incapacidad");//12
-            modelo.addColumn("Pago de seguro");
-            modelo.addColumn("Dias de vacaciones");//14
-            modelo.addColumn("Pago de dias de vacaciones");
-            modelo.addColumn("Dias descansados");//16
-            modelo.addColumn("Pago de dias descansados");
-            modelo.addColumn("Dias Laborados");//18
-            modelo.addColumn("Pago de dias laborados");
-            modelo.addColumn("Descansos Trabajados");//20
-            modelo.addColumn("Pago de descansos trabajados");
-            modelo.addColumn("Descanso sin goce de sueldo");//22
-            modelo.addColumn("Pago de dias de DSGS");
-            modelo.addColumn("Faltas Justificadas");//24
-            modelo.addColumn("Descanso Otorgado");
-            modelo.addColumn("Retardos");//26
-            modelo.addColumn("Pago con retardos");
-            modelo.addColumn("Apoyo");//28
-            modelo.addColumn("Lugar");
-            modelo.addColumn("Rembolso");//30
-            modelo.addColumn("Adicionales");
-            modelo.addColumn("Faltas");//32
-            modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Desc IMSS");//34
-            modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Sancion");//36
-            modelo.addColumn("Chamarra");
-            modelo.addColumn("Chaleco");//38
-            modelo.addColumn("Faltante de efectivo");
-            modelo.addColumn("Grua");//40
-            modelo.addColumn("Pantalon");
-            modelo.addColumn("Credencial");//42
-            modelo.addColumn("Boleto perdido");
-            modelo.addColumn("Playera");//44
-            modelo.addColumn("Corbata");
-            modelo.addColumn("Adelanto de nomina");
-            modelo.addColumn("Pago de prestamo");
-            modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//48
-            modelo.addColumn("Deposito");
-
-//Anchos hasta quincena
-            int[] anchos = {/*NF*/50, /*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
-                /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
-                /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
-                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*RETARDOS*/ 65,
-                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
-                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
-                /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                Tnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
-            while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
-
-        }
-
     }
 
 
@@ -6339,7 +6719,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_CS13ActionPerformed
-    
+
     private void Tnom6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom6MouseClicked
         try {
 
