@@ -6594,67 +6594,70 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) Tnom.getModel();
 
             int fila = Tnom.getSelectedRow();
-            NFnom.setText(String.valueOf(Tnom.getValueAt(fila, 0)));
-            NDL.setText(String.valueOf(Tnom.getValueAt(fila, 1)));
-            NEnom.setText(String.valueOf(Tnom.getValueAt(fila, 2)));
-            Ap.setText(String.valueOf(Tnom.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tnom.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
-            Zon.setText(String.valueOf(Tnom.getValueAt(fila, 6)));
-            ServN.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
-            sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 8)));
-            Bonodep.setText(String.valueOf(Tnom.getValueAt(fila, 9)));
-            pd.setText(String.valueOf(Tnom.getValueAt(fila, 10)));
-            String Quinc = model.getValueAt(fila, 11).toString();
+            NDL.setText(String.valueOf(Tnom.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom.getValueAt(fila, 4)));
+            Zon.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
+            ServN.setText(String.valueOf(Tnom.getValueAt(fila, 6)));
+            sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
+            Bonodep.setText(String.valueOf(Tnom.getValueAt(fila, 8)));
+            pd.setText(String.valueOf(Tnom.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 12));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom.getValueAt(fila, 13)));
-            pds.setText(String.valueOf(Tnom.getValueAt(fila, 14)));
-            Ddv.setText(String.valueOf(Tnom.getValueAt(fila, 15)));
-            PDDDV.setText(String.valueOf(Tnom.getValueAt(fila, 16)));
-            DD.setText(String.valueOf(Tnom.getValueAt(fila, 17)));
-            PDDD.setText(String.valueOf(Tnom.getValueAt(fila, 18)));
-            DL.setText(String.valueOf(Tnom.getValueAt(fila, 19)));
-            PDDL.setText(String.valueOf(Tnom.getValueAt(fila, 20)));
-            dt.setText(String.valueOf(Tnom.getValueAt(fila, 21)));
-            PDDT.setText(String.valueOf(Tnom.getValueAt(fila, 22)));
-            DSGS.setText(String.valueOf(Tnom.getValueAt(fila, 23)));
-            PDDDDSGS.setText(String.valueOf(Tnom.getValueAt(fila, 24)));
-            FJ.setText(String.valueOf(Tnom.getValueAt(fila, 25)));
-            DO.setText(String.valueOf(Tnom.getValueAt(fila, 26)));
-            R.setText(String.valueOf(Tnom.getValueAt(fila, 27)));
-            PCR.setText(String.valueOf(Tnom.getValueAt(fila, 28)));
-            apy.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
-            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
-            ADD.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
-            F.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
-            DPF.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
-            DI.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
-            Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
-            Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
-            Chamarra.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
-            Chaleco.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
-            Fde.setText(String.valueOf(Tnom.getValueAt(fila, 40)));
-            Grua.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
-            Pantalon.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
-            Credencial.setText(String.valueOf(Tnom.getValueAt(fila, 43)));
-            Bp.setText(String.valueOf(Tnom.getValueAt(fila, 44)));
-            Playera.setText(String.valueOf(Tnom.getValueAt(fila, 45)));
-            Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 46)));
-            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 47)));
-            cda.setText(String.valueOf(Tnom.getValueAt(fila, 48)));
-            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 49)));
-            AdN.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
-            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
-            Date FDPago = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 52));
+            Dpi.setText(String.valueOf(Tnom.getValueAt(fila, 12)));
+            pds.setText(String.valueOf(Tnom.getValueAt(fila, 13)));
+            Ddv.setText(String.valueOf(Tnom.getValueAt(fila, 14)));
+            PDDDV.setText(String.valueOf(Tnom.getValueAt(fila, 15)));
+            DD.setText(String.valueOf(Tnom.getValueAt(fila, 16)));
+            PDDD.setText(String.valueOf(Tnom.getValueAt(fila, 17)));
+            DL.setText(String.valueOf(Tnom.getValueAt(fila, 18)));
+            PDDL.setText(String.valueOf(Tnom.getValueAt(fila, 19)));
+            dt.setText(String.valueOf(Tnom.getValueAt(fila, 20)));
+            PDDT.setText(String.valueOf(Tnom.getValueAt(fila, 21)));
+            DSGS.setText(String.valueOf(Tnom.getValueAt(fila, 22)));
+            PDDDDSGS.setText(String.valueOf(Tnom.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tnom.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tnom.getValueAt(fila, 25)));
+            DF.setText(String.valueOf(Tnom.getValueAt(fila, 26)));
+            PDDF.setText(String.valueOf(Tnom.getValueAt(fila, 27)));
+            DFT.setText(String.valueOf(Tnom.getValueAt(fila, 28)));
+            PDDFT.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
+            R.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
+            PCR.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
+            apy.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
+            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            ADD.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
+            F.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
+            DPF.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
+            DI.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
+            Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
+            Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 40)));
+            Chamarra.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
+            Chaleco.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
+            Fde.setText(String.valueOf(Tnom.getValueAt(fila, 43)));
+            Grua.setText(String.valueOf(Tnom.getValueAt(fila, 44)));
+            Pantalon.setText(String.valueOf(Tnom.getValueAt(fila, 45)));
+            Credencial.setText(String.valueOf(Tnom.getValueAt(fila, 46)));
+            Bp.setText(String.valueOf(Tnom.getValueAt(fila, 47)));
+            Playera.setText(String.valueOf(Tnom.getValueAt(fila, 48)));
+            Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 49)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
+            cda.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
+            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 52)));
+            AdN.setText(String.valueOf(Tnom.getValueAt(fila, 53)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 54)));
+            /*Date FDPago = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 52));
             FDD.setDate(FDPago);
-            String Mes = model.getValueAt(fila, 53).toString();
+            String Mes = model.getValueAt(fila, 55).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
@@ -6667,7 +6670,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 }
             }
             Obsdeposito.setText(String.valueOf(Tnom.getValueAt(fila, 55)));
-
+*/
         } catch (ParseException ex) {
             Logger.getLogger(Admin_Depositos_4.class
                     .getName()).log(Level.SEVERE, null, ex);
