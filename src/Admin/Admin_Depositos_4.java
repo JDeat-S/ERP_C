@@ -67,13 +67,11 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         FiltrosZonas zz = new FiltrosZonas();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
         FZservicio.setModel(modelzonas);
+
         FiltrosZonas FZS = new FiltrosZonas();
         DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
         FZservicio.setModel(MODELFZS);
         //</editor-fold>
-        año.setCalendar(fecha_actual);
-        this.setLocationRelativeTo(null);
-        this.setExtendedState(6);
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         LabelBE.setVisible(false);
         LabelBQ.setVisible(false);
@@ -88,6 +86,8 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         FiltroQuincenanomina.setSelectedIndex(0);
         FiltroNDF.setVisible(false);
         LabelBNDF.setVisible(false);
+        FApT.setVisible(false);
+        FAmT.setVisible(false);
         LabelBE1.setVisible(false);
         LabelSZ1.setVisible(false);
         FApT1.setVisible(false);
@@ -185,16 +185,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         LabelBQ8.setVisible(false);
         FiltroNDF8.setVisible(false);
         LabelBNDF8.setVisible(false);
-        //</editor-fold>
-        setIconImage(new ImageIcon(Admin_NominaQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
-        this.setExtendedState(6);
-        año.setCalendar(fecha_actual);
-        FiltrosZonas FZNomdep = new FiltrosZonas();
-        DefaultComboBoxModel FZNOMmodeldep = new DefaultComboBoxModel(FZNomdep.mostrarzonas());
-        FiltroZnomina1.setModel(FZNOMmodeldep);
-        FiltrosZonas FZSnomdep = new FiltrosZonas();
-        DefaultComboBoxModel MODELFZSnomdep = new DefaultComboBoxModel(FZSnomdep.mostrarzonas());
-        FZservicio1.setModel(MODELFZSnomdep);
         LabelBE1.setVisible(false);
         FApT1.setVisible(false);
         FAmT1.setVisible(false);
@@ -209,6 +199,17 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         LabelBQ1.setVisible(false);
         FiltroNDF1.setVisible(false);
         LabelBNDF1.setVisible(false);
+        //</editor-fold>
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(6);
+        año.setCalendar(fecha_actual);
+        FiltrosZonas FZNomdep = new FiltrosZonas();
+        DefaultComboBoxModel FZNOMmodeldep = new DefaultComboBoxModel(FZNomdep.mostrarzonas());
+        FiltroZnomina1.setModel(FZNOMmodeldep);
+        FiltrosZonas FZSnomdep = new FiltrosZonas();
+        DefaultComboBoxModel MODELFZSnomdep = new DefaultComboBoxModel(FZSnomdep.mostrarzonas());
+        FZservicio1.setModel(MODELFZSnomdep);
+
         setIconImage(new ImageIcon(Admin_Depositos_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MDDep();
     }
@@ -489,7 +490,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Deposito");
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
@@ -693,7 +694,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Deposito");
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
@@ -897,7 +898,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Deposito");
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
@@ -1101,7 +1102,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Deposito");
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
@@ -1304,7 +1305,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Deposito");
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
@@ -1508,7 +1509,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Deposito");
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
@@ -1712,7 +1713,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Deposito");
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
@@ -1916,7 +1917,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Deposito");
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
@@ -2120,7 +2121,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Deposito");
 
 //Anchos hasta quincena
-            int[] anchos = {/*NL*/ 50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*pordia*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
