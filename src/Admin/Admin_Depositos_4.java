@@ -383,6 +383,10 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago de dias de DSGS");
             modelo.addColumn("Faltas Justificadas");//24
             modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
@@ -510,6 +514,10 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago de dias de DSGS");
             modelo.addColumn("Faltas Justificadas");//24
             modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
@@ -637,6 +645,10 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago de dias de DSGS");
             modelo.addColumn("Faltas Justificadas");//24
             modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
@@ -786,6 +798,10 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago de dias de DSGS");
             modelo.addColumn("Faltas Justificadas");//24
             modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
@@ -912,6 +928,10 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago de dias de DSGS");
             modelo.addColumn("Faltas Justificadas");//24
             modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
@@ -1039,6 +1059,10 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago de dias de DSGS");
             modelo.addColumn("Faltas Justificadas");//24
             modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
@@ -1166,6 +1190,10 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago de dias de DSGS");
             modelo.addColumn("Faltas Justificadas");//24
             modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
@@ -1293,6 +1321,10 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago de dias de DSGS");
             modelo.addColumn("Faltas Justificadas");//24
             modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
@@ -1420,6 +1452,10 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago de dias de DSGS");
             modelo.addColumn("Faltas Justificadas");//24
             modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
@@ -1714,6 +1750,10 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago de dias de DSGS");
             modelo.addColumn("Faltas justificadas");
             modelo.addColumn("Descanso otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");
