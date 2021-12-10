@@ -512,31 +512,31 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="botonWeb9" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBE2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelBE1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Nominab2" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="Nominab1" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FApT2" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="FApT1" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FAmT2" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="FAmT1" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FFDP1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelSZ2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelSZ1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FZservicio2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FZservicio1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBS2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelBS1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroSnomina2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FiltroSnomina1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBQ2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelBQ1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroQuincenanomina2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FiltroQuincenanomina1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBNDF2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelBNDF1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroNDF2" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="FiltroNDF1" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS8" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -553,20 +553,20 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="LabelBE2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Nominab2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBS2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroSnomina2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBQ2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroQuincenanomina2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelSZ2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FZservicio2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBE1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Nominab1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBS1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroSnomina1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBQ1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroQuincenanomina1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelSZ1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FZservicio1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel169" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltrosTD1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBNDF2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroNDF2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FApT2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FAmT2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBNDF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroNDF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FApT1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FAmT1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb9" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FFDP1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -650,14 +650,14 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JLabel" name="LabelBE2">
+                        <Component class="javax.swing.JLabel" name="LabelBE1">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Empleado:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="Nominab2">
+                        <Component class="javax.swing.JTextField" name="Nominab1">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab2KeyReleased"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab1KeyReleased"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="CS8">
@@ -669,6 +669,356 @@
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS8ActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="LabelBS1">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FiltroSnomina1">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="1">
+                                <StringItem index="0" value=""/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroSnomina1ItemStateChanged"/>
+                          </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="LabelBQ1">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Buscar Quincena:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FiltroQuincenanomina1">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="26">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="1ra Quincena de Enero"/>
+                                <StringItem index="2" value="2da Quincena de Enero"/>
+                                <StringItem index="3" value="1ra Quincena de Febrero"/>
+                                <StringItem index="4" value="2da Quincena de Febrero"/>
+                                <StringItem index="5" value="2da Quincena de Feb B"/>
+                                <StringItem index="6" value="1ra Quincena de Marzo"/>
+                                <StringItem index="7" value="2da Quincena de Marzo"/>
+                                <StringItem index="8" value="1ra Quincena de Abril"/>
+                                <StringItem index="9" value="2da Quincena de Abril"/>
+                                <StringItem index="10" value="1ra Quincena de Mayo"/>
+                                <StringItem index="11" value="2da Quincena de Mayo"/>
+                                <StringItem index="12" value="1ra Quincena de Junio"/>
+                                <StringItem index="13" value="2da Quincena de Junio"/>
+                                <StringItem index="14" value="1ra Quincena de Julio"/>
+                                <StringItem index="15" value="2da Quincena de Julio"/>
+                                <StringItem index="16" value="1ra Quincena de Agosto"/>
+                                <StringItem index="17" value="2da Quincena de Agosto"/>
+                                <StringItem index="18" value="1ra Quincena de Septiembre"/>
+                                <StringItem index="19" value="2da Quincena de Septiembre"/>
+                                <StringItem index="20" value="1ra Quincena de Octubre"/>
+                                <StringItem index="21" value="2da Quincena de Octubre"/>
+                                <StringItem index="22" value="1ra Quincena de Noviembre"/>
+                                <StringItem index="23" value="2da Quincena de Noviembre"/>
+                                <StringItem index="24" value="1ra Quincena de Diciembre"/>
+                                <StringItem index="25" value="2da Quincena de Diciembre"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroQuincenanomina1ItemStateChanged"/>
+                          </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="LabelSZ1">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Selecciona Zona:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FZservicio1">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="0"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FZservicio1ItemStateChanged"/>
+                          </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel169">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Filtros:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FiltrosTD1">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="8">
+                                <StringItem index="0" value="Selecciona filtro"/>
+                                <StringItem index="1" value="Filtrar por Apellido P"/>
+                                <StringItem index="2" value="Filtrar por Apellido M"/>
+                                <StringItem index="3" value="Filtrar por Nombre(s)"/>
+                                <StringItem index="4" value="Filtrar por Servicio"/>
+                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltrosTD1ItemStateChanged"/>
+                          </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="LabelBNDF1">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Buscar por # Lista"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="FiltroNDF1">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroNDF1KeyReleased"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="FApT1">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FApT1KeyReleased"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="FAmT1">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT1KeyReleased"/>
+                          </Events>
+                        </Component>
+                        <Component class="botones.BotonWeb" name="botonWeb9">
+                          <Properties>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                            </Property>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDP1">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="TDFA2">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Foraneos Toluca">
+                        <Property name="tabTitle" type="java.lang.String" value="Foraneos Toluca"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Container class="javax.swing.JPanel" name="jPanel23">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="cc" type="rgb"/>
+                        </Property>
+                      </Properties>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                          <Component id="jLabel170" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FiltrosTD2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="botonWeb10" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="LabelBE2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Nominab2" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FApT2" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FAmT2" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDP2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="LabelSZ2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FZservicio2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="LabelBS2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FiltroSnomina2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="LabelBQ2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FiltroQuincenanomina2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="LabelBNDF2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FiltroNDF2" min="-2" pref="100" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="CS9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane22" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="LabelBE2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Nominab2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBS2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroSnomina2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBQ2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroQuincenanomina2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelSZ2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FZservicio2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel170" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltrosTD2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBNDF2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroNDF2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FApT2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FAmT2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonWeb10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane22" min="-2" pref="627" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                  <Component id="CS9" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane22">
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JTable" name="Tnom2">
+                              <Properties>
+                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                  <Table columnCount="50" rowCount="4">
+                                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 5" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 6" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 7" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 8" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 9" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 10" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 11" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 12" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 13" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 14" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 15" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 16" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 17" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 18" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 19" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 20" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 21" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 22" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 23" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 24" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 25" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 26" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 27" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 28" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 29" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 30" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 31" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 32" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 33" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 34" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 35" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 36" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 37" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 38" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 39" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 40" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 41" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 42" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 43" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 44" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 45" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 46" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 47" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 48" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 49" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 50" type="java.lang.Object"/>
+                                  </Table>
+                                </Property>
+                                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                                </Property>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tnom2MouseClicked"/>
+                              </Events>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Component class="javax.swing.JLabel" name="LabelBE2">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Buscar Empleado:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="Nominab2">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab2KeyReleased"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="CS9">
+                          <Properties>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS9ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS2">
@@ -754,12 +1104,12 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel169">
+                        <Component class="javax.swing.JLabel" name="jLabel170">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Filtros:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltrosTD1">
+                        <Component class="javax.swing.JComboBox" name="FiltrosTD2">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="8">
@@ -775,7 +1125,7 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltrosTD1ItemStateChanged"/>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltrosTD2ItemStateChanged"/>
                           </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -801,7 +1151,7 @@
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT2KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="botones.BotonWeb" name="botonWeb9">
+                        <Component class="botones.BotonWeb" name="botonWeb10">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
@@ -809,7 +1159,7 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FFDP1">
+                        <Component class="javax.swing.JComboBox" name="FFDP2">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="6">
@@ -830,18 +1180,18 @@
                     </Container>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="TDFA2">
+                <Container class="javax.swing.JScrollPane" name="TDFA3">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Foraneos Toluca">
-                        <Property name="tabTitle" type="java.lang.String" value="Foraneos Toluca"/>
+                      <JTabbedPaneConstraints tabName="Norte">
+                        <Property name="tabTitle" type="java.lang.String" value="Norte"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="jPanel23">
+                    <Container class="javax.swing.JPanel" name="jPanel24">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="cc" type="rgb"/>
@@ -856,11 +1206,11 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                                          <Component id="jLabel170" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel171" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltrosTD2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FiltrosTD3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="botonWeb10" min="-2" max="-2" attributes="0"/>
+                                          <Component id="botonWeb11" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelBE3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -870,7 +1220,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT3" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FFDP2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FFDP3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -888,13 +1238,13 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroNDF3" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="CS9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CS10" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane22" max="32767" attributes="0"/>
+                                  <Component id="k" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -911,30 +1261,30 @@
                                       <Component id="FiltroQuincenanomina3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZ3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FZservicio3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel170" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltrosTD2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel171" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltrosTD3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBNDF3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroNDF3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FApT3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonWeb10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FFDP2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonWeb11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane22" min="-2" pref="627" max="-2" attributes="0"/>
+                                  <Component id="k" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  <Component id="CS9" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CS10" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="154" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane22">
+                        <Container class="javax.swing.JScrollPane" name="k">
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="Tnom2">
+                            <Component class="javax.swing.JTable" name="Tnom3">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="50" rowCount="4">
@@ -995,7 +1345,7 @@
                                 </Property>
                               </Properties>
                               <Events>
-                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tnom2MouseClicked"/>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tnom3MouseClicked"/>
                               </Events>
                             </Component>
                           </SubComponents>
@@ -1010,7 +1360,7 @@
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab3KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="CS9">
+                        <Component class="javax.swing.JButton" name="CS10">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
@@ -1018,7 +1368,7 @@
                             <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS9ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS10ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS3">
@@ -1104,12 +1454,12 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel170">
+                        <Component class="javax.swing.JLabel" name="jLabel171">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Filtros:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltrosTD2">
+                        <Component class="javax.swing.JComboBox" name="FiltrosTD3">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="8">
@@ -1125,7 +1475,7 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltrosTD2ItemStateChanged"/>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltrosTD3ItemStateChanged"/>
                           </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -1151,7 +1501,7 @@
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT3KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="botones.BotonWeb" name="botonWeb10">
+                        <Component class="botones.BotonWeb" name="botonWeb11">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
@@ -1159,7 +1509,7 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FFDP2">
+                        <Component class="javax.swing.JComboBox" name="FFDP3">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="6">
@@ -1180,18 +1530,18 @@
                     </Container>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="TDFA3">
+                <Container class="javax.swing.JScrollPane" name="TDFA4">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Norte">
-                        <Property name="tabTitle" type="java.lang.String" value="Norte"/>
+                      <JTabbedPaneConstraints tabName="Oficina">
+                        <Property name="tabTitle" type="java.lang.String" value="Oficina"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="jPanel24">
+                    <Container class="javax.swing.JPanel" name="jPanel25">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="cc" type="rgb"/>
@@ -1206,11 +1556,11 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                                          <Component id="jLabel171" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel172" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltrosTD3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FiltrosTD4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="botonWeb11" min="-2" max="-2" attributes="0"/>
+                                          <Component id="botonWeb12" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelBE4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -1220,7 +1570,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT4" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FFDP3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FFDP4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -1238,13 +1588,13 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroNDF4" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="CS10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CS11" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="k" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane24" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1261,30 +1611,30 @@
                                       <Component id="FiltroQuincenanomina4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZ4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FZservicio4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel171" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltrosTD3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel172" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltrosTD4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBNDF4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroNDF4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FApT4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonWeb11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FFDP3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonWeb12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP4" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="k" min="-2" pref="627" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane24" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  <Component id="CS10" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CS11" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="154" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JScrollPane" name="k">
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane24">
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="Tnom3">
+                            <Component class="javax.swing.JTable" name="Tnom4">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="50" rowCount="4">
@@ -1345,7 +1695,7 @@
                                 </Property>
                               </Properties>
                               <Events>
-                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tnom3MouseClicked"/>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tnom4MouseClicked"/>
                               </Events>
                             </Component>
                           </SubComponents>
@@ -1360,7 +1710,7 @@
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab4KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="CS10">
+                        <Component class="javax.swing.JButton" name="CS11">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
@@ -1368,7 +1718,7 @@
                             <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS10ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS11ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS4">
@@ -1454,12 +1804,12 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel171">
+                        <Component class="javax.swing.JLabel" name="jLabel172">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Filtros:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltrosTD3">
+                        <Component class="javax.swing.JComboBox" name="FiltrosTD4">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="8">
@@ -1475,7 +1825,7 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltrosTD3ItemStateChanged"/>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltrosTD4ItemStateChanged"/>
                           </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -1501,7 +1851,7 @@
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT4KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="botones.BotonWeb" name="botonWeb11">
+                        <Component class="botones.BotonWeb" name="botonWeb12">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
@@ -1509,7 +1859,7 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FFDP3">
+                        <Component class="javax.swing.JComboBox" name="FFDP4">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="6">
@@ -1530,18 +1880,18 @@
                     </Container>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="TDFA4">
+                <Container class="javax.swing.JScrollPane" name="TDFA5">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Oficina">
-                        <Property name="tabTitle" type="java.lang.String" value="Oficina"/>
+                      <JTabbedPaneConstraints tabName="Poniente">
+                        <Property name="tabTitle" type="java.lang.String" value="Poniente"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="jPanel25">
+                    <Container class="javax.swing.JPanel" name="jPanel26">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="cc" type="rgb"/>
@@ -1556,11 +1906,11 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                                          <Component id="jLabel172" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel173" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltrosTD4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FiltrosTD5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="botonWeb12" min="-2" max="-2" attributes="0"/>
+                                          <Component id="botonWeb13" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelBE5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -1570,7 +1920,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT5" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FFDP4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FFDP5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -1588,13 +1938,13 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroNDF5" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="CS11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CS12" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane24" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane25" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1611,30 +1961,30 @@
                                       <Component id="FiltroQuincenanomina5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZ5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FZservicio5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel172" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltrosTD4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel173" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltrosTD5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBNDF5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroNDF5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FApT5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonWeb12" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FFDP4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonWeb13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP5" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane24" min="-2" pref="627" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane25" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  <Component id="CS11" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CS12" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="154" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane24">
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane25">
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="Tnom4">
+                            <Component class="javax.swing.JTable" name="Tnom5">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="50" rowCount="4">
@@ -1695,7 +2045,7 @@
                                 </Property>
                               </Properties>
                               <Events>
-                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tnom4MouseClicked"/>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tnom5MouseClicked"/>
                               </Events>
                             </Component>
                           </SubComponents>
@@ -1710,7 +2060,7 @@
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab5KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="CS11">
+                        <Component class="javax.swing.JButton" name="CS12">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
@@ -1718,7 +2068,7 @@
                             <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS11ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS12ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS5">
@@ -1804,12 +2154,12 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel172">
+                        <Component class="javax.swing.JLabel" name="jLabel173">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Filtros:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltrosTD4">
+                        <Component class="javax.swing.JComboBox" name="FiltrosTD5">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="8">
@@ -1825,7 +2175,7 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltrosTD4ItemStateChanged"/>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltrosTD5ItemStateChanged"/>
                           </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -1851,7 +2201,7 @@
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT5KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="botones.BotonWeb" name="botonWeb12">
+                        <Component class="botones.BotonWeb" name="botonWeb13">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
@@ -1859,7 +2209,7 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FFDP4">
+                        <Component class="javax.swing.JComboBox" name="FFDP5">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="6">
@@ -1880,18 +2230,18 @@
                     </Container>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="TDFA5">
+                <Container class="javax.swing.JScrollPane" name="TDFA6">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Poniente">
-                        <Property name="tabTitle" type="java.lang.String" value="Poniente"/>
+                      <JTabbedPaneConstraints tabName="Sur 1">
+                        <Property name="tabTitle" type="java.lang.String" value="Sur 1"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="jPanel26">
+                    <Container class="javax.swing.JPanel" name="jPanel27">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="cc" type="rgb"/>
@@ -1906,11 +2256,11 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                                          <Component id="jLabel173" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel174" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltrosTD5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FiltrosTD6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="botonWeb13" min="-2" max="-2" attributes="0"/>
+                                          <Component id="botonWeb14" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelBE6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -1920,7 +2270,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT6" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FFDP5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FFDP6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -1938,13 +2288,13 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroNDF6" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="CS12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CS13" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane25" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane26" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1961,30 +2311,30 @@
                                       <Component id="FiltroQuincenanomina6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZ6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FZservicio6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel173" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltrosTD5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel174" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltrosTD6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBNDF6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroNDF6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FApT6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonWeb13" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FFDP5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonWeb14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP6" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane25" min="-2" pref="627" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane26" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  <Component id="CS12" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CS13" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="154" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane25">
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane26">
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="Tnom5">
+                            <Component class="javax.swing.JTable" name="Tnom6">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="50" rowCount="4">
@@ -2045,7 +2395,7 @@
                                 </Property>
                               </Properties>
                               <Events>
-                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tnom5MouseClicked"/>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tnom6MouseClicked"/>
                               </Events>
                             </Component>
                           </SubComponents>
@@ -2060,7 +2410,7 @@
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab6KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="CS12">
+                        <Component class="javax.swing.JButton" name="CS13">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
@@ -2068,7 +2418,7 @@
                             <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS12ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS13ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS6">
@@ -2154,357 +2504,6 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel173">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Filtros:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltrosTD5">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="8">
-                                <StringItem index="0" value="Selecciona filtro"/>
-                                <StringItem index="1" value="Filtrar por Apellido P"/>
-                                <StringItem index="2" value="Filtrar por Apellido M"/>
-                                <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                                <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
-                                <StringItem index="6" value="Filtrar por # Lista"/>
-                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltrosTD5ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBNDF6">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar por # Lista"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="FiltroNDF6">
-                          <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroNDF6KeyReleased"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="FApT6">
-                          <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FApT6KeyReleased"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="FAmT6">
-                          <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT6KeyReleased"/>
-                          </Events>
-                        </Component>
-                        <Component class="botones.BotonWeb" name="botonWeb13">
-                          <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                            </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FFDP5">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="6">
-                                <StringItem index="0" value=" "/>
-                                <StringItem index="1" value="Santander"/>
-                                <StringItem index="2" value="Bancomer"/>
-                                <StringItem index="3" value="Efectivo"/>
-                                <StringItem index="4" value="Baja"/>
-                                <StringItem index="5" value="Retenida"/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                  </SubComponents>
-                </Container>
-                <Container class="javax.swing.JScrollPane" name="TDFA6">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Sur 1">
-                        <Property name="tabTitle" type="java.lang.String" value="Sur 1"/>
-                      </JTabbedPaneConstraints>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Container class="javax.swing.JPanel" name="jPanel27">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="cc" type="rgb"/>
-                        </Property>
-                      </Properties>
-
-                      <Layout>
-                        <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                                          <Component id="jLabel174" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltrosTD6" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="botonWeb14" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBE7" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Nominab7" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FApT7" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FAmT7" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FFDP6" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelSZ7" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FZservicio7" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBS7" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroSnomina7" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBQ7" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroQuincenanomina7" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBNDF7" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroNDF7" min="-2" pref="100" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="CS13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane26" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                        </DimensionLayout>
-                        <DimensionLayout dim="1">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="LabelBE7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Nominab7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBS7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroSnomina7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBQ7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroQuincenanomina7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelSZ7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FZservicio7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel174" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltrosTD6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBNDF7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroNDF7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FApT7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FAmT7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonWeb14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FFDP6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane26" min="-2" pref="627" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  <Component id="CS13" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                        </DimensionLayout>
-                      </Layout>
-                      <SubComponents>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane26">
-
-                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                          <SubComponents>
-                            <Component class="javax.swing.JTable" name="Tnom6">
-                              <Properties>
-                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="50" rowCount="4">
-                                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 5" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 6" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 7" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 8" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 9" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 10" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 11" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 12" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 13" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 14" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 15" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 16" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 17" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 18" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 19" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 20" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 21" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 22" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 23" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 24" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 25" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 26" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 27" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 28" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 29" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 30" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 31" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 32" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 33" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 34" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 35" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 36" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 37" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 38" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 39" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 40" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 41" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 42" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 43" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 44" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 45" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 46" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 47" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 48" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 49" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 50" type="java.lang.Object"/>
-                                  </Table>
-                                </Property>
-                                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                                </Property>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tnom6MouseClicked"/>
-                              </Events>
-                            </Component>
-                          </SubComponents>
-                        </Container>
-                        <Component class="javax.swing.JLabel" name="LabelBE7">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Empleado:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="Nominab7">
-                          <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab7KeyReleased"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="CS13">
-                          <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS13ActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBS7">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroSnomina7">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value=""/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroSnomina7ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBQ7">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Quincena:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroQuincenanomina7">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="26">
-                                <StringItem index="0" value=" "/>
-                                <StringItem index="1" value="1ra Quincena de Enero"/>
-                                <StringItem index="2" value="2da Quincena de Enero"/>
-                                <StringItem index="3" value="1ra Quincena de Febrero"/>
-                                <StringItem index="4" value="2da Quincena de Febrero"/>
-                                <StringItem index="5" value="2da Quincena de Feb B"/>
-                                <StringItem index="6" value="1ra Quincena de Marzo"/>
-                                <StringItem index="7" value="2da Quincena de Marzo"/>
-                                <StringItem index="8" value="1ra Quincena de Abril"/>
-                                <StringItem index="9" value="2da Quincena de Abril"/>
-                                <StringItem index="10" value="1ra Quincena de Mayo"/>
-                                <StringItem index="11" value="2da Quincena de Mayo"/>
-                                <StringItem index="12" value="1ra Quincena de Junio"/>
-                                <StringItem index="13" value="2da Quincena de Junio"/>
-                                <StringItem index="14" value="1ra Quincena de Julio"/>
-                                <StringItem index="15" value="2da Quincena de Julio"/>
-                                <StringItem index="16" value="1ra Quincena de Agosto"/>
-                                <StringItem index="17" value="2da Quincena de Agosto"/>
-                                <StringItem index="18" value="1ra Quincena de Septiembre"/>
-                                <StringItem index="19" value="2da Quincena de Septiembre"/>
-                                <StringItem index="20" value="1ra Quincena de Octubre"/>
-                                <StringItem index="21" value="2da Quincena de Octubre"/>
-                                <StringItem index="22" value="1ra Quincena de Noviembre"/>
-                                <StringItem index="23" value="2da Quincena de Noviembre"/>
-                                <StringItem index="24" value="1ra Quincena de Diciembre"/>
-                                <StringItem index="25" value="2da Quincena de Diciembre"/>
-                              </StringArray>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroQuincenanomina7ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Admin_Depositos_4_FiltroQuincenanomina7"/>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="LabelSZ7">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Selecciona Zona:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JComboBox" name="FZservicio7">
-                          <Properties>
-                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="0"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FZservicio7ItemStateChanged"/>
-                          </Events>
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                          </AuxValues>
-                        </Component>
                         <Component class="javax.swing.JLabel" name="jLabel174">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Filtros:"/>
@@ -2532,24 +2531,24 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBNDF7">
+                        <Component class="javax.swing.JLabel" name="LabelBNDF6">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar por # Lista"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="FiltroNDF7">
+                        <Component class="javax.swing.JTextField" name="FiltroNDF6">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroNDF7KeyReleased"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroNDF6KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="FApT7">
+                        <Component class="javax.swing.JTextField" name="FApT6">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FApT7KeyReleased"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FApT6KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="FAmT7">
+                        <Component class="javax.swing.JTextField" name="FAmT6">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT7KeyReleased"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT6KeyReleased"/>
                           </Events>
                         </Component>
                         <Component class="botones.BotonWeb" name="botonWeb14">
@@ -2613,31 +2612,31 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="botonWeb15" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBE8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelBE7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Nominab8" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="Nominab7" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FApT8" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="FApT7" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FAmT8" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="FAmT7" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FFDP7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelSZ8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelSZ7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FZservicio8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FZservicio7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBS8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelBS7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroSnomina8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FiltroSnomina7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBQ8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelBQ7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroQuincenanomina8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FiltroQuincenanomina7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBNDF8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelBNDF7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroNDF8" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="FiltroNDF7" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS14" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -2654,20 +2653,20 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="LabelBE8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Nominab8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBS8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroSnomina8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBQ8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroQuincenanomina8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelSZ8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FZservicio8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBE7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Nominab7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBS7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroSnomina7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBQ7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroQuincenanomina7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelSZ7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FZservicio7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel175" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltrosTD7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBNDF8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroNDF8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FApT8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FAmT8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBNDF7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroNDF7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FApT7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FAmT7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb15" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FFDP7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -2751,14 +2750,14 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JLabel" name="LabelBE8">
+                        <Component class="javax.swing.JLabel" name="LabelBE7">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Empleado:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="Nominab8">
+                        <Component class="javax.swing.JTextField" name="Nominab7">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab8KeyReleased"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab7KeyReleased"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="CS14">
@@ -2772,12 +2771,12 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS14ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBS8">
+                        <Component class="javax.swing.JLabel" name="LabelBS7">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroSnomina8">
+                        <Component class="javax.swing.JComboBox" name="FiltroSnomina7">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="1">
@@ -2786,18 +2785,18 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroSnomina8ItemStateChanged"/>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroSnomina7ItemStateChanged"/>
                           </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBQ8">
+                        <Component class="javax.swing.JLabel" name="LabelBQ7">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Quincena:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroQuincenanomina8">
+                        <Component class="javax.swing.JComboBox" name="FiltroQuincenanomina7">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="26">
@@ -2831,25 +2830,25 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroQuincenanomina8ItemStateChanged"/>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroQuincenanomina7ItemStateChanged"/>
                           </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelSZ8">
+                        <Component class="javax.swing.JLabel" name="LabelSZ7">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Selecciona Zona:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FZservicio8">
+                        <Component class="javax.swing.JComboBox" name="FZservicio7">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="0"/>
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FZservicio8ItemStateChanged"/>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FZservicio7ItemStateChanged"/>
                           </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -2882,24 +2881,24 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBNDF8">
+                        <Component class="javax.swing.JLabel" name="LabelBNDF7">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar por # Lista"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="FiltroNDF8">
+                        <Component class="javax.swing.JTextField" name="FiltroNDF7">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroNDF8KeyReleased"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroNDF7KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="FApT8">
+                        <Component class="javax.swing.JTextField" name="FApT7">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FApT8KeyReleased"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FApT7KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="FAmT8">
+                        <Component class="javax.swing.JTextField" name="FAmT7">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT8KeyReleased"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT7KeyReleased"/>
                           </Events>
                         </Component>
                         <Component class="botones.BotonWeb" name="botonWeb15">
@@ -2963,31 +2962,31 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="botonWeb25" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBE9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelBE8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Nominab9" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="Nominab8" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FApT9" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="FApT8" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FAmT9" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="FAmT8" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FFDP8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelSZ9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelSZ8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FZservicio9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FZservicio8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBS9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelBS8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroSnomina9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FiltroSnomina8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelBQ9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelBQ8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroQuincenanomina9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FiltroQuincenanomina8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBNDF9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelBNDF8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroNDF9" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="FiltroNDF8" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS24" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -3004,21 +3003,21 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="LabelBE9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Nominab9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBQ9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroQuincenanomina9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBE8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Nominab8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBQ8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroQuincenanomina8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel188" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltrosTD8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBNDF9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroNDF9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FApT9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FAmT9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBNDF8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroNDF8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FApT8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FAmT8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb25" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FZservicio9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelBS9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="FiltroSnomina9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="LabelSZ9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FZservicio8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelBS8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FiltroSnomina8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LabelSZ8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FFDP8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -3101,14 +3100,14 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Component class="javax.swing.JLabel" name="LabelBE9">
+                        <Component class="javax.swing.JLabel" name="LabelBE8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Empleado:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="Nominab9">
+                        <Component class="javax.swing.JTextField" name="Nominab8">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab9KeyReleased"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab8KeyReleased"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="CS24">
@@ -3122,12 +3121,12 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS24ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBQ9">
+                        <Component class="javax.swing.JLabel" name="LabelBQ8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Quincena:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroQuincenanomina9">
+                        <Component class="javax.swing.JComboBox" name="FiltroQuincenanomina8">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="26">
@@ -3161,7 +3160,7 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroQuincenanomina9ItemStateChanged"/>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroQuincenanomina8ItemStateChanged"/>
                           </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -3194,24 +3193,24 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBNDF9">
+                        <Component class="javax.swing.JLabel" name="LabelBNDF8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar por # Lista"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="FiltroNDF9">
+                        <Component class="javax.swing.JTextField" name="FiltroNDF8">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroNDF9KeyReleased"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroNDF8KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="FApT9">
+                        <Component class="javax.swing.JTextField" name="FApT8">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FApT9KeyReleased"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FApT8KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="FAmT9">
+                        <Component class="javax.swing.JTextField" name="FAmT8">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT9KeyReleased"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT8KeyReleased"/>
                           </Events>
                         </Component>
                         <Component class="botones.BotonWeb" name="botonWeb25">
@@ -3222,25 +3221,25 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FZservicio9">
+                        <Component class="javax.swing.JComboBox" name="FZservicio8">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="0"/>
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FZservicio9ItemStateChanged"/>
+                            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FZservicio8ItemStateChanged"/>
                           </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelBS9">
+                        <Component class="javax.swing.JLabel" name="LabelBS8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="FiltroSnomina9">
+                        <Component class="javax.swing.JComboBox" name="FiltroSnomina8">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="1">
@@ -3252,7 +3251,7 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="LabelSZ9">
+                        <Component class="javax.swing.JLabel" name="LabelSZ8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Selecciona Zona:"/>
                           </Properties>
@@ -4752,284 +4751,6 @@
           </Constraints>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel13">
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="Fildepositos" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botonWeb5" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelBE1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="Nominab1" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="FApT1" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="FAmT1" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Component id="LabelBZ1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="FiltroZnomina1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelSZ1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="FZservicio1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelBS1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="FiltroSnomina1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelBQ1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="FiltroQuincenanomina1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelBNDF1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="FiltroNDF1" min="-2" pref="100" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="jScrollPane15" alignment="1" pref="7346" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel72" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Fildepositos" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="LabelBE1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Nominab1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LabelBZ1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FiltroZnomina1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LabelBS1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FiltroSnomina1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LabelBQ1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FiltroQuincenanomina1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LabelSZ1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FZservicio1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LabelBNDF1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FiltroNDF1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FApT1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FAmT1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="botonWeb5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane15" min="-2" pref="548" max="-2" attributes="0"/>
-                          <EmptySpace pref="291" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel72">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Filtros:"/>
-                  </Properties>
-                </Component>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane15">
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="javax.swing.JTable" name="Tdepositos">
-                      <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TdepositosMouseClicked"/>
-                      </Events>
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Component class="javax.swing.JComboBox" name="Fildepositos">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="8">
-                        <StringItem index="0" value="Selecciona filtro"/>
-                        <StringItem index="1" value="Filtrar por Apellido P"/>
-                        <StringItem index="2" value="Filtrar por Apellido M"/>
-                        <StringItem index="3" value="Filtrar por Nombre(s)"/>
-                        <StringItem index="4" value="Filtrar por Zona"/>
-                        <StringItem index="5" value="Filtrar por Servicio"/>
-                        <StringItem index="6" value="Filtrar por quincena"/>
-                        <StringItem index="7" value="Filtrar por # Lista"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FildepositosItemStateChanged"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JTextField" name="FiltroNDF1">
-                  <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroNDF1KeyReleased"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="FiltroZnomina1">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroZnomina1ItemStateChanged"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JTextField" name="FApT1">
-                  <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FApT1KeyReleased"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="LabelBS1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="FAmT1">
-                  <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT1KeyReleased"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="FiltroSnomina1">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="1">
-                        <StringItem index="0" value=""/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroSnomina1ItemStateChanged"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-                <Component class="botones.BotonWeb" name="botonWeb5">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="LabelBQ1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Buscar Quincena:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="FiltroQuincenanomina1">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="26">
-                        <StringItem index="0" value=" "/>
-                        <StringItem index="1" value="1ra Quincena de Enero"/>
-                        <StringItem index="2" value="2da Quincena de Enero"/>
-                        <StringItem index="3" value="1ra Quincena de Febrero"/>
-                        <StringItem index="4" value="2da Quincena de Febrero"/>
-                        <StringItem index="5" value="2da Quincena de Feb B"/>
-                        <StringItem index="6" value="1ra Quincena de Marzo"/>
-                        <StringItem index="7" value="2da Quincena de Marzo"/>
-                        <StringItem index="8" value="1ra Quincena de Abril"/>
-                        <StringItem index="9" value="2da Quincena de Abril"/>
-                        <StringItem index="10" value="1ra Quincena de Mayo"/>
-                        <StringItem index="11" value="2da Quincena de Mayo"/>
-                        <StringItem index="12" value="1ra Quincena de Junio"/>
-                        <StringItem index="13" value="2da Quincena de Junio"/>
-                        <StringItem index="14" value="1ra Quincena de Julio"/>
-                        <StringItem index="15" value="2da Quincena de Julio"/>
-                        <StringItem index="16" value="1ra Quincena de Agosto"/>
-                        <StringItem index="17" value="2da Quincena de Agosto"/>
-                        <StringItem index="18" value="1ra Quincena de Septiembre"/>
-                        <StringItem index="19" value="2da Quincena de Septiembre"/>
-                        <StringItem index="20" value="1ra Quincena de Octubre"/>
-                        <StringItem index="21" value="2da Quincena de Octubre"/>
-                        <StringItem index="22" value="1ra Quincena de Noviembre"/>
-                        <StringItem index="23" value="2da Quincena de Noviembre"/>
-                        <StringItem index="24" value="1ra Quincena de Diciembre"/>
-                        <StringItem index="25" value="2da Quincena de Diciembre"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FiltroQuincenanomina1ItemStateChanged"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JLabel" name="LabelSZ1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Selecciona Zona:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="FZservicio1">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FZservicio1ItemStateChanged"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JLabel" name="LabelBE1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Buscar Empleado:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="Nominab1">
-                  <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab1KeyReleased"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="LabelBNDF1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Buscar por # Lista"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="LabelBZ1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Buscar Zona"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
         </Container>
       </SubComponents>
     </Container>
