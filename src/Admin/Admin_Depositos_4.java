@@ -1844,7 +1844,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         FApT = new javax.swing.JTextField();
         FAmT = new javax.swing.JTextField();
         botonWeb1 = new botones.BotonWeb();
-        FFDP = new javax.swing.JComboBox<>();
         TDFA1 = new javax.swing.JScrollPane();
         jPanel22 = new javax.swing.JPanel();
         jScrollPane21 = new javax.swing.JScrollPane();
@@ -1865,7 +1864,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         FApT1 = new javax.swing.JTextField();
         FAmT1 = new javax.swing.JTextField();
         botonWeb9 = new botones.BotonWeb();
-        FFDP1 = new javax.swing.JComboBox<>();
         TDFA2 = new javax.swing.JScrollPane();
         jPanel23 = new javax.swing.JPanel();
         jScrollPane22 = new javax.swing.JScrollPane();
@@ -1886,7 +1884,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         FApT2 = new javax.swing.JTextField();
         FAmT2 = new javax.swing.JTextField();
         botonWeb10 = new botones.BotonWeb();
-        FFDP2 = new javax.swing.JComboBox<>();
         TDFA3 = new javax.swing.JScrollPane();
         jPanel24 = new javax.swing.JPanel();
         k = new javax.swing.JScrollPane();
@@ -1907,7 +1904,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         FApT3 = new javax.swing.JTextField();
         FAmT3 = new javax.swing.JTextField();
         botonWeb11 = new botones.BotonWeb();
-        FFDP3 = new javax.swing.JComboBox<>();
         TDFA4 = new javax.swing.JScrollPane();
         jPanel25 = new javax.swing.JPanel();
         jScrollPane24 = new javax.swing.JScrollPane();
@@ -1928,7 +1924,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         FApT4 = new javax.swing.JTextField();
         FAmT4 = new javax.swing.JTextField();
         botonWeb12 = new botones.BotonWeb();
-        FFDP4 = new javax.swing.JComboBox<>();
         TDFA5 = new javax.swing.JScrollPane();
         jPanel26 = new javax.swing.JPanel();
         jScrollPane25 = new javax.swing.JScrollPane();
@@ -1949,7 +1944,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         FApT5 = new javax.swing.JTextField();
         FAmT5 = new javax.swing.JTextField();
         botonWeb13 = new botones.BotonWeb();
-        FFDP5 = new javax.swing.JComboBox<>();
         TDFA6 = new javax.swing.JScrollPane();
         jPanel27 = new javax.swing.JPanel();
         jScrollPane26 = new javax.swing.JScrollPane();
@@ -1970,7 +1964,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         FApT6 = new javax.swing.JTextField();
         FAmT6 = new javax.swing.JTextField();
         botonWeb14 = new botones.BotonWeb();
-        FFDP6 = new javax.swing.JComboBox<>();
         TDFA7 = new javax.swing.JScrollPane();
         jPanel28 = new javax.swing.JPanel();
         jScrollPane27 = new javax.swing.JScrollPane();
@@ -1991,7 +1984,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         FApT7 = new javax.swing.JTextField();
         FAmT7 = new javax.swing.JTextField();
         botonWeb15 = new botones.BotonWeb();
-        FFDP7 = new javax.swing.JComboBox<>();
         TDFA8 = new javax.swing.JScrollPane();
         jPanel38 = new javax.swing.JPanel();
         jScrollPane28 = new javax.swing.JScrollPane();
@@ -2012,7 +2004,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         LabelBS8 = new javax.swing.JLabel();
         FiltroSnomina8 = new javax.swing.JComboBox<>();
         LabelSZ8 = new javax.swing.JLabel();
-        FFDP8 = new javax.swing.JComboBox<>();
         jScrollPane10 = new javax.swing.JScrollPane();
         jPanel9 = new javax.swing.JPanel();
         jLabel123 = new javax.swing.JLabel();
@@ -2446,8 +2437,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
 
-        FFDP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -2456,7 +2445,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(0, 0, 0)
                         .addComponent(jLabel65)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosTD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2470,8 +2459,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addComponent(FApT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2489,7 +2476,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS2))
-                .addContainerGap(3806, Short.MAX_VALUE))
+                .addContainerGap(8019, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane3))
@@ -2513,8 +2500,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -2620,8 +2606,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         botonWeb9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
 
-        FFDP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
@@ -2630,7 +2614,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(0, 0, 0)
                         .addComponent(jLabel169)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosTD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2644,8 +2628,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addComponent(FApT1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2663,7 +2645,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS8))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(8019, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane21))
@@ -2687,8 +2669,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -2794,8 +2775,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         botonWeb10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
 
-        FFDP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
@@ -2804,7 +2783,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(0, 0, 0)
                         .addComponent(jLabel170)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosTD2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2818,8 +2797,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addComponent(FApT2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2837,7 +2814,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS9))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(8019, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane22))
@@ -2861,8 +2838,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -2968,8 +2944,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         botonWeb11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb11.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
 
-        FFDP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
         jPanel24Layout.setHorizontalGroup(
@@ -2978,7 +2952,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel24Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(0, 0, 0)
                         .addComponent(jLabel171)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosTD3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2992,8 +2966,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addComponent(FApT3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3011,7 +2983,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS10))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(8019, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(k))
@@ -3035,8 +3007,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(k, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -3142,8 +3113,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         botonWeb12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb12.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
 
-        FFDP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
         jPanel25Layout.setHorizontalGroup(
@@ -3152,7 +3121,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(0, 0, 0)
                         .addComponent(jLabel172)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosTD4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3166,8 +3135,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addComponent(FApT4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3185,7 +3152,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS11))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(8019, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane24))
@@ -3209,8 +3176,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -3316,8 +3282,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         botonWeb13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb13.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
 
-        FFDP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
         jPanel26Layout.setHorizontalGroup(
@@ -3326,7 +3290,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel26Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(0, 0, 0)
                         .addComponent(jLabel173)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosTD5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3340,8 +3304,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addComponent(FApT5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3359,7 +3321,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS12))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(8019, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane25))
@@ -3383,8 +3345,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -3490,8 +3451,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         botonWeb14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb14.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
 
-        FFDP6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
@@ -3500,7 +3459,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel27Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(0, 0, 0)
                         .addComponent(jLabel174)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosTD6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3514,8 +3473,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addComponent(FApT6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3533,7 +3490,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS13))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(8019, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel27Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane26))
@@ -3557,8 +3514,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -3664,8 +3620,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         botonWeb15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb15.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
 
-        FFDP7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
         jPanel28Layout.setHorizontalGroup(
@@ -3674,7 +3628,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel28Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(0, 0, 0)
                         .addComponent(jLabel175)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosTD7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3688,8 +3642,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addComponent(FApT7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3707,7 +3659,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS14))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(8019, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel28Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane27))
@@ -3731,8 +3683,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -3833,8 +3784,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
         LabelSZ8.setText("Selecciona Zona:");
 
-        FFDP8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
         jPanel38.setLayout(jPanel38Layout);
         jPanel38Layout.setHorizontalGroup(
@@ -3843,7 +3792,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel38Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(0, 0, 0)
                         .addComponent(jLabel188)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosTD8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3857,8 +3806,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addComponent(FApT8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3876,7 +3823,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS24))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(8019, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel38Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane28))
@@ -3900,8 +3847,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                     .addComponent(FZservicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBS8)
                     .addComponent(FiltroSnomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelSZ8)
-                    .addComponent(FFDP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LabelSZ8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -6588,2377 +6534,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_DIActionPerformed
 
-    private void TnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TnomMouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom.getModel();
-
-            int fila = Tnom.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom.getValueAt(fila, 0)));
-            NEnom.setText(String.valueOf(Tnom.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tnom.getValueAt(fila, 6)));
-            sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
-            Bonodep.setText(String.valueOf(Tnom.getValueAt(fila, 8)));
-            pd.setText(String.valueOf(Tnom.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
-            for (int i = 0; i < Quincenas.getItemCount(); i++) {
-                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Quincenas.setSelectedIndex(i);
-                }
-            }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
-            año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom.getValueAt(fila, 12)));
-            pds.setText(String.valueOf(Tnom.getValueAt(fila, 13)));
-            Ddv.setText(String.valueOf(Tnom.getValueAt(fila, 14)));
-            PDDDV.setText(String.valueOf(Tnom.getValueAt(fila, 15)));
-            DD.setText(String.valueOf(Tnom.getValueAt(fila, 16)));
-            PDDD.setText(String.valueOf(Tnom.getValueAt(fila, 17)));
-            DL.setText(String.valueOf(Tnom.getValueAt(fila, 18)));
-            PDDL.setText(String.valueOf(Tnom.getValueAt(fila, 19)));
-            dt.setText(String.valueOf(Tnom.getValueAt(fila, 20)));
-            PDDT.setText(String.valueOf(Tnom.getValueAt(fila, 21)));
-            DSGS.setText(String.valueOf(Tnom.getValueAt(fila, 22)));
-            PDDDDSGS.setText(String.valueOf(Tnom.getValueAt(fila, 23)));
-            FJ.setText(String.valueOf(Tnom.getValueAt(fila, 24)));
-            DO.setText(String.valueOf(Tnom.getValueAt(fila, 25)));
-            DF.setText(String.valueOf(Tnom.getValueAt(fila, 26)));
-            PDDF.setText(String.valueOf(Tnom.getValueAt(fila, 27)));
-            DFT.setText(String.valueOf(Tnom.getValueAt(fila, 28)));
-            PDDFT.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
-            R.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
-            PCR.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
-            apy.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
-            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
-            ADD.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
-            F.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
-            DPF.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
-            DI.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
-            Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
-            Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 40)));
-            Chamarra.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
-            Chaleco.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
-            Fde.setText(String.valueOf(Tnom.getValueAt(fila, 43)));
-            Grua.setText(String.valueOf(Tnom.getValueAt(fila, 44)));
-            Pantalon.setText(String.valueOf(Tnom.getValueAt(fila, 45)));
-            Credencial.setText(String.valueOf(Tnom.getValueAt(fila, 46)));
-            Bp.setText(String.valueOf(Tnom.getValueAt(fila, 47)));
-            Playera.setText(String.valueOf(Tnom.getValueAt(fila, 48)));
-            Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 49)));
-            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
-            cda.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
-            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 52)));
-            AdN.setText(String.valueOf(Tnom.getValueAt(fila, 53)));
-            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 54)));
-            /*Date FDPago = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 52));
-            FDD.setDate(FDPago);
-            String Mes = model.getValueAt(fila, 55).toString();
-            for (int i = 0; i < MDP.getItemCount(); i++) {
-                if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
-                    MDP.setSelectedIndex(i);
-                }
-            }
-            String Metodo = model.getValueAt(fila, 54).toString();
-            for (int i = 0; i < FDP.getItemCount(); i++) {
-                if (FDP.getItemAt(i).equalsIgnoreCase(Metodo)) {
-                    FDP.setSelectedIndex(i);
-                }
-            }
-            Obsdeposito.setText(String.valueOf(Tnom.getValueAt(fila, 55)));
-*/
-        } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_TnomMouseClicked
-
-    private void NominabKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NominabKeyReleased
-
-        FunMD();
-    }//GEN-LAST:event_NominabKeyReleased
-
-    private void CS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2ActionPerformed
-
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Login_2 regr = new Login_2();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS2ActionPerformed
-
-    private void FiltroSnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnominaItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroSnominaItemStateChanged
-
-    private void FiltroQuincenanominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanominaItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroQuincenanominaItemStateChanged
-
-    private void FZservicioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicioItemStateChanged
-
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina.setModel(modelServicio);
-        }
-        FunMD();
-    }//GEN-LAST:event_FZservicioItemStateChanged
-
-    private void FiltrosTDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTDItemStateChanged
-
-        String FTD = (String) FiltrosTD.getSelectedItem();
-        if (FTD.equals("Selecciona filtro")) {
-            Nominab.setText("");
-            LabelBE.setVisible(false);
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD.equals("Filtrar por Apellido P")) {
-            Nominab.setText("");
-            LabelBE.setVisible(true);
-            LabelBE.setText("Buscar Apellido P:");
-            FApT.setText("");
-            FApT.setVisible(true);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Apellido M")) {
-            Nominab.setText("");
-            LabelBE.setVisible(true);
-            LabelBE.setText("Buscar Apellido M:");
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(true);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Nombre(s)")) {
-            Nominab.setText("");
-            LabelBE.setVisible(true);
-            LabelBE.setText("Buscar Nombre(s):");
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(true);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Servicio")) {
-            Nominab.setText("");
-            LabelBE.setVisible(false);
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroSnomina.setVisible(true);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(true);
-            FZservicio.setVisible(true);
-            LabelSZ.setVisible(true);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por quincena")) {
-            Nominab.setText("");
-            LabelBE.setVisible(false);
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(true);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(true);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por # Lista")) {
-            Nominab.setText("");
-            LabelBE.setVisible(false);
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(true);
-            LabelBNDF.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTDItemStateChanged
-
-    private void FiltroNDFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDFKeyReleased
-        FunMD();
-    }//GEN-LAST:event_FiltroNDFKeyReleased
-
-    private void FApTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApTKeyReleased
-        FunMD();
-    }//GEN-LAST:event_FApTKeyReleased
-
-    private void FAmTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmTKeyReleased
-        FunMD();
-    }//GEN-LAST:event_FAmTKeyReleased
-
-    private void Tnom1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom1MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom1.getModel();
-
-            int fila = Tnom1.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom1.getValueAt(fila, 0)));
-            NEnom.setText(String.valueOf(Tnom1.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom1.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom1.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom1.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom1.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom1.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom1.getValueAt(fila, 9)));
-            Bonodep.setText(String.valueOf(Tnom1.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom1.getValueAt(fila, 11)));
-            String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Quincenas.getItemCount(); i++) {
-                if (Quincenas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Quincenas.setSelectedIndex(i);
-                }
-            }
-
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-
-            PDDDDSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom1.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom1.getValueAt(fila, 51)));
-            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom1.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom1.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom1.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom1.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom1.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom1.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom1.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom1.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom1.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom1.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom1.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom1.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom1.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom1.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom1.getValueAt(fila, 69)));
-            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom1.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom1.getValueAt(fila, 72)));
-            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 73)));
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom1MouseClicked
-
-    private void Nominab1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab1KeyReleased
-        FunMD();
-    }//GEN-LAST:event_Nominab1KeyReleased
-
-    private void CS8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS8ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Login_2 regr = new Login_2();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS8ActionPerformed
-
-    private void FiltroSnomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina1ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroSnomina1ItemStateChanged
-
-    private void FiltroQuincenanomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina1ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroQuincenanomina1ItemStateChanged
-
-    private void FZservicio1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio1ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio1.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina1.setModel(modelServicio);
-        }
-        FunMD();
-    }//GEN-LAST:event_FZservicio1ItemStateChanged
-
-    private void FiltrosTD1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD1ItemStateChanged
-
-        String FTD1 = (String) FiltrosTD1.getSelectedItem();
-        if (FTD1.equals("Selecciona filtro")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(false);
-            FApT1.setText("");
-            FApT1.setVisible(false);
-            FAmT1.setVisible(false);
-            FAmT1.setText("");
-            Nominab1.setVisible(false);
-            FiltroSnomina1.setVisible(false);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(false);
-            FZservicio1.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(false);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(false);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(false);
-            LabelBNDF1.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD1.equals("Filtrar por Apellido P")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(true);
-            LabelBE1.setText("Buscar Apellido P:");
-            FApT1.setText("");
-            FApT1.setVisible(true);
-            FAmT1.setVisible(false);
-            FAmT1.setText("");
-            FiltroSnomina1.setVisible(false);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(false);
-            FZservicio1.setVisible(false);
-            LabelSZ1.setVisible(false);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(false);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(false);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(false);
-            LabelBNDF1.setVisible(false);
-            FunMD();
-        }
-        if (FTD1.equals("Filtrar por Apellido M")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(true);
-            LabelBE1.setText("Buscar Apellido M:");
-            FApT1.setText("");
-            FApT1.setVisible(false);
-            FAmT1.setVisible(true);
-            FAmT1.setText("");
-            Nominab1.setVisible(false);
-            FiltroSnomina1.setVisible(false);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(false);
-            FZservicio1.setVisible(false);
-            LabelSZ1.setVisible(false);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(false);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(false);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(false);
-            LabelBNDF1.setVisible(false);
-            FunMD();
-        }
-        if (FTD1.equals("Filtrar por Nombre(s)")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(true);
-            LabelBE1.setText("Buscar Nombre(s):");
-            FApT1.setText("");
-            FApT1.setVisible(false);
-            FAmT1.setVisible(false);
-            FAmT1.setText("");
-            Nominab1.setVisible(true);
-            FiltroSnomina1.setVisible(false);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(false);
-            FZservicio1.setVisible(false);
-            LabelSZ1.setVisible(false);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(false);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(false);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(false);
-            LabelBNDF1.setVisible(false);
-            FunMD();
-        }
-        if (FTD1.equals("Filtrar por Servicio")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(false);
-            FApT1.setText("");
-            FApT1.setVisible(false);
-            FAmT1.setVisible(false);
-            FAmT1.setText("");
-            Nominab1.setVisible(false);
-            FiltroSnomina1.setVisible(true);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(true);
-            FZservicio1.setVisible(true);
-            LabelSZ1.setVisible(true);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(false);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(false);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(false);
-            LabelBNDF1.setVisible(false);
-            FunMD();
-        }
-        if (FTD1.equals("Filtrar por quincena")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(false);
-            FApT1.setText("");
-            FApT1.setVisible(false);
-            FAmT1.setVisible(false);
-            FAmT1.setText("");
-            Nominab1.setVisible(false);
-            FiltroSnomina1.setVisible(false);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(false);
-            FZservicio1.setVisible(false);
-            LabelSZ1.setVisible(false);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(true);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(true);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(false);
-            LabelBNDF1.setVisible(false);
-            FunMD();
-        }
-        if (FTD1.equals("Filtrar por # Lista")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(false);
-            FApT1.setText("");
-            FApT1.setVisible(false);
-            FAmT1.setVisible(false);
-            FAmT1.setText("");
-            Nominab1.setVisible(false);
-            FiltroSnomina1.setVisible(false);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(false);
-            FZservicio1.setVisible(false);
-            LabelSZ1.setVisible(false);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(false);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(false);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(true);
-            LabelBNDF1.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD1ItemStateChanged
-
-    private void FiltroNDF1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF1KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FiltroNDF1KeyReleased
-
-    private void FApT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT1KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FApT1KeyReleased
-
-    private void FAmT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT1KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FAmT1KeyReleased
-
-    private void Tnom2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom2MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom2.getModel();
-
-            int fila = Tnom2.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom2.getValueAt(fila, 0)));
-            NEnom.setText(String.valueOf(Tnom2.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom2.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom2.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom2.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom2.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom2.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom2.getValueAt(fila, 9)));
-            Bonodep.setText(String.valueOf(Tnom2.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom2.getValueAt(fila, 11)));
-            String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Quincenas.getItemCount(); i++) {
-                if (Quincenas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Quincenas.setSelectedIndex(i);
-                }
-            }
-
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            PDDDDSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom2.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom2.getValueAt(fila, 51)));
-            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom2.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom2.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom2.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom2.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom2.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom2.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom2.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom2.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom2.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom2.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom2.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom2.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom2.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom2.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom2.getValueAt(fila, 69)));
-            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom2.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom2.getValueAt(fila, 72)));
-            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 73)));
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom2MouseClicked
-
-    private void Nominab2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab2KeyReleased
-        FunMD();
-    }//GEN-LAST:event_Nominab2KeyReleased
-
-    private void CS9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS9ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Login_2 regr = new Login_2();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS9ActionPerformed
-
-    private void FiltroSnomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina2ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroSnomina2ItemStateChanged
-
-    private void FiltroQuincenanomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina2ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroQuincenanomina2ItemStateChanged
-
-    private void FZservicio2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio2ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio2.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina2.setModel(modelServicio);
-        }
-        FunMD();
-    }//GEN-LAST:event_FZservicio2ItemStateChanged
-
-    private void FiltrosTD2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD2ItemStateChanged
-
-        String FTD2 = (String) FiltrosTD2.getSelectedItem();
-        if (FTD2.equals("Selecciona filtro")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(false);
-            FApT2.setText("");
-            FApT2.setVisible(false);
-            FAmT2.setVisible(false);
-            FAmT2.setText("");
-            Nominab2.setVisible(false);
-            FiltroSnomina2.setVisible(false);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(false);
-            FZservicio2.setVisible(false);
-            LabelSZ2.setVisible(false);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(false);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(false);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(false);
-            LabelBNDF2.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD2.equals("Filtrar por Apellido P")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(true);
-            LabelBE2.setText("Buscar Apellido P:");
-            FApT2.setText("");
-            FApT2.setVisible(true);
-            FAmT2.setVisible(false);
-            FAmT2.setText("");
-            FiltroSnomina2.setVisible(false);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(false);
-            FZservicio2.setVisible(false);
-            LabelSZ2.setVisible(false);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(false);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(false);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(false);
-            LabelBNDF2.setVisible(false);
-            FunMD();
-        }
-        if (FTD2.equals("Filtrar por Apellido M")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(true);
-            LabelBE2.setText("Buscar Apellido M:");
-            FApT2.setText("");
-            FApT2.setVisible(false);
-            FAmT2.setVisible(true);
-            FAmT2.setText("");
-            Nominab2.setVisible(false);
-            FiltroSnomina2.setVisible(false);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(false);
-            FZservicio2.setVisible(false);
-            LabelSZ2.setVisible(false);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(false);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(false);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(false);
-            LabelBNDF2.setVisible(false);
-            FunMD();
-        }
-        if (FTD2.equals("Filtrar por Nombre(s)")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(true);
-            LabelBE2.setText("Buscar Nombre(s):");
-            FApT2.setText("");
-            FApT2.setVisible(false);
-            FAmT2.setVisible(false);
-            FAmT2.setText("");
-            Nominab2.setVisible(true);
-            FiltroSnomina2.setVisible(false);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(false);
-            FZservicio2.setVisible(false);
-            LabelSZ2.setVisible(false);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(false);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(false);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(false);
-            LabelBNDF2.setVisible(false);
-            FunMD();
-        }
-        if (FTD2.equals("Filtrar por Servicio")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(false);
-            FApT2.setText("");
-            FApT2.setVisible(false);
-            FAmT2.setVisible(false);
-            FAmT2.setText("");
-            Nominab2.setVisible(false);
-            FiltroSnomina2.setVisible(true);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(true);
-            FZservicio2.setVisible(true);
-            LabelSZ2.setVisible(true);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(false);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(false);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(false);
-            LabelBNDF2.setVisible(false);
-            FunMD();
-        }
-        if (FTD2.equals("Filtrar por quincena")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(false);
-            FApT2.setText("");
-            FApT2.setVisible(false);
-            FAmT2.setVisible(false);
-            FAmT2.setText("");
-            Nominab2.setVisible(false);
-            FiltroSnomina2.setVisible(false);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(false);
-            FZservicio2.setVisible(false);
-            LabelSZ2.setVisible(false);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(true);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(true);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(false);
-            LabelBNDF2.setVisible(false);
-            FunMD();
-        }
-        if (FTD2.equals("Filtrar por # Lista")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(false);
-            FApT2.setText("");
-            FApT2.setVisible(false);
-            FAmT2.setVisible(false);
-            FAmT2.setText("");
-            Nominab2.setVisible(false);
-            FiltroSnomina2.setVisible(false);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(false);
-            FZservicio2.setVisible(false);
-            LabelSZ2.setVisible(false);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(false);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(false);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(true);
-            LabelBNDF2.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD2ItemStateChanged
-
-    private void FiltroNDF2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF2KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FiltroNDF2KeyReleased
-
-    private void FApT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT2KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FApT2KeyReleased
-
-    private void FAmT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT2KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FAmT2KeyReleased
-
-    private void Tnom3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom3MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom3.getModel();
-
-            int fila = Tnom3.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom3.getValueAt(fila, 0)));
-            NEnom.setText(String.valueOf(Tnom3.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom3.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom3.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom3.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom3.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom3.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom3.getValueAt(fila, 9)));
-            Bonodep.setText(String.valueOf(Tnom3.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom3.getValueAt(fila, 11)));
-            String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Quincenas.getItemCount(); i++) {
-                if (Quincenas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Quincenas.setSelectedIndex(i);
-                }
-            }
-
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            PDDDDSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom3.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom3.getValueAt(fila, 51)));
-            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom3.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom3.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom3.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom3.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom3.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom3.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom3.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom3.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom3.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom3.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom3.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom3.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom3.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom3.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom3.getValueAt(fila, 69)));
-            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom3.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom3.getValueAt(fila, 72)));
-            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 73)));
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom3MouseClicked
-
-    private void Nominab3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab3KeyReleased
-        FunMD();
-    }//GEN-LAST:event_Nominab3KeyReleased
-
-    private void CS10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS10ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Login_2 regr = new Login_2();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS10ActionPerformed
-
-    private void FiltroSnomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina3ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroSnomina3ItemStateChanged
-
-    private void FiltroQuincenanomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina3ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroQuincenanomina3ItemStateChanged
-
-    private void FZservicio3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio3ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio3.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina3.setModel(modelServicio);
-        }
-        FunMD();
-    }//GEN-LAST:event_FZservicio3ItemStateChanged
-
-    private void FiltrosTD3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD3ItemStateChanged
-
-        String FTD3 = (String) FiltrosTD3.getSelectedItem();
-        if (FTD3.equals("Selecciona filtro")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(false);
-            FApT3.setText("");
-            FApT3.setVisible(false);
-            FAmT3.setVisible(false);
-            FAmT3.setText("");
-            Nominab3.setVisible(false);
-            FiltroSnomina3.setVisible(false);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(false);
-            FZservicio3.setVisible(false);
-            LabelSZ3.setVisible(false);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(false);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(false);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(false);
-            LabelBNDF3.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD3.equals("Filtrar por Apellido P")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(true);
-            LabelBE3.setText("Buscar Apellido P:");
-            FApT3.setText("");
-            FApT3.setVisible(true);
-            FAmT3.setVisible(false);
-            FAmT3.setText("");
-            FiltroSnomina3.setVisible(false);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(false);
-            FZservicio3.setVisible(false);
-            LabelSZ3.setVisible(false);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(false);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(false);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(false);
-            LabelBNDF3.setVisible(false);
-            FunMD();
-        }
-        if (FTD3.equals("Filtrar por Apellido M")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(true);
-            LabelBE3.setText("Buscar Apellido M:");
-            FApT3.setText("");
-            FApT3.setVisible(false);
-            FAmT3.setVisible(true);
-            FAmT3.setText("");
-            Nominab3.setVisible(false);
-            FiltroSnomina3.setVisible(false);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(false);
-            FZservicio3.setVisible(false);
-            LabelSZ3.setVisible(false);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(false);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(false);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(false);
-            LabelBNDF3.setVisible(false);
-            FunMD();
-        }
-        if (FTD3.equals("Filtrar por Nombre(s)")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(true);
-            LabelBE3.setText("Buscar Nombre(s):");
-            FApT3.setText("");
-            FApT3.setVisible(false);
-            FAmT3.setVisible(false);
-            FAmT3.setText("");
-            Nominab3.setVisible(true);
-            FiltroSnomina3.setVisible(false);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(false);
-            FZservicio3.setVisible(false);
-            LabelSZ3.setVisible(false);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(false);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(false);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(false);
-            LabelBNDF3.setVisible(false);
-            FunMD();
-        }
-        if (FTD3.equals("Filtrar por Servicio")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(false);
-            FApT3.setText("");
-            FApT3.setVisible(false);
-            FAmT3.setVisible(false);
-            FAmT3.setText("");
-            Nominab3.setVisible(false);
-            FiltroSnomina3.setVisible(true);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(true);
-            FZservicio3.setVisible(true);
-            LabelSZ3.setVisible(true);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(false);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(false);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(false);
-            LabelBNDF3.setVisible(false);
-            FunMD();
-        }
-        if (FTD3.equals("Filtrar por quincena")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(false);
-            FApT3.setText("");
-            FApT3.setVisible(false);
-            FAmT3.setVisible(false);
-            FAmT3.setText("");
-            Nominab3.setVisible(false);
-            FiltroSnomina3.setVisible(false);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(false);
-            FZservicio3.setVisible(false);
-            LabelSZ3.setVisible(false);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(true);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(true);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(false);
-            LabelBNDF3.setVisible(false);
-            FunMD();
-        }
-        if (FTD3.equals("Filtrar por # Lista")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(false);
-            FApT3.setText("");
-            FApT3.setVisible(false);
-            FAmT3.setVisible(false);
-            FAmT3.setText("");
-            Nominab3.setVisible(false);
-            FiltroSnomina3.setVisible(false);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(false);
-            FZservicio3.setVisible(false);
-            LabelSZ3.setVisible(false);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(false);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(false);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(true);
-            LabelBNDF3.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD3ItemStateChanged
-
-    private void FiltroNDF3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF3KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FiltroNDF3KeyReleased
-
-    private void FApT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT3KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FApT3KeyReleased
-
-    private void FAmT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT3KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FAmT3KeyReleased
-
-    private void Tnom4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom4MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom4.getModel();
-
-            int fila = Tnom4.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom4.getValueAt(fila, 0)));
-            NEnom.setText(String.valueOf(Tnom4.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom4.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom4.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom4.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom4.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom4.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom4.getValueAt(fila, 9)));
-            Bonodep.setText(String.valueOf(Tnom4.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom4.getValueAt(fila, 11)));
-            String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Quincenas.getItemCount(); i++) {
-                if (Quincenas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Quincenas.setSelectedIndex(i);
-                }
-            }
-
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            PDDDDSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom4.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom4.getValueAt(fila, 51)));
-            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom4.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom4.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom4.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom4.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom4.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom4.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom4.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom4.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom4.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom4.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom4.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom4.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom4.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom4.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom4.getValueAt(fila, 69)));
-            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom4.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom4.getValueAt(fila, 72)));
-            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 73)));
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom4MouseClicked
-
-    private void Nominab4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab4KeyReleased
-        FunMD();
-    }//GEN-LAST:event_Nominab4KeyReleased
-
-    private void CS11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS11ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Login_2 regr = new Login_2();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS11ActionPerformed
-
-    private void FiltroSnomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina4ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroSnomina4ItemStateChanged
-
-    private void FiltroQuincenanomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina4ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroQuincenanomina4ItemStateChanged
-
-    private void FZservicio4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio4ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio4.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina4.setModel(modelServicio);
-        }
-        FunMD();
-    }//GEN-LAST:event_FZservicio4ItemStateChanged
-
-    private void FiltrosTD4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD4ItemStateChanged
-
-        String FTD4 = (String) FiltrosTD4.getSelectedItem();
-        if (FTD4.equals("Selecciona filtro")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(false);
-            FApT4.setText("");
-            FApT4.setVisible(false);
-            FAmT4.setVisible(false);
-            FAmT4.setText("");
-            Nominab4.setVisible(false);
-            FiltroSnomina4.setVisible(false);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(false);
-            FZservicio4.setVisible(false);
-            LabelSZ4.setVisible(false);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(false);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(false);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(false);
-            LabelBNDF4.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD4.equals("Filtrar por Apellido P")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(true);
-            LabelBE4.setText("Buscar Apellido P:");
-            FApT4.setText("");
-            FApT4.setVisible(true);
-            FAmT4.setVisible(false);
-            FAmT4.setText("");
-            FiltroSnomina4.setVisible(false);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(false);
-            FZservicio4.setVisible(false);
-            LabelSZ4.setVisible(false);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(false);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(false);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(false);
-            LabelBNDF4.setVisible(false);
-            FunMD();
-        }
-        if (FTD4.equals("Filtrar por Apellido M")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(true);
-            LabelBE4.setText("Buscar Apellido M:");
-            FApT4.setText("");
-            FApT4.setVisible(false);
-            FAmT4.setVisible(true);
-            FAmT4.setText("");
-            Nominab4.setVisible(false);
-            FiltroSnomina4.setVisible(false);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(false);
-            FZservicio4.setVisible(false);
-            LabelSZ4.setVisible(false);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(false);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(false);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(false);
-            LabelBNDF4.setVisible(false);
-            FunMD();
-        }
-        if (FTD4.equals("Filtrar por Nombre(s)")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(true);
-            LabelBE4.setText("Buscar Nombre(s):");
-            FApT4.setText("");
-            FApT4.setVisible(false);
-            FAmT4.setVisible(false);
-            FAmT4.setText("");
-            Nominab4.setVisible(true);
-            FiltroSnomina4.setVisible(false);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(false);
-            FZservicio4.setVisible(false);
-            LabelSZ4.setVisible(false);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(false);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(false);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(false);
-            LabelBNDF4.setVisible(false);
-            FunMD();
-        }
-        if (FTD4.equals("Filtrar por Servicio")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(false);
-            FApT4.setText("");
-            FApT4.setVisible(false);
-            FAmT4.setVisible(false);
-            FAmT4.setText("");
-            Nominab4.setVisible(false);
-            FiltroSnomina4.setVisible(true);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(true);
-            FZservicio4.setVisible(true);
-            LabelSZ4.setVisible(true);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(false);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(false);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(false);
-            LabelBNDF4.setVisible(false);
-            FunMD();
-        }
-        if (FTD4.equals("Filtrar por quincena")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(false);
-            FApT4.setText("");
-            FApT4.setVisible(false);
-            FAmT4.setVisible(false);
-            FAmT4.setText("");
-            Nominab4.setVisible(false);
-            FiltroSnomina4.setVisible(false);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(false);
-            FZservicio4.setVisible(false);
-            LabelSZ4.setVisible(false);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(true);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(true);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(false);
-            LabelBNDF4.setVisible(false);
-            FunMD();
-        }
-        if (FTD4.equals("Filtrar por # Lista")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(false);
-            FApT4.setText("");
-            FApT4.setVisible(false);
-            FAmT4.setVisible(false);
-            FAmT4.setText("");
-            Nominab4.setVisible(false);
-            FiltroSnomina4.setVisible(false);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(false);
-            FZservicio4.setVisible(false);
-            LabelSZ4.setVisible(false);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(false);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(false);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(true);
-            LabelBNDF4.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD4ItemStateChanged
-
-    private void FiltroNDF4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF4KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FiltroNDF4KeyReleased
-
-    private void FApT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT4KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FApT4KeyReleased
-
-    private void FAmT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT4KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FAmT4KeyReleased
-
-    private void Tnom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom5MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom5.getModel();
-
-            int fila = Tnom5.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom5.getValueAt(fila, 0)));
-            NEnom.setText(String.valueOf(Tnom5.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom5.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom5.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom5.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom5.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom5.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom5.getValueAt(fila, 9)));
-            Bonodep.setText(String.valueOf(Tnom5.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom5.getValueAt(fila, 11)));
-            String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Quincenas.getItemCount(); i++) {
-                if (Quincenas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Quincenas.setSelectedIndex(i);
-                }
-            }
-
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            PDDDDSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom5.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom5.getValueAt(fila, 51)));
-            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom5.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom5.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom5.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom5.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom5.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom5.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom5.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom5.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom5.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom5.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom5.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom5.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom5.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom5.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom5.getValueAt(fila, 69)));
-            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom5.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom5.getValueAt(fila, 72)));
-            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 73)));
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom5MouseClicked
-
-    private void Nominab5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab5KeyReleased
-        FunMD();
-    }//GEN-LAST:event_Nominab5KeyReleased
-
-    private void CS12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS12ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Login_2 regr = new Login_2();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS12ActionPerformed
-
-    private void FiltroSnomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina5ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroSnomina5ItemStateChanged
-
-    private void FiltroQuincenanomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina5ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroQuincenanomina5ItemStateChanged
-
-    private void FZservicio5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio5ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio5.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina5.setModel(modelServicio);
-        }
-        FunMD();
-    }//GEN-LAST:event_FZservicio5ItemStateChanged
-
-    private void FiltrosTD5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD5ItemStateChanged
-
-        String FTD5 = (String) FiltrosTD5.getSelectedItem();
-        if (FTD5.equals("Selecciona filtro")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(false);
-            FApT5.setText("");
-            FApT5.setVisible(false);
-            FAmT5.setVisible(false);
-            FAmT5.setText("");
-            Nominab5.setVisible(false);
-            FiltroSnomina5.setVisible(false);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(false);
-            FZservicio5.setVisible(false);
-            LabelSZ5.setVisible(false);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(false);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(false);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(false);
-            LabelBNDF5.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD5.equals("Filtrar por Apellido P")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(true);
-            LabelBE5.setText("Buscar Apellido P:");
-            FApT5.setText("");
-            FApT5.setVisible(true);
-            FAmT5.setVisible(false);
-            FAmT5.setText("");
-            FiltroSnomina5.setVisible(false);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(false);
-            FZservicio5.setVisible(false);
-            LabelSZ5.setVisible(false);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(false);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(false);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(false);
-            LabelBNDF5.setVisible(false);
-            FunMD();
-        }
-        if (FTD5.equals("Filtrar por Apellido M")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(true);
-            LabelBE5.setText("Buscar Apellido M:");
-            FApT5.setText("");
-            FApT5.setVisible(false);
-            FAmT5.setVisible(true);
-            FAmT5.setText("");
-            Nominab5.setVisible(false);
-            FiltroSnomina5.setVisible(false);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(false);
-            FZservicio5.setVisible(false);
-            LabelSZ5.setVisible(false);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(false);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(false);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(false);
-            LabelBNDF5.setVisible(false);
-            FunMD();
-        }
-        if (FTD5.equals("Filtrar por Nombre(s)")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(true);
-            LabelBE5.setText("Buscar Nombre(s):");
-            FApT5.setText("");
-            FApT5.setVisible(false);
-            FAmT5.setVisible(false);
-            FAmT5.setText("");
-            Nominab5.setVisible(true);
-            FiltroSnomina5.setVisible(false);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(false);
-            FZservicio5.setVisible(false);
-            LabelSZ5.setVisible(false);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(false);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(false);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(false);
-            LabelBNDF5.setVisible(false);
-            FunMD();
-        }
-        if (FTD5.equals("Filtrar por Servicio")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(false);
-            FApT5.setText("");
-            FApT5.setVisible(false);
-            FAmT5.setVisible(false);
-            FAmT5.setText("");
-            Nominab5.setVisible(false);
-            FiltroSnomina5.setVisible(true);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(true);
-            FZservicio5.setVisible(true);
-            LabelSZ5.setVisible(true);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(false);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(false);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(false);
-            LabelBNDF5.setVisible(false);
-            FunMD();
-        }
-        if (FTD5.equals("Filtrar por quincena")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(false);
-            FApT5.setText("");
-            FApT5.setVisible(false);
-            FAmT5.setVisible(false);
-            FAmT5.setText("");
-            Nominab5.setVisible(false);
-            FiltroSnomina5.setVisible(false);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(false);
-            FZservicio5.setVisible(false);
-            LabelSZ5.setVisible(false);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(true);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(true);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(false);
-            LabelBNDF5.setVisible(false);
-            FunMD();
-        }
-        if (FTD5.equals("Filtrar por # Lista")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(false);
-            FApT5.setText("");
-            FApT5.setVisible(false);
-            FAmT5.setVisible(false);
-            FAmT5.setText("");
-            Nominab5.setVisible(false);
-            FiltroSnomina5.setVisible(false);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(false);
-            FZservicio5.setVisible(false);
-            LabelSZ5.setVisible(false);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(false);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(false);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(true);
-            LabelBNDF5.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD5ItemStateChanged
-
-    private void FiltroNDF5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF5KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FiltroNDF5KeyReleased
-
-    private void FApT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT5KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FApT5KeyReleased
-
-    private void FAmT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT5KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FAmT5KeyReleased
-
-    private void Tnom6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom6MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom6.getModel();
-
-            int fila = Tnom6.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom6.getValueAt(fila, 0)));
-            NEnom.setText(String.valueOf(Tnom6.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom6.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom6.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom6.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom6.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom6.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom6.getValueAt(fila, 9)));
-            pd.setText(String.valueOf(Tnom6.getValueAt(fila, 11)));
-            String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Quincenas.getItemCount(); i++) {
-                if (Quincenas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Quincenas.setSelectedIndex(i);
-                }
-            }
-
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            PDDDDSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom6.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom6.getValueAt(fila, 51)));
-            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom6.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom6.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom6.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom6.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom6.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom6.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom6.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom6.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom6.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom6.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom6.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom6.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom6.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom6.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom6.getValueAt(fila, 69)));
-            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom6.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom6.getValueAt(fila, 72)));
-            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 73)));
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom6MouseClicked
-
-    private void Nominab6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab6KeyReleased
-        FunMD();
-    }//GEN-LAST:event_Nominab6KeyReleased
-
-    private void CS13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS13ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Login_2 regr = new Login_2();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS13ActionPerformed
-
-    private void FiltroSnomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina6ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroSnomina6ItemStateChanged
-
-    private void FiltroQuincenanomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina6ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroQuincenanomina6ItemStateChanged
-
-    private void FZservicio6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio6ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio6.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina6.setModel(modelServicio);
-        }
-        FunMD();
-    }//GEN-LAST:event_FZservicio6ItemStateChanged
-
-    private void FiltrosTD6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD6ItemStateChanged
-
-        String FTD6 = (String) FiltrosTD6.getSelectedItem();
-        if (FTD6.equals("Selecciona filtro")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(false);
-            FApT6.setText("");
-            FApT6.setVisible(false);
-            FAmT6.setVisible(false);
-            FAmT6.setText("");
-            Nominab6.setVisible(false);
-            FiltroSnomina6.setVisible(false);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(false);
-            FZservicio6.setVisible(false);
-            LabelSZ6.setVisible(false);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(false);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(false);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(false);
-            LabelBNDF6.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD6.equals("Filtrar por Apellido P")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(true);
-            LabelBE6.setText("Buscar Apellido P:");
-            FApT6.setText("");
-            FApT6.setVisible(true);
-            FAmT6.setVisible(false);
-            FAmT6.setText("");
-            FiltroSnomina6.setVisible(false);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(false);
-            FZservicio6.setVisible(false);
-            LabelSZ6.setVisible(false);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(false);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(false);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(false);
-            LabelBNDF6.setVisible(false);
-            FunMD();
-        }
-        if (FTD6.equals("Filtrar por Apellido M")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(true);
-            LabelBE6.setText("Buscar Apellido M:");
-            FApT6.setText("");
-            FApT6.setVisible(false);
-            FAmT6.setVisible(true);
-            FAmT6.setText("");
-            Nominab6.setVisible(false);
-            FiltroSnomina6.setVisible(false);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(false);
-            FZservicio6.setVisible(false);
-            LabelSZ6.setVisible(false);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(false);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(false);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(false);
-            LabelBNDF6.setVisible(false);
-            FunMD();
-        }
-        if (FTD6.equals("Filtrar por Nombre(s)")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(true);
-            LabelBE6.setText("Buscar Nombre(s):");
-            FApT6.setText("");
-            FApT6.setVisible(false);
-            FAmT6.setVisible(false);
-            FAmT6.setText("");
-            Nominab6.setVisible(true);
-            FiltroSnomina6.setVisible(false);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(false);
-            FZservicio6.setVisible(false);
-            LabelSZ6.setVisible(false);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(false);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(false);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(false);
-            LabelBNDF6.setVisible(false);
-            FunMD();
-        }
-        if (FTD6.equals("Filtrar por Servicio")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(false);
-            FApT6.setText("");
-            FApT6.setVisible(false);
-            FAmT6.setVisible(false);
-            FAmT6.setText("");
-            Nominab6.setVisible(false);
-            FiltroSnomina6.setVisible(true);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(true);
-            FZservicio6.setVisible(true);
-            LabelSZ6.setVisible(true);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(false);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(false);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(false);
-            LabelBNDF6.setVisible(false);
-            FunMD();
-        }
-        if (FTD6.equals("Filtrar por quincena")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(false);
-            FApT6.setText("");
-            FApT6.setVisible(false);
-            FAmT6.setVisible(false);
-            FAmT6.setText("");
-            Nominab6.setVisible(false);
-            FiltroSnomina6.setVisible(false);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(false);
-            FZservicio6.setVisible(false);
-            LabelSZ6.setVisible(false);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(true);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(true);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(false);
-            LabelBNDF6.setVisible(false);
-            FunMD();
-        }
-        if (FTD6.equals("Filtrar por # Lista")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(false);
-            FApT6.setText("");
-            FApT6.setVisible(false);
-            FAmT6.setVisible(false);
-            FAmT6.setText("");
-            Nominab6.setVisible(false);
-            FiltroSnomina6.setVisible(false);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(false);
-            FZservicio6.setVisible(false);
-            LabelSZ6.setVisible(false);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(false);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(false);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(true);
-            LabelBNDF6.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD6ItemStateChanged
-
-    private void FiltroNDF6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF6KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FiltroNDF6KeyReleased
-
-    private void FApT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT6KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FApT6KeyReleased
-
-    private void FAmT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT6KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FAmT6KeyReleased
-
-    private void Tnom7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom7MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom7.getModel();
-
-            int fila = Tnom7.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom7.getValueAt(fila, 0)));
-            NEnom.setText(String.valueOf(Tnom7.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom7.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom7.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom7.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom7.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom7.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom7.getValueAt(fila, 9)));
-            Bonodep.setText(String.valueOf(Tnom7.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom7.getValueAt(fila, 11)));
-            String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Quincenas.getItemCount(); i++) {
-                if (Quincenas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Quincenas.setSelectedIndex(i);
-                }
-            }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            PDDDDSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom7.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom7.getValueAt(fila, 51)));
-            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom7.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom7.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom7.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom7.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom7.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom7.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom7.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom7.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom7.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom7.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom7.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom7.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom7.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom7.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom7.getValueAt(fila, 69)));
-            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom7.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom7.getValueAt(fila, 72)));
-            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 73)));
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom7MouseClicked
-
-    private void Nominab7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab7KeyReleased
-        FunMD();
-    }//GEN-LAST:event_Nominab7KeyReleased
-
-    private void CS14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS14ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Login_2 regr = new Login_2();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS14ActionPerformed
-
-    private void FiltroSnomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina7ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroSnomina7ItemStateChanged
-
-    private void FiltroQuincenanomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina7ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroQuincenanomina7ItemStateChanged
-
-    private void FZservicio7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio7ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio7.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina7.setModel(modelServicio);
-        }
-        FunMD();
-    }//GEN-LAST:event_FZservicio7ItemStateChanged
-
-    private void FiltrosTD7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD7ItemStateChanged
-
-        String FTD7 = (String) FiltrosTD7.getSelectedItem();
-        if (FTD7.equals("Selecciona filtro")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(false);
-            FApT7.setText("");
-            FApT7.setVisible(false);
-            FAmT7.setVisible(false);
-            FAmT7.setText("");
-            Nominab7.setVisible(false);
-            FiltroSnomina7.setVisible(false);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(false);
-            FZservicio7.setVisible(false);
-            LabelSZ7.setVisible(false);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(false);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(false);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(false);
-            LabelBNDF7.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD7.equals("Filtrar por Apellido P")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(true);
-            LabelBE7.setText("Buscar Apellido P:");
-            FApT7.setText("");
-            FApT7.setVisible(true);
-            FAmT7.setVisible(false);
-            FAmT7.setText("");
-            FiltroSnomina7.setVisible(false);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(false);
-            FZservicio7.setVisible(false);
-            LabelSZ7.setVisible(false);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(false);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(false);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(false);
-            LabelBNDF7.setVisible(false);
-            FunMD();
-        }
-        if (FTD7.equals("Filtrar por Apellido M")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(true);
-            LabelBE7.setText("Buscar Apellido M:");
-            FApT7.setText("");
-            FApT7.setVisible(false);
-            FAmT7.setVisible(true);
-            FAmT7.setText("");
-            Nominab7.setVisible(false);
-            FiltroSnomina7.setVisible(false);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(false);
-            FZservicio7.setVisible(false);
-            LabelSZ7.setVisible(false);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(false);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(false);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(false);
-            LabelBNDF7.setVisible(false);
-            FunMD();
-        }
-        if (FTD7.equals("Filtrar por Nombre(s)")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(true);
-            LabelBE7.setText("Buscar Nombre(s):");
-            FApT7.setText("");
-            FApT7.setVisible(false);
-            FAmT7.setVisible(false);
-            FAmT7.setText("");
-            Nominab7.setVisible(true);
-            FiltroSnomina7.setVisible(false);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(false);
-            FZservicio7.setVisible(false);
-            LabelSZ7.setVisible(false);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(false);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(false);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(false);
-            LabelBNDF7.setVisible(false);
-            FunMD();
-        }
-        if (FTD7.equals("Filtrar por Servicio")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(false);
-            FApT7.setText("");
-            FApT7.setVisible(false);
-            FAmT7.setVisible(false);
-            FAmT7.setText("");
-            Nominab7.setVisible(false);
-            FiltroSnomina7.setVisible(true);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(true);
-            FZservicio7.setVisible(true);
-            LabelSZ7.setVisible(true);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(false);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(false);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(false);
-            LabelBNDF7.setVisible(false);
-            FunMD();
-        }
-        if (FTD7.equals("Filtrar por quincena")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(false);
-            FApT7.setText("");
-            FApT7.setVisible(false);
-            FAmT7.setVisible(false);
-            FAmT7.setText("");
-            Nominab7.setVisible(false);
-            FiltroSnomina7.setVisible(false);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(false);
-            FZservicio7.setVisible(false);
-            LabelSZ7.setVisible(false);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(true);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(true);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(false);
-            LabelBNDF7.setVisible(false);
-            FunMD();
-        }
-        if (FTD7.equals("Filtrar por # Lista")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(false);
-            FApT7.setText("");
-            FApT7.setVisible(false);
-            FAmT7.setVisible(false);
-            FAmT7.setText("");
-            Nominab7.setVisible(false);
-            FiltroSnomina7.setVisible(false);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(false);
-            FZservicio7.setVisible(false);
-            LabelSZ7.setVisible(false);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(false);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(false);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(true);
-            LabelBNDF7.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD7ItemStateChanged
-
-    private void FiltroNDF7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF7KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FiltroNDF7KeyReleased
-
-    private void FApT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT7KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FApT7KeyReleased
-
-    private void FAmT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT7KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FAmT7KeyReleased
-
-    private void Tnom8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom8MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom8.getModel();
-
-            int fila = Tnom8.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom8.getValueAt(fila, 0)));
-            NEnom.setText(String.valueOf(Tnom8.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom8.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom8.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom8.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom8.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom8.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom8.getValueAt(fila, 9)));
-            Bonodep.setText(String.valueOf(Tnom8.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom8.getValueAt(fila, 11)));
-            String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Quincenas.getItemCount(); i++) {
-                if (Quincenas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Quincenas.setSelectedIndex(i);
-                }
-            }
-
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            PDDDDSGS.setText(String.valueOf(Tnom8.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom8.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom8.getValueAt(fila, 51)));
-            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom8.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom8.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom8.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom8.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom8.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom8.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom8.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom8.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom8.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom8.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom8.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom8.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom8.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom8.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom8.getValueAt(fila, 69)));
-            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom8.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom8.getValueAt(fila, 72)));
-            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 73)));
-
-        } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom8MouseClicked
-
-    private void Nominab8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab8KeyReleased
-        FunMD();
-    }//GEN-LAST:event_Nominab8KeyReleased
-
-    private void CS24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS24ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Login_2 regr = new Login_2();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS24ActionPerformed
-
-    private void FiltroQuincenanomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina8ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FiltroQuincenanomina8ItemStateChanged
-
-    private void FiltrosTD8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD8ItemStateChanged
-        String FTD8 = (String) FiltrosTD8.getSelectedItem();
-        if (FTD8.equals("Selecciona filtro")) {
-            Nominab8.setText("");
-            LabelBE8.setVisible(false);
-            FApT8.setText("");
-            FApT8.setVisible(false);
-            FAmT8.setVisible(false);
-            FAmT8.setText("");
-            Nominab8.setVisible(false);
-            FiltroSnomina8.setVisible(false);
-            FiltroSnomina8.setSelectedIndex(0);
-            LabelBS8.setVisible(false);
-            FZservicio8.setVisible(false);
-            LabelSZ8.setVisible(false);
-            FZservicio8.setSelectedIndex(0);
-            FiltroQuincenanomina8.setVisible(false);
-            FiltroQuincenanomina8.setSelectedIndex(0);
-            LabelBQ8.setVisible(false);
-            FiltroNDF8.setText("");
-            FiltroNDF8.setVisible(false);
-            LabelBNDF8.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD8.equals("Filtrar por Apellido P")) {
-            Nominab8.setText("");
-            LabelBE8.setVisible(true);
-            LabelBE8.setText("Buscar Apellido P:");
-            FApT8.setText("");
-            FApT8.setVisible(true);
-            FAmT8.setVisible(false);
-            FAmT8.setText("");
-            FiltroSnomina8.setVisible(false);
-            FiltroSnomina8.setSelectedIndex(0);
-            LabelBS8.setVisible(false);
-            FZservicio8.setVisible(false);
-            LabelSZ8.setVisible(false);
-            FZservicio8.setSelectedIndex(0);
-            FiltroQuincenanomina8.setVisible(false);
-            FiltroQuincenanomina8.setSelectedIndex(0);
-            LabelBQ8.setVisible(false);
-            FiltroNDF8.setText("");
-            FiltroNDF8.setVisible(false);
-            LabelBNDF8.setVisible(false);
-            FunMD();
-        }
-        if (FTD8.equals("Filtrar por Apellido M")) {
-            Nominab8.setText("");
-            LabelBE8.setVisible(true);
-            LabelBE8.setText("Buscar Apellido M:");
-            FApT8.setText("");
-            FApT8.setVisible(false);
-            FAmT8.setVisible(true);
-            FAmT8.setText("");
-            Nominab8.setVisible(false);
-            FiltroSnomina8.setVisible(false);
-            FiltroSnomina8.setSelectedIndex(0);
-            LabelBS8.setVisible(false);
-            FZservicio8.setVisible(false);
-            LabelSZ8.setVisible(false);
-            FZservicio8.setSelectedIndex(0);
-            FiltroQuincenanomina8.setVisible(false);
-            FiltroQuincenanomina8.setSelectedIndex(0);
-            LabelBQ8.setVisible(false);
-            FiltroNDF8.setText("");
-            FiltroNDF8.setVisible(false);
-            LabelBNDF8.setVisible(false);
-            FunMD();
-        }
-        if (FTD8.equals("Filtrar por Nombre(s)")) {
-            Nominab8.setText("");
-            LabelBE8.setVisible(true);
-            LabelBE8.setText("Buscar Nombre(s):");
-            FApT8.setText("");
-            FApT8.setVisible(false);
-            FAmT8.setVisible(false);
-            FAmT8.setText("");
-            Nominab8.setVisible(true);
-            FiltroSnomina8.setVisible(false);
-            FiltroSnomina8.setSelectedIndex(0);
-            LabelBS8.setVisible(false);
-            FZservicio8.setVisible(false);
-            LabelSZ8.setVisible(false);
-            FZservicio8.setSelectedIndex(0);
-            FiltroQuincenanomina8.setVisible(false);
-            FiltroQuincenanomina8.setSelectedIndex(0);
-            LabelBQ8.setVisible(false);
-            FiltroNDF8.setText("");
-            FiltroNDF8.setVisible(false);
-            LabelBNDF8.setVisible(false);
-            FunMD();
-        }
-        if (FTD8.equals("Filtrar por Servicio")) {
-            Nominab8.setText("");
-            LabelBE8.setVisible(false);
-            FApT8.setText("");
-            FApT8.setVisible(false);
-            FAmT8.setVisible(false);
-            FAmT8.setText("");
-            Nominab8.setVisible(false);
-            FiltroSnomina8.setVisible(true);
-            FiltroSnomina8.setSelectedIndex(0);
-            LabelBS8.setVisible(true);
-            FZservicio8.setVisible(true);
-            LabelSZ8.setVisible(true);
-            FZservicio8.setSelectedIndex(0);
-            FiltroQuincenanomina8.setVisible(false);
-            FiltroQuincenanomina8.setSelectedIndex(0);
-            LabelBQ8.setVisible(false);
-            FiltroNDF8.setText("");
-            FiltroNDF8.setVisible(false);
-            LabelBNDF8.setVisible(false);
-            FunMD();
-        }
-        if (FTD8.equals("Filtrar por quincena")) {
-            Nominab8.setText("");
-            LabelBE8.setVisible(false);
-            FApT8.setText("");
-            FApT8.setVisible(false);
-            FAmT8.setVisible(false);
-            FAmT8.setText("");
-            Nominab8.setVisible(false);
-            FiltroSnomina8.setVisible(false);
-            FiltroSnomina8.setSelectedIndex(0);
-            LabelBS8.setVisible(false);
-            FZservicio8.setVisible(false);
-            LabelSZ8.setVisible(false);
-            FZservicio8.setSelectedIndex(0);
-            FiltroQuincenanomina8.setVisible(true);
-            FiltroQuincenanomina8.setSelectedIndex(0);
-            LabelBQ8.setVisible(true);
-            FiltroNDF8.setText("");
-            FiltroNDF8.setVisible(false);
-            LabelBNDF8.setVisible(false);
-            FunMD();
-        }
-        if (FTD8.equals("Filtrar por # Lista")) {
-            Nominab8.setText("");
-            LabelBE8.setVisible(false);
-            FApT8.setText("");
-            FApT8.setVisible(false);
-            FAmT8.setVisible(false);
-            FAmT8.setText("");
-            Nominab8.setVisible(false);
-            FiltroSnomina8.setVisible(false);
-            FiltroSnomina8.setSelectedIndex(0);
-            LabelBS8.setVisible(false);
-            FZservicio8.setVisible(false);
-            LabelSZ8.setVisible(false);
-            FZservicio8.setSelectedIndex(0);
-            FiltroQuincenanomina8.setVisible(false);
-            FiltroQuincenanomina8.setSelectedIndex(0);
-            LabelBQ8.setVisible(false);
-            FiltroNDF8.setText("");
-            FiltroNDF8.setVisible(true);
-            LabelBNDF8.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD8ItemStateChanged
-
-    private void FiltroNDF8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF8KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FiltroNDF8KeyReleased
-
-    private void FApT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT8KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FApT8KeyReleased
-
-    private void FAmT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT8KeyReleased
-        FunMD();
-    }//GEN-LAST:event_FAmT8KeyReleased
-
-    private void FZservicio8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio8ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio8.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina8.setModel(modelServicio);
-        }
-        FunMD();
-    }//GEN-LAST:event_FZservicio8ItemStateChanged
-
     private void PDDDDSGSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PDDDDSGSKeyReleased
         deposito();
     }//GEN-LAST:event_PDDDDSGSKeyReleased
@@ -10832,6 +8407,2488 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         FunMD();
     }//GEN-LAST:event_Bampag8KeyReleased
 
+    private void FZservicio8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio8ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio8.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina8.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio8ItemStateChanged
+
+    private void FAmT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT8KeyReleased
+
+    private void FApT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT8KeyReleased
+
+    private void FiltroNDF8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF8KeyReleased
+
+    private void FiltrosTD8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD8ItemStateChanged
+        String FTD8 = (String) FiltrosTD8.getSelectedItem();
+        if (FTD8.equals("Selecciona filtro")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD8.equals("Filtrar por Apellido P")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Apellido P:");
+            FApT8.setText("");
+            FApT8.setVisible(true);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Apellido M")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Apellido M:");
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(true);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Nombre(s)")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Nombre(s):");
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(true);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Servicio")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(true);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(true);
+            FZservicio8.setVisible(true);
+            LabelSZ8.setVisible(true);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por quincena")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(true);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(true);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por # Lista")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(true);
+            LabelBNDF8.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD8ItemStateChanged
+
+    private void FiltroQuincenanomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina8ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina8ItemStateChanged
+
+    private void CS24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS24ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS24ActionPerformed
+
+    private void Nominab8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab8KeyReleased
+
+    private void Tnom8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom8MouseClicked
+try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom8.getModel();
+
+            int fila = Tnom8.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom8.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom8.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom8.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom8.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom8.getValueAt(fila, 4)));
+            Zon.setText(String.valueOf(Tnom8.getValueAt(fila, 5)));
+            ServN.setText(String.valueOf(Tnom8.getValueAt(fila, 6)));
+            sueldo.setText(String.valueOf(Tnom8.getValueAt(fila, 7)));
+            Bonodep.setText(String.valueOf(Tnom8.getValueAt(fila, 8)));
+            pd.setText(String.valueOf(Tnom8.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom8.getValueAt(fila, 12)));
+            pds.setText(String.valueOf(Tnom8.getValueAt(fila, 13)));
+            Ddv.setText(String.valueOf(Tnom8.getValueAt(fila, 14)));
+            PDDDV.setText(String.valueOf(Tnom8.getValueAt(fila, 15)));
+            DD.setText(String.valueOf(Tnom8.getValueAt(fila, 16)));
+            PDDD.setText(String.valueOf(Tnom8.getValueAt(fila, 17)));
+            DL.setText(String.valueOf(Tnom8.getValueAt(fila, 18)));
+            PDDL.setText(String.valueOf(Tnom8.getValueAt(fila, 19)));
+            dt.setText(String.valueOf(Tnom8.getValueAt(fila, 20)));
+            PDDT.setText(String.valueOf(Tnom8.getValueAt(fila, 21)));
+            DSGS.setText(String.valueOf(Tnom8.getValueAt(fila, 22)));
+            PDDDDSGS.setText(String.valueOf(Tnom8.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tnom8.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tnom8.getValueAt(fila, 25)));
+            DF.setText(String.valueOf(Tnom8.getValueAt(fila, 26)));
+            PDDF.setText(String.valueOf(Tnom8.getValueAt(fila, 27)));
+            DFT.setText(String.valueOf(Tnom8.getValueAt(fila, 28)));
+            PDDFT.setText(String.valueOf(Tnom8.getValueAt(fila, 29)));
+            R.setText(String.valueOf(Tnom8.getValueAt(fila, 30)));
+            PCR.setText(String.valueOf(Tnom8.getValueAt(fila, 31)));
+            apy.setText(String.valueOf(Tnom8.getValueAt(fila, 32)));
+            Lugar.setText(String.valueOf(Tnom8.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 34)));
+            ADD.setText(String.valueOf(Tnom8.getValueAt(fila, 35)));
+            F.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
+            DPF.setText(String.valueOf(Tnom8.getValueAt(fila, 37)));
+            DI.setText(String.valueOf(Tnom8.getValueAt(fila, 38)));
+            Fdb.setText(String.valueOf(Tnom8.getValueAt(fila, 39)));
+            Sancion.setText(String.valueOf(Tnom8.getValueAt(fila, 40)));
+            Chamarra.setText(String.valueOf(Tnom8.getValueAt(fila, 41)));
+            Chaleco.setText(String.valueOf(Tnom8.getValueAt(fila, 42)));
+            Fde.setText(String.valueOf(Tnom8.getValueAt(fila, 43)));
+            Grua.setText(String.valueOf(Tnom8.getValueAt(fila, 44)));
+            Pantalon.setText(String.valueOf(Tnom8.getValueAt(fila, 45)));
+            Credencial.setText(String.valueOf(Tnom8.getValueAt(fila, 46)));
+            Bp.setText(String.valueOf(Tnom8.getValueAt(fila, 47)));
+            Playera.setText(String.valueOf(Tnom8.getValueAt(fila, 48)));
+            Corbata.setText(String.valueOf(Tnom8.getValueAt(fila, 49)));
+            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 50)));
+            cda.setText(String.valueOf(Tnom8.getValueAt(fila, 51)));
+            Odtp.setText(String.valueOf(Tnom8.getValueAt(fila, 52)));
+            AdN.setText(String.valueOf(Tnom8.getValueAt(fila, 53)));
+            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 54)));
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_Depositos_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom8MouseClicked
+
+    private void FAmT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT7KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT7KeyReleased
+
+    private void FApT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT7KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT7KeyReleased
+
+    private void FiltroNDF7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF7KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF7KeyReleased
+
+    private void FiltrosTD7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD7ItemStateChanged
+
+        String FTD7 = (String) FiltrosTD7.getSelectedItem();
+        if (FTD7.equals("Selecciona filtro")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD7.equals("Filtrar por Apellido P")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(true);
+            LabelBE7.setText("Buscar Apellido P:");
+            FApT7.setText("");
+            FApT7.setVisible(true);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por Apellido M")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(true);
+            LabelBE7.setText("Buscar Apellido M:");
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(true);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por Nombre(s)")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(true);
+            LabelBE7.setText("Buscar Nombre(s):");
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(true);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por Servicio")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroSnomina7.setVisible(true);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(true);
+            FZservicio7.setVisible(true);
+            LabelSZ7.setVisible(true);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por quincena")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(true);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(true);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por # Lista")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(true);
+            LabelBNDF7.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD7ItemStateChanged
+
+    private void FZservicio7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio7ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio7.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina7.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio7ItemStateChanged
+
+    private void FiltroQuincenanomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina7ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina7ItemStateChanged
+
+    private void FiltroSnomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina7ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina7ItemStateChanged
+
+    private void CS14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS14ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS14ActionPerformed
+
+    private void Nominab7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab7KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab7KeyReleased
+
+    private void Tnom7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom7MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom7.getModel();
+
+            int fila = Tnom7.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom7.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom7.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom7.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom7.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom7.getValueAt(fila, 4)));
+            Zon.setText(String.valueOf(Tnom7.getValueAt(fila, 5)));
+            ServN.setText(String.valueOf(Tnom7.getValueAt(fila, 6)));
+            sueldo.setText(String.valueOf(Tnom7.getValueAt(fila, 7)));
+            Bonodep.setText(String.valueOf(Tnom7.getValueAt(fila, 8)));
+            pd.setText(String.valueOf(Tnom7.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom7.getValueAt(fila, 12)));
+            pds.setText(String.valueOf(Tnom7.getValueAt(fila, 13)));
+            Ddv.setText(String.valueOf(Tnom7.getValueAt(fila, 14)));
+            PDDDV.setText(String.valueOf(Tnom7.getValueAt(fila, 15)));
+            DD.setText(String.valueOf(Tnom7.getValueAt(fila, 16)));
+            PDDD.setText(String.valueOf(Tnom7.getValueAt(fila, 17)));
+            DL.setText(String.valueOf(Tnom7.getValueAt(fila, 18)));
+            PDDL.setText(String.valueOf(Tnom7.getValueAt(fila, 19)));
+            dt.setText(String.valueOf(Tnom7.getValueAt(fila, 20)));
+            PDDT.setText(String.valueOf(Tnom7.getValueAt(fila, 21)));
+            DSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 22)));
+            PDDDDSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tnom7.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tnom7.getValueAt(fila, 25)));
+            DF.setText(String.valueOf(Tnom7.getValueAt(fila, 26)));
+            PDDF.setText(String.valueOf(Tnom7.getValueAt(fila, 27)));
+            DFT.setText(String.valueOf(Tnom7.getValueAt(fila, 28)));
+            PDDFT.setText(String.valueOf(Tnom7.getValueAt(fila, 29)));
+            R.setText(String.valueOf(Tnom7.getValueAt(fila, 30)));
+            PCR.setText(String.valueOf(Tnom7.getValueAt(fila, 31)));
+            apy.setText(String.valueOf(Tnom7.getValueAt(fila, 32)));
+            Lugar.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
+            ADD.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
+            F.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
+            DPF.setText(String.valueOf(Tnom7.getValueAt(fila, 37)));
+            DI.setText(String.valueOf(Tnom7.getValueAt(fila, 38)));
+            Fdb.setText(String.valueOf(Tnom7.getValueAt(fila, 39)));
+            Sancion.setText(String.valueOf(Tnom7.getValueAt(fila, 40)));
+            Chamarra.setText(String.valueOf(Tnom7.getValueAt(fila, 41)));
+            Chaleco.setText(String.valueOf(Tnom7.getValueAt(fila, 42)));
+            Fde.setText(String.valueOf(Tnom7.getValueAt(fila, 43)));
+            Grua.setText(String.valueOf(Tnom7.getValueAt(fila, 44)));
+            Pantalon.setText(String.valueOf(Tnom7.getValueAt(fila, 45)));
+            Credencial.setText(String.valueOf(Tnom7.getValueAt(fila, 46)));
+            Bp.setText(String.valueOf(Tnom7.getValueAt(fila, 47)));
+            Playera.setText(String.valueOf(Tnom7.getValueAt(fila, 48)));
+            Corbata.setText(String.valueOf(Tnom7.getValueAt(fila, 49)));
+            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 50)));
+            cda.setText(String.valueOf(Tnom7.getValueAt(fila, 51)));
+            Odtp.setText(String.valueOf(Tnom7.getValueAt(fila, 52)));
+            AdN.setText(String.valueOf(Tnom7.getValueAt(fila, 53)));
+            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 54)));
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_Depositos_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom7MouseClicked
+
+    private void FAmT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT6KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT6KeyReleased
+
+    private void FApT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT6KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT6KeyReleased
+
+    private void FiltroNDF6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF6KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF6KeyReleased
+
+    private void FiltrosTD6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD6ItemStateChanged
+
+        String FTD6 = (String) FiltrosTD6.getSelectedItem();
+        if (FTD6.equals("Selecciona filtro")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD6.equals("Filtrar por Apellido P")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(true);
+            LabelBE6.setText("Buscar Apellido P:");
+            FApT6.setText("");
+            FApT6.setVisible(true);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por Apellido M")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(true);
+            LabelBE6.setText("Buscar Apellido M:");
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(true);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por Nombre(s)")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(true);
+            LabelBE6.setText("Buscar Nombre(s):");
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(true);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por Servicio")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroSnomina6.setVisible(true);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(true);
+            FZservicio6.setVisible(true);
+            LabelSZ6.setVisible(true);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por quincena")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(true);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(true);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por # Lista")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(true);
+            LabelBNDF6.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD6ItemStateChanged
+
+    private void FZservicio6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio6ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio6.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina6.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio6ItemStateChanged
+
+    private void FiltroQuincenanomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina6ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina6ItemStateChanged
+
+    private void FiltroSnomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina6ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina6ItemStateChanged
+
+    private void CS13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS13ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS13ActionPerformed
+
+    private void Nominab6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab6KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab6KeyReleased
+
+    private void Tnom6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom6MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom6.getModel();
+
+            int fila = Tnom6.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom6.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom6.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom6.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom6.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom6.getValueAt(fila, 4)));
+            Zon.setText(String.valueOf(Tnom6.getValueAt(fila, 5)));
+            ServN.setText(String.valueOf(Tnom6.getValueAt(fila, 6)));
+            sueldo.setText(String.valueOf(Tnom6.getValueAt(fila, 7)));
+            Bonodep.setText(String.valueOf(Tnom6.getValueAt(fila, 8)));
+            pd.setText(String.valueOf(Tnom6.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom6.getValueAt(fila, 12)));
+            pds.setText(String.valueOf(Tnom6.getValueAt(fila, 13)));
+            Ddv.setText(String.valueOf(Tnom6.getValueAt(fila, 14)));
+            PDDDV.setText(String.valueOf(Tnom6.getValueAt(fila, 15)));
+            DD.setText(String.valueOf(Tnom6.getValueAt(fila, 16)));
+            PDDD.setText(String.valueOf(Tnom6.getValueAt(fila, 17)));
+            DL.setText(String.valueOf(Tnom6.getValueAt(fila, 18)));
+            PDDL.setText(String.valueOf(Tnom6.getValueAt(fila, 19)));
+            dt.setText(String.valueOf(Tnom6.getValueAt(fila, 20)));
+            PDDT.setText(String.valueOf(Tnom6.getValueAt(fila, 21)));
+            DSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 22)));
+            PDDDDSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tnom6.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tnom6.getValueAt(fila, 25)));
+            DF.setText(String.valueOf(Tnom6.getValueAt(fila, 26)));
+            PDDF.setText(String.valueOf(Tnom6.getValueAt(fila, 27)));
+            DFT.setText(String.valueOf(Tnom6.getValueAt(fila, 28)));
+            PDDFT.setText(String.valueOf(Tnom6.getValueAt(fila, 29)));
+            R.setText(String.valueOf(Tnom6.getValueAt(fila, 30)));
+            PCR.setText(String.valueOf(Tnom6.getValueAt(fila, 31)));
+            apy.setText(String.valueOf(Tnom6.getValueAt(fila, 32)));
+            Lugar.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
+            ADD.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
+            F.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
+            DPF.setText(String.valueOf(Tnom6.getValueAt(fila, 37)));
+            DI.setText(String.valueOf(Tnom6.getValueAt(fila, 38)));
+            Fdb.setText(String.valueOf(Tnom6.getValueAt(fila, 39)));
+            Sancion.setText(String.valueOf(Tnom6.getValueAt(fila, 40)));
+            Chamarra.setText(String.valueOf(Tnom6.getValueAt(fila, 41)));
+            Chaleco.setText(String.valueOf(Tnom6.getValueAt(fila, 42)));
+            Fde.setText(String.valueOf(Tnom6.getValueAt(fila, 43)));
+            Grua.setText(String.valueOf(Tnom6.getValueAt(fila, 44)));
+            Pantalon.setText(String.valueOf(Tnom6.getValueAt(fila, 45)));
+            Credencial.setText(String.valueOf(Tnom6.getValueAt(fila, 46)));
+            Bp.setText(String.valueOf(Tnom6.getValueAt(fila, 47)));
+            Playera.setText(String.valueOf(Tnom6.getValueAt(fila, 48)));
+            Corbata.setText(String.valueOf(Tnom6.getValueAt(fila, 49)));
+            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 50)));
+            cda.setText(String.valueOf(Tnom6.getValueAt(fila, 51)));
+            Odtp.setText(String.valueOf(Tnom6.getValueAt(fila, 52)));
+            AdN.setText(String.valueOf(Tnom6.getValueAt(fila, 53)));
+            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 54)));
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_Depositos_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom6MouseClicked
+
+    private void FAmT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT5KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT5KeyReleased
+
+    private void FApT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT5KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT5KeyReleased
+
+    private void FiltroNDF5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF5KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF5KeyReleased
+
+    private void FiltrosTD5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD5ItemStateChanged
+
+        String FTD5 = (String) FiltrosTD5.getSelectedItem();
+        if (FTD5.equals("Selecciona filtro")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD5.equals("Filtrar por Apellido P")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(true);
+            LabelBE5.setText("Buscar Apellido P:");
+            FApT5.setText("");
+            FApT5.setVisible(true);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por Apellido M")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(true);
+            LabelBE5.setText("Buscar Apellido M:");
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(true);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por Nombre(s)")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(true);
+            LabelBE5.setText("Buscar Nombre(s):");
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(true);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por Servicio")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroSnomina5.setVisible(true);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(true);
+            FZservicio5.setVisible(true);
+            LabelSZ5.setVisible(true);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por quincena")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(true);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(true);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por # Lista")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(true);
+            LabelBNDF5.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD5ItemStateChanged
+
+    private void FZservicio5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio5ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio5.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina5.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio5ItemStateChanged
+
+    private void FiltroQuincenanomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina5ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina5ItemStateChanged
+
+    private void FiltroSnomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina5ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina5ItemStateChanged
+
+    private void CS12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS12ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS12ActionPerformed
+
+    private void Nominab5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab5KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab5KeyReleased
+
+    private void Tnom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom5MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom5.getModel();
+
+            int fila = Tnom5.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom5.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom5.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom5.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom5.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom5.getValueAt(fila, 4)));
+            Zon.setText(String.valueOf(Tnom5.getValueAt(fila, 5)));
+            ServN.setText(String.valueOf(Tnom5.getValueAt(fila, 6)));
+            sueldo.setText(String.valueOf(Tnom5.getValueAt(fila, 7)));
+            Bonodep.setText(String.valueOf(Tnom5.getValueAt(fila, 8)));
+            pd.setText(String.valueOf(Tnom5.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom5.getValueAt(fila, 12)));
+            pds.setText(String.valueOf(Tnom5.getValueAt(fila, 13)));
+            Ddv.setText(String.valueOf(Tnom5.getValueAt(fila, 14)));
+            PDDDV.setText(String.valueOf(Tnom5.getValueAt(fila, 15)));
+            DD.setText(String.valueOf(Tnom5.getValueAt(fila, 16)));
+            PDDD.setText(String.valueOf(Tnom5.getValueAt(fila, 17)));
+            DL.setText(String.valueOf(Tnom5.getValueAt(fila, 18)));
+            PDDL.setText(String.valueOf(Tnom5.getValueAt(fila, 19)));
+            dt.setText(String.valueOf(Tnom5.getValueAt(fila, 20)));
+            PDDT.setText(String.valueOf(Tnom5.getValueAt(fila, 21)));
+            DSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 22)));
+            PDDDDSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tnom5.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tnom5.getValueAt(fila, 25)));
+            DF.setText(String.valueOf(Tnom5.getValueAt(fila, 26)));
+            PDDF.setText(String.valueOf(Tnom5.getValueAt(fila, 27)));
+            DFT.setText(String.valueOf(Tnom5.getValueAt(fila, 28)));
+            PDDFT.setText(String.valueOf(Tnom5.getValueAt(fila, 29)));
+            R.setText(String.valueOf(Tnom5.getValueAt(fila, 30)));
+            PCR.setText(String.valueOf(Tnom5.getValueAt(fila, 31)));
+            apy.setText(String.valueOf(Tnom5.getValueAt(fila, 32)));
+            Lugar.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
+            ADD.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
+            F.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
+            DPF.setText(String.valueOf(Tnom5.getValueAt(fila, 37)));
+            DI.setText(String.valueOf(Tnom5.getValueAt(fila, 38)));
+            Fdb.setText(String.valueOf(Tnom5.getValueAt(fila, 39)));
+            Sancion.setText(String.valueOf(Tnom5.getValueAt(fila, 40)));
+            Chamarra.setText(String.valueOf(Tnom5.getValueAt(fila, 41)));
+            Chaleco.setText(String.valueOf(Tnom5.getValueAt(fila, 42)));
+            Fde.setText(String.valueOf(Tnom5.getValueAt(fila, 43)));
+            Grua.setText(String.valueOf(Tnom5.getValueAt(fila, 44)));
+            Pantalon.setText(String.valueOf(Tnom5.getValueAt(fila, 45)));
+            Credencial.setText(String.valueOf(Tnom5.getValueAt(fila, 46)));
+            Bp.setText(String.valueOf(Tnom5.getValueAt(fila, 47)));
+            Playera.setText(String.valueOf(Tnom5.getValueAt(fila, 48)));
+            Corbata.setText(String.valueOf(Tnom5.getValueAt(fila, 49)));
+            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 50)));
+            cda.setText(String.valueOf(Tnom5.getValueAt(fila, 51)));
+            Odtp.setText(String.valueOf(Tnom5.getValueAt(fila, 52)));
+            AdN.setText(String.valueOf(Tnom5.getValueAt(fila, 53)));
+            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 54)));
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_Depositos_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom5MouseClicked
+
+    private void FAmT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT4KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT4KeyReleased
+
+    private void FApT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT4KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT4KeyReleased
+
+    private void FiltroNDF4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF4KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF4KeyReleased
+
+    private void FiltrosTD4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD4ItemStateChanged
+
+        String FTD4 = (String) FiltrosTD4.getSelectedItem();
+        if (FTD4.equals("Selecciona filtro")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD4.equals("Filtrar por Apellido P")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(true);
+            LabelBE4.setText("Buscar Apellido P:");
+            FApT4.setText("");
+            FApT4.setVisible(true);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por Apellido M")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(true);
+            LabelBE4.setText("Buscar Apellido M:");
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(true);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por Nombre(s)")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(true);
+            LabelBE4.setText("Buscar Nombre(s):");
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(true);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por Servicio")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroSnomina4.setVisible(true);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(true);
+            FZservicio4.setVisible(true);
+            LabelSZ4.setVisible(true);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por quincena")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(true);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(true);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por # Lista")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(true);
+            LabelBNDF4.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD4ItemStateChanged
+
+    private void FZservicio4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio4ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio4.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina4.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio4ItemStateChanged
+
+    private void FiltroQuincenanomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina4ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina4ItemStateChanged
+
+    private void FiltroSnomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina4ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina4ItemStateChanged
+
+    private void CS11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS11ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS11ActionPerformed
+
+    private void Nominab4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab4KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab4KeyReleased
+
+    private void Tnom4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom4MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom4.getModel();
+
+            int fila = Tnom4.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom4.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom4.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom4.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom4.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom4.getValueAt(fila, 4)));
+            Zon.setText(String.valueOf(Tnom4.getValueAt(fila, 5)));
+            ServN.setText(String.valueOf(Tnom4.getValueAt(fila, 6)));
+            sueldo.setText(String.valueOf(Tnom4.getValueAt(fila, 7)));
+            Bonodep.setText(String.valueOf(Tnom4.getValueAt(fila, 8)));
+            pd.setText(String.valueOf(Tnom4.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom4.getValueAt(fila, 12)));
+            pds.setText(String.valueOf(Tnom4.getValueAt(fila, 13)));
+            Ddv.setText(String.valueOf(Tnom4.getValueAt(fila, 14)));
+            PDDDV.setText(String.valueOf(Tnom4.getValueAt(fila, 15)));
+            DD.setText(String.valueOf(Tnom4.getValueAt(fila, 16)));
+            PDDD.setText(String.valueOf(Tnom4.getValueAt(fila, 17)));
+            DL.setText(String.valueOf(Tnom4.getValueAt(fila, 18)));
+            PDDL.setText(String.valueOf(Tnom4.getValueAt(fila, 19)));
+            dt.setText(String.valueOf(Tnom4.getValueAt(fila, 20)));
+            PDDT.setText(String.valueOf(Tnom4.getValueAt(fila, 21)));
+            DSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 22)));
+            PDDDDSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tnom4.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tnom4.getValueAt(fila, 25)));
+            DF.setText(String.valueOf(Tnom4.getValueAt(fila, 26)));
+            PDDF.setText(String.valueOf(Tnom4.getValueAt(fila, 27)));
+            DFT.setText(String.valueOf(Tnom4.getValueAt(fila, 28)));
+            PDDFT.setText(String.valueOf(Tnom4.getValueAt(fila, 29)));
+            R.setText(String.valueOf(Tnom4.getValueAt(fila, 30)));
+            PCR.setText(String.valueOf(Tnom4.getValueAt(fila, 31)));
+            apy.setText(String.valueOf(Tnom4.getValueAt(fila, 32)));
+            Lugar.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
+            ADD.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
+            F.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
+            DPF.setText(String.valueOf(Tnom4.getValueAt(fila, 37)));
+            DI.setText(String.valueOf(Tnom4.getValueAt(fila, 38)));
+            Fdb.setText(String.valueOf(Tnom4.getValueAt(fila, 39)));
+            Sancion.setText(String.valueOf(Tnom4.getValueAt(fila, 40)));
+            Chamarra.setText(String.valueOf(Tnom4.getValueAt(fila, 41)));
+            Chaleco.setText(String.valueOf(Tnom4.getValueAt(fila, 42)));
+            Fde.setText(String.valueOf(Tnom4.getValueAt(fila, 43)));
+            Grua.setText(String.valueOf(Tnom4.getValueAt(fila, 44)));
+            Pantalon.setText(String.valueOf(Tnom4.getValueAt(fila, 45)));
+            Credencial.setText(String.valueOf(Tnom4.getValueAt(fila, 46)));
+            Bp.setText(String.valueOf(Tnom4.getValueAt(fila, 47)));
+            Playera.setText(String.valueOf(Tnom4.getValueAt(fila, 48)));
+            Corbata.setText(String.valueOf(Tnom4.getValueAt(fila, 49)));
+            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 50)));
+            cda.setText(String.valueOf(Tnom4.getValueAt(fila, 51)));
+            Odtp.setText(String.valueOf(Tnom4.getValueAt(fila, 52)));
+            AdN.setText(String.valueOf(Tnom4.getValueAt(fila, 53)));
+            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 54)));
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_Depositos_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom4MouseClicked
+
+    private void FAmT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT3KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT3KeyReleased
+
+    private void FApT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT3KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT3KeyReleased
+
+    private void FiltroNDF3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF3KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF3KeyReleased
+
+    private void FiltrosTD3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD3ItemStateChanged
+
+        String FTD3 = (String) FiltrosTD3.getSelectedItem();
+        if (FTD3.equals("Selecciona filtro")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD3.equals("Filtrar por Apellido P")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(true);
+            LabelBE3.setText("Buscar Apellido P:");
+            FApT3.setText("");
+            FApT3.setVisible(true);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por Apellido M")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(true);
+            LabelBE3.setText("Buscar Apellido M:");
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(true);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por Nombre(s)")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(true);
+            LabelBE3.setText("Buscar Nombre(s):");
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(true);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por Servicio")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroSnomina3.setVisible(true);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(true);
+            FZservicio3.setVisible(true);
+            LabelSZ3.setVisible(true);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por quincena")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(true);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(true);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por # Lista")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(true);
+            LabelBNDF3.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD3ItemStateChanged
+
+    private void FZservicio3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio3ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio3.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina3.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio3ItemStateChanged
+
+    private void FiltroQuincenanomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina3ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina3ItemStateChanged
+
+    private void FiltroSnomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina3ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina3ItemStateChanged
+
+    private void CS10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS10ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS10ActionPerformed
+
+    private void Nominab3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab3KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab3KeyReleased
+
+    private void Tnom3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom3MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom3.getModel();
+
+            int fila = Tnom3.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom3.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom3.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom3.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom3.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom3.getValueAt(fila, 4)));
+            Zon.setText(String.valueOf(Tnom3.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom3.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom3.getValueAt(fila, 9)));
+            Bonodep.setText(String.valueOf(Tnom3.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom3.getValueAt(fila, 11)));
+            String combo1 = model.getValueAt(fila, 12).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
+            año.setDate(date);
+            PDDDDSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 41)));
+            apy.setText(String.valueOf(Tnom3.getValueAt(fila, 50)));
+            Lugar.setText(String.valueOf(Tnom3.getValueAt(fila, 51)));
+            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 52)));
+            ADD.setText(String.valueOf(Tnom3.getValueAt(fila, 53)));
+            DI.setText(String.valueOf(Tnom3.getValueAt(fila, 56)));
+            Fdb.setText(String.valueOf(Tnom3.getValueAt(fila, 57)));
+            Sancion.setText(String.valueOf(Tnom3.getValueAt(fila, 58)));
+            Chamarra.setText(String.valueOf(Tnom3.getValueAt(fila, 59)));
+            Chaleco.setText(String.valueOf(Tnom3.getValueAt(fila, 60)));
+            Fde.setText(String.valueOf(Tnom3.getValueAt(fila, 61)));
+            Grua.setText(String.valueOf(Tnom3.getValueAt(fila, 62)));
+            Pantalon.setText(String.valueOf(Tnom3.getValueAt(fila, 63)));
+            Credencial.setText(String.valueOf(Tnom3.getValueAt(fila, 64)));
+            Bp.setText(String.valueOf(Tnom3.getValueAt(fila, 65)));
+            Playera.setText(String.valueOf(Tnom3.getValueAt(fila, 66)));
+            Corbata.setText(String.valueOf(Tnom3.getValueAt(fila, 67)));
+            AdN.setText(String.valueOf(Tnom3.getValueAt(fila, 68)));
+            DVT.setText(String.valueOf(Tnom3.getValueAt(fila, 69)));
+            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 70)));
+            cda.setText(String.valueOf(Tnom3.getValueAt(fila, 71)));
+            Odtp.setText(String.valueOf(Tnom3.getValueAt(fila, 72)));
+            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 73)));
+
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_Depositos_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom3MouseClicked
+
+    private void FAmT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT2KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT2KeyReleased
+
+    private void FApT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT2KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT2KeyReleased
+
+    private void FiltroNDF2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF2KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF2KeyReleased
+
+    private void FiltrosTD2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD2ItemStateChanged
+
+        String FTD2 = (String) FiltrosTD2.getSelectedItem();
+        if (FTD2.equals("Selecciona filtro")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD2.equals("Filtrar por Apellido P")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(true);
+            LabelBE2.setText("Buscar Apellido P:");
+            FApT2.setText("");
+            FApT2.setVisible(true);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por Apellido M")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(true);
+            LabelBE2.setText("Buscar Apellido M:");
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(true);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por Nombre(s)")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(true);
+            LabelBE2.setText("Buscar Nombre(s):");
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(true);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por Servicio")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroSnomina2.setVisible(true);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(true);
+            FZservicio2.setVisible(true);
+            LabelSZ2.setVisible(true);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por quincena")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(true);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(true);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por # Lista")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(true);
+            LabelBNDF2.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD2ItemStateChanged
+
+    private void FZservicio2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio2ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio2.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina2.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio2ItemStateChanged
+
+    private void FiltroQuincenanomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina2ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina2ItemStateChanged
+
+    private void FiltroSnomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina2ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina2ItemStateChanged
+
+    private void CS9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS9ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS9ActionPerformed
+
+    private void Nominab2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab2KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab2KeyReleased
+
+    private void Tnom2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom2MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom2.getModel();
+
+            int fila = Tnom2.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom2.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom2.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom2.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom2.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom2.getValueAt(fila, 4)));
+            Zon.setText(String.valueOf(Tnom2.getValueAt(fila, 5)));
+            ServN.setText(String.valueOf(Tnom2.getValueAt(fila, 6)));
+            sueldo.setText(String.valueOf(Tnom2.getValueAt(fila, 7)));
+            Bonodep.setText(String.valueOf(Tnom2.getValueAt(fila, 8)));
+            pd.setText(String.valueOf(Tnom2.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom2.getValueAt(fila, 12)));
+            pds.setText(String.valueOf(Tnom2.getValueAt(fila, 13)));
+            Ddv.setText(String.valueOf(Tnom2.getValueAt(fila, 14)));
+            PDDDV.setText(String.valueOf(Tnom2.getValueAt(fila, 15)));
+            DD.setText(String.valueOf(Tnom2.getValueAt(fila, 16)));
+            PDDD.setText(String.valueOf(Tnom2.getValueAt(fila, 17)));
+            DL.setText(String.valueOf(Tnom2.getValueAt(fila, 18)));
+            PDDL.setText(String.valueOf(Tnom2.getValueAt(fila, 19)));
+            dt.setText(String.valueOf(Tnom2.getValueAt(fila, 20)));
+            PDDT.setText(String.valueOf(Tnom2.getValueAt(fila, 21)));
+            DSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 22)));
+            PDDDDSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tnom2.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tnom2.getValueAt(fila, 25)));
+            DF.setText(String.valueOf(Tnom2.getValueAt(fila, 26)));
+            PDDF.setText(String.valueOf(Tnom2.getValueAt(fila, 27)));
+            DFT.setText(String.valueOf(Tnom2.getValueAt(fila, 28)));
+            PDDFT.setText(String.valueOf(Tnom2.getValueAt(fila, 29)));
+            R.setText(String.valueOf(Tnom2.getValueAt(fila, 30)));
+            PCR.setText(String.valueOf(Tnom2.getValueAt(fila, 31)));
+            apy.setText(String.valueOf(Tnom2.getValueAt(fila, 32)));
+            Lugar.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
+            ADD.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
+            F.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
+            DPF.setText(String.valueOf(Tnom2.getValueAt(fila, 37)));
+            DI.setText(String.valueOf(Tnom2.getValueAt(fila, 38)));
+            Fdb.setText(String.valueOf(Tnom2.getValueAt(fila, 39)));
+            Sancion.setText(String.valueOf(Tnom2.getValueAt(fila, 40)));
+            Chamarra.setText(String.valueOf(Tnom2.getValueAt(fila, 41)));
+            Chaleco.setText(String.valueOf(Tnom2.getValueAt(fila, 42)));
+            Fde.setText(String.valueOf(Tnom2.getValueAt(fila, 43)));
+            Grua.setText(String.valueOf(Tnom2.getValueAt(fila, 44)));
+            Pantalon.setText(String.valueOf(Tnom2.getValueAt(fila, 45)));
+            Credencial.setText(String.valueOf(Tnom2.getValueAt(fila, 46)));
+            Bp.setText(String.valueOf(Tnom2.getValueAt(fila, 47)));
+            Playera.setText(String.valueOf(Tnom2.getValueAt(fila, 48)));
+            Corbata.setText(String.valueOf(Tnom2.getValueAt(fila, 49)));
+            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 50)));
+            cda.setText(String.valueOf(Tnom2.getValueAt(fila, 51)));
+            Odtp.setText(String.valueOf(Tnom2.getValueAt(fila, 52)));
+            AdN.setText(String.valueOf(Tnom2.getValueAt(fila, 53)));
+            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 54)));
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_Depositos_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom2MouseClicked
+
+    private void FAmTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmTKeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmTKeyReleased
+
+    private void FApTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApTKeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApTKeyReleased
+
+    private void FiltroNDFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDFKeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDFKeyReleased
+
+    private void FiltrosTDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTDItemStateChanged
+
+        String FTD = (String) FiltrosTD.getSelectedItem();
+        if (FTD.equals("Selecciona filtro")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            FApT.setText("");
+            FApT.setVisible(false);
+            FAmT.setVisible(false);
+            FAmT.setText("");
+            Nominab.setVisible(false);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD.equals("Filtrar por Apellido P")) {
+            Nominab.setText("");
+            LabelBE.setVisible(true);
+            LabelBE.setText("Buscar Apellido P:");
+            FApT.setText("");
+            FApT.setVisible(true);
+            FAmT.setVisible(false);
+            FAmT.setText("");
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            FunMD();
+        }
+        if (FTD.equals("Filtrar por Apellido M")) {
+            Nominab.setText("");
+            LabelBE.setVisible(true);
+            LabelBE.setText("Buscar Apellido M:");
+            FApT.setText("");
+            FApT.setVisible(false);
+            FAmT.setVisible(true);
+            FAmT.setText("");
+            Nominab.setVisible(false);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            FunMD();
+        }
+        if (FTD.equals("Filtrar por Nombre(s)")) {
+            Nominab.setText("");
+            LabelBE.setVisible(true);
+            LabelBE.setText("Buscar Nombre(s):");
+            FApT.setText("");
+            FApT.setVisible(false);
+            FAmT.setVisible(false);
+            FAmT.setText("");
+            Nominab.setVisible(true);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            FunMD();
+        }
+        if (FTD.equals("Filtrar por Servicio")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            FApT.setText("");
+            FApT.setVisible(false);
+            FAmT.setVisible(false);
+            FAmT.setText("");
+            Nominab.setVisible(false);
+            FiltroSnomina.setVisible(true);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(true);
+            FZservicio.setVisible(true);
+            LabelSZ.setVisible(true);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            FunMD();
+        }
+        if (FTD.equals("Filtrar por quincena")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            FApT.setText("");
+            FApT.setVisible(false);
+            FAmT.setVisible(false);
+            FAmT.setText("");
+            Nominab.setVisible(false);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(true);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(true);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            FunMD();
+        }
+        if (FTD.equals("Filtrar por # Lista")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            FApT.setText("");
+            FApT.setVisible(false);
+            FAmT.setVisible(false);
+            FAmT.setText("");
+            Nominab.setVisible(false);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(true);
+            LabelBNDF.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTDItemStateChanged
+
+    private void FZservicioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicioItemStateChanged
+
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicioItemStateChanged
+
+    private void FiltroQuincenanominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanominaItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanominaItemStateChanged
+
+    private void FiltroSnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnominaItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnominaItemStateChanged
+
+    private void CS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2ActionPerformed
+
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS2ActionPerformed
+
+    private void NominabKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NominabKeyReleased
+
+        FunMD();
+    }//GEN-LAST:event_NominabKeyReleased
+
+    private void TnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TnomMouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom.getModel();
+
+            int fila = Tnom.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom.getValueAt(fila, 4)));
+            Zon.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
+            ServN.setText(String.valueOf(Tnom.getValueAt(fila, 6)));
+            sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
+            Bonodep.setText(String.valueOf(Tnom.getValueAt(fila, 8)));
+            pd.setText(String.valueOf(Tnom.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom.getValueAt(fila, 12)));
+            pds.setText(String.valueOf(Tnom.getValueAt(fila, 13)));
+            Ddv.setText(String.valueOf(Tnom.getValueAt(fila, 14)));
+            PDDDV.setText(String.valueOf(Tnom.getValueAt(fila, 15)));
+            DD.setText(String.valueOf(Tnom.getValueAt(fila, 16)));
+            PDDD.setText(String.valueOf(Tnom.getValueAt(fila, 17)));
+            DL.setText(String.valueOf(Tnom.getValueAt(fila, 18)));
+            PDDL.setText(String.valueOf(Tnom.getValueAt(fila, 19)));
+            dt.setText(String.valueOf(Tnom.getValueAt(fila, 20)));
+            PDDT.setText(String.valueOf(Tnom.getValueAt(fila, 21)));
+            DSGS.setText(String.valueOf(Tnom.getValueAt(fila, 22)));
+            PDDDDSGS.setText(String.valueOf(Tnom.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tnom.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tnom.getValueAt(fila, 25)));
+            DF.setText(String.valueOf(Tnom.getValueAt(fila, 26)));
+            PDDF.setText(String.valueOf(Tnom.getValueAt(fila, 27)));
+            DFT.setText(String.valueOf(Tnom.getValueAt(fila, 28)));
+            PDDFT.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
+            R.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
+            PCR.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
+            apy.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
+            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            ADD.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
+            F.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
+            DPF.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
+            DI.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
+            Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
+            Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 40)));
+            Chamarra.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
+            Chaleco.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
+            Fde.setText(String.valueOf(Tnom.getValueAt(fila, 43)));
+            Grua.setText(String.valueOf(Tnom.getValueAt(fila, 44)));
+            Pantalon.setText(String.valueOf(Tnom.getValueAt(fila, 45)));
+            Credencial.setText(String.valueOf(Tnom.getValueAt(fila, 46)));
+            Bp.setText(String.valueOf(Tnom.getValueAt(fila, 47)));
+            Playera.setText(String.valueOf(Tnom.getValueAt(fila, 48)));
+            Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 49)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
+            cda.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
+            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 52)));
+            AdN.setText(String.valueOf(Tnom.getValueAt(fila, 53)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 54)));
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_Depositos_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_TnomMouseClicked
+
+    private void FAmT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT1KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT1KeyReleased
+
+    private void FApT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT1KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT1KeyReleased
+
+    private void FiltroNDF1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF1KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF1KeyReleased
+
+    private void FiltrosTD1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD1ItemStateChanged
+
+        String FTD1 = (String) FiltrosTD1.getSelectedItem();
+        if (FTD1.equals("Selecciona filtro")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(false);
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD1.equals("Filtrar por Apellido P")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(true);
+            LabelBE1.setText("Buscar Apellido P:");
+            FApT1.setText("");
+            FApT1.setVisible(true);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
+            FunMD();
+        }
+        if (FTD1.equals("Filtrar por Apellido M")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(true);
+            LabelBE1.setText("Buscar Apellido M:");
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(true);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
+            FunMD();
+        }
+        if (FTD1.equals("Filtrar por Nombre(s)")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(true);
+            LabelBE1.setText("Buscar Nombre(s):");
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(true);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
+            FunMD();
+        }
+        if (FTD1.equals("Filtrar por Servicio")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(false);
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroSnomina1.setVisible(true);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(true);
+            FZservicio1.setVisible(true);
+            LabelSZ1.setVisible(true);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
+            FunMD();
+        }
+        if (FTD1.equals("Filtrar por quincena")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(false);
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(true);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(true);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
+            FunMD();
+        }
+        if (FTD1.equals("Filtrar por # Lista")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(false);
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(true);
+            LabelBNDF1.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD1ItemStateChanged
+
+    private void FZservicio1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio1ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio1.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina1.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio1ItemStateChanged
+
+    private void FiltroQuincenanomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina1ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina1ItemStateChanged
+
+    private void FiltroSnomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina1ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina1ItemStateChanged
+
+    private void CS8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS8ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS8ActionPerformed
+
+    private void Nominab1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab1KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab1KeyReleased
+
+    private void Tnom1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom1MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom1.getModel();
+
+            int fila = Tnom1.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom1.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom1.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom1.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom1.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom1.getValueAt(fila, 4)));
+            Zon.setText(String.valueOf(Tnom1.getValueAt(fila, 5)));
+            ServN.setText(String.valueOf(Tnom1.getValueAt(fila, 6)));
+            sueldo.setText(String.valueOf(Tnom1.getValueAt(fila, 7)));
+            Bonodep.setText(String.valueOf(Tnom1.getValueAt(fila, 8)));
+            pd.setText(String.valueOf(Tnom1.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom1.getValueAt(fila, 12)));
+            pds.setText(String.valueOf(Tnom1.getValueAt(fila, 13)));
+            Ddv.setText(String.valueOf(Tnom1.getValueAt(fila, 14)));
+            PDDDV.setText(String.valueOf(Tnom1.getValueAt(fila, 15)));
+            DD.setText(String.valueOf(Tnom1.getValueAt(fila, 16)));
+            PDDD.setText(String.valueOf(Tnom1.getValueAt(fila, 17)));
+            DL.setText(String.valueOf(Tnom1.getValueAt(fila, 18)));
+            PDDL.setText(String.valueOf(Tnom1.getValueAt(fila, 19)));
+            dt.setText(String.valueOf(Tnom1.getValueAt(fila, 20)));
+            PDDT.setText(String.valueOf(Tnom1.getValueAt(fila, 21)));
+            DSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 22)));
+            PDDDDSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tnom1.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tnom1.getValueAt(fila, 25)));
+            DF.setText(String.valueOf(Tnom1.getValueAt(fila, 26)));
+            PDDF.setText(String.valueOf(Tnom1.getValueAt(fila, 27)));
+            DFT.setText(String.valueOf(Tnom1.getValueAt(fila, 28)));
+            PDDFT.setText(String.valueOf(Tnom1.getValueAt(fila, 29)));
+            R.setText(String.valueOf(Tnom1.getValueAt(fila, 30)));
+            PCR.setText(String.valueOf(Tnom1.getValueAt(fila, 31)));
+            apy.setText(String.valueOf(Tnom1.getValueAt(fila, 32)));
+            Lugar.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
+            ADD.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
+            F.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
+            DPF.setText(String.valueOf(Tnom1.getValueAt(fila, 37)));
+            DI.setText(String.valueOf(Tnom1.getValueAt(fila, 38)));
+            Fdb.setText(String.valueOf(Tnom1.getValueAt(fila, 39)));
+            Sancion.setText(String.valueOf(Tnom1.getValueAt(fila, 40)));
+            Chamarra.setText(String.valueOf(Tnom1.getValueAt(fila, 41)));
+            Chaleco.setText(String.valueOf(Tnom1.getValueAt(fila, 42)));
+            Fde.setText(String.valueOf(Tnom1.getValueAt(fila, 43)));
+            Grua.setText(String.valueOf(Tnom1.getValueAt(fila, 44)));
+            Pantalon.setText(String.valueOf(Tnom1.getValueAt(fila, 45)));
+            Credencial.setText(String.valueOf(Tnom1.getValueAt(fila, 46)));
+            Bp.setText(String.valueOf(Tnom1.getValueAt(fila, 47)));
+            Playera.setText(String.valueOf(Tnom1.getValueAt(fila, 48)));
+            Corbata.setText(String.valueOf(Tnom1.getValueAt(fila, 49)));
+            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 50)));
+            cda.setText(String.valueOf(Tnom1.getValueAt(fila, 51)));
+            Odtp.setText(String.valueOf(Tnom1.getValueAt(fila, 52)));
+            AdN.setText(String.valueOf(Tnom1.getValueAt(fila, 53)));
+            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 54)));
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_Depositos_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -10942,15 +10999,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JTextField FApT8;
     private com.toedter.calendar.JDateChooser FDD;
     private javax.swing.JComboBox<String> FDP;
-    private javax.swing.JComboBox<String> FFDP;
-    private javax.swing.JComboBox<String> FFDP1;
-    private javax.swing.JComboBox<String> FFDP2;
-    private javax.swing.JComboBox<String> FFDP3;
-    private javax.swing.JComboBox<String> FFDP4;
-    private javax.swing.JComboBox<String> FFDP5;
-    private javax.swing.JComboBox<String> FFDP6;
-    private javax.swing.JComboBox<String> FFDP7;
-    private javax.swing.JComboBox<String> FFDP8;
     private javax.swing.JComboBox<String> FFDPpag1;
     private javax.swing.JComboBox<String> FFDPpag2;
     private javax.swing.JComboBox<String> FFDPpag3;
