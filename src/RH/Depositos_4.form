@@ -2978,25 +2978,38 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="Datgen" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jPanel19" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="Datgen" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jPanel19" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="pd" min="-2" pref="202" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel123" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="deposito" min="-2" pref="120" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="Quincenas" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jLabel101" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="año" min="-2" pref="90" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="pd" min="-2" pref="202" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel123" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="deposito" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jLabel106" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel102" min="-2" max="-2" attributes="0"/>
@@ -3010,15 +3023,6 @@
                                               <Component id="jScrollPane16" min="-2" max="-2" attributes="0"/>
                                               <Component id="FDP" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                           </Group>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Quincenas" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel101" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="año" min="-2" pref="90" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -3041,7 +3045,7 @@
                                   <Component id="Adddeposito1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="12" max="32767" attributes="0"/>
+                          <EmptySpace pref="14" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3091,6 +3095,7 @@
                                       <Component id="jLabel123" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="deposito" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="jLabel102" min="-2" max="-2" attributes="0"/>
                                       <Component id="FDD" min="-2" max="-2" attributes="0"/>
@@ -3112,7 +3117,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="211" max="32767" attributes="0"/>
+                          <EmptySpace pref="136" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3124,14 +3129,6 @@
                       <Font name="Dialog" size="18" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Deposito:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="deposito">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="18" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JPanel" name="jPanel16">
@@ -3150,38 +3147,35 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
                                       <Component id="jLabel137" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="DPF" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cda" min="-2" pref="80" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel61" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel85" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Odtp" min="-2" pref="80" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="F" min="-2" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Component id="DI" pref="80" max="32767" attributes="0"/>
                                                   <Component id="Presp" max="32767" attributes="0"/>
                                               </Group>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="F" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
+                                          <Component id="cda" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <Component id="Odtp" min="-2" pref="80" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="87" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="DPF" min="-2" pref="80" max="-2" attributes="0"/>
+                              <EmptySpace pref="20" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -3191,8 +3185,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="F" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel137" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="F" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="DPF" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -3266,11 +3260,6 @@
                         <Property name="text" type="java.lang.String" value="Orden de taller:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="F">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JTextField" name="Odtp">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0"/>
@@ -3289,7 +3278,12 @@
                         <Property name="text" type="java.lang.String" value="Descuento por faltas:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DPF">
+                    <Component class="javax.swing.JTextField" name="F">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="DPF">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
@@ -3450,15 +3444,6 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-                                      <Component id="jLabel122" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel124" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="DVT" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="jLabel126" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -3510,6 +3495,20 @@
                                           <Component id="Corbata" alignment="0" pref="65" max="32767" attributes="0"/>
                                           <Component id="AdN" alignment="0" max="32767" attributes="0"/>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                                              <Component id="jLabel122" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel124" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="DVT" min="-2" pref="120" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="0" pref="28" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -3588,14 +3587,6 @@
                           <Font name="Dialog" size="18" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Total de descuentos varios:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="DVT">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Dialog" size="18" style="0"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel125">
@@ -3753,6 +3744,14 @@
                       <Events>
                         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AdNKeyReleased"/>
                       </Events>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="DVT">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Dialog" size="18" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -3999,7 +3998,7 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
@@ -4011,6 +4010,12 @@
                                           <Component id="jLabel76" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel182" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel183" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel103" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel107" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel16" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel105" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel20" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -4026,52 +4031,75 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="Rembolso" alignment="0" pref="60" max="32767" attributes="0"/>
-                                                  <Component id="ADD" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="Rembolso" pref="80" max="32767" attributes="0"/>
+                                                  <Component id="ADD" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
                                                   <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="DFT" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="DFT" min="-2" pref="80" max="-2" attributes="0"/>
                                                       <EmptySpace max="32767" attributes="0"/>
                                                       <Component id="jLabel185" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="DF" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="DF" max="32767" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                                                       <Component id="jLabel184" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                      <Component id="DO" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="FJ" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="DSGS" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="1" attributes="0">
-                                                              <Component id="jLabel88" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel104" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel128" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel21" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel136" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel138" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="DD" min="-2" pref="80" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="DSGS" min="-2" pref="80" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="jLabel136" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="dt" min="-2" pref="80" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="DL" min="-2" pref="80" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="jLabel128" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="Ddv" min="-2" pref="80" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="Ddi" min="-2" pref="80" max="-2" attributes="0"/>
+                                                          <Component id="R" min="-2" pref="80" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel138" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel104" alignment="1" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="PDDDV" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="PDDD" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="pds" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="PDDL" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="PDDT" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="PCR" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="PDDDDSGS" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                                                  <Component id="PDDF" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="PDDFT" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="PCR" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="pds" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="PDDDV" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="PDDD" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="PDDL" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="PDDT" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="PDDF" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="PDDFT" min="-2" pref="80" max="-2" attributes="0"/>
                                               </Group>
+                                          </Group>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="DO" alignment="0" pref="80" max="32767" attributes="0"/>
+                                              <Component id="FJ" alignment="0" pref="80" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -4080,44 +4108,7 @@
                                       <Component id="jLabel142" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="dt" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="DL" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel103" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="DD" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel107" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="Ddv" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jLabel20" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel105" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Dpi" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="R" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -4129,51 +4120,53 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="R" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel138" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="R" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="PCR" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Dpi" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel105" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel104" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="pds" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel105" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel104" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Ddi" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="pds" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Ddv" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel107" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Ddv" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="PDDDV" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="DD" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel103" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel88" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DD" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="PDDD" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DL" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel128" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DL" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="PDDL" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="dt" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="dt" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="PDDT" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="LabelDSGS" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DSGS" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel136" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="PDDDDSGS" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DSGS" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -4190,18 +4183,18 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel182" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="DF" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel184" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="DF" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="PDDF" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel183" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="DFT" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel185" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="DFT" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="PDDFT" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="apy" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -4230,29 +4223,14 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="Dpi">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel105">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Dias de incapacidad:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="Ddv">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel107">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Dias de vacaciones:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="DD">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel103">
@@ -4265,29 +4243,14 @@
                         <Property name="text" type="java.lang.String" value="Dias Laborados:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DL">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel16">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Descansos Trabajados:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="dt">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="LabelDSGS">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Descanso sin goce de sueldo:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="DSGS">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel142">
@@ -4303,11 +4266,6 @@
                         <Property name="text" type="java.lang.String" value="Pago de seguro:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="PDDDV">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel9">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Pago de dias de vacaciones:"/>
@@ -4318,34 +4276,14 @@
                         <Property name="text" type="java.lang.String" value="Pago de dias descansados:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="PDDD">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="pds">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel128">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Pago de dias laborados:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="PDDL">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel21">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Pago de descansos trabajados:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="PDDT">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel136">
@@ -4371,11 +4309,6 @@
                         <Property name="text" type="java.lang.String" value="Descanso Otorgado:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DO">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel17">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Apoyo:"/>
@@ -4395,11 +4328,6 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Lugar">
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="FJ">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Rembolso">
                       <Properties>
@@ -4432,19 +4360,9 @@
                         <Property name="text" type="java.lang.String" value="Dias con retardos:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="R">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel138">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Pago con retardos:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="PCR">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel182">
@@ -4457,16 +4375,6 @@
                         <Property name="text" type="java.lang.String" value="Dias festivos trabajados:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="DF">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="DFT">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="0"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel184">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Pago de dias festivos:"/>
@@ -4477,12 +4385,97 @@
                         <Property name="text" type="java.lang.String" value="Pago de dias festivos trabajados:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="PDDF">
+                    <Component class="javax.swing.JTextField" name="R">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="PDDFT">
+                    <Component class="javax.swing.JTextField" name="Ddi">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="Ddv">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="DD">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="DL">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="dt">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="DSGS">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="FJ">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="DO">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="DF">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="DFT">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="PCR">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="pds">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="PDDDV">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="PDDD">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="PDDL">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="PDDT">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="PDDF">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="PDDFT">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
@@ -4494,6 +4487,14 @@
                 <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Quincena:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="deposito">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="18" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -5752,43 +5753,48 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel178" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltrosP4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                          <Component id="botonWeb19" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBEP4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="busp4" min="-2" pref="109" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="BAppag4" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Bampag4" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelSZP4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroSZP4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBSP4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroServP4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelNDFP4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="filtroNDFP4" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBQP4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroQP4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane32" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jLabel178" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="FiltrosP4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                                  <Component id="botonWeb19" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="LabelBEP4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  <Component id="busp4" min="-2" pref="109" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="BAppag4" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="Bampag4" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  <Component id="LabelSZP4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="FiltroSZP4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="LabelBSP4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="FiltroServP4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="LabelNDFP4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="filtroNDFP4" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="LabelBQP4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="FiltroQP4" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="CS18" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="6799" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="CS18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane32" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6805" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
