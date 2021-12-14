@@ -1364,6 +1364,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         Alumnos = new javax.swing.JMenuItem();
         EmpleadosT = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         Menuadm = new javax.swing.JMenu();
         Nomina = new javax.swing.JMenuItem();
         Administradores = new javax.swing.JMenuItem();
@@ -2760,6 +2761,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         jMenu1.setText("Cambiar a:");
 
+        Alumnos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         Alumnos.setText("Alumnos estadia");
         Alumnos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2768,6 +2770,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         });
         jMenu1.add(Alumnos);
 
+        EmpleadosT.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         EmpleadosT.setText("Empelados torteria");
         EmpleadosT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2775,6 +2778,15 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
             }
         });
         jMenu1.add(EmpleadosT);
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem1.setText("Depositos C/ IMSS");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
@@ -4001,6 +4013,12 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         MDEm();
     }//GEN-LAST:event_FilobsKeyReleased
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Admin_Depositos_4 regr = new Admin_Depositos_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4204,6 +4222,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
