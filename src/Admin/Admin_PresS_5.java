@@ -49,59 +49,12 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
         Busamshpre.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        Bono.setVisible(false);
-        LabelBE.setVisible(false);
-        LabelBQ.setVisible(false);
-        LabelBS.setVisible(false);
-        LabelBZ.setVisible(false);
-        LabelSZ.setVisible(false);
-        Nominab.setText("");
-        Nominab.setVisible(false);
-        FiltroZnomina.setVisible(false);
-        FiltroZnomina.setSelectedIndex(0);
-        FiltroSnomina.setVisible(false);
-        FiltroSnomina.setSelectedIndex(0);
-        FZservicio.setVisible(false);
-        FZservicio.setSelectedIndex(0);
-        Filtrosemnomina.setVisible(false);
-        Filtrosemnomina.setSelectedIndex(0);
-        FiltroNDF.setText("");
-        FiltroNDF.setVisible(false);
-        LabelBNDF.setVisible(false);
-        busp.setVisible(false);
-        LabelBEP.setVisible(false);
-        FiltroQP.setVisible(false);
-        FiltroServP.setVisible(false);
-        FiltroZP.setVisible(false);
-        FiltroSZP.setVisible(false);
-        filtroNDFP.setVisible(false);
-        LabelBQP.setVisible(false);
-        LabelBSP.setVisible(false);
-        LabelSZP.setVisible(false);
-        LabelNDFP.setVisible(false);
-        LabelBZP.setVisible(false);
-        Filtro1.setVisible(false);
-        Filtro1.setText("");
-        BNameNom.setVisible(false);
-        BNameNom.setText("");
-        BAPNom.setText("");
-        BAPNom.setVisible(false);
-        BAMNom.setVisible(false);
-        FApT.setVisible(false);
-        FAmT.setVisible(false);
-        BAMNom.setText("");
-        BAppag.setVisible(false);
-        Bampag.setVisible(false);
         LabelFPDP.setVisible(false);
         FilPDPname.setVisible(false);
         FilPDPAp.setVisible(false);
         FilPDPAm.setVisible(false);
-        shareN();
         shareprestamo();
-        mostrardatos();
-        pagos();
         MDP();
-        sharepresnom();
         MDTPPres();
         setIconImage(new ImageIcon(Admin_PresS_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
@@ -197,6 +150,7 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
         Estadias = new javax.swing.JMenuItem();
         Torteria = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         ODT = new javax.swing.JMenuItem();
         CDA = new javax.swing.JMenuItem();
@@ -796,6 +750,14 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
 
         jMenu1.setText("Cambiar a:");
 
+        jMenuItem1.setText("jMenuItem1");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
         jMenu2.setText("Nomina quincenal");
 
         ODT.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -1030,133 +992,6 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_mpdp) {
             JOptionPane.showMessageDialog(null, "Error al mostrar pagos de Prestamos: " + error_mpdp.getMessage());
-
-        }
-
-    }
-
-    public void AgregarPagoPres() {
-
-        String SQL = "INSERT INTO `nomina.pagos.prestamosem` (`#Folio`, `#Lista`, `#prestamo`, "
-                + "`#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
-                + " `Servicio`, `Semana`, `# semana`, `pagado`, `pendiente`, "
-                + "`Pago de prestamo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        try {
-            PreparedStatement pst = con.prepareStatement(SQL);
-
-            pst.setInt(1, Integer.parseInt(NF.getText()));
-            pst.setString(2, NDL.getText());
-            pst.setInt(3, Integer.parseInt(NumPrenom.getText()));
-            pst.setInt(4, Integer.parseInt(NE.getText()));
-            pst.setString(5, Ap.getText());
-            pst.setString(6, am.getText());
-            pst.setString(7, name.getText());
-            pst.setString(8, Zon.getText());
-            pst.setString(9, ServN.getText());
-            pst.setString(10, Semana.getSelectedItem().toString());
-            pst.setString(11, NQprenom.getText());
-            pst.setString(12, Pagadoprenom.getText());
-            pst.setString(13, Pendienteprenom.getText());
-            pst.setString(14, Presp.getText());
-
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Pago de prestamo registrado");
-
-        } catch (HeadlessException | SQLException Error_PdPrestamo) {
-            JOptionPane.showMessageDialog(null, "Error al registrar pago de prestamo: " + Error_PdPrestamo.getMessage());
-        }
-    }
-
-    //AUTO PRES
-    public void Pagopres() {
-
-        String SQL = "UPDATE `prestamosem` SET  `Semanaspagadas` = ?,"
-                + " `Pagado` = ?, `Pendiente` = ? WHERE `prestamosem`.`idprestamos` = ?";
-
-        try {
-            PreparedStatement pst = con.prepareStatement(SQL);
-
-            pst.setString(1, NQprenom.getText());
-            pst.setString(2, Pagadoprenom.getText());
-            pst.setString(3, Pendienteprenom.getText());
-            pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
-
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Abono de prestamo agregado.");
-
-        } catch (HeadlessException | SQLException error_auto_pres) {
-            JOptionPane.showMessageDialog(null, "Error al abonar prestamo: " + error_auto_pres.getMessage());
-        }
-    }
-
-    public void sharepresnom() {
-        String FiltroN = BNameNom.getText();
-        String FAP = BAPNom.getText();
-        String FAM = BAMNom.getText();
-        String where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `prestamosem`";
-
-        if (!"".equals(FiltroN)) {
-            where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `prestamosem`"
-                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
-        } else if (!"".equals(FAP)) {
-            where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `prestamosem`"
-                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
-        } else if (!"".equals(FAM)) {
-            where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `prestamosem`"
-                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
-        }
-
-        try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            SHPresnom.setModel(modelo);
-            PreparedStatement ps;
-            ResultSet rs;
-            ps = con.prepareStatement(where);
-            rs = ps.executeQuery();
-
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Prestamo");
-            modelo.addColumn("Apellido P");//2
-            modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//4
-            modelo.addColumn("Pago por Sem");
-            modelo.addColumn("Sems pagadas");//6
-            modelo.addColumn("Pagado");
-            modelo.addColumn("Pendiente");//8
-
-//ANCHOS
-            int[] anchos = {/*NP*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*PPS*/ 50,
-                /*SP*/ 50, /*PAG*/ 60, /*PEN*/ 50};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                SHPresnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
-            while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-        } catch (SQLException error_sh_pre_nom) {
-            JOptionPane.showMessageDialog(null, "Error al compartir prestamos con nomina: " + error_sh_pre_nom.getMessage());
 
         }
 
@@ -1445,493 +1280,6 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
 
     }
 
-    public void eliminarnom() {
-
-        try {
-
-            int filaseleccionada = Tnom.getSelectedRow();
-            String sql = "delete from nominasem where #lista=" + Tnom.getValueAt(filaseleccionada, 0);
-            java.sql.Statement st = con.createStatement();
-            int n = st.executeUpdate(sql);
-            if (n >= 0) {
-                JOptionPane.showMessageDialog(null, "Nomina eliminada");
-            }
-        } catch (HeadlessException | SQLException e) {
-
-            JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
-
-        }
-
-    }
-
-    public void limpiarnom() {
-        DAB.clearSelection();
-        NDL.setText("0");
-        Ap.setText("");
-        am.setText("");
-        name.setText("");
-        Bono.setText("0");
-        cta.setText("");
-        ban.setText("");
-        Zon.setText("");
-        ServN.setText("");
-        sueldo.setText("0");
-        pd.setText("0");
-        PH.setText("0");
-        HE.setText("0");
-        THE.setText("0");
-        RI.setText("0");
-        Presp.setText("0");
-        obs.setText("");
-        Rembolso.setText("0");
-        deposito.setText("0");
-        NumPrenom.setText("0");
-        NQprenom.setText("0");
-        Pagadoprenom.setText("0");
-        Pendienteprenom.setText("0");
-    }
-
-//mostrar datos de nomina
-    public void mostrardatos() {
-        //Buscar empleado
-        String FiltroN = Nominab.getText();
-        String where = "select * from nominasem";
-        String FAPNom = FApT.getText();
-        String FAMNom = FAmT.getText();
-        String FiltroZnom = FiltroZnomina.getSelectedItem().toString();
-        String FiltroSnom = FiltroSnomina.getSelectedItem().toString();
-        String FiltroFol = FiltroNDF.getText();
-
-        if (!"".equals(FiltroN)) {
-            where = "Select * from nominasem where `Nombre(s)` LIKE '%" + FiltroN + "%'";
-        } else if (!"".equals(FiltroFol)) {
-            where = "select * from nominasem Where `#lista` LIKE '%" + FiltroFol + "%'";
-        } else if (!"".equals(FAPNom)) {
-            where = "select * from nominasem Where `Apellido P` LIKE '%" + FAPNom + "%'";
-        } else if (!"".equals(FAMNom)) {
-            where = "select * from nominasem Where `Apellido M` LIKE '%" + FAMNom + "%'";
-        } else if (!"".equals(FiltroZnom)) {
-            where = "select * from nominasem where `Zona` LIKE '%" + FiltroZnom + "%'";
-        } else if (!"".equals(FiltroSnom)) {
-            where = "select * from nominasem Where `Servicio` LIKE '%" + FiltroSnom + "%'";
-        }
-        try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            Tnom.setModel(modelo);
-            PreparedStatement ps;
-            ResultSet rs;
-
-            ps = con.prepareStatement(where);
-            rs = ps.executeQuery();
-
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# de Folio");//1
-            modelo.addColumn("# de Empleado");//1
-            modelo.addColumn("# de lista");//1
-            modelo.addColumn("Nombre(s)");//2
-            modelo.addColumn("Apellido P");//3
-            modelo.addColumn("Apellido M");
-            modelo.addColumn("Bono");
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Banco");//7
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");//9
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Por dia");//11
-            modelo.addColumn("Por hora");
-            modelo.addColumn("Año");//13
-            modelo.addColumn("Semana");
-            modelo.addColumn("Fecha sabado");
-            modelo.addColumn("Fecha domingo");//16
-            modelo.addColumn("Fecha lunes");
-            modelo.addColumn("Fecha martes");//18
-            modelo.addColumn("Fecha miercoles");
-            modelo.addColumn("Fecha jueves");//20
-            modelo.addColumn("Fecha viernes");
-            modelo.addColumn("Sabado");//22
-            modelo.addColumn("Domingo");
-            modelo.addColumn("Lunes");//24
-            modelo.addColumn("Martes");
-            modelo.addColumn("Miercoles");//26
-            modelo.addColumn("Jueves");
-            modelo.addColumn("Viernes");//28
-            modelo.addColumn("Fecha de pago");
-            modelo.addColumn("Horas extra");
-            modelo.addColumn("Total horas extra");//30
-            modelo.addColumn("Retencion infonavit");
-            modelo.addColumn("Prestamos");//32
-            modelo.addColumn("Rembolso");
-            modelo.addColumn("Deposito");//34
-            modelo.addColumn("Observaciones");
-
-            int[] anchos = {50/*NF*/, 50/*NE*/, 50/*NL*/, 150/*NAME*/, 60/*AP*/, 60/*AM*/, 60/*Bono*/,
-                60,/*Cdb*/ 60/*Banco*/, 50/*Zona*/, 35/*Serv*/, 55/*Suel*/, 150/*pd*/,
-                25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
-                35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
-                35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
-                50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                Tnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
-            while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
-
-        }
-
-    }
-
-    public void pagos() {
-//Nombre persona del pago
-        String FiltroN = busp.getText();
-        String FAPpago = BAppag.getText();
-        String FAMpago = Bampag.getText();
-        String where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + " `Cuenta de banco`, `Servicio`,"
-                + " `año`, `Semana`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
-                + " `Deposito`, `Observaciones`  FROM `nominasem`";
-        String FiltroZpago = FiltroZP.getSelectedItem().toString();
-        String FiltroSpago = FiltroServP.getSelectedItem().toString();
-        String FiltrosNDF = filtroNDFP.getText();
-
-        if (!"".equals(FiltroN)) {
-            where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                    + " `Cuenta de banco`, `Servicio`,"
-                    + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
-                    + " `Deposito`, `Observaciones`  FROM `nominasem` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
-        } else if (!"".equals(FAPpago)) {
-            where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
-                    + " `Cuenta de banco`,  `Servicio`, `Semana`, `año`,"
-                    + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` "
-                    + " FROM `nominasem` Where `Apellido P` LIKE '%" + FAPpago + "%'";
-        } else if (!"".equals(FAMpago)) {
-            where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                    + "`Cuenta de banco`, `Servicio`, "
-                    + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, "
-                    + "`Deposito`, `Observaciones`  FROM `nominasem` Where "
-                    + "`Apellido M` LIKE '%" + FAMpago + "%'";
-        } else if (!"".equals(FiltrosNDF)) {
-            where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                    + " `Cuenta de banco`, `Servicio`,"
-                    + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`,"
-                    + " `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem`"
-                    + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
-        } else if (!"".equals(FiltroZpago)) {
-            where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                    + " `Cuenta de banco`, `Servicio`,"
-                    + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`,"
-                    + " `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem`"
-                    + " where `Zona` LIKE '%" + FiltroZpago + "%'";
-        } else if (!"".equals(FiltroSpago)) {
-            where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                    + "  `Cuenta de banco`, `Servicio`,"
-                    + "  `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`,"
-                    + " `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem`"
-                    + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
-        }
-
-        try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            pago.setModel(modelo);
-            PreparedStatement ps;
-            ResultSet rs;
-
-            ps = con.prepareStatement(where);
-            rs = ps.executeQuery();
-
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Lista");
-            modelo.addColumn("Nombre(s)");//4
-            modelo.addColumn("Apellido P");//2
-            modelo.addColumn("Apellido M");
-            modelo.addColumn("Cuenta de banco");//6
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Año");
-            modelo.addColumn("Semana pagada");//10
-            modelo.addColumn("Inicio semana");//12
-            modelo.addColumn("Termino Semana");
-            modelo.addColumn("Fecha de pago");
-            modelo.addColumn("Sueldo semanal");//14
-            modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//6
-
-            int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
-                /*CDB*/ 65, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
-                /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                pago.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
-            while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos: " + e.getMessage());
-
-        }
-
-    }
-
-// nomina semanal
-    public void editarNS() {
-
-        String SQL = "UPDATE `nominasem` SET `#Folio` = ?, `#Empleado` = ?, `#Lista` = ?, `Apellido P` = ?,"
-                + " `Apellido M` = ?, `Nombre(s)` = ?, `Bono` = ?,"
-                + " `Cuenta de banco` = ?, `Banco` = ?, `Zona` = ?,"
-                + " `Servicio` = ?, `Sueldo` = ?, `Por dia` = ?, `Por hora` = ?,"
-                + " `año` = ?, `Semana` = ?, `Fecha sabado` = ?, `Fecha domingo` = ?,"
-                + " `Fecha lunes` = ?, `Fecha martes` = ?, `Fecha miercoles` = ?,"
-                + " `Fecha jueves` = ?, `Fecha viernes` = ?, `Sabado` = ?, "
-                + "`Domingo` = ?, `Lunes` = ?, `Martes` = ?, `Miercoles` = ?,"
-                + " `Jueves` = ?, `Viernes` = ?, `Fecha de pago` = ?, `Horas extras` = ?,"
-                + " `Total horas extra` = ?, `Retencion infonavit` = ?, "
-                + "`Prestamos` = ?, `Rembolso` = ?, `Deposito` = ?, "
-                + "`Observaciones` = ? WHERE `nominasem`.`#lista` = ?";
-
-        try {
-            PreparedStatement pst = con.prepareStatement(SQL);
-
-            pst.setInt(1, Integer.parseInt(NF.getText()));
-            pst.setInt(2, Integer.parseInt(NE.getText()));
-            pst.setString(3, NDL.getText());
-            pst.setString(4, Ap.getText());
-            pst.setString(5, am.getText());
-            pst.setString(6, name.getText());
-            pst.setString(7, Bono1.getText());
-            pst.setString(8, cta.getText());
-            pst.setString(9, ban.getText());
-            pst.setString(10, Zon.getText());
-            pst.setString(11, ServN.getText());
-            pst.setString(12, sueldo.getText());
-            pst.setString(13, pd.getText());
-            pst.setString(14, PH.getText());
-            pst.setString(15, ((JTextField) año.getDateEditor().getUiComponent()).getText());
-            pst.setString(16, Semana.getSelectedItem().toString());
-            pst.setString(17, ((JTextField) Fsab.getDateEditor().getUiComponent()).getText());
-            pst.setString(18, ((JTextField) FDom.getDateEditor().getUiComponent()).getText());
-            pst.setString(19, ((JTextField) FLun.getDateEditor().getUiComponent()).getText());
-            pst.setString(20, ((JTextField) Fmar.getDateEditor().getUiComponent()).getText());
-            pst.setString(21, ((JTextField) Fmier.getDateEditor().getUiComponent()).getText());
-            pst.setString(22, ((JTextField) FJuev.getDateEditor().getUiComponent()).getText());
-            pst.setString(23, ((JTextField) Fvier.getDateEditor().getUiComponent()).getText());
-            pst.setString(24, SabT.getSelectedItem().toString());
-            pst.setString(25, DomT.getSelectedItem().toString());
-            pst.setString(26, LunT.getSelectedItem().toString());
-            pst.setString(27, MarT.getSelectedItem().toString());
-            pst.setString(28, MierT.getSelectedItem().toString());
-            pst.setString(29, JueT.getSelectedItem().toString());
-            pst.setString(30, VieT.getSelectedItem().toString());
-            pst.setString(31, ((JTextField) FDP.getDateEditor().getUiComponent()).getText());
-            pst.setString(32, HE.getText());
-            pst.setString(33, THE.getText());
-            pst.setString(34, RI.getText());
-            pst.setString(35, Presp.getText());
-            pst.setString(36, Rembolso.getText());
-            pst.setString(37, deposito.getText());
-            pst.setString(38, obs.getText());
-            pst.setInt(39, Integer.parseInt(NF.getText()));
-
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Nomina Modificada");
-
-        } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al modificar nomina: " + e.getMessage());
-        }
-    }
-
-//Agregar nomina semanal
-    public void AgregarNs() {
-
-        String SQL = "INSERT INTO `nominasem` (`#Folio`, `#Empleado`, `#Lista`, `Apellido P`, `Apellido M`,"
-                + " `Nombre(s)`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`,"
-                + " `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,"
-                + " `Fecha sabado`, `Fecha domingo`, `Fecha lunes`, `Fecha martes`, "
-                + "`Fecha miercoles`, `Fecha jueves`, `Fecha viernes`, `Sabado`, `Domingo`, "
-                + "`Lunes`, `Martes`, `Miercoles`, `Jueves`, `Viernes`, `Fecha de pago`, `Horas extras`,"
-                + " `Total horas extra`, `Retencion infonavit`, `Prestamos`, `Rembolso`, "
-                + "`Deposito`, `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        try {
-            PreparedStatement pst = con.prepareStatement(SQL);
-
-            pst.setInt(1, Integer.parseInt(NF.getText()));
-            pst.setInt(2, Integer.parseInt(NE.getText()));
-            pst.setString(3, NDL.getText());
-            pst.setString(4, Ap.getText());
-            pst.setString(5, am.getText());
-            pst.setString(6, name.getText());
-            pst.setString(7, Bono1.getText());
-            pst.setString(8, cta.getText());
-            pst.setString(9, ban.getText());
-            pst.setString(10, Zon.getText());
-            pst.setString(11, ServN.getText());
-            pst.setString(12, sueldo.getText());
-            pst.setString(13, pd.getText());
-            pst.setString(14, PH.getText());
-            pst.setString(15, ((JTextField) año.getDateEditor().getUiComponent()).getText());
-            pst.setString(16, Semana.getSelectedItem().toString());
-            pst.setString(17, ((JTextField) Fsab.getDateEditor().getUiComponent()).getText());
-            pst.setString(18, ((JTextField) FDom.getDateEditor().getUiComponent()).getText());
-            pst.setString(19, ((JTextField) FLun.getDateEditor().getUiComponent()).getText());
-            pst.setString(20, ((JTextField) Fmar.getDateEditor().getUiComponent()).getText());
-            pst.setString(21, ((JTextField) Fmier.getDateEditor().getUiComponent()).getText());
-            pst.setString(22, ((JTextField) FJuev.getDateEditor().getUiComponent()).getText());
-            pst.setString(23, ((JTextField) Fvier.getDateEditor().getUiComponent()).getText());
-            pst.setString(24, SabT.getSelectedItem().toString());
-            pst.setString(25, DomT.getSelectedItem().toString());
-            pst.setString(26, LunT.getSelectedItem().toString());
-            pst.setString(27, MarT.getSelectedItem().toString());
-            pst.setString(28, MierT.getSelectedItem().toString());
-            pst.setString(29, JueT.getSelectedItem().toString());
-            pst.setString(30, VieT.getSelectedItem().toString());
-            pst.setString(31, ((JTextField) FDP.getDateEditor().getUiComponent()).getText());
-            pst.setString(32, HE.getText());
-            pst.setString(33, THE.getText());
-            pst.setString(34, RI.getText());
-            pst.setString(35, Presp.getText());
-            pst.setString(36, Rembolso.getText());
-            pst.setString(37, deposito.getText());
-            pst.setString(38, obs.getText());
-
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Nomina Semanal Agregada");
-
-        } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al Agregar Nomina: " + e.getMessage());
-        }
-    }
-
-//compartir empleados
-    public void shareN() {
-        //Buscar empleado
-        String Share = BNameNom.getText();
-        String ShareAP = BAPNom.getText();
-        String ShareAM = BAMNom.getText();
-        String where = "select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`"
-                + " from empleados  where `Status` LIKE '%Vigente%'";
-
-        if (!"".equals(Share)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
-        } else if (!"".equals(ShareAP)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
-        } else if (!"".equals(ShareAM)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
-        }
-
-        try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            share.setModel(modelo);
-            PreparedStatement ps;
-            ResultSet rs;
-
-            ps = con.prepareStatement(where);
-            rs = ps.executeQuery();
-
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Empleado");
-            modelo.addColumn("Apellido P");//1
-            modelo.addColumn("Apellido M");//
-            modelo.addColumn("Nombre(s)");//3
-            modelo.addColumn("Banco");//7
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");//5
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");
-
-//Anchos
-            int[] anchos = {/*numE*/35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 150, /*Banco*/ 75, /*CTA*/ 50, /*zona*/ 60,
-                /*servicio*/ 100, /*sueldo*/ 60, /*bono*/ 40};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                share.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
-            while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + e.getMessage());
-
-        }
-
-    }
-
-    public void deposito() {
-        double d111 = Double.parseDouble(this.DT.getText());
-        double d22 = Double.parseDouble(this.DDes.getText());
-        double d7 = Double.parseDouble(this.pd.getText());
-        double totalP = ((d7 * d111) + (d7 * d22));
-        this.Pago.setText("" + totalP + "");
-
-        double d1 = Double.parseDouble(this.THE.getText());
-        double d2 = Double.parseDouble(this.RI.getText());
-        double d6 = Double.parseDouble(this.Pago.getText());
-        double d8 = Double.parseDouble(this.Presp.getText());
-        double d9 = Double.parseDouble(this.Rembolso.getText());
-        double d10 = Double.parseDouble(this.Bono.getText());
-        double d11 = (d1 + d10 + d9 + d6);
-        double d12 = (d2 + d8);
-        double total = d11 - d12;
-        this.deposito.setText("" + total + "");
-    }
 
     private void InteresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_InteresItemStateChanged
         IOMTPres();
@@ -2118,10 +1466,6 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
             regr.setVisible(true);
             this.dispose();
         }
-        double descanso = DS + DD + DL + DM + DMi + DJ + DV;
-        DDes.setText("" + descanso);
-        double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
-        DT.setText("" + asistencia);
     }//GEN-LAST:event_CS5ActionPerformed
 
     private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
@@ -2268,6 +1612,12 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_CNQActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Admin_NominaS_5 regr = new Admin_NominaS_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2383,6 +1733,7 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
