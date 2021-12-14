@@ -994,11 +994,9 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void FFBREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FFBREActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_FFBREActionPerformed
 
     private void FiltrotorItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrotorItemStateChanged
-        // TODO add your handling code here:
         String dt = (String) Filtrotor.getSelectedItem();
         if (dt.equals("Selecciona Filtro")) {
             LabelF1.setText("");
@@ -1047,32 +1045,27 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrotorItemStateChanged
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
         AgregarE();
         MDT();
         clean();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void FilnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilnameKeyReleased
-        // TODO add your handling code here:
         MDT();
 
     }//GEN-LAST:event_FilnameKeyReleased
 
     private void filapKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filapKeyReleased
-        // TODO add your handling code here:
         MDT();
 
     }//GEN-LAST:event_filapKeyReleased
 
     private void filamKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filamKeyReleased
-        // TODO add your handling code here:
         MDT();
 
     }//GEN-LAST:event_filamKeyReleased
 
     private void TTortasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TTortasMouseClicked
-        // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) TTortas.getModel();
 
         int fila = TTortas.getSelectedRow();
@@ -1131,56 +1124,48 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_TTortasMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         editar();
         MDT();
         clean();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        // TODO add your handling code here:
         Admin_Empleados_4 regr = new Admin_Empleados_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed
 
     private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
-        // TODO add your handling code here:
         Admin_Estadias_4 regr = new Admin_Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EstadiasActionPerformed
 
     private void NominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NominaActionPerformed
-        // TODO add your handling code here:
         Admin_NominaQ_5 regr = new Admin_NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NominaActionPerformed
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        // TODO add your handling code here:
         Administradores_3 regr = new Administradores_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed
 
     private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        // TODO add your handling code here:
         AltasZyS_3 regr = new AltasZyS_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void UsuariosnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosnomActionPerformed
-        // TODO add your handling code here:
         Usuarios_Nomina_3 regr = new Usuarios_Nomina_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_UsuariosnomActionPerformed
 
     private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-        // TODO add your handling code here:
         Usuarios_RH_3 regr = new Usuarios_RH_3();
         regr.setVisible(true);
         this.dispose();

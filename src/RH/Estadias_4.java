@@ -838,36 +838,30 @@ public final class Estadias_4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void FilnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilnameKeyReleased
-        // TODO add your handling code here:
         MDE();
     }//GEN-LAST:event_FilnameKeyReleased
 
     private void FilAPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilAPKeyReleased
-        // TODO add your handling code here:
         MDE();
     }//GEN-LAST:event_FilAPKeyReleased
 
     private void FilAMKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilAMKeyReleased
-        // TODO add your handling code here:
         MDE();
     }//GEN-LAST:event_FilAMKeyReleased
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
         AgregarE();
         MDE();
         cleanest();
     }//GEN-LAST:event_addActionPerformed
 
     private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
-        // TODO add your handling code here:
         EditarEst();
         MDE();
         cleanest();
     }//GEN-LAST:event_modActionPerformed
 
     private void TestadiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TestadiaMouseClicked
-        // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) Testadia.getModel();
         try {
 
@@ -961,7 +955,6 @@ public final class Estadias_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_TestadiaMouseClicked
 
     private void FiltroestItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroestItemStateChanged
-        // TODO add your handling code here:
         String dt = (String) Filtroest.getSelectedItem();
         if (dt.equals("Selecciona Filtro")) {
             LabelF1.setText("");
@@ -1010,14 +1003,12 @@ public final class Estadias_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroestItemStateChanged
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        // TODO add your handling code here:
         Empleados_4 regr = new Empleados_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed
 
     private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        // TODO add your handling code here:
         Tortas_4 regr = new Tortas_4();
         regr.setVisible(true);
         this.dispose();

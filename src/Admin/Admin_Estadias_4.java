@@ -893,36 +893,30 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void FilnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilnameKeyReleased
-        // TODO add your handling code here:
         MDE();
     }//GEN-LAST:event_FilnameKeyReleased
 
     private void FilAPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilAPKeyReleased
-        // TODO add your handling code here:
         MDE();
     }//GEN-LAST:event_FilAPKeyReleased
 
     private void FilAMKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilAMKeyReleased
-        // TODO add your handling code here:
         MDE();
     }//GEN-LAST:event_FilAMKeyReleased
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
         AgregarE();
         MDE();
         cleanest();
     }//GEN-LAST:event_addActionPerformed
 
     private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
-        // TODO add your handling code here:
         EditarEst();
         MDE();
         cleanest();
     }//GEN-LAST:event_modActionPerformed
 
     private void TestadiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TestadiaMouseClicked
-        // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) Testadia.getModel();
         try {
 
@@ -1016,7 +1010,6 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_TestadiaMouseClicked
 
     private void FiltroestItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroestItemStateChanged
-        // TODO add your handling code here:
         String dt = (String) Filtroest.getSelectedItem();
         if (dt.equals("Selecciona Filtro")) {
             LabelF1.setText("");
@@ -1065,49 +1058,42 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroestItemStateChanged
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        // TODO add your handling code here:
         Admin_Empleados_4 regr = new Admin_Empleados_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed
 
     private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        // TODO add your handling code here:
         Admin_Tortas_4 regr = new Admin_Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_TorteriaActionPerformed
 
     private void NominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NominaActionPerformed
-        // TODO add your handling code here:
         Admin_NominaQ_5 regr = new Admin_NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NominaActionPerformed
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        // TODO add your handling code here:
         Administradores_3 regr = new Administradores_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed
 
     private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        // TODO add your handling code here:
         AltasZyS_3 regr = new AltasZyS_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void UsuariosnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosnomActionPerformed
-        // TODO add your handling code here:
         Usuarios_Nomina_3 regr = new Usuarios_Nomina_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_UsuariosnomActionPerformed
 
     private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-        // TODO add your handling code here:
         Usuarios_RH_3 regr = new Usuarios_RH_3();
         regr.setVisible(true);
         this.dispose();
