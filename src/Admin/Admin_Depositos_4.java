@@ -476,7 +476,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             pst.setString(11, pd.getText());
             pst.setString(12, Quincenas.getSelectedItem().toString());
             pst.setString(13, ((JTextField) año.getDateEditor().getUiComponent()).getText());
-            pst.setString(14, Dpi.getText());
+            pst.setString(14, Ddi.getText());
             pst.setString(15, pds.getText());
             pst.setString(16, Ddv.getText());
             pst.setString(17, PDDDV.getText());
@@ -1768,7 +1768,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         pd.setText("0");
         Quincenas.setSelectedIndex(0);
         año.setCalendar(fecha_actual);
-        Dpi.setText("0");
+        Ddi.setText("0");
         pds.setText("0");
         Ddv.setText("0");
         PDDDV.setText("0");
@@ -1848,7 +1848,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             pst.setString(11, pd.getText());
             pst.setString(12, Quincenas.getSelectedItem().toString());
             pst.setString(13, ((JTextField) año.getDateEditor().getUiComponent()).getText());
-            pst.setString(14, Dpi.getText());
+            pst.setString(14, Ddi.getText());
             pst.setString(15, pds.getText());
             pst.setString(16, Ddv.getText());
             pst.setString(17, PDDDV.getText());
@@ -3138,7 +3138,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 //por dia
         double PD = Double.parseDouble(this.pd.getText());
 //incapacidad
-        double dpi = Double.parseDouble(this.Dpi.getText());
+        double dpi = Double.parseDouble(this.Ddi.getText());
         double totaldpi = dpi * PD;
         pds.setText("" + totaldpi);
 
@@ -3387,7 +3387,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         jPanel9 = new javax.swing.JPanel();
         jLabel123 = new javax.swing.JLabel();
-        deposito = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
         DI = new javax.swing.JTextField();
@@ -3396,11 +3395,11 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         cda = new javax.swing.JTextField();
         jLabel61 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
-        F = new javax.swing.JLabel();
         Odtp = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         jLabel137 = new javax.swing.JLabel();
-        DPF = new javax.swing.JLabel();
+        F = new javax.swing.JTextField();
+        DPF = new javax.swing.JTextField();
         pd = new javax.swing.JTextField();
         jLabel89 = new javax.swing.JLabel();
         Quincenas = new javax.swing.JComboBox<>();
@@ -3419,7 +3418,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         jPanel17 = new javax.swing.JPanel();
         jLabel122 = new javax.swing.JLabel();
         jLabel124 = new javax.swing.JLabel();
-        DVT = new javax.swing.JLabel();
         jLabel125 = new javax.swing.JLabel();
         Fdb = new javax.swing.JTextField();
         jLabel126 = new javax.swing.JLabel();
@@ -3444,6 +3442,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         Corbata = new javax.swing.JTextField();
         jLabel167 = new javax.swing.JLabel();
         AdN = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
         jPanel19 = new javax.swing.JPanel();
         jLabel91 = new javax.swing.JLabel();
         Zon = new javax.swing.JTextField();
@@ -3468,57 +3467,58 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         NFnom = new javax.swing.JTextField();
         jLabel133 = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
-        Dpi = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
-        Ddv = new javax.swing.JLabel();
         jLabel107 = new javax.swing.JLabel();
-        DD = new javax.swing.JLabel();
         jLabel103 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        DL = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        dt = new javax.swing.JLabel();
         LabelDSGS = new javax.swing.JLabel();
-        DSGS = new javax.swing.JLabel();
         jLabel142 = new javax.swing.JLabel();
         jLabel104 = new javax.swing.JLabel();
-        PDDDV = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel88 = new javax.swing.JLabel();
-        PDDD = new javax.swing.JLabel();
-        pds = new javax.swing.JLabel();
         jLabel128 = new javax.swing.JLabel();
-        PDDL = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        PDDT = new javax.swing.JLabel();
         jLabel136 = new javax.swing.JLabel();
         PDDDDSGS = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        DO = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         apy = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
         Lugar = new javax.swing.JTextField();
-        FJ = new javax.swing.JLabel();
         Rembolso = new javax.swing.JTextField();
         jLabel87 = new javax.swing.JLabel();
         ADD = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        R = new javax.swing.JLabel();
         jLabel138 = new javax.swing.JLabel();
-        PCR = new javax.swing.JLabel();
         jLabel182 = new javax.swing.JLabel();
         jLabel183 = new javax.swing.JLabel();
-        DF = new javax.swing.JLabel();
-        DFT = new javax.swing.JLabel();
         jLabel184 = new javax.swing.JLabel();
         jLabel185 = new javax.swing.JLabel();
-        PDDF = new javax.swing.JLabel();
-        PDDFT = new javax.swing.JLabel();
+        R = new javax.swing.JTextField();
+        Ddi = new javax.swing.JTextField();
+        Ddv = new javax.swing.JTextField();
+        DD = new javax.swing.JTextField();
+        DL = new javax.swing.JTextField();
+        dt = new javax.swing.JTextField();
+        DSGS = new javax.swing.JTextField();
+        FJ = new javax.swing.JTextField();
+        DO = new javax.swing.JTextField();
+        DF = new javax.swing.JTextField();
+        DFT = new javax.swing.JTextField();
+        PCR = new javax.swing.JTextField();
+        pds = new javax.swing.JTextField();
+        PDDDV = new javax.swing.JTextField();
+        PDDD = new javax.swing.JTextField();
+        PDDL = new javax.swing.JTextField();
+        PDDT = new javax.swing.JTextField();
+        PDDF = new javax.swing.JTextField();
+        PDDFT = new javax.swing.JTextField();
         FDP = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        deposito = new javax.swing.JTextField();
         jScrollPane12 = new javax.swing.JScrollPane();
         PestañasPagos = new javax.swing.JTabbedPane();
         TPagos = new javax.swing.JScrollPane();
@@ -5187,9 +5187,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         jLabel123.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel123.setText("Deposito:");
 
-        deposito.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        deposito.setText("0");
-
         jPanel16.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel60.setText("Desc IMSS:");
@@ -5226,8 +5223,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
         jLabel85.setText("Orden de taller:");
 
-        F.setText("0");
-
         Odtp.setText("0");
         Odtp.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -5238,6 +5233,8 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         jLabel26.setText("Dias con faltas:");
 
         jLabel137.setText("Descuento por faltas:");
+
+        F.setText("0");
 
         DPF.setText("0");
 
@@ -5250,30 +5247,28 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGap(193, 193, 193)
-                        .addComponent(jLabel137)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DPF))
-                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addComponent(jLabel137))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel84)
+                            .addComponent(jLabel60)
+                            .addComponent(jLabel26)
                             .addComponent(jLabel61)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cda, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel16Layout.createSequentialGroup()
-                            .addComponent(jLabel85)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Odtp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel16Layout.createSequentialGroup()
-                            .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel84)
-                                .addComponent(jLabel60)
-                                .addComponent(jLabel26))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel85))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(F)
                                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(DI, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                                    .addComponent(Presp))))))
-                .addContainerGap(87, Short.MAX_VALUE))
+                                    .addComponent(Presp))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                                    .addComponent(F, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(4, 4, 4)))
+                            .addComponent(cda, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Odtp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DPF, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5281,9 +5276,9 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(F)
                     .addComponent(jLabel137)
-                    .addComponent(DPF))
+                    .addComponent(F, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel60)
@@ -5351,9 +5346,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
         jLabel124.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel124.setText("Total de descuentos varios:");
-
-        DVT.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        DVT.setText("0");
 
         jLabel125.setText("Faltantes de boleto:");
 
@@ -5463,19 +5455,15 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jTextField1.setText("0");
+
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jLabel122))
-                    .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addComponent(jLabel124)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DVT))
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -5518,7 +5506,17 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                             .addComponent(Bp, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                             .addComponent(Playera, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                             .addComponent(Corbata, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                            .addComponent(AdN))))
+                            .addComponent(AdN)))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGap(108, 108, 108)
+                                .addComponent(jLabel122))
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addComponent(jLabel124)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 28, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel17Layout.setVerticalGroup(
@@ -5565,7 +5563,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel124)
-                    .addComponent(DVT))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -5706,52 +5704,30 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
         jPanel18.setBackground(new java.awt.Color(204, 255, 204));
 
-        Dpi.setText("0");
-
         jLabel105.setText("Dias de incapacidad:");
 
-        Ddv.setText("0");
-
         jLabel107.setText("Dias de vacaciones:");
-
-        DD.setText("0");
 
         jLabel103.setText("Dias descansados:");
 
         jLabel15.setText("Dias Laborados:");
 
-        DL.setText("0");
-
         jLabel16.setText("Descansos Trabajados:");
 
-        dt.setText("0");
-
         LabelDSGS.setText("Descanso sin goce de sueldo:");
-
-        DSGS.setText("0");
 
         jLabel142.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel142.setText("Ingresos:");
 
         jLabel104.setText("Pago de seguro:");
 
-        PDDDV.setText("0");
-
         jLabel9.setText("Pago de dias de vacaciones:");
 
         jLabel88.setText("Pago de dias descansados:");
 
-        PDDD.setText("0");
-
-        pds.setText("0");
-
         jLabel128.setText("Pago de dias laborados:");
 
-        PDDL.setText("0");
-
         jLabel21.setText("Pago de descansos trabajados:");
-
-        PDDT.setText("0");
 
         jLabel136.setText("Pago de dias de DSGS:");
 
@@ -5766,8 +5742,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
         jLabel31.setText("Descanso Otorgado:");
 
-        DO.setText("0");
-
         jLabel17.setText("Apoyo:");
 
         apy.setText("0");
@@ -5778,8 +5752,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         });
 
         jLabel76.setText("Lugar:");
-
-        FJ.setText("0");
 
         Rembolso.setText("0");
         Rembolso.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -5801,23 +5773,49 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
         jLabel20.setText("Dias con retardos:");
 
-        R.setText("0");
-
         jLabel138.setText("Pago con retardos:");
-
-        PCR.setText("0");
 
         jLabel182.setText("Dias festivos:");
 
         jLabel183.setText("Dias festivos trabajados:");
 
+        jLabel184.setText("Pago de dias festivos:");
+
+        jLabel185.setText("Pago de dias festivos trabajados:");
+
+        R.setText("0");
+
+        Ddi.setText("0");
+
+        Ddv.setText("0");
+
+        DD.setText("0");
+
+        DL.setText("0");
+
+        dt.setText("0");
+
+        DSGS.setText("0");
+
+        FJ.setText("0");
+
+        DO.setText("0");
+
         DF.setText("0");
 
         DFT.setText("0");
 
-        jLabel184.setText("Pago de dias festivos:");
+        PCR.setText("0");
 
-        jLabel185.setText("Pago de dias festivos trabajados:");
+        pds.setText("0");
+
+        PDDDV.setText("0");
+
+        PDDD.setText("0");
+
+        PDDL.setText("0");
+
+        PDDT.setText("0");
 
         PDDF.setText("0");
 
@@ -5838,7 +5836,13 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                             .addComponent(jLabel17)
                             .addComponent(jLabel76)
                             .addComponent(jLabel182)
-                            .addComponent(jLabel183))
+                            .addComponent(jLabel183)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel103)
+                            .addComponent(jLabel107)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel105)
+                            .addComponent(jLabel20))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel18Layout.createSequentialGroup()
@@ -5851,75 +5855,64 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                                     .addComponent(jLabel25))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Rembolso, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                                    .addComponent(Rembolso, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
                                     .addComponent(ADD)))
                             .addGroup(jPanel18Layout.createSequentialGroup()
-                                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel18Layout.createSequentialGroup()
-                                        .addComponent(DFT)
+                                        .addComponent(DFT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel185))
                                     .addGroup(jPanel18Layout.createSequentialGroup()
                                         .addComponent(DF)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(68, 68, 68)
                                         .addComponent(jLabel184))
-                                    .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(DO)
-                                        .addComponent(FJ)
-                                        .addGroup(jPanel18Layout.createSequentialGroup()
-                                            .addComponent(DSGS)
-                                            .addGap(24, 24, 24)
-                                            .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jLabel88)
-                                                .addComponent(jLabel9)
-                                                .addComponent(jLabel104)
-                                                .addComponent(jLabel128)
-                                                .addComponent(jLabel21)
-                                                .addComponent(jLabel136)
-                                                .addComponent(jLabel138)))))
+                                    .addGroup(jPanel18Layout.createSequentialGroup()
+                                        .addComponent(DD, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel88))
+                                    .addGroup(jPanel18Layout.createSequentialGroup()
+                                        .addComponent(DSGS, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel136))
+                                    .addGroup(jPanel18Layout.createSequentialGroup()
+                                        .addComponent(dt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel21))
+                                    .addGroup(jPanel18Layout.createSequentialGroup()
+                                        .addComponent(DL, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel128))
+                                    .addGroup(jPanel18Layout.createSequentialGroup()
+                                        .addComponent(Ddv, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel9))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel18Layout.createSequentialGroup()
+                                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Ddi, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(R, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel138, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel104, javax.swing.GroupLayout.Alignment.TRAILING))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(PDDDV)
-                                    .addComponent(PDDD)
-                                    .addComponent(pds)
-                                    .addComponent(PDDL)
-                                    .addComponent(PDDT)
-                                    .addComponent(PCR)
                                     .addComponent(PDDDDSGS, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PDDF)
-                                    .addComponent(PDDFT)))))
+                                    .addComponent(PCR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(pds, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PDDDV, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PDDD, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PDDL, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PDDT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PDDF, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PDDFT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(DO, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                .addComponent(FJ, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))))
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addGap(202, 202, 202)
                         .addComponent(jLabel142)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel18Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dt))
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(DL))
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addComponent(jLabel103)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DD))
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addComponent(jLabel107)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Ddv))
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel105))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Dpi)
-                            .addComponent(R))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5929,68 +5922,68 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(R)
                     .addComponent(jLabel138)
-                    .addComponent(PCR))
+                    .addComponent(R, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PCR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Dpi)
                     .addComponent(jLabel105)
                     .addComponent(jLabel104)
-                    .addComponent(pds))
+                    .addComponent(Ddi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pds, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Ddv)
                     .addComponent(jLabel107)
                     .addComponent(jLabel9)
-                    .addComponent(PDDDV))
+                    .addComponent(Ddv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PDDDV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DD)
                     .addComponent(jLabel103)
                     .addComponent(jLabel88)
-                    .addComponent(PDDD))
+                    .addComponent(DD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PDDD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(DL)
                     .addComponent(jLabel128)
-                    .addComponent(PDDL))
+                    .addComponent(DL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PDDL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(dt)
                     .addComponent(jLabel21)
-                    .addComponent(PDDT))
+                    .addComponent(dt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PDDT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelDSGS)
-                    .addComponent(DSGS)
                     .addComponent(jLabel136)
-                    .addComponent(PDDDDSGS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PDDDDSGS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DSGS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel19)
-                            .addComponent(FJ))
+                            .addComponent(FJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel31)
-                            .addComponent(DO))
+                            .addComponent(DO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel182)
-                            .addComponent(DF)
                             .addComponent(jLabel184)
-                            .addComponent(PDDF))
+                            .addComponent(DF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PDDF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel183)
-                            .addComponent(DFT)
                             .addComponent(jLabel185)
-                            .addComponent(PDDFT))
-                        .addGap(19, 19, 19)
+                            .addComponent(DFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PDDFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17)
                             .addComponent(apy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -6011,6 +6004,9 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
         jLabel1.setText("Quincena:");
 
+        deposito.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        deposito.setText("0");
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -6018,22 +6014,32 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(Datgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addComponent(Datgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addComponent(jLabel89)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addComponent(jLabel123)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(deposito, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Quincenas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel101)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(jLabel89)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(jLabel123)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(deposito))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
+                                .addGap(23, 23, 23)
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel106)
                                     .addComponent(jLabel102)
@@ -6044,15 +6050,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                                     .addComponent(FDD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(MDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Quincenas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel101)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6067,7 +6065,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addComponent(Adddeposito)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Adddeposito1)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6105,7 +6103,8 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel123)
-                            .addComponent(deposito))
+                            .addComponent(deposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel102)
                             .addComponent(FDD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -6121,7 +6120,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel110)
                             .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
 
         jScrollPane10.setViewportView(jPanel9);
@@ -6913,41 +6912,44 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             .addGroup(jPanel32Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane32)
                     .addGroup(jPanel32Layout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel178)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltrosP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonWeb19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelBEP4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(busp4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BAppag4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Bampag4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelSZP4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroSZP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelBSP4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroServP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelNDFP4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(filtroNDFP4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelBQP4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroQP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CS18)
-                    .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(6805, Short.MAX_VALUE))
+                        .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel32Layout.createSequentialGroup()
+                                .addComponent(jButton5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel178)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FiltrosP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(botonWeb19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelBEP4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(busp4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BAppag4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bampag4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelSZP4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FiltroSZP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelBSP4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FiltroServP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelNDFP4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(filtroNDFP4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelBQP4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FiltroQP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CS18))
+                        .addGap(0, 6799, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8142,7 +8144,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom8.getValueAt(fila, 12)));
+            Ddi.setText(String.valueOf(Tnom8.getValueAt(fila, 12)));
             pds.setText(String.valueOf(Tnom8.getValueAt(fila, 13)));
             Ddv.setText(String.valueOf(Tnom8.getValueAt(fila, 14)));
             PDDDV.setText(String.valueOf(Tnom8.getValueAt(fila, 15)));
@@ -8420,7 +8422,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom7.getValueAt(fila, 12)));
+            Ddi.setText(String.valueOf(Tnom7.getValueAt(fila, 12)));
             pds.setText(String.valueOf(Tnom7.getValueAt(fila, 13)));
             Ddv.setText(String.valueOf(Tnom7.getValueAt(fila, 14)));
             PDDDV.setText(String.valueOf(Tnom7.getValueAt(fila, 15)));
@@ -8698,7 +8700,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom6.getValueAt(fila, 12)));
+            Ddi.setText(String.valueOf(Tnom6.getValueAt(fila, 12)));
             pds.setText(String.valueOf(Tnom6.getValueAt(fila, 13)));
             Ddv.setText(String.valueOf(Tnom6.getValueAt(fila, 14)));
             PDDDV.setText(String.valueOf(Tnom6.getValueAt(fila, 15)));
@@ -8976,7 +8978,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom5.getValueAt(fila, 12)));
+            Ddi.setText(String.valueOf(Tnom5.getValueAt(fila, 12)));
             pds.setText(String.valueOf(Tnom5.getValueAt(fila, 13)));
             Ddv.setText(String.valueOf(Tnom5.getValueAt(fila, 14)));
             PDDDV.setText(String.valueOf(Tnom5.getValueAt(fila, 15)));
@@ -9254,7 +9256,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom4.getValueAt(fila, 12)));
+            Ddi.setText(String.valueOf(Tnom4.getValueAt(fila, 12)));
             pds.setText(String.valueOf(Tnom4.getValueAt(fila, 13)));
             Ddv.setText(String.valueOf(Tnom4.getValueAt(fila, 14)));
             PDDDV.setText(String.valueOf(Tnom4.getValueAt(fila, 15)));
@@ -9532,7 +9534,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom3.getValueAt(fila, 12)));
+            Ddi.setText(String.valueOf(Tnom3.getValueAt(fila, 12)));
             pds.setText(String.valueOf(Tnom3.getValueAt(fila, 13)));
             Ddv.setText(String.valueOf(Tnom3.getValueAt(fila, 14)));
             PDDDV.setText(String.valueOf(Tnom3.getValueAt(fila, 15)));
@@ -9810,7 +9812,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom2.getValueAt(fila, 12)));
+            Ddi.setText(String.valueOf(Tnom2.getValueAt(fila, 12)));
             pds.setText(String.valueOf(Tnom2.getValueAt(fila, 13)));
             Ddv.setText(String.valueOf(Tnom2.getValueAt(fila, 14)));
             PDDDV.setText(String.valueOf(Tnom2.getValueAt(fila, 15)));
@@ -10091,7 +10093,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom.getValueAt(fila, 12)));
+            Ddi.setText(String.valueOf(Tnom.getValueAt(fila, 12)));
             pds.setText(String.valueOf(Tnom.getValueAt(fila, 13)));
             Ddv.setText(String.valueOf(Tnom.getValueAt(fila, 14)));
             PDDDV.setText(String.valueOf(Tnom.getValueAt(fila, 15)));
@@ -10369,7 +10371,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom1.getValueAt(fila, 12)));
+            Ddi.setText(String.valueOf(Tnom1.getValueAt(fila, 12)));
             pds.setText(String.valueOf(Tnom1.getValueAt(fila, 13)));
             Ddv.setText(String.valueOf(Tnom1.getValueAt(fila, 14)));
             PDDDV.setText(String.valueOf(Tnom1.getValueAt(fila, 15)));
@@ -12358,20 +12360,19 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Chamarra;
     private javax.swing.JTextField Corbata;
     private javax.swing.JTextField Credencial;
-    private javax.swing.JLabel DD;
-    private javax.swing.JLabel DF;
-    private javax.swing.JLabel DFT;
+    private javax.swing.JTextField DD;
+    private javax.swing.JTextField DF;
+    private javax.swing.JTextField DFT;
     private javax.swing.JTextField DI;
-    private javax.swing.JLabel DL;
-    private javax.swing.JLabel DO;
-    private javax.swing.JLabel DPF;
-    private javax.swing.JLabel DSGS;
-    private javax.swing.JLabel DVT;
+    private javax.swing.JTextField DL;
+    private javax.swing.JTextField DO;
+    private javax.swing.JTextField DPF;
+    private javax.swing.JTextField DSGS;
     private javax.swing.JPanel Datgen;
-    private javax.swing.JLabel Ddv;
-    private javax.swing.JLabel Dpi;
+    private javax.swing.JTextField Ddi;
+    private javax.swing.JTextField Ddv;
     private javax.swing.JMenuItem EmpleadosT;
-    private javax.swing.JLabel F;
+    private javax.swing.JTextField F;
     private javax.swing.JTextField FAmT;
     private javax.swing.JTextField FAmT1;
     private javax.swing.JTextField FAmT2;
@@ -12392,7 +12393,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JTextField FApT8;
     private com.toedter.calendar.JDateChooser FDD;
     private javax.swing.JTextField FDP;
-    private javax.swing.JLabel FJ;
+    private javax.swing.JTextField FJ;
     private javax.swing.JComboBox<String> FZservicio;
     private javax.swing.JComboBox<String> FZservicio1;
     private javax.swing.JComboBox<String> FZservicio2;
@@ -12587,21 +12588,21 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Nominab8;
     private javax.swing.JTextArea Obsdeposito;
     private javax.swing.JTextField Odtp;
-    private javax.swing.JLabel PCR;
-    private javax.swing.JLabel PDDD;
+    private javax.swing.JTextField PCR;
+    private javax.swing.JTextField PDDD;
     private javax.swing.JTextField PDDDDSGS;
-    private javax.swing.JLabel PDDDV;
-    private javax.swing.JLabel PDDF;
-    private javax.swing.JLabel PDDFT;
-    private javax.swing.JLabel PDDL;
-    private javax.swing.JLabel PDDT;
+    private javax.swing.JTextField PDDDV;
+    private javax.swing.JTextField PDDF;
+    private javax.swing.JTextField PDDFT;
+    private javax.swing.JTextField PDDL;
+    private javax.swing.JTextField PDDT;
     private javax.swing.JTextField Pantalon;
     private javax.swing.JTabbedPane PestanañasND;
     private javax.swing.JTabbedPane PestañasPagos;
     private javax.swing.JTextField Playera;
     private javax.swing.JTextField Presp;
     private javax.swing.JComboBox<String> Quincenas;
-    private javax.swing.JLabel R;
+    private javax.swing.JTextField R;
     private javax.swing.JTabbedPane RH;
     private javax.swing.JTextField Rembolso;
     private javax.swing.JTextField Sancion;
@@ -12668,8 +12669,8 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JTextField busp7;
     private javax.swing.JTextField busp8;
     private javax.swing.JTextField cda;
-    private javax.swing.JLabel deposito;
-    private javax.swing.JLabel dt;
+    private javax.swing.JTextField deposito;
+    private javax.swing.JTextField dt;
     private javax.swing.JTextField filtroNDFP;
     private javax.swing.JTextField filtroNDFP1;
     private javax.swing.JTextField filtroNDFP2;
@@ -12815,10 +12816,11 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane36;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JScrollPane k;
     private javax.swing.JTextField name;
     private javax.swing.JTextField pd;
-    private javax.swing.JLabel pds;
+    private javax.swing.JTextField pds;
     private javax.swing.JTextField sueldo;
     // End of variables declaration//GEN-END:variables
 }
