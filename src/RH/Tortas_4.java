@@ -1,6 +1,5 @@
 package RH;
 
-import Admin.*;
 import Conexion.ConexionSQL;
 import Inicio.Login_2;
 import java.awt.HeadlessException;
@@ -370,12 +369,6 @@ public final class Tortas_4 extends javax.swing.JFrame {
         General = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        Menuadm = new javax.swing.JMenu();
-        Nomina = new javax.swing.JMenuItem();
-        Administradores = new javax.swing.JMenuItem();
-        ZYS = new javax.swing.JMenuItem();
-        Usuariosnom = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -934,50 +927,6 @@ public final class Tortas_4 extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        Menuadm.setText("Todas las ventanas");
-
-        Nomina.setText("Ventana Nomina");
-        Nomina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NominaActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Nomina);
-
-        Administradores.setText("Administradores");
-        Administradores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdministradoresActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Administradores);
-
-        ZYS.setText("Zonas y Servicios");
-        ZYS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ZYSActionPerformed(evt);
-            }
-        });
-        Menuadm.add(ZYS);
-
-        Usuariosnom.setText("Usuarios Nomina");
-        Usuariosnom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosnomActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Usuariosnom);
-
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
-
-        jMenuBar1.add(Menuadm);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1140,55 +1089,20 @@ public final class Tortas_4 extends javax.swing.JFrame {
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
         // TODO add your handling code here:
-        Admin_Empleados_4 regr = new Admin_Empleados_4();
+        Empleados_4 regr = new Empleados_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed
 
     private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
         // TODO add your handling code here:
-        Admin_Estadias_4 regr = new Admin_Estadias_4();
+        Estadias_4 regr = new Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EstadiasActionPerformed
 
-    private void NominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NominaActionPerformed
-        // TODO add your handling code here:
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_NominaActionPerformed
-
-    private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        // TODO add your handling code here:
-        Administradores_3 regr = new Administradores_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_AdministradoresActionPerformed
-
-    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        // TODO add your handling code here:
-        AltasZyS_3 regr = new AltasZyS_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ZYSActionPerformed
-
-    private void UsuariosnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosnomActionPerformed
-        // TODO add your handling code here:
-        Usuarios_Nomina_3 regr = new Usuarios_Nomina_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosnomActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-        // TODO add your handling code here:
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Admin_Depositos_4 regr = new Admin_Depositos_4();
+        Depositos_4 regr = new Depositos_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -1254,7 +1168,6 @@ public final class Tortas_4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Administradores;
     private javax.swing.JTextField Aptor;
     private javax.swing.JComboBox<String> BFRE;
     private javax.swing.JComboBox<String> BFtor;
@@ -1278,21 +1191,16 @@ public final class Tortas_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Fintor;
     private javax.swing.JMenuItem General;
     private javax.swing.JLabel LabelF1;
-    private javax.swing.JMenu Menuadm;
     private javax.swing.JTextField NDEtor;
     private javax.swing.JTextField Ndcel;
     private javax.swing.JTextField Ndctor;
     private javax.swing.JTextField Ndrtor;
-    private javax.swing.JMenuItem Nomina;
     private javax.swing.JTextField Nrptor;
     private javax.swing.JTextField RFCtor;
     private javax.swing.JComboBox<String> Statustor;
     private javax.swing.JTable TTortas;
     private javax.swing.JTextField UDLRE;
     private javax.swing.JTextField UDLtor;
-    private javax.swing.JMenuItem UsuariosRH;
-    private javax.swing.JMenuItem Usuariosnom;
-    private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField amtor;
     private botones.BotonWeb botonWeb1;
     private javax.swing.JTextField curptor;
