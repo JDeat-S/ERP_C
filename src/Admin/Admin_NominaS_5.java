@@ -218,7 +218,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         jLabel140 = new javax.swing.JLabel();
         NumPrenom = new javax.swing.JTextField();
         jLabel131 = new javax.swing.JLabel();
-        NQprenom = new javax.swing.JTextField();
+        NSprenom = new javax.swing.JTextField();
         jLabel148 = new javax.swing.JLabel();
         jLabel75 = new javax.swing.JLabel();
         Pendienteprenom = new javax.swing.JTextField();
@@ -553,11 +553,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGap(8, 8, 8)
-                                    .addComponent(jLabel23))
-                                .addComponent(LS))))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(LS)
+                                .addComponent(jLabel23))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(Bsi)
                         .addGap(8, 8, 8)
@@ -936,7 +934,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         jLabel131.setText("# Prestamo:");
 
-        NQprenom.setText("0");
+        NSprenom.setText("0");
 
         jLabel148.setText("# semana:");
 
@@ -1057,7 +1055,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel148)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NQprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NSprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel140)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1111,7 +1109,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                         .addComponent(jLabel141)
                         .addComponent(Pendienteprenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel148)
-                        .addComponent(NQprenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(NSprenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -1784,19 +1782,19 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(2, NDL.getText());
-            pst.setInt(3, Integer.parseInt(NumPrenom.getText()));
-            pst.setInt(4, Integer.parseInt(NE.getText()));
-            pst.setString(5, Ap.getText());
-            pst.setString(6, am.getText());
-            pst.setString(7, name.getText());
-            pst.setString(8, Zon.getText());
-            pst.setString(9, ServN.getText());
-            pst.setString(10, Semana.getSelectedItem().toString());
-            pst.setString(11, NQprenom.getText());
-            pst.setString(12, Pagadoprenom.getText());
-            pst.setString(13, Pendienteprenom.getText());
-            pst.setString(14, Presp.getText());
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
+            pst.setInt(2, Integer.parseInt(NumPrenom.getText()));
+            pst.setInt(3, Integer.parseInt(NE.getText()));
+            pst.setString(4, Ap.getText());
+            pst.setString(5, am.getText());
+            pst.setString(6, name.getText());
+            pst.setString(7, Zon.getText());
+            pst.setString(8, ServN.getText());
+            pst.setString(9, Semana.getSelectedItem().toString());
+            pst.setString(10, NSprenom.getText());
+            pst.setString(11, Pagadoprenom.getText());
+            pst.setString(12, Pendienteprenom.getText());
+            pst.setString(13, Presp.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Pago de prestamo registrado");
@@ -1815,7 +1813,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setString(1, NQprenom.getText());
+            pst.setString(1, NSprenom.getText());
             pst.setString(2, Pagadoprenom.getText());
             pst.setString(3, Pendienteprenom.getText());
             pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
@@ -1942,7 +1940,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         Rembolso.setText("0");
         deposito.setText("0");
         NumPrenom.setText("0");
-        NQprenom.setText("0");
+        NSprenom.setText("0");
         Pagadoprenom.setText("0");
         Pendienteprenom.setText("0");
     }
@@ -2169,7 +2167,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 // nomina semanal
     public void editarNS() {
 
-        String SQL = "UPDATE `nominasem` SET `#Folio` = ?, `#Empleado` = ?, `#Lista` = ?, `Apellido P` = ?,"
+        String SQL = "UPDATE `nominasem.detallada." + Zon.getText() + "` SET `#Lista` = ?, `#Empleado` = ?,  `Apellido P` = ?,"
                 + " `Apellido M` = ?, `Nombre(s)` = ?, `Bono` = ?,"
                 + " `Cuenta de banco` = ?, `Banco` = ?, `Zona` = ?,"
                 + " `Servicio` = ?, `Sueldo` = ?, `Por dia` = ?, `Por hora` = ?,"
@@ -2180,49 +2178,49 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 + " `Jueves` = ?, `Viernes` = ?, `Fecha de pago` = ?, `Horas extras` = ?,"
                 + " `Total horas extra` = ?, `Retencion infonavit` = ?, "
                 + "`Prestamos` = ?, `Rembolso` = ?, `Deposito` = ?, "
-                + "`Observaciones` = ? WHERE `nominasem`.`#lista` = ?";
+                + "`Observaciones` = ? WHERE `nominasem.detallada." + Zon.getText() + "`.`#Lista` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
             pst.setInt(2, Integer.parseInt(NE.getText()));
-            pst.setString(3, NDL.getText());
-            pst.setString(4, Ap.getText());
-            pst.setString(5, am.getText());
-            pst.setString(6, name.getText());
-            pst.setString(7, Bono1.getText());
-            pst.setString(8, cta.getText());
-            pst.setString(9, ban.getText());
-            pst.setString(10, Zon.getText());
-            pst.setString(11, ServN.getText());
-            pst.setString(12, sueldo.getText());
-            pst.setString(13, pd.getText());
-            pst.setString(14, PH.getText());
-            pst.setString(15, ((JTextField) año.getDateEditor().getUiComponent()).getText());
-            pst.setString(16, Semana.getSelectedItem().toString());
-            pst.setString(17, ((JTextField) Fsab.getDateEditor().getUiComponent()).getText());
-            pst.setString(18, ((JTextField) FDom.getDateEditor().getUiComponent()).getText());
-            pst.setString(19, ((JTextField) FLun.getDateEditor().getUiComponent()).getText());
-            pst.setString(20, ((JTextField) Fmar.getDateEditor().getUiComponent()).getText());
-            pst.setString(21, ((JTextField) Fmier.getDateEditor().getUiComponent()).getText());
-            pst.setString(22, ((JTextField) FJuev.getDateEditor().getUiComponent()).getText());
-            pst.setString(23, ((JTextField) Fvier.getDateEditor().getUiComponent()).getText());
-            pst.setString(24, SabT.getSelectedItem().toString());
-            pst.setString(25, DomT.getSelectedItem().toString());
-            pst.setString(26, LunT.getSelectedItem().toString());
-            pst.setString(27, MarT.getSelectedItem().toString());
-            pst.setString(28, MierT.getSelectedItem().toString());
-            pst.setString(29, JueT.getSelectedItem().toString());
-            pst.setString(30, VieT.getSelectedItem().toString());
-            pst.setString(31, ((JTextField) FDP.getDateEditor().getUiComponent()).getText());
-            pst.setString(32, HE.getText());
-            pst.setString(33, THE.getText());
-            pst.setString(34, RI.getText());
-            pst.setString(35, Presp.getText());
-            pst.setString(36, Rembolso.getText());
-            pst.setString(37, deposito.getText());
-            pst.setString(38, obs.getText());
-            pst.setInt(39, Integer.parseInt(NF.getText()));
+            pst.setString(3, Ap.getText());
+            pst.setString(4, am.getText());
+            pst.setString(5, name.getText());
+            pst.setString(6, Bono1.getText());
+            pst.setString(7, cta.getText());
+            pst.setString(8, ban.getText());
+            pst.setString(9, Zon.getText());
+            pst.setString(10, ServN.getText());
+            pst.setString(11, sueldo.getText());
+            pst.setString(12, pd.getText());
+            pst.setString(13, PH.getText());
+            pst.setString(14, ((JTextField) año.getDateEditor().getUiComponent()).getText());
+            pst.setString(15, Semana.getSelectedItem().toString());
+            pst.setString(16, ((JTextField) Fsab.getDateEditor().getUiComponent()).getText());
+            pst.setString(17, ((JTextField) FDom.getDateEditor().getUiComponent()).getText());
+            pst.setString(18, ((JTextField) FLun.getDateEditor().getUiComponent()).getText());
+            pst.setString(19, ((JTextField) Fmar.getDateEditor().getUiComponent()).getText());
+            pst.setString(20, ((JTextField) Fmier.getDateEditor().getUiComponent()).getText());
+            pst.setString(21, ((JTextField) FJuev.getDateEditor().getUiComponent()).getText());
+            pst.setString(22, ((JTextField) Fvier.getDateEditor().getUiComponent()).getText());
+            pst.setString(23, SabT.getSelectedItem().toString());
+            pst.setString(24, DomT.getSelectedItem().toString());
+            pst.setString(25, LunT.getSelectedItem().toString());
+            pst.setString(26, MarT.getSelectedItem().toString());
+            pst.setString(27, MierT.getSelectedItem().toString());
+            pst.setString(28, JueT.getSelectedItem().toString());
+            pst.setString(29, VieT.getSelectedItem().toString());
+            pst.setString(30, ((JTextField) FDP.getDateEditor().getUiComponent()).getText());
+            pst.setString(31, HE.getText());
+            pst.setString(32, THE.getText());
+            pst.setString(33, RI.getText());
+            pst.setString(34, Presp.getText());
+            pst.setString(35, Rembolso.getText());
+            pst.setString(36, deposito.getText());
+            pst.setString(37, obs.getText());
+            pst.setInt(38, Integer.parseInt(NDL.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Modificada");
@@ -2235,56 +2233,55 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 //Agregar nomina semanal
     public void AgregarNs() {
 
-        String SQL = "INSERT INTO `nominasem` (`#Folio`, `#Empleado`, `#Lista`, `Apellido P`, `Apellido M`,"
+        String SQL = "INSERT INTO `nominasem.detallada." + Zon.getText() + "` (`#Lista`, `#Empleado`, `Apellido P`, `Apellido M`,"
                 + " `Nombre(s)`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`,"
                 + " `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,"
                 + " `Fecha sabado`, `Fecha domingo`, `Fecha lunes`, `Fecha martes`, "
                 + "`Fecha miercoles`, `Fecha jueves`, `Fecha viernes`, `Sabado`, `Domingo`, "
                 + "`Lunes`, `Martes`, `Miercoles`, `Jueves`, `Viernes`, `Fecha de pago`, `Horas extras`,"
                 + " `Total horas extra`, `Retencion infonavit`, `Prestamos`, `Rembolso`, "
-                + "`Deposito`, `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + "`Deposito`, `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
-            pst.setInt(1, Integer.parseInt(NF.getText()));
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
             pst.setInt(2, Integer.parseInt(NE.getText()));
-            pst.setString(3, NDL.getText());
-            pst.setString(4, Ap.getText());
-            pst.setString(5, am.getText());
-            pst.setString(6, name.getText());
-            pst.setString(7, Bono1.getText());
-            pst.setString(8, cta.getText());
-            pst.setString(9, ban.getText());
-            pst.setString(10, Zon.getText());
-            pst.setString(11, ServN.getText());
-            pst.setString(12, sueldo.getText());
-            pst.setString(13, pd.getText());
-            pst.setString(14, PH.getText());
-            pst.setString(15, ((JTextField) año.getDateEditor().getUiComponent()).getText());
-            pst.setString(16, Semana.getSelectedItem().toString());
-            pst.setString(17, ((JTextField) Fsab.getDateEditor().getUiComponent()).getText());
-            pst.setString(18, ((JTextField) FDom.getDateEditor().getUiComponent()).getText());
-            pst.setString(19, ((JTextField) FLun.getDateEditor().getUiComponent()).getText());
-            pst.setString(20, ((JTextField) Fmar.getDateEditor().getUiComponent()).getText());
-            pst.setString(21, ((JTextField) Fmier.getDateEditor().getUiComponent()).getText());
-            pst.setString(22, ((JTextField) FJuev.getDateEditor().getUiComponent()).getText());
-            pst.setString(23, ((JTextField) Fvier.getDateEditor().getUiComponent()).getText());
-            pst.setString(24, SabT.getSelectedItem().toString());
-            pst.setString(25, DomT.getSelectedItem().toString());
-            pst.setString(26, LunT.getSelectedItem().toString());
-            pst.setString(27, MarT.getSelectedItem().toString());
-            pst.setString(28, MierT.getSelectedItem().toString());
-            pst.setString(29, JueT.getSelectedItem().toString());
-            pst.setString(30, VieT.getSelectedItem().toString());
-            pst.setString(31, ((JTextField) FDP.getDateEditor().getUiComponent()).getText());
-            pst.setString(32, HE.getText());
-            pst.setString(33, THE.getText());
-            pst.setString(34, RI.getText());
-            pst.setString(35, Presp.getText());
-            pst.setString(36, Rembolso.getText());
-            pst.setString(37, deposito.getText());
-            pst.setString(38, obs.getText());
+            pst.setString(3, Ap.getText());
+            pst.setString(4, am.getText());
+            pst.setString(5, name.getText());
+            pst.setString(6, Bono1.getText());
+            pst.setString(7, cta.getText());
+            pst.setString(8, ban.getText());
+            pst.setString(9, Zon.getText());
+            pst.setString(10, ServN.getText());
+            pst.setString(11, sueldo.getText());
+            pst.setString(12, pd.getText());
+            pst.setString(13, PH.getText());
+            pst.setString(14, ((JTextField) año.getDateEditor().getUiComponent()).getText());
+            pst.setString(15, Semana.getSelectedItem().toString());
+            pst.setString(16, ((JTextField) Fsab.getDateEditor().getUiComponent()).getText());
+            pst.setString(17, ((JTextField) FDom.getDateEditor().getUiComponent()).getText());
+            pst.setString(18, ((JTextField) FLun.getDateEditor().getUiComponent()).getText());
+            pst.setString(19, ((JTextField) Fmar.getDateEditor().getUiComponent()).getText());
+            pst.setString(20, ((JTextField) Fmier.getDateEditor().getUiComponent()).getText());
+            pst.setString(21, ((JTextField) FJuev.getDateEditor().getUiComponent()).getText());
+            pst.setString(22, ((JTextField) Fvier.getDateEditor().getUiComponent()).getText());
+            pst.setString(23, SabT.getSelectedItem().toString());
+            pst.setString(24, DomT.getSelectedItem().toString());
+            pst.setString(25, LunT.getSelectedItem().toString());
+            pst.setString(26, MarT.getSelectedItem().toString());
+            pst.setString(27, MierT.getSelectedItem().toString());
+            pst.setString(28, JueT.getSelectedItem().toString());
+            pst.setString(29, VieT.getSelectedItem().toString());
+            pst.setString(30, ((JTextField) FDP.getDateEditor().getUiComponent()).getText());
+            pst.setString(31, HE.getText());
+            pst.setString(32, THE.getText());
+            pst.setString(33, RI.getText());
+            pst.setString(34, Presp.getText());
+            pst.setString(35, Rembolso.getText());
+            pst.setString(36, deposito.getText());
+            pst.setString(37, obs.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Semanal Agregada");
@@ -2510,9 +2507,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_RembolsoKeyReleased
 
     private void AgregarNPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarNPActionPerformed
-        double QPREP = Double.parseDouble(this.NQprenom.getText());
+        double QPREP = Double.parseDouble(this.NSprenom.getText());
         double QPREPT = QPREP + 1;
-        NQprenom.setText("" + QPREPT);
+        NSprenom.setText("" + QPREPT);
         double PPN = Double.parseDouble(this.Pagadoprenom.getText());
         double PENPN = Double.parseDouble(this.Pendienteprenom.getText());
         double PP = Double.parseDouble(this.Presp.getText());
@@ -3420,7 +3417,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         int fila = SHPresnom.getSelectedRow();
         NumPrenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 0)));
         Presp.setText(String.valueOf(SHPresnom.getValueAt(fila, 4)));
-        NQprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 5)));
+        NSprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 5)));
         Pagadoprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 6)));
         Pendienteprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 7)));
         deposito();
@@ -3564,7 +3561,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JButton Modm;
     private javax.swing.JTextField NDL;
     private javax.swing.JTextField NE;
-    private javax.swing.JTextField NQprenom;
+    private javax.swing.JTextField NSprenom;
     private javax.swing.JMenuItem Nomina1;
     private javax.swing.JTextField Nominab;
     private javax.swing.JTextField NumPrenom;
