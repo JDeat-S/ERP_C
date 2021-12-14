@@ -3723,7 +3723,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         General = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Interface de Recursos Humanos");
+        setTitle("Depositos C/ IMSS");
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 

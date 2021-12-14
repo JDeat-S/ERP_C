@@ -1,6 +1,7 @@
 package Admin;
 
 import Conexion.ConexionSQL;
+import Inicio.Login_2;
 import java.awt.HeadlessException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
