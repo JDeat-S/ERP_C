@@ -12194,7 +12194,6 @@ public final class Depositos_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Bampag8KeyReleased
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        // TODO add your handling code here:
         Empleados_4 regr = new Empleados_4();
         regr.setVisible(true);
         this.dispose();
