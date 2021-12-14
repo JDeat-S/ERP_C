@@ -1,4 +1,4 @@
-package Admin;
+package RH;
 
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
@@ -30,14 +30,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class Admin_Depositos_4 extends javax.swing.JFrame {
+public final class Depositos_4 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
     ColorRH colores = new ColorRH();
 
-    public Admin_Depositos_4() {
+    public Depositos_4() {
         initComponents();
         FunMD();
         // <editor-fold defaultstate="collapsed" desc="Fil Servicios">
@@ -436,7 +436,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         DefaultComboBoxModel MODELFZSnomdep = new DefaultComboBoxModel(FZSnomdep.mostrarzonas());
         FZservicio1.setModel(MODELFZSnomdep);
 
-        setIconImage(new ImageIcon(Admin_Depositos_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Depositos_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MDepFA();
     }
 
@@ -3711,12 +3711,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         botonWeb23 = new botones.BotonWeb();
         jButton9 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        Menuadm = new javax.swing.JMenu();
-        Nomina = new javax.swing.JMenuItem();
-        Administradores = new javax.swing.JMenuItem();
-        ZYS = new javax.swing.JMenuItem();
-        Usuariosnom = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         Alumnos = new javax.swing.JMenuItem();
         EmpleadosT = new javax.swing.JMenuItem();
@@ -5926,11 +5920,12 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                     .addComponent(R, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PCR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel105)
-                    .addComponent(jLabel104)
-                    .addComponent(Ddi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pds, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel105, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel104)
+                        .addComponent(Ddi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pds, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel107)
@@ -7671,50 +7666,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
         RH.addTab("Tabla depositos", jScrollPane12);
 
-        Menuadm.setText("Todas las ventanas");
-
-        Nomina.setText("Ventana Nomina");
-        Nomina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NominaActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Nomina);
-
-        Administradores.setText("Administradores");
-        Administradores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdministradoresActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Administradores);
-
-        ZYS.setText("Zonas y Servicios");
-        ZYS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ZYSActionPerformed(evt);
-            }
-        });
-        Menuadm.add(ZYS);
-
-        Usuariosnom.setText("Usuarios Nomina");
-        Usuariosnom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosnomActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Usuariosnom);
-
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
-
-        jMenuBar1.add(Menuadm);
-
         jMenu1.setText("Cambiar a:");
 
         Alumnos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -7764,52 +7715,17 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
 
-        Admin_Estadias_4 regr = new Admin_Estadias_4();
+        Estadias_4 regr = new Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
 
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        Tortas_4 regr = new Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed
-
-    private void NominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NominaActionPerformed
-
-        Admin_Depositos_4 regr = new Admin_Depositos_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_NominaActionPerformed
-
-    private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-
-        Administradores_3 regr = new Administradores_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_AdministradoresActionPerformed
-
-    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-
-        AltasZyS_3 regr = new AltasZyS_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ZYSActionPerformed
-
-    private void UsuariosnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosnomActionPerformed
-
-        Usuarios_Nomina_3 regr = new Usuarios_Nomina_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosnomActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
 
     private void AdNKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdNKeyReleased
         desv();
@@ -8188,7 +8104,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             AdN.setText(String.valueOf(Tnom8.getValueAt(fila, 53)));
             deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 54)));
         } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
+            Logger.getLogger(Depositos_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom8MouseClicked
@@ -8466,7 +8382,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             AdN.setText(String.valueOf(Tnom7.getValueAt(fila, 53)));
             deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 54)));
         } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
+            Logger.getLogger(Depositos_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom7MouseClicked
@@ -8744,7 +8660,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             AdN.setText(String.valueOf(Tnom6.getValueAt(fila, 53)));
             deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 54)));
         } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
+            Logger.getLogger(Depositos_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom6MouseClicked
@@ -9022,7 +8938,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             AdN.setText(String.valueOf(Tnom5.getValueAt(fila, 53)));
             deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 54)));
         } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
+            Logger.getLogger(Depositos_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom5MouseClicked
@@ -9300,7 +9216,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             AdN.setText(String.valueOf(Tnom4.getValueAt(fila, 53)));
             deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 54)));
         } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
+            Logger.getLogger(Depositos_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom4MouseClicked
@@ -9578,7 +9494,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             AdN.setText(String.valueOf(Tnom3.getValueAt(fila, 53)));
             deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 54)));
         } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
+            Logger.getLogger(Depositos_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom3MouseClicked
@@ -9856,7 +9772,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             AdN.setText(String.valueOf(Tnom2.getValueAt(fila, 53)));
             deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 54)));
         } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
+            Logger.getLogger(Depositos_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom2MouseClicked
@@ -10137,7 +10053,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             AdN.setText(String.valueOf(Tnom.getValueAt(fila, 53)));
             deposito.setText(String.valueOf(Tnom.getValueAt(fila, 54)));
         } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
+            Logger.getLogger(Depositos_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_TnomMouseClicked
@@ -10415,7 +10331,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             AdN.setText(String.valueOf(Tnom1.getValueAt(fila, 53)));
             deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 54)));
         } catch (ParseException ex) {
-            Logger.getLogger(Admin_Depositos_4.class
+            Logger.getLogger(Depositos_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom1MouseClicked
@@ -12278,8 +12194,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Bampag8KeyReleased
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        // TODO add your handling code here:
-        Admin_Empleados_4 regr = new Admin_Empleados_4();
+        Empleados_4 regr = new Empleados_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed
@@ -12301,12 +12216,12 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_Depositos_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Depositos_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Admin_Depositos_4().setVisible(true);
+            new Depositos_4().setVisible(true);
         });
     }
 
@@ -12315,7 +12230,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JTextField AdN;
     private javax.swing.JButton Adddeposito;
     private javax.swing.JButton Adddeposito1;
-    private javax.swing.JMenuItem Administradores;
     private javax.swing.JMenuItem Alumnos;
     private javax.swing.JTextField Ap;
     private javax.swing.JTextField BAppag;
@@ -12573,11 +12487,9 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelSZP8;
     private javax.swing.JTextField Lugar;
     private javax.swing.JComboBox<String> MDP;
-    private javax.swing.JMenu Menuadm;
     private javax.swing.JTextField NDL;
     private javax.swing.JTextField NEnom;
     private javax.swing.JTextField NFnom;
-    private javax.swing.JMenuItem Nomina;
     private javax.swing.JTextField Nominab;
     private javax.swing.JTextField Nominab1;
     private javax.swing.JTextField Nominab2;
@@ -12644,9 +12556,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JTable Tnom6;
     private javax.swing.JTable Tnom7;
     private javax.swing.JTable Tnom8;
-    private javax.swing.JMenuItem UsuariosRH;
-    private javax.swing.JMenuItem Usuariosnom;
-    private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zon;
     private javax.swing.JTextField am;
     private javax.swing.JTextField apy;
