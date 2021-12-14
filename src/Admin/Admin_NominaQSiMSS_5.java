@@ -4945,7 +4945,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         DSGS16.setText("0");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Nomina Quincenal IMSS");
+        setTitle("Nomina Quincenal General");
 
         jPanel17.setBackground(new java.awt.Color(204, 255, 255));
 

@@ -607,17 +607,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CDAActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
-                  <Properties>
-                    <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                      <KeyStroke key="Alt+Q"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Nomina IMSS"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
-                  </Events>
-                </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="PRES">
                   <Properties>
                     <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
@@ -629,6 +618,17 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PRESActionPerformed"/>
                   </Events>
                 </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+                  <Properties>
+                    <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                      <KeyStroke key="Alt+Q"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Nomina IMSS"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
+                  </Events>
+                </MenuItem>
               </SubComponents>
             </Menu>
           </SubComponents>
@@ -638,7 +638,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="Nomina Quincenal general"/>
+    <Property name="title" type="java.lang.String" value="Nomina Quincenal General"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
@@ -2246,7 +2246,6 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="DI">
                       <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                       <Events>
@@ -3636,7 +3635,9 @@
                                           <Component id="FApT" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDP" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio" min="-2" max="-2" attributes="0"/>
@@ -3655,7 +3656,7 @@
                                       </Group>
                                       <Component id="CS2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -3684,6 +3685,7 @@
                                       <Component id="FApT" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane3" min="-2" pref="627" max="-2" attributes="0"/>
@@ -4142,7 +4144,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -4150,6 +4152,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -4185,8 +4188,25 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDP">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -4232,7 +4252,9 @@
                                           <Component id="FApT1" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT1" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDP1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio1" min="-2" max="-2" attributes="0"/>
@@ -4251,7 +4273,7 @@
                                       </Group>
                                       <Component id="CS8" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4280,6 +4302,7 @@
                                       <Component id="FApT1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane21" min="-2" pref="627" max="-2" attributes="0"/>
@@ -4738,7 +4761,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD1">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -4746,6 +4769,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -4781,8 +4805,25 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDP1">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -4828,7 +4869,9 @@
                                           <Component id="FApT2" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT2" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDP2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio2" min="-2" max="-2" attributes="0"/>
@@ -4847,7 +4890,7 @@
                                       </Group>
                                       <Component id="CS9" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4876,6 +4919,7 @@
                                       <Component id="FApT2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane22" min="-2" pref="627" max="-2" attributes="0"/>
@@ -5334,7 +5378,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD2">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -5342,6 +5386,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -5377,8 +5422,25 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDP2">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -5424,7 +5486,9 @@
                                           <Component id="FApT3" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT3" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDP3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio3" min="-2" max="-2" attributes="0"/>
@@ -5443,11 +5507,11 @@
                                       </Group>
                                       <Component id="CS10" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane23" max="32767" attributes="0"/>
+                                  <Component id="k" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5472,9 +5536,10 @@
                                       <Component id="FApT3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane23" min="-2" pref="627" max="-2" attributes="0"/>
+                                  <Component id="k" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="CS10" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="154" max="32767" attributes="0"/>
@@ -5483,7 +5548,7 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane23">
+                        <Container class="javax.swing.JScrollPane" name="k">
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
@@ -5930,7 +5995,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD3">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -5938,6 +6003,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -5973,8 +6039,25 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDP3">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -6020,7 +6103,9 @@
                                           <Component id="FApT4" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT4" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDP4" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio4" min="-2" max="-2" attributes="0"/>
@@ -6039,7 +6124,7 @@
                                       </Group>
                                       <Component id="CS11" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -6068,6 +6153,7 @@
                                       <Component id="FApT4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP4" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane24" min="-2" pref="627" max="-2" attributes="0"/>
@@ -6526,7 +6612,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD4">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -6534,6 +6620,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -6569,8 +6656,25 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDP4">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -6616,7 +6720,9 @@
                                           <Component id="FApT5" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT5" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDP5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio5" min="-2" max="-2" attributes="0"/>
@@ -6635,7 +6741,7 @@
                                       </Group>
                                       <Component id="CS12" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -6664,6 +6770,7 @@
                                       <Component id="FApT5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP5" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane25" min="-2" pref="627" max="-2" attributes="0"/>
@@ -7122,7 +7229,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD5">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -7130,6 +7237,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -7165,8 +7273,25 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDP5">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -7212,7 +7337,9 @@
                                           <Component id="FApT6" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT6" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDP6" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio6" min="-2" max="-2" attributes="0"/>
@@ -7231,7 +7358,7 @@
                                       </Group>
                                       <Component id="CS13" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -7260,6 +7387,7 @@
                                       <Component id="FApT6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP6" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane26" min="-2" pref="627" max="-2" attributes="0"/>
@@ -7718,7 +7846,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD6">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -7726,6 +7854,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -7761,8 +7890,25 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDP6">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -7808,7 +7954,9 @@
                                           <Component id="FApT7" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT7" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDP7" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio7" min="-2" max="-2" attributes="0"/>
@@ -7827,7 +7975,7 @@
                                       </Group>
                                       <Component id="CS14" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -7856,6 +8004,7 @@
                                       <Component id="FApT7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FAmT7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane27" min="-2" pref="627" max="-2" attributes="0"/>
@@ -8314,7 +8463,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD7">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -8322,6 +8471,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -8357,8 +8507,25 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDP7">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -8404,7 +8571,9 @@
                                           <Component id="FApT8" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT8" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDP8" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZ8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio8" min="-2" max="-2" attributes="0"/>
@@ -8423,7 +8592,7 @@
                                       </Group>
                                       <Component id="CS24" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7840" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -8452,6 +8621,7 @@
                                       <Component id="LabelBS8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroSnomina8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZ8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDP8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane28" min="-2" pref="627" max="-2" attributes="0"/>
@@ -8872,7 +9042,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosTD8">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -8880,6 +9050,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -8915,7 +9086,7 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FZservicio8">
@@ -8952,6 +9123,23 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Selecciona Zona:"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDP8">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -9014,7 +9202,9 @@
                                           <Component id="BAppag" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDPpag8" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP" min="-2" max="-2" attributes="0"/>
@@ -9042,7 +9232,7 @@
                                       </Group>
                                       <Component id="jScrollPane6" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -9066,6 +9256,7 @@
                                       <Component id="BAppag" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDPpag8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane6" min="-2" pref="604" max="-2" attributes="0"/>
@@ -9276,7 +9467,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -9284,6 +9475,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -9310,7 +9502,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel8">
@@ -9330,6 +9522,23 @@
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImprimirActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDPpag8">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -9373,7 +9582,9 @@
                                           <Component id="BAppag1" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag1" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDPpag1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP1" min="-2" max="-2" attributes="0"/>
@@ -9401,7 +9612,7 @@
                                       </Group>
                                       <Component id="jScrollPane29" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -9425,6 +9636,7 @@
                                       <Component id="BAppag1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDPpag1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane29" min="-2" pref="604" max="-2" attributes="0"/>
@@ -9664,7 +9876,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP1">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -9672,6 +9884,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -9698,7 +9911,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel30">
@@ -9718,6 +9931,23 @@
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir1ActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDPpag1">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -9761,7 +9991,9 @@
                                           <Component id="BAppag2" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag2" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDPpag2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP2" min="-2" max="-2" attributes="0"/>
@@ -9785,11 +10017,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir2" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane30" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -9813,6 +10045,7 @@
                                       <Component id="BAppag2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDPpag2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane30" min="-2" pref="604" max="-2" attributes="0"/>
@@ -9821,7 +10054,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS16" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -10049,7 +10282,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP2">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -10057,6 +10290,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -10083,7 +10317,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel33">
@@ -10096,13 +10330,30 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir3">
+                        <Component class="javax.swing.JButton" name="Imprimir2">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir3ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir2ActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDPpag2">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -10146,7 +10397,9 @@
                                           <Component id="BAppag3" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag3" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDPpag3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP3" min="-2" max="-2" attributes="0"/>
@@ -10170,11 +10423,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane31" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10198,6 +10451,7 @@
                                       <Component id="BAppag3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDPpag3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane31" min="-2" pref="604" max="-2" attributes="0"/>
@@ -10206,7 +10460,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS17" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -10434,7 +10688,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP3">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -10442,6 +10696,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -10468,7 +10723,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel34">
@@ -10481,13 +10736,30 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir4">
+                        <Component class="javax.swing.JButton" name="Imprimir3">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir4ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir3ActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDPpag3">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -10531,7 +10803,9 @@
                                           <Component id="BAppag4" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag4" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDPpag4" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP4" min="-2" max="-2" attributes="0"/>
@@ -10555,11 +10829,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir4" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane32" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10583,6 +10857,7 @@
                                       <Component id="BAppag4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDPpag4" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane32" min="-2" pref="604" max="-2" attributes="0"/>
@@ -10591,7 +10866,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS18" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -10795,7 +11070,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP4">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="9">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -10803,8 +11078,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
-                                <StringItem index="7" value="Filttrar con IMSS"/>
-                                <StringItem index="8" value="Filtrar sin IMSS"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -10831,7 +11105,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel35">
@@ -10844,13 +11118,30 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir5">
+                        <Component class="javax.swing.JButton" name="Imprimir4">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir5ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir4ActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDPpag4">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -10894,7 +11185,9 @@
                                           <Component id="BAppag5" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag5" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDPpag5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP5" min="-2" max="-2" attributes="0"/>
@@ -10918,11 +11211,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir6" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir5" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane33" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10946,6 +11239,7 @@
                                       <Component id="BAppag5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb20" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDPpag5" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane33" min="-2" pref="604" max="-2" attributes="0"/>
@@ -10954,7 +11248,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS19" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -11182,7 +11476,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP5">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -11190,6 +11484,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11216,15 +11511,15 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir6">
+                        <Component class="javax.swing.JButton" name="Imprimir5">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir6ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir5ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel36">
@@ -11236,6 +11531,23 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDPpag5">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -11279,7 +11591,9 @@
                                           <Component id="BAppag6" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag6" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDPpag6" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP6" min="-2" max="-2" attributes="0"/>
@@ -11303,11 +11617,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir7" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir6" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane34" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -11331,6 +11645,7 @@
                                       <Component id="BAppag6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb21" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDPpag6" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane34" min="-2" pref="604" max="-2" attributes="0"/>
@@ -11339,7 +11654,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS20" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -11567,7 +11882,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP6">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -11575,6 +11890,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11601,7 +11917,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel37">
@@ -11614,13 +11930,30 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir7">
+                        <Component class="javax.swing.JButton" name="Imprimir6">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir7ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir6ActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDPpag6">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -11664,7 +11997,9 @@
                                           <Component id="BAppag7" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag7" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDPpag7" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP7" min="-2" max="-2" attributes="0"/>
@@ -11688,11 +12023,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir7" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane35" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -11716,6 +12051,7 @@
                                       <Component id="BAppag7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb22" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDPpag7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane35" min="-2" pref="604" max="-2" attributes="0"/>
@@ -11724,7 +12060,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS21" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -11952,7 +12288,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP7">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -11960,6 +12296,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11986,7 +12323,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel38">
@@ -11999,13 +12336,30 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir8">
+                        <Component class="javax.swing.JButton" name="Imprimir7">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir8ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir7ActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDPpag7">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -12049,7 +12403,9 @@
                                           <Component id="BAppag8" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag8" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jComboBox18" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP8" min="-2" max="-2" attributes="0"/>
@@ -12073,11 +12429,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir8" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane36" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -12101,6 +12457,7 @@
                                       <Component id="BAppag8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb23" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox18" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane36" min="-2" pref="604" max="-2" attributes="0"/>
@@ -12109,7 +12466,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS22" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -12337,7 +12694,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP8">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -12345,6 +12702,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -12371,7 +12729,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel39">
@@ -12384,13 +12742,30 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir9">
+                        <Component class="javax.swing.JButton" name="Imprimir8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir9ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir8ActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox18">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
