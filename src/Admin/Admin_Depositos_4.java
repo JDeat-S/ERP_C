@@ -3442,7 +3442,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         Corbata = new javax.swing.JTextField();
         jLabel167 = new javax.swing.JLabel();
         AdN = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        DVT = new javax.swing.JTextField();
         jPanel19 = new javax.swing.JPanel();
         jLabel91 = new javax.swing.JLabel();
         Zon = new javax.swing.JTextField();
@@ -5455,8 +5455,8 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jTextField1.setText("0");
+        DVT.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        DVT.setText("0");
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -5515,7 +5515,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                             .addGroup(jPanel17Layout.createSequentialGroup()
                                 .addComponent(jLabel124)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(DVT, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 28, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -5563,7 +5563,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel124)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DVT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -12368,6 +12368,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JTextField DO;
     private javax.swing.JTextField DPF;
     private javax.swing.JTextField DSGS;
+    private javax.swing.JTextField DVT;
     private javax.swing.JPanel Datgen;
     private javax.swing.JTextField Ddi;
     private javax.swing.JTextField Ddv;
@@ -12816,7 +12817,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane36;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JScrollPane k;
     private javax.swing.JTextField name;
     private javax.swing.JTextField pd;
