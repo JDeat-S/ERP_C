@@ -626,6 +626,7 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
         ODT = new javax.swing.JMenuItem();
         CDA = new javax.swing.JMenuItem();
         CNQ = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Prestamos");
@@ -1283,13 +1284,22 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
         jMenu2.add(CDA);
 
         CNQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        CNQ.setText("Captura de nomina");
+        CNQ.setText("Nomina IMSS");
         CNQ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CNQActionPerformed(evt);
             }
         });
         jMenu2.add(CNQ);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem2.setText("Nomina General");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
 
         jMenu1.add(jMenu2);
 
@@ -1689,6 +1699,12 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
         Pendientepres.setText(mt);
     }//GEN-LAST:event_MTKeyReleased
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1810,6 +1826,7 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
