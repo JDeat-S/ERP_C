@@ -44,12 +44,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         DAB = new ButtonGroup();
         DAB.add(Bsi);
         DAB.add(Bno);
-        FiltrosZonas zz = new FiltrosZonas();
-        DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
-        FiltroZnomina.setModel(modelzonas);
-        FiltrosZonas FZP = new FiltrosZonas();
-        DefaultComboBoxModel modelFZP = new DefaultComboBoxModel(FZP.mostrarzonas());
-        FiltroZP.setModel(modelFZP);
         FiltrosZonas FSZP = new FiltrosZonas();
         DefaultComboBoxModel modelFSZP = new DefaultComboBoxModel(FSZP.mostrarzonas());
         FiltroSZP.setModel(modelFSZP);
@@ -63,18 +57,13 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         LabelBE.setVisible(false);
         LabelBQ.setVisible(false);
         LabelBS.setVisible(false);
-        LabelBZ.setVisible(false);
         LabelSZ.setVisible(false);
         Nominab.setText("");
         Nominab.setVisible(false);
-        FiltroZnomina.setVisible(false);
-        FiltroZnomina.setSelectedIndex(0);
         FiltroSnomina.setVisible(false);
         FiltroSnomina.setSelectedIndex(0);
         FZservicio.setVisible(false);
         FZservicio.setSelectedIndex(0);
-        Filtrosemnomina.setVisible(false);
-        Filtrosemnomina.setSelectedIndex(0);
         FiltroNDF.setText("");
         FiltroNDF.setVisible(false);
         LabelBNDF.setVisible(false);
@@ -82,14 +71,12 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         LabelBEP.setVisible(false);
         FiltroQP.setVisible(false);
         FiltroServP.setVisible(false);
-        FiltroZP.setVisible(false);
         FiltroSZP.setVisible(false);
         filtroNDFP.setVisible(false);
         LabelBQP.setVisible(false);
         LabelBSP.setVisible(false);
         LabelSZP.setVisible(false);
         LabelNDFP.setVisible(false);
-        LabelBZP.setVisible(false);
         Filtro1.setVisible(false);
         Filtro1.setText("");
         BNameNom.setVisible(false);
@@ -5182,7 +5169,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     //AUTO PRES
     public void Pagopres() {
 
-        String SQL = "UPDATE `prestamosem` SET  `Semanaspagadas` = ?,"
+        String SQL = "UPDATE `prestamosem` SET  `Semanapagadas` = ?,"
                 + " `Pagado` = ?, `Pendiente` = ? WHERE `prestamosem`.`idprestamos` = ?";
 
         try {
@@ -5206,19 +5193,19 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         String FAP = BAPNom.getText();
         String FAM = BAMNom.getText();
         String where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `prestamosem`";
+                + " `Por semana`, `Semanapagadas`, `Pagado`, `Pendiente` FROM `prestamosem`";
 
         if (!"".equals(FiltroN)) {
             where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `prestamosem`"
+                    + " `Por semana`, `Semanapagadas`, `Pagado`, `Pendiente` FROM `prestamosem`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
             where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `prestamosem`"
+                    + " `Por semana`, `Semanapagadas`, `Pagado`, `Pendiente` FROM `prestamosem`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
             where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `prestamosem`"
+                    + " `Por semana`, `Semanapagadas`, `Pagado`, `Pendiente` FROM `prestamosem`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         }
 
@@ -5321,29 +5308,184 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }
 
 //mostrar datos de nomina
-    public void mostrardatos() {
+      public void MDNCSQ() {
+        //Buscar empleado
+        String FiltroN = Nominab8.getText();
+        String SQL = "select * from `nomina.corporativo santander quincenal`";
+        String FAPNom = FApT8.getText();
+        String FAMNom = FAmT8.getText();
+        String FiltroSnom = FiltroSnomina8.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina8.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF8.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "Select * from `nomina.detallada.corporativo santander quincenal` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `#lista` LIKE '%" + FiltroFol + "%'";
+        } else if (!"".equals(FAPNom)) {
+            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+        } else if (!"".equals(FAMNom)) {
+            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            Tnom8.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# lista");//1
+            modelo.addColumn("# Empleado");//2
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Banco");//6
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Zona");//8
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Bono");
+            modelo.addColumn("Por dia");//12
+            modelo.addColumn("Quincena del mes");
+            modelo.addColumn("Año");//14
+            modelo.addColumn("Dia 1 o 16");
+            modelo.addColumn("Dia 2 o 17");//16
+            modelo.addColumn("Dia 3 o 18");
+            modelo.addColumn("Dia 4 o 19");//18
+            modelo.addColumn("Dia 5 o 20");
+            modelo.addColumn("Dia 6 o 21");//20
+            modelo.addColumn("Dia 7 o 22");
+            modelo.addColumn("Dia 8 o 23");//22
+            modelo.addColumn("Dia 9 o 24");
+            modelo.addColumn("Dia 10 o 25");//24
+            modelo.addColumn("Dia 11 o 26");
+            modelo.addColumn("Dia 12 o 27");//26
+            modelo.addColumn("Dia 13 o 28");
+            modelo.addColumn("Dia 14 o 29");//28
+            modelo.addColumn("Dia 15 o 30");
+            modelo.addColumn("Dia 31");//30
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Retardos");
+            modelo.addColumn("Pago con retardos");//52
+            modelo.addColumn("Apoyo");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//70
+
+//Anchos hasta quincena
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
+                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
+                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
+                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
+                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tnom8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_ND_SCQ) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Santader corp quincenal: " + error_ND_SCQ.getMessage());
+
+        }
+
+    }
+
+    public void MDNFA() {
         //Buscar empleado
         String FiltroN = Nominab.getText();
-        String where = "select * from nominasem";
+        String SQL = "select * from `nomina.detallada.foraneos acapulco`";
         String FAPNom = FApT.getText();
         String FAMNom = FAmT.getText();
-        String FiltroZnom = FiltroZnomina.getSelectedItem().toString();
         String FiltroSnom = FiltroSnomina.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina.getSelectedItem().toString();
         String FiltroFol = FiltroNDF.getText();
 
         if (!"".equals(FiltroN)) {
-            where = "Select * from nominasem where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select * from `nomina.detallada.foraneos acapulco` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            where = "select * from nominasem Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select * from `nomina.detallada.foraneos acapulco` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            where = "select * from nominasem Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select * from `nomina.detallada.foraneos acapulco` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            where = "select * from nominasem Where `Apellido M` LIKE '%" + FAMNom + "%'";
-        } else if (!"".equals(FiltroZnom)) {
-            where = "select * from nominasem where `Zona` LIKE '%" + FiltroZnom + "%'";
+            SQL = "select * from `nomina.detallada.foraneos acapulco` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            where = "select * from nominasem Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select * from `nomina.detallada.foraneos acapulco` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            SQL = "select * from `nomina.detallada.foraneos acapulco` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -5358,58 +5500,101 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             PreparedStatement ps;
             ResultSet rs;
 
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-            modelo.addColumn("# de Folio");//1
-            modelo.addColumn("# de Empleado");//1
-            modelo.addColumn("# de lista");//1
-            modelo.addColumn("Nombre(s)");//2
-            modelo.addColumn("Apellido P");//3
-            modelo.addColumn("Apellido M");
-            modelo.addColumn("Bono");
+            modelo.addColumn("# lista");//1
+            modelo.addColumn("# Empleado");//2
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Banco");//6
             modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Banco");//7
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");//9
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Por dia");//11
-            modelo.addColumn("Por hora");
-            modelo.addColumn("Año");//13
-            modelo.addColumn("Semana");
-            modelo.addColumn("Fecha sabado");
-            modelo.addColumn("Fecha domingo");//16
-            modelo.addColumn("Fecha lunes");
-            modelo.addColumn("Fecha martes");//18
-            modelo.addColumn("Fecha miercoles");
-            modelo.addColumn("Fecha jueves");//20
-            modelo.addColumn("Fecha viernes");
-            modelo.addColumn("Sabado");//22
-            modelo.addColumn("Domingo");
-            modelo.addColumn("Lunes");//24
-            modelo.addColumn("Martes");
-            modelo.addColumn("Miercoles");//26
-            modelo.addColumn("Jueves");
-            modelo.addColumn("Viernes");//28
-            modelo.addColumn("Fecha de pago");
-            modelo.addColumn("Horas extra");
-            modelo.addColumn("Total horas extra");//30
-            modelo.addColumn("Retencion infonavit");
-            modelo.addColumn("Prestamos");//32
+            modelo.addColumn("Zona");//8
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Bono");
+            modelo.addColumn("Por dia");//12
+            modelo.addColumn("Quincena del mes");
+            modelo.addColumn("Año");//14
+            modelo.addColumn("Dia 1 o 16");
+            modelo.addColumn("Dia 2 o 17");//16
+            modelo.addColumn("Dia 3 o 18");
+            modelo.addColumn("Dia 4 o 19");//18
+            modelo.addColumn("Dia 5 o 20");
+            modelo.addColumn("Dia 6 o 21");//20
+            modelo.addColumn("Dia 7 o 22");
+            modelo.addColumn("Dia 8 o 23");//22
+            modelo.addColumn("Dia 9 o 24");
+            modelo.addColumn("Dia 10 o 25");//24
+            modelo.addColumn("Dia 11 o 26");
+            modelo.addColumn("Dia 12 o 27");//26
+            modelo.addColumn("Dia 13 o 28");
+            modelo.addColumn("Dia 14 o 29");//28
+            modelo.addColumn("Dia 15 o 30");
+            modelo.addColumn("Dia 31");//30
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Retardos");
+            modelo.addColumn("Pago con retardos");//52
+            modelo.addColumn("Apoyo");
+            modelo.addColumn("Lugar");//46
             modelo.addColumn("Rembolso");
-            modelo.addColumn("Deposito");//34
-            modelo.addColumn("Observaciones");
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//70
 
-            int[] anchos = {50/*NF*/, 50/*NE*/, 50/*NL*/, 150/*NAME*/, 60/*AP*/, 60/*AM*/, 60/*Bono*/,
-                60,/*Cdb*/ 60/*Banco*/, 50/*Zona*/, 35/*Serv*/, 55/*Suel*/, 150/*pd*/,
-                25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
-                35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
-                35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
-                50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
+//Anchos hasta quincena
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
+                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
+                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
+                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
+                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -5424,8 +5609,1086 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
+        } catch (SQLException error_ND_FA) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + error_ND_FA.getMessage());
+
+        }
+
+    }
+
+    public void MDNFP() {
+        //Buscar empleado
+        String FiltroN = Nominab1.getText();
+        String SQL = "select * from `nomina.detallada.foraneos puebla`";
+        String FAPNom = FApT1.getText();
+        String FAMNom = FAmT1.getText();
+        String FiltroSnom = FiltroSnomina1.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina1.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF1.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "Select * from `nomina.detallada.foraneos puebla` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            SQL = "select * from `nomina.detallada.foraneos puebla` Where `#lista` LIKE '%" + FiltroFol + "%'";
+        } else if (!"".equals(FAPNom)) {
+            SQL = "select * from `nomina.detallada.foraneos puebla` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+        } else if (!"".equals(FAMNom)) {
+            SQL = "select * from `nomina.detallada.foraneos puebla` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            SQL = "select * from `nomina.detallada.foraneos puebla` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            SQL = "select * from `nomina.detallada.foraneos puebla` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            Tnom1.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# lista");//1
+            modelo.addColumn("# Empleado");//2
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Banco");//6
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Zona");//8
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Bono");
+            modelo.addColumn("Por dia");//12
+            modelo.addColumn("Quincena del mes");
+            modelo.addColumn("Año");//14
+            modelo.addColumn("Dia 1 o 16");
+            modelo.addColumn("Dia 2 o 17");//16
+            modelo.addColumn("Dia 3 o 18");
+            modelo.addColumn("Dia 4 o 19");//18
+            modelo.addColumn("Dia 5 o 20");
+            modelo.addColumn("Dia 6 o 21");//20
+            modelo.addColumn("Dia 7 o 22");
+            modelo.addColumn("Dia 8 o 23");//22
+            modelo.addColumn("Dia 9 o 24");
+            modelo.addColumn("Dia 10 o 25");//24
+            modelo.addColumn("Dia 11 o 26");
+            modelo.addColumn("Dia 12 o 27");//26
+            modelo.addColumn("Dia 13 o 28");
+            modelo.addColumn("Dia 14 o 29");//28
+            modelo.addColumn("Dia 15 o 30");
+            modelo.addColumn("Dia 31");//30
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Retardos");
+            modelo.addColumn("Pago con retardos");//52
+            modelo.addColumn("Apoyo");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//70
+
+//Anchos hasta quincena
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
+                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
+                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
+                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
+                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tnom1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_ND_FP) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos puebla: " + error_ND_FP.getMessage());
+
+        }
+
+    }
+
+    public void MDNFT() {
+        //Buscar empleado
+        String FiltroN = Nominab2.getText();
+        String SQL = "select * from `nomina.detallada.foraneos toluca`";
+        String FAPNom = FApT2.getText();
+        String FAMNom = FAmT2.getText();
+        String FiltroSnom = FiltroSnomina2.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina2.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF2.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "Select * from `nomina.detallada.foraneos toluca` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            SQL = "select * from `nomina.detallada.foraneos toluca` Where `#lista` LIKE '%" + FiltroFol + "%'";
+        } else if (!"".equals(FAPNom)) {
+            SQL = "select * from `nomina.detallada.foraneos toluca` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+        } else if (!"".equals(FAMNom)) {
+            SQL = "select * from `nomina.detallada.foraneos toluca` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            SQL = "select * from `nomina.detallada.foraneos toluca` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            SQL = "select * from `nomina.detallada.foraneos toluca` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            Tnom2.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# lista");//1
+            modelo.addColumn("# Empleado");//2
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Banco");//6
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Zona");//8
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Bono");
+            modelo.addColumn("Por dia");//12
+            modelo.addColumn("Quincena del mes");
+            modelo.addColumn("Año");//14
+            modelo.addColumn("Dia 1 o 16");
+            modelo.addColumn("Dia 2 o 17");//16
+            modelo.addColumn("Dia 3 o 18");
+            modelo.addColumn("Dia 4 o 19");//18
+            modelo.addColumn("Dia 5 o 20");
+            modelo.addColumn("Dia 6 o 21");//20
+            modelo.addColumn("Dia 7 o 22");
+            modelo.addColumn("Dia 8 o 23");//22
+            modelo.addColumn("Dia 9 o 24");
+            modelo.addColumn("Dia 10 o 25");//24
+            modelo.addColumn("Dia 11 o 26");
+            modelo.addColumn("Dia 12 o 27");//26
+            modelo.addColumn("Dia 13 o 28");
+            modelo.addColumn("Dia 14 o 29");//28
+            modelo.addColumn("Dia 15 o 30");
+            modelo.addColumn("Dia 31");//30
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Retardos");
+            modelo.addColumn("Pago con retardos");//52
+            modelo.addColumn("Apoyo");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//70
+
+//Anchos hasta quincena
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
+                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
+                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
+                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
+                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tnom2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_ND_FT) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos toluca: " + error_ND_FT.getMessage());
+
+        }
+
+    }
+
+    public void MDNNor() {
+        //Buscar empleado
+        String FiltroN = Nominab3.getText();
+        String where = "select * from `nomina.detallada.norte`";
+        String FAPNom = FApT3.getText();
+        String FAMNom = FAmT3.getText();
+        String FiltroSnom = FiltroSnomina3.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina3.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF3.getText();
+
+        if (!"".equals(FiltroN)) {
+            where = "Select * from `nomina.detallada.norte` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            where = "select * from `nomina.detallada.norte` Where `#lista` LIKE '%" + FiltroFol + "%'";
+        } else if (!"".equals(FAPNom)) {
+            where = "select * from `nomina.detallada.norte` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+        } else if (!"".equals(FAMNom)) {
+            where = "select * from `nomina.detallada.norte` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            where = "select * from `nomina.detallada.norte` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            where = "select * from `nomina.detallada.norte` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            Tnom3.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# lista");//1
+            modelo.addColumn("# Empleado");//2
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Banco");//6
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Zona");//8
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Bono");
+            modelo.addColumn("Por dia");//12
+            modelo.addColumn("Quincena del mes");
+            modelo.addColumn("Año");//14
+            modelo.addColumn("Dia 1 o 16");
+            modelo.addColumn("Dia 2 o 17");//16
+            modelo.addColumn("Dia 3 o 18");
+            modelo.addColumn("Dia 4 o 19");//18
+            modelo.addColumn("Dia 5 o 20");
+            modelo.addColumn("Dia 6 o 21");//20
+            modelo.addColumn("Dia 7 o 22");
+            modelo.addColumn("Dia 8 o 23");//22
+            modelo.addColumn("Dia 9 o 24");
+            modelo.addColumn("Dia 10 o 25");//24
+            modelo.addColumn("Dia 11 o 26");
+            modelo.addColumn("Dia 12 o 27");//26
+            modelo.addColumn("Dia 13 o 28");
+            modelo.addColumn("Dia 14 o 29");//28
+            modelo.addColumn("Dia 15 o 30");
+            modelo.addColumn("Dia 31");//30
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Retardos");
+            modelo.addColumn("Pago con retardos");//52
+            modelo.addColumn("Apoyo");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//70
+
+//Anchos hasta quincena
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
+                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
+                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
+                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
+                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tnom3.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_ND_norte) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de norte: " + error_ND_norte.getMessage());
+
+        }
+
+    }
+
+    public void MDNOfi() {
+        //Buscar empleado
+        String FiltroN = Nominab4.getText();
+        String SQL = "select * from `nomina.detallada.oficina`";
+        String FAPNom = FApT4.getText();
+        String FAMNom = FAmT4.getText();
+        String FiltroSnom = FiltroSnomina4.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina4.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF4.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "Select * from `nomina.detallada.oficina` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            SQL = "select * from `nomina.detallada.oficina` Where `#lista` LIKE '%" + FiltroFol + "%'";
+        } else if (!"".equals(FAPNom)) {
+            SQL = "select * from `nomina.detallada.oficina` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+        } else if (!"".equals(FAMNom)) {
+            SQL = "select * from `nomina.detallada.oficina` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            SQL = "select * from `nomina.detallada.oficina` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            SQL = "select * from `nomina.detallada.oficina` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            Tnom4.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# lista");//1
+            modelo.addColumn("# Empleado");//2
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Banco");//6
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Zona");//8
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Bono");
+            modelo.addColumn("Por dia");//12
+            modelo.addColumn("Quincena del mes");
+            modelo.addColumn("Año");//14
+            modelo.addColumn("Dia 1 o 16");
+            modelo.addColumn("Dia 2 o 17");//16
+            modelo.addColumn("Dia 3 o 18");
+            modelo.addColumn("Dia 4 o 19");//18
+            modelo.addColumn("Dia 5 o 20");
+            modelo.addColumn("Dia 6 o 21");//20
+            modelo.addColumn("Dia 7 o 22");
+            modelo.addColumn("Dia 8 o 23");//22
+            modelo.addColumn("Dia 9 o 24");
+            modelo.addColumn("Dia 10 o 25");//24
+            modelo.addColumn("Dia 11 o 26");
+            modelo.addColumn("Dia 12 o 27");//26
+            modelo.addColumn("Dia 13 o 28");
+            modelo.addColumn("Dia 14 o 29");//28
+            modelo.addColumn("Dia 15 o 30");
+            modelo.addColumn("Dia 31");//30
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Retardos");
+            modelo.addColumn("Pago con retardos");//52
+            modelo.addColumn("Apoyo");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//70
+
+//Anchos hasta quincena
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
+                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
+                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
+                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
+                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tnom4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_ND_ofi) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Oficina: " + error_ND_ofi.getMessage());
+
+        }
+
+    }
+
+    public void MDNPon() {
+        //Buscar empleado
+        String FiltroN = Nominab5.getText();
+        String SQL = "select * from `nomina.detallada.poniente`";
+        String FAPNom = FApT5.getText();
+        String FAMNom = FAmT5.getText();
+        String FiltroSnom = FiltroSnomina5.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina5.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF5.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "Select * from `nomina.detallada.poniente` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            SQL = "select * from `nomina.detallada.poniente` Where `#lista` LIKE '%" + FiltroFol + "%'";
+        } else if (!"".equals(FAPNom)) {
+            SQL = "select * from `nomina.detallada.poniente` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+        } else if (!"".equals(FAMNom)) {
+            SQL = "select * from `nomina.detallada.poniente` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            SQL = "select * from `nomina.detallada.poniente` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            SQL = "select * from `nomina.detallada.poniente` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            Tnom5.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# lista");//1
+            modelo.addColumn("# Empleado");//2
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Banco");//6
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Zona");//8
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Bono");
+            modelo.addColumn("Por dia");//12
+            modelo.addColumn("Quincena del mes");
+            modelo.addColumn("Año");//14
+            modelo.addColumn("Dia 1 o 16");
+            modelo.addColumn("Dia 2 o 17");//16
+            modelo.addColumn("Dia 3 o 18");
+            modelo.addColumn("Dia 4 o 19");//18
+            modelo.addColumn("Dia 5 o 20");
+            modelo.addColumn("Dia 6 o 21");//20
+            modelo.addColumn("Dia 7 o 22");
+            modelo.addColumn("Dia 8 o 23");//22
+            modelo.addColumn("Dia 9 o 24");
+            modelo.addColumn("Dia 10 o 25");//24
+            modelo.addColumn("Dia 11 o 26");
+            modelo.addColumn("Dia 12 o 27");//26
+            modelo.addColumn("Dia 13 o 28");
+            modelo.addColumn("Dia 14 o 29");//28
+            modelo.addColumn("Dia 15 o 30");
+            modelo.addColumn("Dia 31");//30
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Retardos");
+            modelo.addColumn("Pago con retardos");//52
+            modelo.addColumn("Apoyo");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//70
+
+//Anchos hasta quincena
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
+                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
+                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
+                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
+                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tnom5.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_ND_pon) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Poniente: " + error_ND_pon.getMessage());
+
+        }
+
+    }
+
+    public void MDNS1() {
+        //Buscar empleado
+        String FiltroN = Nominab6.getText();
+        String SQL = "select * from `nomina.detallada.sur 1`";
+        String FAPNom = FApT6.getText();
+        String FAMNom = FAmT6.getText();
+        String FiltroSnom = FiltroSnomina6.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina6.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF6.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "Select * from `nomina.detallada.sur 1` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            SQL = "select * from `nomina.detallada.sur 1` Where `#lista` LIKE '%" + FiltroFol + "%'";
+        } else if (!"".equals(FAPNom)) {
+            SQL = "select * from `nomina.detallada.sur 1` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+        } else if (!"".equals(FAMNom)) {
+            SQL = "select * from `nomina.detallada.sur 1` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            SQL = "select * from `nomina.detallada.sur 1` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            SQL = "select * from `nomina.detallada.sur 1` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            Tnom6.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# lista");//1
+            modelo.addColumn("# Empleado");//2
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Banco");//6
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Zona");//8
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Bono");
+            modelo.addColumn("Por dia");//12
+            modelo.addColumn("Quincena del mes");
+            modelo.addColumn("Año");//14
+            modelo.addColumn("Dia 1 o 16");
+            modelo.addColumn("Dia 2 o 17");//16
+            modelo.addColumn("Dia 3 o 18");
+            modelo.addColumn("Dia 4 o 19");//18
+            modelo.addColumn("Dia 5 o 20");
+            modelo.addColumn("Dia 6 o 21");//20
+            modelo.addColumn("Dia 7 o 22");
+            modelo.addColumn("Dia 8 o 23");//22
+            modelo.addColumn("Dia 9 o 24");
+            modelo.addColumn("Dia 10 o 25");//24
+            modelo.addColumn("Dia 11 o 26");
+            modelo.addColumn("Dia 12 o 27");//26
+            modelo.addColumn("Dia 13 o 28");
+            modelo.addColumn("Dia 14 o 29");//28
+            modelo.addColumn("Dia 15 o 30");
+            modelo.addColumn("Dia 31");//30
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Retardos");
+            modelo.addColumn("Pago con retardos");//52
+            modelo.addColumn("Apoyo");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//70
+
+//Anchos hasta quincena
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
+                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
+                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
+                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
+                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tnom6.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_ND_S1) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 1: " + error_ND_S1.getMessage());
+
+        }
+
+    }
+
+    public void MDNS2() {
+        //Buscar empleado
+        String FiltroN = Nominab7.getText();
+        String SQL = "select * from `nomina.detallada.sur 2`";
+        String FAPNom = FApT7.getText();
+        String FAMNom = FAmT7.getText();
+        String FiltroSnom = FiltroSnomina7.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF7.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "Select * from `nomina.detallada.sur 2` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            SQL = "select * from `nomina.detallada.sur 2` Where `#lista` LIKE '%" + FiltroFol + "%'";
+        } else if (!"".equals(FAPNom)) {
+            SQL = "select * from `nomina.detallada.sur 2` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+        } else if (!"".equals(FAMNom)) {
+            SQL = "select * from `nomina.detallada.sur 2` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            SQL = "select * from `nomina.detallada.sur 2` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            SQL = "select * from `nomina.detallada.sur 2` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            Tnom7.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# lista");//1
+            modelo.addColumn("# Empleado");//2
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Banco");//6
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Zona");//8
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Bono");
+            modelo.addColumn("Por dia");//12
+            modelo.addColumn("Quincena del mes");
+            modelo.addColumn("Año");//14
+            modelo.addColumn("Dia 1 o 16");
+            modelo.addColumn("Dia 2 o 17");//16
+            modelo.addColumn("Dia 3 o 18");
+            modelo.addColumn("Dia 4 o 19");//18
+            modelo.addColumn("Dia 5 o 20");
+            modelo.addColumn("Dia 6 o 21");//20
+            modelo.addColumn("Dia 7 o 22");
+            modelo.addColumn("Dia 8 o 23");//22
+            modelo.addColumn("Dia 9 o 24");
+            modelo.addColumn("Dia 10 o 25");//24
+            modelo.addColumn("Dia 11 o 26");
+            modelo.addColumn("Dia 12 o 27");//26
+            modelo.addColumn("Dia 13 o 28");
+            modelo.addColumn("Dia 14 o 29");//28
+            modelo.addColumn("Dia 15 o 30");
+            modelo.addColumn("Dia 31");//30
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Retardos");
+            modelo.addColumn("Pago con retardos");//52
+            modelo.addColumn("Apoyo");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//70
+
+//Anchos hasta quincena
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
+                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
+                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
+                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
+                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tnom7.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_ND_S2) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 2: " + error_ND_S2.getMessage());
 
         }
 
@@ -5440,7 +6703,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 + " `Cuenta de banco`, `Servicio`,"
                 + " `año`, `Semana`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
                 + " `Deposito`, `Observaciones`  FROM `nominasem`";
-        String FiltroZpago = FiltroZP.getSelectedItem().toString();
         String FiltroSpago = FiltroServP.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP.getText();
 
@@ -5466,12 +6728,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                     + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`,"
                     + " `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
-        } else if (!"".equals(FiltroZpago)) {
-            where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                    + " `Cuenta de banco`, `Servicio`,"
-                    + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`,"
-                    + " `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem`"
-                    + " where `Zona` LIKE '%" + FiltroZpago + "%'";
         } else if (!"".equals(FiltroSpago)) {
             where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                     + "  `Cuenta de banco`, `Servicio`,"
@@ -6218,133 +7474,16 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             Bono.setText(String.valueOf(Tnom.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom.getValueAt(fila, 11)));
             String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Semanas.getItemCount(); i++) {
-                if (Semanas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Semanas.setSelectedIndex(i);
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
                 }
             }
 
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
-            String combo2 = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Dia1.getItemCount(); i++) {
-                if (Dia1.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    Dia1.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 15).toString();
-            for (int i = 0; i < Dia2.getItemCount(); i++) {
-                if (Dia2.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    Dia2.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 16).toString();
-            for (int i = 0; i < Dia3.getItemCount(); i++) {
-                if (Dia3.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    Dia3.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 17).toString();
-            for (int i = 0; i < Dia4.getItemCount(); i++) {
-                if (Dia4.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    Dia4.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 18).toString();
-            for (int i = 0; i < Dia5.getItemCount(); i++) {
-                if (Dia5.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    Dia5.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 19).toString();
-            for (int i = 0; i < Dia6.getItemCount(); i++) {
-                if (Dia6.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    Dia6.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 20).toString();
-            for (int i = 0; i < Dia7.getItemCount(); i++) {
-                if (Dia7.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    Dia7.setSelectedIndex(i);
-                }
-            }
-            String combo9 = model.getValueAt(fila, 21).toString();
-            for (int i = 0; i < Dia8.getItemCount(); i++) {
-                if (Dia8.getItemAt(i).equalsIgnoreCase(combo9)) {
-                    Dia8.setSelectedIndex(i);
-                }
-            }
-            String combo10 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < Dia9.getItemCount(); i++) {
-                if (Dia9.getItemAt(i).equalsIgnoreCase(combo10)) {
-                    Dia9.setSelectedIndex(i);
-                }
-            }
-            String combo11 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < Dia10.getItemCount(); i++) {
-                if (Dia10.getItemAt(i).equalsIgnoreCase(combo11)) {
-                    Dia10.setSelectedIndex(i);
-                }
-            }
-            String combo12 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < Dia11.getItemCount(); i++) {
-                if (Dia11.getItemAt(i).equalsIgnoreCase(combo12)) {
-                    Dia11.setSelectedIndex(i);
-                }
-            }
-            String combo13 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < Dia12.getItemCount(); i++) {
-                if (Dia12.getItemAt(i).equalsIgnoreCase(combo13)) {
-                    Dia12.setSelectedIndex(i);
-                }
-            }
-            String combo14 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < Dia13.getItemCount(); i++) {
-                if (Dia13.getItemAt(i).equalsIgnoreCase(combo14)) {
-                    Dia13.setSelectedIndex(i);
-                }
-            }
-            String combo15 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < Dia14.getItemCount(); i++) {
-                if (Dia14.getItemAt(i).equalsIgnoreCase(combo15)) {
-                    Dia14.setSelectedIndex(i);
-                }
-            }
-            String combo16 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < Dia15.getItemCount(); i++) {
-                if (Dia15.getItemAt(i).equalsIgnoreCase(combo16)) {
-                    Dia15.setSelectedIndex(i);
-                }
-            }
-            String combo17 = model.getValueAt(fila, 29).toString();
-            for (int i = 0; i < Dia16.getItemCount(); i++) {
-                if (Dia16.getItemAt(i).equalsIgnoreCase(combo17)) {
-                    Dia16.setSelectedIndex(i);
-                }
-            }
-
-            PDDDDSGS.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
             Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom.getValueAt(fila, 69)));
             Presp.setText(String.valueOf(Tnom.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom.getValueAt(fila, 74)));
 
@@ -6606,133 +7745,16 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             Bono.setText(String.valueOf(Tnom1.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom1.getValueAt(fila, 11)));
             String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Semanas.getItemCount(); i++) {
-                if (Semanas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Semanas.setSelectedIndex(i);
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
                 }
             }
 
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
-            String combo2 = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Dia1.getItemCount(); i++) {
-                if (Dia1.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    Dia1.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 15).toString();
-            for (int i = 0; i < Dia2.getItemCount(); i++) {
-                if (Dia2.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    Dia2.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 16).toString();
-            for (int i = 0; i < Dia3.getItemCount(); i++) {
-                if (Dia3.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    Dia3.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 17).toString();
-            for (int i = 0; i < Dia4.getItemCount(); i++) {
-                if (Dia4.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    Dia4.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 18).toString();
-            for (int i = 0; i < Dia5.getItemCount(); i++) {
-                if (Dia5.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    Dia5.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 19).toString();
-            for (int i = 0; i < Dia6.getItemCount(); i++) {
-                if (Dia6.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    Dia6.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 20).toString();
-            for (int i = 0; i < Dia7.getItemCount(); i++) {
-                if (Dia7.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    Dia7.setSelectedIndex(i);
-                }
-            }
-            String combo9 = model.getValueAt(fila, 21).toString();
-            for (int i = 0; i < Dia8.getItemCount(); i++) {
-                if (Dia8.getItemAt(i).equalsIgnoreCase(combo9)) {
-                    Dia8.setSelectedIndex(i);
-                }
-            }
-            String combo10 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < Dia9.getItemCount(); i++) {
-                if (Dia9.getItemAt(i).equalsIgnoreCase(combo10)) {
-                    Dia9.setSelectedIndex(i);
-                }
-            }
-            String combo11 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < Dia10.getItemCount(); i++) {
-                if (Dia10.getItemAt(i).equalsIgnoreCase(combo11)) {
-                    Dia10.setSelectedIndex(i);
-                }
-            }
-            String combo12 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < Dia11.getItemCount(); i++) {
-                if (Dia11.getItemAt(i).equalsIgnoreCase(combo12)) {
-                    Dia11.setSelectedIndex(i);
-                }
-            }
-            String combo13 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < Dia12.getItemCount(); i++) {
-                if (Dia12.getItemAt(i).equalsIgnoreCase(combo13)) {
-                    Dia12.setSelectedIndex(i);
-                }
-            }
-            String combo14 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < Dia13.getItemCount(); i++) {
-                if (Dia13.getItemAt(i).equalsIgnoreCase(combo14)) {
-                    Dia13.setSelectedIndex(i);
-                }
-            }
-            String combo15 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < Dia14.getItemCount(); i++) {
-                if (Dia14.getItemAt(i).equalsIgnoreCase(combo15)) {
-                    Dia14.setSelectedIndex(i);
-                }
-            }
-            String combo16 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < Dia15.getItemCount(); i++) {
-                if (Dia15.getItemAt(i).equalsIgnoreCase(combo16)) {
-                    Dia15.setSelectedIndex(i);
-                }
-            }
-            String combo17 = model.getValueAt(fila, 29).toString();
-            for (int i = 0; i < Dia16.getItemCount(); i++) {
-                if (Dia16.getItemAt(i).equalsIgnoreCase(combo17)) {
-                    Dia16.setSelectedIndex(i);
-                }
-            }
-
-            PDDDDSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom1.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom1.getValueAt(fila, 51)));
             Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom1.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom1.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom1.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom1.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom1.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom1.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom1.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom1.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom1.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom1.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom1.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom1.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom1.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom1.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom1.getValueAt(fila, 69)));
             Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom1.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom1.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom1.getValueAt(fila, 74)));
 
@@ -6992,9 +8014,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             Bono.setText(String.valueOf(Tnom2.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom2.getValueAt(fila, 11)));
             String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Semanas.getItemCount(); i++) {
-                if (Semanas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Semanas.setSelectedIndex(i);
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
                 }
             }
 
@@ -7379,133 +8401,16 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             Bono.setText(String.valueOf(Tnom3.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom3.getValueAt(fila, 11)));
             String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Semanas.getItemCount(); i++) {
-                if (Semanas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Semanas.setSelectedIndex(i);
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
                 }
             }
 
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
-            String combo2 = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Dia1.getItemCount(); i++) {
-                if (Dia1.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    Dia1.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 15).toString();
-            for (int i = 0; i < Dia2.getItemCount(); i++) {
-                if (Dia2.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    Dia2.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 16).toString();
-            for (int i = 0; i < Dia3.getItemCount(); i++) {
-                if (Dia3.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    Dia3.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 17).toString();
-            for (int i = 0; i < Dia4.getItemCount(); i++) {
-                if (Dia4.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    Dia4.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 18).toString();
-            for (int i = 0; i < Dia5.getItemCount(); i++) {
-                if (Dia5.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    Dia5.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 19).toString();
-            for (int i = 0; i < Dia6.getItemCount(); i++) {
-                if (Dia6.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    Dia6.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 20).toString();
-            for (int i = 0; i < Dia7.getItemCount(); i++) {
-                if (Dia7.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    Dia7.setSelectedIndex(i);
-                }
-            }
-            String combo9 = model.getValueAt(fila, 21).toString();
-            for (int i = 0; i < Dia8.getItemCount(); i++) {
-                if (Dia8.getItemAt(i).equalsIgnoreCase(combo9)) {
-                    Dia8.setSelectedIndex(i);
-                }
-            }
-            String combo10 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < Dia9.getItemCount(); i++) {
-                if (Dia9.getItemAt(i).equalsIgnoreCase(combo10)) {
-                    Dia9.setSelectedIndex(i);
-                }
-            }
-            String combo11 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < Dia10.getItemCount(); i++) {
-                if (Dia10.getItemAt(i).equalsIgnoreCase(combo11)) {
-                    Dia10.setSelectedIndex(i);
-                }
-            }
-            String combo12 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < Dia11.getItemCount(); i++) {
-                if (Dia11.getItemAt(i).equalsIgnoreCase(combo12)) {
-                    Dia11.setSelectedIndex(i);
-                }
-            }
-            String combo13 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < Dia12.getItemCount(); i++) {
-                if (Dia12.getItemAt(i).equalsIgnoreCase(combo13)) {
-                    Dia12.setSelectedIndex(i);
-                }
-            }
-            String combo14 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < Dia13.getItemCount(); i++) {
-                if (Dia13.getItemAt(i).equalsIgnoreCase(combo14)) {
-                    Dia13.setSelectedIndex(i);
-                }
-            }
-            String combo15 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < Dia14.getItemCount(); i++) {
-                if (Dia14.getItemAt(i).equalsIgnoreCase(combo15)) {
-                    Dia14.setSelectedIndex(i);
-                }
-            }
-            String combo16 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < Dia15.getItemCount(); i++) {
-                if (Dia15.getItemAt(i).equalsIgnoreCase(combo16)) {
-                    Dia15.setSelectedIndex(i);
-                }
-            }
-            String combo17 = model.getValueAt(fila, 29).toString();
-            for (int i = 0; i < Dia16.getItemCount(); i++) {
-                if (Dia16.getItemAt(i).equalsIgnoreCase(combo17)) {
-                    Dia16.setSelectedIndex(i);
-                }
-            }
-
-            PDDDDSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom3.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom3.getValueAt(fila, 51)));
             Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom3.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom3.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom3.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom3.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom3.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom3.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom3.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom3.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom3.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom3.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom3.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom3.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom3.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom3.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom3.getValueAt(fila, 69)));
             Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom3.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom3.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom3.getValueAt(fila, 74)));
 
@@ -7765,9 +8670,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             Bono.setText(String.valueOf(Tnom4.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom4.getValueAt(fila, 11)));
             String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Semanas.getItemCount(); i++) {
-                if (Semanas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Semanas.setSelectedIndex(i);
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
                 }
             }
 
@@ -8151,9 +9056,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             Bono.setText(String.valueOf(Tnom5.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom5.getValueAt(fila, 11)));
             String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Semanas.getItemCount(); i++) {
-                if (Semanas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Semanas.setSelectedIndex(i);
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
                 }
             }
 
@@ -8537,9 +9442,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             Bono.setText(String.valueOf(Tnom6.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom6.getValueAt(fila, 11)));
             String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Semanas.getItemCount(); i++) {
-                if (Semanas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Semanas.setSelectedIndex(i);
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
                 }
             }
 
@@ -8923,9 +9828,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             Bono.setText(String.valueOf(Tnom7.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom7.getValueAt(fila, 11)));
             String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Semanas.getItemCount(); i++) {
-                if (Semanas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Semanas.setSelectedIndex(i);
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
                 }
             }
 
@@ -9310,9 +10215,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             Bono.setText(String.valueOf(Tnom8.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom8.getValueAt(fila, 11)));
             String combo1 = model.getValueAt(fila, 12).toString();
-            for (int i = 0; i < Semanas.getItemCount(); i++) {
-                if (Semanas.getItemAt(i).equalsIgnoreCase(combo1)) {
-                    Semanas.setSelectedIndex(i);
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
                 }
             }
 
