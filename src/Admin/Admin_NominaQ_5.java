@@ -558,7 +558,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         }
     }
 
-    public void utilJTablePrint(JTable jTable, String header, String footer, boolean showPrintDialog) {
+    public void Funimprimir(JTable jTable, String header, String footer, boolean showPrintDialog) {
         boolean fitWidth = true;
         boolean interactive = true;
         // We define the print mode (Definimos el modo de impresión)
@@ -19169,14 +19169,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         sumaDep();
     }//GEN-LAST:event_FiltroSnomina6ItemStateChanged
 
-    private void CS13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS13ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Login_2 regr = new Login_2();
-            regr.setVisible(true);
-            this.dispose();
-        }    }//GEN-LAST:event_CS13ActionPerformed
-
     private void Eliminar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar6ActionPerformed
         try {
 
@@ -21708,31 +21700,31 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         int FP = FiltrosP.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total: "
+            Funimprimir(pago, getTitle() + " Foraneos acapulco", "Monto total: "
                     + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 1) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Apellido P "
+            Funimprimir(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Apellido P "
                     + BAppag.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 2) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Apellido M "
+            Funimprimir(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Apellido M "
                     + Bampag.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 3) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Nombre(s) "
+            Funimprimir(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Nombre(s) "
                     + busp.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 4) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total del servicio "
+            Funimprimir(pago, getTitle() + " Foraneos acapulco", "Monto total del servicio "
                     + FiltroServP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 5) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total de la "
+            Funimprimir(pago, getTitle() + " Foraneos acapulco", "Monto total de la "
                     + FiltroQP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 6) {
-            utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro # Lista "
+            Funimprimir(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro # Lista "
                     + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
     }//GEN-LAST:event_ImprimirActionPerformed
@@ -21741,31 +21733,31 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         int FP = FiltrosP1.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total: "
+            Funimprimir(pago1, getTitle() + " Foraneos puebla", "Monto total: "
                     + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
         if (FP == 1) {
-            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro Apellido P "
+            Funimprimir(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro Apellido P "
                     + BAppag1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
         if (FP == 2) {
-            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro Apellido M "
+            Funimprimir(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro Apellido M "
                     + Bampag1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
         if (FP == 3) {
-            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro Nombre(s) "
+            Funimprimir(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro Nombre(s) "
                     + busp1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
         if (FP == 4) {
-            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total del servicio "
+            Funimprimir(pago1, getTitle() + " Foraneos puebla", "Monto total del servicio "
                     + FiltroServP1.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
         if (FP == 5) {
-            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total de la "
+            Funimprimir(pago1, getTitle() + " Foraneos puebla", "Monto total de la "
                     + FiltroQP1.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
         if (FP == 6) {
-            utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro # Lista "
+            Funimprimir(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro # Lista "
                     + filtroNDFP1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
     }//GEN-LAST:event_Imprimir1ActionPerformed
@@ -21774,31 +21766,31 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         int FP = FiltrosP2.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total: "
+            Funimprimir(pago2, getTitle() + " Foraneos toluca", "Monto total: "
                     + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
         if (FP == 1) {
-            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro Apellido P "
+            Funimprimir(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro Apellido P "
                     + BAppag2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
         if (FP == 2) {
-            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro Apellido M "
+            Funimprimir(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro Apellido M "
                     + Bampag2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
         if (FP == 3) {
-            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro Nombre(s) "
+            Funimprimir(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro Nombre(s) "
                     + busp2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
         if (FP == 4) {
-            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total del servicio "
+            Funimprimir(pago2, getTitle() + " Foraneos toluca", "Monto total del servicio "
                     + FiltroServP2.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
         if (FP == 5) {
-            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total de la "
+            Funimprimir(pago2, getTitle() + " Foraneos toluca", "Monto total de la "
                     + FiltroQP2.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
         if (FP == 6) {
-            utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro # Lista "
+            Funimprimir(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro # Lista "
                     + filtroNDFP2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
     }//GEN-LAST:event_Imprimir2ActionPerformed
@@ -21807,31 +21799,31 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         int FP = FiltrosP3.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total: "
+            Funimprimir(pago3, getTitle() + " Norte", "Monto total: "
                     + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
         if (FP == 1) {
-            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total con filtro Apellido P "
+            Funimprimir(pago3, getTitle() + " Norte", "Monto total con filtro Apellido P "
                     + BAppag3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
         if (FP == 2) {
-            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total con filtro Apellido M "
+            Funimprimir(pago3, getTitle() + " Norte", "Monto total con filtro Apellido M "
                     + Bampag3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
         if (FP == 3) {
-            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total con filtro Nombre(s) "
+            Funimprimir(pago3, getTitle() + " Norte", "Monto total con filtro Nombre(s) "
                     + busp3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
         if (FP == 4) {
-            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total del servicio "
+            Funimprimir(pago3, getTitle() + " Norte", "Monto total del servicio "
                     + FiltroServP3.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
         if (FP == 5) {
-            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total de la "
+            Funimprimir(pago3, getTitle() + " Norte", "Monto total de la "
                     + FiltroQP3.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
         if (FP == 6) {
-            utilJTablePrint(pago3, getTitle() + " Norte", "Monto total con filtro # Lista "
+            Funimprimir(pago3, getTitle() + " Norte", "Monto total con filtro # Lista "
                     + filtroNDFP3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
     }//GEN-LAST:event_Imprimir3ActionPerformed
@@ -21841,31 +21833,31 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         int FP = FiltrosP4.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total: "
+            Funimprimir(pago4, getTitle() + " Poniente", "Monto total: "
                     + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
         }
         if (FP == 1) {
-            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total con filtro Apellido P "
+            Funimprimir(pago4, getTitle() + " Poniente", "Monto total con filtro Apellido P "
                     + BAppag4.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
         }
         if (FP == 2) {
-            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total con filtro Apellido M "
+            Funimprimir(pago4, getTitle() + " Poniente", "Monto total con filtro Apellido M "
                     + Bampag4.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
         }
         if (FP == 3) {
-            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total con filtro Nombre(s) "
+            Funimprimir(pago4, getTitle() + " Poniente", "Monto total con filtro Nombre(s) "
                     + busp4.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
         }
         if (FP == 4) {
-            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total del servicio "
+            Funimprimir(pago4, getTitle() + " Poniente", "Monto total del servicio "
                     + FiltroServP4.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
         }
         if (FP == 5) {
-            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total de la "
+            Funimprimir(pago4, getTitle() + " Poniente", "Monto total de la "
                     + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 6) {
-            utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total con filtro # Lista "
+            Funimprimir(pago4, getTitle() + " Poniente", "Monto total con filtro # Lista "
                     + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
     }//GEN-LAST:event_Imprimir4ActionPerformed
@@ -21874,31 +21866,31 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         int FP = FiltrosP5.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total: "
+            Funimprimir(pago5, getTitle() + " Oficina", "Monto total: "
                     + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 1) {
-            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total con filtro Apellido P "
+            Funimprimir(pago5, getTitle() + " Oficina", "Monto total con filtro Apellido P "
                     + BAppag5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 2) {
-            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total con filtro Apellido M "
+            Funimprimir(pago5, getTitle() + " Oficina", "Monto total con filtro Apellido M "
                     + Bampag5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 3) {
-            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total con filtro Nombre(s) "
+            Funimprimir(pago5, getTitle() + " Oficina", "Monto total con filtro Nombre(s) "
                     + busp5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 4) {
-            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total del servicio "
+            Funimprimir(pago5, getTitle() + " Oficina", "Monto total del servicio "
                     + FiltroServP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 5) {
-            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total de la "
+            Funimprimir(pago5, getTitle() + " Oficina", "Monto total de la "
                     + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 6) {
-            utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total con filtro # Lista "
+            Funimprimir(pago5, getTitle() + " Oficina", "Monto total con filtro # Lista "
                     + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
     }//GEN-LAST:event_Imprimir5ActionPerformed
@@ -21907,31 +21899,31 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         int FP = FiltrosP6.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total: "
+            Funimprimir(pago6, getTitle() + " Sur 1", "Monto total: "
                     + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 1) {
-            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total con filtro Apellido P "
+            Funimprimir(pago6, getTitle() + " Sur 1", "Monto total con filtro Apellido P "
                     + BAppag6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 2) {
-            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total con filtro Apellido M "
+            Funimprimir(pago6, getTitle() + " Sur 1", "Monto total con filtro Apellido M "
                     + Bampag6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 3) {
-            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total con filtro Nombre(s) "
+            Funimprimir(pago6, getTitle() + " Sur 1", "Monto total con filtro Nombre(s) "
                     + busp6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 4) {
-            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total del servicio "
+            Funimprimir(pago6, getTitle() + " Sur 1", "Monto total del servicio "
                     + FiltroServP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 5) {
-            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total de la "
+            Funimprimir(pago6, getTitle() + " Sur 1", "Monto total de la "
                     + FiltroQP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 6) {
-            utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total con filtro # Lista "
+            Funimprimir(pago6, getTitle() + " Sur 1", "Monto total con filtro # Lista "
                     + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
     }//GEN-LAST:event_Imprimir6ActionPerformed
@@ -21940,31 +21932,31 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         int FP = FiltrosP7.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total: "
+            Funimprimir(pago7, getTitle() + " Sur 2", "Monto total: "
                     + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 1) {
-            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total con filtro Apellido P "
+            Funimprimir(pago7, getTitle() + " Sur 2", "Monto total con filtro Apellido P "
                     + BAppag7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 2) {
-            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total con filtro Apellido M "
+            Funimprimir(pago7, getTitle() + " Sur 2", "Monto total con filtro Apellido M "
                     + Bampag7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 3) {
-            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total con filtro Nombre(s) "
+            Funimprimir(pago7, getTitle() + " Sur 2", "Monto total con filtro Nombre(s) "
                     + busp7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 4) {
-            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total del servicio "
+            Funimprimir(pago7, getTitle() + " Sur 2", "Monto total del servicio "
                     + FiltroServP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 5) {
-            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total de la "
+            Funimprimir(pago7, getTitle() + " Sur 2", "Monto total de la "
                     + FiltroQP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 6) {
-            utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total con filtro # Lista "
+            Funimprimir(pago7, getTitle() + " Sur 2", "Monto total con filtro # Lista "
                     + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
     }//GEN-LAST:event_Imprimir7ActionPerformed
@@ -21973,31 +21965,31 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         int FP = FiltrosP8.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total: "
+            Funimprimir(pago8, getTitle() + " Santander corporativo quincenal", "Monto total: "
                     + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 1) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Apellido P "
+            Funimprimir(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Apellido P "
                     + BAppag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 2) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Apellido M "
+            Funimprimir(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Apellido M "
                     + Bampag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 3) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Nombre(s) "
+            Funimprimir(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Nombre(s) "
                     + busp8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 4) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total del servicio "
+            Funimprimir(pago8, getTitle() + " Santander corporativo quincenal", "Monto total del servicio "
                     + FiltroServP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 5) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total de la "
+            Funimprimir(pago8, getTitle() + " Santander corporativo quincenal", "Monto total de la "
                     + FiltroQP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 6) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro # Lista "
+            Funimprimir(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro # Lista "
                     + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
     }//GEN-LAST:event_Imprimir8ActionPerformed
@@ -22013,6 +22005,15 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void CS13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS13ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS13ActionPerformed
 
     /**
      * @param args the command line arguments

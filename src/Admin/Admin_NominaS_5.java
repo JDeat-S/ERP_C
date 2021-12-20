@@ -6,11 +6,14 @@ import Filtros.FiltrosZonas;
 import Inicio.Login_2;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
+import java.awt.print.PrinterException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.text.MessageFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -22,6 +25,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -5134,6 +5138,40 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void utilJTablePrint(JTable jTable, String header, String footer, boolean showPrintDialog) {
+        boolean fitWidth = true;
+        boolean interactive = true;
+        // We define the print mode (Definimos el modo de impresión)
+        JTable.PrintMode mode = fitWidth ? JTable.PrintMode.FIT_WIDTH : JTable.PrintMode.NORMAL;
+        try {
+            // Print the table (Imprimo la tabla)             
+            boolean complete = jTable.print(mode,
+                    new MessageFormat(header),
+                    new MessageFormat(footer),
+                    showPrintDialog,
+                    null,
+                    interactive);
+            if (complete) {
+                // Mostramos el mensaje de impresión existosa
+                JOptionPane.showMessageDialog(jTable,
+                        "Print complete (Impresión completa)",
+                        "Print result (Resultado de la impresión)",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                // Mostramos un mensaje indicando que la impresión fue cancelada                 
+                JOptionPane.showMessageDialog(jTable,
+                        "Print canceled (Impresión cancelada)",
+                        "Print result (Resultado de la impresión)",
+                        JOptionPane.WARNING_MESSAGE);
+            }
+        } catch (PrinterException pe) {
+            JOptionPane.showMessageDialog(jTable,
+                    "Print fail (Fallo de impresión): " + pe.getMessage(),
+                    "Print result (Resultado de la impresión)",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
     public void AgregarPagoPres() {
 
         String SQL = "INSERT INTO `nominasem.pagos.prestamosem` (`#Lista`, `#prestamo`, "
@@ -8843,125 +8881,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
-            String combo2 = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Dia1.getItemCount(); i++) {
-                if (Dia1.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    Dia1.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 15).toString();
-            for (int i = 0; i < Dia2.getItemCount(); i++) {
-                if (Dia2.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    Dia2.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 16).toString();
-            for (int i = 0; i < Dia3.getItemCount(); i++) {
-                if (Dia3.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    Dia3.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 17).toString();
-            for (int i = 0; i < Dia4.getItemCount(); i++) {
-                if (Dia4.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    Dia4.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 18).toString();
-            for (int i = 0; i < Dia5.getItemCount(); i++) {
-                if (Dia5.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    Dia5.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 19).toString();
-            for (int i = 0; i < Dia6.getItemCount(); i++) {
-                if (Dia6.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    Dia6.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 20).toString();
-            for (int i = 0; i < Dia7.getItemCount(); i++) {
-                if (Dia7.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    Dia7.setSelectedIndex(i);
-                }
-            }
-            String combo9 = model.getValueAt(fila, 21).toString();
-            for (int i = 0; i < Dia8.getItemCount(); i++) {
-                if (Dia8.getItemAt(i).equalsIgnoreCase(combo9)) {
-                    Dia8.setSelectedIndex(i);
-                }
-            }
-            String combo10 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < Dia9.getItemCount(); i++) {
-                if (Dia9.getItemAt(i).equalsIgnoreCase(combo10)) {
-                    Dia9.setSelectedIndex(i);
-                }
-            }
-            String combo11 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < Dia10.getItemCount(); i++) {
-                if (Dia10.getItemAt(i).equalsIgnoreCase(combo11)) {
-                    Dia10.setSelectedIndex(i);
-                }
-            }
-            String combo12 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < Dia11.getItemCount(); i++) {
-                if (Dia11.getItemAt(i).equalsIgnoreCase(combo12)) {
-                    Dia11.setSelectedIndex(i);
-                }
-            }
-            String combo13 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < Dia12.getItemCount(); i++) {
-                if (Dia12.getItemAt(i).equalsIgnoreCase(combo13)) {
-                    Dia12.setSelectedIndex(i);
-                }
-            }
-            String combo14 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < Dia13.getItemCount(); i++) {
-                if (Dia13.getItemAt(i).equalsIgnoreCase(combo14)) {
-                    Dia13.setSelectedIndex(i);
-                }
-            }
-            String combo15 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < Dia14.getItemCount(); i++) {
-                if (Dia14.getItemAt(i).equalsIgnoreCase(combo15)) {
-                    Dia14.setSelectedIndex(i);
-                }
-            }
-            String combo16 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < Dia15.getItemCount(); i++) {
-                if (Dia15.getItemAt(i).equalsIgnoreCase(combo16)) {
-                    Dia15.setSelectedIndex(i);
-                }
-            }
-            String combo17 = model.getValueAt(fila, 29).toString();
-            for (int i = 0; i < Dia16.getItemCount(); i++) {
-                if (Dia16.getItemAt(i).equalsIgnoreCase(combo17)) {
-                    Dia16.setSelectedIndex(i);
-                }
-            }
-
-            PDDDDSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom2.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom2.getValueAt(fila, 51)));
             Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom2.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom2.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom2.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom2.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom2.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom2.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom2.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom2.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom2.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom2.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom2.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom2.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom2.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom2.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom2.getValueAt(fila, 69)));
             Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom2.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom2.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom2.getValueAt(fila, 74)));
 
@@ -9499,125 +9420,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
-            String combo2 = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Dia1.getItemCount(); i++) {
-                if (Dia1.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    Dia1.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 15).toString();
-            for (int i = 0; i < Dia2.getItemCount(); i++) {
-                if (Dia2.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    Dia2.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 16).toString();
-            for (int i = 0; i < Dia3.getItemCount(); i++) {
-                if (Dia3.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    Dia3.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 17).toString();
-            for (int i = 0; i < Dia4.getItemCount(); i++) {
-                if (Dia4.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    Dia4.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 18).toString();
-            for (int i = 0; i < Dia5.getItemCount(); i++) {
-                if (Dia5.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    Dia5.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 19).toString();
-            for (int i = 0; i < Dia6.getItemCount(); i++) {
-                if (Dia6.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    Dia6.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 20).toString();
-            for (int i = 0; i < Dia7.getItemCount(); i++) {
-                if (Dia7.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    Dia7.setSelectedIndex(i);
-                }
-            }
-            String combo9 = model.getValueAt(fila, 21).toString();
-            for (int i = 0; i < Dia8.getItemCount(); i++) {
-                if (Dia8.getItemAt(i).equalsIgnoreCase(combo9)) {
-                    Dia8.setSelectedIndex(i);
-                }
-            }
-            String combo10 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < Dia9.getItemCount(); i++) {
-                if (Dia9.getItemAt(i).equalsIgnoreCase(combo10)) {
-                    Dia9.setSelectedIndex(i);
-                }
-            }
-            String combo11 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < Dia10.getItemCount(); i++) {
-                if (Dia10.getItemAt(i).equalsIgnoreCase(combo11)) {
-                    Dia10.setSelectedIndex(i);
-                }
-            }
-            String combo12 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < Dia11.getItemCount(); i++) {
-                if (Dia11.getItemAt(i).equalsIgnoreCase(combo12)) {
-                    Dia11.setSelectedIndex(i);
-                }
-            }
-            String combo13 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < Dia12.getItemCount(); i++) {
-                if (Dia12.getItemAt(i).equalsIgnoreCase(combo13)) {
-                    Dia12.setSelectedIndex(i);
-                }
-            }
-            String combo14 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < Dia13.getItemCount(); i++) {
-                if (Dia13.getItemAt(i).equalsIgnoreCase(combo14)) {
-                    Dia13.setSelectedIndex(i);
-                }
-            }
-            String combo15 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < Dia14.getItemCount(); i++) {
-                if (Dia14.getItemAt(i).equalsIgnoreCase(combo15)) {
-                    Dia14.setSelectedIndex(i);
-                }
-            }
-            String combo16 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < Dia15.getItemCount(); i++) {
-                if (Dia15.getItemAt(i).equalsIgnoreCase(combo16)) {
-                    Dia15.setSelectedIndex(i);
-                }
-            }
-            String combo17 = model.getValueAt(fila, 29).toString();
-            for (int i = 0; i < Dia16.getItemCount(); i++) {
-                if (Dia16.getItemAt(i).equalsIgnoreCase(combo17)) {
-                    Dia16.setSelectedIndex(i);
-                }
-            }
-
-            PDDDDSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom4.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom4.getValueAt(fila, 51)));
             Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom4.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom4.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom4.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom4.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom4.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom4.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom4.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom4.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom4.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom4.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom4.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom4.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom4.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom4.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom4.getValueAt(fila, 69)));
             Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom4.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom4.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom4.getValueAt(fila, 74)));
 
@@ -9885,125 +9689,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
-            String combo2 = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Dia1.getItemCount(); i++) {
-                if (Dia1.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    Dia1.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 15).toString();
-            for (int i = 0; i < Dia2.getItemCount(); i++) {
-                if (Dia2.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    Dia2.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 16).toString();
-            for (int i = 0; i < Dia3.getItemCount(); i++) {
-                if (Dia3.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    Dia3.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 17).toString();
-            for (int i = 0; i < Dia4.getItemCount(); i++) {
-                if (Dia4.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    Dia4.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 18).toString();
-            for (int i = 0; i < Dia5.getItemCount(); i++) {
-                if (Dia5.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    Dia5.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 19).toString();
-            for (int i = 0; i < Dia6.getItemCount(); i++) {
-                if (Dia6.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    Dia6.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 20).toString();
-            for (int i = 0; i < Dia7.getItemCount(); i++) {
-                if (Dia7.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    Dia7.setSelectedIndex(i);
-                }
-            }
-            String combo9 = model.getValueAt(fila, 21).toString();
-            for (int i = 0; i < Dia8.getItemCount(); i++) {
-                if (Dia8.getItemAt(i).equalsIgnoreCase(combo9)) {
-                    Dia8.setSelectedIndex(i);
-                }
-            }
-            String combo10 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < Dia9.getItemCount(); i++) {
-                if (Dia9.getItemAt(i).equalsIgnoreCase(combo10)) {
-                    Dia9.setSelectedIndex(i);
-                }
-            }
-            String combo11 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < Dia10.getItemCount(); i++) {
-                if (Dia10.getItemAt(i).equalsIgnoreCase(combo11)) {
-                    Dia10.setSelectedIndex(i);
-                }
-            }
-            String combo12 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < Dia11.getItemCount(); i++) {
-                if (Dia11.getItemAt(i).equalsIgnoreCase(combo12)) {
-                    Dia11.setSelectedIndex(i);
-                }
-            }
-            String combo13 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < Dia12.getItemCount(); i++) {
-                if (Dia12.getItemAt(i).equalsIgnoreCase(combo13)) {
-                    Dia12.setSelectedIndex(i);
-                }
-            }
-            String combo14 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < Dia13.getItemCount(); i++) {
-                if (Dia13.getItemAt(i).equalsIgnoreCase(combo14)) {
-                    Dia13.setSelectedIndex(i);
-                }
-            }
-            String combo15 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < Dia14.getItemCount(); i++) {
-                if (Dia14.getItemAt(i).equalsIgnoreCase(combo15)) {
-                    Dia14.setSelectedIndex(i);
-                }
-            }
-            String combo16 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < Dia15.getItemCount(); i++) {
-                if (Dia15.getItemAt(i).equalsIgnoreCase(combo16)) {
-                    Dia15.setSelectedIndex(i);
-                }
-            }
-            String combo17 = model.getValueAt(fila, 29).toString();
-            for (int i = 0; i < Dia16.getItemCount(); i++) {
-                if (Dia16.getItemAt(i).equalsIgnoreCase(combo17)) {
-                    Dia16.setSelectedIndex(i);
-                }
-            }
-
-            PDDDDSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom5.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom5.getValueAt(fila, 51)));
             Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom5.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom5.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom5.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom5.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom5.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom5.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom5.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom5.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom5.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom5.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom5.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom5.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom5.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom5.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom5.getValueAt(fila, 69)));
             Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom5.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom5.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom5.getValueAt(fila, 74)));
 
@@ -10271,125 +9958,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
-            String combo2 = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Dia1.getItemCount(); i++) {
-                if (Dia1.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    Dia1.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 15).toString();
-            for (int i = 0; i < Dia2.getItemCount(); i++) {
-                if (Dia2.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    Dia2.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 16).toString();
-            for (int i = 0; i < Dia3.getItemCount(); i++) {
-                if (Dia3.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    Dia3.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 17).toString();
-            for (int i = 0; i < Dia4.getItemCount(); i++) {
-                if (Dia4.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    Dia4.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 18).toString();
-            for (int i = 0; i < Dia5.getItemCount(); i++) {
-                if (Dia5.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    Dia5.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 19).toString();
-            for (int i = 0; i < Dia6.getItemCount(); i++) {
-                if (Dia6.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    Dia6.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 20).toString();
-            for (int i = 0; i < Dia7.getItemCount(); i++) {
-                if (Dia7.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    Dia7.setSelectedIndex(i);
-                }
-            }
-            String combo9 = model.getValueAt(fila, 21).toString();
-            for (int i = 0; i < Dia8.getItemCount(); i++) {
-                if (Dia8.getItemAt(i).equalsIgnoreCase(combo9)) {
-                    Dia8.setSelectedIndex(i);
-                }
-            }
-            String combo10 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < Dia9.getItemCount(); i++) {
-                if (Dia9.getItemAt(i).equalsIgnoreCase(combo10)) {
-                    Dia9.setSelectedIndex(i);
-                }
-            }
-            String combo11 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < Dia10.getItemCount(); i++) {
-                if (Dia10.getItemAt(i).equalsIgnoreCase(combo11)) {
-                    Dia10.setSelectedIndex(i);
-                }
-            }
-            String combo12 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < Dia11.getItemCount(); i++) {
-                if (Dia11.getItemAt(i).equalsIgnoreCase(combo12)) {
-                    Dia11.setSelectedIndex(i);
-                }
-            }
-            String combo13 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < Dia12.getItemCount(); i++) {
-                if (Dia12.getItemAt(i).equalsIgnoreCase(combo13)) {
-                    Dia12.setSelectedIndex(i);
-                }
-            }
-            String combo14 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < Dia13.getItemCount(); i++) {
-                if (Dia13.getItemAt(i).equalsIgnoreCase(combo14)) {
-                    Dia13.setSelectedIndex(i);
-                }
-            }
-            String combo15 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < Dia14.getItemCount(); i++) {
-                if (Dia14.getItemAt(i).equalsIgnoreCase(combo15)) {
-                    Dia14.setSelectedIndex(i);
-                }
-            }
-            String combo16 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < Dia15.getItemCount(); i++) {
-                if (Dia15.getItemAt(i).equalsIgnoreCase(combo16)) {
-                    Dia15.setSelectedIndex(i);
-                }
-            }
-            String combo17 = model.getValueAt(fila, 29).toString();
-            for (int i = 0; i < Dia16.getItemCount(); i++) {
-                if (Dia16.getItemAt(i).equalsIgnoreCase(combo17)) {
-                    Dia16.setSelectedIndex(i);
-                }
-            }
-
-            PDDDDSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom6.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom6.getValueAt(fila, 51)));
             Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom6.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom6.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom6.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom6.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom6.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom6.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom6.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom6.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom6.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom6.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom6.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom6.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom6.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom6.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom6.getValueAt(fila, 69)));
             Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom6.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom6.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom6.getValueAt(fila, 74)));
 
@@ -10429,6 +9999,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             Login_2 regr = new Login_2();
             regr.setVisible(true);
             this.dispose();
+        }
     }//GEN-LAST:event_CS13ActionPerformed
 
     private void FiltroSnomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina6ItemStateChanged
@@ -10657,125 +10228,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
-            String combo2 = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Dia1.getItemCount(); i++) {
-                if (Dia1.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    Dia1.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 15).toString();
-            for (int i = 0; i < Dia2.getItemCount(); i++) {
-                if (Dia2.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    Dia2.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 16).toString();
-            for (int i = 0; i < Dia3.getItemCount(); i++) {
-                if (Dia3.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    Dia3.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 17).toString();
-            for (int i = 0; i < Dia4.getItemCount(); i++) {
-                if (Dia4.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    Dia4.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 18).toString();
-            for (int i = 0; i < Dia5.getItemCount(); i++) {
-                if (Dia5.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    Dia5.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 19).toString();
-            for (int i = 0; i < Dia6.getItemCount(); i++) {
-                if (Dia6.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    Dia6.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 20).toString();
-            for (int i = 0; i < Dia7.getItemCount(); i++) {
-                if (Dia7.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    Dia7.setSelectedIndex(i);
-                }
-            }
-            String combo9 = model.getValueAt(fila, 21).toString();
-            for (int i = 0; i < Dia8.getItemCount(); i++) {
-                if (Dia8.getItemAt(i).equalsIgnoreCase(combo9)) {
-                    Dia8.setSelectedIndex(i);
-                }
-            }
-            String combo10 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < Dia9.getItemCount(); i++) {
-                if (Dia9.getItemAt(i).equalsIgnoreCase(combo10)) {
-                    Dia9.setSelectedIndex(i);
-                }
-            }
-            String combo11 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < Dia10.getItemCount(); i++) {
-                if (Dia10.getItemAt(i).equalsIgnoreCase(combo11)) {
-                    Dia10.setSelectedIndex(i);
-                }
-            }
-            String combo12 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < Dia11.getItemCount(); i++) {
-                if (Dia11.getItemAt(i).equalsIgnoreCase(combo12)) {
-                    Dia11.setSelectedIndex(i);
-                }
-            }
-            String combo13 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < Dia12.getItemCount(); i++) {
-                if (Dia12.getItemAt(i).equalsIgnoreCase(combo13)) {
-                    Dia12.setSelectedIndex(i);
-                }
-            }
-            String combo14 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < Dia13.getItemCount(); i++) {
-                if (Dia13.getItemAt(i).equalsIgnoreCase(combo14)) {
-                    Dia13.setSelectedIndex(i);
-                }
-            }
-            String combo15 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < Dia14.getItemCount(); i++) {
-                if (Dia14.getItemAt(i).equalsIgnoreCase(combo15)) {
-                    Dia14.setSelectedIndex(i);
-                }
-            }
-            String combo16 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < Dia15.getItemCount(); i++) {
-                if (Dia15.getItemAt(i).equalsIgnoreCase(combo16)) {
-                    Dia15.setSelectedIndex(i);
-                }
-            }
-            String combo17 = model.getValueAt(fila, 29).toString();
-            for (int i = 0; i < Dia16.getItemCount(); i++) {
-                if (Dia16.getItemAt(i).equalsIgnoreCase(combo17)) {
-                    Dia16.setSelectedIndex(i);
-                }
-            }
-
-            PDDDDSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom7.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom7.getValueAt(fila, 51)));
             Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom7.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom7.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom7.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom7.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom7.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom7.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom7.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom7.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom7.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom7.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom7.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom7.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom7.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom7.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom7.getValueAt(fila, 69)));
             Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom7.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom7.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom7.getValueAt(fila, 74)));
 
@@ -11044,125 +10498,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
-            String combo2 = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Dia1.getItemCount(); i++) {
-                if (Dia1.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    Dia1.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 15).toString();
-            for (int i = 0; i < Dia2.getItemCount(); i++) {
-                if (Dia2.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    Dia2.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 16).toString();
-            for (int i = 0; i < Dia3.getItemCount(); i++) {
-                if (Dia3.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    Dia3.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 17).toString();
-            for (int i = 0; i < Dia4.getItemCount(); i++) {
-                if (Dia4.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    Dia4.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 18).toString();
-            for (int i = 0; i < Dia5.getItemCount(); i++) {
-                if (Dia5.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    Dia5.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 19).toString();
-            for (int i = 0; i < Dia6.getItemCount(); i++) {
-                if (Dia6.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    Dia6.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 20).toString();
-            for (int i = 0; i < Dia7.getItemCount(); i++) {
-                if (Dia7.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    Dia7.setSelectedIndex(i);
-                }
-            }
-            String combo9 = model.getValueAt(fila, 21).toString();
-            for (int i = 0; i < Dia8.getItemCount(); i++) {
-                if (Dia8.getItemAt(i).equalsIgnoreCase(combo9)) {
-                    Dia8.setSelectedIndex(i);
-                }
-            }
-            String combo10 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < Dia9.getItemCount(); i++) {
-                if (Dia9.getItemAt(i).equalsIgnoreCase(combo10)) {
-                    Dia9.setSelectedIndex(i);
-                }
-            }
-            String combo11 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < Dia10.getItemCount(); i++) {
-                if (Dia10.getItemAt(i).equalsIgnoreCase(combo11)) {
-                    Dia10.setSelectedIndex(i);
-                }
-            }
-            String combo12 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < Dia11.getItemCount(); i++) {
-                if (Dia11.getItemAt(i).equalsIgnoreCase(combo12)) {
-                    Dia11.setSelectedIndex(i);
-                }
-            }
-            String combo13 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < Dia12.getItemCount(); i++) {
-                if (Dia12.getItemAt(i).equalsIgnoreCase(combo13)) {
-                    Dia12.setSelectedIndex(i);
-                }
-            }
-            String combo14 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < Dia13.getItemCount(); i++) {
-                if (Dia13.getItemAt(i).equalsIgnoreCase(combo14)) {
-                    Dia13.setSelectedIndex(i);
-                }
-            }
-            String combo15 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < Dia14.getItemCount(); i++) {
-                if (Dia14.getItemAt(i).equalsIgnoreCase(combo15)) {
-                    Dia14.setSelectedIndex(i);
-                }
-            }
-            String combo16 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < Dia15.getItemCount(); i++) {
-                if (Dia15.getItemAt(i).equalsIgnoreCase(combo16)) {
-                    Dia15.setSelectedIndex(i);
-                }
-            }
-            String combo17 = model.getValueAt(fila, 29).toString();
-            for (int i = 0; i < Dia16.getItemCount(); i++) {
-                if (Dia16.getItemAt(i).equalsIgnoreCase(combo17)) {
-                    Dia16.setSelectedIndex(i);
-                }
-            }
-
-            PDDDDSGS.setText(String.valueOf(Tnom8.getValueAt(fila, 41)));
-            apy.setText(String.valueOf(Tnom8.getValueAt(fila, 50)));
-            Lugar.setText(String.valueOf(Tnom8.getValueAt(fila, 51)));
             Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 52)));
-            ADD.setText(String.valueOf(Tnom8.getValueAt(fila, 53)));
-            DI.setText(String.valueOf(Tnom8.getValueAt(fila, 56)));
-            Fdb.setText(String.valueOf(Tnom8.getValueAt(fila, 57)));
-            Sancion.setText(String.valueOf(Tnom8.getValueAt(fila, 58)));
-            Chamarra.setText(String.valueOf(Tnom8.getValueAt(fila, 59)));
-            Chaleco.setText(String.valueOf(Tnom8.getValueAt(fila, 60)));
-            Fde.setText(String.valueOf(Tnom8.getValueAt(fila, 61)));
-            Grua.setText(String.valueOf(Tnom8.getValueAt(fila, 62)));
-            Pantalon.setText(String.valueOf(Tnom8.getValueAt(fila, 63)));
-            Credencial.setText(String.valueOf(Tnom8.getValueAt(fila, 64)));
-            Bp.setText(String.valueOf(Tnom8.getValueAt(fila, 65)));
-            Playera.setText(String.valueOf(Tnom8.getValueAt(fila, 66)));
-            Corbata.setText(String.valueOf(Tnom8.getValueAt(fila, 67)));
-            AdN.setText(String.valueOf(Tnom8.getValueAt(fila, 68)));
-            DVT.setText(String.valueOf(Tnom8.getValueAt(fila, 69)));
             Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 70)));
-            cda.setText(String.valueOf(Tnom8.getValueAt(fila, 71)));
-            Odtp.setText(String.valueOf(Tnom8.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom8.getValueAt(fila, 74)));
 
