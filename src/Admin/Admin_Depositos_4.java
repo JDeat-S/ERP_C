@@ -507,7 +507,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         MDepPon();
         MDepS1();
         MDepS2();
-
     }
 
     // mostrar datos de nomina
