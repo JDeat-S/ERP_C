@@ -601,30 +601,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         MTDsum7 = new javax.swing.JLabel();
         Imprimir7 = new javax.swing.JButton();
         FFDPpag7 = new javax.swing.JComboBox<>();
-        TPagos8 = new javax.swing.JScrollPane();
-        jPanel36 = new javax.swing.JPanel();
-        jScrollPane36 = new javax.swing.JScrollPane();
-        pago8 = new javax.swing.JTable();
-        LabelBEP8 = new javax.swing.JLabel();
-        busp8 = new javax.swing.JTextField();
-        CS22 = new javax.swing.JButton();
-        LabelSZP8 = new javax.swing.JLabel();
-        FiltroSZP8 = new javax.swing.JComboBox<>();
-        LabelBSP8 = new javax.swing.JLabel();
-        FiltroServP8 = new javax.swing.JComboBox<>();
-        LabelNDFP8 = new javax.swing.JLabel();
-        filtroNDFP8 = new javax.swing.JTextField();
-        LabelBQP8 = new javax.swing.JLabel();
-        FiltroQP8 = new javax.swing.JComboBox<>();
-        jLabel186 = new javax.swing.JLabel();
-        FiltrosP8 = new javax.swing.JComboBox<>();
-        BAppag8 = new javax.swing.JTextField();
-        Bampag8 = new javax.swing.JTextField();
-        botonWeb23 = new botones.BotonWeb();
-        jLabel39 = new javax.swing.JLabel();
-        MTDsum8 = new javax.swing.JLabel();
-        Imprimir8 = new javax.swing.JButton();
-        jComboBox18 = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         Nomina1 = new javax.swing.JMenuItem();
@@ -4606,196 +4582,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         PestañasPagos.addTab("Sur 2", TPagos7);
 
-        jPanel36.setBackground(new java.awt.Color(204, 255, 255));
-
-        pago8.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12"
-            }
-        ));
-        jScrollPane36.setViewportView(pago8);
-
-        LabelBEP8.setText("Buscar empleado:");
-
-        busp8.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                busp8KeyReleased(evt);
-            }
-        });
-
-        CS22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
-        CS22.setText("Cerrar sesion");
-        CS22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CS22ActionPerformed(evt);
-            }
-        });
-
-        LabelSZP8.setText("Seleccionar zona:");
-
-        FiltroSZP8.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FiltroSZP8ItemStateChanged(evt);
-            }
-        });
-
-        LabelBSP8.setText("Buscar servicio:");
-
-        FiltroServP8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
-        FiltroServP8.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FiltroServP8ItemStateChanged(evt);
-            }
-        });
-
-        LabelNDFP8.setText("# de Lista");
-
-        filtroNDFP8.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                filtroNDFP8KeyReleased(evt);
-            }
-        });
-
-        LabelBQP8.setText("Buscar quincena:");
-
-        FiltroQP8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        FiltroQP8.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FiltroQP8ItemStateChanged(evt);
-            }
-        });
-
-        jLabel186.setText("Filtrar:");
-
-        FiltrosP8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
-        FiltrosP8.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FiltrosP8ItemStateChanged(evt);
-            }
-        });
-
-        BAppag8.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                BAppag8KeyReleased(evt);
-            }
-        });
-
-        Bampag8.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Bampag8KeyReleased(evt);
-            }
-        });
-
-        botonWeb23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb23.setToolTipText("");
-        botonWeb23.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
-
-        jLabel39.setText("Monto total en fila deposito:");
-
-        MTDsum8.setText("0");
-
-        Imprimir8.setText("Imprimir tabla");
-        Imprimir8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Imprimir8ActionPerformed(evt);
-            }
-        });
-
-        jComboBox18.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
-        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
-        jPanel36.setLayout(jPanel36Layout);
-        jPanel36Layout.setHorizontalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel36Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel36Layout.createSequentialGroup()
-                        .addComponent(jLabel186)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltrosP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonWeb23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelBEP8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(busp8, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BAppag8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Bampag8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelSZP8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroSZP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelBSP8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroServP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelNDFP8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(filtroNDFP8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelBQP8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroQP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel36Layout.createSequentialGroup()
-                        .addComponent(CS22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel39)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MTDsum8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Imprimir8))
-                    .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1898, Short.MAX_VALUE))
-        );
-        jPanel36Layout.setVerticalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel36Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelBEP8)
-                    .addComponent(busp8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelSZP8)
-                    .addComponent(FiltroSZP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelBSP8)
-                    .addComponent(FiltroServP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelNDFP8)
-                    .addComponent(filtroNDFP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelBQP8)
-                    .addComponent(FiltroQP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel186)
-                    .addComponent(FiltrosP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BAppag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bampag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel39)
-                        .addComponent(MTDsum8)
-                        .addComponent(Imprimir8))
-                    .addComponent(CS22))
-                .addContainerGap(183, Short.MAX_VALUE))
-        );
-
-        TPagos8.setViewportView(jPanel36);
-
-        PestañasPagos.addTab("Santander corporativo quincenal", TPagos8);
-
         NomPagos.setViewportView(PestañasPagos);
 
         jTabbedPane1.addTab("Tablas de pagos", NomPagos);
@@ -5005,8 +4791,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     //AUTO PRES
     public void Pagopres() {
 
-        String SQL = "UPDATE `prestamosem` SET  `Semanapagadas` = ?,"
-                + " `Pagado` = ?, `Pendiente` = ? WHERE `prestamosem`.`idprestamos` = ?";
+        String SQL = "UPDATE `nominasem.prestamosem` SET  `Semanaspagadas` = ?,"
+                + " `Pagado` = ?, `Pendiente` = ? WHERE `nominasem.prestamosem`.`idprestamos` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -5029,19 +4815,19 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         String FAP = BAPNom.getText();
         String FAM = BAMNom.getText();
         String where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Por semana`, `Semanapagadas`, `Pagado`, `Pendiente` FROM `prestamosem`";
+                + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `nominasem.prestamosem`";
 
         if (!"".equals(FiltroN)) {
             where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por semana`, `Semanapagadas`, `Pagado`, `Pendiente` FROM `prestamosem`"
+                    + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `nominasem.prestamosem`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
             where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por semana`, `Semanapagadas`, `Pagado`, `Pendiente` FROM `prestamosem`"
+                    + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `nominasem.prestamosem`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
             where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por semana`, `Semanapagadas`, `Pagado`, `Pendiente` FROM `prestamosem`"
+                    + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `nominasem.prestamosem`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         }
 
@@ -5144,159 +4930,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }
 
 //mostrar datos de nomina
-    public void MDNCSQ() {
-        //Buscar empleado
-        String FiltroN = Nominab8.getText();
-        String SQL = "select * from `nominasem.corporativo santander semanal`";
-        String FAPNom = FApT8.getText();
-        String FAMNom = FAmT8.getText();
-        String FiltroSnom = FiltroSnomina8.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina8.getSelectedItem().toString();
-        String FiltroFol = FiltroNDF8.getText();
-
-        if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nominasem.detallada.corporativo santander semanal` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
-        } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `#lista` LIKE '%" + FiltroFol + "%'";
-        } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
-        } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
-        } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
-        } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `Semana` LIKE '%" + FiltroQuin + "%'";
-        }
-
-        try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            Tnom8.setModel(modelo);
-            PreparedStatement ps;
-            ResultSet rs;
-
-            ps = con.prepareStatement(SQL);
-            rs = ps.executeQuery();
-
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# lista");//1
-            modelo.addColumn("# Empleado");//2
-            modelo.addColumn("Apellido P");
-            modelo.addColumn("Apellido M");//4
-            modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");//6
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");//8
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");//10
-            modelo.addColumn("Bono");
-            modelo.addColumn("Por dia");//12
-            modelo.addColumn("Semana");
-            modelo.addColumn("Año");//14
-            modelo.addColumn("Dia 1 o 16");
-            modelo.addColumn("Dia 2 o 17");//16
-            modelo.addColumn("Dia 3 o 18");
-            modelo.addColumn("Dia 4 o 19");//18
-            modelo.addColumn("Dia 5 o 20");
-            modelo.addColumn("Dia 6 o 21");//20
-            modelo.addColumn("Dia 7 o 22");
-            modelo.addColumn("Dia 8 o 23");//22
-            modelo.addColumn("Dia 9 o 24");
-            modelo.addColumn("Dia 10 o 25");//24
-            modelo.addColumn("Dia 11 o 26");
-            modelo.addColumn("Dia 12 o 27");//26
-            modelo.addColumn("Dia 13 o 28");
-            modelo.addColumn("Dia 14 o 29");//28
-            modelo.addColumn("Dia 15 o 30");
-            modelo.addColumn("Dia 31");//30
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
-            modelo.addColumn("Dias descansados");
-            modelo.addColumn("Pago de dias descansados");//36
-            modelo.addColumn("Dias Laborados");
-            modelo.addColumn("Pago de dias laborados");//38
-            modelo.addColumn("Descansos Trabajados");
-            modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
-            modelo.addColumn("Pago de dias de DSGS");//42
-            modelo.addColumn("Faltas Justificadas");
-            modelo.addColumn("Descanso Otorgado");//44
-            modelo.addColumn("Dias festivos");
-            modelo.addColumn("Pago por dias festivos");//46
-            modelo.addColumn("Dias festivos trabajados");
-            modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
-            modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
-            modelo.addColumn("Rembolso");
-            modelo.addColumn("Adicionales");//48
-            modelo.addColumn("Faltas");
-            modelo.addColumn("Descuento por faltas");//50
-            modelo.addColumn("Desc IMSS");
-            modelo.addColumn("Faltantes de boleto");//54
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");//56
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");//58
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");//60 
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");//62
-            modelo.addColumn("Playera");
-            modelo.addColumn("Corbata");//64
-            modelo.addColumn("Adelanto de nomina");
-            modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
-            modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
-            modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//70
-
-//Anchos hasta quincena
-            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
-                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
-                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
-                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
-                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
-                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, 100,/*RETARDOS*/ 65,
-                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
-                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
-                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                Tnom8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
-            while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-        } catch (SQLException error_ND_SCQ) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Santader corp quincenal: " + error_ND_SCQ.getMessage());
-
-        }
-
-    }
 
     public void MDNFA() {
         //Buscar empleado
@@ -6605,109 +6238,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         } else {
 
         }
-        if (pago8.getRowCount() > 0) {
-            for (int i = 0; i < pago8.getRowCount(); i++) {
-                p8 = Double.parseDouble(pago8.getValueAt(i, 7).toString());
-                t8 += p8;
-            }
-            MTDsum8.setText("" + t8);
-        } else {
-
-        }
+        
     }
 
 //mostrar datos pagos nomina
-    public void MDPagosnomCSQ() {
-
-        //Nombre persona del pago
-        String FiltroN = busp8.getText();
-        String FAPpago = BAppag8.getText();
-        String FAMpago = Bampag8.getText();
-        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`";
-        String FiltroSpago = FiltroServP8.getSelectedItem().toString();
-        String FiltroQuinpago = FiltroQP8.getSelectedItem().toString();
-        String FiltrosNDF = filtroNDFP8.getText();
-
-        if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
-                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
-        } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`,  `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
-                    + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
-        } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
-                    + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
-        } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
-                    + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
-        } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
-                    + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
-        } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
-                    + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
-        }
-
-        try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            pago8.setModel(modelo);
-            PreparedStatement ps;
-            ResultSet rs;
-
-            ps = con.prepareStatement(SQL);
-            rs = ps.executeQuery();
-
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Lista");
-            modelo.addColumn("Nombre(s)");//2
-            modelo.addColumn("Apellido P");//3
-            modelo.addColumn("Apellido M");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Sueldo Quincenal");//8
-            modelo.addColumn("Deposito");
-
-//ANCHOS
-            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*SQ*/ 60, /*DEP*/ 60};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                pago8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
-            while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-        } catch (SQLException error_pagos_SCQ) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Corporativo quincenal: " + error_pagos_SCQ.getMessage());
-
-        }
-
-    }
-
     public void MDPagosnomFA() {
         //Nombre persona del pago
         String FiltroN = busp.getText();
@@ -6815,8 +6349,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         MDNPon();
         MDNS1();
         MDNS2();
-        MDPagosnomCSQ();
-        MDNCSQ();
     }
 
     public void MDPagosnomFP() {
@@ -12240,252 +11772,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Imprimir7ActionPerformed
 
-    private void busp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp8KeyReleased
-        FunMD();
-        sumaDep();
-    }//GEN-LAST:event_busp8KeyReleased
-
-    private void CS22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS22ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Login_2 regr = new Login_2();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS22ActionPerformed
-
-    private void FiltroSZP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZP8ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FiltroSZP8.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroServP8.setModel(modelServicio);
-        }
-        FunMD();
-        sumaDep();
-    }//GEN-LAST:event_FiltroSZP8ItemStateChanged
-
-    private void FiltroServP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP8ItemStateChanged
-        FunMD();
-        sumaDep();
-    }//GEN-LAST:event_FiltroServP8ItemStateChanged
-
-    private void filtroNDFP8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP8KeyReleased
-        FunMD();
-        sumaDep();
-    }//GEN-LAST:event_filtroNDFP8KeyReleased
-
-    private void FiltroQP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP8ItemStateChanged
-        FunMD();
-        sumaDep();
-    }//GEN-LAST:event_FiltroQP8ItemStateChanged
-
-    private void FiltrosP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP8ItemStateChanged
-
-        String FP = (String) FiltrosP8.getSelectedItem();
-        if (FP.equals("Selecciona filtro")) {
-            busp8.setVisible(false);
-            BAppag8.setVisible(false);
-            BAppag8.setText("");
-            Bampag8.setVisible(false);
-            Bampag8.setText("");
-            LabelBEP8.setVisible(false);
-            busp8.setText("");
-            LabelBQP8.setVisible(false);
-            FiltroQP8.setVisible(false);
-            FiltroQP8.setSelectedIndex(0);
-            FiltroServP8.setVisible(false);
-            FiltroServP8.setSelectedIndex(0);
-            LabelBSP8.setVisible(false);
-            FiltroSZP8.setVisible(false);
-            FiltroSZP8.setSelectedIndex(0);
-            LabelSZP8.setVisible(false);
-            filtroNDFP8.setVisible(false);
-            filtroNDFP8.setText("");
-            LabelNDFP8.setVisible(false);
-            FunMD();
-
-        }
-        if (FP.equals("Filtrar por Nombre(s)")) {
-            busp8.setVisible(true);
-            LabelBEP8.setVisible(true);
-            LabelBEP8.setText("Buscar por nombre:");
-            BAppag8.setVisible(false);
-            BAppag8.setText("");
-            Bampag8.setVisible(false);
-            Bampag8.setText("");
-            busp8.setText("");
-            LabelBQP8.setVisible(false);
-            FiltroQP8.setVisible(false);
-            FiltroQP8.setSelectedIndex(0);
-            FiltroServP8.setVisible(false);
-            FiltroServP8.setSelectedIndex(0);
-            LabelBSP8.setVisible(false);
-            FiltroSZP8.setVisible(false);
-            FiltroSZP8.setSelectedIndex(0);
-            LabelSZP8.setVisible(false);
-            filtroNDFP8.setVisible(false);
-            filtroNDFP8.setText("");
-            LabelNDFP8.setVisible(false);
-            FunMD();
-        }
-        if (FP.equals("Filtrar por Apellido P")) {
-            busp8.setVisible(false);
-            LabelBEP8.setVisible(true);
-            LabelBEP8.setText("Buscar por apellido P:");
-            BAppag8.setVisible(true);
-            BAppag8.setText("");
-            Bampag8.setVisible(false);
-            Bampag8.setText("");
-            busp8.setText("");
-            LabelBQP8.setVisible(false);
-            FiltroQP8.setVisible(false);
-            FiltroQP8.setSelectedIndex(0);
-            FiltroServP8.setVisible(false);
-            FiltroServP8.setSelectedIndex(0);
-            LabelBSP8.setVisible(false);
-            FiltroSZP8.setVisible(false);
-            FiltroSZP8.setSelectedIndex(0);
-            LabelSZP8.setVisible(false);
-            filtroNDFP8.setVisible(false);
-            filtroNDFP8.setText("");
-            LabelNDFP8.setVisible(false);
-            FunMD();
-        }
-        if (FP.equals("Filtrar por Apellido M")) {
-            busp8.setVisible(false);
-            LabelBEP8.setVisible(true);
-            LabelBEP8.setText("Buscar por apellido M: ");
-            BAppag8.setVisible(false);
-            BAppag8.setText("");
-            Bampag8.setVisible(true);
-            Bampag8.setText("");
-            busp8.setText("");
-            LabelBQP8.setVisible(false);
-            FiltroQP8.setVisible(false);
-            FiltroQP8.setSelectedIndex(0);
-            FiltroServP8.setVisible(false);
-            FiltroServP8.setSelectedIndex(0);
-            LabelBSP8.setVisible(false);
-            FiltroSZP8.setVisible(false);
-            FiltroSZP8.setSelectedIndex(0);
-            LabelSZP8.setVisible(false);
-            filtroNDFP8.setVisible(false);
-            filtroNDFP8.setText("");
-            LabelNDFP8.setVisible(false);
-            FunMD();
-        }
-        if (FP.equals("Filtrar por Servicio")) {
-            busp8.setVisible(false);
-            LabelBEP8.setVisible(false);
-            BAppag8.setVisible(false);
-            BAppag8.setText("");
-            Bampag8.setVisible(false);
-            Bampag8.setText("");
-            busp8.setText("");
-            LabelBQP8.setVisible(false);
-            FiltroQP8.setVisible(false);
-            FiltroQP8.setSelectedIndex(0);
-            FiltroServP8.setVisible(true);
-            FiltroServP8.setSelectedIndex(0);
-            LabelBSP8.setVisible(true);
-            FiltroSZP8.setVisible(true);
-            FiltroSZP8.setSelectedIndex(0);
-            LabelSZP8.setVisible(true);
-            filtroNDFP8.setVisible(false);
-            filtroNDFP8.setText("");
-            LabelNDFP8.setVisible(false);
-            FunMD();
-        }
-        if (FP.equals("Filtrar por quincena")) {
-            busp8.setVisible(false);
-            LabelBEP8.setVisible(false);
-            BAppag8.setVisible(false);
-            BAppag8.setText("");
-            Bampag8.setVisible(false);
-            Bampag8.setText("");
-            busp8.setText("");
-            LabelBQP8.setVisible(true);
-            FiltroQP8.setVisible(true);
-            FiltroQP8.setSelectedIndex(0);
-            FiltroServP8.setVisible(false);
-            FiltroServP8.setSelectedIndex(0);
-            LabelBSP8.setVisible(false);
-            FiltroSZP8.setVisible(false);
-            FiltroSZP8.setSelectedIndex(0);
-            LabelSZP8.setVisible(false);
-            filtroNDFP8.setVisible(false);
-            filtroNDFP8.setText("");
-            LabelNDFP8.setVisible(false);
-            FunMD();
-        }
-        if (FP.equals("Filtrar por # Lista")) {
-            busp8.setVisible(false);
-            LabelBEP8.setVisible(false);
-            BAppag8.setVisible(false);
-            BAppag8.setText("");
-            Bampag8.setVisible(false);
-            Bampag8.setText("");
-            busp8.setText("");
-            LabelBQP8.setVisible(false);
-            FiltroQP8.setVisible(false);
-            FiltroQP8.setSelectedIndex(0);
-            FiltroServP8.setVisible(false);
-            FiltroServP8.setSelectedIndex(0);
-            LabelBSP8.setVisible(false);
-            FiltroSZP8.setVisible(false);
-            FiltroSZP8.setSelectedIndex(0);
-            LabelSZP8.setVisible(false);
-            filtroNDFP8.setVisible(true);
-            filtroNDFP8.setText("");
-            LabelNDFP8.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosP8ItemStateChanged
-
-    private void BAppag8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag8KeyReleased
-        FunMD();
-        sumaDep();
-    }//GEN-LAST:event_BAppag8KeyReleased
-
-    private void Bampag8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag8KeyReleased
-        FunMD();
-        sumaDep();
-    }//GEN-LAST:event_Bampag8KeyReleased
-
-    private void Imprimir8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir8ActionPerformed
-        int FP = FiltrosP8.getSelectedIndex();
-        DecimalFormat dimp = new DecimalFormat("#.00");
-        if (FP == 0) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total: "
-                    + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
-        }
-        if (FP == 1) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Apellido P "
-                    + BAppag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
-        }
-        if (FP == 2) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Apellido M "
-                    + Bampag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
-        }
-        if (FP == 3) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Nombre(s) "
-                    + busp8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
-        }
-        if (FP == 4) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total del servicio "
-                    + FiltroServP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
-        }
-        if (FP == 5) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total de la "
-                    + FiltroQP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
-        }
-        if (FP == 6) {
-            utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro # Lista "
-                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
-        }
-    }//GEN-LAST:event_Imprimir8ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -12533,7 +11819,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField BAppag5;
     private javax.swing.JTextField BAppag6;
     private javax.swing.JTextField BAppag7;
-    private javax.swing.JTextField BAppag8;
     private javax.swing.JTextField BNameNom;
     private javax.swing.JTextField Bampag;
     private javax.swing.JTextField Bampag1;
@@ -12543,7 +11828,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Bampag5;
     private javax.swing.JTextField Bampag6;
     private javax.swing.JTextField Bampag7;
-    private javax.swing.JTextField Bampag8;
     private javax.swing.JRadioButton Bno;
     private javax.swing.JTextField Bono;
     private javax.swing.JTextField Bono1;
@@ -12564,7 +11848,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JButton CS2;
     private javax.swing.JButton CS20;
     private javax.swing.JButton CS21;
-    private javax.swing.JButton CS22;
     private javax.swing.JButton CS3;
     private javax.swing.JButton CS8;
     private javax.swing.JButton CS9;
@@ -12641,7 +11924,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroQP5;
     private javax.swing.JComboBox<String> FiltroQP6;
     private javax.swing.JComboBox<String> FiltroQP7;
-    private javax.swing.JComboBox<String> FiltroQP8;
     private javax.swing.JComboBox<String> FiltroQuincenanomina;
     private javax.swing.JComboBox<String> FiltroQuincenanomina1;
     private javax.swing.JComboBox<String> FiltroQuincenanomina2;
@@ -12658,7 +11940,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroSZP5;
     private javax.swing.JComboBox<String> FiltroSZP6;
     private javax.swing.JComboBox<String> FiltroSZP7;
-    private javax.swing.JComboBox<String> FiltroSZP8;
     private javax.swing.JComboBox<String> FiltroServP;
     private javax.swing.JComboBox<String> FiltroServP1;
     private javax.swing.JComboBox<String> FiltroServP2;
@@ -12667,7 +11948,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroServP5;
     private javax.swing.JComboBox<String> FiltroServP6;
     private javax.swing.JComboBox<String> FiltroServP7;
-    private javax.swing.JComboBox<String> FiltroServP8;
     private javax.swing.JComboBox<String> FiltroSnomina;
     private javax.swing.JComboBox<String> FiltroSnomina1;
     private javax.swing.JComboBox<String> FiltroSnomina2;
@@ -12685,7 +11965,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltrosP5;
     private javax.swing.JComboBox<String> FiltrosP6;
     private javax.swing.JComboBox<String> FiltrosP7;
-    private javax.swing.JComboBox<String> FiltrosP8;
     private javax.swing.JComboBox<String> FiltrosTD;
     private javax.swing.JComboBox<String> FiltrosTD1;
     private javax.swing.JComboBox<String> FiltrosTD2;
@@ -12708,7 +11987,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JButton Imprimir5;
     private javax.swing.JButton Imprimir6;
     private javax.swing.JButton Imprimir7;
-    private javax.swing.JButton Imprimir8;
     private javax.swing.JComboBox<String> JueT;
     private javax.swing.JButton LS;
     private javax.swing.JLabel LabelBE;
@@ -12727,7 +12005,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBEP5;
     private javax.swing.JLabel LabelBEP6;
     private javax.swing.JLabel LabelBEP7;
-    private javax.swing.JLabel LabelBEP8;
     private javax.swing.JLabel LabelBNDF;
     private javax.swing.JLabel LabelBNDF1;
     private javax.swing.JLabel LabelBNDF2;
@@ -12752,7 +12029,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBQP5;
     private javax.swing.JLabel LabelBQP6;
     private javax.swing.JLabel LabelBQP7;
-    private javax.swing.JLabel LabelBQP8;
     private javax.swing.JLabel LabelBS;
     private javax.swing.JLabel LabelBS1;
     private javax.swing.JLabel LabelBS2;
@@ -12769,7 +12045,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBSP5;
     private javax.swing.JLabel LabelBSP6;
     private javax.swing.JLabel LabelBSP7;
-    private javax.swing.JLabel LabelBSP8;
     private javax.swing.JLabel LabelNDFP;
     private javax.swing.JLabel LabelNDFP1;
     private javax.swing.JLabel LabelNDFP2;
@@ -12778,7 +12053,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelNDFP5;
     private javax.swing.JLabel LabelNDFP6;
     private javax.swing.JLabel LabelNDFP7;
-    private javax.swing.JLabel LabelNDFP8;
     private javax.swing.JLabel LabelSZ;
     private javax.swing.JLabel LabelSZ1;
     private javax.swing.JLabel LabelSZ2;
@@ -12795,7 +12069,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelSZP5;
     private javax.swing.JLabel LabelSZP6;
     private javax.swing.JLabel LabelSZP7;
-    private javax.swing.JLabel LabelSZP8;
     private javax.swing.JComboBox<String> LunT;
     private javax.swing.JLabel MTDsum;
     private javax.swing.JLabel MTDsum1;
@@ -12805,7 +12078,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel MTDsum5;
     private javax.swing.JLabel MTDsum6;
     private javax.swing.JLabel MTDsum7;
-    private javax.swing.JLabel MTDsum8;
     private javax.swing.JComboBox<String> MarT;
     private javax.swing.JMenu Menuadm;
     private javax.swing.JComboBox<String> MierT;
@@ -12857,7 +12129,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane TPagos5;
     private javax.swing.JScrollPane TPagos6;
     private javax.swing.JScrollPane TPagos7;
-    private javax.swing.JScrollPane TPagos8;
     private javax.swing.JTable Tnom;
     private javax.swing.JTable Tnom1;
     private javax.swing.JTable Tnom2;
@@ -12889,7 +12160,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private botones.BotonWeb botonWeb20;
     private botones.BotonWeb botonWeb21;
     private botones.BotonWeb botonWeb22;
-    private botones.BotonWeb botonWeb23;
     private botones.BotonWeb botonWeb9;
     private javax.swing.JTextField busp;
     private javax.swing.JTextField busp1;
@@ -12899,7 +12169,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField busp5;
     private javax.swing.JTextField busp6;
     private javax.swing.JTextField busp7;
-    private javax.swing.JTextField busp8;
     private javax.swing.JTextField cta;
     private javax.swing.JLabel deposito;
     private javax.swing.JTextField filtroNDFP;
@@ -12910,8 +12179,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField filtroNDFP5;
     private javax.swing.JTextField filtroNDFP6;
     private javax.swing.JTextField filtroNDFP7;
-    private javax.swing.JTextField filtroNDFP8;
-    private javax.swing.JComboBox<String> jComboBox18;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -12948,7 +12215,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel180;
     private javax.swing.JLabel jLabel181;
-    private javax.swing.JLabel jLabel186;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -12971,7 +12237,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
@@ -13017,7 +12282,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel35;
-    private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
@@ -13038,7 +12302,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane33;
     private javax.swing.JScrollPane jScrollPane34;
     private javax.swing.JScrollPane jScrollPane35;
-    private javax.swing.JScrollPane jScrollPane36;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -13053,7 +12316,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTable pago5;
     private javax.swing.JTable pago6;
     private javax.swing.JTable pago7;
-    private javax.swing.JTable pago8;
     private javax.swing.JTextField pd;
     private javax.swing.JTable share;
     private javax.swing.JTextField sueldo;
