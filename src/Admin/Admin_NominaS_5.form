@@ -2535,7 +2535,7 @@
                                           <Component id="FApT2" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FAmT2" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
                                           <Component id="LabelSZ2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FZservicio2" min="-2" max="-2" attributes="0"/>
@@ -2554,7 +2554,7 @@
                                       </Group>
                                       <Component id="CS9" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="7868" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7961" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
