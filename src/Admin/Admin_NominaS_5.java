@@ -5491,28 +5491,22 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         String FiltroQuinpago = FiltroQP8.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP8.getText();
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`,  `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
+            SQL = "SELECT ` FROM `nominasem.detallada.corporativo santander semanal`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem.detallada.corporativo santander semanal`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -5532,17 +5526,25 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             rs = ps.executeQuery();
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
+            
             modelo.addColumn("# Lista");
-            modelo.addColumn("Nombre(s)");//2
-            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Sueldo Semanal");//8
+            modelo.addColumn("Cuenta de banco");//6
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Año");
+            modelo.addColumn("Inicio semana");//12
+            modelo.addColumn("Termino Semana");
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Sueldo semanal");//14
             modelo.addColumn("Deposito");
-//ANCHOS
-            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*SQ*/ 60, /*DEP*/ 60};
+            modelo.addColumn("Observaciones");//6
+
+            int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
+                /*CDB*/ 65, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
+                /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 pago8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
@@ -5561,7 +5563,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
     public void AgregarPagoPres() {
 
-        String SQL = "INSERT INTO `nominasem.pagos.prestamosem` (`#Lista`, `#prestamo`, "
+        String SQL = "INSERT INTO `nomina.pagos.prestamosem` (`#Lista`, `#prestamo`, "
                 + "`#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
                 + " `Servicio`, `Semana`, `# semana`, `pagado`, `pendiente`, "
                 + "`Pago de prestamo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -6677,35 +6679,49 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp.getText();
         String FAPpago = BAppag.getText();
         String FAMpago = Bampag.getText();
-        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                + " `Cuenta de banco`, `Servicio`,"
+                + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
+                + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`";
         String FiltroSpago = FiltroServP.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                    + " `Cuenta de banco`, `Servicio`,"
+                    + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
+                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                    + " `Cuenta de banco`, `Servicio`,"
+                    + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
+                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`,  `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                    + " `Cuenta de banco`, `Servicio`,"
+                    + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
+                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                    + " `Cuenta de banco`, `Servicio`,"
+                    + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
+                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                    + " `Cuenta de banco`, `Servicio`,"
+                    + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
+                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                    + " `Cuenta de banco`, `Servicio`,"
+                    + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
+                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -6730,17 +6746,22 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Lista");
-            modelo.addColumn("Nombre(s)");//2
-            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Sueldo Semanal");//8
+            modelo.addColumn("Cuenta de banco");//6
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Año");
+            modelo.addColumn("Inicio semana");//12
+            modelo.addColumn("Termino Semana");
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Sueldo semanal");//14
             modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//6
 
-//ANCHOS
-            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*SQ*/ 60, /*DEP*/ 60};
+            int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
+                /*CDB*/ 65, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
+                /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -6788,35 +6809,28 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp1.getText();
         String FAPpago = BAppag1.getText();
         String FAMpago = Bampag1.getText();
-        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos puebla`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`";
         String FiltroSpago = FiltroServP1.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP1.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP1.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`,`Sueldo`, `Deposito`, FROM `nominasem.detallada.foraneos puebla`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos puebla`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos puebla`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos puebla`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos puebla`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos puebla`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -6841,17 +6855,22 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Lista");
-            modelo.addColumn("Nombre(s)");//2
-            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Sueldo Semanal");//8
+            modelo.addColumn("Cuenta de banco");//6
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Año");
+            modelo.addColumn("Inicio semana");//12
+            modelo.addColumn("Termino Semana");
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Sueldo semanal");//14
             modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//6
 
-//ANCHOS
-            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*SQ*/ 60, /*DEP*/ 60};
+            int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
+                /*CDB*/ 65, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
+                /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -6878,35 +6897,28 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp2.getText();
         String FAPpago = BAppag2.getText();
         String FAMpago = Bampag2.getText();
-        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`";
         String FiltroSpago = FiltroServP2.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP2.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP2.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -6930,23 +6942,22 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Lista");
-            modelo.addColumn("Nombre(s)");//2
-            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Zona");//6
+            modelo.addColumn("Cuenta de banco");//6
             modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo Semanal");//8
-            modelo.addColumn("Bono");
+            modelo.addColumn("Año");
+            modelo.addColumn("Inicio semana");//12
+            modelo.addColumn("Termino Semana");
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Sueldo semanal");//14
             modelo.addColumn("Deposito");
-            modelo.addColumn("Semana");//11
-            modelo.addColumn("Año");//12
+            modelo.addColumn("Observaciones");//6
 
-//ANCHOS
-            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
-                /*AÑO*/ 40};
+            int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
+                /*CDB*/ 65, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
+                /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -6980,28 +6991,22 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         String FiltrosNDF = filtroNDFP3.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -7026,17 +7031,22 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Lista");
-            modelo.addColumn("Nombre(s)");//2
-            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Sueldo Semanal");//8
+            modelo.addColumn("Cuenta de banco");//6
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Año");
+            modelo.addColumn("Inicio semana");//12
+            modelo.addColumn("Termino Semana");
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Sueldo semanal");//14
             modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//6
 
-//ANCHOS
-            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*SQ*/ 60, /*DEP*/ 60};
+            int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
+                /*CDB*/ 65, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
+                /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -7063,35 +7073,28 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp4.getText();
         String FAPpago = BAppag4.getText();
         String FAMpago = Bampag4.getText();
-        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`";
         String FiltroSpago = FiltroServP4.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP4.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP4.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -7116,17 +7119,22 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Lista");
-            modelo.addColumn("Nombre(s)");//2
-            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Sueldo Semanal");//8
+            modelo.addColumn("Cuenta de banco");//6
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Año");
+            modelo.addColumn("Inicio semana");//12
+            modelo.addColumn("Termino Semana");
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Sueldo semanal");//14
             modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//6
 
-//ANCHOS
-            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*SQ*/ 60, /*DEP*/ 60};
+            int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
+                /*CDB*/ 65, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
+                /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -7153,35 +7161,28 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp5.getText();
         String FAPpago = BAppag5.getText();
         String FAMpago = Bampag5.getText();
-        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`";
         String FiltroSpago = FiltroServP5.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP5.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP5.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -7206,17 +7207,22 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Lista");
-            modelo.addColumn("Nombre(s)");//2
-            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Sueldo Semanal");//8
+            modelo.addColumn("Cuenta de banco");//6
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Año");
+            modelo.addColumn("Inicio semana");//12
+            modelo.addColumn("Termino Semana");
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Sueldo semanal");//14
             modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//6
 
-//ANCHOS
-            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60};
+            int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
+                /*CDB*/ 65, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
+                /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -7243,35 +7249,28 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp6.getText();
         String FAPpago = BAppag6.getText();
         String FAMpago = Bampag6.getText();
-        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`";
         String FiltroSpago = FiltroServP6.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP6.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP6.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -7296,17 +7295,22 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Lista");
-            modelo.addColumn("Nombre(s)");//2
-            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Sueldo Semanal");//8
+            modelo.addColumn("Cuenta de banco");//6
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Año");
+            modelo.addColumn("Inicio semana");//12
+            modelo.addColumn("Termino Semana");
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Sueldo semanal");//14
             modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//6
 
-//ANCHOS
-            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*SQ*/ 60, /*DEP*/ 60};
+            int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
+                /*CDB*/ 65, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
+                /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -7333,35 +7337,28 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp7.getText();
         String FAPpago = BAppag7.getText();
         String FAMpago = Bampag7.getText();
-        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`";
         String FiltroSpago = FiltroServP7.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP7.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP7.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
-                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`,`Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -7386,17 +7383,22 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Lista");
-            modelo.addColumn("Nombre(s)");//2
-            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");//5
-            modelo.addColumn("Sueldo Semanal");//8
+            modelo.addColumn("Cuenta de banco");//6
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Año");
+            modelo.addColumn("Inicio semana");//12
+            modelo.addColumn("Termino Semana");
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Sueldo semanal");//14
             modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//6
 
-//ANCHOS
-            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
-                /*SQ*/ 60, /*DEP*/ 60};
+            int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
+                /*CDB*/ 65, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
+                /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
