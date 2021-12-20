@@ -1159,7 +1159,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String ShareAP = BAPNom.getText();
         String ShareAM = BAMNom.getText();
         String where = "select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`"
-                + " from empleados  where `Status` LIKE '%Vigente%'";
+                + " from empleados where `Status` LIKE '%Vigente%'";
 
         if (!"".equals(Share)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
@@ -1247,7 +1247,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }
 
 //mostrar datos pagos nomina
-
     public void MDPagosnomFA() {
         //Nombre persona del pago
         String FiltroN = busp.getText();
@@ -2157,7 +2156,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }
 
     // mostrar datos de nomina
-
     public void MDNFA() {
         //Buscar empleado
         String FiltroN = Nominab.getText();
@@ -3491,6 +3489,38 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina en agregada");
+
+            //operacion para pago de Pres
+            double QPREP = Double.parseDouble(this.NQprenom.getText());
+            double QPREPT = QPREP + 1;
+            NQprenom.setText("" + QPREPT);
+            double PPN = Double.parseDouble(this.Pagadoprenom.getText());
+            double PENPN = Double.parseDouble(this.Pendienteprenom.getText());
+            double PP = Double.parseDouble(this.Presp.getText());
+            double TP = PPN + PP;
+            Pagadoprenom.setText("" + TP);
+            double TPEN = PENPN - PP;
+            Pendienteprenom.setText("" + TPEN);
+
+            //Operacion para pago ODT
+            double QODTP = Double.parseDouble(this.NQODTnom.getText());
+            double QODTPT = QODTP + 1;
+            NQODTnom.setText("" + QODTPT);
+            double PODTN = Double.parseDouble(this.PagODTnom.getText());
+            double ODTPN = Double.parseDouble(this.PenODTnom.getText());
+            double ODTP = Double.parseDouble(this.Odtp.getText());
+            double TODT = PODTN + ODTP;
+            PagODTnom.setText("" + TODT);
+            double TODTT = ODTPN - ODTP;
+            PenODTnom.setText("" + TODTT);
+
+            //operacion para agregar abono CDA
+            double APQna = Double.parseDouble(this.cda.getText());
+            double QA = Double.parseDouble(this.QAcdanom.getText());
+            double QAT = QA + 1;
+            QAcdanom.setText("" + QAT);
+            double totalahorrado = APQna * (QAT);
+            TACDANOM.setText("" + totalahorrado);
             AgregarPagoODT();
             editarCDAdnom();
             AgregarPagoCDA();
@@ -4012,7 +4042,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         FApT = new javax.swing.JTextField();
         FAmT = new javax.swing.JTextField();
         botonWeb1 = new botones.BotonWeb();
-        FFDP = new javax.swing.JComboBox<>();
         TDFA1 = new javax.swing.JScrollPane();
         jPanel22 = new javax.swing.JPanel();
         jScrollPane21 = new javax.swing.JScrollPane();
@@ -4034,7 +4063,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         FApT1 = new javax.swing.JTextField();
         FAmT1 = new javax.swing.JTextField();
         botonWeb9 = new botones.BotonWeb();
-        FFDP1 = new javax.swing.JComboBox<>();
         TDFA2 = new javax.swing.JScrollPane();
         jPanel23 = new javax.swing.JPanel();
         jScrollPane22 = new javax.swing.JScrollPane();
@@ -4056,7 +4084,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         FApT2 = new javax.swing.JTextField();
         FAmT2 = new javax.swing.JTextField();
         botonWeb10 = new botones.BotonWeb();
-        FFDP2 = new javax.swing.JComboBox<>();
         TDFA3 = new javax.swing.JScrollPane();
         jPanel24 = new javax.swing.JPanel();
         k = new javax.swing.JScrollPane();
@@ -4122,7 +4149,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         FApT5 = new javax.swing.JTextField();
         FAmT5 = new javax.swing.JTextField();
         botonWeb13 = new botones.BotonWeb();
-        FFDP5 = new javax.swing.JComboBox<>();
         TDFA6 = new javax.swing.JScrollPane();
         jPanel27 = new javax.swing.JPanel();
         jScrollPane26 = new javax.swing.JScrollPane();
@@ -4144,7 +4170,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         FApT6 = new javax.swing.JTextField();
         FAmT6 = new javax.swing.JTextField();
         botonWeb14 = new botones.BotonWeb();
-        FFDP6 = new javax.swing.JComboBox<>();
         TDFA7 = new javax.swing.JScrollPane();
         jPanel28 = new javax.swing.JPanel();
         jScrollPane27 = new javax.swing.JScrollPane();
@@ -4166,7 +4191,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         FApT7 = new javax.swing.JTextField();
         FAmT7 = new javax.swing.JTextField();
         botonWeb15 = new botones.BotonWeb();
-        FFDP7 = new javax.swing.JComboBox<>();
         NomPagos = new javax.swing.JScrollPane();
         PestañasPagos = new javax.swing.JTabbedPane();
         TPagos = new javax.swing.JScrollPane();
@@ -6356,7 +6380,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         jLabel65.setText("Filtros:");
 
-        FiltrosTD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosTD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTDItemStateChanged(evt);
@@ -6386,8 +6410,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
-        FFDP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -6412,8 +6434,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FZservicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6430,7 +6450,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS2))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(7961, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane3))
@@ -6455,8 +6475,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -6540,7 +6559,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         jLabel169.setText("Filtros:");
 
-        FiltrosTD1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosTD1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD1ItemStateChanged(evt);
@@ -6570,8 +6589,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         botonWeb9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
-        FFDP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
@@ -6596,8 +6613,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FZservicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6614,7 +6629,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS8))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(7961, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane21))
@@ -6639,8 +6654,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -6724,7 +6738,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         jLabel170.setText("Filtros:");
 
-        FiltrosTD2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosTD2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD2ItemStateChanged(evt);
@@ -6754,8 +6768,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         botonWeb10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
-        FFDP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
@@ -6779,9 +6791,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addComponent(FApT2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(99, 99, 99)
                         .addComponent(LabelSZ2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FZservicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6798,7 +6808,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS9))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(7868, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane22))
@@ -6823,8 +6833,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -6908,7 +6917,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         jLabel171.setText("Filtros:");
 
-        FiltrosTD3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosTD3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD3ItemStateChanged(evt);
@@ -6982,7 +6991,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS10))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(7868, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(k))
@@ -7092,7 +7101,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         jLabel172.setText("Filtros:");
 
-        FiltrosTD4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosTD4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD4ItemStateChanged(evt);
@@ -7166,7 +7175,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS11))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(7868, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane24))
@@ -7276,7 +7285,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         jLabel173.setText("Filtros:");
 
-        FiltrosTD5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosTD5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD5.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD5ItemStateChanged(evt);
@@ -7306,8 +7315,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         botonWeb13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb13.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
-        FFDP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
         jPanel26Layout.setHorizontalGroup(
@@ -7332,8 +7339,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FZservicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7350,7 +7355,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS12))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(7961, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane25))
@@ -7375,8 +7380,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -7460,7 +7464,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         jLabel174.setText("Filtros:");
 
-        FiltrosTD6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosTD6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD6.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD6ItemStateChanged(evt);
@@ -7490,8 +7494,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         botonWeb14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb14.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
-        FFDP6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
@@ -7516,8 +7518,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FZservicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7534,7 +7534,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS13))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(7961, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel27Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane26))
@@ -7559,8 +7559,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -7644,7 +7643,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         jLabel175.setText("Filtros:");
 
-        FiltrosTD7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosTD7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD7.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD7ItemStateChanged(evt);
@@ -7674,8 +7673,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         botonWeb15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb15.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
-        FFDP7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
         jPanel28Layout.setHorizontalGroup(
@@ -7700,8 +7697,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FAmT7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZ7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FZservicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7718,7 +7713,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltroNDF7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS14))
-                .addContainerGap(7840, Short.MAX_VALUE))
+                .addContainerGap(7961, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel28Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane27))
@@ -7743,8 +7738,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltroNDF7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -9469,38 +9463,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ModmActionPerformed
 
     private void AgregarNPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarNPActionPerformed
-
-//operacion para pago de Pres
-        double QPREP = Double.parseDouble(this.NQprenom.getText());
-        double QPREPT = QPREP + 1;
-        NQprenom.setText("" + QPREPT);
-        double PPN = Double.parseDouble(this.Pagadoprenom.getText());
-        double PENPN = Double.parseDouble(this.Pendienteprenom.getText());
-        double PP = Double.parseDouble(this.Presp.getText());
-        double TP = PPN + PP;
-        Pagadoprenom.setText("" + TP);
-        double TPEN = PENPN - PP;
-        Pendienteprenom.setText("" + TPEN);
-
-        //Operacion para pago ODT
-        double QODTP = Double.parseDouble(this.NQODTnom.getText());
-        double QODTPT = QODTP + 1;
-        NQODTnom.setText("" + QODTPT);
-        double PODTN = Double.parseDouble(this.PagODTnom.getText());
-        double ODTPN = Double.parseDouble(this.PenODTnom.getText());
-        double ODTP = Double.parseDouble(this.Odtp.getText());
-        double TODT = PODTN + ODTP;
-        PagODTnom.setText("" + TODT);
-        double TODTT = ODTPN - ODTP;
-        PenODTnom.setText("" + TODTT);
-
-//operacion para agregar abono CDA
-        double APQna = Double.parseDouble(this.cda.getText());
-        double QA = Double.parseDouble(this.QAcdanom.getText());
-        double QAT = QA + 1;
-        QAcdanom.setText("" + QAT);
-        double totalahorrado = APQna * (QAT);
-        TACDANOM.setText("" + totalahorrado);
 
         AgregarN();
 
@@ -20537,7 +20499,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Imprimir3ActionPerformed
 
     private void Imprimir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir4ActionPerformed
-        
+
         int FP = FiltrosP4.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
@@ -20637,7 +20599,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Imprimir6ActionPerformed
 
     private void Imprimir7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir7ActionPerformed
-       int FP = FiltrosP7.getSelectedIndex();
+        int FP = FiltrosP7.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total: "
@@ -22933,14 +22895,8 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FApT5;
     private javax.swing.JTextField FApT6;
     private javax.swing.JTextField FApT7;
-    private javax.swing.JComboBox<String> FFDP;
-    private javax.swing.JComboBox<String> FFDP1;
-    private javax.swing.JComboBox<String> FFDP2;
     private javax.swing.JComboBox<String> FFDP3;
     private javax.swing.JComboBox<String> FFDP4;
-    private javax.swing.JComboBox<String> FFDP5;
-    private javax.swing.JComboBox<String> FFDP6;
-    private javax.swing.JComboBox<String> FFDP7;
     private javax.swing.JComboBox<String> FFDPpag1;
     private javax.swing.JComboBox<String> FFDPpag2;
     private javax.swing.JComboBox<String> FFDPpag3;

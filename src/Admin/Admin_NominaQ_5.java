@@ -431,8 +431,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
 
     public void sumaDep() {
-        double t = 0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t5 = 0, t6 = 0, t7 = 0, t8 = 0;
-        double p, p1, p2, p3, p4, p5, p6, p7, p8;
+        double t = 0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t5 = 0, t6 = 0, t7 = 0;
+        double p, p1, p2, p3, p4, p5, p6, p7;
         if (pago.getRowCount() > 0) {
             for (int i = 0; i < pago.getRowCount(); i++) {
                 p = Double.parseDouble(pago.getValueAt(i, 7).toString());
@@ -3488,6 +3488,38 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina en agregada");
+            
+//operacion para pago de Pres
+            double QPREP = Double.parseDouble(this.NQprenom.getText());
+            double QPREPT = QPREP + 1;
+            NQprenom.setText("" + QPREPT);
+            double PPN = Double.parseDouble(this.Pagadoprenom.getText());
+            double PENPN = Double.parseDouble(this.Pendienteprenom.getText());
+            double PP = Double.parseDouble(this.Presp.getText());
+            double TP = PPN + PP;
+            Pagadoprenom.setText("" + TP);
+            double TPEN = PENPN - PP;
+            Pendienteprenom.setText("" + TPEN);
+
+            //Operacion para pago ODT
+            double QODTP = Double.parseDouble(this.NQODTnom.getText());
+            double QODTPT = QODTP + 1;
+            NQODTnom.setText("" + QODTPT);
+            double PODTN = Double.parseDouble(this.PagODTnom.getText());
+            double ODTPN = Double.parseDouble(this.PenODTnom.getText());
+            double ODTP = Double.parseDouble(this.Odtp.getText());
+            double TODT = PODTN + ODTP;
+            PagODTnom.setText("" + TODT);
+            double TODTT = ODTPN - ODTP;
+            PenODTnom.setText("" + TODTT);
+
+//operacion para agregar abono CDA
+            double APQna = Double.parseDouble(this.cda.getText());
+            double QA = Double.parseDouble(this.QAcdanom.getText());
+            double QAT = QA + 1;
+            QAcdanom.setText("" + QAT);
+            double totalahorrado = APQna * (QAT);
+            TACDANOM.setText("" + totalahorrado);
             AgregarPagoODT();
             editarCDAdnom();
             AgregarPagoCDA();
@@ -6447,7 +6479,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(CS2)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         TDFA.setViewportView(jPanel2);
@@ -6626,7 +6658,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(CS8)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         TDFA1.setViewportView(jPanel22);
@@ -6805,7 +6837,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(CS9)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         TDFA2.setViewportView(jPanel23);
@@ -6984,7 +7016,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 .addComponent(k, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(CS10)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         TDFA3.setViewportView(jPanel24);
@@ -7163,7 +7195,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(CS11)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         TDFA4.setViewportView(jPanel25);
@@ -7342,7 +7374,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(CS12)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         TDFA5.setViewportView(jPanel26);
@@ -7521,7 +7553,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(CS13)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         TDFA6.setViewportView(jPanel27);
@@ -7700,7 +7732,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(CS14)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         TDFA7.setViewportView(jPanel28);
@@ -9434,39 +9466,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     private void AgregarNPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarNPActionPerformed
 
-//operacion para pago de Pres
-        double QPREP = Double.parseDouble(this.NQprenom.getText());
-        double QPREPT = QPREP + 1;
-        NQprenom.setText("" + QPREPT);
-        double PPN = Double.parseDouble(this.Pagadoprenom.getText());
-        double PENPN = Double.parseDouble(this.Pendienteprenom.getText());
-        double PP = Double.parseDouble(this.Presp.getText());
-        double TP = PPN + PP;
-        Pagadoprenom.setText("" + TP);
-        double TPEN = PENPN - PP;
-        Pendienteprenom.setText("" + TPEN);
-
-        //Operacion para pago ODT
-        double QODTP = Double.parseDouble(this.NQODTnom.getText());
-        double QODTPT = QODTP + 1;
-        NQODTnom.setText("" + QODTPT);
-        double PODTN = Double.parseDouble(this.PagODTnom.getText());
-        double ODTPN = Double.parseDouble(this.PenODTnom.getText());
-        double ODTP = Double.parseDouble(this.Odtp.getText());
-        double TODT = PODTN + ODTP;
-        PagODTnom.setText("" + TODT);
-        double TODTT = ODTPN - ODTP;
-        PenODTnom.setText("" + TODTT);
-
-//operacion para agregar abono CDA
-        double APQna = Double.parseDouble(this.cda.getText());
-        double QA = Double.parseDouble(this.QAcdanom.getText());
-        double QAT = QA + 1;
-        QAcdanom.setText("" + QAT);
-        double totalahorrado = APQna * (QAT);
-        TACDANOM.setText("" + totalahorrado);
-
         AgregarN();
+        FunMD();
 
     }//GEN-LAST:event_AgregarNPActionPerformed
 
@@ -19914,31 +19915,31 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             Funimprimir(pago7, getTitle() + " Sur 2", "Monto total: "
-                + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 1) {
             Funimprimir(pago7, getTitle() + " Sur 2", "Monto total con filtro Apellido P "
-                + BAppag7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + BAppag7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 2) {
             Funimprimir(pago7, getTitle() + " Sur 2", "Monto total con filtro Apellido M "
-                + Bampag7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + Bampag7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 3) {
             Funimprimir(pago7, getTitle() + " Sur 2", "Monto total con filtro Nombre(s) "
-                + busp7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + busp7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 4) {
             Funimprimir(pago7, getTitle() + " Sur 2", "Monto total del servicio "
-                + FiltroServP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + FiltroServP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 5) {
             Funimprimir(pago7, getTitle() + " Sur 2", "Monto total de la "
-                + FiltroQP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + FiltroQP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 6) {
             Funimprimir(pago7, getTitle() + " Sur 2", "Monto total con filtro # Lista "
-                + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
     }//GEN-LAST:event_Imprimir7ActionPerformed
 
@@ -20160,31 +20161,31 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             Funimprimir(pago6, getTitle() + " Sur 1", "Monto total: "
-                + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 1) {
             Funimprimir(pago6, getTitle() + " Sur 1", "Monto total con filtro Apellido P "
-                + BAppag6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + BAppag6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 2) {
             Funimprimir(pago6, getTitle() + " Sur 1", "Monto total con filtro Apellido M "
-                + Bampag6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + Bampag6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 3) {
             Funimprimir(pago6, getTitle() + " Sur 1", "Monto total con filtro Nombre(s) "
-                + busp6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + busp6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 4) {
             Funimprimir(pago6, getTitle() + " Sur 1", "Monto total del servicio "
-                + FiltroServP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + FiltroServP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 5) {
             Funimprimir(pago6, getTitle() + " Sur 1", "Monto total de la "
-                + FiltroQP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + FiltroQP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 6) {
             Funimprimir(pago6, getTitle() + " Sur 1", "Monto total con filtro # Lista "
-                + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
     }//GEN-LAST:event_Imprimir6ActionPerformed
 
@@ -20406,31 +20407,31 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             Funimprimir(pago5, getTitle() + " Oficina", "Monto total: "
-                + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 1) {
             Funimprimir(pago5, getTitle() + " Oficina", "Monto total con filtro Apellido P "
-                + BAppag5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + BAppag5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 2) {
             Funimprimir(pago5, getTitle() + " Oficina", "Monto total con filtro Apellido M "
-                + Bampag5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + Bampag5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 3) {
             Funimprimir(pago5, getTitle() + " Oficina", "Monto total con filtro Nombre(s) "
-                + busp5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + busp5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 4) {
             Funimprimir(pago5, getTitle() + " Oficina", "Monto total del servicio "
-                + FiltroServP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + FiltroServP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 5) {
             Funimprimir(pago5, getTitle() + " Oficina", "Monto total de la "
-                + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 6) {
             Funimprimir(pago5, getTitle() + " Oficina", "Monto total con filtro # Lista "
-                + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
     }//GEN-LAST:event_Imprimir5ActionPerformed
 

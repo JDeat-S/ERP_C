@@ -1210,17 +1210,17 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         String ShareAP = BAPNom.getText();
         String ShareAM = BAMNom.getText();
         String where = "select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`"
-                + " from empleados  where `Status` LIKE '%Vigente%'";
+                + " from empleados";//  where `Status` LIKE '%Vigente%'";
 
         if (!"".equals(Share)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
+                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' ";//AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
+                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%'";// AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
+                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%'";// AND `Status` LIKE '%Vigente%'";
         }
 
         try {
