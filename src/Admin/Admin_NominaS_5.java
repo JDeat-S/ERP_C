@@ -6693,6 +6693,92 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
     }
 
+    public void sumaDep() {
+        double t = 0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t5 = 0, t6 = 0, t7 = 0, t8 = 0;
+        double p, p1, p2, p3, p4, p5, p6, p7, p8;
+        if (pago.getRowCount() > 0) {
+            for (int i = 0; i < pago.getRowCount(); i++) {
+                p = Double.parseDouble(pago.getValueAt(i, 7).toString());
+                t += p;
+            }
+            MTDsum.setText("" + t);
+        } else {
+
+        }
+        if (pago1.getRowCount() > 0) {
+            for (int i = 0; i < pago1.getRowCount(); i++) {
+                p1 = Double.parseDouble(pago1.getValueAt(i, 7).toString());
+                t1 += p1;
+            }
+            MTDsum1.setText("" + t1);
+        } else {
+
+        }
+        if (pago2.getRowCount() > 0) {
+            for (int i = 0; i < pago2.getRowCount(); i++) {
+                p2 = Double.parseDouble(pago2.getValueAt(i, 7).toString());
+                t2 += p2;
+            }
+            MTDsum2.setText("" + t2);
+        } else {
+
+        }
+        if (pago3.getRowCount() > 0) {
+            for (int i = 0; i < pago3.getRowCount(); i++) {
+                p3 = Double.parseDouble(pago3.getValueAt(i, 7).toString());
+                t3 += p3;
+            }
+            MTDsum3.setText("" + t3);
+        } else {
+
+        }
+        if (pago4.getRowCount() > 0) {
+            for (int i = 0; i < pago4.getRowCount(); i++) {
+                p4 = Double.parseDouble(pago4.getValueAt(i, 7).toString());
+                t4 += p4;
+            }
+            MTDsum4.setText("" + t4);
+        } else {
+
+        }
+        if (pago5.getRowCount() > 0) {
+            for (int i = 0; i < pago5.getRowCount(); i++) {
+                p5 = Double.parseDouble(pago5.getValueAt(i, 7).toString());
+                t5 += p5;
+            }
+            MTDsum5.setText("" + t5);
+        } else {
+
+        }
+        if (pago6.getRowCount() > 0) {
+            for (int i = 0; i < pago6.getRowCount(); i++) {
+                p6 = Double.parseDouble(pago6.getValueAt(i, 7).toString());
+                t6 += p6;
+            }
+            MTDsum6.setText("" + t6);
+        } else {
+
+        }
+        if (pago7.getRowCount() > 0) {
+            for (int i = 0; i < pago7.getRowCount(); i++) {
+                p7 = Double.parseDouble(pago7.getValueAt(i, 7).toString());
+                t7 += p7;
+            }
+            MTDsum7.setText("" + t7);
+        } else {
+
+        }
+        if (pago8.getRowCount() > 0) {
+            for (int i = 0; i < pago8.getRowCount(); i++) {
+                p8 = Double.parseDouble(pago8.getValueAt(i, 7).toString());
+                t8 += p8;
+            }
+            MTDsum8.setText("" + t8);
+        } else {
+
+        }
+    }
+
 //mostrar datos pagos nomina
     public void MDPagosnomCSQ() {
 
