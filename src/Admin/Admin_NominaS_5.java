@@ -90,9 +90,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         BAppag.setVisible(false);
         Bampag.setVisible(false);
         shareN();
-        mostrardatos();
-        pagos();
         sharepresnom();
+        FunMD();
         setIconImage(new ImageIcon(Admin_NominaS_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
@@ -5308,10 +5307,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }
 
 //mostrar datos de nomina
-      public void MDNCSQ() {
+    public void MDNCSQ() {
         //Buscar empleado
         String FiltroN = Nominab8.getText();
-        String SQL = "select * from `nominasem.corporativo santander quincenal`";
+        String SQL = "select * from `nominasem.corporativo santander semanal`";
         String FAPNom = FApT8.getText();
         String FAMNom = FAmT8.getText();
         String FiltroSnom = FiltroSnomina8.getSelectedItem().toString();
@@ -5319,17 +5318,17 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF8.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nominasem.detallada.corporativo santander quincenal` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select * from `nominasem.detallada.corporativo santander semanal` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander quincenal` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander quincenal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander quincenal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander quincenal` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander quincenal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -6694,46 +6693,133 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
     }
 
-    public void pagos() {
-//Nombre persona del pago
+//mostrar datos pagos nomina
+    public void MDPagosnomCSQ() {
+
+        //Nombre persona del pago
+        String FiltroN = busp8.getText();
+        String FAPpago = BAppag8.getText();
+        String FAMpago = Bampag8.getText();
+        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`";
+        String FiltroSpago = FiltroServP8.getSelectedItem().toString();
+        String FiltroQuinpago = FiltroQP8.getSelectedItem().toString();
+        String FiltrosNDF = filtroNDFP8.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAPpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`,  `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
+                    + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
+        } else if (!"".equals(FAMpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
+                    + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
+        } else if (!"".equals(FiltrosNDF)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
+                    + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
+        } else if (!"".equals(FiltroSpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
+                    + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
+        } else if (!"".equals(FiltroQuinpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.corporativo santander semanal`"
+                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            pago8.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");//5
+            modelo.addColumn("Sueldo Quincenal");//8
+            modelo.addColumn("Deposito");
+
+//ANCHOS
+            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
+                /*SQ*/ 60, /*DEP*/ 60};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                pago8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_pagos_SCQ) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Corporativo quincenal: " + error_pagos_SCQ.getMessage());
+
+        }
+
+    }
+
+    public void MDPagosnomFA() {
+        //Nombre persona del pago
         String FiltroN = busp.getText();
         String FAPpago = BAppag.getText();
         String FAMpago = Bampag.getText();
-        String where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + " `Cuenta de banco`, `Servicio`,"
-                + " `año`, `Semana`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
-                + " `Deposito`, `Observaciones`  FROM `nominasem`";
+        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`";
         String FiltroSpago = FiltroServP.getSelectedItem().toString();
+        String FiltroQuinpago = FiltroQP.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP.getText();
 
         if (!"".equals(FiltroN)) {
-            where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                    + " `Cuenta de banco`, `Servicio`,"
-                    + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
-                    + " `Deposito`, `Observaciones`  FROM `nominasem` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
-                    + " `Cuenta de banco`,  `Servicio`, `Semana`, `año`,"
-                    + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` "
-                    + " FROM `nominasem` Where `Apellido P` LIKE '%" + FAPpago + "%'";
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`"
+                    + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                    + "`Cuenta de banco`, `Servicio`, "
-                    + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, "
-                    + "`Deposito`, `Observaciones`  FROM `nominasem` Where "
-                    + "`Apellido M` LIKE '%" + FAMpago + "%'";
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`,  `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`"
+                    + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                    + " `Cuenta de banco`, `Servicio`,"
-                    + " `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`,"
-                    + " `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem`"
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            where = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                    + "  `Cuenta de banco`, `Servicio`,"
-                    + "  `Semana`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`,"
-                    + " `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem`"
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
+        } else if (!"".equals(FiltroQuinpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos acapulco`"
+                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
 
         try {
@@ -6750,30 +6836,24 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             PreparedStatement ps;
             ResultSet rs;
 
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Lista");
-            modelo.addColumn("Nombre(s)");//4
-            modelo.addColumn("Apellido P");//2
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
-            modelo.addColumn("Cuenta de banco");//6
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Año");
-            modelo.addColumn("Semana pagada");//10
-            modelo.addColumn("Inicio semana");//12
-            modelo.addColumn("Termino Semana");
-            modelo.addColumn("Fecha de pago");
-            modelo.addColumn("Sueldo semanal");//14
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");//5
+            modelo.addColumn("Sueldo Quincenal");//8
             modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//6
 
-            int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
-                /*CDB*/ 65, /*serv*/ 80, /*año*/ 30,/*Sem*/ 80, /*FS*/ 40,
-                /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
+//ANCHOS
+            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
+                /*SQ*/ 60, /*DEP*/ 60};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -6788,8 +6868,664 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos: " + e.getMessage());
+        } catch (SQLException error_pagos_FA) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos acapulco: " + error_pagos_FA.getMessage());
+
+        }
+
+    }
+
+    public void FunMD() {
+        MDPagosnomFA();
+        MDPagosnomFP();
+        MDPagosnomFT();
+        MDPagosnomOfi();
+        MDPagosnomS1();
+        MDPagosnomPon();
+        MDPagosnomS2();
+        MDPagosnomNor();
+        MDNFA();
+        MDNFP();
+        MDNFT();
+        MDNNor();
+        MDNOfi();
+        MDNPon();
+        MDNS1();
+        MDNS2();
+        MDPagosnomCSQ();
+        MDNCSQ();
+    }
+
+    public void MDPagosnomFP() {
+        //Nombre persona del pago
+        String FiltroN = busp1.getText();
+        String FAPpago = BAppag1.getText();
+        String FAMpago = Bampag1.getText();
+        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos puebla`";
+        String FiltroSpago = FiltroServP1.getSelectedItem().toString();
+        String FiltroQuinpago = FiltroQP1.getSelectedItem().toString();
+        String FiltrosNDF = filtroNDFP1.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`,`Sueldo`, `Deposito`, FROM `nominasem.detallada.foraneos puebla`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAPpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos puebla`"
+                    + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
+        } else if (!"".equals(FAMpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos puebla`"
+                    + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
+        } else if (!"".equals(FiltrosNDF)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos puebla`"
+                    + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
+        } else if (!"".equals(FiltroSpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos puebla`"
+                    + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
+        } else if (!"".equals(FiltroQuinpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos puebla`"
+                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            pago1.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");//5
+            modelo.addColumn("Sueldo Quincenal");//8
+            modelo.addColumn("Deposito");
+
+//ANCHOS
+            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
+                /*SQ*/ 60, /*DEP*/ 60};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                pago1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_pagos_FA) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos puebla: " + error_pagos_FA.getMessage());
+
+        }
+
+    }
+
+    public void MDPagosnomFT() {
+        //Nombre persona del pago
+        String FiltroN = busp2.getText();
+        String FAPpago = BAppag2.getText();
+        String FAMpago = Bampag2.getText();
+        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`";
+        String FiltroSpago = FiltroServP2.getSelectedItem().toString();
+        String FiltroQuinpago = FiltroQP2.getSelectedItem().toString();
+        String FiltrosNDF = filtroNDFP2.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAPpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`"
+                    + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
+        } else if (!"".equals(FAMpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`"
+                    + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
+        } else if (!"".equals(FiltrosNDF)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`"
+                    + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
+        } else if (!"".equals(FiltroSpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`"
+                    + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
+        } else if (!"".equals(FiltroQuinpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.foraneos toluca`"
+                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//Nombre de la tabla
+            pago2.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");//5
+            modelo.addColumn("Zona");//6
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo Quincenal");//8
+            modelo.addColumn("Bono");
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Quincena del mes");//11
+            modelo.addColumn("Año");//12
+
+//ANCHOS
+            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
+                /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
+                /*AÑO*/ 40};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                pago2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_pagos_FT) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos toluca: " + error_pagos_FT.getMessage());
+
+        }
+
+    }
+
+    public void MDPagosnomNor() {
+        //Nombre persona del pago
+        String FiltroN = busp3.getText();
+        String FAPpago = BAppag3.getText();
+        String FAMpago = Bampag3.getText();
+        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`";
+        String FiltroSpago = FiltroServP3.getSelectedItem().toString();
+        String FiltroQuinpago = FiltroQP3.getSelectedItem().toString();
+        String FiltrosNDF = filtroNDFP3.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAPpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`"
+                    + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
+        } else if (!"".equals(FAMpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`"
+                    + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
+        } else if (!"".equals(FiltrosNDF)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`"
+                    + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
+        } else if (!"".equals(FiltroSpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`"
+                    + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
+        } else if (!"".equals(FiltroQuinpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`"
+                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            pago3.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");//5
+            modelo.addColumn("Sueldo Quincenal");//8
+            modelo.addColumn("Deposito");
+
+//ANCHOS
+            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
+                /*SQ*/ 60, /*DEP*/ 60};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                pago3.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_pagos_norte) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en norte: " + error_pagos_norte.getMessage());
+
+        }
+
+    }
+
+    public void MDPagosnomPon() {
+        //Nombre persona del pago
+        String FiltroN = busp4.getText();
+        String FAPpago = BAppag4.getText();
+        String FAMpago = Bampag4.getText();
+        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`";
+        String FiltroSpago = FiltroServP4.getSelectedItem().toString();
+        String FiltroQuinpago = FiltroQP4.getSelectedItem().toString();
+        String FiltrosNDF = filtroNDFP4.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAPpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`"
+                    + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
+        } else if (!"".equals(FAMpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`"
+                    + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
+        } else if (!"".equals(FiltrosNDF)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`"
+                    + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
+        } else if (!"".equals(FiltroSpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`"
+                    + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
+        } else if (!"".equals(FiltroQuinpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.poniente`"
+                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            pago4.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");//5
+            modelo.addColumn("Sueldo Quincenal");//8
+            modelo.addColumn("Deposito");
+
+//ANCHOS
+            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
+                /*SQ*/ 60, /*DEP*/ 60};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                pago4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_pagos_poniente) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Poniente: " + error_pagos_poniente.getMessage());
+
+        }
+
+    }
+
+    public void MDPagosnomOfi() {
+        //Nombre persona del pago
+        String FiltroN = busp5.getText();
+        String FAPpago = BAppag5.getText();
+        String FAMpago = Bampag5.getText();
+        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`";
+        String FiltroSpago = FiltroServP5.getSelectedItem().toString();
+        String FiltroQuinpago = FiltroQP5.getSelectedItem().toString();
+        String FiltrosNDF = filtroNDFP5.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAPpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`"
+                    + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
+        } else if (!"".equals(FAMpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`"
+                    + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
+        } else if (!"".equals(FiltrosNDF)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`"
+                    + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
+        } else if (!"".equals(FiltroSpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`"
+                    + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
+        } else if (!"".equals(FiltroQuinpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.oficina`"
+                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            pago5.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");//5
+            modelo.addColumn("Sueldo Quincenal");//8
+            modelo.addColumn("Deposito");
+
+//ANCHOS
+            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
+                /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                pago5.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_pagos_oficina) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en oficina: " + error_pagos_oficina.getMessage());
+
+        }
+
+    }
+
+    public void MDPagosnomS1() {
+        //Nombre persona del pago
+        String FiltroN = busp6.getText();
+        String FAPpago = BAppag6.getText();
+        String FAMpago = Bampag6.getText();
+        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`";
+        String FiltroSpago = FiltroServP6.getSelectedItem().toString();
+        String FiltroQuinpago = FiltroQP6.getSelectedItem().toString();
+        String FiltrosNDF = filtroNDFP6.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAPpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`"
+                    + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
+        } else if (!"".equals(FAMpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`"
+                    + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
+        } else if (!"".equals(FiltrosNDF)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`"
+                    + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
+        } else if (!"".equals(FiltroSpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`"
+                    + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
+        } else if (!"".equals(FiltroQuinpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 1`"
+                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            pago6.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");//5
+            modelo.addColumn("Sueldo Quincenal");//8
+            modelo.addColumn("Deposito");
+
+//ANCHOS
+            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
+                /*SQ*/ 60, /*DEP*/ 60};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                pago6.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_pagos_sur1) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 1: " + error_pagos_sur1.getMessage());
+
+        }
+
+    }
+
+    public void MDPagosnomS2() {
+        //Nombre persona del pago
+        String FiltroN = busp7.getText();
+        String FAPpago = BAppag7.getText();
+        String FAMpago = Bampag7.getText();
+        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`";
+        String FiltroSpago = FiltroServP7.getSelectedItem().toString();
+        String FiltroQuinpago = FiltroQP7.getSelectedItem().toString();
+        String FiltrosNDF = filtroNDFP7.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAPpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`"
+                    + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
+        } else if (!"".equals(FAMpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`"
+                    + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
+        } else if (!"".equals(FiltrosNDF)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`"
+                    + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
+        } else if (!"".equals(FiltroSpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`,`Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`"
+                    + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
+        } else if (!"".equals(FiltroQuinpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.sur 2`"
+                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            pago7.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");//5
+            modelo.addColumn("Sueldo Quincenal");//8
+            modelo.addColumn("Deposito");
+
+//ANCHOS
+            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
+                /*SQ*/ 60, /*DEP*/ 60};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                pago7.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_pagos_sur2) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 2: " + error_pagos_sur2.getMessage());
 
         }
 
@@ -7151,16 +7887,15 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         Pagopres();
         AgregarPagoPres();
         AgregarNs();
-        pagos();
-        mostrardatos();
         limpiarnom();
+        FunMD();
     }//GEN-LAST:event_AgregarNPActionPerformed
 
     private void ModmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModmActionPerformed
         editarNS();
-        pagos();
-        mostrardatos();
         limpiarnom();
+        FunMD();
+
     }//GEN-LAST:event_ModmActionPerformed
 
     private void BnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BnoActionPerformed
@@ -7489,7 +8224,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQ_5.class
-                .getName()).log(Level.SEVERE, null, ex);
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_TnomMouseClicked
 
@@ -7760,7 +8495,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQ_5.class
-                .getName()).log(Level.SEVERE, null, ex);
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom1MouseClicked
 
@@ -8146,7 +8881,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQ_5.class
-                .getName()).log(Level.SEVERE, null, ex);
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom2MouseClicked
 
@@ -8416,7 +9151,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQ_5.class
-                .getName()).log(Level.SEVERE, null, ex);
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom3MouseClicked
 
@@ -8802,7 +9537,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQ_5.class
-                .getName()).log(Level.SEVERE, null, ex);
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom4MouseClicked
 
@@ -9188,7 +9923,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQ_5.class
-                .getName()).log(Level.SEVERE, null, ex);
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom5MouseClicked
 
@@ -9574,7 +10309,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQ_5.class
-                .getName()).log(Level.SEVERE, null, ex);
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom6MouseClicked
 
@@ -9960,7 +10695,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQ_5.class
-                .getName()).log(Level.SEVERE, null, ex);
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom7MouseClicked
 
@@ -10347,7 +11082,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQ_5.class
-                .getName()).log(Level.SEVERE, null, ex);
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom8MouseClicked
 
@@ -10794,31 +11529,31 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total: "
-                + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+                    + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 1) {
             utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Apellido P "
-                + BAppag.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+                    + BAppag.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 2) {
             utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Apellido M "
-                + Bampag.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+                    + Bampag.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 3) {
             utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro Nombre(s) "
-                + busp.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+                    + busp.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 4) {
             utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total del servicio "
-                + FiltroServP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+                    + FiltroServP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 5) {
             utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total de la "
-                + FiltroQP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+                    + FiltroQP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
         if (FP == 6) {
             utilJTablePrint(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro # Lista "
-                + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())), true);
         }
     }//GEN-LAST:event_ImprimirActionPerformed
 
@@ -11039,31 +11774,31 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total: "
-                + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+                    + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
         if (FP == 1) {
             utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro Apellido P "
-                + BAppag1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+                    + BAppag1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
         if (FP == 2) {
             utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro Apellido M "
-                + Bampag1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+                    + Bampag1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
         if (FP == 3) {
             utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro Nombre(s) "
-                + busp1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+                    + busp1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
         if (FP == 4) {
             utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total del servicio "
-                + FiltroServP1.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+                    + FiltroServP1.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
         if (FP == 5) {
             utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total de la "
-                + FiltroQP1.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+                    + FiltroQP1.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
         if (FP == 6) {
             utilJTablePrint(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro # Lista "
-                + filtroNDFP1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
+                    + filtroNDFP1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())), true);
         }
     }//GEN-LAST:event_Imprimir1ActionPerformed
 
@@ -11286,31 +12021,31 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total: "
-                + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+                    + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
         if (FP == 1) {
             utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro Apellido P "
-                + BAppag2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+                    + BAppag2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
         if (FP == 2) {
             utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro Apellido M "
-                + Bampag2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+                    + Bampag2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
         if (FP == 3) {
             utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro Nombre(s) "
-                + busp2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+                    + busp2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
         if (FP == 4) {
             utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total del servicio "
-                + FiltroServP2.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+                    + FiltroServP2.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
         if (FP == 5) {
             utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total de la "
-                + FiltroQP2.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+                    + FiltroQP2.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
         if (FP == 6) {
             utilJTablePrint(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro # Lista "
-                + filtroNDFP2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
+                    + filtroNDFP2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())), true);
         }
     }//GEN-LAST:event_Imprimir2ActionPerformed
 
@@ -11532,31 +12267,31 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             utilJTablePrint(pago3, getTitle() + " Norte", "Monto total: "
-                + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+                    + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
         if (FP == 1) {
             utilJTablePrint(pago3, getTitle() + " Norte", "Monto total con filtro Apellido P "
-                + BAppag3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+                    + BAppag3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
         if (FP == 2) {
             utilJTablePrint(pago3, getTitle() + " Norte", "Monto total con filtro Apellido M "
-                + Bampag3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+                    + Bampag3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
         if (FP == 3) {
             utilJTablePrint(pago3, getTitle() + " Norte", "Monto total con filtro Nombre(s) "
-                + busp3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+                    + busp3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
         if (FP == 4) {
             utilJTablePrint(pago3, getTitle() + " Norte", "Monto total del servicio "
-                + FiltroServP3.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+                    + FiltroServP3.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
         if (FP == 5) {
             utilJTablePrint(pago3, getTitle() + " Norte", "Monto total de la "
-                + FiltroQP3.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+                    + FiltroQP3.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
         if (FP == 6) {
             utilJTablePrint(pago3, getTitle() + " Norte", "Monto total con filtro # Lista "
-                + filtroNDFP3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
+                    + filtroNDFP3.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())), true);
         }
     }//GEN-LAST:event_Imprimir3ActionPerformed
 
@@ -11780,31 +12515,31 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total: "
-                + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+                    + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
         }
         if (FP == 1) {
             utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total con filtro Apellido P "
-                + BAppag4.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+                    + BAppag4.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
         }
         if (FP == 2) {
             utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total con filtro Apellido M "
-                + Bampag4.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+                    + Bampag4.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
         }
         if (FP == 3) {
             utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total con filtro Nombre(s) "
-                + busp4.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+                    + busp4.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
         }
         if (FP == 4) {
             utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total del servicio "
-                + FiltroServP4.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
+                    + FiltroServP4.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
         }
         if (FP == 5) {
             utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total de la "
-                + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 6) {
             utilJTablePrint(pago4, getTitle() + " Poniente", "Monto total con filtro # Lista "
-                + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
     }//GEN-LAST:event_Imprimir4ActionPerformed
 
@@ -12025,31 +12760,31 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total: "
-                + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 1) {
             utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total con filtro Apellido P "
-                + BAppag5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + BAppag5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 2) {
             utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total con filtro Apellido M "
-                + Bampag5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + Bampag5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 3) {
             utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total con filtro Nombre(s) "
-                + busp5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + busp5.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 4) {
             utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total del servicio "
-                + FiltroServP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + FiltroServP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 5) {
             utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total de la "
-                + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
         if (FP == 6) {
             utilJTablePrint(pago5, getTitle() + " Oficina", "Monto total con filtro # Lista "
-                + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
         }
     }//GEN-LAST:event_Imprimir5ActionPerformed
 
@@ -12271,31 +13006,31 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total: "
-                + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 1) {
             utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total con filtro Apellido P "
-                + BAppag6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + BAppag6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 2) {
             utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total con filtro Apellido M "
-                + Bampag6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + Bampag6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 3) {
             utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total con filtro Nombre(s) "
-                + busp6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + busp6.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 4) {
             utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total del servicio "
-                + FiltroServP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + FiltroServP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 5) {
             utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total de la "
-                + FiltroQP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + FiltroQP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
         if (FP == 6) {
             utilJTablePrint(pago6, getTitle() + " Sur 1", "Monto total con filtro # Lista "
-                + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())), true);
         }
     }//GEN-LAST:event_Imprimir6ActionPerformed
 
@@ -12517,31 +13252,31 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total: "
-                + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 1) {
             utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total con filtro Apellido P "
-                + BAppag7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + BAppag7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 2) {
             utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total con filtro Apellido M "
-                + Bampag7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + Bampag7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 3) {
             utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total con filtro Nombre(s) "
-                + busp7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + busp7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 4) {
             utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total del servicio "
-                + FiltroServP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + FiltroServP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 5) {
             utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total de la "
-                + FiltroQP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + FiltroQP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
         if (FP == 6) {
             utilJTablePrint(pago7, getTitle() + " Sur 2", "Monto total con filtro # Lista "
-                + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())), true);
         }
     }//GEN-LAST:event_Imprimir7ActionPerformed
 
@@ -12763,31 +13498,31 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
             utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total: "
-                + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+                    + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 1) {
             utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Apellido P "
-                + BAppag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+                    + BAppag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 2) {
             utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Apellido M "
-                + Bampag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+                    + Bampag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 3) {
             utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro Nombre(s) "
-                + busp8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+                    + busp8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 4) {
             utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total del servicio "
-                + FiltroServP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+                    + FiltroServP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 5) {
             utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total de la "
-                + FiltroQP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+                    + FiltroQP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 6) {
             utilJTablePrint(pago8, getTitle() + " Santander corporativo quincenal", "Monto total con filtro # Lista "
-                + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
     }//GEN-LAST:event_Imprimir8ActionPerformed
 
