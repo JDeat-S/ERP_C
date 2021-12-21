@@ -3615,72 +3615,60 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Calculo de deposito
     public void deposito() {
         //por dia
-        double PD = Double.parseDouble(this.pd.getText());
+        PH.setText("" + Double.parseDouble(pd.getText()) / 8);
+        
 //incapacidad
-        double dpi = Double.parseDouble(this.Dpi.getText());
-        double totaldpi = dpi * PD;
+        double totaldpi = Double.parseDouble(this.Dpi.getText()) * Double.parseDouble(pd.getText());
         pds.setText("" + totaldpi);
 
 //vacaciones
-        double DDV = Double.parseDouble(this.Ddv.getText());
-        double totalddv = DDV * PD;
+        double totalddv = Double.parseDouble(this.Ddv.getText()) * Double.parseDouble(pd.getText());
         PDDDV.setText("" + totalddv);
 //descanso
-        double DID = Double.parseDouble(this.DD.getText());
-        double totaldd = DID * PD;
+        double totaldd = Double.parseDouble(this.DD.getText()) * Double.parseDouble(pd.getText());
         PDDD.setText("" + totaldd);
 //dia laborado
-        double DIAL = Double.parseDouble(this.DL.getText());
-        double totalDL = DIAL * PD;
+        double totalDL = Double.parseDouble(this.DL.getText()) * Double.parseDouble(pd.getText());
         PDDL.setText("" + totalDL);
 
         //Dia festivo
-        double DIAF = Double.parseDouble(this.DF.getText());
-        double totalDF = DIAF * PD;
+        double totalDF = Double.parseDouble(this.DF.getText()) * Double.parseDouble(pd.getText());
         PDDF.setText("" + totalDF);
 
         //dia festivo laborado
-        double DiaDFT = Double.parseDouble(this.DFT.getText());
-        double totaldt = (2 * PD) * DiaDFT;
+        double totaldt = (2 * Double.parseDouble(pd.getText())) * Double.parseDouble(this.DFT.getText());
         PDDFT.setText("" + totaldt);
 
 //descanso
-        double DEST = Double.parseDouble(this.dt.getText());
-        double totaldft = (2 * PD) * DEST;
+        double totaldft = (2 * Double.parseDouble(pd.getText())) * Double.parseDouble(this.dt.getText());
         PDDT.setText("" + totaldft);
 //faltas
-        double FAL = Double.parseDouble(this.F.getText());
-        double totalFAL = ((350 * FAL) - (PD * FAL));
+        double totalFAL = ((350 * Double.parseDouble(this.F.getText())) - (Double.parseDouble(pd.getText()) * Double.parseDouble(this.F.getText())));
         DPF.setText("" + totalFAL);
 //retardo
-        double RET = Double.parseDouble(this.R.getText());
-        double totalRET = (PD * RET) - (RET * 50);
+        double totalRET = (Double.parseDouble(pd.getText()) * Double.parseDouble(this.R.getText())) - (Double.parseDouble(this.R.getText()) * 50);
         PCR.setText("" + totalRET);
-
-        //EGRESOS
-        double EG1 = Double.parseDouble(this.DVT.getText());
-        double EG2 = Double.parseDouble(this.DI.getText());
-        double EG4 = Double.parseDouble(this.cda.getText());
-        double EG7 = Double.parseDouble(this.Odtp.getText());
-        double EG8 = Double.parseDouble(this.Presp.getText());
-        double EG16 = Double.parseDouble(this.DPF.getText());
-
+//hora extra
+        double TotHE = Double.parseDouble(this.HE.getText()) * Double.parseDouble(this.PH.getText());
+        this.THE.setText("" + TotHE + "");
+        
 //ingresos
-        double IN8 = Double.parseDouble(this.PDDFT.getText());
-        double IN7 = Double.parseDouble(this.PDDF.getText());
-        double IN3 = Double.parseDouble(this.ADD.getText());
-        double IN5 = Double.parseDouble(this.apy.getText());
-        double IN9 = Double.parseDouble(this.Rembolso.getText());
-        double IN10 = Double.parseDouble(this.Bono.getText());
-        double IN15 = Double.parseDouble(this.PCR.getText());
-        double IN14 = Double.parseDouble(this.PDDD.getText());
-        double IN1 = Double.parseDouble(this.PDDL.getText());
-        double IN6 = Double.parseDouble(this.PDDT.getText());
-        double IN2 = Double.parseDouble(this.PDDDV.getText());
-        double IN13 = Double.parseDouble(this.PDDDDSGS.getText());
+        double Ingresos = (Double.parseDouble(this.PDDDDSGS.getText())
+                + Double.parseDouble(this.Bono.getText()) + Double.parseDouble(this.Rembolso.getText())
+                + Double.parseDouble(this.PDDT.getText()) + Double.parseDouble(this.ADD.getText())
+                + Double.parseDouble(this.apy.getText()) + Double.parseDouble(this.PDDD.getText())
+                + Double.parseDouble(this.PCR.getText()) + Double.parseDouble(this.PDDFT.getText())
+                + Double.parseDouble(this.PDDF.getText()) + Double.parseDouble(this.PDDL.getText())
+                + Double.parseDouble(this.PDDDV.getText()) + Double.parseDouble(this.THE.getText()));
 
-        double Ingresos = (IN13 + IN10 + IN9 + IN6 + IN3 + IN5 + IN14 + IN15 + IN8 + IN7 + +IN1 + IN2);
-        double Egresos = (EG1 + EG2 + EG7 + EG8 + EG4 + EG16);
+        double Egresos = (Double.parseDouble(this.DVT.getText())
+                + Double.parseDouble(this.DI.getText()) + Double.parseDouble(this.Odtp.getText())
+                + Double.parseDouble(this.Presp.getText()) + Double.parseDouble(this.cda.getText())
+                + Double.parseDouble(this.DPF.getText()) + Double.parseDouble(this.RI.getText())
+                + Double.parseDouble(Rinfonacot.getText()));
+
+        
+        
         DecimalFormat dDeposito = new DecimalFormat("#.00");
         this.deposito.setText(dDeposito.format(Ingresos - Egresos));
 
@@ -3928,9 +3916,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         jLabel149 = new javax.swing.JLabel();
         NQODTnom = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        RI = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Rinfonacot = new javax.swing.JTextField();
         jPanel18 = new javax.swing.JPanel();
         Dpi = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
@@ -5394,11 +5382,11 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel32.setText("Retencion infonavit:");
 
-        jTextField1.setText("0");
+        RI.setText("0");
 
         jLabel39.setText("Infonacot:");
 
-        jTextField2.setText("0");
+        Rinfonacot.setText("0");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -5446,11 +5434,11 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel32)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel39)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Rinfonacot, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel10Layout.createSequentialGroup()
                                         .addComponent(jLabel132)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5526,9 +5514,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(jLabel24)
                     .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel32)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel39)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Rinfonacot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel144)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -14734,7 +14722,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             double total = DIV2D / Q2D;
             pd.setText("" + total + "");
         }
-
+        deposito();
     }//GEN-LAST:event_QuincenasItemStateChanged
 
     private void BNameNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BNameNomKeyReleased
@@ -21127,10 +21115,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_busp5KeyReleased
 
     private void HEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_HEKeyReleased
-        double d1 = Double.parseDouble(this.HE.getText());
-        double d2 = Double.parseDouble(this.PH.getText());
-        double total = d1 * d2;
-        this.THE.setText("" + total + "");
+       
         deposito();
     }//GEN-LAST:event_HEKeyReleased
 
@@ -22478,7 +22463,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel R7;
     private javax.swing.JLabel R8;
     private javax.swing.JLabel R9;
+    private javax.swing.JTextField RI;
     private javax.swing.JTextField Rembolso;
+    private javax.swing.JTextField Rinfonacot;
     private javax.swing.JTable SHCDAnom;
     private javax.swing.JTable SHODTnom;
     private javax.swing.JTable SHPresnom;
@@ -22769,8 +22756,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane35;
     private javax.swing.JScrollPane jScrollPane36;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JScrollPane k;
     private javax.swing.JTextField name;
     private javax.swing.JTextArea obs;
