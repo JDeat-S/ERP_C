@@ -62,6 +62,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     public Admin_NominaQ_5() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Fil Servicios">
+        FiltrosZonas zz8 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
+        FZservicio8.setModel(modelzonas8);
         FiltrosZonas zz7 = new FiltrosZonas();
         DefaultComboBoxModel modelzonas7 = new DefaultComboBoxModel(zz7.mostrarzonas());
         FZservicio7.setModel(modelzonas7);
@@ -86,6 +89,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         FiltrosZonas zz = new FiltrosZonas();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
         FZservicio.setModel(modelzonas);
+        FiltrosZonas FSZP8 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP8 = new DefaultComboBoxModel(FSZP8.mostrarzonas());
+        FiltroSZP8.setModel(modelFSZP8);
         FiltrosZonas FSZP7 = new FiltrosZonas();
         DefaultComboBoxModel modelFSZP7 = new DefaultComboBoxModel(FSZP7.mostrarzonas());
         FiltroSZP7.setModel(modelFSZP7);
@@ -3488,7 +3494,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina en agregada");
-            
+
 //operacion para pago de Pres
             double QPREP = Double.parseDouble(this.NQprenom.getText());
             double QPREPT = QPREP + 1;
@@ -4198,6 +4204,27 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         FApT7 = new javax.swing.JTextField();
         FAmT7 = new javax.swing.JTextField();
         botonWeb15 = new botones.BotonWeb();
+        TDFA8 = new javax.swing.JScrollPane();
+        jPanel38 = new javax.swing.JPanel();
+        jScrollPane28 = new javax.swing.JScrollPane();
+        Tnom8 = new javax.swing.JTable();
+        LabelBE8 = new javax.swing.JLabel();
+        Nominab8 = new javax.swing.JTextField();
+        Eliminar8 = new javax.swing.JButton();
+        CS24 = new javax.swing.JButton();
+        LabelBQ8 = new javax.swing.JLabel();
+        FiltroQuincenanomina8 = new javax.swing.JComboBox<>();
+        jLabel188 = new javax.swing.JLabel();
+        FiltrosTD8 = new javax.swing.JComboBox<>();
+        LabelBNDF8 = new javax.swing.JLabel();
+        FiltroNDF8 = new javax.swing.JTextField();
+        FApT8 = new javax.swing.JTextField();
+        FAmT8 = new javax.swing.JTextField();
+        botonWeb25 = new botones.BotonWeb();
+        FZservicio8 = new javax.swing.JComboBox<>();
+        LabelBS8 = new javax.swing.JLabel();
+        FiltroSnomina8 = new javax.swing.JComboBox<>();
+        LabelSZ8 = new javax.swing.JLabel();
         NomPagos = new javax.swing.JScrollPane();
         PestañasPagos = new javax.swing.JTabbedPane();
         TPagos = new javax.swing.JScrollPane();
@@ -4392,6 +4419,29 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         MTDsum7 = new javax.swing.JLabel();
         Imprimir7 = new javax.swing.JButton();
         FFDPpag7 = new javax.swing.JComboBox<>();
+        TPagos8 = new javax.swing.JScrollPane();
+        jPanel36 = new javax.swing.JPanel();
+        jScrollPane36 = new javax.swing.JScrollPane();
+        pago8 = new javax.swing.JTable();
+        LabelBEP8 = new javax.swing.JLabel();
+        busp8 = new javax.swing.JTextField();
+        CS22 = new javax.swing.JButton();
+        LabelSZP8 = new javax.swing.JLabel();
+        FiltroSZP8 = new javax.swing.JComboBox<>();
+        LabelBSP8 = new javax.swing.JLabel();
+        FiltroServP8 = new javax.swing.JComboBox<>();
+        LabelNDFP8 = new javax.swing.JLabel();
+        filtroNDFP8 = new javax.swing.JTextField();
+        LabelBQP8 = new javax.swing.JLabel();
+        FiltroQP8 = new javax.swing.JComboBox<>();
+        jLabel186 = new javax.swing.JLabel();
+        FiltrosP8 = new javax.swing.JComboBox<>();
+        BAppag8 = new javax.swing.JTextField();
+        Bampag8 = new javax.swing.JTextField();
+        botonWeb23 = new botones.BotonWeb();
+        jLabel43 = new javax.swing.JLabel();
+        MTDsum8 = new javax.swing.JLabel();
+        Imprimir9 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         Nomina1 = new javax.swing.JMenuItem();
@@ -7809,6 +7859,180 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         PestanañasND.addTab("Sur 2", TDFA7);
 
+        jPanel38.setBackground(new java.awt.Color(204, 255, 255));
+
+        Tnom8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom8MouseClicked(evt);
+            }
+        });
+        jScrollPane28.setViewportView(Tnom8);
+
+        LabelBE8.setText("Buscar Empleado:");
+
+        Nominab8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nominab8KeyReleased(evt);
+            }
+        });
+
+        Eliminar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
+        Eliminar8.setText("Eliminar");
+        Eliminar8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar8ActionPerformed(evt);
+            }
+        });
+
+        CS24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS24.setText("Cerrar sesion");
+        CS24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS24ActionPerformed(evt);
+            }
+        });
+
+        LabelBQ8.setText("Buscar Quincena:");
+
+        FiltroQuincenanomina8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQuincenanomina8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQuincenanomina8ItemStateChanged(evt);
+            }
+        });
+
+        jLabel188.setText("Filtros:");
+
+        FiltrosTD8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosTD8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosTD8ItemStateChanged(evt);
+            }
+        });
+
+        LabelBNDF8.setText("Buscar por # Lista");
+
+        FiltroNDF8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroNDF8KeyReleased(evt);
+            }
+        });
+
+        FApT8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT8KeyReleased(evt);
+            }
+        });
+
+        FAmT8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT8KeyReleased(evt);
+            }
+        });
+
+        botonWeb25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb25.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+
+        FZservicio8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FZservicio8ItemStateChanged(evt);
+            }
+        });
+
+        LabelBS8.setText("Buscar Servicio:");
+
+        FiltroSnomina8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+
+        LabelSZ8.setText("Selecciona Zona:");
+
+        javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
+        jPanel38.setLayout(jPanel38Layout);
+        jPanel38Layout.setHorizontalGroup(
+            jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel38Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel38Layout.createSequentialGroup()
+                        .addComponent(Eliminar8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel188)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS24))
+                .addContainerGap(7974, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel38Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane28))
+        );
+        jPanel38Layout.setVerticalGroup(
+            jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel38Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelBE8)
+                    .addComponent(Nominab8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Eliminar8)
+                    .addComponent(LabelBQ8)
+                    .addComponent(FiltroQuincenanomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel188)
+                    .addComponent(FiltrosTD8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBNDF8)
+                    .addComponent(FiltroNDF8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FApT8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FAmT8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonWeb25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FZservicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBS8)
+                    .addComponent(FiltroSnomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZ8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS24)
+                .addContainerGap(185, Short.MAX_VALUE))
+        );
+
+        TDFA8.setViewportView(jPanel38);
+
+        PestanañasND.addTab("Corporativo santander quincenal", TDFA8);
+
         NomDetallada.setViewportView(PestanañasND);
 
         PestañasPrin.addTab("Nominas detalladas", NomDetallada);
@@ -9333,6 +9557,191 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         TPagos7.setViewportView(jPanel35);
 
         PestañasPagos.addTab("Sur 2", TPagos7);
+
+        jPanel36.setBackground(new java.awt.Color(204, 255, 255));
+
+        pago8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12"
+            }
+        ));
+        jScrollPane36.setViewportView(pago8);
+
+        LabelBEP8.setText("Buscar empleado:");
+
+        busp8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                busp8KeyReleased(evt);
+            }
+        });
+
+        CS22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS22.setText("Cerrar sesion");
+        CS22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS22ActionPerformed(evt);
+            }
+        });
+
+        LabelSZP8.setText("Seleccionar zona:");
+
+        FiltroSZP8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroSZP8ItemStateChanged(evt);
+            }
+        });
+
+        LabelBSP8.setText("Buscar servicio:");
+
+        FiltroServP8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FiltroServP8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroServP8ItemStateChanged(evt);
+            }
+        });
+
+        LabelNDFP8.setText("# de Lista");
+
+        filtroNDFP8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                filtroNDFP8KeyReleased(evt);
+            }
+        });
+
+        LabelBQP8.setText("Buscar quincena:");
+
+        FiltroQP8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQP8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQP8ItemStateChanged(evt);
+            }
+        });
+
+        jLabel186.setText("Filtrar:");
+
+        FiltrosP8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosP8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosP8ItemStateChanged(evt);
+            }
+        });
+
+        BAppag8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BAppag8KeyReleased(evt);
+            }
+        });
+
+        Bampag8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Bampag8KeyReleased(evt);
+            }
+        });
+
+        botonWeb23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        botonWeb23.setToolTipText("");
+        botonWeb23.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+
+        jLabel43.setText("Monto total en fila deposito:");
+
+        MTDsum8.setText("0");
+
+        Imprimir9.setText("Imprimir tabla");
+        Imprimir9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Imprimir9ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
+        jPanel36.setLayout(jPanel36Layout);
+        jPanel36Layout.setHorizontalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel36Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel36Layout.createSequentialGroup()
+                        .addComponent(jLabel186)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(botonWeb23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBEP8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(busp8, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BAppag8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Bampag8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZP8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSZP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBSP8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroServP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelNDFP8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(filtroNDFP8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQP8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel36Layout.createSequentialGroup()
+                        .addComponent(CS22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel43)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MTDsum8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Imprimir9))
+                    .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(2019, Short.MAX_VALUE))
+        );
+        jPanel36Layout.setVerticalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel36Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelBEP8)
+                    .addComponent(busp8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZP8)
+                    .addComponent(FiltroSZP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBSP8)
+                    .addComponent(FiltroServP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelNDFP8)
+                    .addComponent(filtroNDFP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBQP8)
+                    .addComponent(FiltroQP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel186)
+                    .addComponent(FiltrosP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAppag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bampag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonWeb23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel43)
+                        .addComponent(MTDsum8)
+                        .addComponent(Imprimir9))
+                    .addComponent(CS22))
+                .addContainerGap(183, Short.MAX_VALUE))
+        );
+
+        TPagos8.setViewportView(jPanel36);
+
+        PestañasPagos.addTab("Santander corporativo quincenal", TPagos8);
 
         NomPagos.setViewportView(PestañasPagos);
 
@@ -20725,6 +21134,591 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         deposito();
     }//GEN-LAST:event_HEKeyReleased
 
+    private void Tnom8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom8MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom8.getModel();
+
+            int fila = Tnom8.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom8.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom8.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom8.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom8.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom8.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom8.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom8.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom8.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom8.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom8.getValueAt(fila, 9)));
+            Bono1.setText(String.valueOf(Tnom8.getValueAt(fila, 10)));
+            Bono.setText(String.valueOf(Tnom8.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom8.getValueAt(fila, 11)));
+            String combo1 = model.getValueAt(fila, 12).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
+            año.setDate(date);
+            String combo2 = model.getValueAt(fila, 14).toString();
+            for (int i = 0; i < Dia1.getItemCount(); i++) {
+                if (Dia1.getItemAt(i).equalsIgnoreCase(combo2)) {
+                    Dia1.setSelectedIndex(i);
+                }
+            }
+            String combo3 = model.getValueAt(fila, 15).toString();
+            for (int i = 0; i < Dia2.getItemCount(); i++) {
+                if (Dia2.getItemAt(i).equalsIgnoreCase(combo3)) {
+                    Dia2.setSelectedIndex(i);
+                }
+            }
+            String combo4 = model.getValueAt(fila, 16).toString();
+            for (int i = 0; i < Dia3.getItemCount(); i++) {
+                if (Dia3.getItemAt(i).equalsIgnoreCase(combo4)) {
+                    Dia3.setSelectedIndex(i);
+                }
+            }
+            String combo5 = model.getValueAt(fila, 17).toString();
+            for (int i = 0; i < Dia4.getItemCount(); i++) {
+                if (Dia4.getItemAt(i).equalsIgnoreCase(combo5)) {
+                    Dia4.setSelectedIndex(i);
+                }
+            }
+            String combo6 = model.getValueAt(fila, 18).toString();
+            for (int i = 0; i < Dia5.getItemCount(); i++) {
+                if (Dia5.getItemAt(i).equalsIgnoreCase(combo6)) {
+                    Dia5.setSelectedIndex(i);
+                }
+            }
+            String combo7 = model.getValueAt(fila, 19).toString();
+            for (int i = 0; i < Dia6.getItemCount(); i++) {
+                if (Dia6.getItemAt(i).equalsIgnoreCase(combo7)) {
+                    Dia6.setSelectedIndex(i);
+                }
+            }
+            String combo8 = model.getValueAt(fila, 20).toString();
+            for (int i = 0; i < Dia7.getItemCount(); i++) {
+                if (Dia7.getItemAt(i).equalsIgnoreCase(combo8)) {
+                    Dia7.setSelectedIndex(i);
+                }
+            }
+            String combo9 = model.getValueAt(fila, 21).toString();
+            for (int i = 0; i < Dia8.getItemCount(); i++) {
+                if (Dia8.getItemAt(i).equalsIgnoreCase(combo9)) {
+                    Dia8.setSelectedIndex(i);
+                }
+            }
+            String combo10 = model.getValueAt(fila, 22).toString();
+            for (int i = 0; i < Dia9.getItemCount(); i++) {
+                if (Dia9.getItemAt(i).equalsIgnoreCase(combo10)) {
+                    Dia9.setSelectedIndex(i);
+                }
+            }
+            String combo11 = model.getValueAt(fila, 23).toString();
+            for (int i = 0; i < Dia10.getItemCount(); i++) {
+                if (Dia10.getItemAt(i).equalsIgnoreCase(combo11)) {
+                    Dia10.setSelectedIndex(i);
+                }
+            }
+            String combo12 = model.getValueAt(fila, 24).toString();
+            for (int i = 0; i < Dia11.getItemCount(); i++) {
+                if (Dia11.getItemAt(i).equalsIgnoreCase(combo12)) {
+                    Dia11.setSelectedIndex(i);
+                }
+            }
+            String combo13 = model.getValueAt(fila, 25).toString();
+            for (int i = 0; i < Dia12.getItemCount(); i++) {
+                if (Dia12.getItemAt(i).equalsIgnoreCase(combo13)) {
+                    Dia12.setSelectedIndex(i);
+                }
+            }
+            String combo14 = model.getValueAt(fila, 26).toString();
+            for (int i = 0; i < Dia13.getItemCount(); i++) {
+                if (Dia13.getItemAt(i).equalsIgnoreCase(combo14)) {
+                    Dia13.setSelectedIndex(i);
+                }
+            }
+            String combo15 = model.getValueAt(fila, 27).toString();
+            for (int i = 0; i < Dia14.getItemCount(); i++) {
+                if (Dia14.getItemAt(i).equalsIgnoreCase(combo15)) {
+                    Dia14.setSelectedIndex(i);
+                }
+            }
+            String combo16 = model.getValueAt(fila, 28).toString();
+            for (int i = 0; i < Dia15.getItemCount(); i++) {
+                if (Dia15.getItemAt(i).equalsIgnoreCase(combo16)) {
+                    Dia15.setSelectedIndex(i);
+                }
+            }
+            String combo17 = model.getValueAt(fila, 29).toString();
+            for (int i = 0; i < Dia16.getItemCount(); i++) {
+                if (Dia16.getItemAt(i).equalsIgnoreCase(combo17)) {
+                    Dia16.setSelectedIndex(i);
+                }
+            }
+
+            PDDDDSGS.setText(String.valueOf(Tnom8.getValueAt(fila, 41)));
+            apy.setText(String.valueOf(Tnom8.getValueAt(fila, 50)));
+            Lugar.setText(String.valueOf(Tnom8.getValueAt(fila, 51)));
+            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 52)));
+            ADD.setText(String.valueOf(Tnom8.getValueAt(fila, 53)));
+            DI.setText(String.valueOf(Tnom8.getValueAt(fila, 56)));
+            Fdb.setText(String.valueOf(Tnom8.getValueAt(fila, 57)));
+            Sancion.setText(String.valueOf(Tnom8.getValueAt(fila, 58)));
+            Chamarra.setText(String.valueOf(Tnom8.getValueAt(fila, 59)));
+            Chaleco.setText(String.valueOf(Tnom8.getValueAt(fila, 60)));
+            Fde.setText(String.valueOf(Tnom8.getValueAt(fila, 61)));
+            Grua.setText(String.valueOf(Tnom8.getValueAt(fila, 62)));
+            Pantalon.setText(String.valueOf(Tnom8.getValueAt(fila, 63)));
+            Credencial.setText(String.valueOf(Tnom8.getValueAt(fila, 64)));
+            Bp.setText(String.valueOf(Tnom8.getValueAt(fila, 65)));
+            Playera.setText(String.valueOf(Tnom8.getValueAt(fila, 66)));
+            Corbata.setText(String.valueOf(Tnom8.getValueAt(fila, 67)));
+            AdN.setText(String.valueOf(Tnom8.getValueAt(fila, 68)));
+            DVT.setText(String.valueOf(Tnom8.getValueAt(fila, 69)));
+            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 70)));
+            cda.setText(String.valueOf(Tnom8.getValueAt(fila, 71)));
+            Odtp.setText(String.valueOf(Tnom8.getValueAt(fila, 72)));
+            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 73)));
+            obs.setText(String.valueOf(Tnom8.getValueAt(fila, 74)));
+
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_NominaQ_5.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom8MouseClicked
+
+    private void Nominab8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab8KeyReleased
+
+    private void Eliminar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar8ActionPerformed
+        try {
+
+            int filaseleccionada = Tnom8.getSelectedRow();
+            String sql = "delete from `nomina.detallada." + Zon.getText() + "` where #lista=" + Tnom8.getValueAt(filaseleccionada, 0);
+            java.sql.Statement st = con.createStatement();
+            int n = st.executeUpdate(sql);
+            if (n >= 0) {
+                JOptionPane.showMessageDialog(null, "Nomina eliminada");
+            }
+        } catch (HeadlessException | SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
+
+        }
+        FunMD();
+    }//GEN-LAST:event_Eliminar8ActionPerformed
+
+    private void CS24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS24ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS24ActionPerformed
+
+    private void FiltroQuincenanomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina8ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina8ItemStateChanged
+
+    private void FiltrosTD8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD8ItemStateChanged
+        String FTD8 = (String) FiltrosTD8.getSelectedItem();
+        if (FTD8.equals("Selecciona filtro")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD8.equals("Filtrar por Apellido P")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Apellido P:");
+            FApT8.setText("");
+            FApT8.setVisible(true);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Apellido M")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Apellido M:");
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(true);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Nombre(s)")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Nombre(s):");
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(true);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Servicio")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(true);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(true);
+            FZservicio8.setVisible(true);
+            LabelSZ8.setVisible(true);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por quincena")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(true);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(true);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por # Lista")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(true);
+            LabelBNDF8.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD8ItemStateChanged
+
+    private void FiltroNDF8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF8KeyReleased
+
+    private void FApT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT8KeyReleased
+
+    private void FAmT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT8KeyReleased
+
+    private void FZservicio8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio8ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio8.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina8.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio8ItemStateChanged
+
+    private void busp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_busp8KeyReleased
+
+    private void CS22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS22ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS22ActionPerformed
+
+    private void FiltroSZP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZP8ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FiltroSZP8.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroServP8.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FiltroSZP8ItemStateChanged
+
+    private void FiltroServP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP8ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroServP8ItemStateChanged
+
+    private void filtroNDFP8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_filtroNDFP8KeyReleased
+
+    private void FiltroQP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP8ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQP8ItemStateChanged
+
+    private void FiltrosP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP8ItemStateChanged
+
+        String FP = (String) FiltrosP8.getSelectedItem();
+        if (FP.equals("Selecciona filtro")) {
+            busp8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            LabelBEP8.setVisible(false);
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+
+        }
+        if (FP.equals("Filtrar por Nombre(s)")) {
+            busp8.setVisible(true);
+            LabelBEP8.setVisible(true);
+            LabelBEP8.setText("Buscar por nombre:");
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido P")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(true);
+            LabelBEP8.setText("Buscar por apellido P:");
+            BAppag8.setVisible(true);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido M")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(true);
+            LabelBEP8.setText("Buscar por apellido M: ");
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(true);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Servicio")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(true);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(true);
+            FiltroSZP8.setVisible(true);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(true);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por quincena")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(true);
+            FiltroQP8.setVisible(true);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por # Lista")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(true);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosP8ItemStateChanged
+
+    private void BAppag8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_BAppag8KeyReleased
+
+    private void Bampag8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Bampag8KeyReleased
+
+    private void Imprimir9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir9ActionPerformed
+        DecimalFormat dimp = new DecimalFormat("#.00");
+        Funimprimir(pago8, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en Santander corporativo quincenal: " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
+    }//GEN-LAST:event_Imprimir9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -21037,6 +22031,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField BAppag5;
     private javax.swing.JTextField BAppag6;
     private javax.swing.JTextField BAppag7;
+    private javax.swing.JTextField BAppag8;
     private javax.swing.JTextField BNameNom;
     private javax.swing.JTextField Bampag;
     private javax.swing.JTextField Bampag1;
@@ -21046,6 +22041,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Bampag5;
     private javax.swing.JTextField Bampag6;
     private javax.swing.JTextField Bampag7;
+    private javax.swing.JTextField Bampag8;
     private javax.swing.JRadioButton Bno;
     private javax.swing.JTextField Bono;
     private javax.swing.JTextField Bono1;
@@ -21066,6 +22062,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JButton CS2;
     private javax.swing.JButton CS20;
     private javax.swing.JButton CS21;
+    private javax.swing.JButton CS22;
+    private javax.swing.JButton CS24;
     private javax.swing.JButton CS3;
     private javax.swing.JButton CS8;
     private javax.swing.JButton CS9;
@@ -21157,6 +22155,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JButton Eliminar5;
     private javax.swing.JButton Eliminar6;
     private javax.swing.JButton Eliminar7;
+    private javax.swing.JButton Eliminar8;
     private javax.swing.JMenuItem Estadias;
     private javax.swing.JLabel F;
     private javax.swing.JLabel F1;
@@ -21183,6 +22182,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FAmT5;
     private javax.swing.JTextField FAmT6;
     private javax.swing.JTextField FAmT7;
+    private javax.swing.JTextField FAmT8;
     private javax.swing.JTextField FApT;
     private javax.swing.JTextField FApT1;
     private javax.swing.JTextField FApT2;
@@ -21191,6 +22191,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FApT5;
     private javax.swing.JTextField FApT6;
     private javax.swing.JTextField FApT7;
+    private javax.swing.JTextField FApT8;
     private javax.swing.JComboBox<String> FFDPpag1;
     private javax.swing.JComboBox<String> FFDPpag2;
     private javax.swing.JComboBox<String> FFDPpag3;
@@ -21224,6 +22225,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FZservicio5;
     private javax.swing.JComboBox<String> FZservicio6;
     private javax.swing.JComboBox<String> FZservicio7;
+    private javax.swing.JComboBox<String> FZservicio8;
     private javax.swing.JTextField Fdb;
     private javax.swing.JTextField Fde;
     private javax.swing.JLabel Filtro1;
@@ -21235,6 +22237,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FiltroNDF5;
     private javax.swing.JTextField FiltroNDF6;
     private javax.swing.JTextField FiltroNDF7;
+    private javax.swing.JTextField FiltroNDF8;
     private javax.swing.JComboBox<String> FiltroQP;
     private javax.swing.JComboBox<String> FiltroQP1;
     private javax.swing.JComboBox<String> FiltroQP2;
@@ -21243,6 +22246,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroQP5;
     private javax.swing.JComboBox<String> FiltroQP6;
     private javax.swing.JComboBox<String> FiltroQP7;
+    private javax.swing.JComboBox<String> FiltroQP8;
     private javax.swing.JComboBox<String> FiltroQuincenanomina;
     private javax.swing.JComboBox<String> FiltroQuincenanomina1;
     private javax.swing.JComboBox<String> FiltroQuincenanomina2;
@@ -21251,6 +22255,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroQuincenanomina5;
     private javax.swing.JComboBox<String> FiltroQuincenanomina6;
     private javax.swing.JComboBox<String> FiltroQuincenanomina7;
+    private javax.swing.JComboBox<String> FiltroQuincenanomina8;
     private javax.swing.JComboBox<String> FiltroSZP;
     private javax.swing.JComboBox<String> FiltroSZP1;
     private javax.swing.JComboBox<String> FiltroSZP2;
@@ -21259,6 +22264,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroSZP5;
     private javax.swing.JComboBox<String> FiltroSZP6;
     private javax.swing.JComboBox<String> FiltroSZP7;
+    private javax.swing.JComboBox<String> FiltroSZP8;
     private javax.swing.JComboBox<String> FiltroServP;
     private javax.swing.JComboBox<String> FiltroServP1;
     private javax.swing.JComboBox<String> FiltroServP2;
@@ -21267,6 +22273,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroServP5;
     private javax.swing.JComboBox<String> FiltroServP6;
     private javax.swing.JComboBox<String> FiltroServP7;
+    private javax.swing.JComboBox<String> FiltroServP8;
     private javax.swing.JComboBox<String> FiltroSnomina;
     private javax.swing.JComboBox<String> FiltroSnomina1;
     private javax.swing.JComboBox<String> FiltroSnomina2;
@@ -21275,6 +22282,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroSnomina5;
     private javax.swing.JComboBox<String> FiltroSnomina6;
     private javax.swing.JComboBox<String> FiltroSnomina7;
+    private javax.swing.JComboBox<String> FiltroSnomina8;
     private javax.swing.JComboBox<String> FiltrosNom;
     private javax.swing.JComboBox<String> FiltrosP;
     private javax.swing.JComboBox<String> FiltrosP1;
@@ -21284,6 +22292,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltrosP5;
     private javax.swing.JComboBox<String> FiltrosP6;
     private javax.swing.JComboBox<String> FiltrosP7;
+    private javax.swing.JComboBox<String> FiltrosP8;
     private javax.swing.JComboBox<String> FiltrosTD;
     private javax.swing.JComboBox<String> FiltrosTD1;
     private javax.swing.JComboBox<String> FiltrosTD2;
@@ -21292,6 +22301,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltrosTD5;
     private javax.swing.JComboBox<String> FiltrosTD6;
     private javax.swing.JComboBox<String> FiltrosTD7;
+    private javax.swing.JComboBox<String> FiltrosTD8;
     private javax.swing.JMenuItem General;
     private javax.swing.JTextField Grua;
     private javax.swing.JTextField HE;
@@ -21303,6 +22313,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JButton Imprimir5;
     private javax.swing.JButton Imprimir6;
     private javax.swing.JButton Imprimir7;
+    private javax.swing.JButton Imprimir9;
     private javax.swing.JLabel LabelBE;
     private javax.swing.JLabel LabelBE1;
     private javax.swing.JLabel LabelBE2;
@@ -21311,6 +22322,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBE5;
     private javax.swing.JLabel LabelBE6;
     private javax.swing.JLabel LabelBE7;
+    private javax.swing.JLabel LabelBE8;
     private javax.swing.JLabel LabelBEP;
     private javax.swing.JLabel LabelBEP1;
     private javax.swing.JLabel LabelBEP2;
@@ -21319,6 +22331,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBEP5;
     private javax.swing.JLabel LabelBEP6;
     private javax.swing.JLabel LabelBEP7;
+    private javax.swing.JLabel LabelBEP8;
     private javax.swing.JLabel LabelBNDF;
     private javax.swing.JLabel LabelBNDF1;
     private javax.swing.JLabel LabelBNDF2;
@@ -21327,6 +22340,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBNDF5;
     private javax.swing.JLabel LabelBNDF6;
     private javax.swing.JLabel LabelBNDF7;
+    private javax.swing.JLabel LabelBNDF8;
     private javax.swing.JLabel LabelBQ;
     private javax.swing.JLabel LabelBQ1;
     private javax.swing.JLabel LabelBQ2;
@@ -21335,6 +22349,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBQ5;
     private javax.swing.JLabel LabelBQ6;
     private javax.swing.JLabel LabelBQ7;
+    private javax.swing.JLabel LabelBQ8;
     private javax.swing.JLabel LabelBQP;
     private javax.swing.JLabel LabelBQP1;
     private javax.swing.JLabel LabelBQP2;
@@ -21343,6 +22358,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBQP5;
     private javax.swing.JLabel LabelBQP6;
     private javax.swing.JLabel LabelBQP7;
+    private javax.swing.JLabel LabelBQP8;
     private javax.swing.JLabel LabelBS;
     private javax.swing.JLabel LabelBS1;
     private javax.swing.JLabel LabelBS2;
@@ -21351,6 +22367,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBS5;
     private javax.swing.JLabel LabelBS6;
     private javax.swing.JLabel LabelBS7;
+    private javax.swing.JLabel LabelBS8;
     private javax.swing.JLabel LabelBSP;
     private javax.swing.JLabel LabelBSP1;
     private javax.swing.JLabel LabelBSP2;
@@ -21359,6 +22376,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBSP5;
     private javax.swing.JLabel LabelBSP6;
     private javax.swing.JLabel LabelBSP7;
+    private javax.swing.JLabel LabelBSP8;
     private javax.swing.JLabel LabelDSGS;
     private javax.swing.JLabel LabelNDFP;
     private javax.swing.JLabel LabelNDFP1;
@@ -21368,6 +22386,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelNDFP5;
     private javax.swing.JLabel LabelNDFP6;
     private javax.swing.JLabel LabelNDFP7;
+    private javax.swing.JLabel LabelNDFP8;
     private javax.swing.JLabel LabelSZ;
     private javax.swing.JLabel LabelSZ1;
     private javax.swing.JLabel LabelSZ2;
@@ -21376,6 +22395,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelSZ5;
     private javax.swing.JLabel LabelSZ6;
     private javax.swing.JLabel LabelSZ7;
+    private javax.swing.JLabel LabelSZ8;
     private javax.swing.JLabel LabelSZP;
     private javax.swing.JLabel LabelSZP1;
     private javax.swing.JLabel LabelSZP2;
@@ -21384,6 +22404,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelSZP5;
     private javax.swing.JLabel LabelSZP6;
     private javax.swing.JLabel LabelSZP7;
+    private javax.swing.JLabel LabelSZP8;
     private javax.swing.JTextField Lugar;
     private javax.swing.JLabel MTDsum;
     private javax.swing.JLabel MTDsum1;
@@ -21393,6 +22414,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel MTDsum5;
     private javax.swing.JLabel MTDsum6;
     private javax.swing.JLabel MTDsum7;
+    private javax.swing.JLabel MTDsum8;
     private javax.swing.JMenu Menuadm;
     private javax.swing.JButton Modm;
     private javax.swing.JTextField NCDANom;
@@ -21413,6 +22435,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Nominab5;
     private javax.swing.JTextField Nominab6;
     private javax.swing.JTextField Nominab7;
+    private javax.swing.JTextField Nominab8;
     private javax.swing.JTextField NumPrenom;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JTextField Odtp;
@@ -21470,6 +22493,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane TDFA5;
     private javax.swing.JScrollPane TDFA6;
     private javax.swing.JScrollPane TDFA7;
+    private javax.swing.JScrollPane TDFA8;
     private javax.swing.JTextField THE;
     private javax.swing.JScrollPane TPagos;
     private javax.swing.JScrollPane TPagos1;
@@ -21479,6 +22503,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane TPagos5;
     private javax.swing.JScrollPane TPagos6;
     private javax.swing.JScrollPane TPagos7;
+    private javax.swing.JScrollPane TPagos8;
     private javax.swing.JTable Tnom;
     private javax.swing.JTable Tnom1;
     private javax.swing.JTable Tnom2;
@@ -21487,6 +22512,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTable Tnom5;
     private javax.swing.JTable Tnom6;
     private javax.swing.JTable Tnom7;
+    private javax.swing.JTable Tnom8;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JMenuItem UsuariosRH;
     private javax.swing.JMenuItem ZYS;
@@ -21510,6 +22536,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private botones.BotonWeb botonWeb20;
     private botones.BotonWeb botonWeb21;
     private botones.BotonWeb botonWeb22;
+    private botones.BotonWeb botonWeb23;
+    private botones.BotonWeb botonWeb25;
     private botones.BotonWeb botonWeb9;
     private javax.swing.JTextField busp;
     private javax.swing.JTextField busp1;
@@ -21519,6 +22547,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField busp5;
     private javax.swing.JTextField busp6;
     private javax.swing.JTextField busp7;
+    private javax.swing.JTextField busp8;
     private javax.swing.JTextField cda;
     private javax.swing.JTextField cta;
     private javax.swing.JLabel d;
@@ -21563,6 +22592,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField filtroNDFP5;
     private javax.swing.JTextField filtroNDFP6;
     private javax.swing.JTextField filtroNDFP7;
+    private javax.swing.JTextField filtroNDFP8;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -21627,6 +22657,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel183;
     private javax.swing.JLabel jLabel184;
     private javax.swing.JLabel jLabel185;
+    private javax.swing.JLabel jLabel186;
+    private javax.swing.JLabel jLabel188;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -21654,6 +22686,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -21711,6 +22744,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel36;
+    private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane18;
@@ -21723,6 +22758,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane25;
     private javax.swing.JScrollPane jScrollPane26;
     private javax.swing.JScrollPane jScrollPane27;
+    private javax.swing.JScrollPane jScrollPane28;
     private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane30;
@@ -21731,6 +22767,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane33;
     private javax.swing.JScrollPane jScrollPane34;
     private javax.swing.JScrollPane jScrollPane35;
+    private javax.swing.JScrollPane jScrollPane36;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -21745,6 +22782,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTable pago5;
     private javax.swing.JTable pago6;
     private javax.swing.JTable pago7;
+    private javax.swing.JTable pago8;
     private javax.swing.JTextField pd;
     private javax.swing.JLabel pds;
     private javax.swing.JTable share;
