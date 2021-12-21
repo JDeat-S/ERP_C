@@ -436,6 +436,251 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
 
+    public void MDPagosnomCSQ() {
+
+        //Nombre persona del pago
+        String FiltroN = busp8.getText();
+        String FAPpago = BAppag8.getText();
+        String FAMpago = Bampag8.getText();
+        String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`";
+        String FiltroSpago = FiltroServP8.getSelectedItem().toString();
+        String FiltroQuinpago = FiltroQP8.getSelectedItem().toString();
+        String FiltrosNDF = filtroNDFP8.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAPpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`,  `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
+        } else if (!"".equals(FAMpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
+        } else if (!"".equals(FiltrosNDF)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + "`Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
+        } else if (!"".equals(FiltroSpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
+        } else if (!"".equals(FiltroQuinpago)) {
+            SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
+                    + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
+                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            pago8.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");//5
+            modelo.addColumn("Sueldo Quincenal");//8
+            modelo.addColumn("Deposito");
+
+//ANCHOS
+            int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
+                /*SQ*/ 60, /*DEP*/ 60};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                pago8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_pagos_SCQ) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Corporativo quincenal: " + error_pagos_SCQ.getMessage());
+
+        }
+
+    }
+
+    public void MDNCSQ() {
+        //Buscar empleado
+        String FiltroN = Nominab8.getText();
+        String SQL = "select * from `nomina.corporativo santander quincenal`";
+        String FAPNom = FApT8.getText();
+        String FAMNom = FAmT8.getText();
+        String FiltroSnom = FiltroSnomina8.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina8.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF8.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "Select * from `nomina.detallada.corporativo santander quincenal` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `#lista` LIKE '%" + FiltroFol + "%'";
+        } else if (!"".equals(FAPNom)) {
+            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+        } else if (!"".equals(FAMNom)) {
+            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            SQL = "select * from `nomina.detallada.corporativo santander quincenal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            Tnom8.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# lista");//1
+            modelo.addColumn("# Empleado");//2
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Banco");//6
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Zona");//8
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("Bono");
+            modelo.addColumn("Por dia");//12
+            modelo.addColumn("Quincena del mes");
+            modelo.addColumn("Año");//14
+            modelo.addColumn("Dia 1 o 16");
+            modelo.addColumn("Dia 2 o 17");//16
+            modelo.addColumn("Dia 3 o 18");
+            modelo.addColumn("Dia 4 o 19");//18
+            modelo.addColumn("Dia 5 o 20");
+            modelo.addColumn("Dia 6 o 21");//20
+            modelo.addColumn("Dia 7 o 22");
+            modelo.addColumn("Dia 8 o 23");//22
+            modelo.addColumn("Dia 9 o 24");
+            modelo.addColumn("Dia 10 o 25");//24
+            modelo.addColumn("Dia 11 o 26");
+            modelo.addColumn("Dia 12 o 27");//26
+            modelo.addColumn("Dia 13 o 28");
+            modelo.addColumn("Dia 14 o 29");//28
+            modelo.addColumn("Dia 15 o 30");
+            modelo.addColumn("Dia 31");//30
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Retardos");
+            modelo.addColumn("Pago con retardos");//52
+            modelo.addColumn("Apoyo");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Observaciones");//70
+
+//Anchos hasta quincena
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
+                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
+                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
+                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
+                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tnom8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_ND_SCQ) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Santader corp quincenal: " + error_ND_SCQ.getMessage());
+
+        }
+
+    }
+
     public void sumaDep() {
         double t = 0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t5 = 0, t6 = 0, t7 = 0;
         double p, p1, p2, p3, p4, p5, p6, p7;
@@ -3616,42 +3861,32 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     public void deposito() {
         //por dia
         PH.setText("" + Double.parseDouble(pd.getText()) / 8);
-        
+
 //incapacidad
-        double totaldpi = Double.parseDouble(this.Dpi.getText()) * Double.parseDouble(pd.getText());
-        pds.setText("" + totaldpi);
+        pds.setText("" + Double.parseDouble(Dpi.getText()) * Double.parseDouble(pd.getText()));
 
 //vacaciones
-        double totalddv = Double.parseDouble(this.Ddv.getText()) * Double.parseDouble(pd.getText());
-        PDDDV.setText("" + totalddv);
+        PDDDV.setText("" + Double.parseDouble(Ddv.getText()) * Double.parseDouble(pd.getText()));
 //descanso
-        double totaldd = Double.parseDouble(this.DD.getText()) * Double.parseDouble(pd.getText());
-        PDDD.setText("" + totaldd);
+        PDDD.setText("" + Double.parseDouble(DD.getText()) * Double.parseDouble(pd.getText()));
 //dia laborado
-        double totalDL = Double.parseDouble(this.DL.getText()) * Double.parseDouble(pd.getText());
-        PDDL.setText("" + totalDL);
+        PDDL.setText("" + Double.parseDouble(DL.getText()) * Double.parseDouble(pd.getText()));
 
         //Dia festivo
-        double totalDF = Double.parseDouble(this.DF.getText()) * Double.parseDouble(pd.getText());
-        PDDF.setText("" + totalDF);
+        PDDF.setText("" + Double.parseDouble(DF.getText()) * Double.parseDouble(pd.getText()));
 
         //dia festivo laborado
-        double totaldt = (2 * Double.parseDouble(pd.getText())) * Double.parseDouble(this.DFT.getText());
-        PDDFT.setText("" + totaldt);
+        PDDFT.setText("" + (2 * Double.parseDouble(pd.getText())) * Double.parseDouble(DFT.getText()));
 
 //descanso
-        double totaldft = (2 * Double.parseDouble(pd.getText())) * Double.parseDouble(this.dt.getText());
-        PDDT.setText("" + totaldft);
+        PDDT.setText("" + (2 * Double.parseDouble(pd.getText())) * Double.parseDouble(dt.getText()));
 //faltas
-        double totalFAL = ((350 * Double.parseDouble(this.F.getText())) - (Double.parseDouble(pd.getText()) * Double.parseDouble(this.F.getText())));
-        DPF.setText("" + totalFAL);
+        DPF.setText("" + ((350 * Double.parseDouble(F.getText())) - (Double.parseDouble(pd.getText()) * Double.parseDouble(F.getText()))));
 //retardo
-        double totalRET = (Double.parseDouble(pd.getText()) * Double.parseDouble(this.R.getText())) - (Double.parseDouble(this.R.getText()) * 50);
-        PCR.setText("" + totalRET);
+        PCR.setText("" + ((Double.parseDouble(pd.getText()) * Double.parseDouble(R.getText())) - (Double.parseDouble(R.getText()) * 50)));
 //hora extra
-        double TotHE = Double.parseDouble(this.HE.getText()) * Double.parseDouble(this.PH.getText());
-        this.THE.setText("" + TotHE + "");
-        
+        this.THE.setText("" + Double.parseDouble(this.HE.getText()) * Double.parseDouble(this.PH.getText()));
+
 //ingresos
         double Ingresos = (Double.parseDouble(this.PDDDDSGS.getText())
                 + Double.parseDouble(this.Bono.getText()) + Double.parseDouble(this.Rembolso.getText())
@@ -3667,8 +3902,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 + Double.parseDouble(this.DPF.getText()) + Double.parseDouble(this.RI.getText())
                 + Double.parseDouble(Rinfonacot.getText()));
 
-        
-        
         DecimalFormat dDeposito = new DecimalFormat("#.00");
         this.deposito.setText(dDeposito.format(Ingresos - Egresos));
 
@@ -5383,10 +5616,20 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         jLabel32.setText("Retencion infonavit:");
 
         RI.setText("0");
+        RI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                RIKeyReleased(evt);
+            }
+        });
 
         jLabel39.setText("Infonacot:");
 
         Rinfonacot.setText("0");
+        Rinfonacot.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                RinfonacotKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -5519,7 +5762,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(Rinfonacot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel144)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6373,12 +6616,13 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel26)
-                                .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel40)
-                                    .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel26)
+                                    .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Datgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -21115,7 +21359,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_busp5KeyReleased
 
     private void HEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_HEKeyReleased
-       
+
         deposito();
     }//GEN-LAST:event_HEKeyReleased
 
@@ -21703,6 +21947,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         DecimalFormat dimp = new DecimalFormat("#.00");
         Funimprimir(pago8, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en Santander corporativo quincenal: " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
     }//GEN-LAST:event_Imprimir9ActionPerformed
+
+    private void RIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RIKeyReleased
+        deposito();
+    }//GEN-LAST:event_RIKeyReleased
+
+    private void RinfonacotKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RinfonacotKeyReleased
+        deposito();
+    }//GEN-LAST:event_RinfonacotKeyReleased
 
     /**
      * @param args the command line arguments
