@@ -1240,12 +1240,22 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         jLabel13.setText("Banco:");
 
         sueldo.setText("0");
+        sueldo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                sueldoKeyReleased(evt);
+            }
+        });
 
         jLabel12.setText("Cuenta de Banco:");
 
         jLabel90.setText("Bono:");
 
         Bono1.setText("0");
+        Bono1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Bono1KeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -5526,7 +5536,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             rs = ps.executeQuery();
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Lista");
             modelo.addColumn("Nombre(s)");//4
             modelo.addColumn("Apellido P");//2
@@ -5544,7 +5554,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             int[] anchos = {25/*Ndl*/, /*Name*/ 75, 50/*Ap*/, /*AM*/ 50,
                 /*CDB*/ 65, /*serv*/ 80, /*año*/ 30, /*FS*/ 40,
                 /*FV*/ 40, /*FP*/ 40,/*SS*/ 50, /*DEP*/ 100, /*Obs*/ 200};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 pago8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
@@ -7838,14 +7848,15 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ModmActionPerformed
 
     private void BnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BnoActionPerformed
-
         Bono.setText("0");
+        deposito();
     }//GEN-LAST:event_BnoActionPerformed
 
     private void BsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsiActionPerformed
 
         String Bonosi = Bono1.getText();
         Bono.setText(Bonosi);
+        deposito();
     }//GEN-LAST:event_BsiActionPerformed
 
     private void DomTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DomTItemStateChanged
@@ -8007,6 +8018,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             AJ = 0;
 
         }
+        double descanso = DS + DD + DL + DM + DMi + DJ + DV;
+        DDes.setText("" + descanso);
+        double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
+        DT.setText("" + asistencia);
         deposito();
     }//GEN-LAST:event_JueTItemStateChanged
 
@@ -12511,6 +12526,24 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         utilJTablePrint(pago8, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en Santander corporativo quincenal: " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
     }//GEN-LAST:event_Imprimir9ActionPerformed
 
+    private void sueldoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sueldoKeyReleased
+        deposito();
+        double d1 = Double.parseDouble(sueldo.getText());
+        double Pordia = d1 / 7;
+        pd.setText("" + Pordia + "");
+        double Porhora = Pordia / 8;
+        PH.setText("" + Porhora + "");
+    }//GEN-LAST:event_sueldoKeyReleased
+
+    private void Bono1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bono1KeyReleased
+        deposito();
+        double d1 = Double.parseDouble(sueldo.getText());
+        double Pordia = d1 / 7;
+        pd.setText("" + Pordia + "");
+        double Porhora = Pordia / 8;
+        PH.setText("" + Porhora + "");
+    }//GEN-LAST:event_Bono1KeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -12531,7 +12564,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Admin_NominaS_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         //</editor-fold>
 
         /* Create and display the form */

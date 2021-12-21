@@ -34,7 +34,7 @@ import javax.swing.table.DefaultTableModel;
  * @author JDeat
  */
 public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
-
+    
     int a = 1, Pa = 10, b = 15, c = 20, D = 25, e = 2,
             f = 4, g = 6, h = 8;
     ButtonGroup DAB;
@@ -54,11 +54,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             dd14, in14, dv14, df14, dft14,
             dd15, in15, dv15, df15, dft15,
             dd16, in16, dv16, df16, dft16;
-
+    
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
-
+    
     public Admin_NominaQSiMSS_5() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Fil Servicios">
@@ -427,12 +427,12 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         sharepresnom();
         shareODTnom();
     }
-
+    
     @SuppressWarnings("unchecked")
-
+    
     public void sumaDep() {
-        double t = 0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t5 = 0, t6 = 0, t7 = 0, t8 = 0;
-        double p, p1, p2, p3, p4, p5, p6, p7, p8;
+        double t = 0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t5 = 0, t6 = 0, t7 = 0;
+        double p, p1, p2, p3, p4, p5, p6, p7;
         if (pago.getRowCount() > 0) {
             for (int i = 0; i < pago.getRowCount(); i++) {
                 p = Double.parseDouble(pago.getValueAt(i, 7).toString());
@@ -440,7 +440,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
             MTDsum.setText("" + t);
         } else {
-
+            
         }
         if (pago1.getRowCount() > 0) {
             for (int i = 0; i < pago1.getRowCount(); i++) {
@@ -449,7 +449,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
             MTDsum1.setText("" + t1);
         } else {
-
+            
         }
         if (pago2.getRowCount() > 0) {
             for (int i = 0; i < pago2.getRowCount(); i++) {
@@ -458,7 +458,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
             MTDsum2.setText("" + t2);
         } else {
-
+            
         }
         if (pago3.getRowCount() > 0) {
             for (int i = 0; i < pago3.getRowCount(); i++) {
@@ -467,7 +467,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
             MTDsum3.setText("" + t3);
         } else {
-
+            
         }
         if (pago4.getRowCount() > 0) {
             for (int i = 0; i < pago4.getRowCount(); i++) {
@@ -476,7 +476,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
             MTDsum4.setText("" + t4);
         } else {
-
+            
         }
         if (pago5.getRowCount() > 0) {
             for (int i = 0; i < pago5.getRowCount(); i++) {
@@ -485,7 +485,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
             MTDsum5.setText("" + t5);
         } else {
-
+            
         }
         if (pago6.getRowCount() > 0) {
             for (int i = 0; i < pago6.getRowCount(); i++) {
@@ -494,7 +494,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
             MTDsum6.setText("" + t6);
         } else {
-
+            
         }
         if (pago7.getRowCount() > 0) {
             for (int i = 0; i < pago7.getRowCount(); i++) {
@@ -503,10 +503,10 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
             MTDsum7.setText("" + t7);
         } else {
-
+            
         }
     }
-
+    
     public void utilJTablePrint(JTable jTable, String header, String footer, boolean showPrintDialog) {
         boolean fitWidth = true;
         boolean interactive = true;
@@ -543,14 +543,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     //Agregar pago Pres
     public void AgregarPagoPres() {
-
+        
         String SQL = "INSERT INTO `nomina.pagos.prestamos` (`#Lista`, `#prestamo`, "
                 + "`#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
                 + " `Servicio`, `Quincena`, `# quincena`, `pagado`, `pendiente`, "
                 + "`Pago de prestamo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
+            
             pst.setInt(1, Integer.parseInt(NDL.getText()));
             pst.setInt(2, Integer.parseInt(NumPrenom.getText()));
             pst.setInt(3, Integer.parseInt(NEnom.getText()));
@@ -564,10 +564,10 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             pst.setString(11, Pagadoprenom.getText());
             pst.setString(12, Pendienteprenom.getText());
             pst.setString(13, Presp.getText());
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Pago de prestamo en registrado");
-
+            
         } catch (HeadlessException | SQLException Error_PdPrestamo) {
             JOptionPane.showMessageDialog(null, "Error al registrar pago de prestamo: " + Error_PdPrestamo.getMessage());
         }
@@ -575,14 +575,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     //Agregar pago ODT
     public void AgregarPagoODT() {
-
+        
         String SQL = "INSERT INTO `nomina.pagos.odt` (`#Lista`, `# de orden`, "
                 + "`#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
                 + " `Servicio`, `Quincena`, `# quincena`, `pagado`, `pendiente`, "
                 + "`Pago de odt`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
+            
             pst.setInt(1, Integer.parseInt(NDL.getText()));
             pst.setInt(2, Integer.parseInt(NODTnom.getText()));
             pst.setInt(3, Integer.parseInt(NEnom.getText()));
@@ -596,10 +596,10 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             pst.setString(11, PagODTnom.getText());
             pst.setString(12, PenODTnom.getText());
             pst.setString(13, Odtp.getText());
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Pago de orden en agregado");
-
+            
         } catch (HeadlessException | SQLException error_agregar_pdodt) {
             JOptionPane.showMessageDialog(null, "Error al agregar pago de orden: " + error_agregar_pdodt.getMessage());
         }
@@ -607,14 +607,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
 //Agregar pago CDA
     public void AgregarPagoCDA() {
-
+        
         String SQL = "INSERT INTO `nomina.pagos.cda` (`#Lista`, `#caja`, `#empleado`, `Apellido P`,"
                 + " `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Quincena`, `Caja de ahorro`,"
                 + " `Observaciones`, `Qnas aportadas`, `# de recibo de pago`) VALUES (?, ?, ?, ?,"
                 + " ?, ?, ?, ?, ?, ?, '', ?, '')";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
+            
             pst.setInt(1, Integer.parseInt(NDL.getText()));
             pst.setInt(2, Integer.parseInt(NCDANom.getText()));
             pst.setInt(3, Integer.parseInt(NEnom.getText()));
@@ -626,10 +626,10 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             pst.setString(9, Quincenas.getSelectedItem().toString());
             pst.setString(10, cda.getText());
             pst.setString(11, QAcdanom.getText());
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Pago de caja de ahorro en agregado");
-
+            
         } catch (HeadlessException | SQLException error_add_pdcda) {
             JOptionPane.showMessageDialog(null, "Error al agregar pago de caja de ahorro: " + error_add_pdcda.getMessage());
         }
@@ -638,54 +638,54 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //auto ODT
     public void PagoODT() {
         String Otropagoodt = PenODTnom.getText();
-
+        
         if (Otropagoodt.equals("0.0")) {
             String SQL = "UPDATE `nomina.odt` SET `Status` = 'Pagado', `Quincenas pagadas` = ?,"
                     + " `Pagado` = ?, `Pendiente` = ? WHERE `nomina.odt`.`idTaller` = ?";
-
+            
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-
+                
                 pst.setString(1, PagODTnom.getText());
                 pst.setString(2, PenODTnom.getText());
                 pst.setString(3, NQODTnom.getText());
                 pst.setInt(4, Integer.parseInt(NODTnom.getText()));
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Abono de orden de taller agregado.");
-
+                
             } catch (HeadlessException | SQLException error_auto_odt) {
                 JOptionPane.showMessageDialog(null, "Error al abonar orden de taller: " + error_auto_odt.getMessage());
             }
         } else if (Otropagoodt.equals(PenODTnom.getText())) {
             String SQL = "UPDATE `nomina.odt` SET `Status` = 'Debe', `Pagado` = ?, `Pendiente` = ?, "
                     + "`Quincenas pagadas` = ? WHERE `nomina.odt`.`idTaller` = ?";
-
+            
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-
+                
                 pst.setString(1, PagODTnom.getText());
                 pst.setString(2, PenODTnom.getText());
                 pst.setString(3, NQODTnom.getText());
                 pst.setInt(4, Integer.parseInt(NODTnom.getText()));
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Abono de orden de taller en agregado.");
-
+                
             } catch (HeadlessException | SQLException error_auto_odt) {
                 JOptionPane.showMessageDialog(null, "Error al abonar orden de taller en: " + error_auto_odt.getMessage());
             }
         }
-
+        
     }
-
+    
     public void shareODTnom() {
         String FiltroN = BNameNom.getText();
         String FAP = BAPNom.getText();
         String FAM = BAMNom.getText();
         String where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`,"
                 + " `Por quincenas`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.odt`";
-
+        
         if (!"".equals(FiltroN)) {
             where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`,"
                     + " `Por quincenas`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.odt`"
@@ -699,7 +699,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     + " `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.odt`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%' AND `Status` LIKE '%Debe%' ";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -707,19 +707,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             SHODTnom.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Orden");
             modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
@@ -732,13 +732,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NP*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*PPQ*/ 50,
                 /*QP*/ 50, /*PAG*/ 60, /*PEN*/ 50};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 SHODTnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -748,63 +748,63 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_sh_odt) {
             JOptionPane.showMessageDialog(null, "Error al compartir ordenes de taller con nomina: " + error_sh_odt.getMessage());
-
+            
         }
-
+        
     }
 
 //AUTO PRES
     public void Pagopres() {
         String otroprestamo = Pendienteprenom.getText();
-
+        
         if (otroprestamo.equals("0.0")) {
             String SQL = "UPDATE `nomina.prestamos` SET `Status` = 'Pagado', `Quincenas pagadas` = ?,"
                     + " `Pagado` = ?, `Pendiente` = ? WHERE `nomina.prestamos`.`idprestamos` = ?";
-
+            
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-
+                
                 pst.setString(1, NQprenom.getText());
                 pst.setString(2, Pagadoprenom.getText());
                 pst.setString(3, Pendienteprenom.getText());
                 pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Abono de prestamo en agregado.");
-
+                
             } catch (HeadlessException | SQLException error_auto_pres) {
                 JOptionPane.showMessageDialog(null, "Error al abonar prestamo en: " + error_auto_pres.getMessage());
             }
         } else if (otroprestamo.equals(Pendienteprenom.getText())) {
-
+            
             String SQL = "UPDATE `nomina.prestamos` SET `Status` = 'Debe', `Quincenas pagadas` = ?,"
                     + " `Pagado` = ?, `Pendiente` = ? WHERE `nomina.prestamos`.`idprestamos` = ?";
-
+            
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-
+                
                 pst.setString(1, NQprenom.getText());
                 pst.setString(2, Pagadoprenom.getText());
                 pst.setString(3, Pendienteprenom.getText());
                 pst.setInt(4, Integer.parseInt(NumPrenom.getText()));
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Abono de prestamo en agregado.");
-
+                
             } catch (HeadlessException | SQLException error_auto_pres) {
                 JOptionPane.showMessageDialog(null, "Error al abonar prestamo: " + error_auto_pres.getMessage());
             }
         }
-
+        
     }
-
+    
     public void sharepresnom() {
         String FiltroN = BNameNom.getText();
         String FAP = BAPNom.getText();
         String FAM = BAMNom.getText();
         String where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
                 + " `Por quincena`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.prestamos`";
-
+        
         if (!"".equals(FiltroN)) {
             where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
                     + " `Por quincena`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.prestamos`"
@@ -818,7 +818,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     + " `Por quincena`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.prestamos`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%' AND `Status` LIKE '%Debe%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -826,7 +826,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             SHPresnom.setModel(modelo);
@@ -834,10 +834,10 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             ResultSet rs;
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Prestamo");
             modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
@@ -850,13 +850,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NP*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*PPQ*/ 50,
                 /*QP*/ 50, /*PAG*/ 60, /*PEN*/ 50};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 SHPresnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -866,32 +866,32 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_sh_pre_nom) {
             JOptionPane.showMessageDialog(null, "Error al compartir prestamos con nomina: " + error_sh_pre_nom.getMessage());
-
+            
         }
-
+        
     }
 
 //AUTO CDA
     public void editarCDAdnom() {
-
+        
         String SQL = "UPDATE `nomina.cajadeahorro` SET "
                 + " `Quincenas Ahorradas` = ?, `Total Ahorrado` = ? WHERE `nomina.cajadeahorro`.`#caja` = ?";
-
+        
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
+            
             pst.setString(1, QAcdanom.getText());
             pst.setString(2, TACDANOM.getText());
             pst.setInt(3, Integer.parseInt(NCDANom.getText()));
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Abono de caja de ahorro en agregado");
-
+            
         } catch (HeadlessException | SQLException error_auto_cda) {
             JOptionPane.showMessageDialog(null, "Error al abonar Caja de ahorro: " + error_auto_cda.getMessage());
         }
     }
-
+    
     public void sharecdanom() {
         String FiltroN = BNameNom.getText();
         String FAP = BAPNom.getText();
@@ -899,7 +899,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
                 + " `Ahorro por quincena`, `Quincenas Ahorradas`, `Total Ahorrado` "
                 + " FROM `nomina.cajadeahorro`";
-
+        
         if (!"".equals(FiltroN)) {
             where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
                     + " `Ahorro por quincena`, `Quincenas Ahorradas`, `Total Ahorrado`"
@@ -916,7 +916,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     + " FROM `nomina.cajadeahorro`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -924,19 +924,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             SHCDAnom.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Caja");
             modelo.addColumn("Apellido P");//2
             modelo.addColumn("Apellido M");
@@ -948,13 +948,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NF*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*APQ*/ 50,
                 /*QA*/ 50, /*TA*/ 60};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 SHCDAnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -964,9 +964,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_sh_cda_nom) {
             JOptionPane.showMessageDialog(null, "Error al mostrar compartir datos de caja de ahorro en nomina: " + error_sh_cda_nom.getMessage());
-
+            
         }
-
+        
     }
 
 //Descuentos varios
@@ -983,7 +983,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         double desv10 = Double.parseDouble(this.Chaleco.getText());
         double desv11 = Double.parseDouble(this.Credencial.getText());
         double desv12 = Double.parseDouble(this.AdN.getText());
-
+        
         double total = desv1 + desv2 + desv3 + desv4 + desv5 + desv6 + desv7
                 + desv8 + desv9 + desv10 + desv11 + desv12;
         this.DVT.setText("" + total + "");
@@ -1007,7 +1007,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         double dsgs14 = Double.parseDouble(this.DSGS14.getText());
         double dsgs15 = Double.parseDouble(this.DSGS15.getText());
         double dsgs16 = Double.parseDouble(this.DSGS16.getText());
-
+        
         double total = dsgs + dsgs2 + dsgs3 + dsgs4 + dsgs5 + dsgs6 + dsgs7 + dsgs8 + dsgs9 + dsgs10 + dsgs11 + dsgs12 + dsgs13 + dsgs14 + dsgs15 + dsgs16;
         this.DSGS.setText("" + total + "");
     }
@@ -1032,7 +1032,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         int D16 = Integer.parseInt(DL16.getText());
         double total = D1 + D2 + D3 + D4 + D5 + D6 + D7 + D8 + D9 + D10 + D11 + D12 + D13 + D14 + D15 + D16;
         DL.setText("" + total + "");
-
+        
     }
 //descanso trabajado
 
@@ -1053,7 +1053,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         double DEST14 = Double.parseDouble(this.dt14.getText());
         double DEST15 = Double.parseDouble(this.dt15.getText());
         double DEST16 = Double.parseDouble(this.dt16.getText());
-
+        
         double total = DEST1 + DEST2 + DEST3 + DEST4 + DEST5 + DEST6 + DEST7 + DEST8 + DEST9 + DEST10 + DEST11 + DEST12 + DEST13 + DEST14 + DEST15 + DEST16;
         this.dt.setText("" + total + "");
     }
@@ -1076,7 +1076,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         double Fal14 = Double.parseDouble(this.F14.getText());
         double Fal15 = Double.parseDouble(this.F15.getText());
         double Fal16 = Double.parseDouble(this.F16.getText());
-
+        
         double total = Fal1 + Fal2 + Fal3 + Fal4 + Fal5 + Fal6 + Fal7 + Fal8
                 + Fal9 + Fal10 + Fal11 + Fal12 + Fal13 + Fal14 + Fal15 + Fal16;
         this.F.setText("" + total + "");
@@ -1100,7 +1100,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         double FalJ14 = Double.parseDouble(this.FJ14.getText());
         double FalJ15 = Double.parseDouble(this.FJ15.getText());
         double FalJ16 = Double.parseDouble(this.FJ16.getText());
-
+        
         double total = FalJ1 + FalJ2 + FalJ3 + FalJ4 + FalJ5 + FalJ6 + FalJ7 + FalJ8 + FalJ9 + FalJ10 + FalJ11 + FalJ12 + FalJ13 + FalJ14 + FalJ15 + FalJ16;
         this.FJ.setText("" + total + "");
     }
@@ -1123,7 +1123,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         double Ret14 = Double.parseDouble(this.R14.getText());
         double Ret15 = Double.parseDouble(this.R15.getText());
         double Ret16 = Double.parseDouble(this.R16.getText());
-
+        
         double total = Ret + Ret2 + Ret3 + Ret4 + Ret5 + Ret6 + Ret7 + Ret8
                 + Ret9 + Ret10 + Ret11 + Ret12 + Ret13 + Ret14 + Ret15 + Ret16;
         this.R.setText("" + total + "");
@@ -1147,12 +1147,12 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         double DesO14 = Double.parseDouble(this.DO14.getText());
         double DesO15 = Double.parseDouble(this.DO15.getText());
         double DesO16 = Double.parseDouble(this.DO16.getText());
-
+        
         double total = DesO1 + DesO2 + DesO3 + DesO4 + DesO5 + DesO6 + DesO7 + DesO8 + DesO9
                 + DesO10 + DesO11 + DesO12 + DesO13 + DesO14 + DesO15 + DesO16;
         this.DO.setText("" + total + "");
     }
-
+    
     public void shareN() {
         //Buscar empleado
         String Share = BNameNom.getText();
@@ -1160,7 +1160,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String ShareAM = BAMNom.getText();
         String where = "select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`"
                 + " from empleados where `Status` LIKE '%Vigente%'";
-
+        
         if (!"".equals(Share)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
                     + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
@@ -1171,7 +1171,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
                     + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1179,19 +1179,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             share.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");//1
             modelo.addColumn("Apellido M");//
@@ -1206,13 +1206,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //Anchos
             int[] anchos = {/*numE*/35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 150, /*Banco*/ 75, /*CTA*/ 50, /*zona*/ 60,
                 /*servicio*/ 100, /*sueldo*/ 60, /*bono*/ 40};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 share.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1222,11 +1222,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_sharenom) {
             JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void FunMD() {
         MDPagosnomFA();
         MDPagosnomFP();
@@ -1257,7 +1257,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSpago = FiltroServP.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco.simss`"
@@ -1283,7 +1283,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco.simss`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1291,19 +1291,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             pago.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Lista");
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -1316,13 +1316,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
                 /*SQ*/ 60, /*DEP*/ 60};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 pago.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1332,11 +1332,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_pagos_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos acapulco: " + error_pagos_FA.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDPagosnomFP() {
         //Nombre persona del pago
         String FiltroN = busp1.getText();
@@ -1347,7 +1347,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSpago = FiltroServP1.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP1.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP1.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`,`Sueldo`, `Deposito`, FROM `nomina.detallada.foraneos puebla.simss`"
@@ -1373,7 +1373,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla.simss`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1381,19 +1381,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             pago1.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Lista");
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -1406,13 +1406,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
                 /*SQ*/ 60, /*DEP*/ 60};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 pago1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1422,11 +1422,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_pagos_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos puebla: " + error_pagos_FA.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDPagosnomFT() {
         //Nombre persona del pago
         String FiltroN = busp2.getText();
@@ -1437,7 +1437,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSpago = FiltroServP2.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP2.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP2.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca.simss`"
@@ -1463,7 +1463,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca.simss`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1471,19 +1471,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             pago2.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Lista");
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -1502,13 +1502,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
                 /*ZONA*/ 50, /*SERV*/ 60, /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60, /*QDM*/ 80,
                 /*AÑO*/ 40};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 pago2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1518,11 +1518,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_pagos_FT) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos toluca: " + error_pagos_FT.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDPagosnomNor() {
         //Nombre persona del pago
         String FiltroN = busp3.getText();
@@ -1533,7 +1533,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSpago = FiltroServP3.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP3.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP3.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte.simss`"
@@ -1559,7 +1559,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte.simss`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1567,19 +1567,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             pago3.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Lista");
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -1592,13 +1592,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
                 /*SQ*/ 60, /*DEP*/ 60};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 pago3.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1608,11 +1608,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_pagos_norte) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en norte: " + error_pagos_norte.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDPagosnomPon() {
         //Nombre persona del pago
         String FiltroN = busp4.getText();
@@ -1623,7 +1623,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSpago = FiltroServP4.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP4.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP4.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente.simss`"
@@ -1649,7 +1649,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente.simss`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1657,19 +1657,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             pago4.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Lista");
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -1682,13 +1682,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
                 /*SQ*/ 60, /*DEP*/ 60};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 pago4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1698,11 +1698,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_pagos_poniente) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Poniente: " + error_pagos_poniente.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDPagosnomOfi() {
         //Nombre persona del pago
         String FiltroN = busp5.getText();
@@ -1713,7 +1713,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSpago = FiltroServP5.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP5.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP5.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina`"
@@ -1739,7 +1739,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1747,19 +1747,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             pago5.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Lista");
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -1772,13 +1772,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
                 /*SQ*/ 60, /*BONO*/ 50, /*DEP*/ 60};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 pago5.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1788,11 +1788,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_pagos_oficina) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en oficina: " + error_pagos_oficina.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDPagosnomS1() {
         //Nombre persona del pago
         String FiltroN = busp6.getText();
@@ -1803,7 +1803,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSpago = FiltroServP6.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP6.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP6.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 1.simss`"
@@ -1829,7 +1829,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 1.simss`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1837,19 +1837,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             pago6.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Lista");
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -1862,13 +1862,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
                 /*SQ*/ 60, /*DEP*/ 60};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 pago6.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1878,11 +1878,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_pagos_sur1) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 1: " + error_pagos_sur1.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDPagosnomS2() {
         //Nombre persona del pago
         String FiltroN = busp7.getText();
@@ -1893,7 +1893,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSpago = FiltroServP7.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP7.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP7.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 2.simss`"
@@ -1919,7 +1919,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 2.simss`"
                     + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1927,19 +1927,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             pago7.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Lista");
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -1952,13 +1952,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NL*/50, /*NAME*/ 150, /*AP*/ 50, /*AM*/ 50, /*ban*/ 50, /*CDB*/ 50,
                 /*SQ*/ 60, /*DEP*/ 60};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 pago7.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1968,14 +1968,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_pagos_sur2) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 2: " + error_pagos_sur2.getMessage());
-
+            
         }
-
+        
     }
 
 //Modificar nomina
     public void MODN() {
-
+        
         String SQL = "UPDATE `nomina.detallada." + Zon.getText() + ".simss` SET `#lista` = ?, `#empleado` = ?,"
                 + " `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Banco` = ?, "
                 + "`Cuenta de banco` = ?, `Zona` = ?, `Servicio` = ?, `Sueldo` = ?, "
@@ -1995,10 +1995,10 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 + "`Total de DV` = ?, `Pago de prestamo` = ?, `Caja de ahorro` = ?, "
                 + "`Orden de taller` = ?, `Deposito` = ?, `Observaciones` = ? WHERE "
                 + "`nomina.detallada." + Zon.getText() + ".simss`.`#lista` = ?";
-
+        
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
+            
             pst.setInt(1, Integer.parseInt(NDL.getText()));
             pst.setInt(2, Integer.parseInt(NEnom.getText()));
             pst.setString(3, Ap.getText());
@@ -2075,7 +2075,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             pst.setString(74, deposito.getText());
             pst.setString(75, obs.getText());
             pst.setInt(76, Integer.parseInt(NDL.getText()));
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Modificada.");
 
@@ -2149,7 +2149,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-
+            
         } catch (HeadlessException | SQLException error_add_nom) {
             JOptionPane.showMessageDialog(null, "Error al modificar nomina en: " + error_add_nom.getMessage());
         }
@@ -2165,7 +2165,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSnom = FiltroSnomina.getSelectedItem().toString();
         String FiltroQuin = FiltroQuincenanomina.getSelectedItem().toString();
         String FiltroFol = FiltroNDF.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "Select * from `nomina.detallada.foraneos acapulco.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
@@ -2179,7 +2179,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuin)) {
             SQL = "select * from `nomina.detallada.foraneos acapulco.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -2187,19 +2187,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             Tnom.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//2
             modelo.addColumn("Apellido P");
@@ -2289,13 +2289,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -2305,11 +2305,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_ND_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + error_ND_FA.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDNFP() {
         //Buscar empleado
         String FiltroN = Nominab1.getText();
@@ -2319,7 +2319,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSnom = FiltroSnomina1.getSelectedItem().toString();
         String FiltroQuin = FiltroQuincenanomina1.getSelectedItem().toString();
         String FiltroFol = FiltroNDF1.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "Select * from `nomina.detallada.foraneos puebla.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
@@ -2333,7 +2333,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuin)) {
             SQL = "select * from `nomina.detallada.foraneos puebla.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -2341,19 +2341,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             Tnom1.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//2
             modelo.addColumn("Apellido P");
@@ -2443,13 +2443,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -2459,11 +2459,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_ND_FP) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos puebla: " + error_ND_FP.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDNFT() {
         //Buscar empleado
         String FiltroN = Nominab2.getText();
@@ -2473,7 +2473,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSnom = FiltroSnomina2.getSelectedItem().toString();
         String FiltroQuin = FiltroQuincenanomina2.getSelectedItem().toString();
         String FiltroFol = FiltroNDF2.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "Select * from `nomina.detallada.foraneos toluca.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
@@ -2487,7 +2487,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuin)) {
             SQL = "select * from `nomina.detallada.foraneos toluca.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -2495,19 +2495,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             Tnom2.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//2
             modelo.addColumn("Apellido P");
@@ -2597,13 +2597,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -2613,11 +2613,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_ND_FT) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos toluca: " + error_ND_FT.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDNNor() {
         //Buscar empleado
         String FiltroN = Nominab3.getText();
@@ -2627,7 +2627,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSnom = FiltroSnomina3.getSelectedItem().toString();
         String FiltroQuin = FiltroQuincenanomina3.getSelectedItem().toString();
         String FiltroFol = FiltroNDF3.getText();
-
+        
         if (!"".equals(FiltroN)) {
             where = "Select * from `nomina.detallada.norte.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
@@ -2641,7 +2641,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuin)) {
             where = "select * from `nomina.detallada.norte.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -2649,19 +2649,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             Tnom3.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//2
             modelo.addColumn("Apellido P");
@@ -2751,13 +2751,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom3.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -2767,11 +2767,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_ND_norte) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de norte: " + error_ND_norte.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDNOfi() {
         //Buscar empleado
         String FiltroN = Nominab4.getText();
@@ -2781,7 +2781,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSnom = FiltroSnomina4.getSelectedItem().toString();
         String FiltroQuin = FiltroQuincenanomina4.getSelectedItem().toString();
         String FiltroFol = FiltroNDF4.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "Select * from `nomina.detallada.oficina.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
@@ -2795,7 +2795,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuin)) {
             SQL = "select * from `nomina.detallada.oficina.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -2803,19 +2803,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             Tnom4.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//2
             modelo.addColumn("Apellido P");
@@ -2905,13 +2905,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -2921,11 +2921,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_ND_ofi) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Oficina: " + error_ND_ofi.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDNPon() {
         //Buscar empleado
         String FiltroN = Nominab5.getText();
@@ -2935,7 +2935,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSnom = FiltroSnomina5.getSelectedItem().toString();
         String FiltroQuin = FiltroQuincenanomina5.getSelectedItem().toString();
         String FiltroFol = FiltroNDF5.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "Select * from `nomina.detallada.poniente.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
@@ -2949,7 +2949,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuin)) {
             SQL = "select * from `nomina.detallada.poniente.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -2957,19 +2957,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             Tnom5.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//2
             modelo.addColumn("Apellido P");
@@ -3059,13 +3059,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom5.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -3075,11 +3075,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_ND_pon) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Poniente: " + error_ND_pon.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDNS1() {
         //Buscar empleado
         String FiltroN = Nominab6.getText();
@@ -3089,7 +3089,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSnom = FiltroSnomina6.getSelectedItem().toString();
         String FiltroQuin = FiltroQuincenanomina6.getSelectedItem().toString();
         String FiltroFol = FiltroNDF6.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "Select * from `nomina.detallada.sur 1.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
@@ -3103,7 +3103,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuin)) {
             SQL = "select * from `nomina.detallada.sur 1.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -3111,19 +3111,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             Tnom6.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//2
             modelo.addColumn("Apellido P");
@@ -3213,13 +3213,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom6.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -3229,11 +3229,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_ND_S1) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 1: " + error_ND_S1.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDNS2() {
         //Buscar empleado
         String FiltroN = Nominab7.getText();
@@ -3243,7 +3243,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String FiltroSnom = FiltroSnomina7.getSelectedItem().toString();
         String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
         String FiltroFol = FiltroNDF7.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "Select * from `nomina.detallada.sur 2.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
@@ -3257,7 +3257,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuin)) {
             SQL = "select * from `nomina.detallada.sur 2.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -3265,19 +3265,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             Tnom7.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//2
             modelo.addColumn("Apellido P");
@@ -3367,13 +3367,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom7.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -3383,15 +3383,15 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_ND_S2) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 2: " + error_ND_S2.getMessage());
-
+            
         }
-
+        
     }
     //fin de mostrar datos
 
 //Agregar nomina
     public void AgregarN() {
-
+        
         String SQL = "INSERT INTO `nomina.detallada." + Zon.getText() + ".simss` (`#lista`, `#empleado`, `Apellido P`, "
                 + "`Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, "
                 + "`Sueldo`, `Bono`, `por dia`, `quincena del mes`, `año`, `1/16`, `2/17`,"
@@ -3410,7 +3410,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
+            
             pst.setInt(1, Integer.parseInt(NDL.getText()));
             pst.setInt(2, Integer.parseInt(NEnom.getText()));
             pst.setString(3, Ap.getText());
@@ -3486,7 +3486,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             pst.setString(73, Odtp.getText());
             pst.setString(74, deposito.getText());
             pst.setString(75, obs.getText());
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina en agregada");
 
@@ -3601,7 +3601,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
-
+            
         } catch (HeadlessException | SQLException error_add_ND) {
             JOptionPane.showMessageDialog(null, "Error al Agregar Nomina: " + error_add_ND.getMessage());
         }
@@ -3611,6 +3611,8 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     public void deposito() {
         //por dia
         double PD = Double.parseDouble(this.pd.getText());
+        double PH = PD / 8;
+        this.PH.setText("" + PH);
 //incapacidad
         double dpi = Double.parseDouble(this.Dpi.getText());
         double totaldpi = dpi * PD;
@@ -3673,12 +3675,12 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         double IN6 = Double.parseDouble(this.PDDT.getText());
         double IN2 = Double.parseDouble(this.PDDDV.getText());
         double IN13 = Double.parseDouble(this.PDDDDSGS.getText());
-
+        
         double Ingresos = (IN13 + IN10 + IN9 + IN6 + IN3 + IN5 + IN14 + IN15 + IN8 + IN7 + +IN1 + IN2);
         double Egresos = (EG1 + EG2 + EG7 + EG8 + EG4 + EG16);
         DecimalFormat dDeposito = new DecimalFormat("#.00");
         this.deposito.setText(dDeposito.format(Ingresos - Egresos));
-
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -3859,6 +3861,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel91 = new javax.swing.JLabel();
         año = new com.toedter.calendar.JDateChooser();
+        jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         Bsi = new javax.swing.JRadioButton();
         Bno = new javax.swing.JRadioButton();
@@ -3921,6 +3924,10 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         NQprenom = new javax.swing.JTextField();
         jLabel149 = new javax.swing.JLabel();
         NQODTnom = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jPanel18 = new javax.swing.JPanel();
         Dpi = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
@@ -4018,7 +4025,8 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         jLabel164 = new javax.swing.JLabel();
         jLabel165 = new javax.swing.JLabel();
         jLabel166 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jLabel40 = new javax.swing.JLabel();
+        PH = new javax.swing.JTextField();
         NomDetallada = new javax.swing.JScrollPane();
         PestanañasND = new javax.swing.JTabbedPane();
         TDFA = new javax.swing.JScrollPane();
@@ -4931,6 +4939,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         año.setDateFormatString("yyyy");
 
+        jButton2.setText("Limpiar campos");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -5003,7 +5018,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Dia16, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(355, 355, 355)
+                        .addGap(247, 247, 247)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Quincenas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41)
                         .addComponent(jLabel91)
@@ -5022,7 +5039,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addGap(6, 6, 6)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Quincenas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Quincenas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton2))
                     .addComponent(jLabel91)
                     .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -5322,6 +5341,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         NQODTnom.setText("0");
 
+        jLabel32.setText("Retencion infonavit:");
+
+        jTextField1.setText("0");
+
+        jLabel39.setText("Fonacot:");
+
+        jTextField2.setText("0");
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -5364,7 +5391,15 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                                         .addGap(22, 22, 22)
                                         .addComponent(jLabel24)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel32)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel39)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel10Layout.createSequentialGroup()
                                         .addComponent(jLabel132)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5438,7 +5473,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
-                    .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel32)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel144)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -6169,12 +6208,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton2.setText("Limpiar campos");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        jLabel40.setText("Por hora:");
+
+        PH.setText("0");
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -6215,7 +6251,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton2))
+                                        .addComponent(jLabel40)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1342, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel17Layout.createSequentialGroup()
                                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6271,7 +6309,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel26)
                                 .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton2)))
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel40)
+                                    .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Datgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9517,7 +9557,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ChamarraKeyReleased
 
     private void PlayeraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PlayeraKeyReleased
-
+        
         desv();
         deposito();
     }//GEN-LAST:event_PlayeraKeyReleased
@@ -9551,7 +9591,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DIActionPerformed
 
     private void BnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BnoActionPerformed
-
+        
         Bono.setText("0");
         deposito();
 
@@ -9564,9 +9604,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_BsiActionPerformed
 
     private void Dia16ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia16ItemStateChanged
-
+        
         String D16 = (String) Dia16.getSelectedItem();
-
+        
         if (D16.equals(".")) {
             DL16.setText("0");
             F16.setText("0");
@@ -9580,7 +9620,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 0;
             df16 = 0;
             dft16 = 0;
-
+            
         }
         if (D16.equals("A")) {
             DL16.setText("" + a + "");
@@ -9595,7 +9635,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 0;
             df16 = 0;
             dft16 = 0;
-
+            
         }
         if (D16.equals("D")) {
             DL16.setText("0");
@@ -9610,7 +9650,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 0;
             df16 = 0;
             dft16 = 0;
-
+            
         }
         if (D16.equals("V")) {
             DL16.setText("0");
@@ -9625,7 +9665,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 0;
             df16 = 0;
             dft16 = 0;
-
+            
         }
         if (D16.equals("I")) {
             DL16.setText("0");
@@ -9640,7 +9680,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 1;
             df16 = 0;
             dft16 = 0;
-
+            
         }
         if (D16.equals("F")) {
             DL16.setText("0");
@@ -9655,7 +9695,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 0;
             df16 = 0;
             dft16 = 0;
-
+            
         }
         if (D16.equals("FJ")) {
             DL16.setText("0");
@@ -9670,7 +9710,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 0;
             df16 = 0;
             dft16 = 0;
-
+            
         }
         if (D16.equals("DT")) {
             DL16.setText("0");
@@ -9685,7 +9725,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 0;
             df16 = 0;
             dft16 = 0;
-
+            
         }
         if (D16.equals(" ")) {
             DL16.setText("0");
@@ -9700,7 +9740,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 0;
             df16 = 0;
             dft16 = 0;
-
+            
         }
         if (D16.equals("R")) {
             DL16.setText("0");
@@ -9715,7 +9755,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 0;
             df16 = 0;
             dft16 = 0;
-
+            
         }
         if (D16.equals("DSGS")) {
             DL16.setText("0");
@@ -9730,7 +9770,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 0;
             df16 = 0;
             dft16 = 0;
-
+            
         }
         if (D16.equals("DF")) {
             DL16.setText("0");
@@ -9745,7 +9785,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 0;
             df16 = 1;
             dft16 = 0;
-
+            
         }
         if (D16.equals("DFT")) {
             DL16.setText("0");
@@ -9760,7 +9800,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in16 = 0;
             df16 = 0;
             dft16 = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -9784,14 +9824,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         FJ();
         R();
         DO();
-
+        
         deposito();
     }//GEN-LAST:event_Dia16ItemStateChanged
 
     private void Dia15ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia15ItemStateChanged
-
+        
         String D15 = (String) Dia15.getSelectedItem();
-
+        
         if (D15.equals(".")) {
             DL15.setText("0");
             F15.setText("0");
@@ -9805,7 +9845,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 0;
             df15 = 0;
             dft15 = 0;
-
+            
         }
         if (D15.equals("A")) {
             DL15.setText("" + a + "");
@@ -9820,7 +9860,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 0;
             df15 = 0;
             dft15 = 0;
-
+            
         }
         if (D15.equals("D")) {
             DL15.setText("0");
@@ -9835,7 +9875,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 0;
             df15 = 0;
             dft15 = 0;
-
+            
         }
         if (D15.equals("V")) {
             DL15.setText("0");
@@ -9850,7 +9890,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 0;
             df15 = 0;
             dft15 = 0;
-
+            
         }
         if (D15.equals("I")) {
             DL15.setText("0");
@@ -9865,7 +9905,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 1;
             df15 = 0;
             dft15 = 0;
-
+            
         }
         if (D15.equals("F")) {
             DL15.setText("0");
@@ -9880,7 +9920,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 0;
             df15 = 0;
             dft15 = 0;
-
+            
         }
         if (D15.equals("FJ")) {
             DL15.setText("0");
@@ -9895,7 +9935,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 0;
             df15 = 0;
             dft15 = 0;
-
+            
         }
         if (D15.equals("DT")) {
             DL15.setText("0");
@@ -9910,7 +9950,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 0;
             df15 = 0;
             dft15 = 0;
-
+            
         }
         if (D15.equals(" ")) {
             DL15.setText("0");
@@ -9925,7 +9965,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 0;
             df15 = 0;
             dft15 = 0;
-
+            
         }
         if (D15.equals("R")) {
             DL15.setText("0");
@@ -9940,7 +9980,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 0;
             df15 = 0;
             dft15 = 0;
-
+            
         }
         if (D15.equals("DSGS")) {
             DL15.setText("0");
@@ -9955,7 +9995,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 0;
             df15 = 0;
             dft15 = 0;
-
+            
         }
         if (D15.equals("DF")) {
             DL15.setText("0");
@@ -9970,7 +10010,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 0;
             df15 = 1;
             dft15 = 0;
-
+            
         }
         if (D15.equals("DFT")) {
             DL15.setText("0");
@@ -9985,7 +10025,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in15 = 0;
             df15 = 0;
             dft15 = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -10009,14 +10049,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia15ItemStateChanged
 
     private void Dia14ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia14ItemStateChanged
-
+        
         String D14 = (String) Dia14.getSelectedItem();
-
+        
         if (D14.equals(".")) {
             DL14.setText("0");
             F14.setText("0");
@@ -10030,7 +10070,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 0;
             df14 = 0;
             dft14 = 0;
-
+            
         }
         if (D14.equals("A")) {
             DL14.setText("" + a + "");
@@ -10045,7 +10085,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 0;
             df14 = 0;
             dft14 = 0;
-
+            
         }
         if (D14.equals("D")) {
             DL14.setText("0");
@@ -10060,7 +10100,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 0;
             df14 = 0;
             dft14 = 0;
-
+            
         }
         if (D14.equals("V")) {
             DL14.setText("0");
@@ -10075,7 +10115,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 0;
             df14 = 0;
             dft14 = 0;
-
+            
         }
         if (D14.equals("I")) {
             DL14.setText("0");
@@ -10090,7 +10130,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 1;
             df14 = 0;
             dft14 = 0;
-
+            
         }
         if (D14.equals("F")) {
             DL14.setText("0");
@@ -10105,7 +10145,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 0;
             df14 = 0;
             dft14 = 0;
-
+            
         }
         if (D14.equals("FJ")) {
             DL14.setText("0");
@@ -10120,7 +10160,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 0;
             df14 = 0;
             dft14 = 0;
-
+            
         }
         if (D14.equals("DT")) {
             DL14.setText("0");
@@ -10135,7 +10175,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 0;
             df14 = 0;
             dft14 = 0;
-
+            
         }
         if (D14.equals(" ")) {
             DL14.setText("0");
@@ -10150,7 +10190,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 0;
             df14 = 0;
             dft14 = 0;
-
+            
         }
         if (D14.equals("R")) {
             DL14.setText("0");
@@ -10165,7 +10205,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 0;
             df14 = 0;
             dft14 = 0;
-
+            
         }
         if (D14.equals("DSGS")) {
             DL14.setText("0");
@@ -10180,7 +10220,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 0;
             df14 = 0;
             dft14 = 0;
-
+            
         }
         if (D14.equals("DF")) {
             DL14.setText("0");
@@ -10195,7 +10235,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 0;
             df14 = 1;
             dft14 = 0;
-
+            
         }
         if (D14.equals("DFT")) {
             DL14.setText("0");
@@ -10210,7 +10250,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in14 = 0;
             df14 = 0;
             dft14 = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -10234,14 +10274,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia14ItemStateChanged
 
     private void Dia13ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia13ItemStateChanged
-
+        
         String D13 = (String) Dia13.getSelectedItem();
-
+        
         if (D13.equals(".")) {
             DL13.setText("0");
             F13.setText("0");
@@ -10255,7 +10295,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 0;
             df13 = 0;
             dft13 = 0;
-
+            
         }
         if (D13.equals("A")) {
             DL13.setText("" + a + "");
@@ -10270,7 +10310,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 0;
             df13 = 0;
             dft13 = 0;
-
+            
         }
         if (D13.equals("D")) {
             DL13.setText("0");
@@ -10285,7 +10325,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 0;
             df13 = 0;
             dft13 = 0;
-
+            
         }
         if (D13.equals("V")) {
             DL13.setText("0");
@@ -10300,7 +10340,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 0;
             df13 = 0;
             dft13 = 0;
-
+            
         }
         if (D13.equals("I")) {
             DL13.setText("0");
@@ -10315,7 +10355,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 1;
             df13 = 0;
             dft13 = 0;
-
+            
         }
         if (D13.equals("F")) {
             DL13.setText("0");
@@ -10330,7 +10370,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 0;
             df13 = 0;
             dft13 = 0;
-
+            
         }
         if (D13.equals("FJ")) {
             DL13.setText("0");
@@ -10345,7 +10385,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 0;
             df13 = 0;
             dft13 = 0;
-
+            
         }
         if (D13.equals("DT")) {
             DL13.setText("0");
@@ -10360,7 +10400,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 0;
             df13 = 0;
             dft13 = 0;
-
+            
         }
         if (D13.equals(" ")) {
             DL13.setText("0");
@@ -10375,7 +10415,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 0;
             df13 = 0;
             dft13 = 0;
-
+            
         }
         if (D13.equals("R")) {
             DL13.setText("0");
@@ -10390,7 +10430,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 0;
             df13 = 0;
             dft13 = 0;
-
+            
         }
         if (D13.equals("DSGS")) {
             DL13.setText("0");
@@ -10405,7 +10445,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 0;
             df13 = 0;
             dft13 = 0;
-
+            
         }
         if (D13.equals("DF")) {
             DL13.setText("0");
@@ -10420,7 +10460,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 0;
             df13 = 1;
             dft13 = 0;
-
+            
         }
         if (D13.equals("DFT")) {
             DL13.setText("0");
@@ -10435,7 +10475,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in13 = 0;
             df13 = 0;
             dft13 = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -10459,14 +10499,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia13ItemStateChanged
 
     private void Dia12ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia12ItemStateChanged
-
+        
         String D12 = (String) Dia12.getSelectedItem();
-
+        
         if (D12.equals(".")) {
             DL12.setText("0");
             F12.setText("0");
@@ -10480,7 +10520,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 0;
             df12 = 0;
             dft12 = 0;
-
+            
         }
         if (D12.equals("A")) {
             DL12.setText("" + a + "");
@@ -10495,7 +10535,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 0;
             df12 = 0;
             dft12 = 0;
-
+            
         }
         if (D12.equals("D")) {
             DL12.setText("0");
@@ -10510,7 +10550,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 0;
             df12 = 0;
             dft12 = 0;
-
+            
         }
         if (D12.equals("V")) {
             DL12.setText("0");
@@ -10525,7 +10565,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 0;
             df12 = 0;
             dft12 = 0;
-
+            
         }
         if (D12.equals("I")) {
             DL12.setText("0");
@@ -10540,7 +10580,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 1;
             df12 = 0;
             dft12 = 0;
-
+            
         }
         if (D12.equals("F")) {
             DL12.setText("0");
@@ -10555,7 +10595,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 0;
             df12 = 0;
             dft12 = 0;
-
+            
         }
         if (D12.equals("FJ")) {
             DL12.setText("0");
@@ -10570,7 +10610,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 0;
             df12 = 0;
             dft12 = 0;
-
+            
         }
         if (D12.equals("DT")) {
             DL12.setText("0");
@@ -10585,7 +10625,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 0;
             df12 = 0;
             dft12 = 0;
-
+            
         }
         if (D12.equals(" ")) {
             DL12.setText("0");
@@ -10600,7 +10640,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 0;
             df12 = 0;
             dft12 = 0;
-
+            
         }
         if (D12.equals("R")) {
             DL12.setText("0");
@@ -10615,7 +10655,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 0;
             df12 = 0;
             dft12 = 0;
-
+            
         }
         if (D12.equals("DSGS")) {
             DL12.setText("0");
@@ -10630,7 +10670,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 0;
             df12 = 0;
             dft12 = 0;
-
+            
         }
         if (D12.equals("DF")) {
             DL12.setText("0");
@@ -10645,7 +10685,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 0;
             df12 = 1;
             dft12 = 0;
-
+            
         }
         if (D12.equals("DFT")) {
             DL12.setText("0");
@@ -10660,7 +10700,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in12 = 0;
             df12 = 0;
             dft12 = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -10684,14 +10724,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia12ItemStateChanged
 
     private void Dia11ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia11ItemStateChanged
-
+        
         String D11 = (String) Dia11.getSelectedItem();
-
+        
         if (D11.equals(".")) {
             DL11.setText("0");
             F11.setText("0");
@@ -10705,7 +10745,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 0;
             df11 = 0;
             dft11 = 0;
-
+            
         }
         if (D11.equals("A")) {
             DL11.setText("" + a + "");
@@ -10720,7 +10760,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 0;
             df11 = 0;
             dft11 = 0;
-
+            
         }
         if (D11.equals("D")) {
             DL11.setText("0");
@@ -10735,7 +10775,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 0;
             df11 = 0;
             dft11 = 0;
-
+            
         }
         if (D11.equals("V")) {
             DL11.setText("0");
@@ -10750,7 +10790,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 0;
             df11 = 0;
             dft11 = 0;
-
+            
         }
         if (D11.equals("I")) {
             DL11.setText("0");
@@ -10765,7 +10805,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 1;
             df11 = 0;
             dft11 = 0;
-
+            
         }
         if (D11.equals("F")) {
             DL11.setText("0");
@@ -10780,7 +10820,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 0;
             df11 = 0;
             dft11 = 0;
-
+            
         }
         if (D11.equals("FJ")) {
             DL11.setText("0");
@@ -10795,7 +10835,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 0;
             df11 = 0;
             dft11 = 0;
-
+            
         }
         if (D11.equals("DT")) {
             DL11.setText("0");
@@ -10810,7 +10850,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 0;
             df11 = 0;
             dft11 = 0;
-
+            
         }
         if (D11.equals(" ")) {
             DL11.setText("0");
@@ -10825,7 +10865,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 0;
             df11 = 0;
             dft11 = 0;
-
+            
         }
         if (D11.equals("R")) {
             DL11.setText("0");
@@ -10840,7 +10880,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 0;
             df11 = 0;
             dft11 = 0;
-
+            
         }
         if (D11.equals("DSGS")) {
             DL11.setText("0");
@@ -10855,7 +10895,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 0;
             df11 = 0;
             dft11 = 0;
-
+            
         }
         if (D11.equals("DF")) {
             DL11.setText("0");
@@ -10870,7 +10910,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 0;
             df11 = 1;
             dft11 = 0;
-
+            
         }
         if (D11.equals("DFT")) {
             DL11.setText("0");
@@ -10885,7 +10925,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in11 = 0;
             df11 = 0;
             dft11 = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -10909,14 +10949,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia11ItemStateChanged
 
     private void Dia10ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia10ItemStateChanged
-
+        
         String D10 = (String) Dia10.getSelectedItem();
-
+        
         if (D10.equals(".")) {
             DL10.setText("0");
             F10.setText("0");
@@ -10930,7 +10970,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 0;
             df10 = 0;
             dft10 = 0;
-
+            
         }
         if (D10.equals("A")) {
             DL10.setText("" + a + "");
@@ -10945,7 +10985,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 0;
             df10 = 0;
             dft10 = 0;
-
+            
         }
         if (D10.equals("D")) {
             DL10.setText("0");
@@ -10960,7 +11000,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 0;
             df10 = 0;
             dft10 = 0;
-
+            
         }
         if (D10.equals("V")) {
             DL10.setText("0");
@@ -10975,7 +11015,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 0;
             df10 = 0;
             dft10 = 0;
-
+            
         }
         if (D10.equals("I")) {
             DL10.setText("0");
@@ -10990,7 +11030,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 1;
             df10 = 0;
             dft10 = 0;
-
+            
         }
         if (D10.equals("F")) {
             DL10.setText("0");
@@ -11005,7 +11045,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 0;
             df10 = 0;
             dft10 = 0;
-
+            
         }
         if (D10.equals("FJ")) {
             DL10.setText("0");
@@ -11020,7 +11060,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 0;
             df10 = 0;
             dft10 = 0;
-
+            
         }
         if (D10.equals("DT")) {
             DL10.setText("0");
@@ -11035,7 +11075,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 0;
             df10 = 0;
             dft10 = 0;
-
+            
         }
         if (D10.equals(" ")) {
             DL10.setText("0");
@@ -11050,7 +11090,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 0;
             df10 = 0;
             dft10 = 0;
-
+            
         }
         if (D10.equals("R")) {
             DL10.setText("0");
@@ -11065,7 +11105,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 0;
             df10 = 0;
             dft10 = 0;
-
+            
         }
         if (D10.equals("DSGS")) {
             DL10.setText("0");
@@ -11080,7 +11120,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 0;
             df10 = 0;
             dft10 = 0;
-
+            
         }
         if (D10.equals("DF")) {
             DL10.setText("0");
@@ -11095,7 +11135,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 0;
             df10 = 1;
             dft10 = 0;
-
+            
         }
         if (D10.equals("DFT")) {
             DL10.setText("0");
@@ -11110,7 +11150,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in10 = 0;
             df10 = 0;
             dft10 = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -11134,14 +11174,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia10ItemStateChanged
 
     private void Dia9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia9ItemStateChanged
-
+        
         String D9 = (String) Dia9.getSelectedItem();
-
+        
         if (D9.equals(".")) {
             DL9.setText("0");
             F9.setText("0");
@@ -11155,7 +11195,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 0;
             df9 = 0;
             dft9 = 0;
-
+            
         }
         if (D9.equals("A")) {
             DL9.setText("" + a + "");
@@ -11170,7 +11210,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 0;
             df9 = 0;
             dft9 = 0;
-
+            
         }
         if (D9.equals("D")) {
             DL9.setText("0");
@@ -11185,7 +11225,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 0;
             df9 = 0;
             dft9 = 0;
-
+            
         }
         if (D9.equals("V")) {
             DL9.setText("0");
@@ -11200,7 +11240,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 0;
             df9 = 0;
             dft9 = 0;
-
+            
         }
         if (D9.equals("I")) {
             DL9.setText("0");
@@ -11215,7 +11255,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 1;
             df9 = 0;
             dft9 = 0;
-
+            
         }
         if (D9.equals("F")) {
             DL9.setText("0");
@@ -11230,7 +11270,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 0;
             df9 = 0;
             dft9 = 0;
-
+            
         }
         if (D9.equals("FJ")) {
             DL9.setText("0");
@@ -11245,7 +11285,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 0;
             df9 = 0;
             dft9 = 0;
-
+            
         }
         if (D9.equals("DT")) {
             DL9.setText("0");
@@ -11260,7 +11300,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 0;
             df9 = 0;
             dft9 = 0;
-
+            
         }
         if (D9.equals(" ")) {
             DL9.setText("0");
@@ -11275,7 +11315,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 0;
             df9 = 0;
             dft9 = 0;
-
+            
         }
         if (D9.equals("R")) {
             DL9.setText("0");
@@ -11290,7 +11330,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 0;
             df9 = 0;
             dft9 = 0;
-
+            
         }
         if (D9.equals("DSGS")) {
             DL9.setText("0");
@@ -11305,7 +11345,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 0;
             df9 = 0;
             dft9 = 0;
-
+            
         }
         if (D9.equals("DF")) {
             DL9.setText("0");
@@ -11320,7 +11360,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 0;
             df9 = 1;
             dft9 = 0;
-
+            
         }
         if (D9.equals("DFT")) {
             DL9.setText("0");
@@ -11335,7 +11375,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in9 = 0;
             df9 = 0;
             dft9 = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -11359,14 +11399,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia9ItemStateChanged
 
     private void Dia8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia8ItemStateChanged
-
+        
         String D8 = (String) Dia8.getSelectedItem();
-
+        
         if (D8.equals(".")) {
             DL8.setText("0");
             F8.setText("0");
@@ -11380,7 +11420,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 0;
             df8 = 0;
             dft8 = 0;
-
+            
         }
         if (D8.equals("A")) {
             DL8.setText("" + a + "");
@@ -11395,7 +11435,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 0;
             df8 = 0;
             dft8 = 0;
-
+            
         }
         if (D8.equals("D")) {
             DL8.setText("0");
@@ -11410,7 +11450,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 0;
             df8 = 0;
             dft8 = 0;
-
+            
         }
         if (D8.equals("V")) {
             DL8.setText("0");
@@ -11425,7 +11465,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 0;
             df8 = 0;
             dft8 = 0;
-
+            
         }
         if (D8.equals("I")) {
             DL8.setText("0");
@@ -11440,7 +11480,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 1;
             df8 = 0;
             dft8 = 0;
-
+            
         }
         if (D8.equals("F")) {
             DL8.setText("0");
@@ -11455,7 +11495,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 0;
             df8 = 0;
             dft8 = 0;
-
+            
         }
         if (D8.equals("FJ")) {
             DL8.setText("0");
@@ -11470,7 +11510,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 0;
             df8 = 0;
             dft8 = 0;
-
+            
         }
         if (D8.equals("DT")) {
             DL8.setText("0");
@@ -11485,7 +11525,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 0;
             df8 = 0;
             dft8 = 0;
-
+            
         }
         if (D8.equals(" ")) {
             DL8.setText("0");
@@ -11500,7 +11540,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 0;
             df8 = 0;
             dft8 = 0;
-
+            
         }
         if (D8.equals("R")) {
             DL8.setText("0");
@@ -11515,7 +11555,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 0;
             df8 = 0;
             dft8 = 0;
-
+            
         }
         if (D8.equals("DSGS")) {
             DL8.setText("0");
@@ -11530,7 +11570,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 0;
             df8 = 0;
             dft8 = 0;
-
+            
         }
         if (D8.equals("DF")) {
             DL8.setText("0");
@@ -11545,7 +11585,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 0;
             df8 = 1;
             dft8 = 0;
-
+            
         }
         if (D8.equals("DFT")) {
             DL8.setText("0");
@@ -11560,7 +11600,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in8 = 0;
             df8 = 0;
             dft8 = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -11584,14 +11624,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia8ItemStateChanged
 
     private void Dia7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia7ItemStateChanged
-
+        
         String D7 = (String) Dia7.getSelectedItem();
-
+        
         if (D7.equals(".")) {
             DL7.setText("0");
             F7.setText("0");
@@ -11605,7 +11645,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 0;
             df7 = 0;
             dft7 = 0;
-
+            
         }
         if (D7.equals("A")) {
             DL7.setText("" + a + "");
@@ -11620,7 +11660,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 0;
             df7 = 0;
             dft7 = 0;
-
+            
         }
         if (D7.equals("D")) {
             DL7.setText("0");
@@ -11635,7 +11675,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 0;
             df7 = 0;
             dft7 = 0;
-
+            
         }
         if (D7.equals("V")) {
             DL7.setText("0");
@@ -11650,7 +11690,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 0;
             df7 = 0;
             dft7 = 0;
-
+            
         }
         if (D7.equals("I")) {
             DL7.setText("0");
@@ -11665,7 +11705,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 1;
             df7 = 0;
             dft7 = 0;
-
+            
         }
         if (D7.equals("F")) {
             DL7.setText("0");
@@ -11680,7 +11720,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 0;
             df7 = 0;
             dft7 = 0;
-
+            
         }
         if (D7.equals("FJ")) {
             DL7.setText("0");
@@ -11695,7 +11735,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 0;
             df7 = 0;
             dft7 = 0;
-
+            
         }
         if (D7.equals("DT")) {
             DL7.setText("0");
@@ -11710,7 +11750,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 0;
             df7 = 0;
             dft7 = 0;
-
+            
         }
         if (D7.equals(" ")) {
             DL7.setText("0");
@@ -11725,7 +11765,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 0;
             df7 = 0;
             dft7 = 0;
-
+            
         }
         if (D7.equals("R")) {
             DL7.setText("0");
@@ -11740,7 +11780,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 0;
             df7 = 0;
             dft7 = 0;
-
+            
         }
         if (D7.equals("DSGS")) {
             DL7.setText("0");
@@ -11755,7 +11795,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 0;
             df7 = 0;
             dft7 = 0;
-
+            
         }
         if (D7.equals("DF")) {
             DL7.setText("0");
@@ -11770,7 +11810,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 0;
             df7 = 1;
             dft7 = 0;
-
+            
         }
         if (D7.equals("DFT")) {
             DL7.setText("0");
@@ -11785,7 +11825,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in7 = 0;
             df7 = 0;
             dft7 = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -11809,14 +11849,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia7ItemStateChanged
 
     private void Dia6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia6ItemStateChanged
-
+        
         String D6 = (String) Dia6.getSelectedItem();
-
+        
         if (D6.equals(".")) {
             DL6.setText("0");
             F6.setText("0");
@@ -11830,7 +11870,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 0;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         if (D6.equals("A")) {
             DL6.setText("" + a + "");
@@ -11845,7 +11885,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 0;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         if (D6.equals("D")) {
             DL6.setText("0");
@@ -11860,7 +11900,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 0;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         if (D6.equals("V")) {
             DL6.setText("0");
@@ -11875,7 +11915,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 0;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         if (D6.equals("I")) {
             DL6.setText("0");
@@ -11890,7 +11930,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 1;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         if (D6.equals("F")) {
             DL6.setText("0");
@@ -11905,7 +11945,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 0;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         if (D6.equals("FJ")) {
             DL6.setText("0");
@@ -11920,7 +11960,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 0;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         if (D6.equals("DT")) {
             DL6.setText("0");
@@ -11935,7 +11975,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 0;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         if (D6.equals(" ")) {
             DL6.setText("0");
@@ -11950,7 +11990,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 0;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         if (D6.equals("R")) {
             DL6.setText("0");
@@ -11965,7 +12005,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 0;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         if (D6.equals("DSGS")) {
             DL6.setText("0");
@@ -11980,7 +12020,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 0;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         if (D6.equals("DF")) {
             DL6.setText("0");
@@ -11995,7 +12035,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 0;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         if (D6.equals("DFT")) {
             DL6.setText("0");
@@ -12010,7 +12050,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in6 = 0;
             df6 = 0;
             dft6 = 0;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -12034,14 +12074,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia6ItemStateChanged
 
     private void Dia5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia5ItemStateChanged
-
+        
         String D5 = (String) Dia5.getSelectedItem();
-
+        
         if (D5.equals(".")) {
             DL5.setText("0");
             F5.setText("0");
@@ -12055,7 +12095,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 0;
             df5 = 0;
             dft5 = 0;
-
+            
         }
         if (D5.equals("A")) {
             DL5.setText("" + a + "");
@@ -12070,7 +12110,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 0;
             df5 = 0;
             dft5 = 0;
-
+            
         }
         if (D5.equals("D")) {
             DL5.setText("0");
@@ -12085,7 +12125,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 0;
             df5 = 0;
             dft5 = 0;
-
+            
         }
         if (D5.equals("V")) {
             DL5.setText("0");
@@ -12100,7 +12140,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 0;
             df5 = 0;
             dft5 = 0;
-
+            
         }
         if (D5.equals("I")) {
             DL5.setText("0");
@@ -12115,7 +12155,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 1;
             df5 = 0;
             dft5 = 0;
-
+            
         }
         if (D5.equals("F")) {
             DL5.setText("0");
@@ -12130,7 +12170,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 0;
             df5 = 0;
             dft5 = 0;
-
+            
         }
         if (D5.equals("FJ")) {
             DL5.setText("0");
@@ -12145,7 +12185,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 0;
             df5 = 0;
             dft5 = 0;
-
+            
         }
         if (D5.equals("DT")) {
             DL5.setText("0");
@@ -12160,7 +12200,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 0;
             df5 = 0;
             dft5 = 0;
-
+            
         }
         if (D5.equals(" ")) {
             DL5.setText("0");
@@ -12175,7 +12215,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 0;
             df5 = 0;
             dft5 = 0;
-
+            
         }
         if (D5.equals("R")) {
             DL5.setText("0");
@@ -12190,7 +12230,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 0;
             df5 = 0;
             dft5 = 0;
-
+            
         }
         if (D5.equals("DSGS")) {
             DL5.setText("0");
@@ -12205,7 +12245,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 0;
             df5 = 0;
             dft5 = 0;
-
+            
         }
         if (D5.equals("DF")) {
             DL5.setText("0");
@@ -12220,7 +12260,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 0;
             df5 = 1;
             dft5 = 0;
-
+            
         }
         if (D5.equals("DFT")) {
             DL5.setText("0");
@@ -12235,7 +12275,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in5 = 0;
             df5 = 0;
             dft5 = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -12259,14 +12299,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia5ItemStateChanged
 
     private void Dia4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia4ItemStateChanged
-
+        
         String D4 = (String) Dia4.getSelectedItem();
-
+        
         if (D4.equals(".")) {
             DL4.setText("0");
             F4.setText("0");
@@ -12280,7 +12320,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 0;
             df4 = 0;
             dft4 = 0;
-
+            
         }
         if (D4.equals("A")) {
             DL4.setText("" + a + "");
@@ -12295,7 +12335,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 0;
             df4 = 0;
             dft4 = 0;
-
+            
         }
         if (D4.equals("D")) {
             DL4.setText("0");
@@ -12310,7 +12350,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 0;
             df4 = 0;
             dft4 = 0;
-
+            
         }
         if (D4.equals("V")) {
             DL4.setText("0");
@@ -12325,7 +12365,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 0;
             df4 = 0;
             dft4 = 0;
-
+            
         }
         if (D4.equals("I")) {
             DL4.setText("0");
@@ -12340,7 +12380,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 1;
             df4 = 0;
             dft4 = 0;
-
+            
         }
         if (D4.equals("F")) {
             DL4.setText("0");
@@ -12355,7 +12395,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 0;
             df4 = 0;
             dft4 = 0;
-
+            
         }
         if (D4.equals("FJ")) {
             DL4.setText("0");
@@ -12370,7 +12410,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 0;
             df4 = 0;
             dft4 = 0;
-
+            
         }
         if (D4.equals("DT")) {
             DL4.setText("0");
@@ -12385,7 +12425,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 0;
             df4 = 0;
             dft4 = 0;
-
+            
         }
         if (D4.equals(" ")) {
             DL4.setText("0");
@@ -12400,7 +12440,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 0;
             df4 = 0;
             dft4 = 0;
-
+            
         }
         if (D4.equals("R")) {
             DL4.setText("0");
@@ -12415,7 +12455,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 0;
             df4 = 0;
             dft4 = 0;
-
+            
         }
         if (D4.equals("DSGS")) {
             DL4.setText("0");
@@ -12430,7 +12470,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 0;
             df4 = 0;
             dft4 = 0;
-
+            
         }
         if (D4.equals("DF")) {
             DL4.setText("0");
@@ -12445,7 +12485,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 0;
             df4 = 1;
             dft4 = 0;
-
+            
         }
         if (D4.equals("DFT")) {
             DL4.setText("0");
@@ -12460,7 +12500,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in4 = 0;
             df4 = 0;
             dft4 = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -12484,14 +12524,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia4ItemStateChanged
 
     private void Dia3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia3ItemStateChanged
-
+        
         String D3 = (String) Dia3.getSelectedItem();
-
+        
         if (D3.equals(".")) {
             DL3.setText("0");
             F3.setText("0");
@@ -12505,7 +12545,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 0;
             df3 = 0;
             dft3 = 0;
-
+            
         }
         if (D3.equals("A")) {
             DL3.setText("" + a + "");
@@ -12520,7 +12560,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 0;
             df3 = 0;
             dft3 = 0;
-
+            
         }
         if (D3.equals("D")) {
             DL3.setText("0");
@@ -12535,7 +12575,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 0;
             df3 = 0;
             dft3 = 0;
-
+            
         }
         if (D3.equals("V")) {
             DL3.setText("0");
@@ -12550,7 +12590,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 0;
             df3 = 0;
             dft3 = 0;
-
+            
         }
         if (D3.equals("I")) {
             DL3.setText("0");
@@ -12565,7 +12605,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 1;
             df3 = 0;
             dft3 = 0;
-
+            
         }
         if (D3.equals("F")) {
             DL3.setText("0");
@@ -12580,7 +12620,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 0;
             df3 = 0;
             dft3 = 0;
-
+            
         }
         if (D3.equals("FJ")) {
             DL3.setText("0");
@@ -12595,7 +12635,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 0;
             df3 = 0;
             dft3 = 0;
-
+            
         }
         if (D3.equals("DT")) {
             DL3.setText("0");
@@ -12610,7 +12650,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 0;
             df3 = 0;
             dft3 = 0;
-
+            
         }
         if (D3.equals(" ")) {
             DL3.setText("0");
@@ -12625,7 +12665,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 0;
             df3 = 0;
             dft3 = 0;
-
+            
         }
         if (D3.equals("R")) {
             DL3.setText("0");
@@ -12640,7 +12680,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 0;
             df3 = 0;
             dft3 = 0;
-
+            
         }
         if (D3.equals("DSGS")) {
             DL3.setText("0");
@@ -12655,7 +12695,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 0;
             df3 = 0;
             dft3 = 0;
-
+            
         }
         if (D3.equals("DF")) {
             DL3.setText("0");
@@ -12670,7 +12710,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 0;
             df3 = 1;
             dft3 = 0;
-
+            
         }
         if (D3.equals("DFT")) {
             DL3.setText("0");
@@ -12685,7 +12725,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in3 = 0;
             df3 = 1;
             dft3 = 0;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -12709,14 +12749,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
     }//GEN-LAST:event_Dia3ItemStateChanged
 
     private void Dia2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia2ItemStateChanged
-
+        
         String D2 = (String) Dia2.getSelectedItem();
-
+        
         if (D2.equals(".")) {
             DL2.setText("0");
             F2.setText("0");
@@ -12730,7 +12770,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in2 = 0;
             df2 = 0;
             dft2 = 0;
-
+            
         }
         if (D2.equals("A")) {
             DL2.setText("" + a + "");
@@ -12745,7 +12785,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in2 = 0;
             df2 = 0;
             dft2 = 0;
-
+            
         }
         if (D2.equals("D")) {
             DL2.setText("0");
@@ -12760,7 +12800,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in2 = 0;
             df2 = 0;
             dft2 = 0;
-
+            
         }
         if (D2.equals("V")) {
             DL2.setText("0");
@@ -12775,7 +12815,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in2 = 0;
             df2 = 0;
             dft2 = 0;
-
+            
         }
         if (D2.equals("I")) {
             DL2.setText("0");
@@ -12790,7 +12830,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in2 = 1;
             df2 = 0;
             dft2 = 0;
-
+            
         }
         if (D2.equals("F")) {
             DL2.setText("0");
@@ -12805,7 +12845,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in2 = 0;
             df2 = 0;
             dft2 = 0;
-
+            
         }
         if (D2.equals("FJ")) {
             DL2.setText("0");
@@ -12820,7 +12860,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in2 = 0;
             df2 = 0;
             dft2 = 0;
-
+            
         }
         if (D2.equals("DT")) {
             DL2.setText("0");
@@ -12835,7 +12875,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in2 = 0;
             df2 = 0;
             dft2 = 0;
-
+            
         }
         if (D2.equals(" ")) {
             DL2.setText("0");
@@ -12850,7 +12890,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in2 = 0;
             df2 = 0;
             dft2 = 0;
-
+            
         }
         if (D2.equals("R")) {
             DL2.setText("0");
@@ -12865,7 +12905,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in2 = 0;
             df2 = 0;
             dft2 = 0;
-
+            
         }
         if (D2.equals("DSGS")) {
             DL2.setText("0");
@@ -12880,7 +12920,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in2 = 0;
             df2 = 0;
             dft2 = 0;
-
+            
         }
         if (D2.equals("DF")) {
             DL2.setText("0");
@@ -12895,7 +12935,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in2 = 0;
             df2 = 1;
             dft2 = 0;
-
+            
         }
         if (D2.equals("DFT")) {
             DL2.setText("0");
@@ -12933,15 +12973,15 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
 
     }//GEN-LAST:event_Dia2ItemStateChanged
 
     private void Dia1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia1ItemStateChanged
-
+        
         String D1 = (String) Dia1.getSelectedItem();
-
+        
         if (D1.equals(".")) {
             DL1.setText("0");
             F1.setText("0");
@@ -12955,7 +12995,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 0;
             df = 0;
             dft = 0;
-
+            
         }
         if (D1.equals("A")) {
             DL1.setText("" + a + "");
@@ -12970,7 +13010,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 0;
             df = 0;
             dft = 0;
-
+            
         }
         if (D1.equals("D")) {
             DL1.setText("0");
@@ -12985,7 +13025,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 0;
             df = 0;
             dft = 0;
-
+            
         }
         if (D1.equals("V")) {
             DL1.setText("0");
@@ -13000,7 +13040,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 0;
             df = 0;
             dft = 0;
-
+            
         }
         if (D1.equals("I")) {
             DL1.setText("0");
@@ -13015,7 +13055,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 1;
             df = 0;
             dft = 0;
-
+            
         }
         if (D1.equals("F")) {
             DL1.setText("0");
@@ -13029,7 +13069,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 0;
             df = 0;
             dft = 0;
-
+            
         }
         if (D1.equals("FJ")) {
             DL1.setText("0");
@@ -13044,7 +13084,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 0;
             df = 0;
             dft = 0;
-
+            
         }
         if (D1.equals("DT")) {
             DL1.setText("0");
@@ -13059,7 +13099,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 0;
             df = 0;
             dft = 0;
-
+            
         }
         if (D1.equals(" ")) {
             DL1.setText("0");
@@ -13074,7 +13114,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 0;
             df = 0;
             dft = 0;
-
+            
         }
         if (D1.equals("R")) {
             DL1.setText("0");
@@ -13089,7 +13129,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 0;
             df = 0;
             dft = 0;
-
+            
         }
         if (D1.equals("DSGS")) {
             DL1.setText("0");
@@ -13104,7 +13144,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 0;
             df = 0;
             dft = 0;
-
+            
         }
         if (D1.equals("DF")) {
             DL1.setText("0");
@@ -13119,7 +13159,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 0;
             df = 1;
             dft = 0;
-
+            
         }
         if (D1.equals("DFT")) {
             DL1.setText("0");
@@ -13134,7 +13174,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             in = 0;
             df = 0;
             dft = 1;
-
+            
         }
         double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7 + dv8
                 + dv9 + dv10 + dv11 + dv12 + dv13 + dv14 + dv15 + dv16;
@@ -13158,13 +13198,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         R();
         DO();
         DSGS();
-
+        
         deposito();
 
     }//GEN-LAST:event_Dia1ItemStateChanged
 
     private void QuincenasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_QuincenasItemStateChanged
-
+        
         String Q = (String) Quincenas.getSelectedItem();
         if (Q.equals("1ra Quincena de Enero")) {
             d.setText("1");
@@ -13208,7 +13248,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             double DIVE1 = Double.parseDouble(sueldo.getText());
             double total = DIVE1 / Q1E;
             pd.setText("" + total + "");
-
+            
         }
         if (Q.equals("2da Quincena de Enero")) {
             d.setText("16");
@@ -13422,7 +13462,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             double DIV1MZ = Double.parseDouble(sueldo.getText());
             double total = DIV1MZ / Q1MZ;
             pd.setText("" + total + "");
-
+            
         }
         if (Q.equals("2da Quincena de Marzo")) {
             d.setText("16");
@@ -13468,7 +13508,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             double total = DIV2MZ / Q2MZ;
             pd.setText("" + total + "");
         }
-
+        
         if (Q.equals("1ra Quincena de Abril")) {
             d.setText("1");
             d1.setText("2");
@@ -13642,7 +13682,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             double total = DIV2MY / Q2MY;
             pd.setText("" + total + "");
         }
-
+        
         if (Q.equals("1ra Quincena de Junio")) {
             d.setText("1");
             d1.setText("2");
@@ -14268,7 +14308,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_BAPNomKeyReleased
 
     private void shareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shareMouseClicked
-
+        
         int seleccionar = share.getSelectedRow();
         NEnom.setText(String.valueOf(share.getValueAt(seleccionar, 0)));
         Ap.setText(String.valueOf(share.getValueAt(seleccionar, 1)));
@@ -14323,7 +14363,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             double DIVE1 = Double.parseDouble(sueldo.getText());
             double total = DIVE1 / Q1E;
             pd.setText("" + total + "");
-
+            
         }
         if (Q.equals("2da Quincena de Enero")) {
             d.setText("16");
@@ -14537,7 +14577,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             double DIV1MZ = Double.parseDouble(sueldo.getText());
             double total = DIV1MZ / Q1MZ;
             pd.setText("" + total + "");
-
+            
         }
         if (Q.equals("2da Quincena de Marzo")) {
             d.setText("16");
@@ -14583,7 +14623,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             double total = DIV2MZ / Q2MZ;
             pd.setText("" + total + "");
         }
-
+        
         if (Q.equals("1ra Quincena de Abril")) {
             d.setText("1");
             d1.setText("2");
@@ -14757,7 +14797,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             double total = DIV2MY / Q2MY;
             pd.setText("" + total + "");
         }
-
+        
         if (Q.equals("1ra Quincena de Junio")) {
             d.setText("1");
             d1.setText("2");
@@ -15369,7 +15409,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_shareMouseClicked
 
     private void CSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSActionPerformed
-
+        
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -15379,7 +15419,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CSActionPerformed
 
     private void FiltrosNomItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosNomItemStateChanged
-
+        
         String dt = (String) FiltrosNom.getSelectedItem();
         if (dt.equals("Selecciona filtro")) {
             Filtro1.setVisible(false);
@@ -15440,13 +15480,13 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_BampagKeyReleased
 
     private void BAppagKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppagKeyReleased
-
+        
         FunMD();
         sumaDep();
     }//GEN-LAST:event_BAppagKeyReleased
 
     private void FiltrosPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosPItemStateChanged
-
+        
         String FP = (String) FiltrosP.getSelectedItem();
         if (FP.equals("Selecciona filtro")) {
             busp.setVisible(false);
@@ -15469,7 +15509,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             filtroNDFP.setText("");
             LabelNDFP.setVisible(false);
             FunMD();
-
+            
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
             busp.setVisible(true);
@@ -15624,7 +15664,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroServPItemStateChanged
 
     private void FiltroSZPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZPItemStateChanged
-
+        
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             FiltrosZonas zon = (FiltrosZonas) FiltroSZP.getSelectedItem();
             FiltroServ serv = new FiltroServ();
@@ -15635,7 +15675,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroSZPItemStateChanged
 
     private void CS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS3ActionPerformed
-
+        
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -15826,7 +15866,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             filtroNDFP1.setText("");
             LabelNDFP1.setVisible(false);
             FunMD();
-
+            
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
             busp1.setVisible(true);
@@ -16016,7 +16056,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQP2ItemStateChanged
 
     private void FiltrosP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP2ItemStateChanged
-
+        
         String FP2 = (String) FiltrosP2.getSelectedItem();
         if (FP2.equals("Selecciona filtro")) {
             busp2.setVisible(false);
@@ -16039,7 +16079,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             filtroNDFP2.setText("");
             LabelNDFP2.setVisible(false);
             FunMD();
-
+            
         }
         if (FP2.equals("Filtrar por Nombre(s)")) {
             busp2.setVisible(true);
@@ -16110,7 +16150,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             LabelNDFP2.setVisible(false);
             FunMD();
         }
-
+        
         if (FP2.equals("Filtrar por Servicio")) {
             busp2.setVisible(false);
             LabelBEP2.setVisible(false);
@@ -16230,7 +16270,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQP3ItemStateChanged
 
     private void FiltrosP3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP3ItemStateChanged
-
+        
         String FP3 = (String) FiltrosP3.getSelectedItem();
         if (FP3.equals("Selecciona filtro")) {
             busp3.setVisible(false);
@@ -16253,7 +16293,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             filtroNDFP3.setText("");
             LabelNDFP3.setVisible(false);
             FunMD();
-
+            
         }
         if (FP3.equals("Filtrar por Nombre(s)")) {
             busp3.setVisible(true);
@@ -16443,7 +16483,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQP4ItemStateChanged
 
     private void FiltrosP4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP4ItemStateChanged
-
+        
         String FP = (String) FiltrosP4.getSelectedItem();
         if (FP.equals("Selecciona filtro")) {
             busp4.setVisible(false);
@@ -16465,9 +16505,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             filtroNDFP4.setVisible(false);
             filtroNDFP4.setText("");
             LabelNDFP4.setVisible(false);
-
+            
             FunMD();
-
+            
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
             busp4.setVisible(true);
@@ -16679,7 +16719,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             filtroNDFP5.setText("");
             LabelNDFP5.setVisible(false);
             FunMD();
-
+            
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
             busp5.setVisible(true);
@@ -16869,7 +16909,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQP6ItemStateChanged
 
     private void FiltrosP6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP6ItemStateChanged
-
+        
         String FP6 = (String) FiltrosP6.getSelectedItem();
         if (FP6.equals("Selecciona filtro")) {
             busp6.setVisible(false);
@@ -16892,7 +16932,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             filtroNDFP6.setText("");
             LabelNDFP6.setVisible(false);
             FunMD();
-
+            
         }
         if (FP6.equals("Filtrar por Nombre(s)")) {
             busp6.setVisible(true);
@@ -17082,7 +17122,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQP7ItemStateChanged
 
     private void FiltrosP7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP7ItemStateChanged
-
+        
         String FP = (String) FiltrosP7.getSelectedItem();
         if (FP.equals("Selecciona filtro")) {
             busp7.setVisible(false);
@@ -17105,7 +17145,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             filtroNDFP7.setText("");
             LabelNDFP7.setVisible(false);
             FunMD();
-
+            
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
             busp7.setVisible(true);
@@ -17270,7 +17310,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroNDF7KeyReleased
 
     private void FiltrosTD7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD7ItemStateChanged
-
+        
         String FTD7 = (String) FiltrosTD7.getSelectedItem();
         if (FTD7.equals("Selecciona filtro")) {
             Nominab7.setText("");
@@ -17293,7 +17333,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FiltroNDF7.setVisible(false);
             LabelBNDF7.setVisible(false);
             FunMD();
-
+            
         }
         if (FTD7.equals("Filtrar por Apellido P")) {
             Nominab7.setText("");
@@ -17463,7 +17503,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Eliminar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar7ActionPerformed
         try {
-
+            
             int filaseleccionada = Tnom7.getSelectedRow();
             String sql = "delete from `nomina.detallada." + Zon.getText() + "` where #lista=" + Tnom7.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
@@ -17472,9 +17512,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Nomina eliminada");
             }
         } catch (HeadlessException | SQLException e) {
-
+            
             JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
-
+            
         }
         FunMD();
         sumaDep();
@@ -17487,9 +17527,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Tnom7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom7MouseClicked
         try {
-
+            
             DefaultTableModel model = (DefaultTableModel) Tnom7.getModel();
-
+            
             int fila = Tnom7.getSelectedRow();
             NDL.setText(String.valueOf(Tnom7.getValueAt(fila, 0)));
             NEnom.setText(String.valueOf(Tnom7.getValueAt(fila, 1)));
@@ -17510,7 +17550,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-
+            
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
             String combo2 = model.getValueAt(fila, 14).toString();
@@ -17609,7 +17649,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Dia16.setSelectedIndex(i);
                 }
             }
-
+            
             PDDDDSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 41)));
             apy.setText(String.valueOf(Tnom7.getValueAt(fila, 50)));
             Lugar.setText(String.valueOf(Tnom7.getValueAt(fila, 51)));
@@ -17634,7 +17674,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             Odtp.setText(String.valueOf(Tnom7.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom7.getValueAt(fila, 74)));
-
+            
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -17657,7 +17697,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroNDF6KeyReleased
 
     private void FiltrosTD6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD6ItemStateChanged
-
+        
         String FTD6 = (String) FiltrosTD6.getSelectedItem();
         if (FTD6.equals("Selecciona filtro")) {
             Nominab6.setText("");
@@ -17680,7 +17720,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FiltroNDF6.setVisible(false);
             LabelBNDF6.setVisible(false);
             FunMD();
-
+            
         }
         if (FTD6.equals("Filtrar por Apellido P")) {
             Nominab6.setText("");
@@ -17849,7 +17889,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Eliminar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar6ActionPerformed
         try {
-
+            
             int filaseleccionada = Tnom6.getSelectedRow();
             String sql = "delete from `nomina.detallada." + Zon.getText() + "` where #lista=" + Tnom6.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
@@ -17858,9 +17898,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Nomina eliminada");
             }
         } catch (HeadlessException | SQLException e) {
-
+            
             JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
-
+            
         }
         FunMD();
         sumaDep();
@@ -17873,9 +17913,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Tnom6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom6MouseClicked
         try {
-
+            
             DefaultTableModel model = (DefaultTableModel) Tnom6.getModel();
-
+            
             int fila = Tnom6.getSelectedRow();
             NDL.setText(String.valueOf(Tnom6.getValueAt(fila, 0)));
             NEnom.setText(String.valueOf(Tnom6.getValueAt(fila, 1)));
@@ -17896,7 +17936,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-
+            
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
             String combo2 = model.getValueAt(fila, 14).toString();
@@ -17995,7 +18035,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Dia16.setSelectedIndex(i);
                 }
             }
-
+            
             PDDDDSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 41)));
             apy.setText(String.valueOf(Tnom6.getValueAt(fila, 50)));
             Lugar.setText(String.valueOf(Tnom6.getValueAt(fila, 51)));
@@ -18020,7 +18060,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             Odtp.setText(String.valueOf(Tnom6.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom6.getValueAt(fila, 74)));
-
+            
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -18043,7 +18083,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroNDF5KeyReleased
 
     private void FiltrosTD5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD5ItemStateChanged
-
+        
         String FTD5 = (String) FiltrosTD5.getSelectedItem();
         if (FTD5.equals("Selecciona filtro")) {
             Nominab5.setText("");
@@ -18066,7 +18106,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FiltroNDF5.setVisible(false);
             LabelBNDF5.setVisible(false);
             FunMD();
-
+            
         }
         if (FTD5.equals("Filtrar por Apellido P")) {
             Nominab5.setText("");
@@ -18236,7 +18276,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Eliminar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar5ActionPerformed
         try {
-
+            
             int filaseleccionada = Tnom5.getSelectedRow();
             String sql = "delete from `nomina.detallada." + Zon.getText() + "` where #lista=" + Tnom5.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
@@ -18245,9 +18285,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Nomina eliminada");
             }
         } catch (HeadlessException | SQLException e) {
-
+            
             JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
-
+            
         }
         FunMD();
         sumaDep();
@@ -18259,9 +18299,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Tnom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom5MouseClicked
         try {
-
+            
             DefaultTableModel model = (DefaultTableModel) Tnom5.getModel();
-
+            
             int fila = Tnom5.getSelectedRow();
             NDL.setText(String.valueOf(Tnom5.getValueAt(fila, 0)));
             NEnom.setText(String.valueOf(Tnom5.getValueAt(fila, 1)));
@@ -18282,7 +18322,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-
+            
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
             String combo2 = model.getValueAt(fila, 14).toString();
@@ -18381,7 +18421,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Dia16.setSelectedIndex(i);
                 }
             }
-
+            
             PDDDDSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 41)));
             apy.setText(String.valueOf(Tnom5.getValueAt(fila, 50)));
             Lugar.setText(String.valueOf(Tnom5.getValueAt(fila, 51)));
@@ -18406,7 +18446,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             Odtp.setText(String.valueOf(Tnom5.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom5.getValueAt(fila, 74)));
-
+            
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -18429,7 +18469,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroNDF4KeyReleased
 
     private void FiltrosTD4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD4ItemStateChanged
-
+        
         String FTD4 = (String) FiltrosTD4.getSelectedItem();
         if (FTD4.equals("Selecciona filtro")) {
             Nominab4.setText("");
@@ -18452,7 +18492,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FiltroNDF4.setVisible(false);
             LabelBNDF4.setVisible(false);
             FunMD();
-
+            
         }
         if (FTD4.equals("Filtrar por Apellido P")) {
             Nominab4.setText("");
@@ -18622,7 +18662,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Eliminar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar4ActionPerformed
         try {
-
+            
             int filaseleccionada = Tnom4.getSelectedRow();
             String sql = "delete from `nomina.detallada." + Zon.getText() + "` where #lista=" + Tnom4.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
@@ -18631,9 +18671,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Nomina eliminada");
             }
         } catch (HeadlessException | SQLException e) {
-
+            
             JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
-
+            
         }
         FunMD();
     }//GEN-LAST:event_Eliminar4ActionPerformed
@@ -18645,9 +18685,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Tnom4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom4MouseClicked
         try {
-
+            
             DefaultTableModel model = (DefaultTableModel) Tnom4.getModel();
-
+            
             int fila = Tnom4.getSelectedRow();
             NDL.setText(String.valueOf(Tnom4.getValueAt(fila, 0)));
             NEnom.setText(String.valueOf(Tnom4.getValueAt(fila, 1)));
@@ -18668,7 +18708,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-
+            
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
             String combo2 = model.getValueAt(fila, 14).toString();
@@ -18767,7 +18807,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Dia16.setSelectedIndex(i);
                 }
             }
-
+            
             PDDDDSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 41)));
             apy.setText(String.valueOf(Tnom4.getValueAt(fila, 50)));
             Lugar.setText(String.valueOf(Tnom4.getValueAt(fila, 51)));
@@ -18792,7 +18832,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             Odtp.setText(String.valueOf(Tnom4.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom4.getValueAt(fila, 74)));
-
+            
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -18815,7 +18855,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroNDF3KeyReleased
 
     private void FiltrosTD3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD3ItemStateChanged
-
+        
         String FTD3 = (String) FiltrosTD3.getSelectedItem();
         if (FTD3.equals("Selecciona filtro")) {
             Nominab3.setText("");
@@ -18838,7 +18878,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FiltroNDF3.setVisible(false);
             LabelBNDF3.setVisible(false);
             FunMD();
-
+            
         }
         if (FTD3.equals("Filtrar por Apellido P")) {
             Nominab3.setText("");
@@ -19008,7 +19048,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Eliminar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar3ActionPerformed
         try {
-
+            
             int filaseleccionada = Tnom3.getSelectedRow();
             String sql = "delete from `nomina.detallada." + Zon.getText() + "` where #lista=" + Tnom3.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
@@ -19017,9 +19057,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Nomina eliminada");
             }
         } catch (HeadlessException | SQLException e) {
-
+            
             JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
-
+            
         }
         FunMD();
     }//GEN-LAST:event_Eliminar3ActionPerformed
@@ -19031,9 +19071,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Tnom3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom3MouseClicked
         try {
-
+            
             DefaultTableModel model = (DefaultTableModel) Tnom3.getModel();
-
+            
             int fila = Tnom3.getSelectedRow();
             NDL.setText(String.valueOf(Tnom3.getValueAt(fila, 0)));
             NEnom.setText(String.valueOf(Tnom3.getValueAt(fila, 1)));
@@ -19054,7 +19094,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-
+            
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
             String combo2 = model.getValueAt(fila, 14).toString();
@@ -19153,7 +19193,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Dia16.setSelectedIndex(i);
                 }
             }
-
+            
             PDDDDSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 41)));
             apy.setText(String.valueOf(Tnom3.getValueAt(fila, 50)));
             Lugar.setText(String.valueOf(Tnom3.getValueAt(fila, 51)));
@@ -19178,7 +19218,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             Odtp.setText(String.valueOf(Tnom3.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom3.getValueAt(fila, 74)));
-
+            
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -19201,7 +19241,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroNDF2KeyReleased
 
     private void FiltrosTD2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD2ItemStateChanged
-
+        
         String FTD2 = (String) FiltrosTD2.getSelectedItem();
         if (FTD2.equals("Selecciona filtro")) {
             Nominab2.setText("");
@@ -19224,7 +19264,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FiltroNDF2.setVisible(false);
             LabelBNDF2.setVisible(false);
             FunMD();
-
+            
         }
         if (FTD2.equals("Filtrar por Apellido P")) {
             Nominab2.setText("");
@@ -19394,7 +19434,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Eliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar2ActionPerformed
         try {
-
+            
             int filaseleccionada = Tnom2.getSelectedRow();
             String sql = "delete from `nomina.detallada." + Zon.getText() + "` where #lista=" + Tnom2.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
@@ -19403,9 +19443,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Nomina eliminada");
             }
         } catch (HeadlessException | SQLException e) {
-
+            
             JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
-
+            
         }
         FunMD();
         sumaDep();
@@ -19418,9 +19458,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Tnom2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom2MouseClicked
         try {
-
+            
             DefaultTableModel model = (DefaultTableModel) Tnom2.getModel();
-
+            
             int fila = Tnom2.getSelectedRow();
             NDL.setText(String.valueOf(Tnom2.getValueAt(fila, 0)));
             NEnom.setText(String.valueOf(Tnom2.getValueAt(fila, 1)));
@@ -19441,7 +19481,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-
+            
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
             String combo2 = model.getValueAt(fila, 14).toString();
@@ -19540,7 +19580,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Dia16.setSelectedIndex(i);
                 }
             }
-
+            
             PDDDDSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 41)));
             apy.setText(String.valueOf(Tnom2.getValueAt(fila, 50)));
             Lugar.setText(String.valueOf(Tnom2.getValueAt(fila, 51)));
@@ -19565,7 +19605,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             Odtp.setText(String.valueOf(Tnom2.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom2.getValueAt(fila, 74)));
-
+            
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -19588,7 +19628,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroNDF1KeyReleased
 
     private void FiltrosTD1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD1ItemStateChanged
-
+        
         String FTD1 = (String) FiltrosTD1.getSelectedItem();
         if (FTD1.equals("Selecciona filtro")) {
             Nominab1.setText("");
@@ -19611,7 +19651,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FiltroNDF1.setVisible(false);
             LabelBNDF1.setVisible(false);
             FunMD();
-
+            
         }
         if (FTD1.equals("Filtrar por Apellido P")) {
             Nominab1.setText("");
@@ -19781,7 +19821,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar1ActionPerformed
         try {
-
+            
             int filaseleccionada = Tnom1.getSelectedRow();
             String sql = "delete from `nomina.detallada." + Zon.getText() + "` where #lista=" + Tnom1.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
@@ -19790,9 +19830,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Nomina eliminada");
             }
         } catch (HeadlessException | SQLException e) {
-
+            
             JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
-
+            
         }
         FunMD();
     }//GEN-LAST:event_Eliminar1ActionPerformed
@@ -19804,9 +19844,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
     private void Tnom1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom1MouseClicked
         try {
-
+            
             DefaultTableModel model = (DefaultTableModel) Tnom1.getModel();
-
+            
             int fila = Tnom1.getSelectedRow();
             NDL.setText(String.valueOf(Tnom1.getValueAt(fila, 0)));
             NEnom.setText(String.valueOf(Tnom1.getValueAt(fila, 1)));
@@ -19827,7 +19867,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-
+            
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
             String combo2 = model.getValueAt(fila, 14).toString();
@@ -19926,7 +19966,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Dia16.setSelectedIndex(i);
                 }
             }
-
+            
             PDDDDSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 41)));
             apy.setText(String.valueOf(Tnom1.getValueAt(fila, 50)));
             Lugar.setText(String.valueOf(Tnom1.getValueAt(fila, 51)));
@@ -19951,7 +19991,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             Odtp.setText(String.valueOf(Tnom1.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom1.getValueAt(fila, 74)));
-
+            
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -19974,7 +20014,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroNDFKeyReleased
 
     private void FiltrosTDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTDItemStateChanged
-
+        
         String FTD = (String) FiltrosTD.getSelectedItem();
         if (FTD.equals("Selecciona filtro")) {
             Nominab.setText("");
@@ -19997,7 +20037,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FiltroNDF.setVisible(false);
             LabelBNDF.setVisible(false);
             FunMD();
-
+            
         }
         if (FTD.equals("Filtrar por Apellido P")) {
             Nominab.setText("");
@@ -20136,7 +20176,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTDItemStateChanged
 
     private void FZservicioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicioItemStateChanged
-
+        
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             FiltrosZonas zon = (FiltrosZonas) FZservicio.getSelectedItem();
             FiltroServ serv = new FiltroServ();
@@ -20157,7 +20197,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroSnominaItemStateChanged
 
     private void CS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2ActionPerformed
-
+        
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -20167,9 +20207,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS2ActionPerformed
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-
+        
         try {
-
+            
             int filaseleccionada = Tnom.getSelectedRow();
             String sql = "delete from `nomina.detallada." + Zon.getText() + "` where #lista=" + Tnom.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
@@ -20178,23 +20218,23 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Nomina eliminada");
             }
         } catch (HeadlessException | SQLException e) {
-
+            
             JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
-
+            
         }
         FunMD();
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void NominabKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NominabKeyReleased
-
+        
         FunMD();
     }//GEN-LAST:event_NominabKeyReleased
 
     private void TnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TnomMouseClicked
         try {
-
+            
             DefaultTableModel model = (DefaultTableModel) Tnom.getModel();
-
+            
             int fila = Tnom.getSelectedRow();
             NDL.setText(String.valueOf(Tnom.getValueAt(fila, 0)));
             NEnom.setText(String.valueOf(Tnom.getValueAt(fila, 1)));
@@ -20215,7 +20255,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-
+            
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
             año.setDate(date);
             String combo2 = model.getValueAt(fila, 14).toString();
@@ -20314,7 +20354,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     Dia16.setSelectedIndex(i);
                 }
             }
-
+            
             PDDDDSGS.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
             apy.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
             Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
@@ -20339,7 +20379,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 72)));
             deposito.setText(String.valueOf(Tnom.getValueAt(fila, 73)));
             obs.setText(String.valueOf(Tnom.getValueAt(fila, 74)));
-
+            
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -20497,7 +20537,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Imprimir3ActionPerformed
 
     private void Imprimir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir4ActionPerformed
-
+        
         int FP = FiltrosP4.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
@@ -20649,21 +20689,21 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
+                    
                 }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -23127,6 +23167,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel PDDFT;
     private javax.swing.JLabel PDDL;
     private javax.swing.JLabel PDDT;
+    private javax.swing.JTextField PH;
     private javax.swing.JMenuItem PRES;
     private javax.swing.JTextField PagODTnom;
     private javax.swing.JTextField Pagadoprenom;
@@ -23343,13 +23384,16 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -23426,6 +23470,8 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane34;
     private javax.swing.JScrollPane jScrollPane35;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JScrollPane k;
     private javax.swing.JTextField name;
     private javax.swing.JTextArea obs;
