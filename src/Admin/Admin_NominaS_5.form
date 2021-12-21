@@ -2132,7 +2132,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -2497,7 +2497,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -2862,7 +2862,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -3227,7 +3227,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -3592,7 +3592,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -5181,7 +5181,7 @@
                                       </Group>
                                       <Component id="jScrollPane6" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2048" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5320,39 +5320,62 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQP">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar quincena:"/>
+                            <Property name="text" type="java.lang.String" value="Buscar semana:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltroQP">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="26">
+                              <StringArray count="49">
                                 <StringItem index="0" value=" "/>
-                                <StringItem index="1" value="1ra Quincena de Enero"/>
-                                <StringItem index="2" value="2da Quincena de Enero"/>
-                                <StringItem index="3" value="1ra Quincena de Febrero"/>
-                                <StringItem index="4" value="2da Quincena de Febrero"/>
-                                <StringItem index="5" value="2da Quincena de Feb B"/>
-                                <StringItem index="6" value="1ra Quincena de Marzo"/>
-                                <StringItem index="7" value="2da Quincena de Marzo"/>
-                                <StringItem index="8" value="1ra Quincena de Abril"/>
-                                <StringItem index="9" value="2da Quincena de Abril"/>
-                                <StringItem index="10" value="1ra Quincena de Mayo"/>
-                                <StringItem index="11" value="2da Quincena de Mayo"/>
-                                <StringItem index="12" value="1ra Quincena de Junio"/>
-                                <StringItem index="13" value="2da Quincena de Junio"/>
-                                <StringItem index="14" value="1ra Quincena de Julio"/>
-                                <StringItem index="15" value="2da Quincena de Julio"/>
-                                <StringItem index="16" value="1ra Quincena de Agosto"/>
-                                <StringItem index="17" value="2da Quincena de Agosto"/>
-                                <StringItem index="18" value="1ra Quincena de Septiembre"/>
-                                <StringItem index="19" value="2da Quincena de Septiembre"/>
-                                <StringItem index="20" value="1ra Quincena de Octubre"/>
-                                <StringItem index="21" value="2da Quincena de Octubre"/>
-                                <StringItem index="22" value="1ra Quincena de Noviembre"/>
-                                <StringItem index="23" value="2da Quincena de Noviembre"/>
-                                <StringItem index="24" value="1ra Quincena de Diciembre"/>
-                                <StringItem index="25" value="2da Quincena de Diciembre"/>
+                                <StringItem index="1" value="1er semana Enero"/>
+                                <StringItem index="2" value="2da semana Enero"/>
+                                <StringItem index="3" value="3er semana Enero"/>
+                                <StringItem index="4" value="4ta semana Enero"/>
+                                <StringItem index="5" value="1er semana Febrero"/>
+                                <StringItem index="6" value="2da semana Febrero"/>
+                                <StringItem index="7" value="3er semana Febrero"/>
+                                <StringItem index="8" value="4ta semana Febrero"/>
+                                <StringItem index="9" value="1er semana Marzo"/>
+                                <StringItem index="10" value="2da semana Marzo"/>
+                                <StringItem index="11" value="3er semana Marzo"/>
+                                <StringItem index="12" value="4ta semana Marzo"/>
+                                <StringItem index="13" value="1er semana Abril"/>
+                                <StringItem index="14" value="2da semana Abril"/>
+                                <StringItem index="15" value="3er semana Abril"/>
+                                <StringItem index="16" value="4ta semana Abril"/>
+                                <StringItem index="17" value="1er semana Mayo"/>
+                                <StringItem index="18" value="2da semana Mayo"/>
+                                <StringItem index="19" value="3er semana Mayo"/>
+                                <StringItem index="20" value="4ta semana Mayo"/>
+                                <StringItem index="21" value="1er semana Junio"/>
+                                <StringItem index="22" value="2da semana Junio"/>
+                                <StringItem index="23" value="3er semana Junio"/>
+                                <StringItem index="24" value="4ta semana Junio"/>
+                                <StringItem index="25" value="1er semana Julio"/>
+                                <StringItem index="26" value="2da semana Julio"/>
+                                <StringItem index="27" value="3er semana Julio"/>
+                                <StringItem index="28" value="4ta semana Julio"/>
+                                <StringItem index="29" value="1er semana Agosto"/>
+                                <StringItem index="30" value="2da semana Agosto"/>
+                                <StringItem index="31" value="3er semana Agosto"/>
+                                <StringItem index="32" value="4ta semana Agosto"/>
+                                <StringItem index="33" value="1er semana Septiembre"/>
+                                <StringItem index="34" value="2da semana Septiembre"/>
+                                <StringItem index="35" value="3er semana Septiembre"/>
+                                <StringItem index="36" value="4ta semana Septiembre"/>
+                                <StringItem index="37" value="1er semana Octubre"/>
+                                <StringItem index="38" value="2da semana Octubre"/>
+                                <StringItem index="39" value="3er semana Octubre"/>
+                                <StringItem index="40" value="4ta semana Octubre"/>
+                                <StringItem index="41" value="1er semana Noviembre"/>
+                                <StringItem index="42" value="2da semana Noviembre"/>
+                                <StringItem index="43" value="3er semana Noviembre"/>
+                                <StringItem index="44" value="4ta semana Noviembre"/>
+                                <StringItem index="45" value="1er semana Diciembre"/>
+                                <StringItem index="46" value="2da semana Diciembre"/>
+                                <StringItem index="47" value="3er semana Diciembre"/>
+                                <StringItem index="48" value="4ta semana Diciembre"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -5377,7 +5400,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -5496,7 +5519,7 @@
                                       </Group>
                                       <Component id="jScrollPane29" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2048" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5644,39 +5667,62 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQP1">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar quincena:"/>
+                            <Property name="text" type="java.lang.String" value="Buscar semana:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltroQP1">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="26">
+                              <StringArray count="49">
                                 <StringItem index="0" value=" "/>
-                                <StringItem index="1" value="1ra Quincena de Enero"/>
-                                <StringItem index="2" value="2da Quincena de Enero"/>
-                                <StringItem index="3" value="1ra Quincena de Febrero"/>
-                                <StringItem index="4" value="2da Quincena de Febrero"/>
-                                <StringItem index="5" value="2da Quincena de Feb B"/>
-                                <StringItem index="6" value="1ra Quincena de Marzo"/>
-                                <StringItem index="7" value="2da Quincena de Marzo"/>
-                                <StringItem index="8" value="1ra Quincena de Abril"/>
-                                <StringItem index="9" value="2da Quincena de Abril"/>
-                                <StringItem index="10" value="1ra Quincena de Mayo"/>
-                                <StringItem index="11" value="2da Quincena de Mayo"/>
-                                <StringItem index="12" value="1ra Quincena de Junio"/>
-                                <StringItem index="13" value="2da Quincena de Junio"/>
-                                <StringItem index="14" value="1ra Quincena de Julio"/>
-                                <StringItem index="15" value="2da Quincena de Julio"/>
-                                <StringItem index="16" value="1ra Quincena de Agosto"/>
-                                <StringItem index="17" value="2da Quincena de Agosto"/>
-                                <StringItem index="18" value="1ra Quincena de Septiembre"/>
-                                <StringItem index="19" value="2da Quincena de Septiembre"/>
-                                <StringItem index="20" value="1ra Quincena de Octubre"/>
-                                <StringItem index="21" value="2da Quincena de Octubre"/>
-                                <StringItem index="22" value="1ra Quincena de Noviembre"/>
-                                <StringItem index="23" value="2da Quincena de Noviembre"/>
-                                <StringItem index="24" value="1ra Quincena de Diciembre"/>
-                                <StringItem index="25" value="2da Quincena de Diciembre"/>
+                                <StringItem index="1" value="1er semana Enero"/>
+                                <StringItem index="2" value="2da semana Enero"/>
+                                <StringItem index="3" value="3er semana Enero"/>
+                                <StringItem index="4" value="4ta semana Enero"/>
+                                <StringItem index="5" value="1er semana Febrero"/>
+                                <StringItem index="6" value="2da semana Febrero"/>
+                                <StringItem index="7" value="3er semana Febrero"/>
+                                <StringItem index="8" value="4ta semana Febrero"/>
+                                <StringItem index="9" value="1er semana Marzo"/>
+                                <StringItem index="10" value="2da semana Marzo"/>
+                                <StringItem index="11" value="3er semana Marzo"/>
+                                <StringItem index="12" value="4ta semana Marzo"/>
+                                <StringItem index="13" value="1er semana Abril"/>
+                                <StringItem index="14" value="2da semana Abril"/>
+                                <StringItem index="15" value="3er semana Abril"/>
+                                <StringItem index="16" value="4ta semana Abril"/>
+                                <StringItem index="17" value="1er semana Mayo"/>
+                                <StringItem index="18" value="2da semana Mayo"/>
+                                <StringItem index="19" value="3er semana Mayo"/>
+                                <StringItem index="20" value="4ta semana Mayo"/>
+                                <StringItem index="21" value="1er semana Junio"/>
+                                <StringItem index="22" value="2da semana Junio"/>
+                                <StringItem index="23" value="3er semana Junio"/>
+                                <StringItem index="24" value="4ta semana Junio"/>
+                                <StringItem index="25" value="1er semana Julio"/>
+                                <StringItem index="26" value="2da semana Julio"/>
+                                <StringItem index="27" value="3er semana Julio"/>
+                                <StringItem index="28" value="4ta semana Julio"/>
+                                <StringItem index="29" value="1er semana Agosto"/>
+                                <StringItem index="30" value="2da semana Agosto"/>
+                                <StringItem index="31" value="3er semana Agosto"/>
+                                <StringItem index="32" value="4ta semana Agosto"/>
+                                <StringItem index="33" value="1er semana Septiembre"/>
+                                <StringItem index="34" value="2da semana Septiembre"/>
+                                <StringItem index="35" value="3er semana Septiembre"/>
+                                <StringItem index="36" value="4ta semana Septiembre"/>
+                                <StringItem index="37" value="1er semana Octubre"/>
+                                <StringItem index="38" value="2da semana Octubre"/>
+                                <StringItem index="39" value="3er semana Octubre"/>
+                                <StringItem index="40" value="4ta semana Octubre"/>
+                                <StringItem index="41" value="1er semana Noviembre"/>
+                                <StringItem index="42" value="2da semana Noviembre"/>
+                                <StringItem index="43" value="3er semana Noviembre"/>
+                                <StringItem index="44" value="4ta semana Noviembre"/>
+                                <StringItem index="45" value="1er semana Diciembre"/>
+                                <StringItem index="46" value="2da semana Diciembre"/>
+                                <StringItem index="47" value="3er semana Diciembre"/>
+                                <StringItem index="48" value="4ta semana Diciembre"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -5701,7 +5747,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -5820,7 +5866,7 @@
                                       </Group>
                                       <Component id="jScrollPane30" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2048" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5965,39 +6011,62 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQP2">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar quincena:"/>
+                            <Property name="text" type="java.lang.String" value="Buscar semana:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltroQP2">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="26">
+                              <StringArray count="49">
                                 <StringItem index="0" value=" "/>
-                                <StringItem index="1" value="1ra Quincena de Enero"/>
-                                <StringItem index="2" value="2da Quincena de Enero"/>
-                                <StringItem index="3" value="1ra Quincena de Febrero"/>
-                                <StringItem index="4" value="2da Quincena de Febrero"/>
-                                <StringItem index="5" value="2da Quincena de Feb B"/>
-                                <StringItem index="6" value="1ra Quincena de Marzo"/>
-                                <StringItem index="7" value="2da Quincena de Marzo"/>
-                                <StringItem index="8" value="1ra Quincena de Abril"/>
-                                <StringItem index="9" value="2da Quincena de Abril"/>
-                                <StringItem index="10" value="1ra Quincena de Mayo"/>
-                                <StringItem index="11" value="2da Quincena de Mayo"/>
-                                <StringItem index="12" value="1ra Quincena de Junio"/>
-                                <StringItem index="13" value="2da Quincena de Junio"/>
-                                <StringItem index="14" value="1ra Quincena de Julio"/>
-                                <StringItem index="15" value="2da Quincena de Julio"/>
-                                <StringItem index="16" value="1ra Quincena de Agosto"/>
-                                <StringItem index="17" value="2da Quincena de Agosto"/>
-                                <StringItem index="18" value="1ra Quincena de Septiembre"/>
-                                <StringItem index="19" value="2da Quincena de Septiembre"/>
-                                <StringItem index="20" value="1ra Quincena de Octubre"/>
-                                <StringItem index="21" value="2da Quincena de Octubre"/>
-                                <StringItem index="22" value="1ra Quincena de Noviembre"/>
-                                <StringItem index="23" value="2da Quincena de Noviembre"/>
-                                <StringItem index="24" value="1ra Quincena de Diciembre"/>
-                                <StringItem index="25" value="2da Quincena de Diciembre"/>
+                                <StringItem index="1" value="1er semana Enero"/>
+                                <StringItem index="2" value="2da semana Enero"/>
+                                <StringItem index="3" value="3er semana Enero"/>
+                                <StringItem index="4" value="4ta semana Enero"/>
+                                <StringItem index="5" value="1er semana Febrero"/>
+                                <StringItem index="6" value="2da semana Febrero"/>
+                                <StringItem index="7" value="3er semana Febrero"/>
+                                <StringItem index="8" value="4ta semana Febrero"/>
+                                <StringItem index="9" value="1er semana Marzo"/>
+                                <StringItem index="10" value="2da semana Marzo"/>
+                                <StringItem index="11" value="3er semana Marzo"/>
+                                <StringItem index="12" value="4ta semana Marzo"/>
+                                <StringItem index="13" value="1er semana Abril"/>
+                                <StringItem index="14" value="2da semana Abril"/>
+                                <StringItem index="15" value="3er semana Abril"/>
+                                <StringItem index="16" value="4ta semana Abril"/>
+                                <StringItem index="17" value="1er semana Mayo"/>
+                                <StringItem index="18" value="2da semana Mayo"/>
+                                <StringItem index="19" value="3er semana Mayo"/>
+                                <StringItem index="20" value="4ta semana Mayo"/>
+                                <StringItem index="21" value="1er semana Junio"/>
+                                <StringItem index="22" value="2da semana Junio"/>
+                                <StringItem index="23" value="3er semana Junio"/>
+                                <StringItem index="24" value="4ta semana Junio"/>
+                                <StringItem index="25" value="1er semana Julio"/>
+                                <StringItem index="26" value="2da semana Julio"/>
+                                <StringItem index="27" value="3er semana Julio"/>
+                                <StringItem index="28" value="4ta semana Julio"/>
+                                <StringItem index="29" value="1er semana Agosto"/>
+                                <StringItem index="30" value="2da semana Agosto"/>
+                                <StringItem index="31" value="3er semana Agosto"/>
+                                <StringItem index="32" value="4ta semana Agosto"/>
+                                <StringItem index="33" value="1er semana Septiembre"/>
+                                <StringItem index="34" value="2da semana Septiembre"/>
+                                <StringItem index="35" value="3er semana Septiembre"/>
+                                <StringItem index="36" value="4ta semana Septiembre"/>
+                                <StringItem index="37" value="1er semana Octubre"/>
+                                <StringItem index="38" value="2da semana Octubre"/>
+                                <StringItem index="39" value="3er semana Octubre"/>
+                                <StringItem index="40" value="4ta semana Octubre"/>
+                                <StringItem index="41" value="1er semana Noviembre"/>
+                                <StringItem index="42" value="2da semana Noviembre"/>
+                                <StringItem index="43" value="3er semana Noviembre"/>
+                                <StringItem index="44" value="4ta semana Noviembre"/>
+                                <StringItem index="45" value="1er semana Diciembre"/>
+                                <StringItem index="46" value="2da semana Diciembre"/>
+                                <StringItem index="47" value="3er semana Diciembre"/>
+                                <StringItem index="48" value="4ta semana Diciembre"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -6022,7 +6091,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -6141,7 +6210,7 @@
                                       </Group>
                                       <Component id="jScrollPane31" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2048" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -6286,39 +6355,62 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQP3">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar quincena:"/>
+                            <Property name="text" type="java.lang.String" value="Buscar semana:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltroQP3">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="26">
+                              <StringArray count="49">
                                 <StringItem index="0" value=" "/>
-                                <StringItem index="1" value="1ra Quincena de Enero"/>
-                                <StringItem index="2" value="2da Quincena de Enero"/>
-                                <StringItem index="3" value="1ra Quincena de Febrero"/>
-                                <StringItem index="4" value="2da Quincena de Febrero"/>
-                                <StringItem index="5" value="2da Quincena de Feb B"/>
-                                <StringItem index="6" value="1ra Quincena de Marzo"/>
-                                <StringItem index="7" value="2da Quincena de Marzo"/>
-                                <StringItem index="8" value="1ra Quincena de Abril"/>
-                                <StringItem index="9" value="2da Quincena de Abril"/>
-                                <StringItem index="10" value="1ra Quincena de Mayo"/>
-                                <StringItem index="11" value="2da Quincena de Mayo"/>
-                                <StringItem index="12" value="1ra Quincena de Junio"/>
-                                <StringItem index="13" value="2da Quincena de Junio"/>
-                                <StringItem index="14" value="1ra Quincena de Julio"/>
-                                <StringItem index="15" value="2da Quincena de Julio"/>
-                                <StringItem index="16" value="1ra Quincena de Agosto"/>
-                                <StringItem index="17" value="2da Quincena de Agosto"/>
-                                <StringItem index="18" value="1ra Quincena de Septiembre"/>
-                                <StringItem index="19" value="2da Quincena de Septiembre"/>
-                                <StringItem index="20" value="1ra Quincena de Octubre"/>
-                                <StringItem index="21" value="2da Quincena de Octubre"/>
-                                <StringItem index="22" value="1ra Quincena de Noviembre"/>
-                                <StringItem index="23" value="2da Quincena de Noviembre"/>
-                                <StringItem index="24" value="1ra Quincena de Diciembre"/>
-                                <StringItem index="25" value="2da Quincena de Diciembre"/>
+                                <StringItem index="1" value="1er semana Enero"/>
+                                <StringItem index="2" value="2da semana Enero"/>
+                                <StringItem index="3" value="3er semana Enero"/>
+                                <StringItem index="4" value="4ta semana Enero"/>
+                                <StringItem index="5" value="1er semana Febrero"/>
+                                <StringItem index="6" value="2da semana Febrero"/>
+                                <StringItem index="7" value="3er semana Febrero"/>
+                                <StringItem index="8" value="4ta semana Febrero"/>
+                                <StringItem index="9" value="1er semana Marzo"/>
+                                <StringItem index="10" value="2da semana Marzo"/>
+                                <StringItem index="11" value="3er semana Marzo"/>
+                                <StringItem index="12" value="4ta semana Marzo"/>
+                                <StringItem index="13" value="1er semana Abril"/>
+                                <StringItem index="14" value="2da semana Abril"/>
+                                <StringItem index="15" value="3er semana Abril"/>
+                                <StringItem index="16" value="4ta semana Abril"/>
+                                <StringItem index="17" value="1er semana Mayo"/>
+                                <StringItem index="18" value="2da semana Mayo"/>
+                                <StringItem index="19" value="3er semana Mayo"/>
+                                <StringItem index="20" value="4ta semana Mayo"/>
+                                <StringItem index="21" value="1er semana Junio"/>
+                                <StringItem index="22" value="2da semana Junio"/>
+                                <StringItem index="23" value="3er semana Junio"/>
+                                <StringItem index="24" value="4ta semana Junio"/>
+                                <StringItem index="25" value="1er semana Julio"/>
+                                <StringItem index="26" value="2da semana Julio"/>
+                                <StringItem index="27" value="3er semana Julio"/>
+                                <StringItem index="28" value="4ta semana Julio"/>
+                                <StringItem index="29" value="1er semana Agosto"/>
+                                <StringItem index="30" value="2da semana Agosto"/>
+                                <StringItem index="31" value="3er semana Agosto"/>
+                                <StringItem index="32" value="4ta semana Agosto"/>
+                                <StringItem index="33" value="1er semana Septiembre"/>
+                                <StringItem index="34" value="2da semana Septiembre"/>
+                                <StringItem index="35" value="3er semana Septiembre"/>
+                                <StringItem index="36" value="4ta semana Septiembre"/>
+                                <StringItem index="37" value="1er semana Octubre"/>
+                                <StringItem index="38" value="2da semana Octubre"/>
+                                <StringItem index="39" value="3er semana Octubre"/>
+                                <StringItem index="40" value="4ta semana Octubre"/>
+                                <StringItem index="41" value="1er semana Noviembre"/>
+                                <StringItem index="42" value="2da semana Noviembre"/>
+                                <StringItem index="43" value="3er semana Noviembre"/>
+                                <StringItem index="44" value="4ta semana Noviembre"/>
+                                <StringItem index="45" value="1er semana Diciembre"/>
+                                <StringItem index="46" value="2da semana Diciembre"/>
+                                <StringItem index="47" value="3er semana Diciembre"/>
+                                <StringItem index="48" value="4ta semana Diciembre"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -6343,7 +6435,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -6462,7 +6554,7 @@
                                       </Group>
                                       <Component id="jScrollPane32" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2024" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -6603,7 +6695,7 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQP4">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar quincena:"/>
+                            <Property name="text" type="java.lang.String" value="Buscar semana:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltroQP4">
@@ -6660,7 +6752,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -6779,7 +6871,7 @@
                                       </Group>
                                       <Component id="jScrollPane33" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2048" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -6924,39 +7016,62 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQP5">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar quincena:"/>
+                            <Property name="text" type="java.lang.String" value="Buscar semana:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltroQP5">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="26">
+                              <StringArray count="49">
                                 <StringItem index="0" value=" "/>
-                                <StringItem index="1" value="1ra Quincena de Enero"/>
-                                <StringItem index="2" value="2da Quincena de Enero"/>
-                                <StringItem index="3" value="1ra Quincena de Febrero"/>
-                                <StringItem index="4" value="2da Quincena de Febrero"/>
-                                <StringItem index="5" value="2da Quincena de Feb B"/>
-                                <StringItem index="6" value="1ra Quincena de Marzo"/>
-                                <StringItem index="7" value="2da Quincena de Marzo"/>
-                                <StringItem index="8" value="1ra Quincena de Abril"/>
-                                <StringItem index="9" value="2da Quincena de Abril"/>
-                                <StringItem index="10" value="1ra Quincena de Mayo"/>
-                                <StringItem index="11" value="2da Quincena de Mayo"/>
-                                <StringItem index="12" value="1ra Quincena de Junio"/>
-                                <StringItem index="13" value="2da Quincena de Junio"/>
-                                <StringItem index="14" value="1ra Quincena de Julio"/>
-                                <StringItem index="15" value="2da Quincena de Julio"/>
-                                <StringItem index="16" value="1ra Quincena de Agosto"/>
-                                <StringItem index="17" value="2da Quincena de Agosto"/>
-                                <StringItem index="18" value="1ra Quincena de Septiembre"/>
-                                <StringItem index="19" value="2da Quincena de Septiembre"/>
-                                <StringItem index="20" value="1ra Quincena de Octubre"/>
-                                <StringItem index="21" value="2da Quincena de Octubre"/>
-                                <StringItem index="22" value="1ra Quincena de Noviembre"/>
-                                <StringItem index="23" value="2da Quincena de Noviembre"/>
-                                <StringItem index="24" value="1ra Quincena de Diciembre"/>
-                                <StringItem index="25" value="2da Quincena de Diciembre"/>
+                                <StringItem index="1" value="1er semana Enero"/>
+                                <StringItem index="2" value="2da semana Enero"/>
+                                <StringItem index="3" value="3er semana Enero"/>
+                                <StringItem index="4" value="4ta semana Enero"/>
+                                <StringItem index="5" value="1er semana Febrero"/>
+                                <StringItem index="6" value="2da semana Febrero"/>
+                                <StringItem index="7" value="3er semana Febrero"/>
+                                <StringItem index="8" value="4ta semana Febrero"/>
+                                <StringItem index="9" value="1er semana Marzo"/>
+                                <StringItem index="10" value="2da semana Marzo"/>
+                                <StringItem index="11" value="3er semana Marzo"/>
+                                <StringItem index="12" value="4ta semana Marzo"/>
+                                <StringItem index="13" value="1er semana Abril"/>
+                                <StringItem index="14" value="2da semana Abril"/>
+                                <StringItem index="15" value="3er semana Abril"/>
+                                <StringItem index="16" value="4ta semana Abril"/>
+                                <StringItem index="17" value="1er semana Mayo"/>
+                                <StringItem index="18" value="2da semana Mayo"/>
+                                <StringItem index="19" value="3er semana Mayo"/>
+                                <StringItem index="20" value="4ta semana Mayo"/>
+                                <StringItem index="21" value="1er semana Junio"/>
+                                <StringItem index="22" value="2da semana Junio"/>
+                                <StringItem index="23" value="3er semana Junio"/>
+                                <StringItem index="24" value="4ta semana Junio"/>
+                                <StringItem index="25" value="1er semana Julio"/>
+                                <StringItem index="26" value="2da semana Julio"/>
+                                <StringItem index="27" value="3er semana Julio"/>
+                                <StringItem index="28" value="4ta semana Julio"/>
+                                <StringItem index="29" value="1er semana Agosto"/>
+                                <StringItem index="30" value="2da semana Agosto"/>
+                                <StringItem index="31" value="3er semana Agosto"/>
+                                <StringItem index="32" value="4ta semana Agosto"/>
+                                <StringItem index="33" value="1er semana Septiembre"/>
+                                <StringItem index="34" value="2da semana Septiembre"/>
+                                <StringItem index="35" value="3er semana Septiembre"/>
+                                <StringItem index="36" value="4ta semana Septiembre"/>
+                                <StringItem index="37" value="1er semana Octubre"/>
+                                <StringItem index="38" value="2da semana Octubre"/>
+                                <StringItem index="39" value="3er semana Octubre"/>
+                                <StringItem index="40" value="4ta semana Octubre"/>
+                                <StringItem index="41" value="1er semana Noviembre"/>
+                                <StringItem index="42" value="2da semana Noviembre"/>
+                                <StringItem index="43" value="3er semana Noviembre"/>
+                                <StringItem index="44" value="4ta semana Noviembre"/>
+                                <StringItem index="45" value="1er semana Diciembre"/>
+                                <StringItem index="46" value="2da semana Diciembre"/>
+                                <StringItem index="47" value="3er semana Diciembre"/>
+                                <StringItem index="48" value="4ta semana Diciembre"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -6981,7 +7096,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -7100,7 +7215,7 @@
                                       </Group>
                                       <Component id="jScrollPane34" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2048" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -7245,39 +7360,62 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQP6">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar quincena:"/>
+                            <Property name="text" type="java.lang.String" value="Buscar semana:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltroQP6">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="26">
+                              <StringArray count="49">
                                 <StringItem index="0" value=" "/>
-                                <StringItem index="1" value="1ra Quincena de Enero"/>
-                                <StringItem index="2" value="2da Quincena de Enero"/>
-                                <StringItem index="3" value="1ra Quincena de Febrero"/>
-                                <StringItem index="4" value="2da Quincena de Febrero"/>
-                                <StringItem index="5" value="2da Quincena de Feb B"/>
-                                <StringItem index="6" value="1ra Quincena de Marzo"/>
-                                <StringItem index="7" value="2da Quincena de Marzo"/>
-                                <StringItem index="8" value="1ra Quincena de Abril"/>
-                                <StringItem index="9" value="2da Quincena de Abril"/>
-                                <StringItem index="10" value="1ra Quincena de Mayo"/>
-                                <StringItem index="11" value="2da Quincena de Mayo"/>
-                                <StringItem index="12" value="1ra Quincena de Junio"/>
-                                <StringItem index="13" value="2da Quincena de Junio"/>
-                                <StringItem index="14" value="1ra Quincena de Julio"/>
-                                <StringItem index="15" value="2da Quincena de Julio"/>
-                                <StringItem index="16" value="1ra Quincena de Agosto"/>
-                                <StringItem index="17" value="2da Quincena de Agosto"/>
-                                <StringItem index="18" value="1ra Quincena de Septiembre"/>
-                                <StringItem index="19" value="2da Quincena de Septiembre"/>
-                                <StringItem index="20" value="1ra Quincena de Octubre"/>
-                                <StringItem index="21" value="2da Quincena de Octubre"/>
-                                <StringItem index="22" value="1ra Quincena de Noviembre"/>
-                                <StringItem index="23" value="2da Quincena de Noviembre"/>
-                                <StringItem index="24" value="1ra Quincena de Diciembre"/>
-                                <StringItem index="25" value="2da Quincena de Diciembre"/>
+                                <StringItem index="1" value="1er semana Enero"/>
+                                <StringItem index="2" value="2da semana Enero"/>
+                                <StringItem index="3" value="3er semana Enero"/>
+                                <StringItem index="4" value="4ta semana Enero"/>
+                                <StringItem index="5" value="1er semana Febrero"/>
+                                <StringItem index="6" value="2da semana Febrero"/>
+                                <StringItem index="7" value="3er semana Febrero"/>
+                                <StringItem index="8" value="4ta semana Febrero"/>
+                                <StringItem index="9" value="1er semana Marzo"/>
+                                <StringItem index="10" value="2da semana Marzo"/>
+                                <StringItem index="11" value="3er semana Marzo"/>
+                                <StringItem index="12" value="4ta semana Marzo"/>
+                                <StringItem index="13" value="1er semana Abril"/>
+                                <StringItem index="14" value="2da semana Abril"/>
+                                <StringItem index="15" value="3er semana Abril"/>
+                                <StringItem index="16" value="4ta semana Abril"/>
+                                <StringItem index="17" value="1er semana Mayo"/>
+                                <StringItem index="18" value="2da semana Mayo"/>
+                                <StringItem index="19" value="3er semana Mayo"/>
+                                <StringItem index="20" value="4ta semana Mayo"/>
+                                <StringItem index="21" value="1er semana Junio"/>
+                                <StringItem index="22" value="2da semana Junio"/>
+                                <StringItem index="23" value="3er semana Junio"/>
+                                <StringItem index="24" value="4ta semana Junio"/>
+                                <StringItem index="25" value="1er semana Julio"/>
+                                <StringItem index="26" value="2da semana Julio"/>
+                                <StringItem index="27" value="3er semana Julio"/>
+                                <StringItem index="28" value="4ta semana Julio"/>
+                                <StringItem index="29" value="1er semana Agosto"/>
+                                <StringItem index="30" value="2da semana Agosto"/>
+                                <StringItem index="31" value="3er semana Agosto"/>
+                                <StringItem index="32" value="4ta semana Agosto"/>
+                                <StringItem index="33" value="1er semana Septiembre"/>
+                                <StringItem index="34" value="2da semana Septiembre"/>
+                                <StringItem index="35" value="3er semana Septiembre"/>
+                                <StringItem index="36" value="4ta semana Septiembre"/>
+                                <StringItem index="37" value="1er semana Octubre"/>
+                                <StringItem index="38" value="2da semana Octubre"/>
+                                <StringItem index="39" value="3er semana Octubre"/>
+                                <StringItem index="40" value="4ta semana Octubre"/>
+                                <StringItem index="41" value="1er semana Noviembre"/>
+                                <StringItem index="42" value="2da semana Noviembre"/>
+                                <StringItem index="43" value="3er semana Noviembre"/>
+                                <StringItem index="44" value="4ta semana Noviembre"/>
+                                <StringItem index="45" value="1er semana Diciembre"/>
+                                <StringItem index="46" value="2da semana Diciembre"/>
+                                <StringItem index="47" value="3er semana Diciembre"/>
+                                <StringItem index="48" value="4ta semana Diciembre"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -7302,7 +7440,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -7421,7 +7559,7 @@
                                       </Group>
                                       <Component id="jScrollPane35" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2048" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -7566,39 +7704,62 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQP7">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar quincena:"/>
+                            <Property name="text" type="java.lang.String" value="Buscar semana:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltroQP7">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="26">
+                              <StringArray count="49">
                                 <StringItem index="0" value=" "/>
-                                <StringItem index="1" value="1ra Quincena de Enero"/>
-                                <StringItem index="2" value="2da Quincena de Enero"/>
-                                <StringItem index="3" value="1ra Quincena de Febrero"/>
-                                <StringItem index="4" value="2da Quincena de Febrero"/>
-                                <StringItem index="5" value="2da Quincena de Feb B"/>
-                                <StringItem index="6" value="1ra Quincena de Marzo"/>
-                                <StringItem index="7" value="2da Quincena de Marzo"/>
-                                <StringItem index="8" value="1ra Quincena de Abril"/>
-                                <StringItem index="9" value="2da Quincena de Abril"/>
-                                <StringItem index="10" value="1ra Quincena de Mayo"/>
-                                <StringItem index="11" value="2da Quincena de Mayo"/>
-                                <StringItem index="12" value="1ra Quincena de Junio"/>
-                                <StringItem index="13" value="2da Quincena de Junio"/>
-                                <StringItem index="14" value="1ra Quincena de Julio"/>
-                                <StringItem index="15" value="2da Quincena de Julio"/>
-                                <StringItem index="16" value="1ra Quincena de Agosto"/>
-                                <StringItem index="17" value="2da Quincena de Agosto"/>
-                                <StringItem index="18" value="1ra Quincena de Septiembre"/>
-                                <StringItem index="19" value="2da Quincena de Septiembre"/>
-                                <StringItem index="20" value="1ra Quincena de Octubre"/>
-                                <StringItem index="21" value="2da Quincena de Octubre"/>
-                                <StringItem index="22" value="1ra Quincena de Noviembre"/>
-                                <StringItem index="23" value="2da Quincena de Noviembre"/>
-                                <StringItem index="24" value="1ra Quincena de Diciembre"/>
-                                <StringItem index="25" value="2da Quincena de Diciembre"/>
+                                <StringItem index="1" value="1er semana Enero"/>
+                                <StringItem index="2" value="2da semana Enero"/>
+                                <StringItem index="3" value="3er semana Enero"/>
+                                <StringItem index="4" value="4ta semana Enero"/>
+                                <StringItem index="5" value="1er semana Febrero"/>
+                                <StringItem index="6" value="2da semana Febrero"/>
+                                <StringItem index="7" value="3er semana Febrero"/>
+                                <StringItem index="8" value="4ta semana Febrero"/>
+                                <StringItem index="9" value="1er semana Marzo"/>
+                                <StringItem index="10" value="2da semana Marzo"/>
+                                <StringItem index="11" value="3er semana Marzo"/>
+                                <StringItem index="12" value="4ta semana Marzo"/>
+                                <StringItem index="13" value="1er semana Abril"/>
+                                <StringItem index="14" value="2da semana Abril"/>
+                                <StringItem index="15" value="3er semana Abril"/>
+                                <StringItem index="16" value="4ta semana Abril"/>
+                                <StringItem index="17" value="1er semana Mayo"/>
+                                <StringItem index="18" value="2da semana Mayo"/>
+                                <StringItem index="19" value="3er semana Mayo"/>
+                                <StringItem index="20" value="4ta semana Mayo"/>
+                                <StringItem index="21" value="1er semana Junio"/>
+                                <StringItem index="22" value="2da semana Junio"/>
+                                <StringItem index="23" value="3er semana Junio"/>
+                                <StringItem index="24" value="4ta semana Junio"/>
+                                <StringItem index="25" value="1er semana Julio"/>
+                                <StringItem index="26" value="2da semana Julio"/>
+                                <StringItem index="27" value="3er semana Julio"/>
+                                <StringItem index="28" value="4ta semana Julio"/>
+                                <StringItem index="29" value="1er semana Agosto"/>
+                                <StringItem index="30" value="2da semana Agosto"/>
+                                <StringItem index="31" value="3er semana Agosto"/>
+                                <StringItem index="32" value="4ta semana Agosto"/>
+                                <StringItem index="33" value="1er semana Septiembre"/>
+                                <StringItem index="34" value="2da semana Septiembre"/>
+                                <StringItem index="35" value="3er semana Septiembre"/>
+                                <StringItem index="36" value="4ta semana Septiembre"/>
+                                <StringItem index="37" value="1er semana Octubre"/>
+                                <StringItem index="38" value="2da semana Octubre"/>
+                                <StringItem index="39" value="3er semana Octubre"/>
+                                <StringItem index="40" value="4ta semana Octubre"/>
+                                <StringItem index="41" value="1er semana Noviembre"/>
+                                <StringItem index="42" value="2da semana Noviembre"/>
+                                <StringItem index="43" value="3er semana Noviembre"/>
+                                <StringItem index="44" value="4ta semana Noviembre"/>
+                                <StringItem index="45" value="1er semana Diciembre"/>
+                                <StringItem index="46" value="2da semana Diciembre"/>
+                                <StringItem index="47" value="3er semana Diciembre"/>
+                                <StringItem index="48" value="4ta semana Diciembre"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -7623,7 +7784,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -7679,15 +7840,15 @@
                 <Container class="javax.swing.JScrollPane" name="TPagos8">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Santander semanal">
-                        <Property name="tabTitle" type="java.lang.String" value="Santander semanal"/>
+                      <JTabbedPaneConstraints tabName="Santander corporativo semanal">
+                        <Property name="tabTitle" type="java.lang.String" value="Santander corporativo semanal"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="jPanel37">
+                    <Container class="javax.swing.JPanel" name="jPanel38">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="cc" type="rgb"/>
@@ -7701,11 +7862,11 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel183" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel186" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltrosP8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                          <Component id="botonWeb24" min="-2" max="-2" attributes="0"/>
+                                          <Component id="botonWeb25" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelBEP8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -7732,17 +7893,17 @@
                                           <Component id="FiltroQP8" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="CS23" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CS24" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir9" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane36" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="2047" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -7761,11 +7922,11 @@
                                       <Component id="filtroNDFP8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBQP8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroQP8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel183" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel186" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltrosP8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="BAppag8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="botonWeb24" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="botonWeb25" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane36" min="-2" pref="604" max="-2" attributes="0"/>
@@ -7774,9 +7935,9 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir9" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="CS23" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CS24" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="183" max="32767" attributes="0"/>
                               </Group>
@@ -7826,7 +7987,7 @@
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="busp8KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="CS23">
+                        <Component class="javax.swing.JButton" name="CS24">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
@@ -7834,7 +7995,7 @@
                             <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS23ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS24ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelSZP8">
@@ -7887,7 +8048,7 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQP8">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Semana:"/>
+                            <Property name="text" type="java.lang.String" value="Buscar semana:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltroQP8">
@@ -7953,7 +8114,7 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel183">
+                        <Component class="javax.swing.JLabel" name="jLabel186">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Filtrar:"/>
                           </Properties>
@@ -7967,7 +8128,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -7989,7 +8150,7 @@
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Bampag8KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="botones.BotonWeb" name="botonWeb24">
+                        <Component class="botones.BotonWeb" name="botonWeb25">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
@@ -8008,12 +8169,12 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir8">
+                        <Component class="javax.swing.JButton" name="Imprimir9">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir8ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir9ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
