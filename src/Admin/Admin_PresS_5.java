@@ -1,28 +1,17 @@
 package Admin;
 
 import Conexion.ConexionSQL;
-import Filtros.FiltroServ;
-import Filtros.FiltrosZonas;
 import Inicio.Login_2;
 import java.awt.HeadlessException;
-import java.awt.event.ItemEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ButtonGroup;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -934,7 +923,7 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
         double d1 = Double.parseDouble(this.Cantidad.getText());
         double d2 = Double.parseDouble(this.interes.getText());
         double MTo = (d1 + d2);
-        this.MT.setText("" + MTo + "");;
+        this.MT.setText("" + MTo + "");
     }
 
     public void MDTPPres() {
@@ -1105,15 +1094,15 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
         String Share = BP.getText();
         /*String ShareAP = BAPNom.getText();
         String ShareAM = BAMNom.getText();*/
-        String where = "select * from prestamosem";
+        String where = "select * from `nominasem.prestamosem`";
 
         if (!"".equals(Share)) {
-            where = " select * from prestamosem WHERE `Nombre(s)` LIKE '%" + Share + "%'";
+            where = " select * from `nominasem.prestamosem` WHERE `Nombre(s)` LIKE '%" + Share + "%'";
         }
         /*else if (!"".equals(ShareAP)) {
-            where = " select * from taller WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
+            where = " select * from `nominasem.prestamosem` WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
         } else if (!"".equals(ShareAM)) {
-            where = " select * from taller WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
+            where = " select * from `nominasem.prestamosem` WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
         }*/
 
         try {
