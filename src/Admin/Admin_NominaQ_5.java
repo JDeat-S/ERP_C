@@ -2249,7 +2249,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         String SQL = "UPDATE `nomina.detallada." + Zon.getText() + "` SET `#lista` = ?, `#empleado` = ?,"
                 + " `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Banco` = ?, "
                 + "`Cuenta de banco` = ?, `Zona` = ?, `Servicio` = ?, `Sueldo` = ?, "
-                + "`Bono` = ?, `por dia` = ?, `quincena del mes` = ?, `año` = ?, `1/16` = ?, "
+                + "`Bono` = ?, `por dia` = ?, `por hora` = ?, `quincena del mes` = ?, `año` = ?, `1/16` = ?, "
                 + "`2/17` = ?, `3/18` = ?, `4/19` = ?, `5/20` = ?, `6/21` = ?, `7/22` = ?, "
                 + "`8/23` = ?, `9/24` = ?, `10/25` = ?, `11/26` = ?, `12/27` = ?, `13/28` = ?, "
                 + "`14/29` = ?, `15/30` = ?, `31` = ?, `Dias de incapacidad` = ?, "
@@ -2258,8 +2258,10 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 + "`Pago de dias laborados` = ?, `Descansos Trabajados` = ?, `Pago de dias trabajados` = ?, "
                 + "`Descanso sin goce de sueldo` = ?, `Pago de dias de DSGS` = ?, `Faltas Justificadas` = ?, "
                 + "`Descanso Otorgado` = ?, `Dias festivos` = ?, `Pago de dias festivos` = ?, `Dias festivos trabajados` = ?,"
+                + "`horas extra` = ?, `total de horas extra` = ?,"
                 + "`Pago de dias festivos trabajados` = ?, `Retardos` = ?, `Pago con retardos` = ?, `Apoyo` = ?, `Lugar` = ?,"
-                + " `Rembolso` = ?, `Adicionales` = ?, `Faltas` = ?, `Descuento por faltas` = ?, `Desc IMSS` = ?,  "
+                + " `Rembolso` = ?, `Adicionales` = ?, `Faltas` = ?, `Descuento por faltas` = ?, `Desc IMSS` = ?, "
+                + "`Infonavit` = ?, `fonacot` = ?, "
                 + " `Faltantes de boleto` = ?, `Sancion` = ?, `Chamarra` = ?, `Chaleco` = ?, `Faltante de efectivo` = ?, `Grua` = ?, `Pantalon` = ?, "
                 + "`Credencial` = ?, `Adelanto de nomina` = ?, `Boleto perdido` = ?, `Playera` = ?, `Corbata` = ?, "
                 + "`Total de DV` = ?, `Pago de prestamo` = ?, `Caja de ahorro` = ?, "
@@ -2281,75 +2283,85 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             pst.setString(10, sueldo.getText());
             pst.setString(11, Bono1.getText());
             pst.setString(12, pd.getText());
-            pst.setString(13, Quincenas.getSelectedItem().toString());
-            pst.setString(14, ((JTextField) año.getDateEditor().getUiComponent()).getText());
-            pst.setString(15, Dia1.getSelectedItem().toString());
-            pst.setString(16, Dia2.getSelectedItem().toString());
-            pst.setString(17, Dia3.getSelectedItem().toString());
-            pst.setString(18, Dia4.getSelectedItem().toString());
-            pst.setString(19, Dia5.getSelectedItem().toString());
-            pst.setString(20, Dia6.getSelectedItem().toString());
-            pst.setString(21, Dia7.getSelectedItem().toString());
-            pst.setString(22, Dia8.getSelectedItem().toString());
-            pst.setString(23, Dia9.getSelectedItem().toString());
-            pst.setString(24, Dia10.getSelectedItem().toString());
-            pst.setString(25, Dia11.getSelectedItem().toString());
-            pst.setString(26, Dia12.getSelectedItem().toString());
-            pst.setString(27, Dia13.getSelectedItem().toString());
-            pst.setString(28, Dia14.getSelectedItem().toString());
-            pst.setString(29, Dia15.getSelectedItem().toString());
-            pst.setString(30, Dia16.getSelectedItem().toString());
-            pst.setString(31, Dpi.getText());
-            pst.setString(32, pds.getText());
-            pst.setString(33, Ddv.getText());
-            pst.setString(34, PDDDV.getText());
-            pst.setString(35, DD.getText());
-            pst.setString(36, PDDD.getText());
-            pst.setString(37, DL.getText());
-            pst.setString(38, PDDL.getText());
-            pst.setString(39, dt.getText());
-            pst.setString(40, PDDT.getText());
-            pst.setString(41, DSGS.getText());
-            pst.setString(42, PDDDDSGS.getText());
-            pst.setString(43, FJ.getText());
-            pst.setString(44, DO.getText());
-            pst.setString(45, DF.getText());
-            pst.setString(46, PDDF.getText());
-            pst.setString(47, DFT.getText());
-            pst.setString(48, PDDFT.getText());
-            pst.setString(49, R.getText());
-            pst.setString(50, PCR.getText());
-            pst.setString(51, apy.getText());
-            pst.setString(52, Lugar.getText());
-            pst.setString(53, Rembolso.getText());
-            pst.setString(54, ADD.getText());
-            pst.setString(55, F.getText());
-            pst.setString(56, DPF.getText());
-            pst.setString(57, DI.getText());
-            pst.setString(58, Fdb.getText());
-            pst.setString(59, Sancion.getText());
-            pst.setString(60, Chamarra.getText());
-            pst.setString(61, Chaleco.getText());
-            pst.setString(62, Fde.getText());
-            pst.setString(63, Grua.getText());
-            pst.setString(64, Pantalon.getText());
-            pst.setString(65, Credencial.getText());
-            pst.setString(66, Bp.getText());
-            pst.setString(67, Playera.getText());
-            pst.setString(68, Corbata.getText());
-            pst.setString(69, AdN.getText());
-            pst.setString(70, DVT.getText());
-            pst.setString(71, Presp.getText());
-            pst.setString(72, cda.getText());
-            pst.setString(73, Odtp.getText());
-            pst.setString(74, deposito.getText());
-            pst.setString(75, obs.getText());
-            pst.setInt(76, Integer.parseInt(NDL.getText()));
+            pst.setString(13, PH.getText());
+            pst.setString(14, Quincenas.getSelectedItem().toString());
+            pst.setString(15, ((JTextField) año.getDateEditor().getUiComponent()).getText());
+            pst.setString(16, Dia1.getSelectedItem().toString());
+            pst.setString(17, Dia2.getSelectedItem().toString());
+            pst.setString(18, Dia3.getSelectedItem().toString());
+            pst.setString(19, Dia4.getSelectedItem().toString());
+            pst.setString(20, Dia5.getSelectedItem().toString());
+            pst.setString(21, Dia6.getSelectedItem().toString());
+            pst.setString(22, Dia7.getSelectedItem().toString());
+            pst.setString(23, Dia8.getSelectedItem().toString());
+            pst.setString(24, Dia9.getSelectedItem().toString());
+            pst.setString(25, Dia10.getSelectedItem().toString());
+            pst.setString(26, Dia11.getSelectedItem().toString());
+            pst.setString(27, Dia12.getSelectedItem().toString());
+            pst.setString(28, Dia13.getSelectedItem().toString());
+            pst.setString(29, Dia14.getSelectedItem().toString());
+            pst.setString(30, Dia15.getSelectedItem().toString());
+            pst.setString(31, Dia16.getSelectedItem().toString());
+            pst.setString(32, Dpi.getText());
+            pst.setString(33, pds.getText());
+            pst.setString(34, Ddv.getText());
+            pst.setString(35, PDDDV.getText());
+            pst.setString(36, DD.getText());
+            pst.setString(37, PDDD.getText());
+            pst.setString(38, DL.getText());
+            pst.setString(39, PDDL.getText());
+            pst.setString(40, dt.getText());
+            pst.setString(41, PDDT.getText());
+            pst.setString(42, DSGS.getText());
+            pst.setString(43, PDDDDSGS.getText());
+            pst.setString(44, FJ.getText());
+            pst.setString(45, DO.getText());
+            pst.setString(46, DF.getText());
+            pst.setString(47, PDDF.getText());
+            pst.setString(48, DFT.getText());
+            pst.setString(49, PDDFT.getText());
+            pst.setString(50, HE.getText());
+            pst.setString(51, THE.getText());
+            pst.setString(52, R.getText());
+            pst.setString(53, PCR.getText());
+            pst.setString(54, apy.getText());
+            pst.setString(55, Lugar.getText());
+            pst.setString(56, Rembolso.getText());
+            pst.setString(57, ADD.getText());
+            pst.setString(58, F.getText());
+            pst.setString(59, DPF.getText());
+            pst.setString(60, DI.getText());
+            pst.setString(61, RI.getText());
+            pst.setString(62, RF.getText());
+            pst.setString(63, Fdb.getText());
+            pst.setString(64, Sancion.getText());
+            pst.setString(65, Chamarra.getText());
+            pst.setString(66, Chaleco.getText());
+            pst.setString(67, Fde.getText());
+            pst.setString(68, Grua.getText());
+            pst.setString(69, Pantalon.getText());
+            pst.setString(70, Credencial.getText());
+            pst.setString(71, Bp.getText());
+            pst.setString(72, Playera.getText());
+            pst.setString(73, Corbata.getText());
+            pst.setString(74, AdN.getText());
+            pst.setString(75, DVT.getText());
+            pst.setString(76, Presp.getText());
+            pst.setString(77, cda.getText());
+            pst.setString(78, Odtp.getText());
+            pst.setString(79, deposito.getText());
+            pst.setString(80, obs.getText());
+            pst.setInt(81, Integer.parseInt(NDL.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Modificad.");
 
             //limpiar campos
+            RI.setText("0");
+            RF.setText("0");
+            PH.setText("0");
+            HE.setText("0");
+            THE.setText("0");
             DAB.clearSelection();
             NQprenom.setText("0");
             AdN.setText("0");
@@ -3850,6 +3862,11 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             sharecdanom();
             FunMD();
             //limpiar campos
+            RI.setText("0");
+            RF.setText("0");
+            PH.setText("0");
+            HE.setText("0");
+            THE.setText("0");
             DAB.clearSelection();
             NQprenom.setText("0");
             AdN.setText("0");
@@ -16446,6 +16463,11 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_AdNKeyReleased
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        RI.setText("0");
+        RF.setText("0");
+        PH.setText("0");
+        HE.setText("0");
+        THE.setText("0");
         DAB.clearSelection();
         NQprenom.setText("0");
         AdN.setText("0");
