@@ -426,6 +426,18 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         LabelBQ7.setVisible(false);
         FiltroNDF7.setVisible(false);
         LabelBNDF7.setVisible(false);
+        LabelBE8.setVisible(false);
+        FApT8.setVisible(false);
+        FAmT8.setVisible(false);
+        Nominab8.setVisible(false);
+        FiltroSnomina8.setVisible(false);
+        LabelBS8.setVisible(false);
+        FZservicio8.setVisible(false);
+        LabelSZ8.setVisible(false);
+        FiltroQuincenanomina8.setVisible(false);
+        LabelBQ8.setVisible(false);
+        FiltroNDF8.setVisible(false);
+        LabelBNDF8.setVisible(false);
         //</editor-fold>
         sumaDep();
         setIconImage(new ImageIcon(Admin_NominaQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
@@ -583,6 +595,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Sueldo");//10
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");//12
+            modelo.addColumn("Por hora");//12
             modelo.addColumn("Quincena del mes");
             modelo.addColumn("Año");//14
             modelo.addColumn("Dia 1 o 16");
@@ -619,6 +632,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("total de horas extra");
             modelo.addColumn("Retardos");
             modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
@@ -628,6 +643,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -650,14 +667,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
                 /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*por dia*/ 100, /*PH*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
                 /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
                 /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
                 /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, 100,/*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -1352,7 +1369,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         double FalJ15 = Double.parseDouble(this.FJ15.getText());
         double FalJ16 = Double.parseDouble(this.FJ16.getText());
 
-        double total = FalJ1 + FalJ2 + FalJ3 + FalJ4 + FalJ5 + FalJ6 + FalJ7 + FalJ8 + FalJ9 + FalJ10 + FalJ11 + FalJ12 + FalJ13 + FalJ14 + FalJ15 + FalJ16;
+        double total = FalJ1 + FalJ2 + FalJ3 + FalJ4 + FalJ5 + FalJ6 + FalJ7
+                + FalJ8 + FalJ9 + FalJ10 + FalJ11 + FalJ12 + FalJ13 + FalJ14 + FalJ15 + FalJ16;
         this.FJ.setText("" + total + "");
     }
 //retardos
@@ -1495,6 +1513,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         MDNPon();
         MDNS1();
         MDNS2();
+        MDNCSQ();
+        MDPagosnomCSQ();
     }
 
 //mostrar datos pagos nomina
@@ -2462,6 +2482,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Sueldo");//10
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");//12
+            modelo.addColumn("Por hora");//12
             modelo.addColumn("Quincena del mes");
             modelo.addColumn("Año");//14
             modelo.addColumn("Dia 1 o 16");
@@ -2498,6 +2519,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("total de horas extra");
             modelo.addColumn("Retardos");
             modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
@@ -2507,6 +2530,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -2529,14 +2554,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
                 /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*por dia*/ 100, /*PH*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
                 /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
                 /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
                 /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, 100,/*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -2616,6 +2641,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Sueldo");//10
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");//12
+            modelo.addColumn("Por hora");//12
             modelo.addColumn("Quincena del mes");
             modelo.addColumn("Año");//14
             modelo.addColumn("Dia 1 o 16");
@@ -2652,6 +2678,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("total de horas extra");
             modelo.addColumn("Retardos");
             modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
@@ -2661,6 +2689,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -2683,14 +2713,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
                 /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*por dia*/ 100, /*PH*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
                 /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
                 /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
                 /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -2770,6 +2800,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Sueldo");//10
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");//12
+            modelo.addColumn("Por hora");//12
             modelo.addColumn("Quincena del mes");
             modelo.addColumn("Año");//14
             modelo.addColumn("Dia 1 o 16");
@@ -2806,6 +2837,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("total de horas extra");
             modelo.addColumn("Retardos");
             modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
@@ -2815,6 +2848,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -2837,14 +2872,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
                 /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*por dia*/ 100, /*PH*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
                 /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
                 /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
                 /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -2924,6 +2959,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Sueldo");//10
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");//12
+            modelo.addColumn("Por hora");//12
             modelo.addColumn("Quincena del mes");
             modelo.addColumn("Año");//14
             modelo.addColumn("Dia 1 o 16");
@@ -2960,6 +2996,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("total de horas extra");
             modelo.addColumn("Retardos");
             modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
@@ -2969,6 +3007,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -2991,14 +3031,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
                 /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*por dia*/ 100, /*PH*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
                 /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
                 /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
                 /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -3078,6 +3118,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Sueldo");//10
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");//12
+            modelo.addColumn("Por hora");//12
             modelo.addColumn("Quincena del mes");
             modelo.addColumn("Año");//14
             modelo.addColumn("Dia 1 o 16");
@@ -3114,6 +3155,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("total de horas extra");
             modelo.addColumn("Retardos");
             modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
@@ -3123,6 +3166,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -3145,14 +3190,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
                 /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*por dia*/ 100, /*PH*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
                 /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
                 /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
                 /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -3232,6 +3277,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Sueldo");//10
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");//12
+            modelo.addColumn("Por hora");//12
             modelo.addColumn("Quincena del mes");
             modelo.addColumn("Año");//14
             modelo.addColumn("Dia 1 o 16");
@@ -3268,6 +3314,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("total de horas extra");
             modelo.addColumn("Retardos");
             modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
@@ -3277,6 +3325,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -3299,14 +3349,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
                 /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*por dia*/ 100, /*PH*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
                 /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
                 /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
                 /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -3386,6 +3436,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Sueldo");//10
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");//12
+            modelo.addColumn("Por hora");//12
             modelo.addColumn("Quincena del mes");
             modelo.addColumn("Año");//14
             modelo.addColumn("Dia 1 o 16");
@@ -3422,6 +3473,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("total de horas extra");
             modelo.addColumn("Retardos");
             modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
@@ -3431,6 +3484,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -3453,14 +3508,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
                 /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*por dia*/ 100, /*PH*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
                 /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
                 /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
                 /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100, /*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -3540,6 +3595,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Sueldo");//10
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");//12
+            modelo.addColumn("Por hora");//12
             modelo.addColumn("Quincena del mes");
             modelo.addColumn("Año");//14
             modelo.addColumn("Dia 1 o 16");
@@ -3576,6 +3632,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("total de horas extra");
             modelo.addColumn("Retardos");
             modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
@@ -3585,6 +3643,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -3607,14 +3667,14 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 //Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
                 /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
+                /*por dia*/ 100, /*PH*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
                 /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
                 /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
                 /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, 80, 100, 80, 100,/*RETARDOS*/ 65,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -3900,7 +3960,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 + Double.parseDouble(this.DI.getText()) + Double.parseDouble(this.Odtp.getText())
                 + Double.parseDouble(this.Presp.getText()) + Double.parseDouble(this.cda.getText())
                 + Double.parseDouble(this.DPF.getText()) + Double.parseDouble(this.RI.getText())
-                + Double.parseDouble(Rinfonacot.getText()));
+                + Double.parseDouble(RF.getText()));
 
         DecimalFormat dDeposito = new DecimalFormat("#.00");
         this.deposito.setText(dDeposito.format(Ingresos - Egresos));
@@ -4151,7 +4211,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         RI = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
-        Rinfonacot = new javax.swing.JTextField();
+        RF = new javax.swing.JTextField();
         jPanel18 = new javax.swing.JPanel();
         Dpi = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
@@ -4471,7 +4531,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         MTDsum = new javax.swing.JLabel();
         Imprimir = new javax.swing.JButton();
-        FFDPpag8 = new javax.swing.JComboBox<>();
         TPagos1 = new javax.swing.JScrollPane();
         jPanel29 = new javax.swing.JPanel();
         jScrollPane29 = new javax.swing.JScrollPane();
@@ -4495,7 +4554,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         MTDsum1 = new javax.swing.JLabel();
         Imprimir1 = new javax.swing.JButton();
-        FFDPpag1 = new javax.swing.JComboBox<>();
         TPagos2 = new javax.swing.JScrollPane();
         jPanel30 = new javax.swing.JPanel();
         jScrollPane30 = new javax.swing.JScrollPane();
@@ -4519,7 +4577,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         MTDsum2 = new javax.swing.JLabel();
         Imprimir2 = new javax.swing.JButton();
-        FFDPpag2 = new javax.swing.JComboBox<>();
         TPagos3 = new javax.swing.JScrollPane();
         jPanel31 = new javax.swing.JPanel();
         jScrollPane31 = new javax.swing.JScrollPane();
@@ -4543,7 +4600,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         MTDsum3 = new javax.swing.JLabel();
         Imprimir3 = new javax.swing.JButton();
-        FFDPpag3 = new javax.swing.JComboBox<>();
         TPagos4 = new javax.swing.JScrollPane();
         jPanel32 = new javax.swing.JPanel();
         jScrollPane32 = new javax.swing.JScrollPane();
@@ -4567,7 +4623,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         MTDsum4 = new javax.swing.JLabel();
         Imprimir4 = new javax.swing.JButton();
-        FFDPpag4 = new javax.swing.JComboBox<>();
         TPagos5 = new javax.swing.JScrollPane();
         jPanel33 = new javax.swing.JPanel();
         jScrollPane33 = new javax.swing.JScrollPane();
@@ -5622,12 +5677,12 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel39.setText("Infonacot:");
+        jLabel39.setText("fonacot:");
 
-        Rinfonacot.setText("0");
-        Rinfonacot.addKeyListener(new java.awt.event.KeyAdapter() {
+        RF.setText("0");
+        RF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                RinfonacotKeyReleased(evt);
+                RFKeyReleased(evt);
             }
         });
 
@@ -5681,7 +5736,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel39)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Rinfonacot, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel10Layout.createSequentialGroup()
                                         .addComponent(jLabel132)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5759,7 +5814,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(jLabel32)
                     .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel39)
-                    .addComponent(Rinfonacot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel144)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8336,7 +8391,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel64.setText("Filtrar:");
 
-        FiltrosP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosPItemStateChanged(evt);
@@ -8370,8 +8425,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             }
         });
 
-        FFDPpag8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -8393,8 +8446,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(BAppag, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Bampag, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDPpag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8420,7 +8471,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir))
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1898, Short.MAX_VALUE))
+                .addContainerGap(2019, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8441,8 +8492,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDPpag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8527,7 +8577,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel159.setText("Filtrar:");
 
-        FiltrosP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP1ItemStateChanged(evt);
@@ -8561,8 +8611,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             }
         });
 
-        FFDPpag1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
         jPanel29Layout.setHorizontalGroup(
@@ -8584,8 +8632,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(BAppag1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Bampag1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDPpag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZP1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8611,7 +8657,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir1))
                     .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1898, Short.MAX_VALUE))
+                .addContainerGap(2019, Short.MAX_VALUE))
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8632,8 +8678,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDPpag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8717,7 +8762,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel176.setText("Filtrar:");
 
-        FiltrosP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP2ItemStateChanged(evt);
@@ -8751,8 +8796,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             }
         });
 
-        FFDPpag2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
@@ -8774,8 +8817,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(BAppag2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Bampag2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDPpag2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZP2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8801,7 +8842,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir2))
                     .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1898, Short.MAX_VALUE))
+                .addContainerGap(2019, Short.MAX_VALUE))
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8822,8 +8863,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDPpag2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8907,7 +8947,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel177.setText("Filtrar:");
 
-        FiltrosP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP3ItemStateChanged(evt);
@@ -8941,8 +8981,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             }
         });
 
-        FFDPpag3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
@@ -8964,8 +9002,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(BAppag3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Bampag3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDPpag3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZP3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8991,7 +9027,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir3))
                     .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1898, Short.MAX_VALUE))
+                .addContainerGap(2019, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9012,8 +9048,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDPpag3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9097,7 +9132,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         jLabel178.setText("Filtrar:");
 
-        FiltrosP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista", "Filtrar por Metodo de pago" }));
+        FiltrosP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP4ItemStateChanged(evt);
@@ -9131,8 +9166,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             }
         });
 
-        FFDPpag4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Santander", "Bancomer", "Efectivo", "Baja", "Retenida" }));
-
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
         jPanel32Layout.setHorizontalGroup(
@@ -9154,8 +9187,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addComponent(BAppag4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Bampag4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FFDPpag4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelSZP4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9181,7 +9212,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir4))
                     .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1898, Short.MAX_VALUE))
+                .addContainerGap(2019, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9202,8 +9233,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FFDPpag4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -21952,9 +21982,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         deposito();
     }//GEN-LAST:event_RIKeyReleased
 
-    private void RinfonacotKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RinfonacotKeyReleased
+    private void RFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RFKeyReleased
         deposito();
-    }//GEN-LAST:event_RinfonacotKeyReleased
+    }//GEN-LAST:event_RFKeyReleased
 
     /**
      * @param args the command line arguments
@@ -22429,14 +22459,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FApT6;
     private javax.swing.JTextField FApT7;
     private javax.swing.JTextField FApT8;
-    private javax.swing.JComboBox<String> FFDPpag1;
-    private javax.swing.JComboBox<String> FFDPpag2;
-    private javax.swing.JComboBox<String> FFDPpag3;
-    private javax.swing.JComboBox<String> FFDPpag4;
     private javax.swing.JComboBox<String> FFDPpag5;
     private javax.swing.JComboBox<String> FFDPpag6;
     private javax.swing.JComboBox<String> FFDPpag7;
-    private javax.swing.JComboBox<String> FFDPpag8;
     private javax.swing.JLabel FJ;
     private javax.swing.JLabel FJ1;
     private javax.swing.JLabel FJ10;
@@ -22715,9 +22740,9 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel R7;
     private javax.swing.JLabel R8;
     private javax.swing.JLabel R9;
+    private javax.swing.JTextField RF;
     private javax.swing.JTextField RI;
     private javax.swing.JTextField Rembolso;
-    private javax.swing.JTextField Rinfonacot;
     private javax.swing.JTable SHCDAnom;
     private javax.swing.JTable SHODTnom;
     private javax.swing.JTable SHPresnom;
