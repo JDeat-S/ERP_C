@@ -7822,7 +7822,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         double total = d1 * d2;
         this.THE.setText("" + total + "");
         deposito();
-
     }//GEN-LAST:event_HEKeyReleased
 
     private void PrespKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PrespKeyReleased
