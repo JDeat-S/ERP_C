@@ -569,17 +569,35 @@
             <Property name="text" type="java.lang.String" value="Cambiar a:"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <Menu class="javax.swing.JMenu" name="jMenu3">
               <Properties>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Alt+S"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Nomina Semanal"/>
+                <Property name="text" type="java.lang.String" value="Semanal"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
-              </Events>
-            </MenuItem>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+                  <Properties>
+                    <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                      <KeyStroke key="Alt+S"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Nomina Semanal"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+                  <Properties>
+                    <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                      <KeyStroke key="Shift+Alt+P"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Prestamos Semanales"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nomina quincenal"/>
@@ -665,7 +683,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PestañasPrin" alignment="1" pref="897" max="32767" attributes="0"/>
+          <Component id="PestañasPrin" alignment="1" pref="899" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -734,7 +752,9 @@
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="pd" min="-2" pref="202" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="PH" min="-2" pref="202" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="jScrollPane2" alignment="0" min="-2" pref="1342" max="-2" attributes="0"/>
                                           </Group>
@@ -806,10 +826,15 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jScrollPane2" pref="0" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="pd" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="PH" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="pd" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
@@ -1189,7 +1214,9 @@
                                       <Component id="Dia16" min="-2" pref="70" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
+                                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Quincenas" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                       <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
@@ -1213,7 +1240,10 @@
                               <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="Quincenas" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Quincenas" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
                                   <Component id="año" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1850,6 +1880,14 @@
                         <Property name="dateFormatString" type="java.lang.String" value="yyyy"/>
                       </Properties>
                     </Component>
+                    <Component class="javax.swing.JButton" name="jButton2">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Limpiar campos"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                      </Events>
+                    </Component>
                   </SubComponents>
                 </Container>
                 <Component class="javax.swing.JLabel" name="jLabel3">
@@ -2065,6 +2103,14 @@
                                                       <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="DI" min="-2" pref="73" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="RI" min="-2" pref="75" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="RF" min="-2" pref="75" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="jLabel132" min="-2" max="-2" attributes="0"/>
@@ -2151,10 +2197,14 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="DI" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="RI" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="RF" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel144" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane17" min="-2" pref="101" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -2498,6 +2548,32 @@
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel32">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Retencion infonavit:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="RI">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="RIKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel39">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="fonacot:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="RF">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="RFKeyReleased"/>
+                      </Events>
+                    </Component>
                   </SubComponents>
                 </Container>
                 <Container class="javax.swing.JPanel" name="jPanel18">
@@ -2522,27 +2598,13 @@
                                           <Component id="jLabel76" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel182" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel183" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel41" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel42" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="apy" alignment="0" pref="80" max="32767" attributes="0"/>
-                                                  <Component id="Lugar" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="jLabel87" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="Rembolso" pref="60" max="32767" attributes="0"/>
-                                                  <Component id="ADD" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                                   <Group type="102" attributes="0">
                                                       <Component id="DFT" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="32767" attributes="0"/>
@@ -2553,21 +2615,17 @@
                                                       <EmptySpace max="32767" attributes="0"/>
                                                       <Component id="jLabel184" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="DO" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="FJ" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="DSGS" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="1" attributes="0">
-                                                              <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel104" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel128" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel21" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel136" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel138" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="DSGS" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel104" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel128" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel21" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel136" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel138" alignment="1" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -2583,6 +2641,33 @@
                                                   <Component id="PDDF" min="-2" max="-2" attributes="0"/>
                                                   <Component id="PDDFT" min="-2" max="-2" attributes="0"/>
                                               </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                          <Component id="apy" alignment="0" pref="80" max="32767" attributes="0"/>
+                                                          <Component id="Lugar" alignment="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Component id="jLabel87" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="Rembolso" pref="60" max="32767" attributes="0"/>
+                                                          <Component id="ADD" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="THE" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="HE" alignment="0" pref="81" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="FJ" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="DO" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -2712,7 +2797,7 @@
                                           <Component id="jLabel185" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="PDDFT" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="apy" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2734,6 +2819,16 @@
                                           <Component id="ADD" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="HE" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="THE" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -2994,6 +3089,29 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="PDDFT">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel41">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Horas extras:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="HE">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="0"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="HEKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel42">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Total horas extra:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="THE">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
@@ -3568,13 +3686,15 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="jButton2">
+                <Component class="javax.swing.JTextField" name="PH">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Limpiar campos"/>
+                    <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
-                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel40">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Por hora:"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -3654,7 +3774,7 @@
                                       </Group>
                                       <Component id="CS2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7974" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -3688,7 +3808,7 @@
                                   <Component id="jScrollPane3" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="CS2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                                  <EmptySpace pref="185" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4250,7 +4370,7 @@
                                       </Group>
                                       <Component id="CS8" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7974" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4284,7 +4404,7 @@
                                   <Component id="jScrollPane21" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="CS8" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                                  <EmptySpace pref="185" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4846,7 +4966,7 @@
                                       </Group>
                                       <Component id="CS9" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7974" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -4880,7 +5000,7 @@
                                   <Component id="jScrollPane22" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="CS9" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5442,11 +5562,11 @@
                                       </Group>
                                       <Component id="CS10" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7974" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane23" max="32767" attributes="0"/>
+                                  <Component id="k" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5473,16 +5593,16 @@
                                       <Component id="botonWeb11" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane23" min="-2" pref="627" max="-2" attributes="0"/>
+                                  <Component id="k" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="CS10" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                                  <EmptySpace pref="185" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane23">
+                        <Container class="javax.swing.JScrollPane" name="k">
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
@@ -6038,7 +6158,7 @@
                                       </Group>
                                       <Component id="CS11" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7974" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -6072,7 +6192,7 @@
                                   <Component id="jScrollPane24" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="CS11" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                                  <EmptySpace pref="185" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -6634,7 +6754,7 @@
                                       </Group>
                                       <Component id="CS12" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7974" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -6668,7 +6788,7 @@
                                   <Component id="jScrollPane25" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="CS12" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                                  <EmptySpace pref="185" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -7230,7 +7350,7 @@
                                       </Group>
                                       <Component id="CS13" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7974" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -7264,7 +7384,7 @@
                                   <Component id="jScrollPane26" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="CS13" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                                  <EmptySpace pref="185" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -7826,7 +7946,7 @@
                                       </Group>
                                       <Component id="CS14" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7974" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -7860,7 +7980,7 @@
                                   <Component id="jScrollPane27" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="CS14" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                                  <EmptySpace pref="185" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -8422,7 +8542,7 @@
                                       </Group>
                                       <Component id="CS24" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="6872" max="32767" attributes="0"/>
+                                  <EmptySpace pref="7974" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -8456,7 +8576,7 @@
                                   <Component id="jScrollPane28" min="-2" pref="627" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Component id="CS24" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                                  <EmptySpace pref="185" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -8521,260 +8641,6 @@
                                     <Column editable="true" title="Title 49" type="java.lang.Object"/>
                                     <Column editable="true" title="Title 50" type="java.lang.Object"/>
                                   </Table>
-                                </Property>
-                                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                                  <TableColumnModel selectionModel="0">
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                  </TableColumnModel>
                                 </Property>
                                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -9041,7 +8907,7 @@
                                       </Group>
                                       <Component id="jScrollPane6" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -9400,7 +9266,7 @@
                                       </Group>
                                       <Component id="jScrollPane29" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -9784,11 +9650,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir2" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane30" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -9820,7 +9686,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS16" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -10095,12 +9961,12 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir3">
+                        <Component class="javax.swing.JButton" name="Imprimir2">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir3ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir2ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -10169,11 +10035,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane31" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10205,7 +10071,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS17" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -10480,12 +10346,12 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir4">
+                        <Component class="javax.swing.JButton" name="Imprimir3">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir4ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir3ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -10554,11 +10420,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir4" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane32" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10590,7 +10456,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS18" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -10841,12 +10707,12 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir5">
+                        <Component class="javax.swing.JButton" name="Imprimir4">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir5ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir4ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -10891,7 +10757,9 @@
                                           <Component id="BAppag5" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag5" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDPpag5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP5" min="-2" max="-2" attributes="0"/>
@@ -10915,11 +10783,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir6" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir5" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane33" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -10943,6 +10811,7 @@
                                       <Component id="BAppag5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb20" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDPpag5" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane33" min="-2" pref="604" max="-2" attributes="0"/>
@@ -10951,7 +10820,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS19" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -11179,7 +11048,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP5">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -11187,6 +11056,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11216,12 +11086,12 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir6">
+                        <Component class="javax.swing.JButton" name="Imprimir5">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir6ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir5ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel36">
@@ -11233,6 +11103,23 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDPpag5">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -11276,7 +11163,9 @@
                                           <Component id="BAppag6" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag6" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDPpag6" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP6" min="-2" max="-2" attributes="0"/>
@@ -11300,11 +11189,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir7" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir6" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane34" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -11328,6 +11217,7 @@
                                       <Component id="BAppag6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb21" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDPpag6" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane34" min="-2" pref="604" max="-2" attributes="0"/>
@@ -11336,7 +11226,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS20" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -11564,7 +11454,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP6">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -11572,6 +11462,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11611,13 +11502,30 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir7">
+                        <Component class="javax.swing.JButton" name="Imprimir6">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir7ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir6ActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDPpag6">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -11661,7 +11569,9 @@
                                           <Component id="BAppag7" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Bampag7" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="FFDPpag7" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelSZP7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltroSZP7" min="-2" max="-2" attributes="0"/>
@@ -11685,11 +11595,11 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum7" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Imprimir8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir7" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jScrollPane35" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1898" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -11713,6 +11623,7 @@
                                       <Component id="BAppag7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bampag7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="botonWeb22" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="FFDPpag7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane35" min="-2" pref="604" max="-2" attributes="0"/>
@@ -11721,7 +11632,7 @@
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                           <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Imprimir8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Imprimir7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="CS21" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -11949,7 +11860,7 @@
                         <Component class="javax.swing.JComboBox" name="FiltrosP7">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="7">
+                              <StringArray count="8">
                                 <StringItem index="0" value="Selecciona filtro"/>
                                 <StringItem index="1" value="Filtrar por Apellido P"/>
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
@@ -11957,6 +11868,7 @@
                                 <StringItem index="4" value="Filtrar por Servicio"/>
                                 <StringItem index="5" value="Filtrar por quincena"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
+                                <StringItem index="7" value="Filtrar por Metodo de pago"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -11996,13 +11908,30 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Imprimir8">
+                        <Component class="javax.swing.JButton" name="Imprimir7">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Imprimir tabla"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir8ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Imprimir7ActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="FFDPpag7">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value=" "/>
+                                <StringItem index="1" value="Santander"/>
+                                <StringItem index="2" value="Bancomer"/>
+                                <StringItem index="3" value="Efectivo"/>
+                                <StringItem index="4" value="Baja"/>
+                                <StringItem index="5" value="Retenida"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -12066,7 +11995,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="CS22" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="MTDsum8" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -12074,7 +12003,7 @@
                                       </Group>
                                       <Component id="jScrollPane36" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="930" max="32767" attributes="0"/>
+                                  <EmptySpace pref="2019" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -12104,11 +12033,11 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="MTDsum8" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Imprimir9" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="CS22" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CS22" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="183" max="32767" attributes="0"/>
                               </Group>
@@ -12140,70 +12069,6 @@
                                     <Column editable="true" title="Title 11" type="java.lang.Object"/>
                                     <Column editable="true" title="Title 12" type="java.lang.Object"/>
                                   </Table>
-                                </Property>
-                                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                                  <TableColumnModel selectionModel="0">
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
-                                  </TableColumnModel>
                                 </Property>
                                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -12371,7 +12236,7 @@
                             <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel39">
+                        <Component class="javax.swing.JLabel" name="jLabel43">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Monto total en fila deposito:"/>
                           </Properties>
