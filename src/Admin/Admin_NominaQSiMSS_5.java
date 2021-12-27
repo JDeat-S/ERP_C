@@ -2246,7 +2246,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //Modificar nomina
     public void MODN() {
 
-        String SQL = "UPDATE `nomina.detallada." + Zon.getText() + "` SET `#lista` = ?, `#empleado` = ?,"
+        String SQL = "UPDATE `nomina.detallada." + Zon.getText() + ".simss` SET `#lista` = ?, `#empleado` = ?,"
                 + " `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Banco` = ?, "
                 + "`Cuenta de banco` = ?, `Zona` = ?, `Servicio` = ?, `Sueldo` = ?, "
                 + "`Bono` = ?, `por dia` = ?, `por hora` = ?, `quincena del mes` = ?, `año` = ?, `1/16` = ?, "
@@ -2266,7 +2266,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                 + "`Credencial` = ?, `Adelanto de nomina` = ?, `Boleto perdido` = ?, `Playera` = ?, `Corbata` = ?, "
                 + "`Total de DV` = ?, `Pago de prestamo` = ?, `Caja de ahorro` = ?, "
                 + "`Orden de taller` = ?, `Deposito` = ?, `Observaciones` = ? WHERE "
-                + "`nomina.detallada." + Zon.getText() + "`.`#lista` = ?";
+                + "`nomina.detallada." + Zon.getText() + ".simss`.`#lista` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -2431,6 +2431,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
+            FunMD();
 
         } catch (HeadlessException | SQLException error_add_nom) {
             JOptionPane.showMessageDialog(null, "Error al modificar nomina en: " + error_add_nom.getMessage());
@@ -3714,7 +3715,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 //Agregar nomina
     public void AgregarN() {
 
-        String SQL = "INSERT INTO `nomina.detallada." + Zon.getText() + "` (`#lista`, `#empleado`, "
+        String SQL = "INSERT INTO `nomina.detallada." + Zon.getText() + ".simss` (`#lista`, `#empleado`, "
                 + "`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, "
                 + "`Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,"
                 + " `1/16`, `2/17`, `3/18`, `4/19`, `5/20`, `6/21`, `7/22`, `8/23`, `9/24`, `10/25`,"
@@ -18012,7 +18013,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) Tnom6.getModel();
 
             int fila = Tnom6.getSelectedRow();
-            DL.setText(String.valueOf(Tnom6.getValueAt(fila, 0)));
+            NDL.setText(String.valueOf(Tnom6.getValueAt(fila, 0)));
             NEnom.setText(String.valueOf(Tnom6.getValueAt(fila, 1)));
             Ap.setText(String.valueOf(Tnom6.getValueAt(fila, 2)));
             am.setText(String.valueOf(Tnom6.getValueAt(fila, 3)));

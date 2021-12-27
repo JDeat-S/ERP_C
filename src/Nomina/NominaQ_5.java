@@ -1428,17 +1428,17 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         String ShareAP = BAPNom.getText();
         String ShareAM = BAMNom.getText();
         String where = "select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`"
-                + " from empleados  where `Status` LIKE '%Vigente%'";
+                + " from empleados ";// where `Status` LIKE '%Vigente%'";
 
         if (!"".equals(Share)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
+                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%'";// AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
+                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%'";// AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
+                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%'";// AND `Status` LIKE '%Vigente%'";
         }
 
         try {
@@ -2431,6 +2431,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             Dia14.setSelectedIndex(0);
             Dia15.setSelectedIndex(0);
             Dia16.setSelectedIndex(0);
+            FunMD();
 
         } catch (HeadlessException | SQLException error_add_nom) {
             JOptionPane.showMessageDialog(null, "Error al modificar nomina en: " + error_add_nom.getMessage());
@@ -17902,7 +17903,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) Tnom6.getModel();
 
             int fila = Tnom6.getSelectedRow();
-            DL.setText(String.valueOf(Tnom6.getValueAt(fila, 0)));
+            NDL.setText(String.valueOf(Tnom6.getValueAt(fila, 0)));
             NEnom.setText(String.valueOf(Tnom6.getValueAt(fila, 1)));
             Ap.setText(String.valueOf(Tnom6.getValueAt(fila, 2)));
             am.setText(String.valueOf(Tnom6.getValueAt(fila, 3)));

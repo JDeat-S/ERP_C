@@ -841,13 +841,13 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jPanel21" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="204" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2125,27 +2125,22 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="257" max="-2" attributes="0"/>
+                                      <Component id="jLabel145" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="236" max="-2" attributes="0"/>
+                                      <Component id="jLabel146" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="263" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel144" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="257" max="-2" attributes="0"/>
-                                              <Component id="jLabel145" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="236" max="-2" attributes="0"/>
-                                              <Component id="jLabel146" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="263" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel144" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                                                      <Component id="jLabel134" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
+                                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                              <Component id="jLabel134" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="470" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
@@ -2238,7 +2233,7 @@
                                                       <Component id="Presp" min="-2" pref="80" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace min="0" pref="48" max="32767" attributes="0"/>
+                                              <EmptySpace min="0" pref="63" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -2710,28 +2705,33 @@
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                          <Component id="apy" alignment="0" pref="80" max="32767" attributes="0"/>
-                                                          <Component id="Lugar" alignment="0" max="32767" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="jLabel87" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="Rembolso" pref="60" max="32767" attributes="0"/>
-                                                          <Component id="ADD" max="32767" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
                                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                                       <Component id="THE" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="HE" alignment="0" pref="81" max="32767" attributes="0"/>
                                                   </Group>
                                                   <Component id="FJ" min="-2" max="-2" attributes="0"/>
                                                   <Component id="DO" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                          <Component id="apy" alignment="0" pref="80" max="32767" attributes="0"/>
+                                                          <Component id="Lugar" alignment="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="1" attributes="0">
+                                                              <Component id="jLabel87" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="Rembolso" min="-2" pref="60" max="-2" attributes="0"/>
+                                                          <Component id="ADD" min="-2" pref="60" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
                                               </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
@@ -3473,77 +3473,26 @@
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Grua" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Obsgrua" min="-2" pref="181" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="Fde" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ObsFde" min="-2" pref="181" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="Chaleco" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ObsChal" min="-2" pref="181" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="Chamarra" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ObsCham" min="-2" pref="181" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="Sancion" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ObsSan" min="-2" pref="181" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="Fdb" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ObsFDB" min="-2" pref="181" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Pantalon" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ObsPan" min="-2" pref="181" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="Credencial" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ObsCred" min="-2" pref="181" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Bp" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Obsbp" min="-2" pref="181" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Playera" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ObsPla" min="-2" pref="181" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Corbata" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="ObsCor" min="-2" pref="181" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="AdN" min="-2" pref="65" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jTextField12" min="-2" pref="181" max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="Grua" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <Component id="Fde" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <Component id="Chaleco" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <Component id="Chamarra" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <Component id="Sancion" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <Component id="Fdb" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <Component id="Pantalon" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <Component id="Credencial" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <Component id="Bp" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <Component id="Playera" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <Component id="Corbata" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <Component id="AdN" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
                                           </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                                          <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                                  <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3553,81 +3502,66 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel75" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Fdb" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ObsFDB" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel79" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Sancion" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ObsSan" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel82" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Chamarra" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ObsCham" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Chaleco" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ObsChal" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel77" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Fde" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ObsFde" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel80" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Grua" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Obsgrua" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel83" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Pantalon" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ObsPan" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel86" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Credencial" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ObsCred" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel78" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Bp" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Obsbp" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel81" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Playera" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ObsPla" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Corbata" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ObsCor" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel167" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="AdN" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField12" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -3824,38 +3758,6 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Concepto"/>
                           </Properties>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="ObsFDB">
-                          <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ObsFDBKeyReleased"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel45">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Observacion."/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="ObsSan">
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="ObsCham">
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="ObsChal">
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="ObsFde">
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="Obsgrua">
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="ObsPan">
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="ObsCred">
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="Obsbp">
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="ObsPla">
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="ObsCor">
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField12">
                         </Component>
                       </SubComponents>
                     </Container>
