@@ -35,7 +35,7 @@ public final class Listas extends javax.swing.JFrame {
 
     public Listas() {
         initComponents();
-
+        SHempleados();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         Fecha2.setVisible(false);
         Fecha3.setVisible(false);
@@ -106,7 +106,7 @@ public final class Listas extends javax.swing.JFrame {
         LDAfilap = new javax.swing.JTextField();
         LDAfilam = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        LDAZon = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -184,6 +184,11 @@ public final class Listas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        EmpleadosSh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EmpleadosShMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(EmpleadosSh);
 
         jLabel9.setText("Filtrar por:");
@@ -271,7 +276,7 @@ public final class Listas extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(CI))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -316,7 +321,7 @@ public final class Listas extends javax.swing.JFrame {
                                     .addComponent(jLabel8)
                                     .addComponent(CI)
                                     .addComponent(jLabel7)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(MTL)
                                 .addGap(7, 7, 7)
@@ -427,11 +432,10 @@ public final class Listas extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");//1
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");//3
-            modelo.addColumn("Servicio");
             modelo.addColumn("Zona");
 
 //Anchos
-            int[] anchos = {50, 50, 100, 75, 50};
+            int[] anchos = {50, 50, 100, 50};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -457,6 +461,28 @@ public final class Listas extends javax.swing.JFrame {
     private void LDAQuinItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LDAQuinItemStateChanged
         int vari = LDAQuin.getSelectedIndex();
 
+        // <editor-fold defaultstate="collapsed" desc="Seleccionar">
+        if (vari == 0) {
+            Fecha1.setDate(null);
+            Fecha2.setDate(null);
+            Fecha3.setDate(null);
+            Fecha4.setDate(null);
+            Fecha5.setDate(null);
+            Fecha6.setDate(null);
+            Fecha7.setDate(null);
+            Fecha8.setDate(null);
+            Fecha9.setDate(null);
+            Fecha10.setDate(null);
+            Fecha11.setDate(null);
+            Fecha12.setDate(null);
+            Fecha13.setDate(null);
+            Fecha14.setDate(null);
+            Fecha15.setDate(null);
+            Fecha16.setDate(null);
+
+        }
+        //</editor-fold>
+        
         // <editor-fold defaultstate="collapsed" desc="Q1 ENE">
         if (vari == 1) {
             try {
@@ -2062,6 +2088,14 @@ public final class Listas extends javax.swing.JFrame {
         SHempleados();
     }//GEN-LAST:event_LDAfilamKeyReleased
 
+    private void EmpleadosShMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmpleadosShMouseClicked
+        int fila = EmpleadosSh.getSelectedRow();
+        LDAAp.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 0)));
+        LDAAm.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 1)));
+        LDAName.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 2)));
+        LDAZon.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 3)));
+    }//GEN-LAST:event_EmpleadosShMouseClicked
+
     public void Fecha() {
     }
 
@@ -2121,6 +2155,7 @@ public final class Listas extends javax.swing.JFrame {
     private javax.swing.JTextField LDAAp;
     private javax.swing.JTextField LDAName;
     private javax.swing.JComboBox<String> LDAQuin;
+    private javax.swing.JTextField LDAZon;
     private javax.swing.JComboBox<String> LDAfil;
     private javax.swing.JTextField LDAfilam;
     private javax.swing.JTextField LDAfilap;
@@ -2140,6 +2175,5 @@ public final class Listas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

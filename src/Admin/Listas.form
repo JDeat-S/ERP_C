@@ -106,7 +106,7 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField1" min="-2" pref="100" max="-2" attributes="0"/>
+                                              <Component id="LDAZon" min="-2" pref="100" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="CI" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -163,7 +163,7 @@
                                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="CI" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LDAZon" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="MTL" min="-2" max="-2" attributes="0"/>
@@ -424,6 +424,9 @@
                       </Table>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="EmpleadosShMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -472,7 +475,7 @@
                 <Property name="text" type="java.lang.String" value="Zona"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="LDAZon">
             </Component>
           </SubComponents>
         </Container>
