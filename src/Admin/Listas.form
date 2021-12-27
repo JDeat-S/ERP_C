@@ -45,47 +45,58 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Fecha2" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha3" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha4" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha5" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha6" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha7" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha8" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha9" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha10" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha11" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha12" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha13" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha14" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha15" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="Fecha16" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Fecha1" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha2" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha3" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha6" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha7" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha8" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha9" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha10" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha11" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha12" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha13" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha14" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha15" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha16" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="Fecha1" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LDAAp" min="-2" pref="80" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="LDAAm" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LDAName" min="-2" pref="141" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LDAAp" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="Fecha4" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha5" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="LDAAm" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LDAName" min="-2" pref="141" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="301" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -195,10 +206,18 @@
                       <Component id="Fecha2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Fecha3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Fecha4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Fecha5" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Fecha4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Fecha5" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Fecha6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -476,6 +495,14 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="LDAZon">
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jButton1"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
