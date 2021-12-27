@@ -856,14 +856,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
+        // <editor-fold defaultstate="collapsed" desc="Q2 may">
 
-        if (vari == 6) {
+        if (vari == 11) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 16-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 16-may.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -918,13 +918,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q1 Marzo">
-        if (vari == 6) {
+        
+        // <editor-fold defaultstate="collapsed" desc="Q1 junio">
+        if (vari == 12) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 1-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 1-jun.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -979,14 +980,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
+        // <editor-fold defaultstate="collapsed" desc="Q2 jun">
 
-        if (vari == 6) {
+        if (vari == 13) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 16-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 16-jun.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -1041,13 +1042,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q1 Marzo">
-        if (vari == 6) {
+        
+        // <editor-fold defaultstate="collapsed" desc="Q1 jul">
+        if (vari == 14) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 1-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 1-jul.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -1102,14 +1104,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
+        // <editor-fold defaultstate="collapsed" desc="Q2 jul">
 
-        if (vari == 6) {
+        if (vari == 15) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 16-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 16-jul.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -1164,13 +1166,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q1 Marzo">
-        if (vari == 6) {
+        
+        // <editor-fold defaultstate="collapsed" desc="Q1 ago">
+        if (vari == 16) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 1-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 1-ago.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -1225,14 +1228,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
+        // <editor-fold defaultstate="collapsed" desc="Q2 ago">
 
-        if (vari == 6) {
+        if (vari == 17) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 16-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 16-ago.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -1287,13 +1290,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q1 Marzo">
-        if (vari == 6) {
+        
+        // <editor-fold defaultstate="collapsed" desc="Q1 sep">
+        if (vari == 18) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 1-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 1-sep.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -1348,14 +1352,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
+        // <editor-fold defaultstate="collapsed" desc="Q2 sep">
 
-        if (vari == 6) {
+        if (vari == 19) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 16-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 16-sep.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -1410,13 +1414,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q1 Marzo">
-        if (vari == 6) {
+        
+        // <editor-fold defaultstate="collapsed" desc="Q1 oct">
+        if (vari == 20) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 1-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 1-oct.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -1471,14 +1476,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
+        // <editor-fold defaultstate="collapsed" desc="Q2 oct">
 
-        if (vari == 6) {
+        if (vari == 21) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 16-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 16-oct.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -1533,13 +1538,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q1 Marzo">
-        if (vari == 6) {
+        
+        // <editor-fold defaultstate="collapsed" desc="Q1 nov">
+        if (vari == 22) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 1-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 1-nov.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -1594,14 +1600,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
+        // <editor-fold defaultstate="collapsed" desc="Q2 nov">
 
-        if (vari == 6) {
+        if (vari == 23) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 16-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 16-nov.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -1656,13 +1662,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q1 Marzo">
-        if (vari == 6) {
+        
+        // <editor-fold defaultstate="collapsed" desc="Q1 dic">
+        if (vari == 24) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 1-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 1-dic.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
@@ -1717,14 +1724,14 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
+        // <editor-fold defaultstate="collapsed" desc="Q2 dic">
 
-        if (vari == 6) {
+        if (vari == 25) {
             try {
                 Date DTano = new Date();
                 SimpleDateFormat ano = new SimpleDateFormat("y");
                 SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                FG = dias.format(DTano) + ", 16-mar.-" + ano.format(DTano);
+                FG = dias.format(DTano) + ", 16-dic.-" + ano.format(DTano);
                 Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                 Fecha1.setDate(fin);
                 Calendar cc = Calendar.getInstance();
