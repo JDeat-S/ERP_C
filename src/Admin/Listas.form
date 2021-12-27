@@ -45,24 +45,24 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Fecha2" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha3" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha4" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha5" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha6" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha7" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha8" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha9" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha10" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha11" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha12" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha13" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha14" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha15" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="Fecha16" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="Fecha2" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha3" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha4" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha5" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha6" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha7" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha8" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha9" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha10" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha11" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha12" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha13" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha14" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha15" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha16" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Fecha1" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="Fecha1" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -396,6 +396,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mostrar todas las Fechas."/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox2ActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
               <AuxValues>

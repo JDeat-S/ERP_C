@@ -37,8 +37,9 @@ public final class Listas extends javax.swing.JFrame {
         Fecha11.setVisible(false);
         Fecha12.setVisible(false);
         Fecha13.setVisible(false);
-         Fecha14.setVisible(false);
+        Fecha14.setVisible(false);
         Fecha15.setVisible(false);
+        Fecha16.setVisible(false);
 
     }
 
@@ -151,6 +152,11 @@ public final class Listas extends javax.swing.JFrame {
         jCheckBox1.setText("Con imss");
 
         jCheckBox2.setText("Mostrar todas las Fechas.");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -178,24 +184,24 @@ public final class Listas extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(43, 43, 43)
                                 .addComponent(jLabel3)))
@@ -902,7 +908,7 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        
+
         // <editor-fold defaultstate="collapsed" desc="Q1 may">
         if (vari == 10) {
             try {
@@ -1026,7 +1032,7 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        
+
         // <editor-fold defaultstate="collapsed" desc="Q1 junio">
         if (vari == 12) {
             try {
@@ -1150,7 +1156,7 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        
+
         // <editor-fold defaultstate="collapsed" desc="Q1 jul">
         if (vari == 14) {
             try {
@@ -1274,7 +1280,7 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        
+
         // <editor-fold defaultstate="collapsed" desc="Q1 ago">
         if (vari == 16) {
             try {
@@ -1398,7 +1404,7 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        
+
         // <editor-fold defaultstate="collapsed" desc="Q1 sep">
         if (vari == 18) {
             try {
@@ -1522,7 +1528,7 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        
+
         // <editor-fold defaultstate="collapsed" desc="Q1 oct">
         if (vari == 20) {
             try {
@@ -1646,7 +1652,7 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        
+
         // <editor-fold defaultstate="collapsed" desc="Q1 nov">
         if (vari == 22) {
             try {
@@ -1770,7 +1776,7 @@ public final class Listas extends javax.swing.JFrame {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }//</editor-fold>
-        
+
         // <editor-fold defaultstate="collapsed" desc="Q1 dic">
         if (vari == 24) {
             try {
@@ -1896,6 +1902,43 @@ public final class Listas extends javax.swing.JFrame {
         }//</editor-fold>
 
     }//GEN-LAST:event_jComboBox1ItemStateChanged
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        if (jCheckBox2.isSelected() == false) {
+            Fecha2.setVisible(false);
+            Fecha3.setVisible(false);
+            Fecha4.setVisible(false);
+            Fecha5.setVisible(false);
+            Fecha6.setVisible(false);
+            Fecha7.setVisible(false);
+            Fecha8.setVisible(false);
+            Fecha9.setVisible(false);
+            Fecha10.setVisible(false);
+            Fecha11.setVisible(false);
+            Fecha12.setVisible(false);
+            Fecha13.setVisible(false);
+            Fecha14.setVisible(false);
+            Fecha15.setVisible(false);
+            Fecha16.setVisible(false);
+        }
+        if (jCheckBox2.isSelected() == true) {
+            Fecha2.setVisible(true);
+            Fecha3.setVisible(true);
+            Fecha4.setVisible(true);
+            Fecha5.setVisible(true);
+            Fecha6.setVisible(true);
+            Fecha7.setVisible(true);
+            Fecha8.setVisible(true);
+            Fecha9.setVisible(true);
+            Fecha10.setVisible(true);
+            Fecha11.setVisible(true);
+            Fecha12.setVisible(true);
+            Fecha13.setVisible(true);
+            Fecha14.setVisible(true);
+            Fecha15.setVisible(true);
+            Fecha16.setVisible(true);
+        }
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     public void Fecha() {
     }
