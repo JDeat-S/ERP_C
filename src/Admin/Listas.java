@@ -2156,7 +2156,7 @@ public final class Listas extends javax.swing.JFrame {
             ResultSet resultSet = statement.executeQuery("SELECT `id_bd`, `Entra imss`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `empleados`");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
-                XSSFSheet spreadsheet = libro.createSheet("employe db");
+                XSSFSheet spreadsheet = libro.createSheet("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText());
 
                 XSSFRow row = spreadsheet.createRow(1);
                 XSSFCell cell;
@@ -2202,8 +2202,6 @@ public final class Listas extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-public void Fecha() {
-    }
 
     /**
      * @param args the command line arguments
