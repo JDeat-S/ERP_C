@@ -477,13 +477,13 @@ public final class Listas extends javax.swing.JFrame {
 
     public void MostrarULDA() {
         if (CI.isSelected() == true) {
-            String SQL = "Select `NDL` FROM `nomina.listas." + LDAZon.getText() + "` WHERE `NDL`=(SELECT max(NDL) FROM `nomina.listas." + LDAZon.getText() + "`)";
+            String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort' AND TABLE_NAME = 'nomina.listas." + LDAZon.getText() + "'";
             try {
                 java.sql.Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(SQL);
                 while (rs.next()) {
 
-                    ULDA.setText(rs.getString("NDL"));
+                    ULDA.setText("" + (Integer.parseInt(rs.getString("AUTO_INCREMENT")) - 1));
                 }
 
             } catch (SQLException e) {
@@ -494,13 +494,13 @@ public final class Listas extends javax.swing.JFrame {
 
         }
         if (CI.isSelected() == false) {
-            String SQL = "Select `NDL` FROM `nomina.listas." + LDAZon.getText() + ".simss` WHERE `NDL`=(SELECT max(NDL) FROM `nomina.listas." + LDAZon.getText() + ".simss`)";
+            String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort' AND TABLE_NAME = 'nomina.listas." + LDAZon.getText() + ".simss'";
             try {
                 java.sql.Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(SQL);
                 while (rs.next()) {
 
-                    ULDA.setText(rs.getString("NDL"));
+                    ULDA.setText("" + (Integer.parseInt(rs.getString("AUTO_INCREMENT")) - 1));
                 }
 
             } catch (SQLException e) {
@@ -571,6 +571,8 @@ public final class Listas extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al compartir datos con prestamos: " + ex.getMessage());
 
@@ -733,6 +735,29 @@ public final class Listas extends javax.swing.JFrame {
                     Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
+                LDAZon.setText("");
+                CI.setSelected(false);
+                LDAQuin.setSelectedIndex(0);
+                LDAAp.setText("");
+                LDAAm.setText("");
+                LDAName.setText("");
+                Fecha1.setDate(null);
+                Fecha2.setDate(null);
+                Fecha3.setDate(null);
+                Fecha4.setDate(null);
+                Fecha5.setDate(null);
+                Fecha6.setDate(null);
+                Fecha7.setDate(null);
+                Fecha8.setDate(null);
+                Fecha9.setDate(null);
+                Fecha10.setDate(null);
+                Fecha11.setDate(null);
+                Fecha12.setDate(null);
+                Fecha13.setDate(null);
+                Fecha14.setDate(null);
+                Fecha15.setDate(null);
+                Fecha16.setDate(null);
+
                 JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
 
             } catch (SQLException error_AddLDA) {
@@ -893,6 +918,29 @@ public final class Listas extends javax.swing.JFrame {
                 } catch (ClassNotFoundException | SQLException ex) {
                     Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                LDAZon.setText("");
+                CI.setSelected(false);
+                LDAQuin.setSelectedIndex(0);
+                LDAAp.setText("");
+                LDAAm.setText("");
+                LDAName.setText("");
+                Fecha1.setDate(null);
+                Fecha2.setDate(null);
+                Fecha3.setDate(null);
+                Fecha4.setDate(null);
+                Fecha5.setDate(null);
+                Fecha6.setDate(null);
+                Fecha7.setDate(null);
+                Fecha8.setDate(null);
+                Fecha9.setDate(null);
+                Fecha10.setDate(null);
+                Fecha11.setDate(null);
+                Fecha12.setDate(null);
+                Fecha13.setDate(null);
+                Fecha14.setDate(null);
+                Fecha15.setDate(null);
+                Fecha16.setDate(null);
+                
                 JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
             } catch (SQLException error_AddLDA) {
                 JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
