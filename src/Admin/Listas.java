@@ -122,6 +122,8 @@ public final class Listas extends javax.swing.JFrame {
         LDAZon = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        ULDA = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -177,11 +179,22 @@ public final class Listas extends javax.swing.JFrame {
 
         Fecha16.setDateFormatString("EEEE, d MMM y");
 
+        LDAAp.setEnabled(false);
+
+        LDAAm.setEnabled(false);
+
+        LDAName.setEnabled(false);
+
         LDA.setText("0");
 
         jLabel8.setText("# Lista");
 
         CI.setText("Con imss");
+        CI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CIActionPerformed(evt);
+            }
+        });
 
         MTL.setText("Mostrar todas las Fechas.");
         MTL.addActionListener(new java.awt.event.ActionListener() {
@@ -234,7 +247,7 @@ public final class Listas extends javax.swing.JFrame {
 
         jLabel7.setText("Zona");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Excel");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -248,6 +261,10 @@ public final class Listas extends javax.swing.JFrame {
             }
         });
 
+        jLabel11.setText("Ultima lista registrada:");
+
+        ULDA.setText("0");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -255,56 +272,56 @@ public final class Listas extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(43, 43, 43)
-                                        .addComponent(jLabel3)))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(LDAAp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(LDAAm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton2)))))
-                        .addContainerGap(510, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(jLabel3)))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(301, 301, 301))))
+                            .addComponent(jLabel5)
+                            .addComponent(LDAAp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LDAAm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1))))
+                    .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MTL)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(MTL)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ULDA))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel1)
@@ -323,7 +340,7 @@ public final class Listas extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(301, 301, 301)
                         .addComponent(jLabel2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -364,7 +381,10 @@ public final class Listas extends javax.swing.JFrame {
                                     .addComponent(jLabel7)
                                     .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(MTL)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(MTL)
+                                    .addComponent(jLabel11)
+                                    .addComponent(ULDA))
                                 .addGap(7, 7, 7)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel1)
@@ -382,20 +402,16 @@ public final class Listas extends javax.swing.JFrame {
                         .addComponent(LDAAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(LDAAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton2)))
+                        .addComponent(jButton2)
+                        .addComponent(jButton1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jButton1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -436,6 +452,23 @@ public final class Listas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    public void MostrarULDA() {
+        String SQL = "Select `Ultima lista registrada` FROM `nomina.listas` Where `Zona` '%" + LDAZon.getText() + "%'";
+        try {
+            java.sql.Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            while (rs.next()) {
+
+                ULDA.setText(rs.getString("Ultima lista registrada"));
+            }
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Error al mostrar ultima lista registrada de " + LDAZon.getText() + ": " + e);
+
+        }
+    }
 
     public void SHempleados() {
         //Buscar empleado
@@ -506,7 +539,7 @@ public final class Listas extends javax.swing.JFrame {
 
     public void AgregarLDA() {
 
-        String SQL = "INSERT INTO `nomina.listas` (`NDL`, `Zona`, `Quincena`, `Dia 1/16`, `Dia 2/17`,"
+        String SQL = "INSERT INTO `nomina.listas." + LDAZon.getText() + "` (`NDL`, `Zona`, `Quincena`, `Dia 1/16`, `Dia 2/17`,"
                 + " `Dia 3/18`, `Dia 4/19`, `Dia 5/20`, `Dia 6/21`, `Dia 7/22`, `Dia 8/23`, `Dia 9/24`,"
                 + " `Dia 10/25`, `Dia 11/26`, `Dia 12/27`, `Dia 13/28`, `Dia 14/29`, `Dia 15/30`, "
                 + "`Dia 31`, `Apellido P`, `Apellido M`, `Nombre(s)`) VALUES (?, ?, ?, ?, ?, ?, ?,"
@@ -516,22 +549,22 @@ public final class Listas extends javax.swing.JFrame {
             pst.setInt(1, Integer.parseInt(LDA.getText()));
             pst.setString(2, LDAZon.getText());
             pst.setString(3, LDAQuin.getSelectedItem().toString());
-            pst.setString(4, ((JTextField)  Fecha1.getDateEditor().getUiComponent()).getText());
-            pst.setString(5, ((JTextField)  Fecha2.getDateEditor().getUiComponent()).getText());
-            pst.setString(6, ((JTextField)  Fecha3.getDateEditor().getUiComponent()).getText());
-            pst.setString(7, ((JTextField)  Fecha4.getDateEditor().getUiComponent()).getText());
-            pst.setString(8, ((JTextField)  Fecha5.getDateEditor().getUiComponent()).getText());
-            pst.setString(9, ((JTextField)  Fecha6.getDateEditor().getUiComponent()).getText());
-            pst.setString(10, ((JTextField)  Fecha7.getDateEditor().getUiComponent()).getText());
-            pst.setString(11, ((JTextField)  Fecha8.getDateEditor().getUiComponent()).getText());
-            pst.setString(12, ((JTextField)  Fecha9.getDateEditor().getUiComponent()).getText());
-            pst.setString(13,  ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText());
-            pst.setString(14,  ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText());
-            pst.setString(15,  ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText());
-            pst.setString(16,  ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText());
-            pst.setString(17,  ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText());
-            pst.setString(18,  ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText());
-            pst.setString(19,  ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText());
+            pst.setString(4, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+            pst.setString(5, ((JTextField) Fecha2.getDateEditor().getUiComponent()).getText());
+            pst.setString(6, ((JTextField) Fecha3.getDateEditor().getUiComponent()).getText());
+            pst.setString(7, ((JTextField) Fecha4.getDateEditor().getUiComponent()).getText());
+            pst.setString(8, ((JTextField) Fecha5.getDateEditor().getUiComponent()).getText());
+            pst.setString(9, ((JTextField) Fecha6.getDateEditor().getUiComponent()).getText());
+            pst.setString(10, ((JTextField) Fecha7.getDateEditor().getUiComponent()).getText());
+            pst.setString(11, ((JTextField) Fecha8.getDateEditor().getUiComponent()).getText());
+            pst.setString(12, ((JTextField) Fecha9.getDateEditor().getUiComponent()).getText());
+            pst.setString(13, ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText());
+            pst.setString(14, ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText());
+            pst.setString(15, ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText());
+            pst.setString(16, ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText());
+            pst.setString(17, ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText());
+            pst.setString(18, ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText());
+            pst.setString(19, ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText());
             pst.setString(20, LDAAp.getText());
             pst.setString(21, LDAAm.getText());
             pst.setString(22, LDAName.getText());
@@ -543,7 +576,6 @@ public final class Listas extends javax.swing.JFrame {
         }
 
     }
-
 
     private void LDAQuinItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LDAQuinItemStateChanged
         int vari = LDAQuin.getSelectedIndex();
@@ -2181,6 +2213,8 @@ public final class Listas extends javax.swing.JFrame {
         LDAAm.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 1)));
         LDAName.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 2)));
         LDAZon.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 3)));
+        
+        MostrarULDA();
     }//GEN-LAST:event_EmpleadosShMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -2308,6 +2342,26 @@ public final class Listas extends javax.swing.JFrame {
         AgregarLDA();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void CIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIActionPerformed
+        if (CI.isSelected() == true) {
+            LDAAp.setEnabled(true);
+            LDAAm.setEnabled(true);
+            LDAName.setEnabled(true);
+            LDAAp.setText("");
+            LDAAm.setText("");
+            LDAName.setText("");
+
+        }
+        if (CI.isSelected() == false) {
+            LDAAp.setEnabled(false);
+            LDAAm.setEnabled(false);
+            LDAName.setEnabled(false);
+            LDAAp.setText("");
+            LDAAm.setText("");
+            LDAName.setText("");
+        }
+    }//GEN-LAST:event_CIActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2379,10 +2433,12 @@ public final class Listas extends javax.swing.JFrame {
     private javax.swing.JTextField LDAfilap;
     private javax.swing.JTextField LDAfilname;
     private javax.swing.JCheckBox MTL;
+    private javax.swing.JLabel ULDA;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

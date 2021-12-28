@@ -45,69 +45,66 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Fecha2" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha3" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha6" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha7" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha8" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha9" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha10" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha11" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha12" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha13" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha14" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha15" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha16" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Fecha2" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha3" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha6" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha7" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha8" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha9" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha10" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha11" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha12" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha13" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha14" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha15" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha16" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="Fecha1" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Fecha1" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                          <Component id="LDAAp" min="-2" pref="80" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="LDAAm" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Component id="LDAName" min="-2" pref="141" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="510" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Fecha4" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha5" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LDAAp" min="-2" pref="80" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="301" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="LDAAm" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="LDAName" min="-2" pref="141" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
+                          <Component id="Fecha4" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="Fecha5" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="MTL" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="MTL" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ULDA" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -134,7 +131,7 @@
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="33" max="32767" attributes="0"/>
+                      <EmptySpace pref="96" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane2" min="-2" pref="568" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
@@ -181,7 +178,11 @@
                                           <Component id="LDAZon" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="MTL" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="MTL" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ULDA" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -205,24 +206,17 @@
                               <Component id="LDAAm" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="LDAName" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Fecha2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Fecha3" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha5" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Fecha4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Fecha5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Fecha6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -405,10 +399,19 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="LDAAp">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="LDAAm">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="LDAName">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="LDA">
               <Properties>
@@ -424,6 +427,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Con imss"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CIActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="MTL">
               <Properties>
@@ -506,7 +512,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton1"/>
+                <Property name="text" type="java.lang.String" value="Excel"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -519,6 +525,16 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel11">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ultima lista registrada:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ULDA">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
