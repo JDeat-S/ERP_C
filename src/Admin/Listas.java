@@ -454,7 +454,7 @@ public final class Listas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void MostrarULDA() {
-        String SQL = "Select `Ultima lista registrada` FROM `nomina.listas` Where `Zona` '%" + LDAZon.getText() + "%'";
+        String SQL = "Select `Ultima lista registrada` FROM `nomina.listas` Where `Zona` LIKE '%" + LDAZon.getText() + "%'";
         try {
             java.sql.Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
@@ -466,6 +466,22 @@ public final class Listas extends javax.swing.JFrame {
         } catch (SQLException e) {
 
             JOptionPane.showMessageDialog(null, "Error al mostrar ultima lista registrada de " + LDAZon.getText() + ": " + e);
+
+        }
+    }
+
+    public void UpdateULDA() {
+        String SQL = "UPDATE `nomina.listas` SET `Ultima lista registrada` = ? WHERE `nomina.listas`.`Zona` = '" + LDAZon.getText() + "' ";
+        int UpULDA = Integer.parseInt(ULDA.getText()) + 1;
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setString(1, Integer.toString(UpULDA));
+            pst.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Se actualizo ultima lista registrada");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al actualizar ultima lista registrada: " + e);
 
         }
     }
@@ -570,7 +586,11 @@ public final class Listas extends javax.swing.JFrame {
                 pst.setString(22, LDAName.getText());
 
                 pst.executeUpdate();
+                UpdateULDA();
+                MostrarULDA();
+
                 JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
+
             } catch (SQLException error_AddLDA) {
                 JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
             }
@@ -2247,12 +2267,19 @@ public final class Listas extends javax.swing.JFrame {
     }//GEN-LAST:event_LDAfilamKeyReleased
 
     private void EmpleadosShMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmpleadosShMouseClicked
-        int fila = EmpleadosSh.getSelectedRow();
-        LDAAp.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 0)));
-        LDAAm.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 1)));
-        LDAName.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 2)));
-        LDAZon.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 3)));
+        if (CI.isSelected() == true) {
+            int fila = EmpleadosSh.getSelectedRow();
+            LDAAp.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 0)));
+            LDAAm.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 1)));
+            LDAName.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 2)));
+            LDAZon.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 3)));
 
+        }
+        if (CI.isSelected() == false) {
+            int fila = EmpleadosSh.getSelectedRow();
+            LDAZon.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 3)));
+
+        }
         MostrarULDA();
     }//GEN-LAST:event_EmpleadosShMouseClicked
 
