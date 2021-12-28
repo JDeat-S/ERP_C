@@ -538,41 +538,80 @@ public final class Listas extends javax.swing.JFrame {
     }
 
     public void AgregarLDA() {
+        if (CI.isSelected() == true) {
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getText() + "` (`NDL`, `Zona`, `Quincena`, `Dia 1/16`, `Dia 2/17`,"
+                    + " `Dia 3/18`, `Dia 4/19`, `Dia 5/20`, `Dia 6/21`, `Dia 7/22`, `Dia 8/23`, `Dia 9/24`,"
+                    + " `Dia 10/25`, `Dia 11/26`, `Dia 12/27`, `Dia 13/28`, `Dia 14/29`, `Dia 15/30`, "
+                    + "`Dia 31`, `Apellido P`, `Apellido M`, `Nombre(s)`) VALUES (?, ?, ?, ?, ?, ?, ?,"
+                    + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(LDA.getText()));
+                pst.setString(2, LDAZon.getText());
+                pst.setString(3, LDAQuin.getSelectedItem().toString());
+                pst.setString(4, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setString(5, ((JTextField) Fecha2.getDateEditor().getUiComponent()).getText());
+                pst.setString(6, ((JTextField) Fecha3.getDateEditor().getUiComponent()).getText());
+                pst.setString(7, ((JTextField) Fecha4.getDateEditor().getUiComponent()).getText());
+                pst.setString(8, ((JTextField) Fecha5.getDateEditor().getUiComponent()).getText());
+                pst.setString(9, ((JTextField) Fecha6.getDateEditor().getUiComponent()).getText());
+                pst.setString(10, ((JTextField) Fecha7.getDateEditor().getUiComponent()).getText());
+                pst.setString(11, ((JTextField) Fecha8.getDateEditor().getUiComponent()).getText());
+                pst.setString(12, ((JTextField) Fecha9.getDateEditor().getUiComponent()).getText());
+                pst.setString(13, ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText());
+                pst.setString(14, ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText());
+                pst.setString(15, ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText());
+                pst.setString(16, ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText());
+                pst.setString(17, ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText());
+                pst.setString(18, ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText());
+                pst.setString(19, ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText());
+                pst.setString(20, LDAAp.getText());
+                pst.setString(21, LDAAm.getText());
+                pst.setString(22, LDAName.getText());
 
-        String SQL = "INSERT INTO `nomina.listas." + LDAZon.getText() + "` (`NDL`, `Zona`, `Quincena`, `Dia 1/16`, `Dia 2/17`,"
-                + " `Dia 3/18`, `Dia 4/19`, `Dia 5/20`, `Dia 6/21`, `Dia 7/22`, `Dia 8/23`, `Dia 9/24`,"
-                + " `Dia 10/25`, `Dia 11/26`, `Dia 12/27`, `Dia 13/28`, `Dia 14/29`, `Dia 15/30`, "
-                + "`Dia 31`, `Apellido P`, `Apellido M`, `Nombre(s)`) VALUES (?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        try {
-            PreparedStatement pst = con.prepareStatement(SQL);
-            pst.setInt(1, Integer.parseInt(LDA.getText()));
-            pst.setString(2, LDAZon.getText());
-            pst.setString(3, LDAQuin.getSelectedItem().toString());
-            pst.setString(4, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
-            pst.setString(5, ((JTextField) Fecha2.getDateEditor().getUiComponent()).getText());
-            pst.setString(6, ((JTextField) Fecha3.getDateEditor().getUiComponent()).getText());
-            pst.setString(7, ((JTextField) Fecha4.getDateEditor().getUiComponent()).getText());
-            pst.setString(8, ((JTextField) Fecha5.getDateEditor().getUiComponent()).getText());
-            pst.setString(9, ((JTextField) Fecha6.getDateEditor().getUiComponent()).getText());
-            pst.setString(10, ((JTextField) Fecha7.getDateEditor().getUiComponent()).getText());
-            pst.setString(11, ((JTextField) Fecha8.getDateEditor().getUiComponent()).getText());
-            pst.setString(12, ((JTextField) Fecha9.getDateEditor().getUiComponent()).getText());
-            pst.setString(13, ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText());
-            pst.setString(14, ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText());
-            pst.setString(15, ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText());
-            pst.setString(16, ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText());
-            pst.setString(17, ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText());
-            pst.setString(18, ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText());
-            pst.setString(19, ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText());
-            pst.setString(20, LDAAp.getText());
-            pst.setString(21, LDAAm.getText());
-            pst.setString(22, LDAName.getText());
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
+            } catch (SQLException error_AddLDA) {
+                JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
+            }
 
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
-        } catch (SQLException error_AddLDA) {
-            JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
+        }
+        if (CI.isSelected() == false) {
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getText() + ".simss` (`NDL`, `Zona`, `Quincena`, `Dia 1/16`, `Dia 2/17`,"
+                    + " `Dia 3/18`, `Dia 4/19`, `Dia 5/20`, `Dia 6/21`, `Dia 7/22`, `Dia 8/23`, `Dia 9/24`,"
+                    + " `Dia 10/25`, `Dia 11/26`, `Dia 12/27`, `Dia 13/28`, `Dia 14/29`, `Dia 15/30`, "
+                    + "`Dia 31`, `Apellido P`, `Apellido M`, `Nombre(s)`) VALUES (?, ?, ?, ?, ?, ?, ?,"
+                    + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(LDA.getText()));
+                pst.setString(2, LDAZon.getText());
+                pst.setString(3, LDAQuin.getSelectedItem().toString());
+                pst.setString(4, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setString(5, ((JTextField) Fecha2.getDateEditor().getUiComponent()).getText());
+                pst.setString(6, ((JTextField) Fecha3.getDateEditor().getUiComponent()).getText());
+                pst.setString(7, ((JTextField) Fecha4.getDateEditor().getUiComponent()).getText());
+                pst.setString(8, ((JTextField) Fecha5.getDateEditor().getUiComponent()).getText());
+                pst.setString(9, ((JTextField) Fecha6.getDateEditor().getUiComponent()).getText());
+                pst.setString(10, ((JTextField) Fecha7.getDateEditor().getUiComponent()).getText());
+                pst.setString(11, ((JTextField) Fecha8.getDateEditor().getUiComponent()).getText());
+                pst.setString(12, ((JTextField) Fecha9.getDateEditor().getUiComponent()).getText());
+                pst.setString(13, ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText());
+                pst.setString(14, ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText());
+                pst.setString(15, ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText());
+                pst.setString(16, ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText());
+                pst.setString(17, ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText());
+                pst.setString(18, ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText());
+                pst.setString(19, ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText());
+                pst.setString(20, LDAAp.getText());
+                pst.setString(21, LDAAm.getText());
+                pst.setString(22, LDAName.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
+            } catch (SQLException error_AddLDA) {
+                JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
+            }
         }
 
     }
@@ -2213,7 +2252,7 @@ public final class Listas extends javax.swing.JFrame {
         LDAAm.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 1)));
         LDAName.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 2)));
         LDAZon.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 3)));
-        
+
         MostrarULDA();
     }//GEN-LAST:event_EmpleadosShMouseClicked
 
