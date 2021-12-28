@@ -65,6 +65,10 @@ public final class Listas extends javax.swing.JFrame {
         Fecha14.setVisible(false);
         Fecha15.setVisible(false);
         Fecha16.setVisible(false);
+        LabelFil.setVisible(false);
+        LDAfilap.setVisible(false);
+        LDAfilam.setVisible(false);
+        LDAfilname.setVisible(false);
 // </editor-fold>
 
     }
@@ -114,7 +118,7 @@ public final class Listas extends javax.swing.JFrame {
         EmpleadosSh = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         LDAfil = new javax.swing.JComboBox<>();
-        jLabel10 = new javax.swing.JLabel();
+        LabelFil = new javax.swing.JLabel();
         LDAfilname = new javax.swing.JTextField();
         LDAfilap = new javax.swing.JTextField();
         LDAfilam = new javax.swing.JTextField();
@@ -220,13 +224,23 @@ public final class Listas extends javax.swing.JFrame {
                 EmpleadosShMouseClicked(evt);
             }
         });
+        EmpleadosSh.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                EmpleadosShKeyReleased(evt);
+            }
+        });
         jScrollPane2.setViewportView(EmpleadosSh);
 
         jLabel9.setText("Filtrar por:");
 
         LDAfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
+        LDAfil.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                LDAfilItemStateChanged(evt);
+            }
+        });
 
-        jLabel10.setText("jLabel10");
+        LabelFil.setText("jLabel10");
 
         LDAfilname.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -247,6 +261,12 @@ public final class Listas extends javax.swing.JFrame {
         });
 
         jLabel7.setText("Zona");
+
+        LDAZon.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                LDAZonKeyReleased(evt);
+            }
+        });
 
         jButton2.setText("Agregar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -350,7 +370,7 @@ public final class Listas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LDAfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10)
+                        .addComponent(LabelFil)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LDAfilname, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -369,7 +389,7 @@ public final class Listas extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel9)
                             .addComponent(LDAfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10)
+                            .addComponent(LabelFil)
                             .addComponent(LDAfilname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(LDAfilap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(LDAfilam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -596,7 +616,8 @@ public final class Listas extends javax.swing.JFrame {
 
                 JFileChooser chooser = new JFileChooser();
                 FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-                chooser.setSelectedFile(new File("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText()));
+                chooser.setSelectedFile(new File("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText() + " de la "
+                        + LDAQuin.getSelectedItem().toString()));
                 chooser.setFileFilter(filter);
                 chooser.setDialogTitle("Guardar archivo");
                 chooser.setAcceptAllFileFilterUsed(false);
@@ -756,7 +777,8 @@ public final class Listas extends javax.swing.JFrame {
 
                 JFileChooser chooser = new JFileChooser();
                 FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-                chooser.setSelectedFile(new File("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText()));
+                chooser.setSelectedFile(new File("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText() + " de la "
+                        + LDAQuin.getSelectedItem().toString()));
                 chooser.setFileFilter(filter);
                 chooser.setDialogTitle("Guardar archivo");
                 chooser.setAcceptAllFileFilterUsed(false);
@@ -7496,6 +7518,75 @@ public final class Listas extends javax.swing.JFrame {
 
     }//GEN-LAST:event_NYearActionPerformed
 
+    private void LDAfilItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LDAfilItemStateChanged
+        if (LDAfil.getSelectedIndex() == 0) {
+            LabelFil.setVisible(false);
+            LDAfilap.setVisible(false);
+            LDAfilam.setVisible(false);
+            LDAfilname.setVisible(false);
+            LDAfilap.setText("");
+            LDAfilam.setText("");
+            LDAfilname.setText("");
+
+        }
+        if (LDAfil.getSelectedIndex() == 1) {
+            LabelFil.setVisible(true);
+            LabelFil.setText("Buscar Apellido P:");
+            LDAfilap.setVisible(true);
+            LDAfilam.setVisible(false);
+            LDAfilname.setVisible(false);
+            LDAfilap.setText("");
+            LDAfilam.setText("");
+            LDAfilname.setText("");
+
+        }
+        if (LDAfil.getSelectedIndex() == 2) {
+            LabelFil.setVisible(true);
+            LabelFil.setText("Buscar Apellido M:");
+            LDAfilap.setVisible(false);
+            LDAfilam.setVisible(true);
+            LDAfilname.setVisible(false);
+            LDAfilap.setText("");
+            LDAfilam.setText("");
+            LDAfilname.setText("");
+
+        }
+        if (LDAfil.getSelectedIndex() == 3) {
+            LabelFil.setVisible(true);
+            LabelFil.setText("Buscar Nombre(s)");
+            LDAfilap.setVisible(false);
+            LDAfilam.setVisible(false);
+            LDAfilname.setVisible(true);
+            LDAfilap.setText("");
+            LDAfilam.setText("");
+            LDAfilname.setText("");
+
+        }
+        SHempleados();
+    }//GEN-LAST:event_LDAfilItemStateChanged
+
+    private void EmpleadosShKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EmpleadosShKeyReleased
+        if (CI.isSelected() == true) {
+            int fila = EmpleadosSh.getSelectedRow();
+            LDAAp.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 0)));
+            LDAAm.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 1)));
+            LDAName.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 2)));
+            LDAZon.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 3)));
+
+        }
+        if (CI.isSelected() == false) {
+            int fila = EmpleadosSh.getSelectedRow();
+            LDAZon.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 3)));
+
+        }
+        MostrarULDA();
+    }//GEN-LAST:event_EmpleadosShKeyReleased
+
+    private void LDAZonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LDAZonKeyReleased
+        MostrarULDA();
+
+    }//GEN-LAST:event_LDAZonKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -7566,12 +7657,12 @@ public final class Listas extends javax.swing.JFrame {
     private javax.swing.JTextField LDAfilam;
     private javax.swing.JTextField LDAfilap;
     private javax.swing.JTextField LDAfilname;
+    private javax.swing.JLabel LabelFil;
     private javax.swing.JCheckBox MTL;
     private javax.swing.JCheckBox NYear;
     private javax.swing.JLabel ULDA;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
