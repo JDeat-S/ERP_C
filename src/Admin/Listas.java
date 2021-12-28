@@ -120,7 +120,6 @@ public final class Listas extends javax.swing.JFrame {
         LDAfilam = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         LDAZon = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         ULDA = new javax.swing.JLabel();
@@ -185,6 +184,7 @@ public final class Listas extends javax.swing.JFrame {
 
         LDAName.setEnabled(false);
 
+        LDA.setEditable(false);
         LDA.setText("0");
 
         jLabel8.setText("# Lista");
@@ -247,13 +247,6 @@ public final class Listas extends javax.swing.JFrame {
 
         jLabel7.setText("Zona");
 
-        jButton1.setText("Excel");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         jButton2.setText("Agregar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,9 +298,7 @@ public final class Listas extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1))))
+                                .addComponent(jButton2))))
                     .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -402,8 +393,7 @@ public final class Listas extends javax.swing.JFrame {
                         .addComponent(LDAAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(LDAAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton2)
-                        .addComponent(jButton1)))
+                        .addComponent(jButton2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -586,8 +576,126 @@ public final class Listas extends javax.swing.JFrame {
                 pst.setString(22, LDAName.getText());
 
                 pst.executeUpdate();
+
                 UpdateULDA();
                 MostrarULDA();
+
+                JFileChooser chooser = new JFileChooser();
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
+                chooser.setFileFilter(filter);
+                chooser.setDialogTitle("Guardar archivo");
+                chooser.setAcceptAllFileFilterUsed(false);
+                if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+                }
+                try {
+                    String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
+                    File archivoXLS = new File(ruta);
+                    if (archivoXLS.exists()) {
+                        archivoXLS.delete();
+                    }
+                    archivoXLS.createNewFile();
+
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection connect = DriverManager.getConnection(
+                            "jdbc:mysql://192.168.1.170:3306/confort",
+                            "Servidor",
+                            "Confort1022"
+                    );
+
+                    Statement statement = connect.createStatement();
+                    ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas` WHERE" + LDA.getText());
+                    try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                        XSSFWorkbook libro = new XSSFWorkbook();
+                        XSSFSheet spreadsheet = libro.createSheet("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText());
+
+                        XSSFRow row = spreadsheet.createRow(1);
+                        XSSFCell cell;
+                        cell = row.createCell(1);
+                        cell.setCellValue("Fecha");
+                        cell = row.createCell(2);
+                        cell.setCellValue("Apellido P");
+                        cell = row.createCell(3);
+                        cell.setCellValue("Apellido M");
+                        cell = row.createCell(4);
+                        cell.setCellValue("Nombre(s)");
+                        cell = row.createCell(5);
+                        cell.setCellValue("Entrada");
+                        cell = row.createCell(6);
+                        cell.setCellValue("Salida");
+                        cell = row.createCell(7);
+                        cell.setCellValue("Firma");
+
+                        int i = 2;
+
+                        while (resultSet.next()) {
+                            row = spreadsheet.createRow(i);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 1/16"));
+                            row = spreadsheet.createRow(3);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 2/17"));
+                            row = spreadsheet.createRow(4);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 3/18"));
+                            row = spreadsheet.createRow(5);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 4/19"));
+                            row = spreadsheet.createRow(6);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 5/20"));
+                            row = spreadsheet.createRow(7);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 6/21"));
+                            row = spreadsheet.createRow(8);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 7/22"));
+                            row = spreadsheet.createRow(9);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 8/23"));
+                            row = spreadsheet.createRow(10);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 9/24"));
+                            row = spreadsheet.createRow(11);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 10/25"));
+                            row = spreadsheet.createRow(12);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 11/26"));
+                            row = spreadsheet.createRow(13);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 12/27"));
+                            row = spreadsheet.createRow(14);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 13/28"));
+                            row = spreadsheet.createRow(15);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 14/29"));
+                            row = spreadsheet.createRow(15);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 15/30"));
+                            row = spreadsheet.createRow(16);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 31"));
+                            /*row = spreadsheet.createRow(17);
+                    cell = row.createCell(i);
+                    cell.setCellValue(resultSet.getString("Apellido M"));
+                    cell = row.createCell(5);
+                    cell.setCellValue(resultSet.getString("Nombre(s)"));
+                    i++;*/
+                        }
+                        libro.write(archivo);
+                    }
+                    Desktop.getDesktop().open(archivoXLS);
+                } catch (IOException | NumberFormatException e) {
+                    try {
+                        throw e;
+                    } catch (IOException | NumberFormatException ex) {
+                        Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } catch (ClassNotFoundException | SQLException ex) {
+                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                }
 
                 JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
 
@@ -628,6 +736,126 @@ public final class Listas extends javax.swing.JFrame {
                 pst.setString(22, LDAName.getText());
 
                 pst.executeUpdate();
+
+                UpdateULDA();
+                MostrarULDA();
+
+                JFileChooser chooser = new JFileChooser();
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
+                chooser.setFileFilter(filter);
+                chooser.setDialogTitle("Guardar archivo");
+                chooser.setAcceptAllFileFilterUsed(false);
+                if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+                }
+                try {
+                    String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
+                    File archivoXLS = new File(ruta);
+                    if (archivoXLS.exists()) {
+                        archivoXLS.delete();
+                    }
+                    archivoXLS.createNewFile();
+
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection connect = DriverManager.getConnection(
+                            "jdbc:mysql://192.168.1.170:3306/confort",
+                            "Servidor",
+                            "Confort1022"
+                    );
+
+                    Statement statement = connect.createStatement();
+                    ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas` WHERE" + LDA.getText());
+                    try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                        XSSFWorkbook libro = new XSSFWorkbook();
+                        XSSFSheet spreadsheet = libro.createSheet("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText());
+
+                        XSSFRow row = spreadsheet.createRow(1);
+                        XSSFCell cell;
+                        cell = row.createCell(1);
+                        cell.setCellValue("Fecha");
+                        cell = row.createCell(2);
+                        cell.setCellValue("Apellido P");
+                        cell = row.createCell(3);
+                        cell.setCellValue("Apellido M");
+                        cell = row.createCell(4);
+                        cell.setCellValue("Nombre(s)");
+                        cell = row.createCell(5);
+                        cell.setCellValue("Entrada");
+                        cell = row.createCell(6);
+                        cell.setCellValue("Salida");
+                        cell = row.createCell(7);
+                        cell.setCellValue("Firma");
+
+                        int i = 2;
+
+                        while (resultSet.next()) {
+                            row = spreadsheet.createRow(i);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 1/16"));
+                            row = spreadsheet.createRow(3);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 2/17"));
+                            row = spreadsheet.createRow(4);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 3/18"));
+                            row = spreadsheet.createRow(5);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 4/19"));
+                            row = spreadsheet.createRow(6);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 5/20"));
+                            row = spreadsheet.createRow(7);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 6/21"));
+                            row = spreadsheet.createRow(8);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 7/22"));
+                            row = spreadsheet.createRow(9);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 8/23"));
+                            row = spreadsheet.createRow(10);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 9/24"));
+                            row = spreadsheet.createRow(11);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 10/25"));
+                            row = spreadsheet.createRow(12);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 11/26"));
+                            row = spreadsheet.createRow(13);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 12/27"));
+                            row = spreadsheet.createRow(14);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 13/28"));
+                            row = spreadsheet.createRow(15);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 14/29"));
+                            row = spreadsheet.createRow(15);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 15/30"));
+                            row = spreadsheet.createRow(16);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("Dia 31"));
+                            /*row = spreadsheet.createRow(17);
+                    cell = row.createCell(i);
+                    cell.setCellValue(resultSet.getString("Apellido M"));
+                    cell = row.createCell(5);
+                    cell.setCellValue(resultSet.getString("Nombre(s)"));
+                    i++;*/
+                        }
+                        libro.write(archivo);
+                    }
+                    Desktop.getDesktop().open(archivoXLS);
+                } catch (IOException | NumberFormatException e) {
+                    try {
+                        throw e;
+                    } catch (IOException | NumberFormatException ex) {
+                        Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                } catch (ClassNotFoundException | SQLException ex) {
+                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
             } catch (SQLException error_AddLDA) {
                 JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
@@ -2283,127 +2511,6 @@ public final class Listas extends javax.swing.JFrame {
         MostrarULDA();
     }//GEN-LAST:event_EmpleadosShMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JFileChooser chooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-        chooser.setFileFilter(filter);
-        chooser.setDialogTitle("Guardar archivo");
-        chooser.setAcceptAllFileFilterUsed(false);
-        if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-            String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
-        }
-        try {
-            String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
-            File archivoXLS = new File(ruta);
-            if (archivoXLS.exists()) {
-                archivoXLS.delete();
-            }
-            archivoXLS.createNewFile();
-
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connect = DriverManager.getConnection(
-                    "jdbc:mysql://192.168.1.170:3306/confort",
-                    "Servidor",
-                    "Confort1022"
-            );
-
-            Statement statement = connect.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT  `Dia 1/16`, `Dia 2/17`, `Dia 3/18`, `Dia 4/19`, `Dia 5/20`, `Dia 6/21`, `Dia 7/22`, `Dia 8/23`, `Dia 9/24`, `Dia 10/25`, `Dia 11/26`, `Dia 12/27`, `Dia 13/28`, `Dia 14/29`, `Dia 15/30`, `Dia 31` FROM `nomina.listas` WHERE" + LDA.getText());
-            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
-                XSSFWorkbook libro = new XSSFWorkbook();
-                XSSFSheet spreadsheet = libro.createSheet("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText());
-
-                XSSFRow row = spreadsheet.createRow(1);
-                XSSFCell cell;
-                cell = row.createCell(1);
-                cell.setCellValue("Fecha");
-                cell = row.createCell(2);
-                cell.setCellValue("Apellido P");
-                cell = row.createCell(3);
-                cell.setCellValue("Apellido M");
-                cell = row.createCell(4);
-                cell.setCellValue("Nombre(s)");
-                cell = row.createCell(5);
-                cell.setCellValue("Entrada");
-                cell = row.createCell(6);
-                cell.setCellValue("Salida");
-                cell = row.createCell(7);
-                cell.setCellValue("Firma");
-
-                int i = 2;
-
-                while (resultSet.next()) {
-                    row = spreadsheet.createRow(i);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 1/16"));
-                    row = spreadsheet.createRow(3);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 2/17"));
-                    row = spreadsheet.createRow(4);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 3/18"));
-                    row = spreadsheet.createRow(5);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 4/19"));
-                    row = spreadsheet.createRow(6);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 5/20"));
-                    row = spreadsheet.createRow(7);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 6/21"));
-                    row = spreadsheet.createRow(8);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 7/22"));
-                    row = spreadsheet.createRow(9);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 8/23"));
-                    row = spreadsheet.createRow(10);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 9/24"));
-                    row = spreadsheet.createRow(11);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 10/25"));
-                    row = spreadsheet.createRow(12);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 11/26"));
-                    row = spreadsheet.createRow(13);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 12/27"));
-                    row = spreadsheet.createRow(14);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 13/28"));
-                    row = spreadsheet.createRow(15);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 14/29"));
-                    row = spreadsheet.createRow(15);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 15/30"));
-                    row = spreadsheet.createRow(16);
-                    cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getString("Dia 31"));
-                    /*row = spreadsheet.createRow(17);
-                    cell = row.createCell(i);
-                    cell.setCellValue(resultSet.getString("Apellido M"));
-                    cell = row.createCell(5);
-                    cell.setCellValue(resultSet.getString("Nombre(s)"));
-                    i++;*/
-                }
-                libro.write(archivo);
-            }
-            Desktop.getDesktop().open(archivoXLS);
-        } catch (IOException | NumberFormatException e) {
-            try {
-                throw e;
-            } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         AgregarLDA();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -2500,7 +2607,6 @@ public final class Listas extends javax.swing.JFrame {
     private javax.swing.JTextField LDAfilname;
     private javax.swing.JCheckBox MTL;
     private javax.swing.JLabel ULDA;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
