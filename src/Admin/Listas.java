@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,12 +26,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.w3c.dom.NodeList;
 
 /**
  *
@@ -105,7 +108,7 @@ public final class Listas extends javax.swing.JFrame {
         LDAAp = new javax.swing.JTextField();
         LDAAm = new javax.swing.JTextField();
         LDAName = new javax.swing.JTextField();
-        NLDA = new javax.swing.JTextField();
+        LDA = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         CI = new javax.swing.JCheckBox();
         MTL = new javax.swing.JCheckBox();
@@ -120,6 +123,7 @@ public final class Listas extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         LDAZon = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -174,6 +178,8 @@ public final class Listas extends javax.swing.JFrame {
         Fecha15.setDateFormatString("EEEE, d MMM y");
 
         Fecha16.setDateFormatString("EEEE, d MMM y");
+
+        LDA.setText("0");
 
         jLabel8.setText("# Lista");
 
@@ -237,6 +243,13 @@ public final class Listas extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Agregar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -276,8 +289,11 @@ public final class Listas extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
-                                    .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton2)))))
+                        .addContainerGap(510, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -299,7 +315,7 @@ public final class Listas extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(NLDA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -344,7 +360,7 @@ public final class Listas extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(NLDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel8)
                                     .addComponent(CI)
                                     .addComponent(jLabel7)
@@ -367,7 +383,8 @@ public final class Listas extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(LDAAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(LDAAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -428,7 +445,7 @@ public final class Listas extends javax.swing.JFrame {
         String ShareAP = LDAfilap.getText();
         String ShareAM = LDAfilam.getText();
         String SQL = "select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                + " from empleados  where `Status` LIKE '%Vigente%'";
+                + " from empleados where `Status` LIKE '%Vigente%'";
 
         if (!"".equals(Share)) {
             SQL = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
@@ -485,6 +502,46 @@ public final class Listas extends javax.swing.JFrame {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al compartir datos con prestamos: " + ex.getMessage());
 
+        }
+
+    }
+
+    public void AgregarLDA() {
+
+        String SQL = "INSERT INTO `nomina.listas` (`NDL`, `Zona`, `Quincena`, `Dia 1/16`, `Dia 2/17`,"
+                + " `Dia 3/18`, `Dia 4/19`, `Dia 5/20`, `Dia 6/21`, `Dia 7/22`, `Dia 8/23`, `Dia 9/24`,"
+                + " `Dia 10/25`, `Dia 11/26`, `Dia 12/27`, `Dia 13/28`, `Dia 14/29`, `Dia 15/30`, "
+                + "`Dia 31`, `Apellido P`, `Apellido M`, `Nombre(s)`) VALUES (?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(LDA.getText()));
+            pst.setString(2, LDAZon.getText());
+            pst.setString(3, LDAQuin.getSelectedItem().toString());
+            pst.setString(4, ((JTextField)  Fecha1.getDateEditor().getUiComponent()).getText());
+            pst.setString(5, ((JTextField)  Fecha2.getDateEditor().getUiComponent()).getText());
+            pst.setString(6, ((JTextField)  Fecha3.getDateEditor().getUiComponent()).getText());
+            pst.setString(7, ((JTextField)  Fecha4.getDateEditor().getUiComponent()).getText());
+            pst.setString(8, ((JTextField)  Fecha5.getDateEditor().getUiComponent()).getText());
+            pst.setString(9, ((JTextField)  Fecha6.getDateEditor().getUiComponent()).getText());
+            pst.setString(10, ((JTextField)  Fecha7.getDateEditor().getUiComponent()).getText());
+            pst.setString(11, ((JTextField)  Fecha8.getDateEditor().getUiComponent()).getText());
+            pst.setString(12, ((JTextField)  Fecha9.getDateEditor().getUiComponent()).getText());
+            pst.setString(13,  ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText());
+            pst.setString(14,  ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText());
+            pst.setString(15,  ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText());
+            pst.setString(16,  ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText());
+            pst.setString(17,  ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText());
+            pst.setString(18,  ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText());
+            pst.setString(19,  ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText());
+            pst.setString(20, LDAAp.getText());
+            pst.setString(21, LDAAm.getText());
+            pst.setString(22, LDAName.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
+        } catch (SQLException error_AddLDA) {
+            JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
         }
 
     }
@@ -2153,7 +2210,7 @@ public final class Listas extends javax.swing.JFrame {
             );
 
             Statement statement = connect.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT `id_bd`, `Entra imss`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `empleados`");
+            ResultSet resultSet = statement.executeQuery("SELECT  `Dia 1/16`, `Dia 2/17`, `Dia 3/18`, `Dia 4/19`, `Dia 5/20`, `Dia 6/21`, `Dia 7/22`, `Dia 8/23`, `Dia 9/24`, `Dia 10/25`, `Dia 11/26`, `Dia 12/27`, `Dia 13/28`, `Dia 14/29`, `Dia 15/30`, `Dia 31` FROM `nomina.listas` WHERE" + LDA.getText());
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText());
@@ -2161,30 +2218,77 @@ public final class Listas extends javax.swing.JFrame {
                 XSSFRow row = spreadsheet.createRow(1);
                 XSSFCell cell;
                 cell = row.createCell(1);
-                cell.setCellValue("EMP ID");
+                cell.setCellValue("Fecha");
                 cell = row.createCell(2);
-                cell.setCellValue("EMP NAME");
+                cell.setCellValue("Apellido P");
                 cell = row.createCell(3);
-                cell.setCellValue("DEG");
+                cell.setCellValue("Apellido M");
                 cell = row.createCell(4);
-                cell.setCellValue("SALARY");
+                cell.setCellValue("Nombre(s)");
                 cell = row.createCell(5);
-                cell.setCellValue("DEPT");
+                cell.setCellValue("Entrada");
+                cell = row.createCell(6);
+                cell.setCellValue("Salida");
+                cell = row.createCell(7);
+                cell.setCellValue("Firma");
+
                 int i = 2;
 
                 while (resultSet.next()) {
                     row = spreadsheet.createRow(i);
                     cell = row.createCell(1);
-                    cell.setCellValue(resultSet.getInt("id_bd"));
-                    cell = row.createCell(2);
-                    cell.setCellValue(resultSet.getString("Entra imss"));
-                    cell = row.createCell(3);
-                    cell.setCellValue(resultSet.getString("Apellido P"));
-                    cell = row.createCell(4);
+                    cell.setCellValue(resultSet.getString("Dia 1/16"));
+                    row = spreadsheet.createRow(3);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 2/17"));
+                    row = spreadsheet.createRow(4);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 3/18"));
+                    row = spreadsheet.createRow(5);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 4/19"));
+                    row = spreadsheet.createRow(6);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 5/20"));
+                    row = spreadsheet.createRow(7);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 6/21"));
+                    row = spreadsheet.createRow(8);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 7/22"));
+                    row = spreadsheet.createRow(9);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 8/23"));
+                    row = spreadsheet.createRow(10);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 9/24"));
+                    row = spreadsheet.createRow(11);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 10/25"));
+                    row = spreadsheet.createRow(12);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 11/26"));
+                    row = spreadsheet.createRow(13);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 12/27"));
+                    row = spreadsheet.createRow(14);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 13/28"));
+                    row = spreadsheet.createRow(15);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 14/29"));
+                    row = spreadsheet.createRow(15);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 15/30"));
+                    row = spreadsheet.createRow(16);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("Dia 31"));
+                    /*row = spreadsheet.createRow(17);
+                    cell = row.createCell(i);
                     cell.setCellValue(resultSet.getString("Apellido M"));
                     cell = row.createCell(5);
                     cell.setCellValue(resultSet.getString("Nombre(s)"));
-                    i++;
+                    i++;*/
                 }
                 libro.write(archivo);
             }
@@ -2198,10 +2302,13 @@ public final class Listas extends javax.swing.JFrame {
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        AgregarLDA();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2218,27 +2325,23 @@ public final class Listas extends javax.swing.JFrame {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
 
-}
+                }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Listas.class  
+            java.util.logging.Logger.getLogger(Listas.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Listas.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Listas.class  
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Listas.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Listas.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Listas.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Listas.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -2267,6 +2370,7 @@ public final class Listas extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser Fecha7;
     private com.toedter.calendar.JDateChooser Fecha8;
     private com.toedter.calendar.JDateChooser Fecha9;
+    private javax.swing.JTextField LDA;
     private javax.swing.JTextField LDAAm;
     private javax.swing.JTextField LDAAp;
     private javax.swing.JTextField LDAName;
@@ -2277,8 +2381,8 @@ public final class Listas extends javax.swing.JFrame {
     private javax.swing.JTextField LDAfilap;
     private javax.swing.JTextField LDAfilname;
     private javax.swing.JCheckBox MTL;
-    private javax.swing.JTextField NLDA;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
