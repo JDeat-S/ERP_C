@@ -645,7 +645,8 @@ public final class Listas extends javax.swing.JFrame {
                     ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + "` WHERE " + ULDA.getText());
                     try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                         XSSFWorkbook libro = new XSSFWorkbook();
-                        XSSFSheet spreadsheet = libro.createSheet("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText());
+                        XSSFSheet spreadsheet = libro.createSheet(("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText() + " de la "
+                        + LDAQuin.getSelectedItem().toString()));
 
                         XSSFRow row = spreadsheet.createRow(1);
                         XSSFCell cell;
@@ -736,7 +737,6 @@ public final class Listas extends javax.swing.JFrame {
                 }
 
                 LDAZon.setText("");
-                CI.setSelected(false);
                 LDAQuin.setSelectedIndex(0);
                 LDAAp.setText("");
                 LDAAm.setText("");
@@ -802,8 +802,7 @@ public final class Listas extends javax.swing.JFrame {
 
                 JFileChooser chooser = new JFileChooser();
                 FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-                chooser.setSelectedFile(new File("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText() + " de la "
-                        + LDAQuin.getSelectedItem().toString()));
+                chooser.setSelectedFile(new File("Lista " + ULDA.getText() + " de " + LDAZon.getText()));
                 chooser.setFileFilter(filter);
                 chooser.setDialogTitle("Guardar archivo");
                 chooser.setAcceptAllFileFilterUsed(false);
@@ -829,7 +828,7 @@ public final class Listas extends javax.swing.JFrame {
                     ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + ".simss` WHERE " + ULDA.getText());
                     try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                         XSSFWorkbook libro = new XSSFWorkbook();
-                        XSSFSheet spreadsheet = libro.createSheet("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText());
+                        XSSFSheet spreadsheet = libro.createSheet("Lista " + ULDA.getText() + " de " + LDAZon.getText());
 
                         XSSFRow row = spreadsheet.createRow(1);
                         XSSFCell cell;
@@ -918,6 +917,7 @@ public final class Listas extends javax.swing.JFrame {
                 } catch (ClassNotFoundException | SQLException ex) {
                     Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
                 }
+
                 LDAZon.setText("");
                 CI.setSelected(false);
                 LDAQuin.setSelectedIndex(0);
@@ -940,7 +940,7 @@ public final class Listas extends javax.swing.JFrame {
                 Fecha14.setDate(null);
                 Fecha15.setDate(null);
                 Fecha16.setDate(null);
-                
+
                 JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
             } catch (SQLException error_AddLDA) {
                 JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
