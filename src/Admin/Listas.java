@@ -17,7 +17,6 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -33,7 +32,6 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.w3c.dom.NodeList;
 
 /**
  *
@@ -753,9 +751,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -810,15 +808,15 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha13.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha14.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha14.setDate(null);
+                //calM1.add(Calendar.DATE, 1);
+                //fin = calM1.getTime();
+                Fecha15.setDate(null);
+                //calM1.add(Calendar.DATE, 1);
+                //fin = calM1.getTime();
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -875,12 +873,12 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha14.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                //calM1.add(Calendar.DATE, 1);
+                //fin = calM1.getTime();
+                Fecha15.setDate(null);
+                //calM1.add(Calendar.DATE, 1);
+                //fin = calM1.getTime();
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -940,9 +938,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                //calM1.add(Calendar.DATE, 1);
+                //fin = calM1.getTime();
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1064,9 +1062,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1126,9 +1124,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1188,9 +1186,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1312,9 +1310,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1374,9 +1372,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1436,9 +1434,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1560,9 +1558,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1684,9 +1682,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1746,9 +1744,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1808,9 +1806,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1932,9 +1930,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1994,9 +1992,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -2056,9 +2054,9 @@ public final class Listas extends javax.swing.JFrame {
                 calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();
                 Fecha15.setDate(fin);
-                calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();
-                Fecha16.setDate(fin);
+                /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                Fecha16.setDate(null);
             } catch (ParseException ex) {
                 Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
             }
