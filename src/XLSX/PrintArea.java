@@ -279,6 +279,18 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
+
+                    rowSinestilo = spreadsheet.createRow(9);
+                    rowSinestilo.setHeight((short) 600);
+                    cellSinestilo = rowSinestilo.createCell(0);
+                    cellSinestilo.setCellValue(resultSet.getString("Dia 5/20"));
+                    cellSinestilo.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     9, //first row (0-based)
@@ -287,19 +299,12 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    rowSinestilo = spreadsheet.createRow(9);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 5/20"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
 
                     rowSinestilo = spreadsheet.createRow(10);
                     rowSinestilo.setHeight((short) 600);
@@ -314,6 +319,12 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
 
                     rowSinestilo = spreadsheet.createRow(11);
                     rowSinestilo.setHeight((short) 600);
@@ -328,6 +339,12 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
 
                     rowSinestilo = spreadsheet.createRow(12);
                     rowSinestilo.setHeight((short) 600);
@@ -342,6 +359,12 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
 
                     rowSinestilo = spreadsheet.createRow(13);
                     rowSinestilo.setHeight((short) 600);
@@ -356,6 +379,12 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
 
                     rowSinestilo = spreadsheet.createRow(14);
                     rowSinestilo.setHeight((short) 600);
@@ -370,6 +399,12 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
 
                     rowSinestilo = spreadsheet.createRow(15);
                     rowSinestilo.setHeight((short) 600);
@@ -384,6 +419,12 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
 
                     rowSinestilo = spreadsheet.createRow(16);
                     rowSinestilo.setHeight((short) 600);
@@ -398,6 +439,12 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
 
                     rowSinestilo = spreadsheet.createRow(17);
                     rowSinestilo.setHeight((short) 600);
@@ -412,6 +459,12 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
 
                     rowSinestilo = spreadsheet.createRow(18);
                     rowSinestilo.setHeight((short) 600);
@@ -426,6 +479,12 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
 
                     rowSinestilo = spreadsheet.createRow(19);
                     rowSinestilo.setHeight((short) 600);
@@ -440,6 +499,12 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
 
                     rowSinestilo = spreadsheet.createRow(20);
                     rowSinestilo.setHeight((short) 600);
@@ -454,6 +519,12 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
 
                     /*row = spreadsheet.createRow(17);
                     cell = row.createCell(i);
