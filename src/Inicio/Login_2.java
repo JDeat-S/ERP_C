@@ -233,11 +233,6 @@ public class Login_2 extends javax.swing.JFrame {
         });
 
         userrh.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        userrh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userrhActionPerformed(evt);
-            }
-        });
 
         jLabel5.setText("Usuario:");
 
@@ -311,12 +306,6 @@ public class Login_2 extends javax.swing.JFrame {
         );
 
         login.addTab("RH", jPanel2);
-
-        passnom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passnomActionPerformed(evt);
-            }
-        });
 
         jLabel9.setText("Usuario:");
 
@@ -418,10 +407,6 @@ public class Login_2 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void userrhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userrhActionPerformed
-
-    }//GEN-LAST:event_userrhActionPerformed
-
     private void btningreso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btningreso1ActionPerformed
         String pass = String.valueOf(passrh.getPassword());
         if (userrh.getText().isEmpty() || pass.isEmpty()) {
@@ -430,10 +415,6 @@ public class Login_2 extends javax.swing.JFrame {
             validarRH();
         }
     }//GEN-LAST:event_btningreso1ActionPerformed
-
-    private void passnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passnomActionPerformed
-
-    }//GEN-LAST:event_passnomActionPerformed
 
     private void btningreso2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btningreso2ActionPerformed
         String pass = String.valueOf(passnom.getPassword());

@@ -373,9 +373,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtname">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtnameActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnadd">
                   <Properties>
@@ -389,9 +386,6 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtuserActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
@@ -399,14 +393,8 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtAP">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAPActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="txtpass">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtpassActionPerformed"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>

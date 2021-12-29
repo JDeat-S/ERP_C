@@ -5482,6 +5482,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_ND_SCQ) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Santader corp Semanal: " + error_ND_SCQ.getMessage());
 
@@ -5566,6 +5570,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();ps.isClosed();
+            
+            
         } catch (SQLException error_pagos_SCQ) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Corporativo quincenal: " + error_pagos_SCQ.getMessage());
         }
@@ -5690,6 +5697,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();            
+            
         } catch (SQLException error_sh_pre_nom) {
             JOptionPane.showMessageDialog(null, "Error al compartir prestamos con nomina: " + error_sh_pre_nom.getMessage());
 
@@ -5820,6 +5830,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_ND_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + error_ND_FA.getMessage());
 
@@ -5930,6 +5944,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_ND_FP) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos puebla: " + error_ND_FP.getMessage());
 
@@ -6040,6 +6058,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_ND_FT) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos toluca: " + error_ND_FT.getMessage());
 
@@ -6150,6 +6172,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_ND_norte) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de norte: " + error_ND_norte.getMessage());
 
@@ -6260,6 +6286,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_ND_ofi) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Oficina: " + error_ND_ofi.getMessage());
 
@@ -6370,6 +6400,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_ND_pon) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Poniente: " + error_ND_pon.getMessage());
 
@@ -6480,6 +6514,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_ND_S1) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 1: " + error_ND_S1.getMessage());
 
@@ -6590,6 +6628,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_ND_S2) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 2: " + error_ND_S2.getMessage());
 
@@ -6786,6 +6828,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_pagos_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos acapulco: " + error_pagos_FA.getMessage());
 
@@ -6895,6 +6941,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_pagos_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos puebla: " + error_pagos_FA.getMessage());
 
@@ -6982,6 +7032,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_pagos_FT) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos toluca: " + error_pagos_FT.getMessage());
 
@@ -7071,6 +7125,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_pagos_norte) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en norte: " + error_pagos_norte.getMessage());
 
@@ -7159,6 +7217,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_pagos_poniente) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Poniente: " + error_pagos_poniente.getMessage());
 
@@ -7247,6 +7309,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_pagos_oficina) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en oficina: " + error_pagos_oficina.getMessage());
 
@@ -7335,6 +7401,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_pagos_sur1) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 1: " + error_pagos_sur1.getMessage());
 
@@ -7423,6 +7493,10 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            rs.isClosed();
+            ps.isClosed();
+            
+            
         } catch (SQLException error_pagos_sur2) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 2: " + error_pagos_sur2.getMessage());
 
@@ -7688,6 +7762,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
+            
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + e.getMessage());
 

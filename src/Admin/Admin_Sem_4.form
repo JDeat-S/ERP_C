@@ -124,7 +124,7 @@
                       <Component id="jScrollPane4" min="-2" pref="187" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane5" min="-2" pref="192" max="-2" attributes="0"/>
-                      <EmptySpace pref="112" max="32767" attributes="0"/>
+                      <EmptySpace pref="109" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1097,12 +1097,17 @@
                                                   <Component id="Servicio10" min="-2" pref="160" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="Importe10" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="NPadron" min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Importe10" min="-2" pref="71" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Component id="jPanel2" pref="0" max="32767" attributes="0"/>
+                                          <Component id="jPanel2" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1180,6 +1185,7 @@
                                               <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="TDIDP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jLabel16" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -1192,6 +1198,7 @@
                                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                       <Component id="Importe10" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Servicio10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="NPadron" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="Folio10" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1486,99 +1493,112 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="Folio11" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Fecha11" min="-2" pref="150" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Folio12" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Fecha12" min="-2" pref="150" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Folio13" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Fecha13" min="-2" pref="150" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Folio14" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Fecha14" min="-2" pref="150" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Folio15" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Fecha15" min="-2" pref="150" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Folio16" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Fecha16" min="-2" pref="150" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Folio17" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Fecha17" min="-2" pref="150" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Folio18" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Fecha18" min="-2" pref="150" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="Folio19" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Fecha19" min="-2" pref="150" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="Folio12" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Fecha12" min="-2" pref="150" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Folio13" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Fecha13" min="-2" pref="150" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Folio14" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Fecha14" min="-2" pref="150" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Folio15" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Fecha15" min="-2" pref="150" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Folio16" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Fecha16" min="-2" pref="150" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Folio17" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Fecha17" min="-2" pref="150" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Folio18" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Fecha18" min="-2" pref="150" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Folio19" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Fecha19" min="-2" pref="150" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="Servicio12" min="-2" pref="160" max="-2" attributes="0"/>
+                                          <Component id="Servicio19" min="-2" pref="160" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Importe12" min="-2" pref="71" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="Servicio13" min="-2" pref="160" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Importe13" min="-2" pref="71" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="Servicio14" min="-2" pref="160" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Importe14" min="-2" pref="71" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="Servicio15" min="-2" pref="160" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Importe15" min="-2" pref="71" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="Servicio16" min="-2" pref="160" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Importe16" min="-2" pref="71" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="Servicio17" min="-2" pref="160" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Importe17" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="NPadron9" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="Importe19" min="-2" pref="71" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Component id="Servicio18" min="-2" pref="160" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="NPadron8" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Importe18" min="-2" pref="71" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Component id="Servicio19" min="-2" pref="160" max="-2" attributes="0"/>
+                                          <Component id="Servicio17" min="-2" pref="160" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Importe19" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="NPadron7" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Importe17" min="-2" pref="71" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="Servicio16" min="-2" pref="160" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="NPadron6" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Importe16" min="-2" pref="71" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Servicio15" min="-2" pref="160" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="NPadron5" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Importe15" min="-2" pref="71" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Servicio14" min="-2" pref="160" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="NPadron4" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Importe14" min="-2" pref="71" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Servicio13" min="-2" pref="160" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="NPadron3" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Importe13" min="-2" pref="71" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Servicio12" min="-2" pref="160" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="NPadron2" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Importe12" min="-2" pref="71" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
                                           <Component id="Servicio11" min="-2" pref="160" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="NPadron1" min="-2" pref="80" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Importe11" min="-2" pref="71" max="-2" attributes="0"/>
                                       </Group>
@@ -1590,22 +1610,26 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="Folio11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="Servicio11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="Importe11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="Fecha11" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="Folio11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Importe11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="Fecha11" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                                          <Component id="Servicio11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="NPadron1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="Folio12" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="Servicio12" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="Importe12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="NPadron2" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="Fecha12" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -1613,46 +1637,57 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="Folio13" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="Servicio13" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="Importe13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="NPadron3" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="Fecha13" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Servicio13" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="Folio14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Servicio14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Importe14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="Folio14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Importe14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="NPadron4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="Servicio14" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Component id="Fecha14" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Fecha14" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="Folio15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Servicio15" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Importe15" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="Fecha15" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="Servicio15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="NPadron5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="Folio16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Servicio16" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Importe16" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="Fecha16" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="Servicio16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="NPadron6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="Folio17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Servicio17" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Importe17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="NPadron7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="Fecha17" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Servicio17" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1660,6 +1695,7 @@
                                           <Component id="Folio18" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Servicio18" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Importe18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="NPadron8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="Fecha18" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -1669,6 +1705,7 @@
                                           <Component id="Folio19" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Servicio19" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Importe19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="NPadron9" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="Fecha19" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -1858,8 +1895,33 @@
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe19KeyReleased"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JTextField" name="NPadron1">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="NPadron2">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="NPadron3">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="NPadron4">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="NPadron5">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="NPadron6">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="NPadron7">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="NPadron8">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="NPadron9">
+                        </Component>
                       </SubComponents>
                     </Container>
+                    <Component class="javax.swing.JTextField" name="NPadron">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel26">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="# De padron"/>
+                      </Properties>
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
@@ -2523,7 +2585,7 @@
                     </Container>
                     <Component class="javax.swing.JLabel" name="jLabel22">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Servicio"/>
+                        <Property name="text" type="java.lang.String" value="Concepto"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel23">
