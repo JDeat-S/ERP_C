@@ -18,6 +18,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import org.apache.poi.hssf.usermodel.HSSFPrintSetup;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.PaperSize;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
@@ -64,11 +68,29 @@ public class PrintArea {
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
 
+                XSSFCellStyle Encabezado = libro.createCellStyle();
+                Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+
+                XSSFCellStyle Fechas = libro.createCellStyle();
+
+                Fechas.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                Fechas.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                Fechas.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                Fechas.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                Fechas.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
+                Fechas.setVerticalAlignment(XSSFCellStyle.VERTICAL_JUSTIFY);
+
                 XSSFCellStyle style2 = libro.createCellStyle();
                 style2.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 style2.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+                style2.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                style2.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                style2.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                style2.setBorderTop(XSSFCellStyle.BORDER_THIN);
+
                 cell.setCellValue("L I S T A  D E  A S I S T E N C I A");
-                cell.setCellStyle(style2);
+                cell.setCellStyle(Encabezado);
 
                 spreadsheet.addMergedRegion(
                         new CellRangeAddress(
@@ -83,7 +105,7 @@ public class PrintArea {
                 XSSFCell cellConf;
                 cellConf = rowConf.createCell(2);
                 cellConf.setCellValue("CONFORT SERVICE PRESTIGE");
-                cellConf.setCellStyle(style2);
+                cellConf.setCellStyle(Encabezado);
 
                 spreadsheet.addMergedRegion(
                         new CellRangeAddress(
@@ -98,7 +120,7 @@ public class PrintArea {
                 rowSinestilo.setHeight((short) 500);
                 XSSFCell cellSinestilo;
                 cellSinestilo = rowSinestilo.createCell(0);
-                spreadsheet.setColumnWidth(0, 5650);
+                spreadsheet.setColumnWidth(0, 4600);
                 cellSinestilo.setCellValue("Fecha");
                 cellSinestilo.setCellStyle(style2);
                 cellSinestilo = rowSinestilo.createCell(1);
@@ -289,95 +311,92 @@ public class PrintArea {
                                     7 //last column (0-based)
                             )
                     );
-                    XSSFCellStyle style3 = libro.createCellStyle();
-                    style3.setAlignment(XSSFCellStyle.ALIGN_RIGHT);
-                    style3.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
                     cellSinestilo = rowSinestilo.createCell(8);
                     cellSinestilo.setCellValue(resultSet.getString("Zona"));
-                    cellSinestilo.setCellStyle(style3);
+                    cellSinestilo.setCellStyle(style2);
                     cellSinestilo = rowSinestilo.createCell(9);
                     cellSinestilo.setCellValue(resultSet.getString("NDL"));
-                    cellSinestilo.setCellStyle(style3);
+                    cellSinestilo.setCellStyle(style2);
                     rowSinestilo = spreadsheet.createRow(5);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 1/16"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(6);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 2/17"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(7);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 3/18"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(8);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 4/19"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(9);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 5/20"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(10);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 6/21"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(11);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 7/22"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(12);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 8/23"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(13);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 9/24"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(14);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 10/25"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(15);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 11/26"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(16);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 12/27"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(17);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 13/28"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(18);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 14/29"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(19);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 15/30"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     rowSinestilo = spreadsheet.createRow(20);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 31"));
-                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo.setCellStyle(Fechas);
                     /*row = spreadsheet.createRow(17);
                     cell = row.createCell(i);
                     cell.setCellValue(resultSet.getString("Apellido M"));
@@ -385,6 +404,17 @@ public class PrintArea {
                     cell.setCellValue(resultSet.getString("Nombre(s)"));
                     i++;*/
                 }
+
+                spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
+                spreadsheet.getPrintSetup().setLandscape(true); // Dirección de impresión, true: horizontal, false: vertical
+                spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.1); // Margen (abajo)  
+                spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.3); // Margen (izquierda)
+                spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
+                spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.49); // Margen (arriba)
+                spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
+                spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
+
+                spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
                 libro.write(archivo);
             }
             Desktop.getDesktop().open(archivoXLS);
