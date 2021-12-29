@@ -1,6 +1,6 @@
 package Inicio;
 
-import Admin.Listas;
+import Admin.Admin_Listas_5;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;

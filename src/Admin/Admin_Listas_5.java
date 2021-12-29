@@ -23,6 +23,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -41,7 +42,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDeat
  */
-public final class Listas extends javax.swing.JFrame {
+public final class Admin_Listas_5 extends javax.swing.JFrame {
 
     /**
      * Creates new form Listas
@@ -50,7 +51,7 @@ public final class Listas extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
 
-    public Listas() {
+    public Admin_Listas_5() {
         initComponents();
         SHempleados();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
@@ -74,7 +75,9 @@ public final class Listas extends javax.swing.JFrame {
         LDAfilam.setVisible(false);
         LDAfilname.setVisible(false);
 // </editor-fold>
-
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(6);
+        setIconImage(new ImageIcon(Admin_Listas_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
     }
 
     /**
@@ -128,12 +131,32 @@ public final class Listas extends javax.swing.JFrame {
         LDAfilam = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         LDAZon = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        Agregar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         ULDA = new javax.swing.JLabel();
         NYear = new javax.swing.JCheckBox();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        FillLCIAp = new javax.swing.JTextField();
+        FillLCIAm = new javax.swing.JTextField();
+        FillLCIName = new javax.swing.JTextField();
+        FillLCIQuin = new javax.swing.JComboBox<>();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel2.setText("LISTA DE ASISTENCIA");
@@ -272,10 +295,10 @@ public final class Listas extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Agregar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Agregar.setText("Agregar");
+        Agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                AgregarActionPerformed(evt);
             }
         });
 
@@ -290,134 +313,208 @@ public final class Listas extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setText("Filtro:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+
+        jLabel12.setText("jLabel12");
+
+        FillLCIQuin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane7.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(82, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FillLCIAp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FillLCIAm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FillLCIName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FillLCIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12)
+                    .addComponent(FillLCIAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jScrollPane5.setViewportView(jPanel2);
+
+        jTabbedPane3.addTab("Foraneos acapulco", jScrollPane5);
+
+        jScrollPane3.setViewportView(jTabbedPane3);
+
+        jTabbedPane1.addTab("Listas con IMSS", jScrollPane3);
+
+        jTabbedPane2.addTab("tab1", jScrollPane6);
+
+        jScrollPane4.setViewportView(jTabbedPane2);
+
+        jTabbedPane1.addTab("Listas sin IMSS", jScrollPane4);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addComponent(jLabel3)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(LDAAp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LDAAm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))))
-                    .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(MTL)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ULDA))
+                                .addGap(43, 43, 43)
+                                .addComponent(jLabel3))
+                            .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel8))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(LDAAp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LDAAm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NYear))
+                                        .addComponent(Agregar))
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1))
+                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1040, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(MTL)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel7)
+                                        .addComponent(jLabel11)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ULDA))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel8))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(CI))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(301, 301, 301)
-                        .addComponent(jLabel2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LDAfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelFil)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LDAfilname, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LDAfilap, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LDAfilam, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(NYear))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel7)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(CI))))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(301, 301, 301)
+                                .addComponent(jLabel2)))
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LDAfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelFil)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LDAfilname, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LDAfilap, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LDAfilam, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(8, 8, 8)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel9)
-                            .addComponent(LDAfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelFil)
-                            .addComponent(LDAfilname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LDAfilap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LDAfilam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(5, 5, 5)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(CI)
-                                    .addComponent(jLabel7)
-                                    .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(MTL)
-                                    .addComponent(jLabel11)
-                                    .addComponent(ULDA))
-                                .addGap(7, 7, 7)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(NYear)))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8)
+                            .addComponent(CI)
+                            .addComponent(jLabel7)
+                            .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(MTL)
+                            .addComponent(jLabel11)
+                            .addComponent(ULDA))
                         .addGap(7, 7, 7)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NYear))
+                        .addGap(33, 33, 33)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
@@ -425,42 +522,59 @@ public final class Listas extends javax.swing.JFrame {
                             .addComponent(jLabel6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(LDAAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(LDAAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton2)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(LDAfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelFil)
+                            .addComponent(LDAfilname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LDAfilap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LDAfilam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(LDAAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LDAAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Agregar)))
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -469,11 +583,11 @@ public final class Listas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1013, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
         );
 
         pack();
@@ -489,7 +603,8 @@ public final class Listas extends javax.swing.JFrame {
 
                     ULDA.setText("" + (Integer.parseInt(rs.getString("AUTO_INCREMENT")) - 1));
                 }
-
+                st.isClosed();
+                rs.isClosed();
             } catch (SQLException e) {
 
                 JOptionPane.showMessageDialog(null, "Error al mostrar ultima lista registrada de " + LDAZon.getText() + ": " + e);
@@ -506,7 +621,8 @@ public final class Listas extends javax.swing.JFrame {
 
                     ULDA.setText("" + (Integer.parseInt(rs.getString("AUTO_INCREMENT")) - 1));
                 }
-
+                st.isClosed();
+                rs.isClosed();
             } catch (SQLException e) {
 
                 JOptionPane.showMessageDialog(null, "Error al mostrar ultima lista registrada de " + LDAZon.getText() + ": " + e);
@@ -578,7 +694,7 @@ public final class Listas extends javax.swing.JFrame {
             ps.isClosed();
             rs.isClosed();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al compartir datos con prestamos: " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al compartir datos con Listas de asistencia: " + ex.getMessage());
 
         }
 
@@ -649,8 +765,7 @@ public final class Listas extends javax.swing.JFrame {
                     ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + "` WHERE " + ULDA.getText());
                     try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                         XSSFWorkbook libro = new XSSFWorkbook();
-                        XSSFSheet spreadsheet = libro.createSheet(("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText() + " de la "
-                                + LDAQuin.getSelectedItem().toString()));
+                        XSSFSheet spreadsheet = libro.createSheet(("Lista"));
 
                         XSSFRow row = spreadsheet.createRow((short) 0);
                         XSSFCell cell = (XSSFCell) row.createCell((short) 0);
@@ -688,11 +803,10 @@ public final class Listas extends javax.swing.JFrame {
                                 )
                         );
 
-                        XSSFRow rowConf = spreadsheet.createRow(1);
-                        XSSFCell cellConf;
-                        cellConf = rowConf.createCell(2);
-                        cellConf.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
-                        cellConf.setCellStyle(Encabezado);
+                        row = spreadsheet.createRow(1);
+                        cell = row.createCell(2);
+                        cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
+                        cell.setCellStyle(Encabezado);
 
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
@@ -703,16 +817,15 @@ public final class Listas extends javax.swing.JFrame {
                                 )
                         );
 //quincena etc mañana
-                        XSSFRow rowSinestilo = spreadsheet.createRow(4);
-                        rowSinestilo.setHeight((short) 500);
-                        XSSFCell cellSinestilo;
-                        cellSinestilo = rowSinestilo.createCell(0);
+                        row = spreadsheet.createRow(4);
+                        row.setHeight((short) 500);
+                        cell = row.createCell(0);
                         spreadsheet.setColumnWidth(0, 4500);
-                        cellSinestilo.setCellValue("Fecha");
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(1);
-                        cellSinestilo.setCellValue("Nombre completo");
-                        cellSinestilo.setCellStyle(Contenido);
+                        cell.setCellValue("Fecha");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(1);
+                        cell.setCellValue("Nombre completo");
+                        cell.setCellStyle(Contenido);
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
                                         4, //first row (0-based)
@@ -721,40 +834,40 @@ public final class Listas extends javax.swing.JFrame {
                                         3 //last column (0-based)
                                 )
                         );
-                        cellSinestilo = rowSinestilo.createCell(2);
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(3);
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(4);
-                        cellSinestilo.setCellValue("Entrada");
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(5);
-                        cellSinestilo.setCellValue("Salida");
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(6);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellValue("Entrada");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellValue("Salida");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
                         spreadsheet.setColumnWidth(6, 3000);
-                        cellSinestilo.setCellValue("Firma");
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(7);
+                        cell.setCellValue("Firma");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
                         spreadsheet.setColumnWidth(7, 5650);
-                        cellSinestilo.setCellValue("Lugar");
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(8);
+                        cell.setCellValue("Lugar");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(8);
                         spreadsheet.setColumnWidth(8, 4500);
-                        cellSinestilo.setCellValue("Doble");
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(9);
+                        cell.setCellValue("Doble");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
                         spreadsheet.setColumnWidth(9, 5650);
-                        cellSinestilo.setCellValue("Observaciones");
-                        cellSinestilo.setCellStyle(Contenido);
+                        cell.setCellValue("Observaciones");
+                        cell.setCellStyle(Contenido);
 
                         //  int i = 2;
                         while (resultSet.next()) {
-                            rowSinestilo = spreadsheet.createRow(2);
-                            rowSinestilo.setHeight((short) 400);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Quincena"));
-                            cellSinestilo.setCellStyle(Contenido);
+                            row = spreadsheet.createRow(2);
+                            row.setHeight((short) 400);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Quincena"));
+                            cell.setCellStyle(Contenido);
 
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
@@ -764,10 +877,10 @@ public final class Listas extends javax.swing.JFrame {
                                             2 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
 
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
@@ -777,38 +890,38 @@ public final class Listas extends javax.swing.JFrame {
                                             7 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellValue(resultSet.getString("Apellido P") + " "
+                            cell = row.createCell(4);
+                            cell.setCellValue(resultSet.getString("Apellido P") + " "
                                     + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                            cellSinestilo.setCellStyle(Encabezado);
+                            cell.setCellStyle(Encabezado);
 
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellValue(resultSet.getString("Apellido P") + " "
+                            cell = row.createCell(5);
+                            cell.setCellValue(resultSet.getString("Apellido P") + " "
                                     + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Encabezado);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Encabezado);
 
-                            cellSinestilo.setCellValue(resultSet.getString("Apellido P") + " "
+                            cell.setCellValue(resultSet.getString("Apellido P") + " "
                                     + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                            cellSinestilo.setCellStyle(Encabezado);
+                            cell.setCellStyle(Encabezado);
 
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellValue(resultSet.getString("Apellido P") + " "
+                            cell = row.createCell(7);
+                            cell.setCellValue(resultSet.getString("Apellido P") + " "
                                     + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                            cellSinestilo.setCellStyle(Encabezado);
+                            cell.setCellStyle(Encabezado);
 
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellValue(resultSet.getString("Zona"));
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellValue(resultSet.getString("NDL"));
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellValue(resultSet.getString("Zona"));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellValue(resultSet.getInt("NDL"));
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(5);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellStyle(Fechas);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 1/16"));
+                            row = spreadsheet.createRow(5);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellStyle(Fechas);
+                            cell.setCellValue(resultSet.getString("Dia 1/16"));
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             5, //first row (0-based)
@@ -817,30 +930,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(6);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 2/17"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(6);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 2/17"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             6, //first row (0-based)
@@ -849,30 +962,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(7);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 3/18"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(7);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 3/18"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             7, //first row (0-based)
@@ -881,30 +994,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(8);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 4/19"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(8);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 4/19"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             8, //first row (0-based)
@@ -913,30 +1026,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(9);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 5/20"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(9);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 5/20"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             9, //first row (0-based)
@@ -945,30 +1058,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(10);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 6/21"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(10);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 6/21"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             10, //first row (0-based)
@@ -977,30 +1090,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(11);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 7/22"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(11);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 7/22"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             11, //first row (0-based)
@@ -1009,30 +1122,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(12);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 8/23"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(12);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 8/23"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             12, //first row (0-based)
@@ -1041,30 +1154,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(13);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 9/24"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(13);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 9/24"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             13, //first row (0-based)
@@ -1073,30 +1186,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(14);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 10/25"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(14);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 10/25"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             14, //first row (0-based)
@@ -1105,30 +1218,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(15);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 11/26"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(15);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 11/26"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             15, //first row (0-based)
@@ -1137,30 +1250,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(16);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 12/27"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(16);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 12/27"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             16, //first row (0-based)
@@ -1169,30 +1282,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(17);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 13/28"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(17);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 13/28"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             17, //first row (0-based)
@@ -1201,30 +1314,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(18);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 14/29"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(18);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 14/29"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             18, //first row (0-based)
@@ -1233,30 +1346,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(19);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 15/30"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(19);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 15/30"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             19, //first row (0-based)
@@ -1265,30 +1378,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(20);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 31"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(20);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 31"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             20, //first row (0-based)
@@ -1297,24 +1410,24 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
                             /*row = spreadsheet.createRow(17);
                     cell = row.createCell(i);
@@ -1341,11 +1454,12 @@ public final class Listas extends javax.swing.JFrame {
                     try {
                         throw e;
                     } catch (IOException | NumberFormatException ex) {
-                        Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                pst.isClosed();
 
                 LDAZon.setText("");
                 LDAQuin.setSelectedIndex(0);
@@ -1372,7 +1486,7 @@ public final class Listas extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
 
             } catch (SQLException error_AddLDA) {
-                JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
+                JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia: " + error_AddLDA);
             }
 
         }
@@ -1413,7 +1527,7 @@ public final class Listas extends javax.swing.JFrame {
 
                 JFileChooser chooser = new JFileChooser();
                 FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-                chooser.setSelectedFile(new File("Lista " + ULDA.getText() + " de " + LDAZon.getText()));
+                chooser.setSelectedFile(new File("Lista " + ULDA.getText() + " de " + LDAZon.getText() + "de la " + LDAQuin.getSelectedItem().toString()));
                 chooser.setFileFilter(filter);
                 chooser.setDialogTitle("Guardar archivo");
                 chooser.setAcceptAllFileFilterUsed(false);
@@ -1439,7 +1553,7 @@ public final class Listas extends javax.swing.JFrame {
                     ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + ".simss` WHERE " + ULDA.getText());
                     try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                         XSSFWorkbook libro = new XSSFWorkbook();
-                        XSSFSheet spreadsheet = libro.createSheet("Lista " + ULDA.getText() + " de " + LDAZon.getText());
+                        XSSFSheet spreadsheet = libro.createSheet("Lista " + ULDA.getText() + " de " + LDAZon.getText() + "de la " + LDAQuin.getSelectedItem().toString());
 
                         XSSFRow row = spreadsheet.createRow((short) 0);
                         XSSFCell cell = (XSSFCell) row.createCell((short) 0);
@@ -1477,11 +1591,10 @@ public final class Listas extends javax.swing.JFrame {
                                 )
                         );
 
-                        XSSFRow rowConf = spreadsheet.createRow(1);
-                        XSSFCell cellConf;
-                        cellConf = rowConf.createCell(2);
-                        cellConf.setCellValue("CONFORT SERVICE PRESTIGE");
-                        cellConf.setCellStyle(Encabezado);
+                        row = spreadsheet.createRow(1);
+                        cell = row.createCell(2);
+                        cell.setCellValue("CONFORT SERVICE PRESTIGE");
+                        cell.setCellStyle(Encabezado);
 
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
@@ -1492,16 +1605,15 @@ public final class Listas extends javax.swing.JFrame {
                                 )
                         );
 //quincena etc mañana
-                        XSSFRow rowSinestilo = spreadsheet.createRow(4);
-                        rowSinestilo.setHeight((short) 500);
-                        XSSFCell cellSinestilo;
-                        cellSinestilo = rowSinestilo.createCell(0);
+                        row = spreadsheet.createRow(4);
+                        row.setHeight((short) 500);
+                        cell = row.createCell(0);
                         spreadsheet.setColumnWidth(0, 4500);
-                        cellSinestilo.setCellValue("Fecha");
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(1);
-                        cellSinestilo.setCellValue("Nombre completo");
-                        cellSinestilo.setCellStyle(Contenido);
+                        cell.setCellValue("Fecha");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(1);
+                        cell.setCellValue("Nombre completo");
+                        cell.setCellStyle(Contenido);
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
                                         4, //first row (0-based)
@@ -1510,40 +1622,40 @@ public final class Listas extends javax.swing.JFrame {
                                         3 //last column (0-based)
                                 )
                         );
-                        cellSinestilo = rowSinestilo.createCell(2);
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(3);
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(4);
-                        cellSinestilo.setCellValue("Entrada");
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(5);
-                        cellSinestilo.setCellValue("Salida");
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(6);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellValue("Entrada");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellValue("Salida");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
                         spreadsheet.setColumnWidth(6, 3000);
-                        cellSinestilo.setCellValue("Firma");
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(7);
+                        cell.setCellValue("Firma");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
                         spreadsheet.setColumnWidth(7, 5650);
-                        cellSinestilo.setCellValue("Lugar");
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(8);
+                        cell.setCellValue("Lugar");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(8);
                         spreadsheet.setColumnWidth(8, 4500);
-                        cellSinestilo.setCellValue("Doble");
-                        cellSinestilo.setCellStyle(Contenido);
-                        cellSinestilo = rowSinestilo.createCell(9);
+                        cell.setCellValue("Doble");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
                         spreadsheet.setColumnWidth(9, 5650);
-                        cellSinestilo.setCellValue("Observaciones");
-                        cellSinestilo.setCellStyle(Contenido);
+                        cell.setCellValue("Observaciones");
+                        cell.setCellStyle(Contenido);
 
                         //  int i = 2;
                         while (resultSet.next()) {
-                            rowSinestilo = spreadsheet.createRow(2);
-                            rowSinestilo.setHeight((short) 400);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Quincena"));
-                            cellSinestilo.setCellStyle(Contenido);
+                            row = spreadsheet.createRow(2);
+                            row.setHeight((short) 400);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Quincena"));
+                            cell.setCellStyle(Contenido);
 
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
@@ -1553,13 +1665,13 @@ public final class Listas extends javax.swing.JFrame {
                                             2 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellValue("Servicio");
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellValue("Servicio");
+                            cell.setCellStyle(Contenido);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             2, //first row (0-based)
@@ -1568,26 +1680,26 @@ public final class Listas extends javax.swing.JFrame {
                                             7 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellValue(resultSet.getString("Zona"));
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellValue(resultSet.getString("NDL"));
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellValue(resultSet.getString("Zona"));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellValue(resultSet.getString("NDL"));
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(5);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellStyle(Fechas);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 1/16"));
+                            row = spreadsheet.createRow(5);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellStyle(Fechas);
+                            cell.setCellValue(resultSet.getString("Dia 1/16"));
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             5, //first row (0-based)
@@ -1596,30 +1708,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(6);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 2/17"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(6);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 2/17"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             6, //first row (0-based)
@@ -1628,30 +1740,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(7);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 3/18"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(7);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 3/18"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             7, //first row (0-based)
@@ -1660,30 +1772,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(8);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 4/19"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(8);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 4/19"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             8, //first row (0-based)
@@ -1692,30 +1804,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(9);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 5/20"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(9);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 5/20"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             9, //first row (0-based)
@@ -1724,30 +1836,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(10);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 6/21"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(10);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 6/21"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             10, //first row (0-based)
@@ -1756,30 +1868,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(11);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 7/22"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(11);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 7/22"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             11, //first row (0-based)
@@ -1788,30 +1900,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(12);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 8/23"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(12);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 8/23"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             12, //first row (0-based)
@@ -1820,30 +1932,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(13);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 9/24"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(13);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 9/24"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             13, //first row (0-based)
@@ -1852,30 +1964,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(14);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 10/25"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(14);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 10/25"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             14, //first row (0-based)
@@ -1884,30 +1996,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(15);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 11/26"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(15);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 11/26"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             15, //first row (0-based)
@@ -1916,30 +2028,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(16);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 12/27"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(16);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 12/27"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             16, //first row (0-based)
@@ -1948,30 +2060,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(17);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 13/28"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(17);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 13/28"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             17, //first row (0-based)
@@ -1980,30 +2092,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(18);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 14/29"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(18);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 14/29"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             18, //first row (0-based)
@@ -2012,30 +2124,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(19);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 15/30"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(19);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 15/30"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             19, //first row (0-based)
@@ -2044,30 +2156,30 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
-                            rowSinestilo = spreadsheet.createRow(20);
-                            rowSinestilo.setHeight((short) 600);
-                            cellSinestilo = rowSinestilo.createCell(0);
-                            cellSinestilo.setCellValue(resultSet.getString("Dia 31"));
-                            cellSinestilo.setCellStyle(Fechas);
+                            row = spreadsheet.createRow(20);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Dia 31"));
+                            cell.setCellStyle(Fechas);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             20, //first row (0-based)
@@ -2076,24 +2188,24 @@ public final class Listas extends javax.swing.JFrame {
                                             3 //last column (0-based)
                                     )
                             );
-                            cellSinestilo = rowSinestilo.createCell(1);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(2);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(3);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(4);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(5);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(6);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(7);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(8);
-                            cellSinestilo.setCellStyle(Contenido);
-                            cellSinestilo = rowSinestilo.createCell(9);
-                            cellSinestilo.setCellStyle(Contenido);
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
 
                             /*row = spreadsheet.createRow(17);
                     cell = row.createCell(i);
@@ -2120,10 +2232,10 @@ public final class Listas extends javax.swing.JFrame {
                     try {
                         throw e;
                     } catch (IOException | NumberFormatException ex) {
-                        Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                 LDAZon.setText("");
@@ -2148,7 +2260,7 @@ public final class Listas extends javax.swing.JFrame {
                 Fecha14.setDate(null);
                 Fecha15.setDate(null);
                 Fecha16.setDate(null);
-
+                pst.isClosed();
                 JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
             } catch (SQLException error_AddLDA) {
                 JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
@@ -2245,7 +2357,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             }
@@ -2313,7 +2425,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 //</editor-fold>
@@ -2380,7 +2492,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 //</editor-fold>
@@ -2447,7 +2559,7 @@ public final class Listas extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
@@ -2513,7 +2625,7 @@ public final class Listas extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -2579,7 +2691,7 @@ public final class Listas extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
@@ -2645,7 +2757,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -2711,7 +2823,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 abril">
@@ -2777,7 +2889,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -2843,7 +2955,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 may">
@@ -2909,7 +3021,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -2975,7 +3087,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jun">
@@ -3041,7 +3153,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -3107,7 +3219,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jul">
@@ -3173,7 +3285,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -3239,7 +3351,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 ago">
@@ -3305,7 +3417,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -3371,7 +3483,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 sep">
@@ -3437,7 +3549,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -3503,7 +3615,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 oct">
@@ -3569,7 +3681,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -3635,7 +3747,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 nov">
@@ -3701,7 +3813,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -3767,7 +3879,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 dic">
@@ -3833,7 +3945,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
         }
@@ -3918,7 +4030,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             }
@@ -3982,7 +4094,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 //</editor-fold>
@@ -4045,7 +4157,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 //</editor-fold>
@@ -4108,7 +4220,7 @@ public final class Listas extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
@@ -4170,7 +4282,7 @@ public final class Listas extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -4232,7 +4344,7 @@ public final class Listas extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
@@ -4294,7 +4406,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -4356,7 +4468,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 abril">
@@ -4418,7 +4530,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -4480,7 +4592,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 may">
@@ -4542,7 +4654,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -4604,7 +4716,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jun">
@@ -4666,7 +4778,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -4728,7 +4840,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jul">
@@ -4790,7 +4902,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -4852,7 +4964,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 ago">
@@ -4914,7 +5026,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -4976,7 +5088,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 sep">
@@ -5038,7 +5150,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -5100,7 +5212,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 oct">
@@ -5162,7 +5274,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -5224,7 +5336,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 nov">
@@ -5286,7 +5398,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -5348,7 +5460,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 dic">
@@ -5410,7 +5522,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
         }
@@ -5483,9 +5595,9 @@ public final class Listas extends javax.swing.JFrame {
         MostrarULDA();
     }//GEN-LAST:event_EmpleadosShMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
         AgregarLDA();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_AgregarActionPerformed
 
     private void CIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIActionPerformed
         if (CI.isSelected() == true) {
@@ -5602,7 +5714,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             }
@@ -5670,7 +5782,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 //</editor-fold>
@@ -5737,7 +5849,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 //</editor-fold>
@@ -5804,7 +5916,7 @@ public final class Listas extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
@@ -5870,7 +5982,7 @@ public final class Listas extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -5936,7 +6048,7 @@ public final class Listas extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
@@ -6002,7 +6114,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -6068,7 +6180,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 abril">
@@ -6134,7 +6246,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -6200,7 +6312,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 may">
@@ -6266,7 +6378,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -6332,7 +6444,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jun">
@@ -6398,7 +6510,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -6464,7 +6576,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jul">
@@ -6530,7 +6642,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -6596,7 +6708,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 ago">
@@ -6662,7 +6774,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -6728,7 +6840,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 sep">
@@ -6794,7 +6906,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -6860,7 +6972,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 oct">
@@ -6926,7 +7038,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -6992,7 +7104,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 nov">
@@ -7058,7 +7170,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -7124,7 +7236,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 dic">
@@ -7190,7 +7302,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
         }
@@ -7275,7 +7387,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             }
@@ -7339,7 +7451,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 //</editor-fold>
@@ -7402,7 +7514,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 //</editor-fold>
@@ -7465,7 +7577,7 @@ public final class Listas extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
@@ -7527,7 +7639,7 @@ public final class Listas extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -7589,7 +7701,7 @@ public final class Listas extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
@@ -7651,7 +7763,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -7713,7 +7825,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 abril">
@@ -7775,7 +7887,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -7837,7 +7949,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 may">
@@ -7899,7 +8011,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -7961,7 +8073,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jun">
@@ -8023,7 +8135,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -8085,7 +8197,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jul">
@@ -8147,7 +8259,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -8209,7 +8321,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 ago">
@@ -8271,7 +8383,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -8333,7 +8445,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 sep">
@@ -8395,7 +8507,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -8457,7 +8569,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 oct">
@@ -8519,7 +8631,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -8581,7 +8693,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 nov">
@@ -8643,7 +8755,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -8705,7 +8817,7 @@ public final class Listas extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     Fecha16.setDate(null);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 dic">
@@ -8767,7 +8879,7 @@ public final class Listas extends javax.swing.JFrame {
                     fin = calM1.getTime();
                     Fecha16.setDate(fin);
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
         }
@@ -8860,31 +8972,25 @@ public final class Listas extends javax.swing.JFrame {
 
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Listas.class
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Admin_Listas_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Listas.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Listas.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Listas.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Listas().setVisible(true);
+            new Admin_Listas_5().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Agregar;
     private javax.swing.JCheckBox CI;
     private javax.swing.JTable EmpleadosSh;
     private com.toedter.calendar.JDateChooser Fecha1;
@@ -8903,6 +9009,10 @@ public final class Listas extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser Fecha7;
     private com.toedter.calendar.JDateChooser Fecha8;
     private com.toedter.calendar.JDateChooser Fecha9;
+    private javax.swing.JTextField FillLCIAm;
+    private javax.swing.JTextField FillLCIAp;
+    private javax.swing.JTextField FillLCIName;
+    private javax.swing.JComboBox<String> FillLCIQuin;
     private javax.swing.JTextField LDA;
     private javax.swing.JTextField LDAAm;
     private javax.swing.JTextField LDAAp;
@@ -8917,9 +9027,12 @@ public final class Listas extends javax.swing.JFrame {
     private javax.swing.JCheckBox MTL;
     private javax.swing.JCheckBox NYear;
     private javax.swing.JLabel ULDA;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -8929,7 +9042,17 @@ public final class Listas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

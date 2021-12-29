@@ -5,7 +5,7 @@
  */
 package XLSX;
 
-import Admin.Listas;
+import Admin.Admin_Listas_5;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -750,7 +750,7 @@ public class PrintArea {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
