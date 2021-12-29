@@ -19,12 +19,8 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.util.HSSFRegionUtil;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.PaperSize;
 import org.apache.poi.ss.util.CellRangeAddress;
-import org.apache.poi.ss.util.CellUtil;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -59,7 +55,7 @@ public class PrintArea {
             );
 
             Statement statement = connect.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas.norte` WHERE 1");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas.foraneos toluca` WHERE 1");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
 
                 XSSFWorkbook libro = new XSSFWorkbook();
@@ -104,7 +100,7 @@ public class PrintArea {
                 XSSFRow rowConf = spreadsheet.createRow(1);
                 XSSFCell cellConf;
                 cellConf = rowConf.createCell(2);
-                cellConf.setCellValue("CONFORT SERVICE PRESTIGE");
+                cellConf.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
                 cellConf.setCellStyle(Encabezado);
 
                 spreadsheet.addMergedRegion(
@@ -181,9 +177,7 @@ public class PrintArea {
                     cellSinestilo.setCellStyle(Contenido);
                     cellSinestilo = rowSinestilo.createCell(2);
                     cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellValue("Servicio");
-                    cellSinestilo.setCellStyle(Contenido);
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     2, //first row (0-based)
@@ -193,13 +187,25 @@ public class PrintArea {
                             )
                     );
                     cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cellSinestilo.setCellValue(resultSet.getString("Apellido P") + " "
+                            + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                    cellSinestilo.setCellStyle(Encabezado);
+
                     cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cellSinestilo.setCellValue(resultSet.getString("Apellido P") + " "
+                            + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
                     cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cellSinestilo.setCellStyle(Encabezado);
+
+                    cellSinestilo.setCellValue(resultSet.getString("Apellido P") + " "
+                            + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                    cellSinestilo.setCellStyle(Encabezado);
+
                     cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cellSinestilo.setCellValue(resultSet.getString("Apellido P") + " "
+                            + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                    cellSinestilo.setCellStyle(Encabezado);
+
                     cellSinestilo = rowSinestilo.createCell(8);
                     cellSinestilo.setCellValue(resultSet.getString("Zona"));
                     cellSinestilo.setCellStyle(Contenido);
