@@ -18,15 +18,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import org.apache.poi.hssf.usermodel.HSSFPrintSetup;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.hssf.util.HSSFRegionUtil;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.PaperSize;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.ss.util.CellUtil;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
-
-import org.apache.poi.xssf.usermodel.XSSFPrintSetup;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -120,7 +120,7 @@ public class PrintArea {
                 rowSinestilo.setHeight((short) 500);
                 XSSFCell cellSinestilo;
                 cellSinestilo = rowSinestilo.createCell(0);
-                spreadsheet.setColumnWidth(0, 4600);
+                spreadsheet.setColumnWidth(0, 4500);
                 cellSinestilo.setCellValue("Fecha");
                 cellSinestilo.setCellStyle(style2);
                 cellSinestilo = rowSinestilo.createCell(1);
@@ -134,134 +134,10 @@ public class PrintArea {
                                 3 //last column (0-based)
                         )
                 );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                5, //first row (0-based)
-                                5, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                6, //first row (0-based)
-                                6, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                7, //first row (0-based)
-                                7, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                8, //first row (0-based)
-                                8, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                9, //first row (0-based)
-                                9, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                10, //first row (0-based)
-                                10, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                11, //first row (0-based)
-                                11, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                12, //first row (0-based)
-                                12, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                13, //first row (0-based)
-                                13, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                14, //first row (0-based)
-                                14, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                15, //first row (0-based)
-                                15, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                16, //first row (0-based)
-                                16, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                17, //first row (0-based)
-                                17, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                18, //first row (0-based)
-                                18, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                19, //first row (0-based)
-                                19, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                20, //first row (0-based)
-                                20, //last row (0-based)
-                                1, //first column (0-based)
-                                3 //last column (0-based)
-                        )
-                );
+                cellSinestilo = rowSinestilo.createCell(2);
+                cellSinestilo.setCellStyle(style2);
+                cellSinestilo = rowSinestilo.createCell(3);
+                cellSinestilo.setCellStyle(style2);
                 cellSinestilo = rowSinestilo.createCell(4);
                 cellSinestilo.setCellValue("Entrada");
                 cellSinestilo.setCellStyle(style2);
@@ -300,6 +176,10 @@ public class PrintArea {
                                     2 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
                     cellSinestilo = rowSinestilo.createCell(3);
                     cellSinestilo.setCellValue("Servicio");
                     cellSinestilo.setCellStyle(style2);
@@ -311,92 +191,270 @@ public class PrintArea {
                                     7 //last column (0-based)
                             )
                     );
+                    cellSinestilo = rowSinestilo.createCell(4);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(5);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(6);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(7);
+                    cellSinestilo.setCellStyle(style2);
                     cellSinestilo = rowSinestilo.createCell(8);
                     cellSinestilo.setCellValue(resultSet.getString("Zona"));
                     cellSinestilo.setCellStyle(style2);
                     cellSinestilo = rowSinestilo.createCell(9);
                     cellSinestilo.setCellValue(resultSet.getString("NDL"));
                     cellSinestilo.setCellStyle(style2);
+
                     rowSinestilo = spreadsheet.createRow(5);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 1/16"));
                     cellSinestilo.setCellStyle(Fechas);
+                    cellSinestilo.setCellValue(resultSet.getString("Dia 1/16"));
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    5, //first row (0-based)
+                                    5, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
+
                     rowSinestilo = spreadsheet.createRow(6);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 2/17"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    6, //first row (0-based)
+                                    6, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
+
                     rowSinestilo = spreadsheet.createRow(7);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 3/18"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    7, //first row (0-based)
+                                    7, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+                    cellSinestilo = rowSinestilo.createCell(1);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(2);
+                    cellSinestilo.setCellStyle(style2);
+                    cellSinestilo = rowSinestilo.createCell(3);
+                    cellSinestilo.setCellStyle(style2);
+
                     rowSinestilo = spreadsheet.createRow(8);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 4/19"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    8, //first row (0-based)
+                                    8, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    9, //first row (0-based)
+                                    9, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
                     rowSinestilo = spreadsheet.createRow(9);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 5/20"));
                     cellSinestilo.setCellStyle(Fechas);
+
                     rowSinestilo = spreadsheet.createRow(10);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 6/21"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    10, //first row (0-based)
+                                    10, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
                     rowSinestilo = spreadsheet.createRow(11);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 7/22"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    11, //first row (0-based)
+                                    11, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
                     rowSinestilo = spreadsheet.createRow(12);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 8/23"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    12, //first row (0-based)
+                                    12, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
                     rowSinestilo = spreadsheet.createRow(13);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 9/24"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    13, //first row (0-based)
+                                    13, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
                     rowSinestilo = spreadsheet.createRow(14);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 10/25"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    14, //first row (0-based)
+                                    14, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
                     rowSinestilo = spreadsheet.createRow(15);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 11/26"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    15, //first row (0-based)
+                                    15, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
                     rowSinestilo = spreadsheet.createRow(16);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 12/27"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    16, //first row (0-based)
+                                    16, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
                     rowSinestilo = spreadsheet.createRow(17);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 13/28"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    17, //first row (0-based)
+                                    17, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
                     rowSinestilo = spreadsheet.createRow(18);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 14/29"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    18, //first row (0-based)
+                                    18, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
                     rowSinestilo = spreadsheet.createRow(19);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 15/30"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    19, //first row (0-based)
+                                    19, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
                     rowSinestilo = spreadsheet.createRow(20);
                     rowSinestilo.setHeight((short) 600);
                     cellSinestilo = rowSinestilo.createCell(0);
                     cellSinestilo.setCellValue(resultSet.getString("Dia 31"));
                     cellSinestilo.setCellStyle(Fechas);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    20, //first row (0-based)
+                                    20, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
                     /*row = spreadsheet.createRow(17);
                     cell = row.createCell(i);
                     cell.setCellValue(resultSet.getString("Apellido M"));
