@@ -100,18 +100,34 @@ public class PrintArea {
                 XSSFCell cellSinestilo;
                 cellSinestilo = rowSinestilo.createCell(0);
                 cellSinestilo.setCellValue("Fecha");
+                cellSinestilo.setCellStyle(style2);
                 cellSinestilo = rowSinestilo.createCell(1);
                 cellSinestilo.setCellValue("Apellido P");
+                cellSinestilo.setCellStyle(style2);
                 cellSinestilo = rowSinestilo.createCell(2);
                 cellSinestilo.setCellValue("Apellido M");
+                cellSinestilo.setCellStyle(style2);
                 cellSinestilo = rowSinestilo.createCell(3);
                 cellSinestilo.setCellValue("Nombre(s)");
+                cellSinestilo.setCellStyle(style2);
                 cellSinestilo = rowSinestilo.createCell(4);
                 cellSinestilo.setCellValue("Entrada");
+                cellSinestilo.setCellStyle(style2);
                 cellSinestilo = rowSinestilo.createCell(5);
                 cellSinestilo.setCellValue("Salida");
+                cellSinestilo.setCellStyle(style2);
                 cellSinestilo = rowSinestilo.createCell(6);
                 cellSinestilo.setCellValue("Firma");
+                cellSinestilo.setCellStyle(style2);
+                cellSinestilo = rowSinestilo.createCell(7);
+                cellSinestilo.setCellValue("Lugar");
+                cellSinestilo.setCellStyle(style2);
+                cellSinestilo = rowSinestilo.createCell(8);
+                cellSinestilo.setCellValue("Doble");
+                cellSinestilo.setCellStyle(style2);
+                cellSinestilo = rowSinestilo.createCell(9);
+                cellSinestilo.setCellValue("Observaciones");
+                cellSinestilo.setCellStyle(style2);
 
                 int i = 2;
 
