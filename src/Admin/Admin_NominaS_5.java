@@ -1972,6 +1972,11 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Tnom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TnomMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(Tnom);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -1979,47 +1984,46 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CS2)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(Eliminar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel65)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltrosTD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Nominab, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FApT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FAmT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelSZ)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FZservicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBS)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroSnomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBQ)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroQuincenanomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBNDF)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroNDF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(CS2)))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Eliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel65)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2146,6 +2150,11 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Tnom1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom1MouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(Tnom1);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -2192,7 +2201,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                             .addComponent(CS4)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -2320,6 +2329,11 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Tnom2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom2MouseClicked(evt);
+            }
+        });
         jScrollPane10.setViewportView(Tnom2);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -2366,7 +2380,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                             .addComponent(CS5)))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
@@ -2494,6 +2508,11 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Tnom3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom3MouseClicked(evt);
+            }
+        });
         jScrollPane13.setViewportView(Tnom3);
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -2540,7 +2559,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                             .addComponent(CS6)))
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
@@ -2668,6 +2687,11 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Tnom4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom4MouseClicked(evt);
+            }
+        });
         jScrollPane15.setViewportView(Tnom4);
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
@@ -2714,7 +2738,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                             .addComponent(CS7)))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
@@ -2842,6 +2866,11 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Tnom5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom5MouseClicked(evt);
+            }
+        });
         jScrollPane17.setViewportView(Tnom5);
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -2888,7 +2917,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                             .addComponent(CS8)))
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
@@ -3016,6 +3045,11 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Tnom6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom6MouseClicked(evt);
+            }
+        });
         jScrollPane19.setViewportView(Tnom6);
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
@@ -3062,7 +3096,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                             .addComponent(CS9)))
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
@@ -3190,6 +3224,11 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Tnom7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom7MouseClicked(evt);
+            }
+        });
         jScrollPane21.setViewportView(Tnom7);
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
@@ -3236,7 +3275,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                             .addComponent(CS10)))
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
@@ -3364,6 +3403,11 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Tnom8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom8MouseClicked(evt);
+            }
+        });
         jScrollPane23.setViewportView(Tnom8);
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
@@ -3410,7 +3454,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                             .addComponent(CS11)))
                     .addGroup(jPanel19Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
@@ -5395,8 +5439,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
         } catch (SQLException error_ND_SCQ) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Santader corp Semanal: " + error_ND_SCQ.getMessage());
 
@@ -5481,9 +5523,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-            rs.isClosed();ps.isClosed();
-            
-            
+            rs.isClosed();
+            ps.isClosed();
+
         } catch (SQLException error_pagos_SCQ) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Corporativo quincenal: " + error_pagos_SCQ.getMessage());
         }
@@ -5609,8 +5651,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 modelo.addRow(filas);
             }
             rs.isClosed();
-            ps.isClosed();            
-            
+            ps.isClosed();
+
         } catch (SQLException error_sh_pre_nom) {
             JOptionPane.showMessageDialog(null, "Error al compartir prestamos con nomina: " + error_sh_pre_nom.getMessage());
 
@@ -5743,8 +5785,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
         } catch (SQLException error_ND_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + error_ND_FA.getMessage());
 
@@ -5857,8 +5897,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_ND_FP) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos puebla: " + error_ND_FP.getMessage());
 
@@ -5971,8 +6010,6 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
         } catch (SQLException error_ND_FT) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos toluca: " + error_ND_FT.getMessage());
 
@@ -6085,8 +6122,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_ND_norte) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de norte: " + error_ND_norte.getMessage());
 
@@ -6199,8 +6235,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_ND_ofi) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Oficina: " + error_ND_ofi.getMessage());
 
@@ -6313,8 +6348,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_ND_pon) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Poniente: " + error_ND_pon.getMessage());
 
@@ -6427,8 +6461,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_ND_S1) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 1: " + error_ND_S1.getMessage());
 
@@ -6541,8 +6574,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_ND_S2) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 2: " + error_ND_S2.getMessage());
 
@@ -6741,8 +6773,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_pagos_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos acapulco: " + error_pagos_FA.getMessage());
 
@@ -6854,8 +6885,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_pagos_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos puebla: " + error_pagos_FA.getMessage());
 
@@ -6945,8 +6975,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_pagos_FT) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos toluca: " + error_pagos_FT.getMessage());
 
@@ -7038,8 +7067,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_pagos_norte) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en norte: " + error_pagos_norte.getMessage());
 
@@ -7130,8 +7158,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_pagos_poniente) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Poniente: " + error_pagos_poniente.getMessage());
 
@@ -7222,8 +7249,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_pagos_oficina) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en oficina: " + error_pagos_oficina.getMessage());
 
@@ -7314,8 +7340,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_pagos_sur1) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 1: " + error_pagos_sur1.getMessage());
 
@@ -7406,8 +7431,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             rs.isClosed();
             ps.isClosed();
-            
-            
+
         } catch (SQLException error_pagos_sur2) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 2: " + error_pagos_sur2.getMessage());
 
@@ -7675,7 +7699,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             }
             ps.isClosed();
             rs.isClosed();
-            
+
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + e.getMessage());
 
@@ -10881,6 +10905,915 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private void CS11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CS11ActionPerformed
+
+    private void Tnom2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom2MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom2.getModel();
+
+            int fila = Tnom2.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom2.getValueAt(fila, 0)));
+            NE.setText(String.valueOf(Tnom2.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom2.getValueAt(fila, 3)));
+            am.setText(String.valueOf(Tnom2.getValueAt(fila, 4)));
+            name.setText(String.valueOf(Tnom2.getValueAt(fila, 2)));
+            Bono.setText(String.valueOf(Tnom2.getValueAt(fila, 5)));
+            Bono1.setText(String.valueOf(Tnom2.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom2.getValueAt(fila, 6)));
+            ban.setText(String.valueOf(Tnom2.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tnom2.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tnom2.getValueAt(fila, 9)));
+            sueldo.setText(String.valueOf(Tnom2.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom2.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom2.getValueAt(fila, 12)));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
+            año.setDate(date);
+            String combo1 = model.getValueAt(fila, 14).toString();
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
+                }
+            }
+            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
+            Fsab.setDate(date2);
+            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
+            FDom.setDate(date3);
+            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
+            FLun.setDate(date4);
+            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
+            Fmar.setDate(date5);
+            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
+            Fmier.setDate(date6);
+            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
+            FJuev.setDate(date7);
+            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
+            Fvier.setDate(date8);
+
+            String combo2 = model.getValueAt(fila, 22).toString();
+            for (int i = 0; i < SabT.getItemCount(); i++) {
+                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
+                    SabT.setSelectedIndex(i);
+                }
+            }
+            String combo3 = model.getValueAt(fila, 23).toString();
+            for (int i = 0; i < DomT.getItemCount(); i++) {
+                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
+                    DomT.setSelectedIndex(i);
+                }
+            }
+            String combo4 = model.getValueAt(fila, 24).toString();
+            for (int i = 0; i < LunT.getItemCount(); i++) {
+                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
+                    LunT.setSelectedIndex(i);
+                }
+            }
+            String combo5 = model.getValueAt(fila, 25).toString();
+            for (int i = 0; i < MarT.getItemCount(); i++) {
+                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
+                    MarT.setSelectedIndex(i);
+                }
+            }
+            String combo6 = model.getValueAt(fila, 26).toString();
+            for (int i = 0; i < MierT.getItemCount(); i++) {
+                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
+                    MierT.setSelectedIndex(i);
+                }
+            }
+            String combo7 = model.getValueAt(fila, 27).toString();
+            for (int i = 0; i < JueT.getItemCount(); i++) {
+                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
+                    JueT.setSelectedIndex(i);
+                }
+            }
+            String combo8 = model.getValueAt(fila, 28).toString();
+            for (int i = 0; i < VieT.getItemCount(); i++) {
+                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
+                    VieT.setSelectedIndex(i);
+                }
+            }
+            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
+            FDP.setDate(date9);
+            HE.setText(String.valueOf(Tnom2.getValueAt(fila, 30)));
+            THE.setText(String.valueOf(Tnom2.getValueAt(fila, 31)));
+            RI.setText(String.valueOf(Tnom2.getValueAt(fila, 32)));
+            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
+            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
+            obs.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
+
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_NominaS_5.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom2MouseClicked
+
+    private void Tnom3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom3MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom3.getModel();
+
+            int fila = Tnom3.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom3.getValueAt(fila, 0)));
+            NE.setText(String.valueOf(Tnom3.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom3.getValueAt(fila, 3)));
+            am.setText(String.valueOf(Tnom3.getValueAt(fila, 4)));
+            name.setText(String.valueOf(Tnom3.getValueAt(fila, 2)));
+            Bono.setText(String.valueOf(Tnom3.getValueAt(fila, 5)));
+            Bono1.setText(String.valueOf(Tnom3.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom3.getValueAt(fila, 6)));
+            ban.setText(String.valueOf(Tnom3.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tnom3.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tnom3.getValueAt(fila, 9)));
+            sueldo.setText(String.valueOf(Tnom3.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom3.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom3.getValueAt(fila, 12)));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
+            año.setDate(date);
+            String combo1 = model.getValueAt(fila, 14).toString();
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
+                }
+            }
+            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
+            Fsab.setDate(date2);
+            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
+            FDom.setDate(date3);
+            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
+            FLun.setDate(date4);
+            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
+            Fmar.setDate(date5);
+            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
+            Fmier.setDate(date6);
+            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
+            FJuev.setDate(date7);
+            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
+            Fvier.setDate(date8);
+
+            String combo2 = model.getValueAt(fila, 22).toString();
+            for (int i = 0; i < SabT.getItemCount(); i++) {
+                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
+                    SabT.setSelectedIndex(i);
+                }
+            }
+            String combo3 = model.getValueAt(fila, 23).toString();
+            for (int i = 0; i < DomT.getItemCount(); i++) {
+                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
+                    DomT.setSelectedIndex(i);
+                }
+            }
+            String combo4 = model.getValueAt(fila, 24).toString();
+            for (int i = 0; i < LunT.getItemCount(); i++) {
+                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
+                    LunT.setSelectedIndex(i);
+                }
+            }
+            String combo5 = model.getValueAt(fila, 25).toString();
+            for (int i = 0; i < MarT.getItemCount(); i++) {
+                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
+                    MarT.setSelectedIndex(i);
+                }
+            }
+            String combo6 = model.getValueAt(fila, 26).toString();
+            for (int i = 0; i < MierT.getItemCount(); i++) {
+                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
+                    MierT.setSelectedIndex(i);
+                }
+            }
+            String combo7 = model.getValueAt(fila, 27).toString();
+            for (int i = 0; i < JueT.getItemCount(); i++) {
+                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
+                    JueT.setSelectedIndex(i);
+                }
+            }
+            String combo8 = model.getValueAt(fila, 28).toString();
+            for (int i = 0; i < VieT.getItemCount(); i++) {
+                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
+                    VieT.setSelectedIndex(i);
+                }
+            }
+            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
+            FDP.setDate(date9);
+            HE.setText(String.valueOf(Tnom3.getValueAt(fila, 30)));
+            THE.setText(String.valueOf(Tnom3.getValueAt(fila, 31)));
+            RI.setText(String.valueOf(Tnom3.getValueAt(fila, 32)));
+            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 34)));
+            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
+            obs.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
+
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_NominaS_5.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom3MouseClicked
+
+    private void Tnom1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom1MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom1.getModel();
+
+            int fila = Tnom1.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom1.getValueAt(fila, 0)));
+            NE.setText(String.valueOf(Tnom1.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom1.getValueAt(fila, 3)));
+            am.setText(String.valueOf(Tnom1.getValueAt(fila, 4)));
+            name.setText(String.valueOf(Tnom1.getValueAt(fila, 2)));
+            Bono.setText(String.valueOf(Tnom1.getValueAt(fila, 5)));
+            Bono1.setText(String.valueOf(Tnom1.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom1.getValueAt(fila, 6)));
+            ban.setText(String.valueOf(Tnom1.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tnom1.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tnom1.getValueAt(fila, 9)));
+            sueldo.setText(String.valueOf(Tnom1.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom1.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom1.getValueAt(fila, 12)));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
+            año.setDate(date);
+            String combo1 = model.getValueAt(fila, 14).toString();
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
+                }
+            }
+            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
+            Fsab.setDate(date2);
+            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
+            FDom.setDate(date3);
+            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
+            FLun.setDate(date4);
+            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
+            Fmar.setDate(date5);
+            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
+            Fmier.setDate(date6);
+            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
+            FJuev.setDate(date7);
+            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
+            Fvier.setDate(date8);
+
+            String combo2 = model.getValueAt(fila, 22).toString();
+            for (int i = 0; i < SabT.getItemCount(); i++) {
+                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
+                    SabT.setSelectedIndex(i);
+                }
+            }
+            String combo3 = model.getValueAt(fila, 23).toString();
+            for (int i = 0; i < DomT.getItemCount(); i++) {
+                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
+                    DomT.setSelectedIndex(i);
+                }
+            }
+            String combo4 = model.getValueAt(fila, 24).toString();
+            for (int i = 0; i < LunT.getItemCount(); i++) {
+                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
+                    LunT.setSelectedIndex(i);
+                }
+            }
+            String combo5 = model.getValueAt(fila, 25).toString();
+            for (int i = 0; i < MarT.getItemCount(); i++) {
+                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
+                    MarT.setSelectedIndex(i);
+                }
+            }
+            String combo6 = model.getValueAt(fila, 26).toString();
+            for (int i = 0; i < MierT.getItemCount(); i++) {
+                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
+                    MierT.setSelectedIndex(i);
+                }
+            }
+            String combo7 = model.getValueAt(fila, 27).toString();
+            for (int i = 0; i < JueT.getItemCount(); i++) {
+                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
+                    JueT.setSelectedIndex(i);
+                }
+            }
+            String combo8 = model.getValueAt(fila, 28).toString();
+            for (int i = 0; i < VieT.getItemCount(); i++) {
+                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
+                    VieT.setSelectedIndex(i);
+                }
+            }
+            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
+            FDP.setDate(date9);
+            HE.setText(String.valueOf(Tnom1.getValueAt(fila, 30)));
+            THE.setText(String.valueOf(Tnom1.getValueAt(fila, 31)));
+            RI.setText(String.valueOf(Tnom1.getValueAt(fila, 32)));
+            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
+            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
+            obs.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
+
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_NominaS_5.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom1MouseClicked
+
+    private void TnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TnomMouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom.getModel();
+
+            int fila = Tnom.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom.getValueAt(fila, 0)));
+            NE.setText(String.valueOf(Tnom.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom.getValueAt(fila, 3)));
+            am.setText(String.valueOf(Tnom.getValueAt(fila, 4)));
+            name.setText(String.valueOf(Tnom.getValueAt(fila, 2)));
+            Bono.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
+            Bono1.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom.getValueAt(fila, 6)));
+            ban.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tnom.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tnom.getValueAt(fila, 9)));
+            sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom.getValueAt(fila, 12)));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
+            año.setDate(date);
+            String combo1 = model.getValueAt(fila, 14).toString();
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
+                }
+            }
+            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
+            Fsab.setDate(date2);
+            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
+            FDom.setDate(date3);
+            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
+            FLun.setDate(date4);
+            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
+            Fmar.setDate(date5);
+            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
+            Fmier.setDate(date6);
+            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
+            FJuev.setDate(date7);
+            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
+            Fvier.setDate(date8);
+
+            String combo2 = model.getValueAt(fila, 22).toString();
+            for (int i = 0; i < SabT.getItemCount(); i++) {
+                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
+                    SabT.setSelectedIndex(i);
+                }
+            }
+            String combo3 = model.getValueAt(fila, 23).toString();
+            for (int i = 0; i < DomT.getItemCount(); i++) {
+                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
+                    DomT.setSelectedIndex(i);
+                }
+            }
+            String combo4 = model.getValueAt(fila, 24).toString();
+            for (int i = 0; i < LunT.getItemCount(); i++) {
+                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
+                    LunT.setSelectedIndex(i);
+                }
+            }
+            String combo5 = model.getValueAt(fila, 25).toString();
+            for (int i = 0; i < MarT.getItemCount(); i++) {
+                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
+                    MarT.setSelectedIndex(i);
+                }
+            }
+            String combo6 = model.getValueAt(fila, 26).toString();
+            for (int i = 0; i < MierT.getItemCount(); i++) {
+                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
+                    MierT.setSelectedIndex(i);
+                }
+            }
+            String combo7 = model.getValueAt(fila, 27).toString();
+            for (int i = 0; i < JueT.getItemCount(); i++) {
+                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
+                    JueT.setSelectedIndex(i);
+                }
+            }
+            String combo8 = model.getValueAt(fila, 28).toString();
+            for (int i = 0; i < VieT.getItemCount(); i++) {
+                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
+                    VieT.setSelectedIndex(i);
+                }
+            }
+            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
+            FDP.setDate(date9);
+            HE.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
+            THE.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
+            RI.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
+            obs.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
+
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_NominaS_5.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_TnomMouseClicked
+
+    private void Tnom4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom4MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom4.getModel();
+
+            int fila = Tnom4.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom4.getValueAt(fila, 0)));
+            NE.setText(String.valueOf(Tnom4.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom4.getValueAt(fila, 3)));
+            am.setText(String.valueOf(Tnom4.getValueAt(fila, 4)));
+            name.setText(String.valueOf(Tnom4.getValueAt(fila, 2)));
+            Bono.setText(String.valueOf(Tnom4.getValueAt(fila, 5)));
+            Bono1.setText(String.valueOf(Tnom4.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom4.getValueAt(fila, 6)));
+            ban.setText(String.valueOf(Tnom4.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tnom4.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tnom4.getValueAt(fila, 9)));
+            sueldo.setText(String.valueOf(Tnom4.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom4.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom4.getValueAt(fila, 12)));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
+            año.setDate(date);
+            String combo1 = model.getValueAt(fila, 14).toString();
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
+                }
+            }
+            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
+            Fsab.setDate(date2);
+            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
+            FDom.setDate(date3);
+            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
+            FLun.setDate(date4);
+            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
+            Fmar.setDate(date5);
+            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
+            Fmier.setDate(date6);
+            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
+            FJuev.setDate(date7);
+            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
+            Fvier.setDate(date8);
+
+            String combo2 = model.getValueAt(fila, 22).toString();
+            for (int i = 0; i < SabT.getItemCount(); i++) {
+                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
+                    SabT.setSelectedIndex(i);
+                }
+            }
+            String combo3 = model.getValueAt(fila, 23).toString();
+            for (int i = 0; i < DomT.getItemCount(); i++) {
+                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
+                    DomT.setSelectedIndex(i);
+                }
+            }
+            String combo4 = model.getValueAt(fila, 24).toString();
+            for (int i = 0; i < LunT.getItemCount(); i++) {
+                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
+                    LunT.setSelectedIndex(i);
+                }
+            }
+            String combo5 = model.getValueAt(fila, 25).toString();
+            for (int i = 0; i < MarT.getItemCount(); i++) {
+                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
+                    MarT.setSelectedIndex(i);
+                }
+            }
+            String combo6 = model.getValueAt(fila, 26).toString();
+            for (int i = 0; i < MierT.getItemCount(); i++) {
+                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
+                    MierT.setSelectedIndex(i);
+                }
+            }
+            String combo7 = model.getValueAt(fila, 27).toString();
+            for (int i = 0; i < JueT.getItemCount(); i++) {
+                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
+                    JueT.setSelectedIndex(i);
+                }
+            }
+            String combo8 = model.getValueAt(fila, 28).toString();
+            for (int i = 0; i < VieT.getItemCount(); i++) {
+                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
+                    VieT.setSelectedIndex(i);
+                }
+            }
+            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
+            FDP.setDate(date9);
+            HE.setText(String.valueOf(Tnom4.getValueAt(fila, 30)));
+            THE.setText(String.valueOf(Tnom4.getValueAt(fila, 31)));
+            RI.setText(String.valueOf(Tnom4.getValueAt(fila, 32)));
+            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
+            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
+            obs.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
+
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_NominaS_5.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom4MouseClicked
+
+    private void Tnom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom5MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom5.getModel();
+
+            int fila = Tnom5.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom5.getValueAt(fila, 0)));
+            NE.setText(String.valueOf(Tnom5.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom5.getValueAt(fila, 3)));
+            am.setText(String.valueOf(Tnom5.getValueAt(fila, 4)));
+            name.setText(String.valueOf(Tnom5.getValueAt(fila, 2)));
+            Bono.setText(String.valueOf(Tnom5.getValueAt(fila, 5)));
+            Bono1.setText(String.valueOf(Tnom5.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom5.getValueAt(fila, 6)));
+            ban.setText(String.valueOf(Tnom5.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tnom5.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tnom5.getValueAt(fila, 9)));
+            sueldo.setText(String.valueOf(Tnom5.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom5.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom5.getValueAt(fila, 12)));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
+            año.setDate(date);
+            String combo1 = model.getValueAt(fila, 14).toString();
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
+                }
+            }
+            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
+            Fsab.setDate(date2);
+            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
+            FDom.setDate(date3);
+            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
+            FLun.setDate(date4);
+            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
+            Fmar.setDate(date5);
+            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
+            Fmier.setDate(date6);
+            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
+            FJuev.setDate(date7);
+            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
+            Fvier.setDate(date8);
+
+            String combo2 = model.getValueAt(fila, 22).toString();
+            for (int i = 0; i < SabT.getItemCount(); i++) {
+                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
+                    SabT.setSelectedIndex(i);
+                }
+            }
+            String combo3 = model.getValueAt(fila, 23).toString();
+            for (int i = 0; i < DomT.getItemCount(); i++) {
+                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
+                    DomT.setSelectedIndex(i);
+                }
+            }
+            String combo4 = model.getValueAt(fila, 24).toString();
+            for (int i = 0; i < LunT.getItemCount(); i++) {
+                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
+                    LunT.setSelectedIndex(i);
+                }
+            }
+            String combo5 = model.getValueAt(fila, 25).toString();
+            for (int i = 0; i < MarT.getItemCount(); i++) {
+                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
+                    MarT.setSelectedIndex(i);
+                }
+            }
+            String combo6 = model.getValueAt(fila, 26).toString();
+            for (int i = 0; i < MierT.getItemCount(); i++) {
+                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
+                    MierT.setSelectedIndex(i);
+                }
+            }
+            String combo7 = model.getValueAt(fila, 27).toString();
+            for (int i = 0; i < JueT.getItemCount(); i++) {
+                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
+                    JueT.setSelectedIndex(i);
+                }
+            }
+            String combo8 = model.getValueAt(fila, 28).toString();
+            for (int i = 0; i < VieT.getItemCount(); i++) {
+                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
+                    VieT.setSelectedIndex(i);
+                }
+            }
+            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
+            FDP.setDate(date9);
+            HE.setText(String.valueOf(Tnom5.getValueAt(fila, 30)));
+            THE.setText(String.valueOf(Tnom5.getValueAt(fila, 31)));
+            RI.setText(String.valueOf(Tnom5.getValueAt(fila, 32)));
+            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
+            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
+            obs.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
+
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_NominaS_5.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom5MouseClicked
+
+    private void Tnom6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom6MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom6.getModel();
+
+            int fila = Tnom6.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom6.getValueAt(fila, 0)));
+            NE.setText(String.valueOf(Tnom6.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom6.getValueAt(fila, 3)));
+            am.setText(String.valueOf(Tnom6.getValueAt(fila, 4)));
+            name.setText(String.valueOf(Tnom6.getValueAt(fila, 2)));
+            Bono.setText(String.valueOf(Tnom6.getValueAt(fila, 5)));
+            Bono1.setText(String.valueOf(Tnom6.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom6.getValueAt(fila, 6)));
+            ban.setText(String.valueOf(Tnom6.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tnom6.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tnom6.getValueAt(fila, 9)));
+            sueldo.setText(String.valueOf(Tnom6.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom6.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom6.getValueAt(fila, 12)));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
+            año.setDate(date);
+            String combo1 = model.getValueAt(fila, 14).toString();
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
+                }
+            }
+            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
+            Fsab.setDate(date2);
+            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
+            FDom.setDate(date3);
+            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
+            FLun.setDate(date4);
+            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
+            Fmar.setDate(date5);
+            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
+            Fmier.setDate(date6);
+            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
+            FJuev.setDate(date7);
+            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
+            Fvier.setDate(date8);
+
+            String combo2 = model.getValueAt(fila, 22).toString();
+            for (int i = 0; i < SabT.getItemCount(); i++) {
+                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
+                    SabT.setSelectedIndex(i);
+                }
+            }
+            String combo3 = model.getValueAt(fila, 23).toString();
+            for (int i = 0; i < DomT.getItemCount(); i++) {
+                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
+                    DomT.setSelectedIndex(i);
+                }
+            }
+            String combo4 = model.getValueAt(fila, 24).toString();
+            for (int i = 0; i < LunT.getItemCount(); i++) {
+                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
+                    LunT.setSelectedIndex(i);
+                }
+            }
+            String combo5 = model.getValueAt(fila, 25).toString();
+            for (int i = 0; i < MarT.getItemCount(); i++) {
+                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
+                    MarT.setSelectedIndex(i);
+                }
+            }
+            String combo6 = model.getValueAt(fila, 26).toString();
+            for (int i = 0; i < MierT.getItemCount(); i++) {
+                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
+                    MierT.setSelectedIndex(i);
+                }
+            }
+            String combo7 = model.getValueAt(fila, 27).toString();
+            for (int i = 0; i < JueT.getItemCount(); i++) {
+                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
+                    JueT.setSelectedIndex(i);
+                }
+            }
+            String combo8 = model.getValueAt(fila, 28).toString();
+            for (int i = 0; i < VieT.getItemCount(); i++) {
+                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
+                    VieT.setSelectedIndex(i);
+                }
+            }
+            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
+            FDP.setDate(date9);
+            HE.setText(String.valueOf(Tnom6.getValueAt(fila, 30)));
+            THE.setText(String.valueOf(Tnom6.getValueAt(fila, 31)));
+            RI.setText(String.valueOf(Tnom6.getValueAt(fila, 32)));
+            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
+            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
+            obs.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
+
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_NominaS_5.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom6MouseClicked
+
+    private void Tnom7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom7MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom7.getModel();
+
+            int fila = Tnom7.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom7.getValueAt(fila, 0)));
+            NE.setText(String.valueOf(Tnom7.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom7.getValueAt(fila, 3)));
+            am.setText(String.valueOf(Tnom7.getValueAt(fila, 4)));
+            name.setText(String.valueOf(Tnom7.getValueAt(fila, 2)));
+            Bono.setText(String.valueOf(Tnom7.getValueAt(fila, 5)));
+            Bono1.setText(String.valueOf(Tnom7.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom7.getValueAt(fila, 6)));
+            ban.setText(String.valueOf(Tnom7.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tnom7.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tnom7.getValueAt(fila, 9)));
+            sueldo.setText(String.valueOf(Tnom7.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom7.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom7.getValueAt(fila, 12)));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
+            año.setDate(date);
+            String combo1 = model.getValueAt(fila, 14).toString();
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
+                }
+            }
+            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
+            Fsab.setDate(date2);
+            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
+            FDom.setDate(date3);
+            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
+            FLun.setDate(date4);
+            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
+            Fmar.setDate(date5);
+            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
+            Fmier.setDate(date6);
+            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
+            FJuev.setDate(date7);
+            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
+            Fvier.setDate(date8);
+
+            String combo2 = model.getValueAt(fila, 22).toString();
+            for (int i = 0; i < SabT.getItemCount(); i++) {
+                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
+                    SabT.setSelectedIndex(i);
+                }
+            }
+            String combo3 = model.getValueAt(fila, 23).toString();
+            for (int i = 0; i < DomT.getItemCount(); i++) {
+                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
+                    DomT.setSelectedIndex(i);
+                }
+            }
+            String combo4 = model.getValueAt(fila, 24).toString();
+            for (int i = 0; i < LunT.getItemCount(); i++) {
+                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
+                    LunT.setSelectedIndex(i);
+                }
+            }
+            String combo5 = model.getValueAt(fila, 25).toString();
+            for (int i = 0; i < MarT.getItemCount(); i++) {
+                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
+                    MarT.setSelectedIndex(i);
+                }
+            }
+            String combo6 = model.getValueAt(fila, 26).toString();
+            for (int i = 0; i < MierT.getItemCount(); i++) {
+                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
+                    MierT.setSelectedIndex(i);
+                }
+            }
+            String combo7 = model.getValueAt(fila, 27).toString();
+            for (int i = 0; i < JueT.getItemCount(); i++) {
+                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
+                    JueT.setSelectedIndex(i);
+                }
+            }
+            String combo8 = model.getValueAt(fila, 28).toString();
+            for (int i = 0; i < VieT.getItemCount(); i++) {
+                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
+                    VieT.setSelectedIndex(i);
+                }
+            }
+            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
+            FDP.setDate(date9);
+            HE.setText(String.valueOf(Tnom7.getValueAt(fila, 30)));
+            THE.setText(String.valueOf(Tnom7.getValueAt(fila, 31)));
+            RI.setText(String.valueOf(Tnom7.getValueAt(fila, 32)));
+            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
+            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
+            obs.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
+
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_NominaS_5.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom7MouseClicked
+
+    private void Tnom8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom8MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom8.getModel();
+
+            int fila = Tnom8.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom8.getValueAt(fila, 0)));
+            NE.setText(String.valueOf(Tnom8.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom8.getValueAt(fila, 3)));
+            am.setText(String.valueOf(Tnom8.getValueAt(fila, 4)));
+            name.setText(String.valueOf(Tnom8.getValueAt(fila, 2)));
+            Bono.setText(String.valueOf(Tnom8.getValueAt(fila, 5)));
+            Bono1.setText(String.valueOf(Tnom8.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom8.getValueAt(fila, 6)));
+            ban.setText(String.valueOf(Tnom8.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tnom8.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tnom8.getValueAt(fila, 9)));
+            sueldo.setText(String.valueOf(Tnom8.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom8.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom8.getValueAt(fila, 12)));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
+            año.setDate(date);
+            String combo1 = model.getValueAt(fila, 14).toString();
+            for (int i = 0; i < Semana.getItemCount(); i++) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    Semana.setSelectedIndex(i);
+                }
+            }
+            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
+            Fsab.setDate(date2);
+            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
+            FDom.setDate(date3);
+            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
+            FLun.setDate(date4);
+            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
+            Fmar.setDate(date5);
+            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
+            Fmier.setDate(date6);
+            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
+            FJuev.setDate(date7);
+            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
+            Fvier.setDate(date8);
+
+            String combo2 = model.getValueAt(fila, 22).toString();
+            for (int i = 0; i < SabT.getItemCount(); i++) {
+                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
+                    SabT.setSelectedIndex(i);
+                }
+            }
+            String combo3 = model.getValueAt(fila, 23).toString();
+            for (int i = 0; i < DomT.getItemCount(); i++) {
+                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
+                    DomT.setSelectedIndex(i);
+                }
+            }
+            String combo4 = model.getValueAt(fila, 24).toString();
+            for (int i = 0; i < LunT.getItemCount(); i++) {
+                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
+                    LunT.setSelectedIndex(i);
+                }
+            }
+            String combo5 = model.getValueAt(fila, 25).toString();
+            for (int i = 0; i < MarT.getItemCount(); i++) {
+                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
+                    MarT.setSelectedIndex(i);
+                }
+            }
+            String combo6 = model.getValueAt(fila, 26).toString();
+            for (int i = 0; i < MierT.getItemCount(); i++) {
+                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
+                    MierT.setSelectedIndex(i);
+                }
+            }
+            String combo7 = model.getValueAt(fila, 27).toString();
+            for (int i = 0; i < JueT.getItemCount(); i++) {
+                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
+                    JueT.setSelectedIndex(i);
+                }
+            }
+            String combo8 = model.getValueAt(fila, 28).toString();
+            for (int i = 0; i < VieT.getItemCount(); i++) {
+                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
+                    VieT.setSelectedIndex(i);
+                }
+            }
+            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
+            FDP.setDate(date9);
+            HE.setText(String.valueOf(Tnom8.getValueAt(fila, 30)));
+            THE.setText(String.valueOf(Tnom8.getValueAt(fila, 31)));
+            RI.setText(String.valueOf(Tnom8.getValueAt(fila, 32)));
+            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 33)));
+            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 34)));
+            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 35)));
+            obs.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
+
+        } catch (ParseException ex) {
+            Logger.getLogger(Admin_NominaS_5.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom8MouseClicked
 
     /**
      * @param args the command line arguments
