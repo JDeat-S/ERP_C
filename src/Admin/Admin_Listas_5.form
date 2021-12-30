@@ -521,12 +521,12 @@
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha1">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha2">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
@@ -541,72 +541,72 @@
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha3">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha4">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha5">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha6">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha7">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha8">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha9">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha10">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha11">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha12">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha13">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha14">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha15">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha16">
               <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="EEEE, d MMM y"/>
+                <Property name="dateFormatString" type="java.lang.String" value="y"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="LDAAp">

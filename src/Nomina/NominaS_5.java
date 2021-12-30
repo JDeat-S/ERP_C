@@ -5312,94 +5312,50 @@ public final class NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# Empleado");//2
-            modelo.addColumn("Apellido P");
-            modelo.addColumn("Apellido M");//4
-            modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");//6
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");//8
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");//10
+            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("Nombre(s)");//2
+            modelo.addColumn("Apellido P");//3
+            modelo.addColumn("Apellido M");
             modelo.addColumn("Bono");
-            modelo.addColumn("Por dia");//12
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Banco");//7
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");//9
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Por dia");//11
+            modelo.addColumn("Por hora");
+            modelo.addColumn("Año");//13
             modelo.addColumn("Semana");
-            modelo.addColumn("Año");//14
-            modelo.addColumn("Dia 1 o 16");
-            modelo.addColumn("Dia 2 o 17");//16
-            modelo.addColumn("Dia 3 o 18");
-            modelo.addColumn("Dia 4 o 19");//18
-            modelo.addColumn("Dia 5 o 20");
-            modelo.addColumn("Dia 6 o 21");//20
-            modelo.addColumn("Dia 7 o 22");
-            modelo.addColumn("Dia 8 o 23");//22
-            modelo.addColumn("Dia 9 o 24");
-            modelo.addColumn("Dia 10 o 25");//24
-            modelo.addColumn("Dia 11 o 26");
-            modelo.addColumn("Dia 12 o 27");//26
-            modelo.addColumn("Dia 13 o 28");
-            modelo.addColumn("Dia 14 o 29");//28
-            modelo.addColumn("Dia 15 o 30");
-            modelo.addColumn("Dia 31");//30
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
-            modelo.addColumn("Dias descansados");
-            modelo.addColumn("Pago de dias descansados");//36
-            modelo.addColumn("Dias Laborados");
-            modelo.addColumn("Pago de dias laborados");//38
-            modelo.addColumn("Descansos Trabajados");
-            modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
-            modelo.addColumn("Pago de dias de DSGS");//42
-            modelo.addColumn("Faltas Justificadas");
-            modelo.addColumn("Descanso Otorgado");//44
-            modelo.addColumn("Dias festivos");
-            modelo.addColumn("Pago por dias festivos");//46
-            modelo.addColumn("Dias festivos trabajados");
-            modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
-            modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Fecha sabado");
+            modelo.addColumn("Fecha domingo");//16
+            modelo.addColumn("Fecha lunes");
+            modelo.addColumn("Fecha martes");//18
+            modelo.addColumn("Fecha miercoles");
+            modelo.addColumn("Fecha jueves");//20
+            modelo.addColumn("Fecha viernes");
+            modelo.addColumn("Sabado");//22
+            modelo.addColumn("Domingo");
+            modelo.addColumn("Lunes");//24
+            modelo.addColumn("Martes");
+            modelo.addColumn("Miercoles");//26
+            modelo.addColumn("Jueves");
+            modelo.addColumn("Viernes");//28
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total horas extra");//30
+            modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
-            modelo.addColumn("Adicionales");//48
-            modelo.addColumn("Faltas");
-            modelo.addColumn("Descuento por faltas");//50
-            modelo.addColumn("Desc IMSS");
-            modelo.addColumn("Faltantes de boleto");//54
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");//56
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");//58
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");//60 
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");//62
-            modelo.addColumn("Playera");
-            modelo.addColumn("Corbata");//64
-            modelo.addColumn("Adelanto de nomina");
-            modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
-            modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
-            modelo.addColumn("Deposito");
-            modelo.addColumn("Observaciones");//70
+            modelo.addColumn("Deposito");//34
+            modelo.addColumn("Observaciones");
 
-//Anchos hasta quincena
-            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150, /*BANCO*/ 60,
-                /*CTA*/ 100, /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50,
-                /*por dia*/ 100, /*QDM*/ 150, /*AÑO*/ 35, /*1*/ 50,
-                /*2*/ 50,/*3*/ 50, /*4*/ 50, /*5*/ 50, /*6*/ 50,
-                /*7*/ 50, /*8*/ 50, /*9*/ 50, /*10*/ 55, /*11*/ 55, /*12*/ 55, /*13*/ 55,
-                /*14*/ 55, /*15*/ 55, /*31*/ 50, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
-                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
-                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, 100,/*RETARDOS*/ 65,
-                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
-                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
-                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
+            int[] anchos = {50/*NL*/, 50/*NE*/, 150/*NAME*/, 60/*AP*/, 60/*AM*/, 60/*Bono*/,
+                60,/*Cdb*/ 60/*Banco*/, 50/*Zona*/, 35/*Serv*/, 55/*Suel*/, 150/*pd*/,
+                25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
+                35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
+                35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/,50, 50/*RI*/,
+                50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
