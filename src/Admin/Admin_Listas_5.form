@@ -53,24 +53,120 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Fecha1" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha2" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha3" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha4" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha5" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha6" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha7" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha8" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha9" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha10" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha11" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha12" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha13" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha14" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha15" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="Fecha16" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha2" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha3" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha4" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom4" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha5" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor5" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom5" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha6" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor6" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom6" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha7" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor7" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom7" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha8" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor8" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom8" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha9" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor9" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom9" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha10" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor10" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom10" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha11" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor11" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom11" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha12" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor12" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom12" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha13" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor13" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom13" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha14" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor14" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom14" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha15" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor15" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom15" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha16" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor16" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom16" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Fecha1" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCor1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DiaCom1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -157,14 +253,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="45" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="jButton7" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace pref="84" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -172,7 +261,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
@@ -196,14 +285,19 @@
                                   <Component id="NYear" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="Fecha1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="DiaCor1" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -214,7 +308,7 @@
                                   <Component id="LDAfilap" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="LDAfilam" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="jScrollPane2" min="-2" pref="103" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -224,50 +318,139 @@
                                   <Component id="Agregar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <Component id="DiaCom1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="Fecha2" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="DiaCor15" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="DiaCor14" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="DiaCor12" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Component id="DiaCor10" min="-2" max="-2" attributes="0"/>
+                                                          <Group type="102" attributes="0">
+                                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                                  <Component id="DiaCor9" min="-2" max="-2" attributes="0"/>
+                                                                  <Group type="102" attributes="0">
+                                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                                          <Component id="Fecha2" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="DiaCor2" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="DiaCom2" min="-2" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                                          <Component id="Fecha3" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="DiaCor3" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="DiaCom3" min="-2" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                                          <Component id="Fecha4" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="DiaCor4" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="DiaCom4" min="-2" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                                          <Component id="Fecha5" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="DiaCor5" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="DiaCom5" min="-2" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                                          <Component id="Fecha6" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="DiaCor6" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="DiaCom6" min="-2" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                                          <Component id="Fecha7" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="DiaCor7" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="DiaCom7" min="-2" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                                          <Group type="102" attributes="0">
+                                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                                  <Component id="Fecha8" min="-2" max="-2" attributes="0"/>
+                                                                                  <Component id="DiaCor8" min="-2" max="-2" attributes="0"/>
+                                                                              </Group>
+                                                                              <EmptySpace max="-2" attributes="0"/>
+                                                                              <Component id="Fecha9" min="-2" max="-2" attributes="0"/>
+                                                                          </Group>
+                                                                          <Group type="102" attributes="0">
+                                                                              <Component id="DiaCom8" min="-2" max="-2" attributes="0"/>
+                                                                              <EmptySpace max="32767" attributes="0"/>
+                                                                              <Component id="DiaCom9" min="-2" max="-2" attributes="0"/>
+                                                                          </Group>
+                                                                      </Group>
+                                                                  </Group>
+                                                              </Group>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="Fecha10" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="DiaCom10" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                          </Group>
+                                                      </Group>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Group type="102" attributes="0">
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="Fecha11" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="DiaCor11" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="Fecha12" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="DiaCom11" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="32767" attributes="0"/>
+                                                              <Component id="DiaCom12" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="Fecha13" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="DiaCor13" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="Fecha14" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="DiaCom13" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="DiaCom14" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="Fecha15" min="-2" max="-2" attributes="0"/>
+                                          <Component id="DiaCom15" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha7" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha8" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha9" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha10" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha11" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha12" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha13" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha14" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha15" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Fecha16" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="Fecha16" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DiaCor16" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DiaCom16" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Component id="jTabbedPane1" min="-2" pref="435" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="12" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="jButton7" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -333,7 +516,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nombre(s)"/>
+                <Property name="text" type="java.lang.String" value="Nombre(s):"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fecha1">
@@ -348,7 +531,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Apellido P"/>
+                <Property name="text" type="java.lang.String" value="Apellido P:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
@@ -3956,11 +4139,164 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="jButton7">
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor1">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                </Property>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor2">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor3">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor4">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor5">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor6">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor7">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor8">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor9">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor10">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor11">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor12">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor13">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor14">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor15">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCor16">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="d"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom1">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom2">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom3">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom4">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom5">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom6">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom7">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom8">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom9">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom10">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom11">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom12">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom13">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom14">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom15">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
+              </Properties>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="DiaCom16">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
               </Properties>
             </Component>
           </SubComponents>
