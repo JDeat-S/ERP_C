@@ -4761,7 +4761,7 @@
                                       </Group>
                                       <Component id="jScrollPane6" alignment="0" min="-2" pref="1050" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="2048" max="32767" attributes="0"/>
+                                  <EmptySpace pref="1967" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
