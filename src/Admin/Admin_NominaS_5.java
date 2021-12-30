@@ -10777,7 +10777,21 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab1KeyReleased
 
     private void Eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar1ActionPerformed
-        // TODO add your handling code here:
+        try {
+
+            int filaseleccionada = Tnom1.getSelectedRow();
+            String sql = "delete from `nominasem.detallada." + Zon.getText() + "` where #lista=" + Tnom1.getValueAt(filaseleccionada, 0);
+            java.sql.Statement st = con.createStatement();
+            int n = st.executeUpdate(sql);
+            if (n >= 0) {
+                JOptionPane.showMessageDialog(null, "Nomina eliminada");
+            }
+        } catch (HeadlessException | SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
+
+        }
+        FunMD();
     }//GEN-LAST:event_Eliminar1ActionPerformed
 
     private void FiltroNDF1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF1KeyReleased
@@ -10985,7 +10999,21 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab2KeyReleased
 
     private void Eliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar2ActionPerformed
-        // TODO add your handling code here:
+        try {
+
+            int filaseleccionada = Tnom2.getSelectedRow();
+            String sql = "delete from `nominasem.detallada." + Zon.getText() + "` where #lista=" + Tnom2.getValueAt(filaseleccionada, 0);
+            java.sql.Statement st = con.createStatement();
+            int n = st.executeUpdate(sql);
+            if (n >= 0) {
+                JOptionPane.showMessageDialog(null, "Nomina eliminada");
+            }
+        } catch (HeadlessException | SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
+
+        }
+        FunMD();
     }//GEN-LAST:event_Eliminar2ActionPerformed
 
     private void FiltroNDF2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF2KeyReleased
@@ -11194,7 +11222,21 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab3KeyReleased
 
     private void Eliminar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar3ActionPerformed
-        // TODO add your handling code here:
+        try {
+
+            int filaseleccionada = Tnom3.getSelectedRow();
+            String sql = "delete from `nominasem.detallada." + Zon.getText() + "` where #lista=" + Tnom3.getValueAt(filaseleccionada, 0);
+            java.sql.Statement st = con.createStatement();
+            int n = st.executeUpdate(sql);
+            if (n >= 0) {
+                JOptionPane.showMessageDialog(null, "Nomina eliminada");
+            }
+        } catch (HeadlessException | SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
+
+        }
+        FunMD();
     }//GEN-LAST:event_Eliminar3ActionPerformed
 
     private void FiltroNDF3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF3KeyReleased
@@ -11403,7 +11445,21 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab4KeyReleased
 
     private void Eliminar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar4ActionPerformed
-        // TODO add your handling code here:
+        try {
+
+            int filaseleccionada = Tnom4.getSelectedRow();
+            String sql = "delete from `nominasem.detallada." + Zon.getText() + "` where #lista=" + Tnom4.getValueAt(filaseleccionada, 0);
+            java.sql.Statement st = con.createStatement();
+            int n = st.executeUpdate(sql);
+            if (n >= 0) {
+                JOptionPane.showMessageDialog(null, "Nomina eliminada");
+            }
+        } catch (HeadlessException | SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
+
+        }
+        FunMD();
     }//GEN-LAST:event_Eliminar4ActionPerformed
 
     private void FiltroNDF4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF4KeyReleased
@@ -11612,7 +11668,21 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab5KeyReleased
 
     private void Eliminar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar5ActionPerformed
-        // TODO add your handling code here:
+               try {
+
+            int filaseleccionada = Tnom5.getSelectedRow();
+            String sql = "delete from `nominasem.detallada." + Zon.getText() + "` where #lista=" + Tnom5.getValueAt(filaseleccionada, 0);
+            java.sql.Statement st = con.createStatement();
+            int n = st.executeUpdate(sql);
+            if (n >= 0) {
+                JOptionPane.showMessageDialog(null, "Nomina eliminada");
+            }
+        } catch (HeadlessException | SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
+
+        }
+        FunMD();
     }//GEN-LAST:event_Eliminar5ActionPerformed
 
     private void FiltroNDF5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF5KeyReleased
@@ -11821,7 +11891,21 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab6KeyReleased
 
     private void Eliminar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar6ActionPerformed
-        // TODO add your handling code here:
+        try {
+
+            int filaseleccionada = Tnom6.getSelectedRow();
+            String sql = "delete from `nominasem.detallada." + Zon.getText() + "` where #lista=" + Tnom6.getValueAt(filaseleccionada, 0);
+            java.sql.Statement st = con.createStatement();
+            int n = st.executeUpdate(sql);
+            if (n >= 0) {
+                JOptionPane.showMessageDialog(null, "Nomina eliminada");
+            }
+        } catch (HeadlessException | SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
+
+        }
+        FunMD();
     }//GEN-LAST:event_Eliminar6ActionPerformed
 
     private void FiltroNDF6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF6KeyReleased
@@ -12030,7 +12114,21 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab7KeyReleased
 
     private void Eliminar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar7ActionPerformed
-        // TODO add your handling code here:
+                try {
+
+            int filaseleccionada = Tnom7.getSelectedRow();
+            String sql = "delete from `nominasem.detallada." + Zon.getText() + "` where #lista=" + Tnom7.getValueAt(filaseleccionada, 0);
+            java.sql.Statement st = con.createStatement();
+            int n = st.executeUpdate(sql);
+            if (n >= 0) {
+                JOptionPane.showMessageDialog(null, "Nomina eliminada");
+            }
+        } catch (HeadlessException | SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
+
+        }
+        FunMD();
     }//GEN-LAST:event_Eliminar7ActionPerformed
 
     private void FiltroNDF7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF7KeyReleased
