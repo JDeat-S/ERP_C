@@ -10586,19 +10586,23 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FApTKeyReleased
 
     private void FApT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT1KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT1KeyReleased
 
     private void FAmT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT1KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT1KeyReleased
 
     private void FiltroSnomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina1ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina1ItemStateChanged
 
     private void FiltroQuincenanomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina1ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina1ItemStateChanged
 
     private void FZservicio1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio1ItemStateChanged
@@ -10768,7 +10772,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD1ItemStateChanged
 
     private void Nominab1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab1KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab1KeyReleased
 
     private void Eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar1ActionPerformed
@@ -10776,27 +10781,37 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Eliminar1ActionPerformed
 
     private void FiltroNDF1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF1KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF1KeyReleased
 
     private void CS4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS4ActionPerformed
-        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_CS4ActionPerformed
 
     private void FApT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT2KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT2KeyReleased
 
     private void FAmT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT2KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT2KeyReleased
 
     private void FiltroSnomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina2ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina2ItemStateChanged
 
     private void FiltroQuincenanomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina2ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina2ItemStateChanged
 
     private void FZservicio2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio2ItemStateChanged
@@ -10965,7 +10980,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         }    }//GEN-LAST:event_FiltrosTD2ItemStateChanged
 
     private void Nominab2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab2KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab2KeyReleased
 
     private void Eliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar2ActionPerformed
@@ -10973,27 +10989,37 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Eliminar2ActionPerformed
 
     private void FiltroNDF2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF2KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF2KeyReleased
 
     private void CS5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS5ActionPerformed
-        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_CS5ActionPerformed
 
     private void FApT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT3KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT3KeyReleased
 
     private void FAmT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT3KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT3KeyReleased
 
     private void FiltroSnomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina3ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina3ItemStateChanged
 
     private void FiltroQuincenanomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina3ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina3ItemStateChanged
 
     private void FZservicio3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio3ItemStateChanged
@@ -11163,7 +11189,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD3ItemStateChanged
 
     private void Nominab3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab3KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab3KeyReleased
 
     private void Eliminar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar3ActionPerformed
@@ -11171,27 +11198,37 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Eliminar3ActionPerformed
 
     private void FiltroNDF3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF3KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF3KeyReleased
 
     private void CS6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS6ActionPerformed
-        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_CS6ActionPerformed
 
     private void FApT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT4KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT4KeyReleased
 
     private void FAmT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT4KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT4KeyReleased
 
     private void FiltroSnomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina4ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina4ItemStateChanged
 
     private void FiltroQuincenanomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina4ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina4ItemStateChanged
 
     private void FZservicio4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio4ItemStateChanged
@@ -11361,7 +11398,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD4ItemStateChanged
 
     private void Nominab4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab4KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab4KeyReleased
 
     private void Eliminar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar4ActionPerformed
@@ -11369,27 +11407,37 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Eliminar4ActionPerformed
 
     private void FiltroNDF4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF4KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF4KeyReleased
 
     private void CS7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS7ActionPerformed
-        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_CS7ActionPerformed
 
     private void FApT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT5KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT5KeyReleased
 
     private void FAmT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT5KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT5KeyReleased
 
     private void FiltroSnomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina5ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina5ItemStateChanged
 
     private void FiltroQuincenanomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina5ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina5ItemStateChanged
 
     private void FZservicio5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio5ItemStateChanged
@@ -11559,7 +11607,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD5ItemStateChanged
 
     private void Nominab5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab5KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab5KeyReleased
 
     private void Eliminar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar5ActionPerformed
@@ -11567,27 +11616,37 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Eliminar5ActionPerformed
 
     private void FiltroNDF5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF5KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF5KeyReleased
 
     private void CS8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS8ActionPerformed
-        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_CS8ActionPerformed
 
     private void FApT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT6KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT6KeyReleased
 
     private void FAmT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT6KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT6KeyReleased
 
     private void FiltroSnomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina6ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina6ItemStateChanged
 
     private void FiltroQuincenanomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina6ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina6ItemStateChanged
 
     private void FZservicio6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio6ItemStateChanged
@@ -11757,7 +11816,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD6ItemStateChanged
 
     private void Nominab6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab6KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab6KeyReleased
 
     private void Eliminar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar6ActionPerformed
@@ -11765,27 +11825,37 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Eliminar6ActionPerformed
 
     private void FiltroNDF6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF6KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF6KeyReleased
 
     private void CS9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS9ActionPerformed
-        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_CS9ActionPerformed
 
     private void FApT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT7KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT7KeyReleased
 
     private void FAmT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT7KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT7KeyReleased
 
     private void FiltroSnomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina7ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina7ItemStateChanged
 
     private void FiltroQuincenanomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina7ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina7ItemStateChanged
 
     private void FZservicio7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio7ItemStateChanged
@@ -11955,7 +12025,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD7ItemStateChanged
 
     private void Nominab7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab7KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab7KeyReleased
 
     private void Eliminar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar7ActionPerformed
@@ -11963,27 +12034,37 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Eliminar7ActionPerformed
 
     private void FiltroNDF7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF7KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF7KeyReleased
 
     private void CS10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS10ActionPerformed
-        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_CS10ActionPerformed
 
     private void FApT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT8KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FApT8KeyReleased
 
     private void FAmT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT8KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FAmT8KeyReleased
 
     private void FiltroSnomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina8ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroSnomina8ItemStateChanged
 
     private void FiltroQuincenanomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina8ItemStateChanged
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroQuincenanomina8ItemStateChanged
 
     private void FZservicio8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio8ItemStateChanged
@@ -12153,7 +12234,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD8ItemStateChanged
 
     private void Nominab8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab8KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_Nominab8KeyReleased
 
     private void Eliminar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar8ActionPerformed
@@ -12161,11 +12243,17 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Eliminar8ActionPerformed
 
     private void FiltroNDF8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF8KeyReleased
-        // TODO add your handling code here:
+        FunMD();
+        sumaDep();
     }//GEN-LAST:event_FiltroNDF8KeyReleased
 
     private void CS11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS11ActionPerformed
-        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Login_2 regr = new Login_2();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_CS11ActionPerformed
 
     private void Tnom2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom2MouseClicked
