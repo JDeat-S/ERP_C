@@ -545,6 +545,7 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Caja de ahorro");
@@ -1300,7 +1301,7 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         jMenu3.setText("Semanal");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        jMenuItem1.setText("Nomina Semanal");
+        jMenuItem1.setText("Nomina Semanal IMSS");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -1316,6 +1317,15 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem3);
+
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem4.setText("Nomina Semanal General");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem4);
 
         jMenu1.add(jMenu3);
 
@@ -1740,6 +1750,12 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1864,6 +1880,7 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
