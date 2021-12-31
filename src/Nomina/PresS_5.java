@@ -139,7 +139,7 @@ public final class PresS_5 extends javax.swing.JFrame {
         CNQ = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nomina Semanal");
@@ -725,7 +725,7 @@ public final class PresS_5 extends javax.swing.JFrame {
         jMenu3.setText("Semanal");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        jMenuItem1.setText("Nomina Semanal");
+        jMenuItem1.setText("Nomina Semanal IMSS");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -733,14 +733,14 @@ public final class PresS_5 extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem1);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        jMenuItem3.setText("Prestamos Semanales");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem4.setText("Nomina Semanal General");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem3);
+        jMenu3.add(jMenuItem4);
 
         jMenu1.add(jMenu3);
 
@@ -756,7 +756,7 @@ public final class PresS_5 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
         );
 
         pack();
@@ -855,7 +855,7 @@ public final class PresS_5 extends javax.swing.JFrame {
         double d1 = Double.parseDouble(this.Cantidad.getText());
         double d2 = Double.parseDouble(this.interes.getText());
         double MTo = (d1 + d2);
-        this.MT.setText("" + MTo + "");;
+        this.MT.setText("" + MTo + "");
     }
 
     public void MDTPPres() {
@@ -1506,11 +1506,11 @@ public final class PresS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        PresS_5 regr = new PresS_5();
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        NominaS_simss_5 regr = new NominaS_simss_5();
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1624,7 +1624,7 @@ public final class PresS_5 extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;

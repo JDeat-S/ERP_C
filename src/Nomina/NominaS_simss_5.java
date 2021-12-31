@@ -33,7 +33,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class NominaS_5 extends javax.swing.JFrame {
+public final class NominaS_simss_5 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
@@ -42,7 +42,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     double DS, DD, DL, DM, DMi, DJ, DV;
     double AS, AD, AL, AM, AMi, AJ, AV;
 
-    public NominaS_5() {
+    public NominaS_simss_5() {
         initComponents();
 
         DAB = new ButtonGroup();
@@ -352,7 +352,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         shareN();
         sharepresnom();
         FunMD();
-        setIconImage(new ImageIcon(NominaS_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(NominaS_simss_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         sumaDep();
 
     }
@@ -1908,7 +1908,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ.setText("Buscar Semana:");
 
@@ -2088,7 +2088,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb3.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb3.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ1.setText("Buscar Semana:");
 
@@ -2269,7 +2269,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb4.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb4.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ2.setText("Buscar Semana:");
 
@@ -2450,7 +2450,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb5.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb5.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ3.setText("Buscar Semana:");
 
@@ -2631,7 +2631,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb6.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb6.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ4.setText("Buscar Semana:");
 
@@ -2812,7 +2812,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb7.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb7.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ5.setText("Buscar Semana:");
 
@@ -2993,7 +2993,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb8.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb8.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ6.setText("Buscar Semana:");
 
@@ -3174,7 +3174,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ7.setText("Buscar Semana:");
 
@@ -3355,7 +3355,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ8.setText("Buscar Semana:");
 
@@ -3604,7 +3604,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb2.setToolTipText("");
-        botonWeb2.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
+        botonWeb2.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel30.setText("Monto total en fila deposito:");
 
@@ -3790,7 +3790,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         botonWeb16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb16.setToolTipText("");
-        botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
+        botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel31.setText("Monto total en fila deposito:");
 
@@ -3975,7 +3975,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         botonWeb17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb17.setToolTipText("");
-        botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
+        botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel33.setText("Monto total en fila deposito:");
 
@@ -4160,7 +4160,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         botonWeb18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb18.setToolTipText("");
-        botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
+        botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel34.setText("Monto total en fila deposito:");
 
@@ -4345,7 +4345,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         botonWeb19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb19.setToolTipText("");
-        botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
+        botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel35.setText("Monto total en fila deposito:");
 
@@ -4530,7 +4530,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         botonWeb20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb20.setToolTipText("");
-        botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
+        botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         Imprimir5.setText("Imprimir tabla");
         Imprimir5.addActionListener(new java.awt.event.ActionListener() {
@@ -4715,7 +4715,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         botonWeb21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb21.setToolTipText("");
-        botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
+        botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel37.setText("Monto total en fila deposito:");
 
@@ -4900,7 +4900,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         botonWeb22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb22.setToolTipText("");
-        botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
+        botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel38.setText("Monto total en fila deposito:");
 
@@ -5085,7 +5085,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         botonWeb25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb25.setToolTipText("");
-        botonWeb25.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
+        botonWeb25.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel39.setText("Monto total en fila deposito:");
 
@@ -5308,7 +5308,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     public void MDNCSQ() {
         //Buscar empleado
         String FiltroN = Nominab8.getText();
-        String SQL = "select * from `nominasem.corporativo santander semanal`";
+        String SQL = "select * from `nominasem.corporativo santander semanal.simss`";
         String FAPNom = FApT8.getText();
         String FAMNom = FAmT8.getText();
         String FiltroSnom = FiltroSnomina8.getSelectedItem().toString();
@@ -5316,17 +5316,17 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF8.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nominasem.detallada.corporativo santander semanal` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select * from `nominasem.detallada.corporativo santander semanal.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select * from `nominasem.detallada.corporativo santander semanal.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select * from `nominasem.detallada.corporativo santander semanal.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select * from `nominasem.detallada.corporativo santander semanal.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select * from `nominasem.detallada.corporativo santander semanal.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nominasem.detallada.corporativo santander semanal` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select * from `nominasem.detallada.corporativo santander semanal.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -5424,27 +5424,27 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp8.getText();
         String FAPpago = BAppag8.getText();
         String FAMpago = Bampag8.getText();
-        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal.simss`";
         String FiltroSpago = FiltroServP8.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP8.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP8.getText();
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal.simss`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal.simss`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal.simss`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.corporativo santander semanal.simss`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem.detallada.corporativo santander semanal`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones`  FROM `nominasem.detallada.corporativo santander semanal.simss`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -5636,7 +5636,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         try {
 
             int filaseleccionada = Tnom.getSelectedRow();
-            String sql = "delete from nominasem where #lista=" + Tnom.getValueAt(filaseleccionada, 0);
+            String sql = "delete from `nominasem.detallada."+Zon.getText()+".simss` where #lista=" + Tnom.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
             int n = st.executeUpdate(sql);
             if (n >= 0) {
@@ -5654,7 +5654,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     public void MDNFA() {
         //Buscar empleado
         String FiltroN = Nominab.getText();
-        String SQL = "select * from `nominasem.detallada.foraneos acapulco`";
+        String SQL = "select * from `nominasem.detallada.foraneos acapulco.simss`";
         String FAPNom = FApT.getText();
         String FAMNom = FAmT.getText();
         String FiltroSnom = FiltroSnomina.getSelectedItem().toString();
@@ -5662,17 +5662,17 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nominasem.detallada.foraneos acapulco` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select * from `nominasem.detallada.foraneos acapulco.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nominasem.detallada.foraneos acapulco` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos acapulco.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nominasem.detallada.foraneos acapulco` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos acapulco.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nominasem.detallada.foraneos acapulco` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos acapulco.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nominasem.detallada.foraneos acapulco` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos acapulco.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nominasem.detallada.foraneos acapulco` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos acapulco.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -5766,7 +5766,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     public void MDNFP() {
         //Buscar empleado
         String FiltroN = Nominab1.getText();
-        String SQL = "select * from `nominasem.detallada.foraneos puebla`";
+        String SQL = "select * from `nominasem.detallada.foraneos puebla.simss`";
         String FAPNom = FApT1.getText();
         String FAMNom = FAmT1.getText();
         String FiltroSnom = FiltroSnomina1.getSelectedItem().toString();
@@ -5774,17 +5774,17 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF1.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nominasem.detallada.foraneos puebla` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select * from `nominasem.detallada.foraneos puebla.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nominasem.detallada.foraneos puebla` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos puebla.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nominasem.detallada.foraneos puebla` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos puebla.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nominasem.detallada.foraneos puebla` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos puebla.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nominasem.detallada.foraneos puebla` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos puebla.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nominasem.detallada.foraneos puebla` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos puebla.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -5991,7 +5991,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     public void MDNNor() {
         //Buscar empleado
         String FiltroN = Nominab3.getText();
-        String where = "select * from `nominasem.detallada.norte`";
+        String where = "select * from `nominasem.detallada.norte.simss`";
         String FAPNom = FApT3.getText();
         String FAMNom = FAmT3.getText();
         String FiltroSnom = FiltroSnomina3.getSelectedItem().toString();
@@ -5999,17 +5999,17 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF3.getText();
 
         if (!"".equals(FiltroN)) {
-            where = "Select * from `nominasem.detallada.norte` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            where = "Select * from `nominasem.detallada.norte.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            where = "select * from `nominasem.detallada.norte` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            where = "select * from `nominasem.detallada.norte.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            where = "select * from `nominasem.detallada.norte` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            where = "select * from `nominasem.detallada.norte.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            where = "select * from `nominasem.detallada.norte` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            where = "select * from `nominasem.detallada.norte.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            where = "select * from `nominasem.detallada.norte` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            where = "select * from `nominasem.detallada.norte.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            where = "select * from `nominasem.detallada.norte` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            where = "select * from `nominasem.detallada.norte.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -6104,7 +6104,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     public void MDNOfi() {
         //Buscar empleado
         String FiltroN = Nominab4.getText();
-        String SQL = "select * from `nominasem.detallada.oficina`";
+        String SQL = "select * from `nominasem.detallada.oficina.simss`";
         String FAPNom = FApT4.getText();
         String FAMNom = FAmT4.getText();
         String FiltroSnom = FiltroSnomina4.getSelectedItem().toString();
@@ -6112,17 +6112,17 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF4.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nominasem.detallada.oficina` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select * from `nominasem.detallada.oficina.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nominasem.detallada.oficina` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select * from `nominasem.detallada.oficina.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nominasem.detallada.oficina` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select * from `nominasem.detallada.oficina.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nominasem.detallada.oficina` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select * from `nominasem.detallada.oficina.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nominasem.detallada.oficina` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select * from `nominasem.detallada.oficina.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nominasem.detallada.oficina` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select * from `nominasem.detallada.oficina.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -6217,7 +6217,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     public void MDNPon() {
         //Buscar empleado
         String FiltroN = Nominab5.getText();
-        String SQL = "select * from `nominasem.detallada.poniente`";
+        String SQL = "select * from `nominasem.detallada.poniente.simss`";
         String FAPNom = FApT5.getText();
         String FAMNom = FAmT5.getText();
         String FiltroSnom = FiltroSnomina5.getSelectedItem().toString();
@@ -6225,17 +6225,17 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF5.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nominasem.detallada.poniente` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select * from `nominasem.detallada.poniente.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nominasem.detallada.poniente` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select * from `nominasem.detallada.poniente.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nominasem.detallada.poniente` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select * from `nominasem.detallada.poniente.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nominasem.detallada.poniente` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select * from `nominasem.detallada.poniente.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nominasem.detallada.poniente` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select * from `nominasem.detallada.poniente.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nominasem.detallada.poniente` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select * from `nominasem.detallada.poniente.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -6330,7 +6330,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     public void MDNS1() {
         //Buscar empleado
         String FiltroN = Nominab6.getText();
-        String SQL = "select * from `nominasem.detallada.sur 1`";
+        String SQL = "select * from `nominasem.detallada.sur 1.simss`";
         String FAPNom = FApT6.getText();
         String FAMNom = FAmT6.getText();
         String FiltroSnom = FiltroSnomina6.getSelectedItem().toString();
@@ -6338,17 +6338,17 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF6.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nominasem.detallada.sur 1` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select * from `nominasem.detallada.sur 1.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nominasem.detallada.sur 1` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select * from `nominasem.detallada.sur 1.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nominasem.detallada.sur 1` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select * from `nominasem.detallada.sur 1.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nominasem.detallada.sur 1` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select * from `nominasem.detallada.sur 1.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nominasem.detallada.sur 1` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select * from `nominasem.detallada.sur 1.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nominasem.detallada.sur 1` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select * from `nominasem.detallada.sur 1.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -6443,7 +6443,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     public void MDNS2() {
         //Buscar empleado
         String FiltroN = Nominab7.getText();
-        String SQL = "select * from `nominasem.detallada.sur 2`";
+        String SQL = "select * from `nominasem.detallada.sur 2.simss`";
         String FAPNom = FApT7.getText();
         String FAMNom = FAmT7.getText();
         String FiltroSnom = FiltroSnomina7.getSelectedItem().toString();
@@ -6451,17 +6451,17 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF7.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nominasem.detallada.sur 2` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select * from `nominasem.detallada.sur 2.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nominasem.detallada.sur 2` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select * from `nominasem.detallada.sur 2.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nominasem.detallada.sur 2` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select * from `nominasem.detallada.sur 2.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nominasem.detallada.sur 2` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select * from `nominasem.detallada.sur 2.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nominasem.detallada.sur 2` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select * from `nominasem.detallada.sur 2.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nominasem.detallada.sur 2` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select * from `nominasem.detallada.sur 2.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -6778,28 +6778,28 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp1.getText();
         String FAPpago = BAppag1.getText();
         String FAMpago = Bampag1.getText();
-        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla.simss`";
         String FiltroSpago = FiltroServP1.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP1.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP1.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla.simss`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla.simss`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla.simss`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla.simss`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos puebla.simss`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -6960,28 +6960,28 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FAPpago = BAppag3.getText();
         String FAMpago = Bampag3.getText();
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
-                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte`";
+                + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nominasem.detallada.norte.simss`";
         String FiltroSpago = FiltroServP3.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP3.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP3.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte.simss`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte.simss`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte.simss`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte.simss`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.norte.simss`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -7051,28 +7051,28 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp4.getText();
         String FAPpago = BAppag4.getText();
         String FAMpago = Bampag4.getText();
-        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente.simss`";
         String FiltroSpago = FiltroServP4.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP4.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP4.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente.simss`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente.simss`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente.simss`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente.simss`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.poniente.simss`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -7142,28 +7142,28 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp5.getText();
         String FAPpago = BAppag5.getText();
         String FAMpago = Bampag5.getText();
-        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina.simss`";
         String FiltroSpago = FiltroServP5.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP5.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP5.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina.simss`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina.simss`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina.simss`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina.simss`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.oficina.simss`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -7233,28 +7233,28 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp6.getText();
         String FAPpago = BAppag6.getText();
         String FAMpago = Bampag6.getText();
-        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1.simss`";
         String FiltroSpago = FiltroServP6.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP6.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP6.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1.simss`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1.simss`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1.simss`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1.simss`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 1.simss`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -7324,28 +7324,28 @@ public final class NominaS_5 extends javax.swing.JFrame {
         String FiltroN = busp7.getText();
         String FAPpago = BAppag7.getText();
         String FAMpago = Bampag7.getText();
-        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2.simss`";
         String FiltroSpago = FiltroServP7.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP7.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP7.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2.simss`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2.simss`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2.simss`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2.simss`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.sur 2.simss`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -12422,7 +12422,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             obs.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_5.class
+            Logger.getLogger(NominaS_simss_5.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom2MouseClicked
@@ -12523,7 +12523,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             obs.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_5.class
+            Logger.getLogger(NominaS_simss_5.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom3MouseClicked
@@ -12624,7 +12624,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             obs.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_5.class
+            Logger.getLogger(NominaS_simss_5.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom1MouseClicked
@@ -12725,7 +12725,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             obs.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_5.class
+            Logger.getLogger(NominaS_simss_5.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_TnomMouseClicked
@@ -12826,7 +12826,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             obs.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_5.class
+            Logger.getLogger(NominaS_simss_5.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom4MouseClicked
@@ -12927,7 +12927,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             obs.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_5.class
+            Logger.getLogger(NominaS_simss_5.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom5MouseClicked
@@ -13028,7 +13028,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             obs.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_5.class
+            Logger.getLogger(NominaS_simss_5.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom6MouseClicked
@@ -13129,7 +13129,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             obs.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_5.class
+            Logger.getLogger(NominaS_simss_5.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom7MouseClicked
@@ -13230,7 +13230,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             obs.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_5.class
+            Logger.getLogger(NominaS_simss_5.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom8MouseClicked
@@ -13263,9 +13263,10 @@ public final class NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CleanActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        NominaS_simss_5 regr = new NominaS_simss_5();
+        NominaS_5 regr = new NominaS_5();
         regr.setVisible(true);
-        this.dispose();    }//GEN-LAST:event_jMenuItem3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -13284,8 +13285,10 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NominaS_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NominaS_simss_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -13293,7 +13296,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new NominaS_5().setVisible(true);
+            new NominaS_simss_5().setVisible(true);
         });
     }
 
