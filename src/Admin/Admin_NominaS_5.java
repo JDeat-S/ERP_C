@@ -111,6 +111,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        Bono.setVisible(false);
         busp8.setVisible(false);
         BAppag8.setVisible(false);
         Bampag8.setVisible(false);
@@ -1879,6 +1880,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Nomina Semanal", jScrollPane1);
 
+        jPanel6.setBackground(new java.awt.Color(204, 255, 255));
+
         FApT.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FApTKeyReleased(evt);
@@ -2056,6 +2059,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         jScrollPane7.setViewportView(jPanel6);
 
         PestanañasND.addTab("Foraneos acapulco", jScrollPane7);
+
+        jPanel7.setBackground(new java.awt.Color(204, 255, 255));
 
         FApT1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -2236,6 +2241,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         PestanañasND.addTab("Foraneos Puebla", jScrollPane8);
 
+        jPanel10.setBackground(new java.awt.Color(204, 255, 255));
+
         FApT2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FApT2KeyReleased(evt);
@@ -2414,6 +2421,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         jScrollPane9.setViewportView(jPanel10);
 
         PestanañasND.addTab("Foraneos Toluca", jScrollPane9);
+
+        jPanel14.setBackground(new java.awt.Color(204, 255, 255));
 
         FApT3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -2594,6 +2603,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         PestanañasND.addTab("Norte", jScrollPane12);
 
+        jPanel15.setBackground(new java.awt.Color(204, 255, 255));
+
         FApT4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FApT4KeyReleased(evt);
@@ -2772,6 +2783,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         jScrollPane14.setViewportView(jPanel15);
 
         PestanañasND.addTab("Oficina", jScrollPane14);
+
+        jPanel16.setBackground(new java.awt.Color(204, 255, 255));
 
         FApT5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -2952,6 +2965,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         PestanañasND.addTab("Poniente", jScrollPane16);
 
+        jPanel17.setBackground(new java.awt.Color(204, 255, 255));
+
         FApT6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FApT6KeyReleased(evt);
@@ -3131,6 +3146,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         PestanañasND.addTab("Sur 1", jScrollPane18);
 
+        jPanel18.setBackground(new java.awt.Color(204, 255, 255));
+
         FApT7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FApT7KeyReleased(evt);
@@ -3309,6 +3326,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         jScrollPane20.setViewportView(jPanel18);
 
         PestanañasND.addTab("Sur 2", jScrollPane20);
+
+        jPanel19.setBackground(new java.awt.Color(204, 255, 255));
 
         FApT8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -10606,8 +10625,12 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQuincenanomina1ItemStateChanged
 
     private void FZservicio1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio1ItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FZservicio1ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio1.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina1.setModel(modelServicio);
+        }    }//GEN-LAST:event_FZservicio1ItemStateChanged
 
     private void FiltrosTD1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD1ItemStateChanged
 
@@ -10829,8 +10852,12 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQuincenanomina2ItemStateChanged
 
     private void FZservicio2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio2ItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FZservicio2ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio2.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina2.setModel(modelServicio);
+        }    }//GEN-LAST:event_FZservicio2ItemStateChanged
 
     private void FiltrosTD2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD2ItemStateChanged
 
@@ -11051,8 +11078,12 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQuincenanomina3ItemStateChanged
 
     private void FZservicio3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio3ItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FZservicio3ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio3.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina3.setModel(modelServicio);
+        }    }//GEN-LAST:event_FZservicio3ItemStateChanged
 
     private void FiltrosTD3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD3ItemStateChanged
 
@@ -11274,8 +11305,12 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQuincenanomina4ItemStateChanged
 
     private void FZservicio4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio4ItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FZservicio4ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio4.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina4.setModel(modelServicio);
+        }    }//GEN-LAST:event_FZservicio4ItemStateChanged
 
     private void FiltrosTD4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD4ItemStateChanged
 
@@ -11497,7 +11532,12 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQuincenanomina5ItemStateChanged
 
     private void FZservicio5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio5ItemStateChanged
-        // TODO add your handling code here:
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio5.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina5.setModel(modelServicio);
+        }
     }//GEN-LAST:event_FZservicio5ItemStateChanged
 
     private void FiltrosTD5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD5ItemStateChanged
@@ -11668,7 +11708,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab5KeyReleased
 
     private void Eliminar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar5ActionPerformed
-               try {
+        try {
 
             int filaseleccionada = Tnom5.getSelectedRow();
             String sql = "delete from `nominasem.detallada." + Zon.getText() + "` where #lista=" + Tnom5.getValueAt(filaseleccionada, 0);
@@ -11720,7 +11760,12 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQuincenanomina6ItemStateChanged
 
     private void FZservicio6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio6ItemStateChanged
-        // TODO add your handling code here:
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio6.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina6.setModel(modelServicio);
+        }
     }//GEN-LAST:event_FZservicio6ItemStateChanged
 
     private void FiltrosTD6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD6ItemStateChanged
@@ -11943,7 +11988,12 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQuincenanomina7ItemStateChanged
 
     private void FZservicio7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio7ItemStateChanged
-        // TODO add your handling code here:
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio7.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina7.setModel(modelServicio);
+        }
     }//GEN-LAST:event_FZservicio7ItemStateChanged
 
     private void FiltrosTD7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD7ItemStateChanged
@@ -12114,7 +12164,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab7KeyReleased
 
     private void Eliminar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar7ActionPerformed
-                try {
+        try {
 
             int filaseleccionada = Tnom7.getSelectedRow();
             String sql = "delete from `nominasem.detallada." + Zon.getText() + "` where #lista=" + Tnom7.getValueAt(filaseleccionada, 0);
@@ -12166,7 +12216,12 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroQuincenanomina8ItemStateChanged
 
     private void FZservicio8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio8ItemStateChanged
-        // TODO add your handling code here:
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio8.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina8.setModel(modelServicio);
+        }
     }//GEN-LAST:event_FZservicio8ItemStateChanged
 
     private void FiltrosTD8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD8ItemStateChanged
@@ -12337,7 +12392,21 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab8KeyReleased
 
     private void Eliminar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar8ActionPerformed
-        // TODO add your handling code here:
+        try {
+
+            int filaseleccionada = Tnom8.getSelectedRow();
+            String sql = "delete from `nominasem.detallada." + Zon.getText() + "` where #lista=" + Tnom8.getValueAt(filaseleccionada, 0);
+            java.sql.Statement st = con.createStatement();
+            int n = st.executeUpdate(sql);
+            if (n >= 0) {
+                JOptionPane.showMessageDialog(null, "Nomina eliminada");
+            }
+        } catch (HeadlessException | SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Error al eliminar Nomina: " + e.getMessage());
+
+        }
+        FunMD();
     }//GEN-LAST:event_Eliminar8ActionPerformed
 
     private void FiltroNDF8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF8KeyReleased
