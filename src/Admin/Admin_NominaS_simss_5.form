@@ -1971,7 +1971,7 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQ">
@@ -2294,7 +2294,7 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQ1">
@@ -2617,7 +2617,7 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQ2">
@@ -2940,7 +2940,7 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQ3">
@@ -3263,7 +3263,7 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQ4">
@@ -3586,7 +3586,7 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQ5">
@@ -3909,7 +3909,7 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQ6">
@@ -4232,7 +4232,7 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQ7">
@@ -4555,7 +4555,7 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQ8">
@@ -5072,7 +5072,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel30">
@@ -5419,7 +5419,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel31">
@@ -5763,7 +5763,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel33">
@@ -6107,7 +6107,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel34">
@@ -6424,7 +6424,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel35">
@@ -6768,7 +6768,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="Imprimir5">
@@ -7112,7 +7112,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel37">
@@ -7456,7 +7456,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel38">
@@ -7800,7 +7800,7 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
-                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php"/>
+                            <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel39">

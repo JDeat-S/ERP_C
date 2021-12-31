@@ -903,11 +903,11 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         PRES = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         CNQ = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Nomina Semanal General");
+        setTitle("Nomina Semanal IMSS");
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -1916,7 +1916,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ.setText("Buscar Semana:");
 
@@ -2096,7 +2096,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb3.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb3.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ1.setText("Buscar Semana:");
 
@@ -2277,7 +2277,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb4.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb4.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ2.setText("Buscar Semana:");
 
@@ -2458,7 +2458,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb5.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb5.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ3.setText("Buscar Semana:");
 
@@ -2639,7 +2639,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb6.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb6.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ4.setText("Buscar Semana:");
 
@@ -2820,7 +2820,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb7.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb7.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ5.setText("Buscar Semana:");
 
@@ -3001,7 +3001,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb8.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb8.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ6.setText("Buscar Semana:");
 
@@ -3182,7 +3182,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ7.setText("Buscar Semana:");
 
@@ -3363,7 +3363,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
+        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
 
         LabelBQ8.setText("Buscar Semana:");
 
@@ -3612,7 +3612,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb2.setToolTipText("");
-        botonWeb2.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb2.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel30.setText("Monto total en fila deposito:");
 
@@ -3798,7 +3798,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb16.setToolTipText("");
-        botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel31.setText("Monto total en fila deposito:");
 
@@ -3983,7 +3983,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb17.setToolTipText("");
-        botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel33.setText("Monto total en fila deposito:");
 
@@ -4168,7 +4168,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb18.setToolTipText("");
-        botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel34.setText("Monto total en fila deposito:");
 
@@ -4353,7 +4353,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb19.setToolTipText("");
-        botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel35.setText("Monto total en fila deposito:");
 
@@ -4538,7 +4538,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb20.setToolTipText("");
-        botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         Imprimir5.setText("Imprimir tabla");
         Imprimir5.addActionListener(new java.awt.event.ActionListener() {
@@ -4723,7 +4723,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb21.setToolTipText("");
-        botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel37.setText("Monto total en fila deposito:");
 
@@ -4908,7 +4908,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb22.setToolTipText("");
-        botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel38.setText("Monto total en fila deposito:");
 
@@ -5093,7 +5093,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb25.setToolTipText("");
-        botonWeb25.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb25.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
 
         jLabel39.setText("Monto total en fila deposito:");
 
@@ -5305,14 +5305,6 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
 
         jMenu1.add(jMenu2);
 
-        jMenuItem3.setText("Nomina IMSS");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem3);
-
         jMenuItem1.setText("Prestamos Sem");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -5320,6 +5312,14 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem1);
+
+        jMenuItem3.setText("Semanal General");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
 
