@@ -532,6 +532,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_pagos_SCQ) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Corporativo quincenal: " + error_pagos_SCQ.getMessage());
 
@@ -691,6 +693,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_ND_SCQ) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Santader corp quincenal: " + error_ND_SCQ.getMessage());
 
@@ -1014,6 +1018,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_sh_odt) {
             JOptionPane.showMessageDialog(null, "Error al compartir ordenes de taller con nomina: " + error_sh_odt.getMessage());
 
@@ -1132,6 +1138,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_sh_pre_nom) {
             JOptionPane.showMessageDialog(null, "Error al compartir prestamos con nomina: " + error_sh_pre_nom.getMessage());
 
@@ -1230,6 +1238,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_sh_cda_nom) {
             JOptionPane.showMessageDialog(null, "Error al mostrar compartir datos de caja de ahorro en nomina: " + error_sh_cda_nom.getMessage());
 
@@ -1428,17 +1438,17 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         String ShareAP = BAPNom.getText();
         String ShareAM = BAMNom.getText();
         String where = "select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`"
-                + " from empleados";// where `Status` LIKE '%Vigente%'";
+                + " from empleados where `Status` LIKE '%Vigente%'";
 
         if (!"".equals(Share)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%'";// AND `Status` LIKE '%Vigente%'";
+                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%'";// AND `Status` LIKE '%Vigente%'";
+                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%'";// AND `Status` LIKE '%Vigente%'";
+                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }
 
         try {
@@ -1489,6 +1499,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_sharenom) {
             JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
 
@@ -1601,6 +1613,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_pagos_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos acapulco: " + error_pagos_FA.getMessage());
 
@@ -1691,6 +1705,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_pagos_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos puebla: " + error_pagos_FA.getMessage());
 
@@ -1786,6 +1802,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_pagos_FT) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Foraneos toluca: " + error_pagos_FT.getMessage());
 
@@ -1876,6 +1894,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_pagos_norte) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en norte: " + error_pagos_norte.getMessage());
 
@@ -1966,6 +1986,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_pagos_poniente) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en Poniente: " + error_pagos_poniente.getMessage());
 
@@ -2056,6 +2078,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_pagos_oficina) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en oficina: " + error_pagos_oficina.getMessage());
 
@@ -2146,6 +2170,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_pagos_sur1) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 1: " + error_pagos_sur1.getMessage());
 
@@ -2236,6 +2262,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_pagos_sur2) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla pagos en sur 2: " + error_pagos_sur2.getMessage());
 
@@ -2590,6 +2618,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_ND_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + error_ND_FA.getMessage());
 
@@ -2749,6 +2779,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_ND_FP) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos puebla: " + error_ND_FP.getMessage());
 
@@ -2908,6 +2940,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_ND_FT) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos toluca: " + error_ND_FT.getMessage());
 
@@ -3067,6 +3101,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_ND_norte) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de norte: " + error_ND_norte.getMessage());
 
@@ -3226,6 +3262,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_ND_ofi) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Oficina: " + error_ND_ofi.getMessage());
 
@@ -3385,6 +3423,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_ND_pon) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Poniente: " + error_ND_pon.getMessage());
 
@@ -3544,6 +3584,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_ND_S1) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 1: " + error_ND_S1.getMessage());
 
@@ -3703,6 +3745,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_ND_S2) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Sur 2: " + error_ND_S2.getMessage());
 
@@ -4748,6 +4792,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         ODT = new javax.swing.JMenuItem();
         CDA = new javax.swing.JMenuItem();
@@ -5539,7 +5584,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
 
         jLabel24.setText("Desc IMSS:");
 
-        DI.setText("0");
+        DI.setText("26.98");
         DI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DIActionPerformed(evt);
@@ -6831,7 +6876,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -7010,7 +7055,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
@@ -7189,7 +7234,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -7368,7 +7413,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb11.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb11.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -7547,7 +7592,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb12.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb12.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -7726,7 +7771,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb13.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb13.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -7905,7 +7950,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb14.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb14.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
@@ -8084,7 +8129,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb15.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb15.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -8246,7 +8291,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         });
 
         botonWeb25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb25.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb25.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCNominaQuin.php");
 
         FZservicio8.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -8429,7 +8474,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
 
         botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb2.setToolTipText("");
-        botonWeb2.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb2.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel8.setText("Monto total en fila deposito:");
 
@@ -8615,7 +8660,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
 
         botonWeb16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb16.setToolTipText("");
-        botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel30.setText("Monto total en fila deposito:");
 
@@ -8800,7 +8845,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
 
         botonWeb17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb17.setToolTipText("");
-        botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel33.setText("Monto total en fila deposito:");
 
@@ -8985,7 +9030,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
 
         botonWeb18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb18.setToolTipText("");
-        botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel34.setText("Monto total en fila deposito:");
 
@@ -9170,7 +9215,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
 
         botonWeb19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb19.setToolTipText("");
-        botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel35.setText("Monto total en fila deposito:");
 
@@ -9355,7 +9400,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
 
         botonWeb20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb20.setToolTipText("");
-        botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         Imprimir5.setText("Imprimir tabla");
         Imprimir5.addActionListener(new java.awt.event.ActionListener() {
@@ -9545,7 +9590,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
 
         botonWeb21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb21.setToolTipText("");
-        botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel37.setText("Monto total en fila deposito:");
 
@@ -9735,7 +9780,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
 
         botonWeb22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb22.setToolTipText("");
-        botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel38.setText("Monto total en fila deposito:");
 
@@ -9925,7 +9970,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
 
         botonWeb23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb23.setToolTipText("");
-        botonWeb23.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
+        botonWeb23.setLink("http://192.168.3.10/Reportes/ReportesNominaQuinSIMSS/EPCPagosNomQuin.php");
 
         jLabel43.setText("Monto total en fila deposito:");
 
@@ -10031,7 +10076,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         jMenu3.setText("Semanal");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        jMenuItem1.setText("Nomina Semanal");
+        jMenuItem1.setText("Nomina Semanal IMSS");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -10047,6 +10092,15 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem3);
+
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem4.setText("Nomina Semanal General");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem4);
 
         jMenu1.add(jMenu3);
 
@@ -21950,6 +22004,12 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         deposito();
     }//GEN-LAST:event_RFKeyReleased
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        NominaS_simss_5 regr = new NominaS_simss_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -23709,6 +23769,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
