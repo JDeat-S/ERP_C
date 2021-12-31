@@ -486,6 +486,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         AgregarNP = new javax.swing.JButton();
         Modm = new javax.swing.JButton();
+        Clean = new javax.swing.JButton();
         NomDetallada = new javax.swing.JScrollPane();
         PestanañasND = new javax.swing.JTabbedPane();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -1782,6 +1783,13 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        Clean.setText("jButton1");
+        Clean.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CleanActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1807,7 +1815,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jLabel19)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Clean))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel28)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1861,7 +1871,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                             .addComponent(jLabel26)
                             .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel19)
-                            .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Clean)))
                     .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1904,7 +1915,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ.setText("Buscar Semana:");
 
@@ -2084,7 +2095,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb3.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb3.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ1.setText("Buscar Semana:");
 
@@ -2265,7 +2276,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb4.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb4.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ2.setText("Buscar Semana:");
 
@@ -2446,7 +2457,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb5.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb5.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ3.setText("Buscar Semana:");
 
@@ -2627,7 +2638,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb6.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb6.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ4.setText("Buscar Semana:");
 
@@ -2808,7 +2819,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb7.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb7.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ5.setText("Buscar Semana:");
 
@@ -2989,7 +3000,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb8.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb8.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ6.setText("Buscar Semana:");
 
@@ -3170,7 +3181,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ7.setText("Buscar Semana:");
 
@@ -3351,7 +3362,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         });
 
         botonWeb10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCNominaQuin.php");
+        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ8.setText("Buscar Semana:");
 
@@ -13332,6 +13343,33 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Tnom8MouseClicked
 
+    private void CleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CleanActionPerformed
+        DAB.clearSelection();
+        NDL.setText("0");
+        Ap.setText("");
+        am.setText("");
+        name.setText("");
+        Bono.setText("0");
+        cta.setText("");
+        ban.setText("");
+        Zon.setText("");
+        ServN.setText("");
+        sueldo.setText("0");
+        pd.setText("0");
+        PH.setText("0");
+        HE.setText("0");
+        THE.setText("0");
+        RI.setText("0");
+        Presp.setText("0");
+        obs.setText("");
+        Rembolso.setText("0");
+        deposito.setText("0");
+        NumPrenom.setText("0");
+        NSprenom.setText("0");
+        Pagadoprenom.setText("0");
+        Pendienteprenom.setText("0");
+    }//GEN-LAST:event_CleanActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -13411,6 +13449,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JButton CS7;
     private javax.swing.JButton CS8;
     private javax.swing.JButton CS9;
+    private javax.swing.JButton Clean;
     private javax.swing.JLabel DDes;
     private javax.swing.JLabel DT;
     private javax.swing.JComboBox<String> DomT;
