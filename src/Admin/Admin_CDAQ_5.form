@@ -1027,11 +1027,16 @@
                                   </Group>
                               </Group>
                               <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="MMAPagos" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="MADE" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Component id="jLabel155" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FilPCDA" min="-2" max="-2" attributes="0"/>
@@ -1045,10 +1050,10 @@
                                   <Component id="FilAMPCDA" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="botonWeb8" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="1613" max="32767" attributes="0"/>
+                                  <EmptySpace pref="713" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="jScrollPane1" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1083,6 +1088,13 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="MMAPagos" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="MADE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane1" alignment="0" pref="811" max="32767" attributes="0"/>
@@ -1212,6 +1224,24 @@
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosCda.php"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="MMAPagos">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Mostrar monto ahorrado"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MMAPagosActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Monto Ahorrado del empleado:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="MADE">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
               </SubComponents>
