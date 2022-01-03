@@ -55,7 +55,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         initComponents();
         SHempleados();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
-        Fecha1.setVisible(false);
+        /* Fecha1.setVisible(false);
         LabelFil.setVisible(false);
         LDAfilap.setVisible(false);
         LDAfilam.setVisible(false);
@@ -93,6 +93,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         DiaCom14.setVisible(false);
         DiaCom15.setVisible(false);
         DiaCom16.setVisible(false);
+         */
 // </editor-fold>
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
@@ -2454,797 +2455,14 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
     public void AgregarLDA() {
         if (CI.isSelected() == true) {
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getText() + "` (`NDL`, "
-                    + "`Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
-                    + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, "
-                    + "`dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`,"
-                    + " `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, "
-                    + "`EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, "
-                    + "`EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`,"
-                    + " `EEEE 31`, `y 1/16`, `y 2/17`, `y 3/18`, `y 4/19`, `y 5/20`, `y 6/21`, `y 7/22`, "
-                    + "`y 8/23`, `y 9/24`, `y 10/25`, `y 11/26`, `y 12/27`, `y 13/28`, `y 14/29`, `y 15/30`, `y 31`)"
-                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                    + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(LDA.getText()));
-                pst.setString(2, LDAZon.getText());
-                pst.setString(3, LDAQuin.getSelectedItem().toString());
-                pst.setString(4, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
-                pst.setString(5, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
-                pst.setString(6, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
-                pst.setString(7, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
-                pst.setString(8, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
-                pst.setString(9, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
-                pst.setString(10, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
-                pst.setString(11, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
-                pst.setString(12, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
-                pst.setString(13, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
-                pst.setString(14, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
-                pst.setString(15, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
-                pst.setString(16, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
-                pst.setString(17, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
-                pst.setString(18, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
-                pst.setString(19, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
-                pst.setString(20, LDAAp.getText());
-                pst.setString(21, LDAAm.getText());
-                pst.setString(22, LDAName.getText());
-
-                pst.executeUpdate();
-
-                MostrarULDA();
-
-                JFileChooser chooser = new JFileChooser();
-                FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-                chooser.setSelectedFile(new File("Lista de " + LDAAp.getText() + " " + LDAAm.getText() + " " + LDAName.getText() + " de la "
-                        + LDAQuin.getSelectedItem().toString()));
-                chooser.setFileFilter(filter);
-                chooser.setDialogTitle("Guardar archivo");
-                chooser.setAcceptAllFileFilterUsed(false);
-                if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-                    String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
-                }
-                try {
-                    String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
-                    File archivoXLS = new File(ruta);
-                    if (archivoXLS.exists()) {
-                        archivoXLS.delete();
-                    }
-                    archivoXLS.createNewFile();
-
-                    Class.forName("com.mysql.cj.jdbc.Driver");
-                    Connection connect = DriverManager.getConnection(
-                            "jdbc:mysql://192.168.1.170:3306/confort",
-                            "Servidor",
-                            "Confort1022"
-                    );
-
-                    Statement statement = connect.createStatement();
-                    ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + "` WHERE " + ULDA.getText());
-                    try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
-                        XSSFWorkbook libro = new XSSFWorkbook();
-                        XSSFSheet spreadsheet = libro.createSheet(("Lista"));
-
-                        XSSFRow row = spreadsheet.createRow((short) 0);
-                        XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-
-                        XSSFCellStyle Encabezado = libro.createCellStyle();
-                        Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
-                        Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-
-                        XSSFCellStyle Fechas = libro.createCellStyle();
-
-                        Fechas.setBorderBottom(XSSFCellStyle.BORDER_THIN);
-                        Fechas.setBorderLeft(XSSFCellStyle.BORDER_THIN);
-                        Fechas.setBorderRight(XSSFCellStyle.BORDER_THIN);
-                        Fechas.setBorderTop(XSSFCellStyle.BORDER_THIN);
-                        Fechas.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
-                        Fechas.setVerticalAlignment(XSSFCellStyle.VERTICAL_JUSTIFY);
-
-                        XSSFCellStyle Contenido = libro.createCellStyle();
-                        Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
-                        Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-                        Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
-                        Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
-                        Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
-                        Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
-
-                        cell.setCellValue("L I S T A  D E  A S I S T E N C I A");
-                        cell.setCellStyle(Encabezado);
-
-                        spreadsheet.addMergedRegion(
-                                new CellRangeAddress(
-                                        0, //first row (0-based)
-                                        0, //last row (0-based)
-                                        0, //first column (0-based)
-                                        9 //last column (0-based)
-                                )
-                        );
-
-                        row = spreadsheet.createRow(1);
-                        cell = row.createCell(2);
-                        cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
-                        cell.setCellStyle(Encabezado);
-
-                        spreadsheet.addMergedRegion(
-                                new CellRangeAddress(
-                                        1, //first row (0-based)
-                                        1, //last row (0-based)
-                                        2, //first column (0-based)
-                                        7 //last column (0-based)
-                                )
-                        );
-//quincena etc mañana
-                        row = spreadsheet.createRow(4);
-                        row.setHeight((short) 500);
-                        cell = row.createCell(0);
-                        spreadsheet.setColumnWidth(0, 4500);
-                        cell.setCellValue("Fecha");
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(1);
-                        cell.setCellValue("Nombre completo");
-                        cell.setCellStyle(Contenido);
-                        spreadsheet.addMergedRegion(
-                                new CellRangeAddress(
-                                        4, //first row (0-based)
-                                        4, //last row (0-based)
-                                        1, //first column (0-based)
-                                        3 //last column (0-based)
-                                )
-                        );
-                        cell = row.createCell(2);
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(3);
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(4);
-                        cell.setCellValue("Entrada");
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(5);
-                        cell.setCellValue("Salida");
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(6);
-                        spreadsheet.setColumnWidth(6, 3000);
-                        cell.setCellValue("Firma");
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(7);
-                        spreadsheet.setColumnWidth(7, 5650);
-                        cell.setCellValue("Lugar");
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(8);
-                        spreadsheet.setColumnWidth(8, 4500);
-                        cell.setCellValue("Doble");
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(9);
-                        spreadsheet.setColumnWidth(9, 5650);
-                        cell.setCellValue("Observaciones");
-                        cell.setCellStyle(Contenido);
-
-                        //  int i = 2;
-                        while (resultSet.next()) {
-                            row = spreadsheet.createRow(2);
-                            row.setHeight((short) 400);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Quincena"));
-                            cell.setCellStyle(Contenido);
-
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            2, //first row (0-based)
-                                            2, //last row (0-based)
-                                            0, //first column (0-based)
-                                            2 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            2, //first row (0-based)
-                                            2, //last row (0-based)
-                                            4, //first column (0-based)
-                                            7 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(4);
-                            cell.setCellValue(resultSet.getString("Apellido P") + " "
-                                    + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                            cell.setCellStyle(Encabezado);
-
-                            cell = row.createCell(5);
-                            cell.setCellValue(resultSet.getString("Apellido P") + " "
-                                    + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Encabezado);
-
-                            cell.setCellValue(resultSet.getString("Apellido P") + " "
-                                    + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                            cell.setCellStyle(Encabezado);
-
-                            cell = row.createCell(7);
-                            cell.setCellValue(resultSet.getString("Apellido P") + " "
-                                    + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                            cell.setCellStyle(Encabezado);
-
-                            cell = row.createCell(8);
-                            cell.setCellValue(resultSet.getString("Zona"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellValue(resultSet.getInt("NDL"));
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(5);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellStyle(Fechas);
-                            cell.setCellValue(resultSet.getString("Dia 1/16"));
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            5, //first row (0-based)
-                                            5, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(6);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 2/17"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            6, //first row (0-based)
-                                            6, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(7);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 3/18"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            7, //first row (0-based)
-                                            7, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(8);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 4/19"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            8, //first row (0-based)
-                                            8, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(9);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 5/20"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            9, //first row (0-based)
-                                            9, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(10);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 6/21"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            10, //first row (0-based)
-                                            10, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(11);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 7/22"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            11, //first row (0-based)
-                                            11, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(12);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 8/23"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            12, //first row (0-based)
-                                            12, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(13);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 9/24"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            13, //first row (0-based)
-                                            13, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(14);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 10/25"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            14, //first row (0-based)
-                                            14, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(15);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 11/26"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            15, //first row (0-based)
-                                            15, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(16);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 12/27"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            16, //first row (0-based)
-                                            16, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(17);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 13/28"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            17, //first row (0-based)
-                                            17, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(18);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 14/29"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            18, //first row (0-based)
-                                            18, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(19);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 15/30"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            19, //first row (0-based)
-                                            19, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(20);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Dia 31"));
-                            cell.setCellStyle(Fechas);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            20, //first row (0-based)
-                                            20, //last row (0-based)
-                                            1, //first column (0-based)
-                                            3 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            /*row = spreadsheet.createRow(17);
-                    cell = row.createCell(i);
-                    cell.setCellValue(resultSet.getString("Apellido M"));
-                    cell = row.createCell(5);
-                    cell.setCellValue(resultSet.getString("Nombre(s)"));
-                    i++;*/
-                        }
-                        spreadsheet.getPrintSetup();
-                        spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
-                        spreadsheet.getPrintSetup().setLandscape(true); // Dirección de impresión, true: horizontal, false: vertical
-                        spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.1); // Margen (abajo)  
-                        spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
-                        spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
-                        spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.49); // Margen (arriba)
-                        spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
-                        spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
-
-                        spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
-                        libro.write(archivo);
-                    }
-                    Desktop.getDesktop().open(archivoXLS);
-                } catch (IOException | NumberFormatException e) {
-                    try {
-                        throw e;
-                    } catch (IOException | NumberFormatException ex) {
-                        Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                pst.isClosed();
-
-                LDAZon.setText("");
-                LDAQuin.setSelectedIndex(0);
-                LDAAp.setText("");
-                LDAAm.setText("");
-                LDAName.setText("");
-                Fecha1.setDate(null);
-
-                JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
-
-            } catch (SQLException error_AddLDA) {
-                JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia: " + error_AddLDA);
-            }
-
-        }
-        if (CI.isSelected() == false) {
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getText() + ".simss` (`NDL`, "
-                    + "`Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
-                    + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, "
-                    + "`dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`,"
-                    + " `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, "
-                    + "`EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, "
-                    + "`EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`,"
-                    + " `EEEE 31`, `y 1/16`, `y 2/17`, `y 3/18`, `y 4/19`, `y 5/20`, `y 6/21`, `y 7/22`, "
-                    + "`y 8/23`, `y 9/24`, `y 10/25`, `y 11/26`, `y 12/27`, `y 13/28`, `y 14/29`, `y 15/30`, `y 31`)"
-                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                    + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getText() + "` "
+                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
+                    + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
+                    + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
+                    + " `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`,"
+                    + " `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, "
+                    + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(LDA.getText()));
@@ -3276,16 +2494,122 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 pst.setString(27, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
                 pst.setString(28, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
                 pst.setString(29, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
-                pst.setString(11, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
-                pst.setString(12, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
-                pst.setString(13, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
-                pst.setString(14, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
-                pst.setString(15, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
-                pst.setString(16, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
-                pst.setString(17, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
-                pst.setString(18, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
-                pst.setString(19, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
-                pst.setString(4, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setString(30, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(31, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(32, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(33, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(34, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(35, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(36, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(37, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(38, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(39, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+
+                pst.executeUpdate();
+
+                MostrarULDA();
+
+                pst.isClosed();
+
+                LDAZon.setText("");
+                LDAQuin.setSelectedIndex(0);
+                LDAAp.setText("");
+                LDAAm.setText("");
+                LDAName.setText("");
+                Fecha1.setDate(null);
+                DiaCor1.setDate(null);
+                DiaCor2.setDate(null);
+                DiaCor3.setDate(null);
+                DiaCor4.setDate(null);
+                DiaCor5.setDate(null);
+                DiaCor6.setDate(null);
+                DiaCor7.setDate(null);
+                DiaCor8.setDate(null);
+                DiaCor9.setDate(null);
+                DiaCor10.setDate(null);
+                DiaCor11.setDate(null);
+                DiaCor12.setDate(null);
+                DiaCor13.setDate(null);
+                DiaCor14.setDate(null);
+                DiaCor15.setDate(null);
+                DiaCor16.setDate(null);
+
+                DiaCom1.setDate(null);
+                DiaCom2.setDate(null);
+                DiaCom3.setDate(null);
+                DiaCom4.setDate(null);
+                DiaCom5.setDate(null);
+                DiaCom6.setDate(null);
+                DiaCom7.setDate(null);
+                DiaCom8.setDate(null);
+                DiaCom9.setDate(null);
+                DiaCom10.setDate(null);
+                DiaCom11.setDate(null);
+                DiaCom12.setDate(null);
+                DiaCom13.setDate(null);
+                DiaCom14.setDate(null);
+                DiaCom15.setDate(null);
+                DiaCom16.setDate(null);
+
+                JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
+
+            } catch (SQLException error_AddLDA) {
+                JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia: " + error_AddLDA);
+            }
+
+        }
+
+        if (CI.isSelected()
+                == false) {
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getText() + ".simss` "
+                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
+                    + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
+                    + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
+                    + " `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`,"
+                    + " `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, "
+                    + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(LDA.getText()));
+                pst.setString(2, LDAZon.getText());
+                pst.setString(3, LDAQuin.getSelectedItem().toString());
+                pst.setString(4, LDAAp.getText());
+                pst.setString(5, LDAAm.getText());
+                pst.setString(6, LDAName.getText());
+                pst.setString(7, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(8, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(9, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(10, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(11, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(12, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(13, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(14, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(15, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(16, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(17, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(18, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(19, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(20, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(21, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(22, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(23, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(24, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(25, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(26, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(27, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(28, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(29, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(30, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(31, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(32, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(33, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(34, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(35, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(36, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(37, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(38, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(39, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
 
                 pst.executeUpdate();
 
@@ -4011,6 +3335,39 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 LDAAm.setText("");
                 LDAName.setText("");
                 Fecha1.setDate(null);
+                DiaCor1.setDate(null);
+                DiaCor2.setDate(null);
+                DiaCor3.setDate(null);
+                DiaCor4.setDate(null);
+                DiaCor5.setDate(null);
+                DiaCor6.setDate(null);
+                DiaCor7.setDate(null);
+                DiaCor8.setDate(null);
+                DiaCor9.setDate(null);
+                DiaCor10.setDate(null);
+                DiaCor11.setDate(null);
+                DiaCor12.setDate(null);
+                DiaCor13.setDate(null);
+                DiaCor14.setDate(null);
+                DiaCor15.setDate(null);
+                DiaCor16.setDate(null);
+                DiaCom1.setDate(null);
+                DiaCom2.setDate(null);
+                DiaCom3.setDate(null);
+                DiaCom4.setDate(null);
+                DiaCom5.setDate(null);
+                DiaCom6.setDate(null);
+                DiaCom7.setDate(null);
+                DiaCom8.setDate(null);
+                DiaCom9.setDate(null);
+                DiaCom10.setDate(null);
+                DiaCom11.setDate(null);
+                DiaCom12.setDate(null);
+                DiaCom13.setDate(null);
+                DiaCom14.setDate(null);
+                DiaCom15.setDate(null);
+                DiaCom16.setDate(null);
+
                 pst.isClosed();
                 JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
             } catch (SQLException error_AddLDA) {
@@ -4140,7 +3497,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 DiaCom14.setDate(null);
                 DiaCom15.setDate(null);
                 DiaCom16.setDate(null);
-                
+
             }
             //</editor-fold>
 
@@ -4238,7 +3595,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
 
             }
@@ -4338,7 +3696,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
 //</editor-fold>
@@ -4447,8 +3806,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
 //</editor-fold>
@@ -4559,7 +3920,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
@@ -4670,7 +4032,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -4782,7 +4145,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
@@ -4894,8 +4258,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -5005,7 +4371,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 abril">
@@ -5117,7 +4484,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -5229,7 +4597,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 may">
@@ -5343,7 +4712,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -5453,8 +4823,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jun">
@@ -5564,8 +4936,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -5677,7 +5051,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jul">
@@ -5791,7 +5166,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -5903,7 +5279,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 ago">
@@ -6015,8 +5392,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -6128,7 +5507,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 sep">
@@ -6240,7 +5620,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -6352,7 +5733,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 oct">
@@ -6464,8 +5846,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -6575,8 +5959,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 nov">
@@ -6686,8 +6072,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -6797,8 +6185,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 dic">
@@ -6912,7 +6302,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
         }
@@ -7058,8 +6449,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
 
             }
@@ -7171,7 +6564,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
 //</editor-fold>
@@ -7280,7 +6674,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
 //</editor-fold>
@@ -7388,7 +6783,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
@@ -7494,8 +6890,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     //fin = calM1.getTime();
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -7601,8 +6999,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
@@ -7712,7 +7112,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -7818,8 +7219,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 abril">
@@ -7927,7 +7330,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -7940,55 +7344,103 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     FG = dias.format(DTano) + ", 1-may.-" + ano.format(DTano);
                     Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
                     Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
                     Calendar calM1 = Calendar.getInstance();
                     calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
 
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
 
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
 
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
 
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
 
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
 
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
 
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 may">
@@ -8098,7 +7550,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -8204,8 +7657,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jun">
@@ -8311,8 +7766,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -8420,7 +7877,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jul">
@@ -8530,7 +7988,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -8636,8 +8095,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 ago">
@@ -8747,7 +8208,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -8855,7 +8317,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 sep">
@@ -8963,7 +8426,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -9071,7 +8535,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 oct">
@@ -9181,7 +8646,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -9289,7 +8755,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 nov">
@@ -9395,8 +8862,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -9502,8 +8971,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 fin = calM1.getTime();*/
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
+
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 dic">
@@ -9613,7 +9084,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
         }
@@ -9679,3194 +9151,6 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         MostrarULDA();
 
     }//GEN-LAST:event_CIActionPerformed
-
-    private void NYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NYearActionPerformed
-        int vari = LDAQuin.getSelectedIndex();
-
-        if (NYear.isSelected() == true) {
-            // <editor-fold defaultstate="collapsed" desc="SelecalM1ionar">
-            if (vari == 0) {
-                Fecha1.setDate(null);
-
-            }
-            //</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 ENE">
-            if (vari == 1) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-ene.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-            }
-            //</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 ENE">
-
-            if (vari == 2) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-ene.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 FEB">
-            if (vari == 3) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-feb.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 Feb">
-
-            if (vari == 4) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-feb.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                    //calM1.add(Calendar.DATE, 1);
-                    //fin = calM1.getTime();
-                    //calM1.add(Calendar.DATE, 1);
-                    //fin = calM1.getTime();
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
-
-            if (vari == 5) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-feb.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    //calM1.add(Calendar.DATE, 1);
-                    //fin = calM1.getTime();
-                    //calM1.add(Calendar.DATE, 1);
-                    //fin = calM1.getTime();
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 Marzo">
-            if (vari == 6) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-mar.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    //calM1.add(Calendar.DATE, 1);
-                    //fin = calM1.getTime();
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
-
-            if (vari == 7) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-mar.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 Abril">
-            if (vari == 8) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-abr.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 abril">
-
-            if (vari == 9) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-abr.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 may">
-            if (vari == 10) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-may.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 may">
-
-            if (vari == 11) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-may.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 junio">
-            if (vari == 12) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-jun.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 jun">
-
-            if (vari == 13) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-jun.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 jul">
-            if (vari == 14) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-jul.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 jul">
-
-            if (vari == 15) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-jul.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 ago">
-            if (vari == 16) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-ago.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 ago">
-
-            if (vari == 17) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-ago.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 sep">
-            if (vari == 18) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-sep.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 sep">
-
-            if (vari == 19) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-sep.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 oct">
-            if (vari == 20) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-oct.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 oct">
-
-            if (vari == 21) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-oct.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 nov">
-            if (vari == 22) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-nov.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 nov">
-
-            if (vari == 23) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-nov.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 dic">
-            if (vari == 24) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-dic.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 dic">
-
-            if (vari == 25) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-dic.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Calendar calY1 = Calendar.getInstance();
-                    calY1.setTime(fin);
-                    calY1.add(Calendar.YEAR, 1);
-                    fin = calY1.getTime();
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-        }
-        if (NYear.isSelected() == false) {
-            // <editor-fold defaultstate="collapsed" desc="SelecalM1ionar">
-            if (vari == 0) {
-                Fecha1.setDate(null);
-
-            }
-            //</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 ENE">
-            if (vari == 1) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-ene.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-            }
-            //</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 ENE">
-
-            if (vari == 2) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-ene.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 FEB">
-            if (vari == 3) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-feb.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 Feb">
-
-            if (vari == 4) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-feb.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                    //calM1.add(Calendar.DATE, 1);
-                    //fin = calM1.getTime();
-                    //calM1.add(Calendar.DATE, 1);
-                    //fin = calM1.getTime();
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
-
-            if (vari == 5) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-feb.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    //calM1.add(Calendar.DATE, 1);
-                    //fin = calM1.getTime();
-                    //calM1.add(Calendar.DATE, 1);
-                    //fin = calM1.getTime();
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 Marzo">
-            if (vari == 6) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-mar.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    //calM1.add(Calendar.DATE, 1);
-                    //fin = calM1.getTime();
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
-
-            if (vari == 7) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-mar.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 Abril">
-            if (vari == 8) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-abr.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 abril">
-
-            if (vari == 9) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-abr.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 may">
-            if (vari == 10) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-may.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 may">
-
-            if (vari == 11) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-may.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 junio">
-            if (vari == 12) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-jun.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 jun">
-
-            if (vari == 13) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-jun.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 jul">
-            if (vari == 14) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-jul.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 jul">
-
-            if (vari == 15) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-jul.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 ago">
-            if (vari == 16) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-ago.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 ago">
-
-            if (vari == 17) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-ago.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 sep">
-            if (vari == 18) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-sep.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 sep">
-
-            if (vari == 19) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-sep.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 oct">
-            if (vari == 20) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-oct.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 oct">
-
-            if (vari == 21) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-oct.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 nov">
-            if (vari == 22) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-nov.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 nov">
-
-            if (vari == 23) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-nov.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc="Q1 dic">
-            if (vari == 24) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 1-dic.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    /*calM1.add(Calendar.DATE, 1);
-                fin = calM1.getTime();*/
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-            // <editor-fold defaultstate="collapsed" desc="Q2 dic">
-
-            if (vari == 25) {
-                try {
-                    Date DTano = new Date();
-                    SimpleDateFormat ano = new SimpleDateFormat("y");
-                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
-                    FG = dias.format(DTano) + ", 16-dic.-" + ano.format(DTano);
-                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
-                    Fecha1.setDate(fin);
-                    Calendar calM1 = Calendar.getInstance();
-                    calM1.setTime(fin);
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                    calM1.add(Calendar.DATE, 1);
-                    fin = calM1.getTime();
-
-                } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }//</editor-fold>
-        }
-
-    }//GEN-LAST:event_NYearActionPerformed
 
     private void LDAfilItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LDAfilItemStateChanged
         if (LDAfil.getSelectedIndex() == 0) {
@@ -12936,6 +9220,5639 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         MostrarULDA();
 
     }//GEN-LAST:event_LDAZonKeyReleased
+
+    private void NYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NYearActionPerformed
+        int vari = LDAQuin.getSelectedIndex();
+
+        if (NYear.isSelected() == true) {
+            // <editor-fold defaultstate="collapsed" desc="SelecalM1ionar">
+            if (vari == 0) {
+                Fecha1.setDate(null);
+                DiaCor1.setDate(null);
+                DiaCor2.setDate(null);
+                DiaCor3.setDate(null);
+                DiaCor4.setDate(null);
+                DiaCor5.setDate(null);
+                DiaCor6.setDate(null);
+                DiaCor7.setDate(null);
+                DiaCor8.setDate(null);
+                DiaCor9.setDate(null);
+                DiaCor10.setDate(null);
+                DiaCor11.setDate(null);
+                DiaCor12.setDate(null);
+                DiaCor13.setDate(null);
+                DiaCor14.setDate(null);
+                DiaCor15.setDate(null);
+                DiaCor16.setDate(null);
+                DiaCom1.setDate(null);
+                DiaCom2.setDate(null);
+                DiaCom3.setDate(null);
+                DiaCom4.setDate(null);
+                DiaCom5.setDate(null);
+                DiaCom6.setDate(null);
+                DiaCom7.setDate(null);
+                DiaCom8.setDate(null);
+                DiaCom9.setDate(null);
+                DiaCom10.setDate(null);
+                DiaCom11.setDate(null);
+                DiaCom12.setDate(null);
+                DiaCom13.setDate(null);
+                DiaCom14.setDate(null);
+                DiaCom15.setDate(null);
+                DiaCom16.setDate(null);
+
+            }
+            //</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 ENE">
+            if (vari == 1) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-ene.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+            //</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 ENE">
+
+            if (vari == 2) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-ene.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 FEB">
+            if (vari == 3) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-feb.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 Feb">
+
+            if (vari == 4) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-feb.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor14.setDate(null);
+                    DiaCom14.setDate(null);
+
+                    //calM1.add(Calendar.DATE, 1);
+                    //fin = calM1.getTime();
+                    DiaCor15.setDate(null);
+                    DiaCom15.setDate(null);
+
+                    //calM1.add(Calendar.DATE, 1);
+                    //fin = calM1.getTime();
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
+
+            if (vari == 5) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-feb.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    //calM1.add(Calendar.DATE, 1);
+                    //fin = calM1.getTime();
+                    DiaCor15.setDate(null);
+                    DiaCom15.setDate(null);
+
+                    //calM1.add(Calendar.DATE, 1);
+                    //fin = calM1.getTime();
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 Marzo">
+            if (vari == 6) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-mar.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
+
+            if (vari == 7) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-mar.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 Abril">
+            if (vari == 8) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-abr.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 abril">
+
+            if (vari == 9) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-abr.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 may">
+            if (vari == 10) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-may.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 may">
+
+            if (vari == 11) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-may.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 jun">
+            if (vari == 12) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-jun.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 jun">
+
+            if (vari == 13) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-jun.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 jul">
+            if (vari == 14) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-jul.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 jul">
+
+            if (vari == 15) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-jul.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 ago">
+            if (vari == 16) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-ago.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 ago">
+
+            if (vari == 17) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-ago.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 sep">
+            if (vari == 18) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-sep.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 sep">
+
+            if (vari == 19) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-sep.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 oct">
+            if (vari == 20) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-oct.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 oct">
+
+            if (vari == 21) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-oct.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 nov">
+            if (vari == 22) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-nov.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 nov">
+
+            if (vari == 23) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-nov.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 dic">
+            if (vari == 24) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-dic.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 dic">
+
+            if (vari == 25) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-dic.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Calendar calY1 = Calendar.getInstance();
+                    calY1.setTime(fin);
+                    calY1.add(Calendar.YEAR, 1);
+                    fin = calY1.getTime();
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+        }
+        if (NYear.isSelected() == false) {
+            // <editor-fold defaultstate="collapsed" desc="SelecalM1ionar">
+            if (vari == 0) {
+                Fecha1.setDate(null);
+                DiaCor1.setDate(null);
+                DiaCor2.setDate(null);
+                DiaCor3.setDate(null);
+                DiaCor4.setDate(null);
+                DiaCor5.setDate(null);
+                DiaCor6.setDate(null);
+                DiaCor7.setDate(null);
+                DiaCor8.setDate(null);
+                DiaCor9.setDate(null);
+                DiaCor10.setDate(null);
+                DiaCor11.setDate(null);
+                DiaCor12.setDate(null);
+                DiaCor13.setDate(null);
+                DiaCor14.setDate(null);
+                DiaCor15.setDate(null);
+                DiaCor16.setDate(null);
+                DiaCom1.setDate(null);
+                DiaCom2.setDate(null);
+                DiaCom3.setDate(null);
+                DiaCom4.setDate(null);
+                DiaCom5.setDate(null);
+                DiaCom6.setDate(null);
+                DiaCom7.setDate(null);
+                DiaCom8.setDate(null);
+                DiaCom9.setDate(null);
+                DiaCom10.setDate(null);
+                DiaCom11.setDate(null);
+                DiaCom12.setDate(null);
+                DiaCom13.setDate(null);
+                DiaCom14.setDate(null);
+                DiaCom15.setDate(null);
+                DiaCom16.setDate(null);
+
+            }
+            //</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 ENE">
+            if (vari == 1) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-ene.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+            //</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 ENE">
+
+            if (vari == 2) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-ene.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 FEB">
+            if (vari == 3) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-feb.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 Feb">
+
+            if (vari == 4) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-feb.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor14.setDate(null);
+                    DiaCom14.setDate(null);
+
+                    //calM1.add(Calendar.DATE, 1);
+                    //fin = calM1.getTime();
+                    DiaCor15.setDate(null);
+                    DiaCom15.setDate(null);
+
+                    //calM1.add(Calendar.DATE, 1);
+                    //fin = calM1.getTime();
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
+
+            if (vari == 5) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-feb.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    //calM1.add(Calendar.DATE, 1);
+                    //fin = calM1.getTime();
+                    DiaCor15.setDate(null);
+                    DiaCom15.setDate(null);
+
+                    //calM1.add(Calendar.DATE, 1);
+                    //fin = calM1.getTime();
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 Marzo">
+            if (vari == 6) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-mar.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
+
+            if (vari == 7) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-mar.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 Abril">
+            if (vari == 8) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-abr.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 abril">
+
+            if (vari == 9) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-abr.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 may">
+            if (vari == 10) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-may.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 may">
+
+            if (vari == 11) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-may.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 jun">
+            if (vari == 12) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-jun.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 jun">
+
+            if (vari == 13) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-jun.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 jul">
+            if (vari == 14) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-jul.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 jul">
+
+            if (vari == 15) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-jul.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 ago">
+            if (vari == 16) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-ago.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 ago">
+
+            if (vari == 17) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-ago.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 sep">
+            if (vari == 18) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-sep.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 sep">
+
+            if (vari == 19) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-sep.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 oct">
+            if (vari == 20) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-oct.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 oct">
+
+            if (vari == 21) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-oct.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 nov">
+            if (vari == 22) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-nov.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 nov">
+
+            if (vari == 23) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-nov.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc="Q1 dic">
+            if (vari == 24) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 1-dic.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    /*calM1.add(Calendar.DATE, 1);
+                fin = calM1.getTime();*/
+                    DiaCor16.setDate(null);
+                    DiaCom16.setDate(null);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+            // <editor-fold defaultstate="collapsed" desc="Q2 dic">
+
+            if (vari == 25) {
+                try {
+                    Date DTano = new Date();
+                    SimpleDateFormat ano = new SimpleDateFormat("y");
+                    SimpleDateFormat dias = new SimpleDateFormat("EEEE");
+                    FG = dias.format(DTano) + ", 16-dic.-" + ano.format(DTano);
+                    Date fin = new SimpleDateFormat("EEEE, d-MMM-y").parse(FG);
+                    Fecha1.setDate(fin);
+                    Fecha1.setDate(fin);
+                    DiaCor1.setDate(fin);
+                    DiaCom1.setDate(fin);
+
+                    Calendar calM1 = Calendar.getInstance();
+                    calM1.setTime(fin);
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor2.setDate(fin);
+                    DiaCom2.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor3.setDate(fin);
+                    DiaCom3.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor4.setDate(fin);
+                    DiaCom4.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor5.setDate(fin);
+                    DiaCom5.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor6.setDate(fin);
+                    DiaCom6.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor7.setDate(fin);
+                    DiaCom7.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor8.setDate(fin);
+                    DiaCom8.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor9.setDate(fin);
+                    DiaCom9.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor10.setDate(fin);
+                    DiaCom10.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor11.setDate(fin);
+                    DiaCom11.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor12.setDate(fin);
+                    DiaCom12.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor13.setDate(fin);
+                    DiaCom13.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor14.setDate(fin);
+                    DiaCom14.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor15.setDate(fin);
+                    DiaCom15.setDate(fin);
+
+                    calM1.add(Calendar.DATE, 1);
+                    fin = calM1.getTime();
+
+                    DiaCor16.setDate(fin);
+                    DiaCom16.setDate(fin);
+
+                } catch (ParseException ex) {
+                    Logger.getLogger(Admin_Listas_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
+                }
+            }//</editor-fold>
+        }
+    }//GEN-LAST:event_NYearActionPerformed
 
     /**
      * @param args the command line arguments

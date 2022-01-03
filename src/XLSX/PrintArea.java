@@ -27,7 +27,7 @@ public class PrintArea {
     public static void main(String[] args) throws Exception {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-        chooser.setSelectedFile(new File("Lista de"));
+        chooser.setSelectedFile(new File("Lista de la "));
         chooser.setFileFilter(filter);
         chooser.setDialogTitle("Guardar archivo");
         chooser.setAcceptAllFileFilterUsed(false);
@@ -52,9 +52,8 @@ public class PrintArea {
             Statement statement = connect.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas.foraneos toluca` WHERE 1");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
-
                 XSSFWorkbook libro = new XSSFWorkbook();
-                XSSFSheet spreadsheet = libro.createSheet("Lista de ");
+                XSSFSheet spreadsheet = libro.createSheet(("Lista"));
 
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
@@ -70,7 +69,7 @@ public class PrintArea {
                 Fechas.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 Fechas.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 Fechas.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
-                Fechas.setVerticalAlignment(XSSFCellStyle.VERTICAL_JUSTIFY);
+                Fechas.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
 
                 XSSFCellStyle Contenido = libro.createCellStyle();
                 Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
@@ -92,11 +91,10 @@ public class PrintArea {
                         )
                 );
 
-                XSSFRow rowConf = spreadsheet.createRow(1);
-                XSSFCell cellConf;
-                cellConf = rowConf.createCell(2);
-                cellConf.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
-                cellConf.setCellStyle(Encabezado);
+                row = spreadsheet.createRow(1);
+                cell = row.createCell(2);
+                cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
+                cell.setCellStyle(Encabezado);
 
                 spreadsheet.addMergedRegion(
                         new CellRangeAddress(
@@ -107,16 +105,28 @@ public class PrintArea {
                         )
                 );
 //quincena etc mañana
-                XSSFRow rowSinestilo = spreadsheet.createRow(4);
-                rowSinestilo.setHeight((short) 500);
-                XSSFCell cellSinestilo;
-                cellSinestilo = rowSinestilo.createCell(0);
-                spreadsheet.setColumnWidth(0, 4500);
-                cellSinestilo.setCellValue("Fecha");
-                cellSinestilo.setCellStyle(Contenido);
-                cellSinestilo = rowSinestilo.createCell(1);
-                cellSinestilo.setCellValue("Nombre completo");
-                cellSinestilo.setCellStyle(Contenido);
+                row = spreadsheet.createRow(4);
+                spreadsheet.addMergedRegion(
+                        new CellRangeAddress(
+                                4, //first row (0-based)
+                                4, //last row (0-based)
+                                0, //first column (0-based)
+                                1 //last column (0-based)
+                        )
+                );
+                row.setHeight((short) 500);
+                cell = row.createCell(0);
+                spreadsheet.setColumnWidth(0, 750);
+                cell.setCellValue("Fecha");
+                cell.setCellStyle(Contenido);
+                
+                spreadsheet.setColumnWidth(1, 2500);
+                cell = row.createCell(1);
+                cell.setCellStyle(Contenido);
+
+                cell = row.createCell(2);
+                cell.setCellValue("Nombre completo");
+                cell.setCellStyle(Contenido);
                 spreadsheet.addMergedRegion(
                         new CellRangeAddress(
                                 4, //first row (0-based)
@@ -125,40 +135,40 @@ public class PrintArea {
                                 3 //last column (0-based)
                         )
                 );
-                cellSinestilo = rowSinestilo.createCell(2);
-                cellSinestilo.setCellStyle(Contenido);
-                cellSinestilo = rowSinestilo.createCell(3);
-                cellSinestilo.setCellStyle(Contenido);
-                cellSinestilo = rowSinestilo.createCell(4);
-                cellSinestilo.setCellValue("Entrada");
-                cellSinestilo.setCellStyle(Contenido);
-                cellSinestilo = rowSinestilo.createCell(5);
-                cellSinestilo.setCellValue("Salida");
-                cellSinestilo.setCellStyle(Contenido);
-                cellSinestilo = rowSinestilo.createCell(6);
-                spreadsheet.setColumnWidth(6, 3000);
-                cellSinestilo.setCellValue("Firma");
-                cellSinestilo.setCellStyle(Contenido);
-                cellSinestilo = rowSinestilo.createCell(7);
-                spreadsheet.setColumnWidth(7, 5650);
-                cellSinestilo.setCellValue("Lugar");
-                cellSinestilo.setCellStyle(Contenido);
-                cellSinestilo = rowSinestilo.createCell(8);
-                spreadsheet.setColumnWidth(8, 4500);
-                cellSinestilo.setCellValue("Doble");
-                cellSinestilo.setCellStyle(Contenido);
-                cellSinestilo = rowSinestilo.createCell(9);
-                spreadsheet.setColumnWidth(9, 5650);
-                cellSinestilo.setCellValue("Observaciones");
-                cellSinestilo.setCellStyle(Contenido);
+                cell = row.createCell(3);
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(4);
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(5);
+                cell.setCellValue("Entrada");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(6);
+                cell.setCellValue("Salida");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(7);
+                spreadsheet.setColumnWidth(7, 3000);
+                cell.setCellValue("Firma");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(8);
+                spreadsheet.setColumnWidth(8, 5650);
+                cell.setCellValue("Lugar");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(9);
+                spreadsheet.setColumnWidth(9, 4500);
+                cell.setCellValue("Doble");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(10);
+                spreadsheet.setColumnWidth(10, 5650);
+                cell.setCellValue("Observaciones");
+                cell.setCellStyle(Contenido);
 
                 //  int i = 2;
                 while (resultSet.next()) {
-                    rowSinestilo = spreadsheet.createRow(2);
-                    rowSinestilo.setHeight((short) 400);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Quincena"));
-                    cellSinestilo.setCellStyle(Contenido);
+                    row = spreadsheet.createRow(2);
+                    row.setHeight((short) 400);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("Quincena") + " " + resultSet.getString("y 1/16"));
+                    cell.setCellStyle(Contenido);
 
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
@@ -168,10 +178,10 @@ public class PrintArea {
                                     2 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
 
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
@@ -181,70 +191,63 @@ public class PrintArea {
                                     7 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellValue(resultSet.getString("Apellido P") + " "
+                    cell = row.createCell(4);
+                    cell.setCellValue(resultSet.getString("Apellido P") + " "
                             + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                    cellSinestilo.setCellStyle(Encabezado);
+                    cell.setCellStyle(Encabezado);
 
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellValue(resultSet.getString("Apellido P") + " "
+                    cell = row.createCell(5);
+                    cell.setCellValue(resultSet.getString("Apellido P") + " "
                             + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Encabezado);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Encabezado);
 
-                    cellSinestilo.setCellValue(resultSet.getString("Apellido P") + " "
+                    cell.setCellValue(resultSet.getString("Apellido P") + " "
                             + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                    cellSinestilo.setCellStyle(Encabezado);
+                    cell.setCellStyle(Encabezado);
 
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellValue(resultSet.getString("Apellido P") + " "
+                    cell = row.createCell(7);
+                    cell.setCellValue(resultSet.getString("Apellido P") + " "
                             + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                    cellSinestilo.setCellStyle(Encabezado);
+                    cell.setCellStyle(Encabezado);
 
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellValue(resultSet.getString("Zona"));
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellValue(resultSet.getString("NDL"));
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellValue(resultSet.getString("Zona"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellValue(resultSet.getInt("NDL"));
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(5);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellStyle(Fechas);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 1/16"));
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    5, //first row (0-based)
-                                    5, //last row (0-based)
-                                    1, //first column (0-based)
-                                    3 //last column (0-based)
-                            )
-                    );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    row = spreadsheet.createRow(5);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellStyle(Fechas);
+                    cell.setCellValue(resultSet.getString("dd 1/16"));
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSet.getString("EEEE 1/16"));
+                    cell.setCellStyle(Fechas);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(6);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 2/17"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(6);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 2/17"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     6, //first row (0-based)
@@ -253,30 +256,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(7);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 3/18"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(7);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 3/18"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     7, //first row (0-based)
@@ -285,30 +288,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(8);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 4/19"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(8);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 4/19"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     8, //first row (0-based)
@@ -317,30 +320,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(9);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 5/20"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(9);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 5/20"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     9, //first row (0-based)
@@ -349,30 +352,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(10);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 6/21"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(10);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 6/21"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     10, //first row (0-based)
@@ -381,30 +384,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(11);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 7/22"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(11);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 7/22"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     11, //first row (0-based)
@@ -413,30 +416,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(12);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 8/23"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(12);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 8/23"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     12, //first row (0-based)
@@ -445,30 +448,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(13);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 9/24"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(13);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 9/24"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     13, //first row (0-based)
@@ -477,30 +480,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(14);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 10/25"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(14);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 10/25"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     14, //first row (0-based)
@@ -509,30 +512,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(15);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 11/26"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(15);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 11/26"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     15, //first row (0-based)
@@ -541,30 +544,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(16);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 12/27"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(16);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 12/27"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     16, //first row (0-based)
@@ -573,30 +576,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(17);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 13/28"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(17);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 13/28"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     17, //first row (0-based)
@@ -605,30 +608,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(18);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 14/29"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(18);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 14/29"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     18, //first row (0-based)
@@ -637,30 +640,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(19);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 15/30"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(19);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 15/30"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     19, //first row (0-based)
@@ -669,30 +672,30 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                    rowSinestilo = spreadsheet.createRow(20);
-                    rowSinestilo.setHeight((short) 600);
-                    cellSinestilo = rowSinestilo.createCell(0);
-                    cellSinestilo.setCellValue(resultSet.getString("Dia 31"));
-                    cellSinestilo.setCellStyle(Fechas);
+                    row = spreadsheet.createRow(20);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSet.getString("dd 31"));
+                    cell.setCellStyle(Fechas);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     20, //first row (0-based)
@@ -701,31 +704,25 @@ public class PrintArea {
                                     3 //last column (0-based)
                             )
                     );
-                    cellSinestilo = rowSinestilo.createCell(1);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(2);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(3);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(4);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(5);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(6);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(7);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(8);
-                    cellSinestilo.setCellStyle(Contenido);
-                    cellSinestilo = rowSinestilo.createCell(9);
-                    cellSinestilo.setCellStyle(Contenido);
-
-                    /*row = spreadsheet.createRow(17);
-                    cell = row.createCell(i);
-                    cell.setCellValue(resultSet.getString("Apellido M"));
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
                     cell = row.createCell(5);
-                    cell.setCellValue(resultSet.getString("Nombre(s)"));
-                    i++;*/
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
                 }
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
@@ -742,6 +739,7 @@ public class PrintArea {
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
+
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
