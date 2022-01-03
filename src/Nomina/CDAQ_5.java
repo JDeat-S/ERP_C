@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Nomina;
 
 import Conexion.ConexionSQL;
@@ -122,7 +117,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     public void MODPAGOCDA() {
 
         String SQL = "UPDATE `nomina.pagos.cda` SET `Observaciones` = ?, `# de recibo de pago`"
-                + " = ? WHERE `nomina.pagos.cda`.`#Lista` = ?";
+                + " = ? WHERE `nomina.pagos.cda`.`#Folio` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -193,7 +188,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
             modelo.addColumn("# de recibo de pago");
 
 //ANCHOS
-            int[] anchos = {/*ND*/50, /*NL*/ 50, /*NC*/ 50, /*NE*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*ZON*/ 50,
+            int[] anchos = {/*ND*/30, /*NL*/ 30, /*NC*/ 30, /*NE*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*ZON*/ 50,
                 /*SERV*/ 50, /*QUIN*/ 60, /*cda*/ 50, /*OBS*/ 100, /*QA*/ 60,/*NDRDP*/ 60};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -527,6 +522,9 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         FilAPPCDA = new javax.swing.JTextField();
         FilAMPCDA = new javax.swing.JTextField();
         botonWeb8 = new botones.BotonWeb();
+        MMAPagos = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
+        MADE = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -1113,6 +1111,17 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         botonWeb8.setToolTipText("");
         botonWeb8.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosCda.php");
 
+        MMAPagos.setText("Mostrar monto ahorrado");
+        MMAPagos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MMAPagosActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Monto Ahorrado del empleado:");
+
+        MADE.setText("0");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1131,10 +1140,14 @@ public final class CDAQ_5 extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(NFpagocda, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                                 .addComponent(NREcda, javax.swing.GroupLayout.Alignment.LEADING))))
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(MMAPagos)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MADE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel155)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1149,8 +1162,8 @@ public final class CDAQ_5 extends javax.swing.JFrame {
                         .addComponent(FilAMPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonWeb8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 1613, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(713, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1179,6 +1192,12 @@ public final class CDAQ_5 extends javax.swing.JFrame {
                             .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MMAPagos)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(MADE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 811, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1594,14 +1613,65 @@ public final class CDAQ_5 extends javax.swing.JFrame {
 
     private void FilnamePCDAKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilnamePCDAKeyReleased
         MDTPCDA();
+        if (MMAPagos.isSelected() == true) {
+            double t = 0;
+            double p;
+            if (TPCDA.getRowCount() > 0) {
+                for (int i = 0; i < TPCDA.getRowCount(); i++) {
+                    p = Double.parseDouble(TPCDA.getValueAt(i, 10).toString());
+                    t += p;
+                }
+                MADE.setText("" + t);
+            } else {
+
+            }
+        }
+        if (MMAPagos.isSelected() == false) {
+            MADE.setText("0");
+
+        }
     }//GEN-LAST:event_FilnamePCDAKeyReleased
 
     private void FilAPPCDAKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilAPPCDAKeyReleased
         MDTPCDA();
+        if (MMAPagos.isSelected() == true) {
+            double t = 0;
+            double p;
+            if (TPCDA.getRowCount() > 0) {
+                for (int i = 0; i < TPCDA.getRowCount(); i++) {
+                    p = Double.parseDouble(TPCDA.getValueAt(i, 10).toString());
+                    t += p;
+                }
+                MADE.setText("" + t);
+            } else {
+
+            }
+        }
+        if (MMAPagos.isSelected() == false) {
+            MADE.setText("0");
+
+        }
     }//GEN-LAST:event_FilAPPCDAKeyReleased
 
     private void FilAMPCDAKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilAMPCDAKeyReleased
         MDTPCDA();
+        if (MMAPagos.isSelected() == true) {
+            double t = 0;
+            double p;
+            if (TPCDA.getRowCount() > 0) {
+                for (int i = 0; i < TPCDA.getRowCount(); i++) {
+                    p = Double.parseDouble(TPCDA.getValueAt(i, 10).toString());
+                    t += p;
+                }
+                MADE.setText("" + t);
+            } else {
+
+            }
+        }
+        if (MMAPagos.isSelected() == false) {
+            MADE.setText("0");
+
+        }
     }//GEN-LAST:event_FilAMPCDAKeyReleased
 
     private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
@@ -1645,6 +1715,26 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void MMAPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MMAPagosActionPerformed
+        if (MMAPagos.isSelected() == true) {
+            double t = 0;
+            double p;
+            if (TPCDA.getRowCount() > 0) {
+                for (int i = 0; i < TPCDA.getRowCount(); i++) {
+                    p = Double.parseDouble(TPCDA.getValueAt(i, 10).toString());
+                    t += p;
+                }
+                MADE.setText("" + t);
+            } else {
+
+            }
+        }
+        if (MMAPagos.isSelected() == false) {
+            MADE.setText("0");
+
+        }
+    }//GEN-LAST:event_MMAPagosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1705,6 +1795,8 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField IAP;
     private javax.swing.JLabel Labelcda;
     private javax.swing.JLabel Labelfilcda;
+    private javax.swing.JLabel MADE;
+    private javax.swing.JCheckBox MMAPagos;
     private javax.swing.JButton ModCDA;
     private javax.swing.JTextField NFpagocda;
     private javax.swing.JTextField NREcda;
@@ -1729,6 +1821,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     private botones.BotonWeb botonWeb7;
     private botones.BotonWeb botonWeb8;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel106;
