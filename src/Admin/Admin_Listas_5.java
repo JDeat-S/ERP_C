@@ -1557,10 +1557,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel31.setText("Filtro:");
 
         FillLSI.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSIItemStateChanged(evt);
+            }
+        });
 
         jLabel32.setText("jLabel12");
 
+        FillLSIAp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIApKeyReleased(evt);
+            }
+        });
+
+        FillLSIAm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAmKeyReleased(evt);
+            }
+        });
+
+        FillLSIName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSINameKeyReleased(evt);
+            }
+        });
+
         FillLSIQuin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIQuinKeyReleased(evt);
+            }
+        });
 
         TableLDASI.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1629,10 +1657,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel33.setText("Filtro:");
 
         FillLSI1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSI1ItemStateChanged(evt);
+            }
+        });
 
         jLabel34.setText("jLabel12");
 
+        FillLSIAp1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAp1KeyReleased(evt);
+            }
+        });
+
+        FillLSIAm1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAm1KeyReleased(evt);
+            }
+        });
+
+        FillLSIName1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIName1KeyReleased(evt);
+            }
+        });
+
         FillLSIQuin1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSIQuin1ItemStateChanged(evt);
+            }
+        });
 
         TableLDASI1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1701,10 +1757,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel35.setText("Filtro:");
 
         FillLSI2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSI2ItemStateChanged(evt);
+            }
+        });
 
         jLabel36.setText("jLabel12");
 
+        FillLSIAp2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAp2KeyReleased(evt);
+            }
+        });
+
+        FillLSIAm2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAm2KeyReleased(evt);
+            }
+        });
+
+        FillLSIName2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIName2KeyReleased(evt);
+            }
+        });
+
         FillLSIQuin2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSIQuin2ItemStateChanged(evt);
+            }
+        });
 
         TableLDASI2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1777,6 +1861,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel38.setText("jLabel12");
 
         FillLSIQuin3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSIQuin3ItemStateChanged(evt);
+            }
+        });
 
         TableLDASI3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1845,10 +1934,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel39.setText("Filtro:");
 
         FillLSI4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSI4ItemStateChanged(evt);
+            }
+        });
 
         jLabel40.setText("jLabel12");
 
+        FillLSIAp4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAp4KeyReleased(evt);
+            }
+        });
+
+        FillLSIAm4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAm4KeyReleased(evt);
+            }
+        });
+
+        FillLSIName4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIName4KeyReleased(evt);
+            }
+        });
+
         FillLSIQuin4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIQuin4KeyReleased(evt);
+            }
+        });
 
         TableLDASI4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1917,10 +2034,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel41.setText("Filtro:");
 
         FillLSI5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI5.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSI5ItemStateChanged(evt);
+            }
+        });
 
         jLabel42.setText("jLabel12");
 
+        FillLSIAp5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAp5KeyReleased(evt);
+            }
+        });
+
+        FillLSIAm5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAm5KeyReleased(evt);
+            }
+        });
+
+        FillLSIName5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIName5KeyReleased(evt);
+            }
+        });
+
         FillLSIQuin5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin5.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSIQuin5ItemStateChanged(evt);
+            }
+        });
 
         TableLDASI5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1989,10 +2134,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel43.setText("Filtro:");
 
         FillLSI6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSI6ItemStateChanged(evt);
+            }
+        });
 
         jLabel44.setText("jLabel12");
 
+        FillLSIAp6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAp6KeyReleased(evt);
+            }
+        });
+
+        FillLSIAm6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAm6KeyReleased(evt);
+            }
+        });
+
+        FillLSIName6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIName6KeyReleased(evt);
+            }
+        });
+
         FillLSIQuin6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSIQuin6ItemStateChanged(evt);
+            }
+        });
 
         TableLDASI6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2061,10 +2234,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel45.setText("Filtro:");
 
         FillLSI7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSI7ItemStateChanged(evt);
+            }
+        });
 
         jLabel46.setText("jLabel12");
 
+        FillLSIAp7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAp7KeyReleased(evt);
+            }
+        });
+
+        FillLSIAm7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAm7KeyReleased(evt);
+            }
+        });
+
+        FillLSIName7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIName7KeyReleased(evt);
+            }
+        });
+
         FillLSIQuin7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSIQuin7ItemStateChanged(evt);
+            }
+        });
 
         TableLDASI7.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2133,10 +2334,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel47.setText("Filtro:");
 
         FillLSI8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSI8ItemStateChanged(evt);
+            }
+        });
 
         jLabel48.setText("jLabel12");
 
+        FillLSIAp8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAp8KeyReleased(evt);
+            }
+        });
+
+        FillLSIAm8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAm8KeyReleased(evt);
+            }
+        });
+
+        FillLSIName8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIName8KeyReleased(evt);
+            }
+        });
+
         FillLSIQuin8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSIQuin8ItemStateChanged(evt);
+            }
+        });
 
         TableLDASI8.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2205,10 +2434,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel49.setText("Filtro:");
 
         FillLSI9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI9.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSI9ItemStateChanged(evt);
+            }
+        });
 
         jLabel50.setText("jLabel12");
 
+        FillLSIAp9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAp9KeyReleased(evt);
+            }
+        });
+
+        FillLSIAm9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAm9KeyReleased(evt);
+            }
+        });
+
+        FillLSIName9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIName9KeyReleased(evt);
+            }
+        });
+
         FillLSIQuin9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin9.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSIQuin9ItemStateChanged(evt);
+            }
+        });
 
         TableLDASI9.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -5183,7 +5440,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de corporativo santander semanal: " + error_mostrsr_pcda.getMessage());
 
         }
-        
+
     }
 
     public void MDLDA() {
@@ -5899,7 +6156,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
     }
 
-    
+
     private void LDAQuinItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LDAQuinItemStateChanged
         int vari = LDAQuin.getSelectedIndex();
 
@@ -17528,6 +17785,236 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         MDLDA();
         // TODO add your handling code here:
     }//GEN-LAST:event_FillLCI9ItemStateChanged
+
+    private void FillLSIItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIItemStateChanged
+
+    private void FillLSIApKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIApKeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIApKeyReleased
+
+    private void FillLSIAmKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAmKeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAmKeyReleased
+
+    private void FillLSINameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSINameKeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSINameKeyReleased
+
+    private void FillLSIQuinKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIQuinKeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIQuinKeyReleased
+
+    private void FillLSI1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI1ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSI1ItemStateChanged
+
+    private void FillLSIAp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp1KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAp1KeyReleased
+
+    private void FillLSIAm1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm1KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAm1KeyReleased
+
+    private void FillLSIName1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName1KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIName1KeyReleased
+
+    private void FillLSIQuin1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin1ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIQuin1ItemStateChanged
+
+    private void FillLSI2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI2ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSI2ItemStateChanged
+
+    private void FillLSIAp2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp2KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAp2KeyReleased
+
+    private void FillLSIAm2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm2KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAm2KeyReleased
+
+    private void FillLSIName2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName2KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIName2KeyReleased
+
+    private void FillLSIQuin2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin2ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIQuin2ItemStateChanged
+
+    private void FillLSIQuin3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin3ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIQuin3ItemStateChanged
+
+    private void FillLSI4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI4ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSI4ItemStateChanged
+
+    private void FillLSIAp4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp4KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAp4KeyReleased
+
+    private void FillLSIAm4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm4KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAm4KeyReleased
+
+    private void FillLSIName4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName4KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIName4KeyReleased
+
+    private void FillLSIQuin4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIQuin4KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIQuin4KeyReleased
+
+    private void FillLSI5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI5ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSI5ItemStateChanged
+
+    private void FillLSIAp5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp5KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAp5KeyReleased
+
+    private void FillLSIAm5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm5KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAm5KeyReleased
+
+    private void FillLSIName5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName5KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIName5KeyReleased
+
+    private void FillLSIQuin5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin5ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIQuin5ItemStateChanged
+
+    private void FillLSI6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI6ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSI6ItemStateChanged
+
+    private void FillLSIAp6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp6KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAp6KeyReleased
+
+    private void FillLSIAm6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm6KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAm6KeyReleased
+
+    private void FillLSIName6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName6KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIName6KeyReleased
+
+    private void FillLSIQuin6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin6ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIQuin6ItemStateChanged
+
+    private void FillLSIQuin7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin7ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIQuin7ItemStateChanged
+
+    private void FillLSIName7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName7KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIName7KeyReleased
+
+    private void FillLSIAm7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm7KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAm7KeyReleased
+
+    private void FillLSIAp7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp7KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAp7KeyReleased
+
+    private void FillLSI7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI7ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSI7ItemStateChanged
+
+    private void FillLSI8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI8ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSI8ItemStateChanged
+
+    private void FillLSIAp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp8KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAp8KeyReleased
+
+    private void FillLSIAm8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm8KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAm8KeyReleased
+
+    private void FillLSIName8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName8KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIName8KeyReleased
+
+    private void FillLSIQuin8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin8ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIQuin8ItemStateChanged
+
+    private void FillLSIQuin9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin9ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIQuin9ItemStateChanged
+
+    private void FillLSIName9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName9KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIName9KeyReleased
+
+    private void FillLSIAm9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm9KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAm9KeyReleased
+
+    private void FillLSIAp9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp9KeyReleased
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSIAp9KeyReleased
+
+    private void FillLSI9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI9ItemStateChanged
+        MDLDASIMSS();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLSI9ItemStateChanged
 
     /**
      * @param args the command line arguments
