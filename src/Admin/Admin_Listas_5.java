@@ -96,6 +96,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
 // </editor-fold>
         MDLDA();
+        MDLDASIMSS();
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
         setIconImage(new ImageIcon(Admin_Listas_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
@@ -696,6 +697,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         FillLCI2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
 
         jLabel16.setText("jLabel12");
+
+        FillLCIAp2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAp2KeyReleased(evt);
+            }
+        });
 
         FillLCIQuin2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
 
@@ -4189,7 +4196,719 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         }
 
     }
-//fechas
+
+    public void MDLDASIMSS() {
+        String FiltroN = FillLCIName.getText();
+        String FAP = FillLCIAp.getText();
+        String FAM = FillLCIAm.getText();
+        String FQuin = FillLCIQuin.getSelectedItem().toString();
+        String SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco.`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//4
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de acapulco: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName1.getText();
+        FAP = FillLCIAp1.getText();
+        FAM = FillLCIAm1.getText();
+        FQuin = FillLCIQuin1.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI1.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//4
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de puebla: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName2.getText();
+        FAP = FillLCIAp2.getText();
+        FAM = FillLCIAm2.getText();
+        FQuin = FillLCIQuin2.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI2.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//4
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de toluca: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName3.getText();
+        FAP = FillLCIAp3.getText();
+        FAM = FillLCIAm3.getText();
+        FQuin = FillLCIQuin3.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI3.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//4
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI3.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de norte: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName4.getText();
+        FAP = FillLCIAp4.getText();
+        FAM = FillLCIAm4.getText();
+        FQuin = FillLCIQuin4.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI4.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//4
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de oficina: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName5.getText();
+        FAP = FillLCIAp5.getText();
+        FAM = FillLCIAm5.getText();
+        FQuin = FillLCIQuin5.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI5.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//5
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI5.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de poniente: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName6.getText();
+        FAP = FillLCIAp6.getText();
+        FAM = FillLCIAm6.getText();
+        FQuin = FillLCIQuin6.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI6.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//6
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI6.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de sur 1: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName7.getText();
+        FAP = FillLCIAp7.getText();
+        FAM = FillLCIAm7.getText();
+        FQuin = FillLCIQuin7.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI7.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//7
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//7
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI7.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de sur 2: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName8.getText();
+        FAP = FillLCIAp8.getText();
+        FAM = FillLCIAm8.getText();
+        FQuin = FillLCIQuin8.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI8.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//8
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//8
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de corporativo santander quincenal: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName9.getText();
+        FAP = FillLCIAp9.getText();
+        FAM = FillLCIAm9.getText();
+        FQuin = FillLCIQuin9.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI9.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//9
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//9
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI9.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de corporativo santander semanal: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+    }
 
     public void MDLDA() {
         String FiltroN = FillLCIName.getText();
@@ -4262,7 +4981,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de acapulco: " + error_mostrsr_pcda.getMessage());
 
         }
-        
+
         FiltroN = FillLCIName1.getText();
         FAP = FillLCIAp1.getText();
         FAM = FillLCIAm1.getText();
@@ -4326,15 +5045,15 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-                ps.isClosed();
-                rs.isClosed();
- 
+            ps.isClosed();
+            rs.isClosed();
+
         } catch (SQLException error_mostrsr_pcda) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de puebla: " + error_mostrsr_pcda.getMessage());
 
         }
-        
-         FiltroN = FillLCIName2.getText();
+
+        FiltroN = FillLCIName2.getText();
         FAP = FillLCIAp2.getText();
         FAM = FillLCIAm2.getText();
         FQuin = FillLCIQuin2.getSelectedItem().toString();
@@ -4397,11 +5116,508 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
-                ps.isClosed();
-                rs.isClosed();
- 
+            ps.isClosed();
+            rs.isClosed();
+
         } catch (SQLException error_mostrsr_pcda) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de toluca: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName3.getText();
+        FAP = FillLCIAp3.getText();
+        FAM = FillLCIAm3.getText();
+        FQuin = FillLCIQuin3.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI3.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//4
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI3.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de norte: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName4.getText();
+        FAP = FillLCIAp4.getText();
+        FAM = FillLCIAm4.getText();
+        FQuin = FillLCIQuin4.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI4.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//4
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de oficina: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName5.getText();
+        FAP = FillLCIAp5.getText();
+        FAM = FillLCIAm5.getText();
+        FQuin = FillLCIQuin5.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI5.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//5
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI5.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de poniente: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName6.getText();
+        FAP = FillLCIAp6.getText();
+        FAM = FillLCIAm6.getText();
+        FQuin = FillLCIQuin6.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI6.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//6
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI6.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de sur 1: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName7.getText();
+        FAP = FillLCIAp7.getText();
+        FAM = FillLCIAm7.getText();
+        FQuin = FillLCIQuin7.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI7.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//7
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//7
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI7.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de sur 2: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName8.getText();
+        FAP = FillLCIAp8.getText();
+        FAM = FillLCIAm8.getText();
+        FQuin = FillLCIQuin8.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI8.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//8
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//8
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de corporativo santander quincenal: " + error_mostrsr_pcda.getMessage());
+
+        }
+
+        FiltroN = FillLCIName9.getText();
+        FAP = FillLCIAp9.getText();
+        FAM = FillLCIAm9.getText();
+        FQuin = FillLCIQuin9.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI9.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//9
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//9
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI9.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de corporativo santander semanal: " + error_mostrsr_pcda.getMessage());
 
         }
 
@@ -15802,6 +17018,10 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }//</editor-fold>
         }
     }//GEN-LAST:event_NYearActionPerformed
+
+    private void FillLCIAp2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp2KeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCIAp2KeyReleased
 
     /**
      * @param args the command line arguments

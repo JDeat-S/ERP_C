@@ -1074,6 +1074,9 @@
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="FillLCIAp2">
+                                  <Events>
+                                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FillLCIAp2KeyReleased"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="FillLCIAm2">
                                 </Component>
