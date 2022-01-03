@@ -551,10 +551,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel10.setText("Filtro:");
 
         FillLCI.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLCI.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCIItemStateChanged(evt);
+            }
+        });
 
         jLabel12.setText("jLabel12");
 
+        FillLCIAp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIApKeyReleased(evt);
+            }
+        });
+
+        FillLCIAm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAmKeyReleased(evt);
+            }
+        });
+
+        FillLCIName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCINameKeyReleased(evt);
+            }
+        });
+
         FillLCIQuin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLCIQuin.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCIQuinItemStateChanged(evt);
+            }
+        });
 
         TableLDACI.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -620,13 +648,43 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("Foraneos acapulco", jScrollPane5);
 
+        jPanel3.setBackground(new java.awt.Color(204, 255, 204));
+
         jLabel13.setText("Filtro:");
 
         FillLCI1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLCI1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCI1ItemStateChanged(evt);
+            }
+        });
 
         jLabel14.setText("jLabel12");
 
+        FillLCIAp1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAp1KeyReleased(evt);
+            }
+        });
+
+        FillLCIAm1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAm1KeyReleased(evt);
+            }
+        });
+
+        FillLCIName1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIName1KeyReleased(evt);
+            }
+        });
+
         FillLCIQuin1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLCIQuin1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCIQuin1ItemStateChanged(evt);
+            }
+        });
 
         TableLDACI1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -695,6 +753,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel15.setText("Filtro:");
 
         FillLCI2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLCI2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCI2ItemStateChanged(evt);
+            }
+        });
 
         jLabel16.setText("jLabel12");
 
@@ -704,7 +767,24 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
+        FillLCIAm2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAm2KeyReleased(evt);
+            }
+        });
+
+        FillLCIName2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIName2KeyReleased(evt);
+            }
+        });
+
         FillLCIQuin2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLCIQuin2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIQuin2KeyReleased(evt);
+            }
+        });
 
         TableLDACI2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -773,10 +853,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel17.setText("Filtro:");
 
         FillLCI3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLCI3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCI3ItemStateChanged(evt);
+            }
+        });
 
         jLabel18.setText("jLabel12");
 
+        FillLCIAp3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAp3KeyReleased(evt);
+            }
+        });
+
+        FillLCIAm3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAm3KeyReleased(evt);
+            }
+        });
+
+        FillLCIName3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIName3KeyReleased(evt);
+            }
+        });
+
         FillLCIQuin3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLCIQuin3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCIQuin3ItemStateChanged(evt);
+            }
+        });
 
         TableLDACI3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -849,6 +957,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel20.setText("jLabel12");
 
         FillLCIQuin4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLCIQuin4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCIQuin4ItemStateChanged(evt);
+            }
+        });
 
         TableLDACI4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -4198,23 +4311,23 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }
 
     public void MDLDASIMSS() {
-        String FiltroN = FillLCIName.getText();
-        String FAP = FillLCIAp.getText();
-        String FAM = FillLCIAm.getText();
-        String FQuin = FillLCIQuin.getSelectedItem().toString();
-        String SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco.`";
+        String FiltroN = FillLSIName.getText();
+        String FAP = FillLSIAp.getText();
+        String FAM = FillLSIAm.getText();
+        String FQuin = FillLSIQuin.getSelectedItem().toString();
+        String SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -4228,7 +4341,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI.setModel(modelo);
+            TableLDASI.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -4250,7 +4363,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -4269,23 +4382,23 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName1.getText();
-        FAP = FillLCIAp1.getText();
-        FAM = FillLCIAm1.getText();
-        FQuin = FillLCIQuin1.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`";
+        FiltroN = FillLSIName1.getText();
+        FAP = FillLSIAp1.getText();
+        FAM = FillLSIAm1.getText();
+        FQuin = FillLSIQuin1.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -4299,7 +4412,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI1.setModel(modelo);
+            TableLDASI1.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -4321,7 +4434,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -4340,23 +4453,23 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName2.getText();
-        FAP = FillLCIAp2.getText();
-        FAM = FillLCIAm2.getText();
-        FQuin = FillLCIQuin2.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`";
+        FiltroN = FillLSIName2.getText();
+        FAP = FillLSIAp2.getText();
+        FAM = FillLSIAm2.getText();
+        FQuin = FillLSIQuin2.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -4370,7 +4483,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI2.setModel(modelo);
+            TableLDASI2.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -4392,7 +4505,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -4411,23 +4524,23 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName3.getText();
-        FAP = FillLCIAp3.getText();
-        FAM = FillLCIAm3.getText();
-        FQuin = FillLCIQuin3.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`";
+        FiltroN = FillLSIName3.getText();
+        FAP = FillLSIAp3.getText();
+        FAM = FillLSIAm3.getText();
+        FQuin = FillLSIQuin3.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -4441,7 +4554,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI3.setModel(modelo);
+            TableLDASI3.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -4463,7 +4576,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI3.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI3.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -4482,23 +4595,23 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName4.getText();
-        FAP = FillLCIAp4.getText();
-        FAM = FillLCIAm4.getText();
-        FQuin = FillLCIQuin4.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`";
+        FiltroN = FillLSIName4.getText();
+        FAP = FillLSIAp4.getText();
+        FAM = FillLSIAm4.getText();
+        FQuin = FillLSIQuin4.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -4512,7 +4625,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI4.setModel(modelo);
+            TableLDASI4.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -4534,7 +4647,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -4549,27 +4662,27 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             rs.isClosed();
 
         } catch (SQLException error_mostrsr_pcda) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar datos de oficina: " + error_mostrsr_pcda.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de ofiSIna: " + error_mostrsr_pcda.getMessage());
 
         }
 
-        FiltroN = FillLCIName5.getText();
-        FAP = FillLCIAp5.getText();
-        FAM = FillLCIAm5.getText();
-        FQuin = FillLCIQuin5.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`";
+        FiltroN = FillLSIName5.getText();
+        FAP = FillLSIAp5.getText();
+        FAM = FillLSIAm5.getText();
+        FQuin = FillLSIQuin5.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -4583,7 +4696,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI5.setModel(modelo);
+            TableLDASI5.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -4605,7 +4718,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI5.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI5.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -4624,23 +4737,23 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName6.getText();
-        FAP = FillLCIAp6.getText();
-        FAM = FillLCIAm6.getText();
-        FQuin = FillLCIQuin6.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`";
+        FiltroN = FillLSIName6.getText();
+        FAP = FillLSIAp6.getText();
+        FAM = FillLSIAm6.getText();
+        FQuin = FillLSIQuin6.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -4654,7 +4767,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI6.setModel(modelo);
+            TableLDASI6.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -4676,7 +4789,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI6.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI6.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -4695,23 +4808,23 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName7.getText();
-        FAP = FillLCIAp7.getText();
-        FAM = FillLCIAm7.getText();
-        FQuin = FillLCIQuin7.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`";
+        FiltroN = FillLSIName7.getText();
+        FAP = FillLSIAp7.getText();
+        FAM = FillLSIAm7.getText();
+        FQuin = FillLSIQuin7.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -4725,7 +4838,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI7.setModel(modelo);
+            TableLDASI7.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -4747,7 +4860,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI7.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI7.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -4766,23 +4879,23 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName8.getText();
-        FAP = FillLCIAp8.getText();
-        FAM = FillLCIAm8.getText();
-        FQuin = FillLCIQuin8.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`";
+        FiltroN = FillLSIName8.getText();
+        FAP = FillLSIAp8.getText();
+        FAM = FillLSIAm8.getText();
+        FQuin = FillLSIQuin8.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -4796,7 +4909,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI8.setModel(modelo);
+            TableLDASI8.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -4818,7 +4931,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -4837,23 +4950,23 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName9.getText();
-        FAP = FillLCIAp9.getText();
-        FAM = FillLCIAm9.getText();
-        FQuin = FillLCIQuin9.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`";
+        FiltroN = FillLSIName9.getText();
+        FAP = FillLSIAp9.getText();
+        FAM = FillLSIAm9.getText();
+        FQuin = FillLSIQuin9.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -4867,7 +4980,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI9.setModel(modelo);
+            TableLDASI9.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -4889,7 +5002,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI9.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI9.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -4907,7 +5020,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de corporativo santander semanal: " + error_mostrsr_pcda.getMessage());
 
         }
-
+        
     }
 
     public void MDLDA() {
@@ -5623,6 +5736,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
     }
 
+    
     private void LDAQuinItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LDAQuinItemStateChanged
         int vari = LDAQuin.getSelectedIndex();
 
@@ -17022,6 +17136,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     private void FillLCIAp2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp2KeyReleased
         MDLDA();
     }//GEN-LAST:event_FillLCIAp2KeyReleased
+
+    private void FillLCIApKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIApKeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCIApKeyReleased
+
+    private void FillLCIAmKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAmKeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCIAmKeyReleased
+
+    private void FillLCINameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCINameKeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCINameKeyReleased
+
+    private void FillLCIQuinItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuinItemStateChanged
+        MDLDA();
+    }//GEN-LAST:event_FillLCIQuinItemStateChanged
+
+    private void FillLCIItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIItemStateChanged
+
+        MDLDA();
+
+    }//GEN-LAST:event_FillLCIItemStateChanged
+
+    private void FillLCI1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI1ItemStateChanged
+
+        MDLDA();
+
+    }//GEN-LAST:event_FillLCI1ItemStateChanged
+
+    private void FillLCIAp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp1KeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCIAp1KeyReleased
+
+    private void FillLCIAm1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm1KeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCIAm1KeyReleased
+
+    private void FillLCIName1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName1KeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCIName1KeyReleased
+
+    private void FillLCIQuin1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin1ItemStateChanged
+        MDLDA();
+    }//GEN-LAST:event_FillLCIQuin1ItemStateChanged
+
+    private void FillLCI2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI2ItemStateChanged
+        MDLDA();
+    }//GEN-LAST:event_FillLCI2ItemStateChanged
+
+    private void FillLCIAm2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm2KeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCIAm2KeyReleased
+
+    private void FillLCIName2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName2KeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCIName2KeyReleased
+
+    private void FillLCIQuin2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIQuin2KeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCIQuin2KeyReleased
+
+    private void FillLCI3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI3ItemStateChanged
+        MDLDA();
+    }//GEN-LAST:event_FillLCI3ItemStateChanged
+
+    private void FillLCIAp3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp3KeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCIAp3KeyReleased
+
+    private void FillLCIAm3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm3KeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCIAm3KeyReleased
+
+    private void FillLCIName3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName3KeyReleased
+        MDLDA();
+    }//GEN-LAST:event_FillLCIName3KeyReleased
+
+    private void FillLCIQuin3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin3ItemStateChanged
+        MDLDA();
+    }//GEN-LAST:event_FillLCIQuin3ItemStateChanged
+
+    private void FillLCIQuin4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin4ItemStateChanged
+        MDLDA();
+    }//GEN-LAST:event_FillLCIQuin4ItemStateChanged
 
     /**
      * @param args the command line arguments
