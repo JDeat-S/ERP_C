@@ -93,8 +93,9 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         DiaCom14.setVisible(false);
         DiaCom15.setVisible(false);
         DiaCom16.setVisible(false);
-         
+
 // </editor-fold>
+        MDLDA();
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
         setIconImage(new ImageIcon(Admin_Listas_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
@@ -4190,24 +4191,24 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }
 //fechas
 
-    public void MDTPCDA() {
+    public void MDLDA() {
         String FiltroN = FillLCIName.getText();
         String FAP = FillLCIAp.getText();
         String FAM = FillLCIAm.getText();
         String FQuin = FillLCIQuin.getSelectedItem().toString();
-        String SQL = "SELECT * FROM `nomina.listas.foraneos acapulco`";
+        String SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `nomina.listas.foraneos acapulco`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT * FROM `nomina.listas.foraneos acapulco`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT * FROM `nomina.listas.foraneos acapulco`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT * FROM `nomina.listas.foraneos acapulco`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -4234,21 +4235,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             modelo.addColumn("# Lista");
             modelo.addColumn("Zona");//2
             modelo.addColumn("Quincena");//2
-            modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");//4
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");//6
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");//8
-            modelo.addColumn("Quincena");
-            modelo.addColumn("Caja de ahorro");//10
-            modelo.addColumn("Observaciones");
-            modelo.addColumn("Qnas aportadas");//12
-            modelo.addColumn("# de recibo de pago");
 
 //ANCHOS
-            int[] anchos = {/*ND*/50, /*NL*/ 50, /*NC*/ 50, /*NE*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*ZON*/ 50,
-                /*SERV*/ 50, /*QUIN*/ 60, /*cda*/ 50, /*OBS*/ 100, /*QA*/ 60,/*NDRDP*/ 60};
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -4263,8 +4255,153 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 }
                 modelo.addRow(filas);
             }
+            ps.isClosed();
+            rs.isClosed();
+
         } catch (SQLException error_mostrsr_pcda) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar datos pagos de caja de ahorro: " + error_mostrsr_pcda.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de acapulco: " + error_mostrsr_pcda.getMessage());
+
+        }
+        
+        FiltroN = FillLCIName1.getText();
+        FAP = FillLCIAp1.getText();
+        FAM = FillLCIAm1.getText();
+        FQuin = FillLCIQuin1.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI1.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//4
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+                ps.isClosed();
+                rs.isClosed();
+ 
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de puebla: " + error_mostrsr_pcda.getMessage());
+
+        }
+        
+         FiltroN = FillLCIName2.getText();
+        FAP = FillLCIAp2.getText();
+        FAM = FillLCIAm2.getText();
+        FQuin = FillLCIQuin2.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`";
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(FQuin)) {
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TableLDACI2.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Lista");
+            modelo.addColumn("Zona");//2
+            modelo.addColumn("Quincena");//2
+            modelo.addColumn("Apellido P");//4
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//6
+
+//ANCHOS
+            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TableLDACI2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+                ps.isClosed();
+                rs.isClosed();
+ 
+        } catch (SQLException error_mostrsr_pcda) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de toluca: " + error_mostrsr_pcda.getMessage());
 
         }
 
