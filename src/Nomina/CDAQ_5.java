@@ -125,8 +125,8 @@ public final class CDAQ_5 extends javax.swing.JFrame {
 
             pst.setString(1, ADCDA.getText());
             pst.setString(2, obdpagocda.getText());
-            pst.setString(3, NREcda.getText());
-            pst.setString(4, NQna.getText());
+            pst.setString(3, NQna.getText());
+            pst.setString(4, NREcda.getText());
             pst.setInt(5, Integer.parseInt(NFpagocda.getText()));
 
             pst.executeUpdate();
