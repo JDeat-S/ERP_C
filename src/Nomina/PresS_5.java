@@ -939,7 +939,7 @@ public final class PresS_5 extends javax.swing.JFrame {
         try {
 
             int filaseleccionada = Pre.getSelectedRow();
-            String sql = "delete from prestamosem where idprestamos=" + Pre.getValueAt(filaseleccionada, 0);
+            String sql = "delete from nominasem.prestamosem where idprestamos=" + Pre.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
             int n = st.executeUpdate(sql);
             if (n >= 0) {
@@ -957,12 +957,12 @@ public final class PresS_5 extends javax.swing.JFrame {
 
         int id = Integer.parseInt(Num.getText());
 
-        String SQL = "UPDATE `prestamosem` SET `idprestamos` = ?, `Fecha de solicitud` = ?,"
+        String SQL = "UPDATE `nominasem.prestamosem` SET `idprestamos` = ?, `Fecha de solicitud` = ?,"
                 + " `Mes` = ?, `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?,"
                 + " `Zona` = ?, `Servicio` = ?, `Cantidad` = ?, `Tiempo` = ?, `Interes` = ?,"
                 + " `Monto total` = ?, `Por semana` = ?, `Carpeta de descuentos` = ?,"
                 + " `Fecha liberado` = ?, `Status` = ?, `Metodo` = ?, `Semanaspagadas` = ?,"
-                + " `Pendiente` = ?, `Pagado` = ? WHERE `prestamosem`.`idprestamos` = ?";
+                + " `Pendiente` = ?, `Pagado` = ? WHERE `nominasem.prestamosem`.`idprestamos` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);

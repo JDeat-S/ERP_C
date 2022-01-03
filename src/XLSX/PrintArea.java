@@ -132,6 +132,7 @@ public class PrintArea {
                 cell.setCellStyle(Contenido);
 
                 cell = row.createCell(2);
+                spreadsheet.setColumnWidth(2, 9500);
                 cell.setCellValue("Nombre completo");
                 cell.setCellStyle(Contenido);
                 spreadsheet.addMergedRegion(
@@ -143,31 +144,39 @@ public class PrintArea {
                         )
                 );
                 cell = row.createCell(3);
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(4);
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(5);
                 cell.setCellValue("Entrada");
                 cell.setCellStyle(Contenido);
-                cell = row.createCell(6);
+                cell = row.createCell(4);
                 cell.setCellValue("Salida");
                 cell.setCellStyle(Contenido);
-                cell = row.createCell(7);
-                spreadsheet.setColumnWidth(7, 3000);
+                cell = row.createCell(5);
+                spreadsheet.setColumnWidth(5, 5000);
                 cell.setCellValue("Firma");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(6);
+                spreadsheet.setColumnWidth(6, 5000);
+                cell.setCellValue("Lugar");
+
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(7);
+                spreadsheet.setColumnWidth(7, 1800);
+                cell.setCellValue("Doble");
+
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(8);
                 spreadsheet.setColumnWidth(8, 5650);
-                cell.setCellValue("Lugar");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(9);
-                spreadsheet.setColumnWidth(9, 4500);
-                cell.setCellValue("Doble");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(10);
-                spreadsheet.setColumnWidth(10, 5650);
                 cell.setCellValue("Observaciones");
                 cell.setCellStyle(Contenido);
+                cell = row.createCell(9);
+                cell.setCellStyle(Contenido);
+                spreadsheet.addMergedRegion(
+                        new CellRangeAddress(
+                                4, //first row (0-based)
+                                4, //last row (0-based)
+                                8, //first column (0-based)
+                                9 //last column (0-based)
+                        )
+                );
 
                 //  int i = 2;
                 while (resultSet.next()) {
@@ -220,7 +229,9 @@ public class PrintArea {
 
                     cell = row.createCell(8);
                     cell.setCellValue(resultSet.getString("Zona"));
+                    spreadsheet.setColumnWidth(8, 4000);
                     cell.setCellStyle(Contenido);
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(resultSet.getInt("NDL"));
                     cell.setCellStyle(Contenido);
@@ -405,7 +416,7 @@ public class PrintArea {
                     cell = row.createCell(0);
                     cell.setCellValue(resultSet.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
-                   cell = row.createCell(1);
+                    cell = row.createCell(1);
                     cell.setCellValue(resultSet.getString("EEEE 8/23"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
@@ -603,7 +614,7 @@ public class PrintArea {
                     row = spreadsheet.createRow(20);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(resultSet.getInt("dd 31"));
+                    cell.setCellValue(resultSet.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
                     cell.setCellValue(resultSet.getString("EEEE 31"));
@@ -620,6 +631,14 @@ public class PrintArea {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    20, //first row (0-based)
+                                    20, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
                     cell = row.createCell(8);
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(9);
