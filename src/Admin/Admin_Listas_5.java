@@ -56,21 +56,6 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         SHempleados();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         Fecha1.setVisible(false);
-        Fecha2.setVisible(false);
-        Fecha3.setVisible(false);
-        Fecha4.setVisible(false);
-        Fecha5.setVisible(false);
-        Fecha6.setVisible(false);
-        Fecha7.setVisible(false);
-        Fecha8.setVisible(false);
-        Fecha9.setVisible(false);
-        Fecha10.setVisible(false);
-        Fecha11.setVisible(false);
-        Fecha12.setVisible(false);
-        Fecha13.setVisible(false);
-        Fecha14.setVisible(false);
-        Fecha15.setVisible(false);
-        Fecha16.setVisible(false);
         LabelFil.setVisible(false);
         LDAfilap.setVisible(false);
         LDAfilam.setVisible(false);
@@ -131,23 +116,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         Fecha1 = new com.toedter.calendar.JDateChooser();
-        Fecha2 = new com.toedter.calendar.JDateChooser();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        Fecha3 = new com.toedter.calendar.JDateChooser();
-        Fecha4 = new com.toedter.calendar.JDateChooser();
-        Fecha5 = new com.toedter.calendar.JDateChooser();
-        Fecha6 = new com.toedter.calendar.JDateChooser();
-        Fecha7 = new com.toedter.calendar.JDateChooser();
-        Fecha8 = new com.toedter.calendar.JDateChooser();
-        Fecha9 = new com.toedter.calendar.JDateChooser();
-        Fecha10 = new com.toedter.calendar.JDateChooser();
-        Fecha11 = new com.toedter.calendar.JDateChooser();
-        Fecha12 = new com.toedter.calendar.JDateChooser();
-        Fecha13 = new com.toedter.calendar.JDateChooser();
-        Fecha14 = new com.toedter.calendar.JDateChooser();
-        Fecha15 = new com.toedter.calendar.JDateChooser();
-        Fecha16 = new com.toedter.calendar.JDateChooser();
         LDAAp = new javax.swing.JTextField();
         LDAAm = new javax.swing.JTextField();
         LDAName = new javax.swing.JTextField();
@@ -469,39 +439,9 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
         Fecha1.setDateFormatString("y");
 
-        Fecha2.setDateFormatString("y");
-
         jLabel5.setText("Apellido P:");
 
         jLabel6.setText("Apellido M:");
-
-        Fecha3.setDateFormatString("y");
-
-        Fecha4.setDateFormatString("y");
-
-        Fecha5.setDateFormatString("y");
-
-        Fecha6.setDateFormatString("y");
-
-        Fecha7.setDateFormatString("y");
-
-        Fecha8.setDateFormatString("y");
-
-        Fecha9.setDateFormatString("y");
-
-        Fecha10.setDateFormatString("y");
-
-        Fecha11.setDateFormatString("y");
-
-        Fecha12.setDateFormatString("y");
-
-        Fecha13.setDateFormatString("y");
-
-        Fecha14.setDateFormatString("y");
-
-        Fecha15.setDateFormatString("y");
-
-        Fecha16.setDateFormatString("y");
 
         LDAAp.setEnabled(false);
 
@@ -2129,106 +2069,76 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(DiaCom2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(DiaCor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DiaCom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(60, 60, 60)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2324,17 +2234,17 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                             .addComponent(NYear)
                             .addComponent(jLabel3))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(DiaCom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(DiaCor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Fecha1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(DiaCor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(DiaCor15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2352,78 +2262,55 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                                                             .addComponent(DiaCor9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                    .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addComponent(DiaCor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addComponent(DiaCom2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                    .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addComponent(DiaCor3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addComponent(DiaCom3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                    .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addComponent(DiaCor4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addComponent(DiaCom4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                    .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addComponent(DiaCor5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addComponent(DiaCom5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                    .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addComponent(DiaCor6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addComponent(DiaCom6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                    .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addComponent(DiaCor7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addComponent(DiaCom7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                     .addComponent(DiaCor8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                            .addComponent(DiaCom8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                            .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                        .addComponent(DiaCom8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                            .addComponent(DiaCom9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                            .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                                                        .addComponent(DiaCom9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(DiaCom10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                        .addComponent(DiaCom10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(DiaCor11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(DiaCom11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(DiaCom11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                            .addComponent(DiaCom12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                                        .addComponent(DiaCom12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(DiaCor13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(DiaCom13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(DiaCom13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(DiaCom14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                                .addComponent(DiaCom14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(DiaCom15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(DiaCom15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DiaCor16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DiaCom16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -3338,21 +3225,6 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 LDAAm.setText("");
                 LDAName.setText("");
                 Fecha1.setDate(null);
-                Fecha2.setDate(null);
-                Fecha3.setDate(null);
-                Fecha4.setDate(null);
-                Fecha5.setDate(null);
-                Fecha6.setDate(null);
-                Fecha7.setDate(null);
-                Fecha8.setDate(null);
-                Fecha9.setDate(null);
-                Fecha10.setDate(null);
-                Fecha11.setDate(null);
-                Fecha12.setDate(null);
-                Fecha13.setDate(null);
-                Fecha14.setDate(null);
-                Fecha15.setDate(null);
-                Fecha16.setDate(null);
 
                 JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
 
@@ -3378,32 +3250,32 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 pst.setInt(1, Integer.parseInt(LDA.getText()));
                 pst.setString(2, LDAZon.getText());
                 pst.setString(3, LDAQuin.getSelectedItem().toString());
-                pst.setString(20, LDAAp.getText());
-                pst.setString(21, LDAAm.getText());
-                pst.setString(22, LDAName.getText());
-                pst.setString(4, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
-                pst.setString(5, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
-                pst.setString(6, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
-                pst.setString(7, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
-                pst.setString(8, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
-                pst.setString(9, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
-                pst.setString(10, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
-                pst.setString(11, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
-                pst.setString(12, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
-                pst.setString(13, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
-                pst.setString(14, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
-                pst.setString(15, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
-                pst.setString(16, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
-                pst.setString(17, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
-                pst.setString(18, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
-                pst.setString(19, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
-                pst.setString(4, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
-                pst.setString(5, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
-                pst.setString(6, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
-                pst.setString(7, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
-                pst.setString(8, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
-                pst.setString(9, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
-                pst.setString(10, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(4, LDAAp.getText());
+                pst.setString(5, LDAAm.getText());
+                pst.setString(6, LDAName.getText());
+                pst.setString(7, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(8, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(9, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(10, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(11, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(12, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(13, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(14, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(15, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(16, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(17, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(18, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(19, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(20, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(21, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(22, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(23, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(24, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(25, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(26, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(27, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(28, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(29, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
                 pst.setString(11, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
                 pst.setString(12, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
                 pst.setString(13, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
@@ -3414,21 +3286,6 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 pst.setString(18, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
                 pst.setString(19, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
                 pst.setString(4, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
-                pst.setString(5, ((JTextField) Fecha2.getDateEditor().getUiComponent()).getText());
-                pst.setString(6, ((JTextField) Fecha3.getDateEditor().getUiComponent()).getText());
-                pst.setString(7, ((JTextField) Fecha4.getDateEditor().getUiComponent()).getText());
-                pst.setString(8, ((JTextField) Fecha5.getDateEditor().getUiComponent()).getText());
-                pst.setString(9, ((JTextField) Fecha6.getDateEditor().getUiComponent()).getText());
-                pst.setString(10, ((JTextField) Fecha7.getDateEditor().getUiComponent()).getText());
-                pst.setString(11, ((JTextField) Fecha8.getDateEditor().getUiComponent()).getText());
-                pst.setString(12, ((JTextField) Fecha9.getDateEditor().getUiComponent()).getText());
-                pst.setString(13, ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText());
-                pst.setString(14, ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText());
-                pst.setString(15, ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText());
-                pst.setString(16, ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText());
-                pst.setString(17, ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText());
-                pst.setString(18, ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText());
-                pst.setString(19, ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText());
 
                 pst.executeUpdate();
 
@@ -4154,21 +4011,6 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 LDAAm.setText("");
                 LDAName.setText("");
                 Fecha1.setDate(null);
-                Fecha2.setDate(null);
-                Fecha3.setDate(null);
-                Fecha4.setDate(null);
-                Fecha5.setDate(null);
-                Fecha6.setDate(null);
-                Fecha7.setDate(null);
-                Fecha8.setDate(null);
-                Fecha9.setDate(null);
-                Fecha10.setDate(null);
-                Fecha11.setDate(null);
-                Fecha12.setDate(null);
-                Fecha13.setDate(null);
-                Fecha14.setDate(null);
-                Fecha15.setDate(null);
-                Fecha16.setDate(null);
                 pst.isClosed();
                 JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
             } catch (SQLException error_AddLDA) {
@@ -4266,22 +4108,39 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             // <editor-fold defaultstate="collapsed" desc="SelecalM1ionar">
             if (vari == 0) {
                 Fecha1.setDate(null);
-                Fecha2.setDate(null);
-                Fecha3.setDate(null);
-                Fecha4.setDate(null);
-                Fecha5.setDate(null);
-                Fecha6.setDate(null);
-                Fecha7.setDate(null);
-                Fecha8.setDate(null);
-                Fecha9.setDate(null);
-                Fecha10.setDate(null);
-                Fecha11.setDate(null);
-                Fecha12.setDate(null);
-                Fecha13.setDate(null);
-                Fecha14.setDate(null);
-                Fecha15.setDate(null);
-                Fecha16.setDate(null);
-
+                DiaCor1.setDate(null);
+                DiaCor2.setDate(null);
+                DiaCor3.setDate(null);
+                DiaCor4.setDate(null);
+                DiaCor5.setDate(null);
+                DiaCor6.setDate(null);
+                DiaCor7.setDate(null);
+                DiaCor8.setDate(null);
+                DiaCor9.setDate(null);
+                DiaCor10.setDate(null);
+                DiaCor11.setDate(null);
+                DiaCor12.setDate(null);
+                DiaCor13.setDate(null);
+                DiaCor14.setDate(null);
+                DiaCor15.setDate(null);
+                DiaCor16.setDate(null);
+                DiaCom1.setDate(null);
+                DiaCom2.setDate(null);
+                DiaCom3.setDate(null);
+                DiaCom4.setDate(null);
+                DiaCom5.setDate(null);
+                DiaCom6.setDate(null);
+                DiaCom7.setDate(null);
+                DiaCom8.setDate(null);
+                DiaCom9.setDate(null);
+                DiaCom10.setDate(null);
+                DiaCom11.setDate(null);
+                DiaCom12.setDate(null);
+                DiaCom13.setDate(null);
+                DiaCom14.setDate(null);
+                DiaCom15.setDate(null);
+                DiaCom16.setDate(null);
+                
             }
             //</editor-fold>
 
@@ -4305,91 +4164,76 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -4420,91 +4264,76 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
 
@@ -4534,91 +4363,88 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -4647,91 +4473,88 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha14.setDate(null);
                     DiaCor14.setDate(null);
                     DiaCom14.setDate(null);
 
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha15.setDate(null);
                     DiaCor15.setDate(null);
                     DiaCom15.setDate(null);
 
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -4760,91 +4583,89 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha15.setDate(null);
                     DiaCor15.setDate(null);
                     DiaCom15.setDate(null);
 
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -4873,91 +4694,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -4987,91 +4807,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
                 } catch (ParseException ex) {
@@ -5099,91 +4919,88 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -5212,91 +5029,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -5325,91 +5141,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -5439,91 +5254,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
 
@@ -5552,91 +5367,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -5664,91 +5478,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -5776,91 +5589,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -5890,91 +5702,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
 
@@ -6003,91 +5815,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -6117,91 +5928,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
                 } catch (ParseException ex) {
@@ -6229,91 +6040,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -6342,91 +6152,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -6455,91 +6264,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -6569,91 +6377,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
                 } catch (ParseException ex) {
@@ -6681,91 +6489,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -6793,91 +6600,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -6905,91 +6711,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -7018,91 +6823,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
 
@@ -7115,21 +6920,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             // <editor-fold defaultstate="collapsed" desc="SelecalM1ionar">
             if (vari == 0) {
                 Fecha1.setDate(null);
-                Fecha2.setDate(null);
-                Fecha3.setDate(null);
-                Fecha4.setDate(null);
-                Fecha5.setDate(null);
-                Fecha6.setDate(null);
-                Fecha7.setDate(null);
-                Fecha8.setDate(null);
-                Fecha9.setDate(null);
-                Fecha10.setDate(null);
-                Fecha11.setDate(null);
-                Fecha12.setDate(null);
-                Fecha13.setDate(null);
-                Fecha14.setDate(null);
-                Fecha15.setDate(null);
-                Fecha16.setDate(null);
+                DiaCor1.setDate(null);
+                DiaCor2.setDate(null);
+                DiaCor3.setDate(null);
+                DiaCor4.setDate(null);
+                DiaCor5.setDate(null);
+                DiaCor6.setDate(null);
+                DiaCor7.setDate(null);
+                DiaCor8.setDate(null);
+                DiaCor9.setDate(null);
+                DiaCor10.setDate(null);
+                DiaCor11.setDate(null);
+                DiaCor12.setDate(null);
+                DiaCor13.setDate(null);
+                DiaCor14.setDate(null);
+                DiaCor15.setDate(null);
+                DiaCor16.setDate(null);
+                DiaCom1.setDate(null);
+                DiaCom2.setDate(null);
+                DiaCom3.setDate(null);
+                DiaCom4.setDate(null);
+                DiaCom5.setDate(null);
+                DiaCom6.setDate(null);
+                DiaCom7.setDate(null);
+                DiaCom8.setDate(null);
+                DiaCom9.setDate(null);
+                DiaCom10.setDate(null);
+                DiaCom11.setDate(null);
+                DiaCom12.setDate(null);
+                DiaCom13.setDate(null);
+                DiaCom14.setDate(null);
+                DiaCom15.setDate(null);
+                DiaCom16.setDate(null);
 
             }
             //</editor-fold>
@@ -7150,91 +6972,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -7261,91 +7082,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
 
@@ -7371,91 +7192,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -7482,91 +7302,88 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha14.setDate(null);
                     DiaCor14.setDate(null);
                     DiaCom14.setDate(null);
 
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha15.setDate(null);
                     DiaCor15.setDate(null);
                     DiaCom15.setDate(null);
 
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -7592,91 +7409,89 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha15.setDate(null);
                     DiaCor15.setDate(null);
                     DiaCom15.setDate(null);
 
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -7700,91 +7515,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -7809,91 +7623,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
 
@@ -7918,91 +7732,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -8026,91 +7839,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -8133,49 +7945,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -8198,91 +8009,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
 
@@ -8307,91 +8118,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -8415,91 +8225,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -8523,91 +8332,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -8633,91 +8441,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
 
@@ -8742,91 +8550,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -8851,91 +8658,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
 
@@ -8960,91 +8767,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -9069,91 +8875,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -9178,91 +8983,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -9288,91 +9092,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
 
@@ -9397,91 +9201,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
 
@@ -9506,91 +9309,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -9614,91 +9416,90 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                     DiaCor16.setDate(null);
                     DiaCom16.setDate(null);
                 } catch (ParseException ex) {
@@ -9723,91 +9524,91 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     DiaCor2.setDate(fin);
                     DiaCom2.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     DiaCor3.setDate(fin);
                     DiaCom3.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     DiaCor4.setDate(fin);
                     DiaCom4.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     DiaCor5.setDate(fin);
                     DiaCom5.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     DiaCor6.setDate(fin);
                     DiaCom6.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     DiaCor7.setDate(fin);
                     DiaCom7.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     DiaCor8.setDate(fin);
                     DiaCom8.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     DiaCor9.setDate(fin);
                     DiaCom9.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     DiaCor10.setDate(fin);
                     DiaCom10.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     DiaCor11.setDate(fin);
                     DiaCom11.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     DiaCor12.setDate(fin);
                     DiaCom12.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     DiaCor13.setDate(fin);
                     DiaCom13.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     DiaCor14.setDate(fin);
                     DiaCom14.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     DiaCor15.setDate(fin);
                     DiaCom15.setDate(fin);
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                     DiaCor16.setDate(fin);
                     DiaCom16.setDate(fin);
 
@@ -9886,21 +9687,6 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             // <editor-fold defaultstate="collapsed" desc="SelecalM1ionar">
             if (vari == 0) {
                 Fecha1.setDate(null);
-                Fecha2.setDate(null);
-                Fecha3.setDate(null);
-                Fecha4.setDate(null);
-                Fecha5.setDate(null);
-                Fecha6.setDate(null);
-                Fecha7.setDate(null);
-                Fecha8.setDate(null);
-                Fecha9.setDate(null);
-                Fecha10.setDate(null);
-                Fecha11.setDate(null);
-                Fecha12.setDate(null);
-                Fecha13.setDate(null);
-                Fecha14.setDate(null);
-                Fecha15.setDate(null);
-                Fecha16.setDate(null);
 
             }
             //</editor-fold>
@@ -9923,49 +9709,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -9991,49 +9776,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10058,49 +9843,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10125,49 +9909,46 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha14.setDate(null);
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha15.setDate(null);
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10191,49 +9972,47 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha15.setDate(null);
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10257,49 +10036,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10323,49 +10101,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10389,49 +10167,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10455,49 +10232,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10521,49 +10297,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10587,49 +10362,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10653,49 +10428,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10719,49 +10493,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10785,49 +10558,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10851,49 +10623,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10917,49 +10689,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -10983,49 +10754,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11049,49 +10820,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11115,49 +10885,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11181,49 +10950,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11247,49 +11015,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11313,49 +11081,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11379,49 +11146,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11445,49 +11211,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11511,49 +11276,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11563,21 +11328,6 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             // <editor-fold defaultstate="collapsed" desc="SelecalM1ionar">
             if (vari == 0) {
                 Fecha1.setDate(null);
-                Fecha2.setDate(null);
-                Fecha3.setDate(null);
-                Fecha4.setDate(null);
-                Fecha5.setDate(null);
-                Fecha6.setDate(null);
-                Fecha7.setDate(null);
-                Fecha8.setDate(null);
-                Fecha9.setDate(null);
-                Fecha10.setDate(null);
-                Fecha11.setDate(null);
-                Fecha12.setDate(null);
-                Fecha13.setDate(null);
-                Fecha14.setDate(null);
-                Fecha15.setDate(null);
-                Fecha16.setDate(null);
 
             }
             //</editor-fold>
@@ -11596,49 +11346,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11660,49 +11409,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11723,49 +11472,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11786,49 +11534,46 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha14.setDate(null);
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha15.setDate(null);
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11848,49 +11593,47 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     calM1.setTime(fin);
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha15.setDate(null);
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11910,49 +11653,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     //calM1.add(Calendar.DATE, 1);
                     //fin = calM1.getTime();
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -11972,49 +11714,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12034,49 +11776,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12096,49 +11837,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12158,49 +11898,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12220,49 +11959,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12282,49 +12021,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12344,49 +12082,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12406,49 +12143,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12468,49 +12204,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12530,49 +12266,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12592,49 +12327,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12654,49 +12389,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12716,49 +12450,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12778,49 +12511,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12840,49 +12572,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12902,49 +12634,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -12964,49 +12695,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -13026,49 +12756,48 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     /*calM1.add(Calendar.DATE, 1);
                 fin = calM1.getTime();*/
-                    Fecha16.setDate(null);
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -13088,49 +12817,49 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha2.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha3.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha4.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha5.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha6.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha7.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha8.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha9.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha10.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha11.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha12.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha13.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha14.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha15.setDate(fin);
+
                     calM1.add(Calendar.DATE, 1);
                     fin = calM1.getTime();
-                    Fecha16.setDate(fin);
+
                 } catch (ParseException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -13279,21 +13008,6 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser DiaCor9;
     private javax.swing.JTable EmpleadosSh;
     private com.toedter.calendar.JDateChooser Fecha1;
-    private com.toedter.calendar.JDateChooser Fecha10;
-    private com.toedter.calendar.JDateChooser Fecha11;
-    private com.toedter.calendar.JDateChooser Fecha12;
-    private com.toedter.calendar.JDateChooser Fecha13;
-    private com.toedter.calendar.JDateChooser Fecha14;
-    private com.toedter.calendar.JDateChooser Fecha15;
-    private com.toedter.calendar.JDateChooser Fecha16;
-    private com.toedter.calendar.JDateChooser Fecha2;
-    private com.toedter.calendar.JDateChooser Fecha3;
-    private com.toedter.calendar.JDateChooser Fecha4;
-    private com.toedter.calendar.JDateChooser Fecha5;
-    private com.toedter.calendar.JDateChooser Fecha6;
-    private com.toedter.calendar.JDateChooser Fecha7;
-    private com.toedter.calendar.JDateChooser Fecha8;
-    private com.toedter.calendar.JDateChooser Fecha9;
     private javax.swing.JComboBox<String> FillLCI;
     private javax.swing.JComboBox<String> FillLCI1;
     private javax.swing.JComboBox<String> FillLCI2;
