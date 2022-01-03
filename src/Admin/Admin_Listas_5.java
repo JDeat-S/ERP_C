@@ -1253,10 +1253,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel25.setText("Filtro:");
 
         FillLCI7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLCI7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCI7ItemStateChanged(evt);
+            }
+        });
 
         jLabel26.setText("jLabel12");
 
+        FillLCIAp7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAp7KeyReleased(evt);
+            }
+        });
+
+        FillLCIAm7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAm7KeyReleased(evt);
+            }
+        });
+
+        FillLCIName7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIName7KeyReleased(evt);
+            }
+        });
+
         FillLCIQuin7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLCIQuin7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCIQuin7ItemStateChanged(evt);
+            }
+        });
 
         TableLDACI7.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1325,10 +1353,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel27.setText("Filtro:");
 
         FillLCI8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLCI8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCI8ItemStateChanged(evt);
+            }
+        });
 
         jLabel28.setText("jLabel12");
 
+        FillLCIAp8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAp8KeyReleased(evt);
+            }
+        });
+
+        FillLCIAm8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAm8KeyReleased(evt);
+            }
+        });
+
+        FillLCIName8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIName8KeyReleased(evt);
+            }
+        });
+
         FillLCIQuin8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLCIQuin8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIQuin8KeyReleased(evt);
+            }
+        });
 
         TableLDACI8.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1397,10 +1453,38 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel29.setText("Filtro:");
 
         FillLCI9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLCI9.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCI9ItemStateChanged(evt);
+            }
+        });
 
         jLabel30.setText("jLabel12");
 
+        FillLCIAp9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAp9KeyReleased(evt);
+            }
+        });
+
+        FillLCIAm9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIAm9KeyReleased(evt);
+            }
+        });
+
+        FillLCIName9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLCIName9KeyReleased(evt);
+            }
+        });
+
         FillLCIQuin9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLCIQuin9.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLCIQuin9ItemStateChanged(evt);
+            }
+        });
 
         TableLDACI9.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2339,7 +2423,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                                         .addComponent(DiaCor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(DiaCom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(60, 60, 60)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2400,7 +2484,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(LDAfilam, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -17369,6 +17453,81 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         MDLDA();
         // TODO add your handling code here:
     }//GEN-LAST:event_FillLCIQuin6ItemStateChanged
+
+    private void FillLCI7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI7ItemStateChanged
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCI7ItemStateChanged
+
+    private void FillLCIAp7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp7KeyReleased
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCIAp7KeyReleased
+
+    private void FillLCIAm7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm7KeyReleased
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCIAm7KeyReleased
+
+    private void FillLCIName7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName7KeyReleased
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCIName7KeyReleased
+
+    private void FillLCIQuin7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin7ItemStateChanged
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCIQuin7ItemStateChanged
+
+    private void FillLCI8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI8ItemStateChanged
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCI8ItemStateChanged
+
+    private void FillLCIAp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp8KeyReleased
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCIAp8KeyReleased
+
+    private void FillLCIAm8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm8KeyReleased
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCIAm8KeyReleased
+
+    private void FillLCIName8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName8KeyReleased
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCIName8KeyReleased
+
+    private void FillLCIQuin8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIQuin8KeyReleased
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCIQuin8KeyReleased
+
+    private void FillLCIQuin9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin9ItemStateChanged
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCIQuin9ItemStateChanged
+
+    private void FillLCIName9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName9KeyReleased
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCIName9KeyReleased
+
+    private void FillLCIAm9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm9KeyReleased
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCIAm9KeyReleased
+
+    private void FillLCIAp9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp9KeyReleased
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCIAp9KeyReleased
+
+    private void FillLCI9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI9ItemStateChanged
+        MDLDA();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FillLCI9ItemStateChanged
 
     /**
      * @param args the command line arguments

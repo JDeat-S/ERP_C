@@ -143,7 +143,7 @@
                                               <Component id="DiaCom1" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -224,7 +224,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                      <EmptySpace pref="93" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2009,6 +2009,9 @@
                                       </StringArray>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FillLCI7ItemStateChanged"/>
+                                  </Events>
                                   <AuxValues>
                                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                                   </AuxValues>
@@ -2019,10 +2022,19 @@
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="FillLCIAp7">
+                                  <Events>
+                                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FillLCIAp7KeyReleased"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="FillLCIAm7">
+                                  <Events>
+                                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FillLCIAm7KeyReleased"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="FillLCIName7">
+                                  <Events>
+                                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FillLCIName7KeyReleased"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JComboBox" name="FillLCIQuin7">
                                   <Properties>
@@ -2057,6 +2069,9 @@
                                       </StringArray>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FillLCIQuin7ItemStateChanged"/>
+                                  </Events>
                                   <AuxValues>
                                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                                   </AuxValues>
@@ -2176,6 +2191,9 @@
                                       </StringArray>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FillLCI8ItemStateChanged"/>
+                                  </Events>
                                   <AuxValues>
                                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                                   </AuxValues>
@@ -2186,10 +2204,19 @@
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="FillLCIAp8">
+                                  <Events>
+                                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FillLCIAp8KeyReleased"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="FillLCIAm8">
+                                  <Events>
+                                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FillLCIAm8KeyReleased"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="FillLCIName8">
+                                  <Events>
+                                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FillLCIName8KeyReleased"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JComboBox" name="FillLCIQuin8">
                                   <Properties>
@@ -2224,6 +2251,9 @@
                                       </StringArray>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FillLCIQuin8KeyReleased"/>
+                                  </Events>
                                   <AuxValues>
                                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                                   </AuxValues>
@@ -2343,6 +2373,9 @@
                                       </StringArray>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FillLCI9ItemStateChanged"/>
+                                  </Events>
                                   <AuxValues>
                                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                                   </AuxValues>
@@ -2353,10 +2386,19 @@
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="FillLCIAp9">
+                                  <Events>
+                                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FillLCIAp9KeyReleased"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="FillLCIAm9">
+                                  <Events>
+                                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FillLCIAm9KeyReleased"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JTextField" name="FillLCIName9">
+                                  <Events>
+                                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FillLCIName9KeyReleased"/>
+                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JComboBox" name="FillLCIQuin9">
                                   <Properties>
@@ -2391,6 +2433,9 @@
                                       </StringArray>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="FillLCIQuin9ItemStateChanged"/>
+                                  </Events>
                                   <AuxValues>
                                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                                   </AuxValues>
