@@ -5704,7 +5704,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         try {
 
             int filaseleccionada = Tnom.getSelectedRow();
-            String sql = "delete from `nominasem.detallada."+Zon.getText()+".simss` where #lista=" + Tnom.getValueAt(filaseleccionada, 0);
+            String sql = "delete from `nominasem.detallada." + Zon.getText() + ".simss` where #lista=" + Tnom.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
             int n = st.executeUpdate(sql);
             if (n >= 0) {
@@ -7637,6 +7637,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             Pendienteprenom.setText("" + TPEN);
             Pagopres();
             AgregarPagoPres();
+            sharepresnom();
             FunMD();
             DAB.clearSelection();
             NDL.setText("0");

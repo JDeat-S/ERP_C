@@ -55,7 +55,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         initComponents();
         SHempleados();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
-        /* Fecha1.setVisible(false);
+        Fecha1.setVisible(false);
         LabelFil.setVisible(false);
         LDAfilap.setVisible(false);
         LDAfilam.setVisible(false);
@@ -93,7 +93,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         DiaCom14.setVisible(false);
         DiaCom15.setVisible(false);
         DiaCom16.setVisible(false);
-         */
+         
 // </editor-fold>
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);

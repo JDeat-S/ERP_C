@@ -7569,6 +7569,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             Pendienteprenom.setText("" + TPEN);
             Pagopres();
             AgregarPagoPres();
+            sharepresnom();
             FunMD();
             DAB.clearSelection();
             NDL.setText("0");
