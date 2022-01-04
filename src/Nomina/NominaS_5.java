@@ -12509,10 +12509,13 @@ public final class NominaS_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom2.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom2.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom2.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom2.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_5.class
@@ -12610,10 +12613,13 @@ public final class NominaS_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom3.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom3.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom3.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom3.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom3.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom3.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_5.class
@@ -12711,10 +12717,13 @@ public final class NominaS_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom1.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom1.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom1.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom1.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_5.class
@@ -12812,10 +12821,13 @@ public final class NominaS_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_5.class
@@ -12913,10 +12925,13 @@ public final class NominaS_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom4.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom4.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom4.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom4.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_5.class
@@ -13014,10 +13029,13 @@ public final class NominaS_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom5.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom5.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom5.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom5.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_5.class
@@ -13115,10 +13133,13 @@ public final class NominaS_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom6.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom6.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom6.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom6.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_5.class
@@ -13216,10 +13237,13 @@ public final class NominaS_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom7.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom7.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom7.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom7.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_5.class
@@ -13317,10 +13341,13 @@ public final class NominaS_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom8.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom8.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom8.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom8.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom8.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom8.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_5.class
@@ -13330,6 +13357,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
     private void CleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CleanActionPerformed
         DAB.clearSelection();
+        ISR.setText("0");
+        ADN.setText("0");
+        RF.setText("0");
         NDL.setText("0");
         Ap.setText("");
         am.setText("");
