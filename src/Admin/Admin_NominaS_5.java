@@ -446,7 +446,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         DT = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        Pago = new javax.swing.JLabel();
+        subdeposito = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
         obs = new javax.swing.JTextArea();
@@ -481,6 +481,12 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         jLabel164 = new javax.swing.JLabel();
         jLabel165 = new javax.swing.JLabel();
         jLabel166 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        ISR = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        RF = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        ADN = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
         deposito = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -1415,7 +1421,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
 
         jLabel25.setText("Pago de dias descansado y trabajados");
 
-        Pago.setText("0");
+        subdeposito.setText("0");
 
         jLabel16.setText("Observaciones:");
 
@@ -1445,7 +1451,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                                 .addGap(77, 77, 77)
                                 .addComponent(jLabel25)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Pago))
+                                .addComponent(subdeposito))
                             .addComponent(DT)
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1472,7 +1478,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel49)
                     .addComponent(DDes)
                     .addComponent(jLabel25)
-                    .addComponent(Pago))
+                    .addComponent(subdeposito))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
@@ -1508,7 +1514,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         jLabel56.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel56.setText("Egresos");
 
-        jLabel24.setText("Retencion Infonavit");
+        jLabel24.setText("Infonavit");
 
         RI.setText("0");
         RI.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1650,6 +1656,33 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel40.setText("ISR");
+
+        ISR.setText("0");
+        ISR.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ISRKeyReleased(evt);
+            }
+        });
+
+        jLabel41.setText("Fonacot");
+
+        RF.setText("0");
+        RF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                RFKeyReleased(evt);
+            }
+        });
+
+        jLabel42.setText("Adelanto de nomina");
+
+        ADN.setText("0");
+        ADN.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ADNKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -1690,6 +1723,18 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ISR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel41)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel42)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ADN, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1705,7 +1750,13 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
-                    .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel40)
+                    .addComponent(ISR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel41)
+                    .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel42)
+                    .addComponent(ADN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel50)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5450,6 +5501,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -5460,7 +5514,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -5796,6 +5850,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -5806,7 +5863,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -5908,6 +5965,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -5918,7 +5978,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -6021,6 +6081,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -6031,7 +6094,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -6133,6 +6196,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -6143,7 +6209,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -6246,6 +6312,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -6256,7 +6325,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -6359,6 +6428,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -6369,7 +6441,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -6472,6 +6544,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -6482,7 +6557,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -6585,6 +6660,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -6595,7 +6673,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -7490,8 +7568,8 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 + " `Fecha jueves` = ?, `Fecha viernes` = ?, `Sabado` = ?, "
                 + "`Domingo` = ?, `Lunes` = ?, `Martes` = ?, `Miercoles` = ?,"
                 + " `Jueves` = ?, `Viernes` = ?, `Fecha de pago` = ?, `Horas extras` = ?,"
-                + " `Total horas extra` = ?, `Retencion infonavit` = ?, "
-                + "`Prestamos` = ?, `Rembolso` = ?, `Deposito` = ?, "
+                + " `Total horas extra` = ?, `Retencion infonavit` = ?, `ISR` = ?, `Fonacot` = ?, "
+                + " `Adelanto de nomina` = ?, `Prestamos` = ?, `Rembolso` = ?, `Deposito` = ?, "
                 + "`Observaciones` = ? WHERE `nominasem.detallada." + Zon.getText() + "`.`#Lista` = ?";
 
         try {
@@ -7530,16 +7608,22 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             pst.setString(31, HE.getText());
             pst.setString(32, THE.getText());
             pst.setString(33, RI.getText());
-            pst.setString(34, Presp.getText());
-            pst.setString(35, Rembolso.getText());
-            pst.setString(36, deposito.getText());
-            pst.setString(37, obs.getText());
-            pst.setInt(38, Integer.parseInt(NDL.getText()));
+            pst.setString(34, ISR.getText());
+            pst.setString(35, RF.getText());
+            pst.setString(36, ADN.getText());
+            pst.setString(37, Presp.getText());
+            pst.setString(38, Rembolso.getText());
+            pst.setString(39, deposito.getText());
+            pst.setString(40, obs.getText());
+            pst.setInt(41, Integer.parseInt(NDL.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Modificada");
 
             DAB.clearSelection();
+            ADN.setText("0");
+            ISR.setText("0");
+            RF.setText("0");
             NDL.setText("0");
             Ap.setText("");
             am.setText("");
@@ -7578,9 +7662,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
                 + " `Fecha sabado`, `Fecha domingo`, `Fecha lunes`, `Fecha martes`, "
                 + "`Fecha miercoles`, `Fecha jueves`, `Fecha viernes`, `Sabado`, `Domingo`, "
                 + "`Lunes`, `Martes`, `Miercoles`, `Jueves`, `Viernes`, `Fecha de pago`, `Horas extras`,"
-                + " `Total horas extra`, `Retencion infonavit`, `Prestamos`, `Rembolso`, "
-                + "`Deposito`, `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + " `Total horas extra`, `Retencion infonavit`, `ISR`, `Fonacot`, `Adelanto de nomina`, `Prestamos`, `Rembolso`, "
+                + " `Deposito`, `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -7617,10 +7701,13 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             pst.setString(31, HE.getText());
             pst.setString(32, THE.getText());
             pst.setString(33, RI.getText());
-            pst.setString(34, Presp.getText());
-            pst.setString(35, Rembolso.getText());
-            pst.setString(36, deposito.getText());
-            pst.setString(37, obs.getText());
+            pst.setString(34, ISR.getText());
+            pst.setString(35, RF.getText());
+            pst.setString(36, ADN.getText());
+            pst.setString(37, Presp.getText());
+            pst.setString(38, Rembolso.getText());
+            pst.setString(39, deposito.getText());
+            pst.setString(40, obs.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Semanal Agregada");
@@ -7641,6 +7728,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
             FunMD();
             DAB.clearSelection();
             NDL.setText("0");
+            ADN.setText("0");
+            ISR.setText("0");
+            RF.setText("0");
             Ap.setText("");
             am.setText("");
             name.setText("");
@@ -7752,18 +7842,20 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         double d22 = Double.parseDouble(this.DDes.getText());
         double d7 = Double.parseDouble(this.pd.getText());
         double totalP = ((d7 * d111) + (d7 * d22));
-        this.Pago.setText("" + totalP + "");
+        this.subdeposito.setText("" + totalP + "");
 
         double d1 = Double.parseDouble(this.THE.getText());
         double d2 = Double.parseDouble(this.RI.getText());
-        double d6 = Double.parseDouble(this.Pago.getText());
+        double d6 = Double.parseDouble(this.subdeposito.getText());
         double d8 = Double.parseDouble(this.Presp.getText());
         double d9 = Double.parseDouble(this.Rembolso.getText());
         double d10 = Double.parseDouble(this.Bono.getText());
         double d11 = (d1 + d10 + d9 + d6);
         double d12 = (d2 + d8);
-        double total = d11 - d12;
-        this.deposito.setText("" + total + "");
+        double total = d11 - d12 - Double.parseDouble(ISR.getText()) - Double.parseDouble(RF.getText()) - Double.parseDouble(ADN.getText());
+
+        DecimalFormat dDeposito = new DecimalFormat("#.00");
+        this.deposito.setText(dDeposito.format(total));
     }
 
     private void BAPNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAPNomKeyReleased
@@ -13385,6 +13477,18 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void ISRKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ISRKeyReleased
+        deposito();
+    }//GEN-LAST:event_ISRKeyReleased
+
+    private void RFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RFKeyReleased
+        deposito();
+    }//GEN-LAST:event_RFKeyReleased
+
+    private void ADNKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADNKeyReleased
+        deposito();
+    }//GEN-LAST:event_ADNKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -13415,6 +13519,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ADN;
     private javax.swing.JMenuItem Administradores;
     private javax.swing.JButton AgregarNP;
     private javax.swing.JTextField Ap;
@@ -13589,6 +13694,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser Fvier;
     private javax.swing.JMenuItem General;
     private javax.swing.JTextField HE;
+    private javax.swing.JTextField ISR;
     private javax.swing.JButton Imprimir;
     private javax.swing.JButton Imprimir1;
     private javax.swing.JButton Imprimir2;
@@ -13724,11 +13830,11 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField PH;
     private javax.swing.JMenuItem PRES;
     private javax.swing.JTextField Pagadoprenom;
-    private javax.swing.JLabel Pago;
     private javax.swing.JTextField Pendienteprenom;
     private javax.swing.JTabbedPane PestanañasND;
     private javax.swing.JTabbedPane PestañasPagos;
     private javax.swing.JTextField Presp;
+    private javax.swing.JTextField RF;
     private javax.swing.JTextField RI;
     private javax.swing.JTextField Rembolso;
     private javax.swing.JTable SHPresnom;
@@ -13854,6 +13960,9 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
@@ -13957,6 +14066,7 @@ public final class Admin_NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTable pago8;
     private javax.swing.JTextField pd;
     private javax.swing.JTable share;
+    private javax.swing.JLabel subdeposito;
     private javax.swing.JTextField sueldo;
     // End of variables declaration//GEN-END:variables
 }
