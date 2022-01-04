@@ -7853,6 +7853,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         double d11 = (d1 + d10 + d9 + d6);
         double d12 = (d2 + d8);
         double total = d11 - d12 - Double.parseDouble(ISR.getText()) - Double.parseDouble(RF.getText()) - Double.parseDouble(ADN.getText());
+        
         DecimalFormat dDeposito = new DecimalFormat("#.00");
         this.deposito.setText(dDeposito.format(total));
 

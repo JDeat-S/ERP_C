@@ -4042,7 +4042,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                 + Double.parseDouble(this.DI.getText()) + Double.parseDouble(this.Odtp.getText())
                 + Double.parseDouble(this.Presp.getText()) + Double.parseDouble(this.cda.getText())
                 + Double.parseDouble(this.DPF.getText()) + Double.parseDouble(this.RI.getText())
-                + Double.parseDouble(RF.getText()) +Double.parseDouble(NomISR.getText()));
+                + Double.parseDouble(RF.getText()) + Double.parseDouble(NomISR.getText()));
 
         DecimalFormat dDeposito = new DecimalFormat("#.00");
         this.deposito.setText(dDeposito.format(Ingresos - Egresos));

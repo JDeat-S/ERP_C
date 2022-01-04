@@ -646,7 +646,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
-            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -676,7 +677,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 60, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -2289,7 +2290,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 + "`Dias festivos trabajados` = ?, `Pago de dias festivos trabajados` = ?, `horas extra` = ?,"
                 + " `total de horas extra` = ?, `Retardos` = ?, `Pago con retardos` = ?, `Apoyo` = ?, `Lugar` = ?, "
                 + "`Rembolso` = ?, `Adicionales` = ?, `Faltas` = ?, `Descuento por faltas` = ?, `Desc IMSS` = ?,"
-                + " `Infonavit` = ?, `fonacot` = ?, `Faltantes de boleto` = ?, `Sancion` = ?, `Chamarra` = ?, "
+                + " `Infonavit` = ?, `fonacot` = ?, `ISR` = ?, `Faltantes de boleto` = ?, `Sancion` = ?, `Chamarra` = ?, "
                 + "`Chaleco` = ?, `Faltante de efectivo` = ?, `Grua` = ?, `Pantalon` = ?, `Credencial` = ?, "
                 + "`Boleto perdido` = ?, `Playera` = ?, `Corbata` = ?, `Adelanto de nomina` = ?, `Total de DV` = ?, "
                 + "`Pago de prestamo` = ?, `Caja de ahorro` = ?, `Orden de taller` = ?, `Deposito` = ?, `Observaciones` = ? WHERE "
@@ -2360,30 +2361,32 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             pst.setString(60, DI.getText());
             pst.setString(61, RI.getText());
             pst.setString(62, RF.getText());
-            pst.setString(63, Fdb.getText());
-            pst.setString(64, Sancion.getText());
-            pst.setString(65, Chamarra.getText());
-            pst.setString(66, Chaleco.getText());
-            pst.setString(67, Fde.getText());
-            pst.setString(68, Grua.getText());
-            pst.setString(69, Pantalon.getText());
-            pst.setString(70, Credencial.getText());
-            pst.setString(71, Bp.getText());
-            pst.setString(72, Playera.getText());
-            pst.setString(73, Corbata.getText());
-            pst.setString(74, AdN.getText());
-            pst.setString(75, DVT.getText());
-            pst.setString(76, Presp.getText());
-            pst.setString(77, cda.getText());
-            pst.setString(78, Odtp.getText());
-            pst.setString(79, deposito.getText());
-            pst.setString(80, obs.getText());
-            pst.setInt(81, Integer.parseInt(NDL.getText()));
+            pst.setString(63, NomISR.getText());
+            pst.setString(64, Fdb.getText());
+            pst.setString(65, Sancion.getText());
+            pst.setString(66, Chamarra.getText());
+            pst.setString(67, Chaleco.getText());
+            pst.setString(68, Fde.getText());
+            pst.setString(69, Grua.getText());
+            pst.setString(70, Pantalon.getText());
+            pst.setString(71, Credencial.getText());
+            pst.setString(72, Bp.getText());
+            pst.setString(73, Playera.getText());
+            pst.setString(74, Corbata.getText());
+            pst.setString(75, AdN.getText());
+            pst.setString(76, DVT.getText());
+            pst.setString(77, Presp.getText());
+            pst.setString(78, cda.getText());
+            pst.setString(79, Odtp.getText());
+            pst.setString(80, deposito.getText());
+            pst.setString(81, obs.getText());
+            pst.setInt(82, Integer.parseInt(NDL.getText()));
 
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Nomina Modificad.");
+            JOptionPane.showMessageDialog(null, "Nomina Modificada.");
 
             //limpiar campos
+            NomISR.setText("0");
             RI.setText("0");
             RF.setText("0");
             PH.setText("0");
@@ -2571,7 +2574,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
-            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -2601,7 +2605,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 60, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -2732,7 +2736,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
-            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -2762,7 +2767,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 60, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -2893,7 +2898,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
-            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -2923,7 +2929,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 60, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -3054,7 +3060,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
-            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -3084,7 +3091,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 60, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -3215,7 +3222,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
-            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -3245,7 +3253,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 60, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -3376,7 +3384,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
-            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -3406,7 +3415,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 60, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -3537,7 +3546,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
-            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -3567,7 +3577,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80, /*FDB*/ 80, /*ISR*/ 60, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -3698,7 +3708,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
-            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");//12
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -3728,7 +3739,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
-                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 60, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120, /*OBS*/ 750};
 
@@ -3770,13 +3781,13 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 + "`Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, "
                 + "`total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`,"
                 + " `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`,"
-                + " `Infonavit`, `fonacot`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
+                + " `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`,"
                 + " `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`,"
                 + " `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`,"
                 + " `Caja de ahorro`, `Orden de taller`, `Deposito`, `Observaciones`) VALUES (?, ?,"
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -3842,24 +3853,25 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             pst.setString(60, DI.getText());
             pst.setString(61, RI.getText());
             pst.setString(62, RF.getText());
-            pst.setString(63, Fdb.getText());
-            pst.setString(64, Sancion.getText());
-            pst.setString(65, Chamarra.getText());
-            pst.setString(66, Chaleco.getText());
-            pst.setString(67, Fde.getText());
-            pst.setString(68, Grua.getText());
-            pst.setString(69, Pantalon.getText());
-            pst.setString(70, Credencial.getText());
-            pst.setString(71, Bp.getText());
-            pst.setString(72, Playera.getText());
-            pst.setString(73, Corbata.getText());
-            pst.setString(74, AdN.getText());
-            pst.setString(75, DVT.getText());
-            pst.setString(76, Presp.getText());
-            pst.setString(77, cda.getText());
-            pst.setString(78, Odtp.getText());
-            pst.setString(79, deposito.getText());
-            pst.setString(80, obs.getText());
+            pst.setString(63, NomISR.getText());
+            pst.setString(64, Fdb.getText());
+            pst.setString(65, Sancion.getText());
+            pst.setString(66, Chamarra.getText());
+            pst.setString(67, Chaleco.getText());
+            pst.setString(68, Fde.getText());
+            pst.setString(69, Grua.getText());
+            pst.setString(70, Pantalon.getText());
+            pst.setString(71, Credencial.getText());
+            pst.setString(72, Bp.getText());
+            pst.setString(73, Playera.getText());
+            pst.setString(74, Corbata.getText());
+            pst.setString(75, AdN.getText());
+            pst.setString(76, DVT.getText());
+            pst.setString(77, Presp.getText());
+            pst.setString(78, cda.getText());
+            pst.setString(79, Odtp.getText());
+            pst.setString(80, deposito.getText());
+            pst.setString(81, obs.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina en agregada");
@@ -3906,6 +3918,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             sharecdanom();
             FunMD();
             //limpiar campos
+            NomISR.setText("0");
             RI.setText("0");
             RF.setText("0");
             PH.setText("0");
@@ -4029,7 +4042,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 + Double.parseDouble(this.DI.getText()) + Double.parseDouble(this.Odtp.getText())
                 + Double.parseDouble(this.Presp.getText()) + Double.parseDouble(this.cda.getText())
                 + Double.parseDouble(this.DPF.getText()) + Double.parseDouble(this.RI.getText())
-                + Double.parseDouble(RF.getText()));
+                + Double.parseDouble(RF.getText()) + Double.parseDouble(NomISR.getText()));
 
         DecimalFormat dDeposito = new DecimalFormat("#.00");
         this.deposito.setText(dDeposito.format(Ingresos - Egresos));
@@ -4281,6 +4294,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         RI = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
         RF = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        NomISR = new javax.swing.JTextField();
         jPanel18 = new javax.swing.JPanel();
         Dpi = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
@@ -5745,6 +5760,10 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         });
 
+        jLabel44.setText("ISR:");
+
+        NomISR.setText("0");
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -5795,7 +5814,11 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel39)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel44)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(NomISR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel10Layout.createSequentialGroup()
                                         .addComponent(jLabel132)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5873,7 +5896,9 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel32)
                     .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel39)
-                    .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel44)
+                    .addComponent(NomISR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel144)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8530,7 +8555,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir))
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2019, Short.MAX_VALUE))
+                .addContainerGap(2031, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8716,7 +8741,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir1))
                     .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2019, Short.MAX_VALUE))
+                .addContainerGap(2031, Short.MAX_VALUE))
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8901,7 +8926,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir2))
                     .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2019, Short.MAX_VALUE))
+                .addContainerGap(2031, Short.MAX_VALUE))
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9086,7 +9111,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir3))
                     .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2019, Short.MAX_VALUE))
+                .addContainerGap(2031, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9271,7 +9296,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir4))
                     .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2019, Short.MAX_VALUE))
+                .addContainerGap(2031, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9456,7 +9481,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir5))
                     .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2019, Short.MAX_VALUE))
+                .addContainerGap(2031, Short.MAX_VALUE))
         );
         jPanel33Layout.setVerticalGroup(
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9641,7 +9666,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir6))
                     .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2019, Short.MAX_VALUE))
+                .addContainerGap(2031, Short.MAX_VALUE))
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9826,7 +9851,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir7))
                     .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2019, Short.MAX_VALUE))
+                .addContainerGap(2031, Short.MAX_VALUE))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -10011,7 +10036,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir9))
                     .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2019, Short.MAX_VALUE))
+                .addContainerGap(2031, Short.MAX_VALUE))
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -16389,6 +16414,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_AdNKeyReleased
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        NomISR.setText("0");
         RI.setText("0");
         RF.setText("0");
         PH.setText("0");
@@ -23453,6 +23479,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField NQODTnom;
     private javax.swing.JTextField NQprenom;
     private javax.swing.JScrollPane NomDetallada;
+    private javax.swing.JTextField NomISR;
     private javax.swing.JScrollPane NomPagos;
     private javax.swing.JScrollPane Nomina;
     private javax.swing.JTextField Nominab;
@@ -23714,6 +23741,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
