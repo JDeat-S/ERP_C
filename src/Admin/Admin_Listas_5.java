@@ -1497,9 +1497,19 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI9MouseClicked(evt);
+            }
+        });
         jScrollPane25.setViewportView(TableLDACI9);
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -17643,378 +17653,1154 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
     private void FillLCIName4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName4KeyTyped
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIName4KeyTyped
 
     private void FillLCIAm4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm4KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIAm4KeyReleased
 
     private void FillLCIAp4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp4KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIAp4KeyReleased
 
     private void FillLCI4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI4ItemStateChanged
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCI4ItemStateChanged
 
     private void FillLCI5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI5ItemStateChanged
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCI5ItemStateChanged
 
     private void FillLCIAp5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp5KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIAp5KeyReleased
 
     private void FillLCIAm5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm5KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIAm5KeyReleased
 
     private void FillLCIName5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName5KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIName5KeyReleased
 
     private void FillLCIQuin5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIQuin5KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIQuin5KeyReleased
 
     private void FillLCI6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI6ItemStateChanged
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCI6ItemStateChanged
 
     private void FillLCIAp6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp6KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIAp6KeyReleased
 
     private void FillLCIAm6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm6KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIAm6KeyReleased
 
     private void FillLCIName6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName6KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIName6KeyReleased
 
     private void FillLCIQuin6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin6ItemStateChanged
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIQuin6ItemStateChanged
 
     private void FillLCI7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI7ItemStateChanged
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCI7ItemStateChanged
 
     private void FillLCIAp7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp7KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIAp7KeyReleased
 
     private void FillLCIAm7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm7KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIAm7KeyReleased
 
     private void FillLCIName7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName7KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIName7KeyReleased
 
     private void FillLCIQuin7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin7ItemStateChanged
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIQuin7ItemStateChanged
 
     private void FillLCI8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI8ItemStateChanged
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCI8ItemStateChanged
 
     private void FillLCIAp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp8KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIAp8KeyReleased
 
     private void FillLCIAm8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm8KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIAm8KeyReleased
 
     private void FillLCIName8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName8KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIName8KeyReleased
 
     private void FillLCIQuin8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIQuin8KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIQuin8KeyReleased
 
     private void FillLCIQuin9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin9ItemStateChanged
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIQuin9ItemStateChanged
 
     private void FillLCIName9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName9KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIName9KeyReleased
 
     private void FillLCIAm9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm9KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIAm9KeyReleased
 
     private void FillLCIAp9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp9KeyReleased
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCIAp9KeyReleased
 
     private void FillLCI9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI9ItemStateChanged
         MDLDA();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLCI9ItemStateChanged
 
     private void FillLSIItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIItemStateChanged
 
     private void FillLSIApKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIApKeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIApKeyReleased
 
     private void FillLSIAmKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAmKeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAmKeyReleased
 
     private void FillLSINameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSINameKeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSINameKeyReleased
 
     private void FillLSIQuinKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIQuinKeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIQuinKeyReleased
 
     private void FillLSI1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI1ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSI1ItemStateChanged
 
     private void FillLSIAp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp1KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAp1KeyReleased
 
     private void FillLSIAm1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm1KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAm1KeyReleased
 
     private void FillLSIName1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName1KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIName1KeyReleased
 
     private void FillLSIQuin1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin1ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIQuin1ItemStateChanged
 
     private void FillLSI2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI2ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSI2ItemStateChanged
 
     private void FillLSIAp2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp2KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAp2KeyReleased
 
     private void FillLSIAm2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm2KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAm2KeyReleased
 
     private void FillLSIName2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName2KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIName2KeyReleased
 
     private void FillLSIQuin2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin2ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIQuin2ItemStateChanged
 
     private void FillLSIQuin3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin3ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIQuin3ItemStateChanged
 
     private void FillLSI4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI4ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSI4ItemStateChanged
 
     private void FillLSIAp4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp4KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAp4KeyReleased
 
     private void FillLSIAm4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm4KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAm4KeyReleased
 
     private void FillLSIName4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName4KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIName4KeyReleased
 
     private void FillLSIQuin4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIQuin4KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIQuin4KeyReleased
 
     private void FillLSI5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI5ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSI5ItemStateChanged
 
     private void FillLSIAp5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp5KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAp5KeyReleased
 
     private void FillLSIAm5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm5KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAm5KeyReleased
 
     private void FillLSIName5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName5KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIName5KeyReleased
 
     private void FillLSIQuin5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin5ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIQuin5ItemStateChanged
 
     private void FillLSI6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI6ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSI6ItemStateChanged
 
     private void FillLSIAp6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp6KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAp6KeyReleased
 
     private void FillLSIAm6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm6KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAm6KeyReleased
 
     private void FillLSIName6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName6KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIName6KeyReleased
 
     private void FillLSIQuin6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin6ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIQuin6ItemStateChanged
 
     private void FillLSIQuin7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin7ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIQuin7ItemStateChanged
 
     private void FillLSIName7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName7KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIName7KeyReleased
 
     private void FillLSIAm7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm7KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAm7KeyReleased
 
     private void FillLSIAp7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp7KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAp7KeyReleased
 
     private void FillLSI7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI7ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSI7ItemStateChanged
 
     private void FillLSI8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI8ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSI8ItemStateChanged
 
     private void FillLSIAp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp8KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAp8KeyReleased
 
     private void FillLSIAm8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm8KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAm8KeyReleased
 
     private void FillLSIName8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName8KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIName8KeyReleased
 
     private void FillLSIQuin8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin8ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIQuin8ItemStateChanged
 
     private void FillLSIQuin9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin9ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIQuin9ItemStateChanged
 
     private void FillLSIName9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName9KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIName9KeyReleased
 
     private void FillLSIAm9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm9KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAm9KeyReleased
 
     private void FillLSIAp9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp9KeyReleased
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSIAp9KeyReleased
 
     private void FillLSI9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI9ItemStateChanged
         MDLDASIMSS();
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_FillLSI9ItemStateChanged
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+
+        
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void TableLDACI9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI9MouseClicked
+                JFileChooser chooser = new JFileChooser();
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
+                chooser.setSelectedFile(new File("Lista de la "));
+                chooser.setFileFilter(filter);
+                chooser.setDialogTitle("Guardar archivo");
+                chooser.setAcceptAllFileFilterUsed(false);
+                if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+                }
+                try {
+                    String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
+                    File archivoXLS = new File(ruta);
+                    if (archivoXLS.exists()) {
+                        archivoXLS.delete();
+                    }
+                    archivoXLS.createNewFile();
+
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection connect = DriverManager.getConnection(
+                            "jdbc:mysql://192.168.1.170:3306/confort",
+                            "Servidor",
+                            "Confort1022"
+                    );
+
+                    Statement statement = connect.createStatement();
+                    ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + ".simss` WHERE " + ULDA.getText());
+                    try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                        XSSFWorkbook libro = new XSSFWorkbook();
+                        XSSFSheet spreadsheet = libro.createSheet(("Lista"));
+
+                        XSSFRow row = spreadsheet.createRow((short) 0);
+                        XSSFCell cell = (XSSFCell) row.createCell((short) 0);
+
+                        XSSFCellStyle Encabezado = libro.createCellStyle();
+                        Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                        Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+
+                        XSSFCellStyle Stilodd = libro.createCellStyle();
+
+                        Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                        Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                        Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                        Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
+                        Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                        XSSFCellStyle StiloEEEE = libro.createCellStyle();
+
+                        StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                        StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                        StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                        StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
+                        StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                        XSSFCellStyle Contenido = libro.createCellStyle();
+                        Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                        Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+                        Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                        Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                        Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                        Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
+
+                        cell.setCellValue("L I S T A  D E  A S I S T E N C I A");
+                        cell.setCellStyle(Encabezado);
+
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        0, //first row (0-based)
+                                        0, //last row (0-based)
+                                        0, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+
+                        row = spreadsheet.createRow(1);
+                        cell = row.createCell(2);
+                        cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
+                        cell.setCellStyle(Encabezado);
+
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        1, //first row (0-based)
+                                        1, //last row (0-based)
+                                        2, //first column (0-based)
+                                        7 //last column (0-based)
+                                )
+                        );
+//quincena etc mañana
+                        row = spreadsheet.createRow(4);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        4, //first row (0-based)
+                                        4, //last row (0-based)
+                                        0, //first column (0-based)
+                                        1 //last column (0-based)
+                                )
+                        );
+                        row.setHeight((short) 500);
+                        cell = row.createCell(0);
+                        spreadsheet.setColumnWidth(0, 750);
+                        cell.setCellValue("Fecha");
+                        cell.setCellStyle(Contenido);
+
+                        spreadsheet.setColumnWidth(1, 2500);
+                        cell = row.createCell(1);
+                        cell.setCellStyle(Contenido);
+
+                        cell = row.createCell(2);
+                        spreadsheet.setColumnWidth(2, 9500);
+                        cell.setCellValue("Nombre completo");
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        4, //first row (0-based)
+                                        4, //last row (0-based)
+                                        1, //first column (0-based)
+                                        3 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(3);
+                        cell.setCellValue("Entrada");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellValue("Salida");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        spreadsheet.setColumnWidth(5, 5000);
+                        cell.setCellValue("Firma");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        spreadsheet.setColumnWidth(6, 5000);
+                        cell.setCellValue("Lugar");
+
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        spreadsheet.setColumnWidth(7, 1800);
+                        cell.setCellValue("Doble");
+
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(8);
+                        spreadsheet.setColumnWidth(8, 5650);
+                        cell.setCellValue("Observaciones");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        4, //first row (0-based)
+                                        4, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+
+                        //  int i = 2;
+                        while (resultSet.next()) {
+                            row = spreadsheet.createRow(2);
+                            row.setHeight((short) 400);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("Quincena") + " " + resultSet.getString("y 1/16"));
+                            cell.setCellStyle(Contenido);
+
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            2, //first row (0-based)
+                                            2, //last row (0-based)
+                                            0, //first column (0-based)
+                                            2 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(1);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            2, //first row (0-based)
+                                            2, //last row (0-based)
+                                            4, //first column (0-based)
+                                            7 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(4);
+                            cell.setCellValue(resultSet.getString("Apellido P") + " "
+                                    + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                            cell.setCellStyle(Encabezado);
+
+                            cell = row.createCell(5);
+                            cell.setCellValue(resultSet.getString("Apellido P") + " "
+                                    + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Encabezado);
+
+                            cell.setCellValue(resultSet.getString("Apellido P") + " "
+                                    + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                            cell.setCellStyle(Encabezado);
+
+                            cell = row.createCell(7);
+                            cell.setCellValue(resultSet.getString("Apellido P") + " "
+                                    + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                            cell.setCellStyle(Encabezado);
+
+                            cell = row.createCell(8);
+                            cell.setCellValue(resultSet.getString("Zona"));
+                            spreadsheet.setColumnWidth(8, 4250);
+                            cell.setCellStyle(Contenido);
+
+                            cell = row.createCell(9);
+                            spreadsheet.setColumnWidth(9, 1500);
+                            cell.setCellValue(resultSet.getInt("NDL"));
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(5);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellStyle(Stilodd);
+                            cell.setCellValue(resultSet.getInt("dd 1/16"));
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 1/16"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            5, //first row (0-based)
+                                            5, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(6);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 2/17"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 2/17"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            6, //first row (0-based)
+                                            6, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(7);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 3/18"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 3/18"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            7, //first row (0-based)
+                                            7, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(8);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 4/19"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 4/19"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            8, //first row (0-based)
+                                            8, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(9);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 5/20"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 5/20"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            9, //first row (0-based)
+                                            9, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(10);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 6/21"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 6/21"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            10, //first row (0-based)
+                                            10, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(11);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 7/22"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 7/22"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            11, //first row (0-based)
+                                            11, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(12);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 8/23"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 8/23"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            12, //first row (0-based)
+                                            12, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(13);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 9/24"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 9/24"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            13, //first row (0-based)
+                                            13, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(14);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 10/25"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 10/25"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            14, //first row (0-based)
+                                            14, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(15);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 11/26"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 11/26"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            15, //first row (0-based)
+                                            15, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(16);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 12/27"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 12/27"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            16, //first row (0-based)
+                                            16, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(17);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 13/28"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 13/28"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            17, //first row (0-based)
+                                            17, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(18);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 14/29"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 14/29"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            18, //first row (0-based)
+                                            18, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(19);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getInt("dd 15/30"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 15/30"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            19, //first row (0-based)
+                                            19, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                            row = spreadsheet.createRow(20);
+                            row.setHeight((short) 600);
+                            cell = row.createCell(0);
+                            cell.setCellValue(resultSet.getString("dd 31"));
+                            cell.setCellStyle(Stilodd);
+                            cell = row.createCell(1);
+                            cell.setCellValue(resultSet.getString("EEEE 31"));
+                            cell.setCellStyle(StiloEEEE);
+                            cell = row.createCell(2);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(3);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(4);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(5);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(6);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(7);
+                            cell.setCellStyle(Contenido);
+                            spreadsheet.addMergedRegion(
+                                    new CellRangeAddress(
+                                            20, //first row (0-based)
+                                            20, //last row (0-based)
+                                            8, //first column (0-based)
+                                            9 //last column (0-based)
+                                    )
+                            );
+                            cell = row.createCell(8);
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellStyle(Contenido);
+
+                        }
+                        spreadsheet.getPrintSetup();
+                        spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
+                        spreadsheet.getPrintSetup().setLandscape(true); // Dirección de impresión, true: horizontal, false: vertical
+                        spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.49); // Margen (abajo)  
+                        spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
+                        spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
+                        spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
+                        spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
+                        spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
+
+                        spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
+                        libro.write(archivo);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    Desktop.getDesktop().open(archivoXLS);
+                } catch (IOException | NumberFormatException e) {
+
+                    try {
+                        throw e;
+                    } catch (IOException | NumberFormatException ex) {
+                        Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                } catch (ClassNotFoundException | SQLException ex) {
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                }
+    }//GEN-LAST:event_TableLDACI9MouseClicked
 
     /**
      * @param args the command line arguments
