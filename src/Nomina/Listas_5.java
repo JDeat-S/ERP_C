@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Admin;
+package Nomina;
 
+import Admin.*;
 import Conexion.ConexionSQL;
 import java.awt.Desktop;
 import java.io.File;
@@ -42,7 +43,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDeat
  */
-public final class Admin_Listas_5 extends javax.swing.JFrame {
+public final class Listas_5 extends javax.swing.JFrame {
 
     /**
      * Creates new form Listas
@@ -51,7 +52,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
 
-    public Admin_Listas_5() {
+    public Listas_5() {
         initComponents();
         SHempleados();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
@@ -199,7 +200,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
         ExcelSI.setVisible(false);
-        setIconImage(new ImageIcon(Admin_Listas_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Listas_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
     }
 
     /**
@@ -4078,11 +4079,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     try {
                         throw e;
                     } catch (IOException | NumberFormatException ex) {
-                        Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                 LDAZon.setText("");
@@ -4939,11 +4940,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     try {
                         throw e;
                     } catch (IOException | NumberFormatException ex) {
-                        Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                 LDAZon.setText("");
@@ -6559,7 +6560,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -6660,7 +6661,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -6772,7 +6773,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -6884,7 +6885,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -6996,7 +6997,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -7109,7 +7110,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -7224,7 +7225,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -7335,7 +7336,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -7448,7 +7449,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -7561,7 +7562,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -7676,7 +7677,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -7789,7 +7790,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -7902,7 +7903,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -8015,7 +8016,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -8130,7 +8131,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -8243,7 +8244,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -8358,7 +8359,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -8471,7 +8472,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -8584,7 +8585,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -8697,7 +8698,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -8812,7 +8813,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -8925,7 +8926,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9038,7 +9039,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9151,7 +9152,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9266,7 +9267,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9415,7 +9416,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -9528,7 +9529,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -9638,7 +9639,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -9747,7 +9748,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9856,7 +9857,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9965,7 +9966,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10076,7 +10077,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10185,7 +10186,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10294,7 +10295,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10403,7 +10404,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10514,7 +10515,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10623,7 +10624,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10732,7 +10733,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10841,7 +10842,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10952,7 +10953,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11061,7 +11062,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11172,7 +11173,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11281,7 +11282,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11390,7 +11391,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11499,7 +11500,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11610,7 +11611,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11719,7 +11720,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11828,7 +11829,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11937,7 +11938,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12048,7 +12049,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12322,7 +12323,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -12423,7 +12424,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -12535,7 +12536,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -12647,7 +12648,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12759,7 +12760,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12872,7 +12873,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12987,7 +12988,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13098,7 +13099,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13211,7 +13212,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13324,7 +13325,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13439,7 +13440,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13552,7 +13553,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13665,7 +13666,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13778,7 +13779,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13893,7 +13894,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14006,7 +14007,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14121,7 +14122,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14234,7 +14235,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14347,7 +14348,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14460,7 +14461,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14575,7 +14576,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14688,7 +14689,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14801,7 +14802,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14914,7 +14915,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15029,7 +15030,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15178,7 +15179,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -15291,7 +15292,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -15401,7 +15402,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -15510,7 +15511,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15619,7 +15620,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15728,7 +15729,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15839,7 +15840,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15948,7 +15949,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16057,7 +16058,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16166,7 +16167,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16277,7 +16278,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16386,7 +16387,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16495,7 +16496,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16604,7 +16605,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16715,7 +16716,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16824,7 +16825,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16935,7 +16936,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17044,7 +17045,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17153,7 +17154,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17262,7 +17263,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17373,7 +17374,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17482,7 +17483,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17591,7 +17592,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17700,7 +17701,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17811,7 +17812,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Admin_Listas_5.class
+                    Logger.getLogger(Listas_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -19325,11 +19326,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 try {
                     throw e;
                 } catch (IOException | NumberFormatException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Listas_5.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             LDAZon.setText("");
@@ -20131,7 +20132,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
                     libro.write(archivo);
                 } catch (SQLException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 Desktop.getDesktop().open(archivoXLS);
             } catch (IOException | NumberFormatException e) {
@@ -20139,11 +20140,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 try {
                     throw e;
                 } catch (IOException | NumberFormatException ex) {
-                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Listas_5.class.getName()).log(Level.SEVERE, null, ex);
             }
             LDAZon.setText("");
             LDAQuin.setSelectedIndex(0);
@@ -21310,10 +21311,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_Listas_5.class
+            java.util.logging.Logger.getLogger(Listas_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -21322,7 +21325,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Admin_Listas_5().setVisible(true);
+            new Listas_5().setVisible(true);
         });
     }
 

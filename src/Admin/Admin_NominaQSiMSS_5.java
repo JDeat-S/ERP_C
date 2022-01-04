@@ -4818,6 +4818,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         CDA = new javax.swing.JMenuItem();
         PRES = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
 
         DO1.setText("0");
 
@@ -10218,6 +10219,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         jMenu2.add(jMenuItem2);
 
         jMenu1.add(jMenu2);
+
+        jMenuItem5.setText("Listas de asistencia");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem5);
 
         jMenuBar1.add(jMenu1);
 
@@ -22137,6 +22146,12 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        Admin_Listas_5 regr = new Admin_Listas_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -23392,6 +23407,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
