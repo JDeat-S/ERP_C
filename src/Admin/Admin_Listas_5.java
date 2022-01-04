@@ -400,6 +400,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         DiaCom16 = new com.toedter.calendar.JDateChooser();
         ExcelCI = new javax.swing.JButton();
         ExcelSI = new javax.swing.JButton();
+        jLabel51 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Listas de asistencia");
@@ -975,6 +976,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI4MouseClicked(evt);
+            }
+        });
         jScrollPane15.setViewportView(TableLDACI4);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -1069,6 +1075,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI5MouseClicked(evt);
+            }
+        });
         jScrollPane17.setViewportView(TableLDACI5);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -1163,6 +1174,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI6MouseClicked(evt);
+            }
+        });
         jScrollPane19.setViewportView(TableLDACI6);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -1257,6 +1273,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI7MouseClicked(evt);
+            }
+        });
         jScrollPane21.setViewportView(TableLDACI7);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -1351,6 +1372,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI8MouseClicked(evt);
+            }
+        });
         jScrollPane23.setViewportView(TableLDACI8);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -1548,6 +1574,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASIMouseClicked(evt);
+            }
+        });
         jScrollPane27.setViewportView(TableLDASI);
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -1642,6 +1673,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI1MouseClicked(evt);
+            }
+        });
         jScrollPane29.setViewportView(TableLDASI1);
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -1736,6 +1772,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI2MouseClicked(evt);
+            }
+        });
         jScrollPane31.setViewportView(TableLDASI2);
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -1807,6 +1848,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI3MouseClicked(evt);
+            }
+        });
         jScrollPane33.setViewportView(TableLDASI3);
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
@@ -1901,6 +1947,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI4MouseClicked(evt);
+            }
+        });
         jScrollPane35.setViewportView(TableLDASI4);
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -1995,6 +2046,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI5MouseClicked(evt);
+            }
+        });
         jScrollPane37.setViewportView(TableLDASI5);
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
@@ -2089,6 +2145,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI6MouseClicked(evt);
+            }
+        });
         jScrollPane39.setViewportView(TableLDASI6);
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
@@ -2183,6 +2244,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI7MouseClicked(evt);
+            }
+        });
         jScrollPane41.setViewportView(TableLDASI7);
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
@@ -2277,6 +2343,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI8MouseClicked(evt);
+            }
+        });
         jScrollPane43.setViewportView(TableLDASI8);
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
@@ -2371,6 +2442,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI9MouseClicked(evt);
+            }
+        });
         jScrollPane45.setViewportView(TableLDASI9);
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
@@ -2500,6 +2576,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
+        jLabel51.setText("Reimprecion");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -2599,9 +2677,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                                                 .addComponent(Agregar))
                                             .addComponent(jLabel4))
                                         .addGap(228, 228, 228)
-                                        .addComponent(ExcelCI)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ExcelSI))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(ExcelCI)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(ExcelSI))
+                                            .addComponent(jLabel51)))
                                     .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2773,8 +2854,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                                     .addComponent(LDAAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Agregar)))
-                            .addComponent(ExcelCI)
-                            .addComponent(ExcelSI))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel51)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ExcelCI, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ExcelSI, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(63, Short.MAX_VALUE))
@@ -17973,6 +18058,260 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         LDAName.setText(String.valueOf(TableLDACI3.getValueAt(fila, 5)));
     }//GEN-LAST:event_TableLDACI3MouseClicked
 
+    private void TableLDACI4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI4MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI4.getModel();
+
+        int fila = TableLDACI4.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI4.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI4.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI4.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI4.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI4.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDACI4MouseClicked
+
+    private void TableLDACI5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI5MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI5.getModel();
+
+        int fila = TableLDACI5.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI5.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI5.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI5.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI5.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI5.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDACI5MouseClicked
+
+    private void TableLDACI6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI6MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI6.getModel();
+
+        int fila = TableLDACI6.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI6.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI6.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI6.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI6.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI6.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDACI6MouseClicked
+
+    private void TableLDACI7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI7MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI7.getModel();
+
+        int fila = TableLDACI7.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI7.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI7.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI7.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI7.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI7.getValueAt(fila, 5)));    }//GEN-LAST:event_TableLDACI7MouseClicked
+
+    private void TableLDACI8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI8MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI8.getModel();
+
+        int fila = TableLDACI8.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI8.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI8.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI8.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI8.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI8.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDACI8MouseClicked
+
+    private void TableLDASIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASIMouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI.getModel();
+
+        int fila = TableLDASI.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDASIMouseClicked
+
+    private void TableLDASI1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI1MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI1.getModel();
+
+        int fila = TableLDASI1.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI1.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI1.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI1.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI1.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI1.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDASI1MouseClicked
+
+    private void TableLDASI2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI2MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI2.getModel();
+
+        int fila = TableLDASI2.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI2.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI2.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI2.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI2.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI2.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDASI2MouseClicked
+
+    private void TableLDASI3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI3MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI3.getModel();
+
+        int fila = TableLDASI3.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI3.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI3.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI3.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI3.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI3.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDASI3MouseClicked
+
+    private void TableLDASI4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI4MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI4.getModel();
+
+        int fila = TableLDASI4.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI4.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI4.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI4.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI4.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI4.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDASI4MouseClicked
+
+    private void TableLDASI5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI5MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI5.getModel();
+
+        int fila = TableLDASI5.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI5.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI5.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI5.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI5.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI5.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDASI5MouseClicked
+
+    private void TableLDASI6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI6MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI6.getModel();
+
+        int fila = TableLDASI6.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI6.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI6.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI6.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI6.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI6.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDASI6MouseClicked
+
+    private void TableLDASI7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI7MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI7.getModel();
+
+        int fila = TableLDASI7.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI7.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI7.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI7.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI7.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI7.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDASI7MouseClicked
+
+    private void TableLDASI8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI8MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI8.getModel();
+
+        int fila = TableLDASI8.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI8.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI8.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI8.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI8.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI8.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDASI8MouseClicked
+
+    private void TableLDASI9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI9MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI9.getModel();
+
+        int fila = TableLDASI9.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI9.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI9.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI9.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI9.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI9.getValueAt(fila, 5)));
+    }//GEN-LAST:event_TableLDASI9MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -18225,6 +18564,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
