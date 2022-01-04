@@ -5,7 +5,6 @@
  */
 package Nomina;
 
-import Admin.*;
 import Conexion.ConexionSQL;
 import java.awt.Desktop;
 import java.io.File;
@@ -503,14 +502,6 @@ public final class Listas_5 extends javax.swing.JFrame {
         ExcelSI = new javax.swing.JButton();
         jLabel51 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        Menuadm = new javax.swing.JMenu();
-        Nomina1 = new javax.swing.JMenuItem();
-        Administradores = new javax.swing.JMenuItem();
-        ZYS = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
-        General = new javax.swing.JMenuItem();
-        Estadias = new javax.swing.JMenuItem();
-        Torteria = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -2992,66 +2983,6 @@ public final class Listas_5 extends javax.swing.JFrame {
         );
 
         jScrollPane1.setViewportView(jPanel1);
-
-        Menuadm.setText("Todas las ventanas");
-
-        Nomina1.setText("Ventana Nomina");
-        Nomina1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nomina1ActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Nomina1);
-
-        Administradores.setText("Administradores");
-        Administradores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdministradoresActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Administradores);
-
-        ZYS.setText("Zonas y Servicios");
-        ZYS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ZYSActionPerformed(evt);
-            }
-        });
-        Menuadm.add(ZYS);
-
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
-
-        General.setText("Empleados General");
-        General.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GeneralActionPerformed(evt);
-            }
-        });
-        Menuadm.add(General);
-
-        Estadias.setText("Alumno de estadia");
-        Estadias.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EstadiasActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Estadias);
-
-        Torteria.setText("Empleados Torteria");
-        Torteria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TorteriaActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Torteria);
-
-        jMenuBar1.add(Menuadm);
 
         jMenu1.setText("Cambiar a:");
 
@@ -21203,92 +21134,50 @@ public final class Listas_5 extends javax.swing.JFrame {
         MDLDASIMSS();
     }//GEN-LAST:event_FillLSI3ItemStateChanged
 
-    private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_Nomina1ActionPerformed
-
-    private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        Administradores_3 regr = new Administradores_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_AdministradoresActionPerformed
-
-    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        AltasZyS_3 regr = new AltasZyS_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ZYSActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
-
-    private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        Admin_Empleados_4 regr = new Admin_Empleados_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_GeneralActionPerformed
-
-    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
-        Admin_Estadias_4 regr = new Admin_Estadias_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_EstadiasActionPerformed
-
-    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_TorteriaActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Admin_NominaS_5 regr = new Admin_NominaS_5();
+        NominaS_5 regr = new NominaS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5();
+        NominaS_simss_5 regr = new NominaS_simss_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5();
+        PresS_5 regr = new PresS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODTActionPerformed
 
     private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+        CDAQ_5 regr = new CDAQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDAActionPerformed
 
     private void PRESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESActionPerformed
-        Admin_PresQ_5 regr = new Admin_PresQ_5();
+        PresQ_5 regr = new PresQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5();
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
@@ -21330,7 +21219,6 @@ public final class Listas_5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Administradores;
     private javax.swing.JButton Agregar;
     private javax.swing.JMenuItem CDA;
     private javax.swing.JCheckBox CI;
@@ -21367,7 +21255,6 @@ public final class Listas_5 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser DiaCor8;
     private com.toedter.calendar.JDateChooser DiaCor9;
     private javax.swing.JTable EmpleadosSh;
-    private javax.swing.JMenuItem Estadias;
     private javax.swing.JButton ExcelCI;
     private javax.swing.JButton ExcelSI;
     private com.toedter.calendar.JDateChooser Fecha1;
@@ -21491,7 +21378,6 @@ public final class Listas_5 extends javax.swing.JFrame {
     private javax.swing.JLabel FillLSIabel7;
     private javax.swing.JLabel FillLSIabel8;
     private javax.swing.JLabel FillLSIabel9;
-    private javax.swing.JMenuItem General;
     private javax.swing.JTextField LDA;
     private javax.swing.JTextField LDAAm;
     private javax.swing.JTextField LDAAp;
@@ -21503,9 +21389,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     private javax.swing.JTextField LDAfilap;
     private javax.swing.JTextField LDAfilname;
     private javax.swing.JLabel LabelFil;
-    private javax.swing.JMenu Menuadm;
     private javax.swing.JCheckBox NYear;
-    private javax.swing.JMenuItem Nomina1;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem PRES;
     private javax.swing.JTable TableLDACI;
@@ -21528,10 +21412,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     private javax.swing.JTable TableLDASI7;
     private javax.swing.JTable TableLDASI8;
     private javax.swing.JTable TableLDASI9;
-    private javax.swing.JMenuItem Torteria;
     private javax.swing.JLabel ULDA;
-    private javax.swing.JMenuItem UsuariosRH;
-    private javax.swing.JMenuItem ZYS;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

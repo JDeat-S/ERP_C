@@ -658,6 +658,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
 
         Q11.setText("0");
 
@@ -1438,6 +1439,14 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         jMenu3.add(jMenuItem4);
 
         jMenu1.add(jMenu3);
+
+        jMenuItem7.setText("Listas de asistencia");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem7);
 
         jMenuBar1.add(jMenu1);
 
@@ -2476,6 +2485,12 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        Listas_5 regr = new Listas_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2629,6 +2644,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
