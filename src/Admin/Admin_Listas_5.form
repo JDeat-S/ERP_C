@@ -164,6 +164,10 @@
                                                   </Group>
                                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
+                                              <Component id="ExcelCI" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="ExcelSI" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -375,17 +379,23 @@
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="LDAAp" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LDAAm" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LDAName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Agregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="LDAAp" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LDAAm" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LDAName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Agregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="ExcelCI" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ExcelSI" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
@@ -681,8 +691,6 @@
                                                   <Component id="FillLCIName" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLCIQuin" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace pref="152" max="32767" attributes="0"/>
@@ -692,18 +700,15 @@
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCI" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAp" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAm" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIQuin" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCI" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAp" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAm" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIQuin" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane7" pref="396" max="32767" attributes="0"/>
@@ -815,16 +820,12 @@
                                           </Table>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TableLDACIMouseClicked"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton1">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -868,29 +869,24 @@
                                                   <Component id="FillLCIName1" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLCIQuin1" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCI1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAp1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAm1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIName1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIQuin1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCI1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAp1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAm1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIName1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIQuin1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane9" pref="396" max="32767" attributes="0"/>
@@ -1002,16 +998,12 @@
                                           </Table>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TableLDACI1KeyReleased"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton2">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -1050,29 +1042,24 @@
                                                   <Component id="FillLCIName2" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLCIQuin2" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCI2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAp2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAm2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIName2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIQuin2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCI2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAp2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAm2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIName2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIQuin2" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane11" pref="396" max="32767" attributes="0"/>
@@ -1184,16 +1171,12 @@
                                           </Table>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TableLDACI2MouseClicked"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton3">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -1232,29 +1215,24 @@
                                                   <Component id="FillLCIName3" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLCIQuin3" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCI3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAp3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAm3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIName3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIQuin3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCI3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAp3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAm3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIName3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIQuin3" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane13" pref="396" max="32767" attributes="0"/>
@@ -1366,16 +1344,12 @@
                                           </Table>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TableLDACI3MouseClicked"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton4">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -1414,29 +1388,24 @@
                                                   <Component id="FillLCIName4" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLCIQuin4" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCI4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAp4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAm4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIName4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIQuin4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCI4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAp4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAm4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIName4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIQuin4" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane15" pref="396" max="32767" attributes="0"/>
@@ -1551,13 +1520,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton5">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -1596,29 +1558,24 @@
                                                   <Component id="FillLCIName5" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLCIQuin5" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCI5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAp5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAm5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIName5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIQuin5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCI5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAp5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAm5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIName5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIQuin5" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane17" pref="396" max="32767" attributes="0"/>
@@ -1733,13 +1690,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton6">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -1778,29 +1728,24 @@
                                                   <Component id="FillLCIName6" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLCIQuin6" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCI6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAp6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAm6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIName6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIQuin6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCI6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAp6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAm6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIName6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIQuin6" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane19" pref="396" max="32767" attributes="0"/>
@@ -1915,13 +1860,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton8">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -1960,29 +1898,24 @@
                                                   <Component id="FillLCIName7" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLCIQuin7" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton9" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCI7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAp7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAm7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIName7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIQuin7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton9" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCI7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAp7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAm7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIName7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIQuin7" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane21" pref="396" max="32767" attributes="0"/>
@@ -2097,13 +2030,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton9">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -2142,29 +2068,24 @@
                                                   <Component id="FillLCIName8" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLCIQuin8" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton10" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCI8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAp8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAm8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIName8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIQuin8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton10" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCI8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAp8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAm8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIName8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIQuin8" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane23" pref="396" max="32767" attributes="0"/>
@@ -2279,13 +2200,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton10">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -2324,29 +2238,24 @@
                                                   <Component id="FillLCIName9" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLCIQuin9" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton11" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCI9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAp9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIAm9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIName9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLCIQuin9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton11" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCI9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAp9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIAm9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIName9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLCIQuin9" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane25" pref="396" max="32767" attributes="0"/>
@@ -2464,16 +2373,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton11">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                  <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
-                                  </Events>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -2531,8 +2430,6 @@
                                                   <Component id="FillLSIName" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLSIQuin" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton12" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace pref="152" max="32767" attributes="0"/>
@@ -2542,18 +2439,15 @@
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSI" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAp" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAm" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIQuin" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton12" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSI" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAp" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAm" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIQuin" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane27" pref="396" max="32767" attributes="0"/>
@@ -2668,13 +2562,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton12">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -2713,29 +2600,24 @@
                                                   <Component id="FillLSIName1" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLSIQuin1" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton13" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSI1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAp1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAm1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIName1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIQuin1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton13" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSI1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAp1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAm1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIName1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIQuin1" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane29" pref="396" max="32767" attributes="0"/>
@@ -2850,13 +2732,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton13">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -2895,29 +2770,24 @@
                                                   <Component id="FillLSIName2" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLSIQuin2" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton14" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSI2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAp2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAm2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIName2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIQuin2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton14" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSI2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAp2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAm2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIName2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIQuin2" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane31" pref="396" max="32767" attributes="0"/>
@@ -3032,13 +2902,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton14">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -3077,29 +2940,24 @@
                                                   <Component id="FillLSIName3" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLSIQuin3" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton15" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSI3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAp3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAm3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIName3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIQuin3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton15" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSI3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAp3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAm3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIName3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIQuin3" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane33" pref="396" max="32767" attributes="0"/>
@@ -3202,13 +3060,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton15">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -3247,29 +3098,24 @@
                                                   <Component id="FillLSIName4" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLSIQuin4" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton16" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSI4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAp4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAm4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIName4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIQuin4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton16" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSI4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAp4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAm4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIName4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIQuin4" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane35" pref="396" max="32767" attributes="0"/>
@@ -3384,13 +3230,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton16">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -3429,29 +3268,24 @@
                                                   <Component id="FillLSIName5" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLSIQuin5" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton17" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSI5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAp5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAm5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIName5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIQuin5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton17" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSI5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAp5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAm5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIName5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIQuin5" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane37" pref="396" max="32767" attributes="0"/>
@@ -3566,13 +3400,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton17">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -3611,29 +3438,24 @@
                                                   <Component id="FillLSIName6" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLSIQuin6" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton18" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSI6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAp6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAm6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIName6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIQuin6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton18" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSI6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAp6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAm6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIName6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIQuin6" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane39" pref="396" max="32767" attributes="0"/>
@@ -3748,13 +3570,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton18">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -3793,29 +3608,24 @@
                                                   <Component id="FillLSIName7" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLSIQuin7" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton19" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSI7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAp7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAm7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIName7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIQuin7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton19" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSI7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAp7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAm7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIName7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIQuin7" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane41" pref="396" max="32767" attributes="0"/>
@@ -3930,13 +3740,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton19">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -3975,29 +3778,24 @@
                                                   <Component id="FillLSIName8" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLSIQuin8" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton20" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSI8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAp8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAm8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIName8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIQuin8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton20" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSI8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAp8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAm8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIName8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIQuin8" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane43" pref="396" max="32767" attributes="0"/>
@@ -4112,13 +3910,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton20">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -4157,29 +3948,24 @@
                                                   <Component id="FillLSIName9" min="-2" pref="80" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FillLSIQuin9" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jButton21" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="152" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSI9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAp9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIAm9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIName9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FillLSIQuin9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jButton21" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSI9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAp9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIAm9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIName9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="FillLSIQuin9" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jScrollPane45" pref="396" max="32767" attributes="0"/>
@@ -4294,13 +4080,6 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JButton" name="jButton21">
-                                  <Properties>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                                    </Property>
-                                  </Properties>
-                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
@@ -4470,6 +4249,26 @@
               <Properties>
                 <Property name="dateFormatString" type="java.lang.String" value="EEEE"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="ExcelCI">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExcelCIActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="ExcelSI">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExcelSIActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
