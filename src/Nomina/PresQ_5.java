@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Nomina;
 
 import Conexion.ConexionSQL;
@@ -22,10 +18,10 @@ import javax.swing.table.DefaultTableModel;
  * @author JDeat
  */
 public final class PresQ_5 extends javax.swing.JFrame {
-
+    
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
-
+    
     public PresQ_5() {
         initComponents();
         shareprestamo();
@@ -49,15 +45,15 @@ public final class PresQ_5 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
         setIconImage(new ImageIcon(PresQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
-
+        
     }
-
+    
     public void MDTPPres() {
         String FiltroN = FilPDPname.getText();
         String FAP = FilPDPAp.getText();
         String FAM = FilPDPAm.getText();
         String where = "SELECT * FROM `nomina.pagos.prestamos`";
-
+        
         if (!"".equals(FiltroN)) {
             where = "SELECT * FROM `nomina.pagos.prestamos`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
@@ -68,7 +64,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
             where = "SELECT * FROM `nomina.pagos.prestamos`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -76,19 +72,19 @@ public final class PresQ_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             TPPRES.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
             modelo.addColumn("# de prestamo");//2
@@ -107,13 +103,13 @@ public final class PresQ_5 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {50, /*NL*/ 50, /*NF*/ 50,/*NE*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*ZON*/ 50,
                 /*SERV*/ 50, /*QUIN*/ 60, /*NQ*/ 50, /*PAG*/ 60, /*PEN*/ 60,/*PDPres*/ 60};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TPPRES.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -123,15 +119,15 @@ public final class PresQ_5 extends javax.swing.JFrame {
             }
         } catch (SQLException error_mpdp) {
             JOptionPane.showMessageDialog(null, "Error al mostrar pagos de Prestamos: " + error_mpdp.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void eliminarpre() {
-
+        
         try {
-
+            
             int filaseleccionada = Pre.getSelectedRow();
             String sql = "delete from prestamos where idprestamos=" + Pre.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
@@ -140,20 +136,20 @@ public final class PresQ_5 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Prestamo eliminado.");
             }
         } catch (HeadlessException | SQLException e) {
-
+            
             JOptionPane.showMessageDialog(null, "Error al eliminar prestamo: " + e.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void MDP() {
         //Buscar empleado
         String FILNAMEPRE = FNamepres.getText();
         String FILAPPRE = FAPpres.getText();
         String FILAMPRE = FAMpres.getText();
         String sql = "select * from `nomina.prestamos`";
-
+        
         if (!"".equals(FILNAMEPRE)) {
             sql = " select * from `nomina.prestamos` WHERE `Nombre(s)` LIKE '%" + FILNAMEPRE + "%'";
         } else if (!"".equals(FILAPPRE)) {
@@ -161,7 +157,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
         } else if (!"".equals(FILAMPRE)) {
             sql = " select * from `nomina.prestamos` WHERE `Apellido M` LIKE '%" + FILAMPRE + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -169,19 +165,19 @@ public final class PresQ_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             Pre.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# de prestamo");//1
             modelo.addColumn("Fecha de solicitud");//
             modelo.addColumn("Mes");//3
@@ -208,13 +204,13 @@ public final class PresQ_5 extends javax.swing.JFrame {
                 /*Nom*/ 125, /*zon*/ 65, /*Serv*/ 80, /*Cantidad*/ 55,/*tiempo*/ 60, /*inte*/ 50,
                 /*MT*/ 55, /*PQ*/ 75, /*CDD*/ 250, /*FL*/ 55, /*STATUS*/ 70, /*METODO*/ 60,
                 /*QP*/ 60, /*PAG*/ 60, /*PEN*/ 50};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Pre.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -224,14 +220,14 @@ public final class PresQ_5 extends javax.swing.JFrame {
             }
         } catch (SQLException Error_prestamos) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de prestamos: " + Error_prestamos.getMessage());
-
+            
         }
     }
-
+    
     public void editarpre() {
-
+        
         int id = Integer.parseInt(Num.getText());
-
+        
         String SQL = "UPDATE `nomina.prestamos` SET `idprestamos` = ?, `Fecha de solicitud` = ?, `Mes` = ?,"
                 + " `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Zona` = ?, "
                 + "`Servicio` = ?, `Cantidad` = ?, `Tiempo` = ?, `Interes` = ?,"
@@ -239,7 +235,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
                 + " `Fecha liberado` = ?, `Status` = ?, `Metodo` = ?,"
                 + " `Quincenas pagadas` = ?, `Pagado` = ?, `Pendiente` = ? WHERE"
                 + " `nomina.prestamos`.`idprestamos` = ?";
-
+        
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
             pst.setInt(1, id);
@@ -263,10 +259,10 @@ public final class PresQ_5 extends javax.swing.JFrame {
             pst.setString(19, PagadoPres.getText());
             pst.setString(20, Pendientepres.getText());
             pst.setInt(21, id);
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Prestamo Modificado");
-
+            
             Num.setText("0");
             FS.setText("");
             Namepres.setText("");
@@ -287,16 +283,16 @@ public final class PresQ_5 extends javax.swing.JFrame {
             QPprest.setText("0");
             PagadoPres.setText("0");
             Pendientepres.setText("0");
-
+            
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar Prestamo: " + e.getMessage());
         }
     }
-
+    
     public void AgregarPre() {
-
+        
         int id = Integer.parseInt(Num.getText());
-
+        
         String SQL = "INSERT INTO `nomina.prestamos` (`idprestamos`, `Fecha de solicitud`,"
                 + " `Mes`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`,"
                 + " `Cantidad`, `Tiempo`, `Interes`, `Monto total`, `Por quincena`, "
@@ -305,7 +301,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
+            
             pst.setInt(1, id);
             pst.setString(2, FS.getText());
             pst.setString(3, Mes.getSelectedItem().toString());
@@ -326,10 +322,10 @@ public final class PresQ_5 extends javax.swing.JFrame {
             pst.setString(18, QPprest.getText());
             pst.setString(19, PagadoPres.getText());
             pst.setString(20, Pendientepres.getText());
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Prestamo Agregado");
-
+            
             Num.setText("0");
             FS.setText("");
             Namepres.setText("");
@@ -350,12 +346,12 @@ public final class PresQ_5 extends javax.swing.JFrame {
             QPprest.setText("0");
             PagadoPres.setText("0");
             Pendientepres.setText("0");
-
+            
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar prestamo: " + e.getMessage());
         }
     }
-
+    
     public void shareprestamo() {
         //Buscar empleado
         String Share = BE.getText();
@@ -363,7 +359,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
         String ShareAM = Busamshpre.getText();
         String where = "select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
                 + " from empleados  where `Status` LIKE '%Vigente%'";
-
+        
         if (!"".equals(Share)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
                     + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
@@ -374,7 +370,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
                     + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -382,19 +378,19 @@ public final class PresQ_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             share1.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("Apellido P");//1
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");//3
@@ -403,13 +399,13 @@ public final class PresQ_5 extends javax.swing.JFrame {
 
 //Anchos
             int[] anchos = {50, 50, 100, 75, 50};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 share1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -419,14 +415,14 @@ public final class PresQ_5 extends javax.swing.JFrame {
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al compartir datos con prestamos: " + ex.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void IOMTPres() {
         double inter = 0, Quincenasint = 0;
-
+        
         String interespres = (String) Interes.getSelectedItem();
         if (interespres.equals(".")) {
             inter = 0;
@@ -527,7 +523,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
         double MTo = (MTinteres1 + MTinteres2);
         this.MT.setText("" + MTo + "");;
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -613,11 +609,15 @@ public final class PresQ_5 extends javax.swing.JFrame {
         botonWeb5 = new botones.BotonWeb();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         ODT = new javax.swing.JMenuItem();
         CDA = new javax.swing.JMenuItem();
         CNQ = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Prestamos");
@@ -1185,15 +1185,6 @@ public final class PresQ_5 extends javax.swing.JFrame {
 
         jMenu1.setText("Cambiar a:");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        jMenuItem1.setText("Nomina Semanal");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
-
         jMenu2.setText("Nomina quincenal");
 
         ODT.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -1215,7 +1206,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
         jMenu2.add(CDA);
 
         CNQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        CNQ.setText("Captura de nomina");
+        CNQ.setText("Nomina IMSS");
         CNQ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CNQActionPerformed(evt);
@@ -1223,7 +1214,47 @@ public final class PresQ_5 extends javax.swing.JFrame {
         });
         jMenu2.add(CNQ);
 
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem2.setText("Nomina General");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
         jMenu1.add(jMenu2);
+
+        jMenu3.setText("Semanal");
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem1.setText("Nomina Semanal IMSS");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem1);
+
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem3.setText("Prestamos Semanales");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem3);
+
+        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem6.setText("Nomina Semanal General");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem6);
+
+        jMenu1.add(jMenu3);
 
         jMenuBar1.add(jMenu1);
 
@@ -1243,26 +1274,20 @@ public final class PresQ_5 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        NominaS_5 regr = new NominaS_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void InteresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_InteresItemStateChanged
-
+        
         IOMTPres();
         String mt = MT.getText();
         Pendientepres.setText(mt);
     }//GEN-LAST:event_InteresItemStateChanged
 
     private void BEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BEKeyReleased
-
+        
         shareprestamo();
     }//GEN-LAST:event_BEKeyReleased
 
     private void share1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_share1MouseClicked
-
+        
         int seleccionar = share1.getSelectedRow();
         Appres.setText(String.valueOf(share1.getValueAt(seleccionar, 0)));
         Ampres.setText(String.valueOf(share1.getValueAt(seleccionar, 1)));
@@ -1272,13 +1297,13 @@ public final class PresQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_share1MouseClicked
 
     private void AgregarprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarprestamoActionPerformed
-
+        
         AgregarPre();
         MDP();
     }//GEN-LAST:event_AgregarprestamoActionPerformed
 
     private void modprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modprestamoActionPerformed
-
+        
         editarpre();
         MDP();
     }//GEN-LAST:event_modprestamoActionPerformed
@@ -1288,7 +1313,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FSActionPerformed
 
     private void CS4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS4ActionPerformed
-
+        
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -1298,12 +1323,12 @@ public final class PresQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS4ActionPerformed
 
     private void BusapshpreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BusapshpreKeyReleased
-
+        
         shareprestamo();
     }//GEN-LAST:event_BusapshpreKeyReleased
 
     private void FiltrosshpItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosshpItemStateChanged
-
+        
         String FSH = (String) Filtrosshp.getSelectedItem();
         if (FSH.equals("Selecciona filtro")) {
             LabelPrestamos.setVisible(false);
@@ -1347,12 +1372,12 @@ public final class PresQ_5 extends javax.swing.JFrame {
             Busamshpre.setText("");
             Busamshpre.setVisible(false);
             shareprestamo();
-
+            
         }
     }//GEN-LAST:event_FiltrosshpItemStateChanged
 
     private void BusamshpreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BusamshpreKeyReleased
-
+        
         shareprestamo();
     }//GEN-LAST:event_BusamshpreKeyReleased
 
@@ -1361,12 +1386,12 @@ public final class PresQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_SinteresActionPerformed
 
     private void FNamepresKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FNamepresKeyReleased
-
+        
         MDP();
     }//GEN-LAST:event_FNamepresKeyReleased
 
     private void PreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PreMouseClicked
-
+        
         DefaultTableModel model = (DefaultTableModel) Pre.getModel();
         try {
             int seleccionar = Pre.getSelectedRow();
@@ -1400,7 +1425,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
             QPprest.setText(String.valueOf(Pre.getValueAt(seleccionar, 17)));
             PagadoPres.setText(String.valueOf(Pre.getValueAt(seleccionar, 18)));
             Pendientepres.setText(String.valueOf(Pre.getValueAt(seleccionar, 19)));
-
+            
             int id = Integer.parseInt(Pre.getValueAt(seleccionar, 0).toString());
             String Otrointeres = interes.getText();
             PreparedStatement ps;
@@ -1412,25 +1437,25 @@ public final class PresQ_5 extends javax.swing.JFrame {
             while (rs.next()) {
                 if (rs.getString("Interes").equals("0.0")) {
                     Sinteres.setSelected(true);
-
+                    
                 } else if (rs.getString("Interes").equals(Otrointeres)) {
                     Sinteres.setSelected(false);
                 }
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
-
+            
         }
     }//GEN-LAST:event_PreMouseClicked
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-
+        
         eliminarpre();
         MDP();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void CS5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS5ActionPerformed
-
+        
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Login_2 regr = new Login_2();
@@ -1440,7 +1465,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS5ActionPerformed
 
     private void FiltrosTPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTPItemStateChanged
-
+        
         String FTP = (String) FiltrosTP.getSelectedItem();
         if (FTP.equals("Selecciona filtro")) {
             Labelfilpres.setVisible(false);
@@ -1484,7 +1509,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
             FAMpres.setText("");
             FAMpres.setVisible(false);
             MDP();
-
+            
         }
     }//GEN-LAST:event_FiltrosTPItemStateChanged
 
@@ -1540,7 +1565,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
             FilPDPAm.setText("");
             FilPDPAm.setVisible(false);
             MDTPPres();
-
+            
         }
     }//GEN-LAST:event_FiltrosTPDPItemStateChanged
 
@@ -1579,6 +1604,30 @@ public final class PresQ_5 extends javax.swing.JFrame {
         Pendientepres.setText(mt);
     }//GEN-LAST:event_MTKeyReleased
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        NominaS_5 regr = new NominaS_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        PresS_5 regr = new PresS_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        NominaS_simss_5 regr = new NominaS_simss_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1610,10 +1659,8 @@ public final class PresQ_5 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PresQ_5().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new PresQ_5().setVisible(true);
         });
     }
 
@@ -1694,8 +1741,12 @@ public final class PresQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel99;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

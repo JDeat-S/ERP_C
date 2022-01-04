@@ -139,7 +139,7 @@ public final class PresS_5 extends javax.swing.JFrame {
         CNQ = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nomina Semanal");
@@ -725,7 +725,7 @@ public final class PresS_5 extends javax.swing.JFrame {
         jMenu3.setText("Semanal");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        jMenuItem1.setText("Nomina Semanal");
+        jMenuItem1.setText("Nomina Semanal IMSS");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -733,14 +733,14 @@ public final class PresS_5 extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem1);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        jMenuItem3.setText("Prestamos Semanales");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem4.setText("Nomina Semanal General");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem3);
+        jMenu3.add(jMenuItem4);
 
         jMenu1.add(jMenu3);
 
@@ -756,7 +756,7 @@ public final class PresS_5 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
         );
 
         pack();
@@ -855,7 +855,7 @@ public final class PresS_5 extends javax.swing.JFrame {
         double d1 = Double.parseDouble(this.Cantidad.getText());
         double d2 = Double.parseDouble(this.interes.getText());
         double MTo = (d1 + d2);
-        this.MT.setText("" + MTo + "");;
+        this.MT.setText("" + MTo + "");
     }
 
     public void MDTPPres() {
@@ -939,7 +939,7 @@ public final class PresS_5 extends javax.swing.JFrame {
         try {
 
             int filaseleccionada = Pre.getSelectedRow();
-            String sql = "delete from prestamosem where idprestamos=" + Pre.getValueAt(filaseleccionada, 0);
+            String sql = "delete from `nominasem.prestamosem` where idprestamos=" + Pre.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
             int n = st.executeUpdate(sql);
             if (n >= 0) {
@@ -957,12 +957,12 @@ public final class PresS_5 extends javax.swing.JFrame {
 
         int id = Integer.parseInt(Num.getText());
 
-        String SQL = "UPDATE `prestamosem` SET `idprestamos` = ?, `Fecha de solicitud` = ?,"
+        String SQL = "UPDATE `nominasem.prestamosem` SET `idprestamos` = ?, `Fecha de solicitud` = ?,"
                 + " `Mes` = ?, `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?,"
                 + " `Zona` = ?, `Servicio` = ?, `Cantidad` = ?, `Tiempo` = ?, `Interes` = ?,"
                 + " `Monto total` = ?, `Por semana` = ?, `Carpeta de descuentos` = ?,"
                 + " `Fecha liberado` = ?, `Status` = ?, `Metodo` = ?, `Semanaspagadas` = ?,"
-                + " `Pendiente` = ?, `Pagado` = ? WHERE `prestamosem`.`idprestamos` = ?";
+                + " `Pendiente` = ?, `Pagado` = ? WHERE `nominasem.prestamosem`.`idprestamos` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -1105,7 +1105,7 @@ public final class PresS_5 extends javax.swing.JFrame {
 
     public void AgregarPre() {
 
-        String SQL = "INSERT INTO `prestamosem` (`idprestamos`, `Fecha de solicitud`,"
+        String SQL = "INSERT INTO `nominasem.prestamosem` (`idprestamos`, `Fecha de solicitud`,"
                 + " `Mes`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`,"
                 + " `Cantidad`, `Tiempo`, `Interes`, `Monto total`, `Por semana`,"
                 + " `Carpeta de descuentos`, `Fecha liberado`, `Status`, `Metodo`,"
@@ -1148,20 +1148,20 @@ public final class PresS_5 extends javax.swing.JFrame {
         String Share = BE.getText();
         String ShareAP = Busapshpre.getText();
         String ShareAM = Busamshpre.getText();
-        String where = "select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`"
+        String where = "select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
                 + " from empleados  where `Status` LIKE '%Vigente%'";
-
+        
         if (!"".equals(Share)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
+            where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
                     + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
+            where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
                     + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
+            where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
                     + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1169,33 +1169,27 @@ public final class PresS_5 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             share1.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Empleado");
+            
             modelo.addColumn("Apellido P");//1
-            modelo.addColumn("Apellido M");//
+            modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");//3
-            modelo.addColumn("Banco");//7
-            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Servicio");
             modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");//5
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");
 
 //Anchos
-            int[] anchos = {/*numE*/35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 150, /*Banco*/ 75, /*CTA*/ 50, /*zona*/ 60,
-                /*servicio*/ 100, /*sueldo*/ 60, /*bono*/ 40};
+            int[] anchos = {50, 50, 100, 75, 50};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1369,7 +1363,7 @@ public final class PresS_5 extends javax.swing.JFrame {
             String Otrointeres = interes.getText();
             PreparedStatement ps;
             ResultSet rs;
-            ps = con.prepareStatement("select * from prestamosem where idprestamos =?");
+            ps = con.prepareStatement("select * from `nominasem.prestamosem` where idprestamos =?");
             ps.setInt(1, id);
             rs = ps.executeQuery();
             java.sql.Statement st = con.createStatement();
@@ -1506,11 +1500,11 @@ public final class PresS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        PresS_5 regr = new PresS_5();
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        NominaS_simss_5 regr = new NominaS_simss_5();
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1624,7 +1618,7 @@ public final class PresS_5 extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
