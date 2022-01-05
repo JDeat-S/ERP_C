@@ -202,11 +202,64 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         LDA7.setVisible(false);
         LDA8.setVisible(false);
         LDA9.setVisible(false);
-        // </editor-fold>                        
+        Menos27.setVisible(false);
+        Menos28.setVisible(false);
+        Menos29.setVisible(false);
+        Menos30.setVisible(false);
+        Menos31.setVisible(false);
+        Menos32.setVisible(false);
+        Menos33.setVisible(false);
+        Menos34.setVisible(false);
+        Menos35.setVisible(false);
+        Mas28.setVisible(false);
+        Mas29.setVisible(false);
+        Mas30.setVisible(false);
+        Mas31.setVisible(false);
+        Mas32.setVisible(false);
+        Mas33.setVisible(false);
+        Mas34.setVisible(false);
+        Mas35.setVisible(false);
+        Folio31.setVisible(false);
+        Folio32.setVisible(false);
+        Folio33.setVisible(false);
+        Folio34.setVisible(false);
+        Folio35.setVisible(false);
+        Folio36.setVisible(false);
+        Folio37.setVisible(false);
+        Folio38.setVisible(false);
+        Folio39.setVisible(false);
+        ObsV1.setVisible(false);
+        ObsV2.setVisible(false);
+        ObsV3.setVisible(false);
+        ObsV4.setVisible(false);
+        ObsV5.setVisible(false);
+        ObsV6.setVisible(false);
+        ObsV7.setVisible(false);
+        ObsV8.setVisible(false);
+        ObsV9.setVisible(false);
+        Fecha31.setVisible(false);
+        Fecha32.setVisible(false);
+        Fecha33.setVisible(false);
+        Fecha34.setVisible(false);
+        Fecha35.setVisible(false);
+        Fecha36.setVisible(false);
+        Fecha37.setVisible(false);
+        Fecha38.setVisible(false);
+        Fecha39.setVisible(false);
+        Importe31.setVisible(false);
+        Importe32.setVisible(false);
+        Importe33.setVisible(false);
+        Importe34.setVisible(false);
+        Importe35.setVisible(false);
+        Importe36.setVisible(false);
+        Importe37.setVisible(false);
+        Importe38.setVisible(false);
+        Importe39.setVisible(false);
 
+        // </editor-fold>                        
     }
 
-    public void Imtotal() {
+    public void Operaciones() {
         // <editor-fold defaultstate="collapsed" desc="Suma Servicios">
         double ImServ1 = Double.parseDouble(Importe.getText());
         double ImServ2 = Double.parseDouble(Importe1.getText());
@@ -257,16 +310,13 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 + Gasto9 + Gasto10;
         TDG.setText("" + TotalGas);
         //</editor-fold>
-        
+
         // <editor-fold defaultstate="collapsed" desc="Suma vales">
-
-
-      
-        TDG.setText("" + Double.parseDouble(Importe30.getText()) +Double.parseDouble(Importe31.getText()) +
-                Double.parseDouble(Importe32.getText()) +Double.parseDouble(Importe33.getText()) +
-                Double.parseDouble(Importe34.getText()) +Double.parseDouble(Importe35.getText()) +
-                Double.parseDouble(Importe36.getText()) +Double.parseDouble(Importe37.getText()) +
-                Double.parseDouble(Importe38.getText()) +Double.parseDouble(Importe39.getText()));
+        TDV.setText("" + (Double.parseDouble(Importe30.getText()) + Double.parseDouble(Importe31.getText())
+                + Double.parseDouble(Importe32.getText()) + Double.parseDouble(Importe33.getText())
+                + Double.parseDouble(Importe34.getText()) + Double.parseDouble(Importe35.getText())
+                + Double.parseDouble(Importe36.getText()) + Double.parseDouble(Importe37.getText())
+                + Double.parseDouble(Importe38.getText()) + Double.parseDouble(Importe39.getText())));
         //</editor-fold>
 
         // <editor-fold defaultstate="collapsed" desc="Total SYP">
@@ -277,12 +327,16 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         TDSYP.setText("" + TotalSYP);
         //</editor-fold>
 
-        // <editor-fold defaultstate="collapsed" desc="Diferencia TG y Gastos">
-        double DIF1 = Double.parseDouble(TDSYP.getText());
-        double DIF2 = Double.parseDouble(TDG.getText());
+        // <editor-fold defaultstate="collapsed" desc="Total menos gastos">
+        TMG.setText("" + (Double.parseDouble(TDSYP.getText()) - Double.parseDouble(TDG.getText())));
+        //</editor-fold>
 
-        double TotalDif = DIF1 - DIF2;
-        DE.setText("" + TotalDif);
+        // <editor-fold defaultstate="collapsed" desc="Debe entregar">
+        DE.setText("" + (Double.parseDouble(TMG.getText()) - Double.parseDouble(TDV.getText())));
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Debe">
+        DBe.setText("" + (Double.parseDouble(DE.getText()) - Double.parseDouble(EEntrega.getText())));
         //</editor-fold>
 
     }
@@ -949,48 +1003,52 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         TDV = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        Folio31 = new javax.swing.JTextField();
-        Folio32 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        Folio30 = new javax.swing.JTextField();
+        ObsV = new javax.swing.JTextField();
+        Importe30 = new javax.swing.JTextField();
+        Fecha30 = new com.toedter.calendar.JDateChooser();
+        jPanel7 = new javax.swing.JPanel();
         Folio33 = new javax.swing.JTextField();
-        Folio34 = new javax.swing.JTextField();
-        Folio35 = new javax.swing.JTextField();
+        Importe32 = new javax.swing.JTextField();
+        Importe37 = new javax.swing.JTextField();
+        Importe31 = new javax.swing.JTextField();
+        Importe33 = new javax.swing.JTextField();
         Folio36 = new javax.swing.JTextField();
-        Folio37 = new javax.swing.JTextField();
         Folio38 = new javax.swing.JTextField();
-        Folio39 = new javax.swing.JTextField();
-        ObsV1 = new javax.swing.JTextField();
-        ObsV2 = new javax.swing.JTextField();
-        ObsV3 = new javax.swing.JTextField();
         ObsV4 = new javax.swing.JTextField();
-        ObsV5 = new javax.swing.JTextField();
-        ObsV6 = new javax.swing.JTextField();
-        ObsV7 = new javax.swing.JTextField();
-        ObsV8 = new javax.swing.JTextField();
         ObsV9 = new javax.swing.JTextField();
-        Fecha31 = new com.toedter.calendar.JDateChooser();
-        Fecha32 = new com.toedter.calendar.JDateChooser();
-        Fecha33 = new com.toedter.calendar.JDateChooser();
-        Fecha34 = new com.toedter.calendar.JDateChooser();
-        Fecha35 = new com.toedter.calendar.JDateChooser();
+        Folio31 = new javax.swing.JTextField();
         Fecha36 = new com.toedter.calendar.JDateChooser();
-        Fecha37 = new com.toedter.calendar.JDateChooser();
+        Importe34 = new javax.swing.JTextField();
+        ObsV3 = new javax.swing.JTextField();
+        Fecha31 = new com.toedter.calendar.JDateChooser();
         Fecha38 = new com.toedter.calendar.JDateChooser();
         Fecha39 = new com.toedter.calendar.JDateChooser();
-        Importe31 = new javax.swing.JTextField();
-        Importe32 = new javax.swing.JTextField();
-        Importe33 = new javax.swing.JTextField();
-        Importe34 = new javax.swing.JTextField();
+        Fecha33 = new com.toedter.calendar.JDateChooser();
+        Folio37 = new javax.swing.JTextField();
+        Folio35 = new javax.swing.JTextField();
+        Fecha37 = new com.toedter.calendar.JDateChooser();
+        Folio34 = new javax.swing.JTextField();
+        Fecha34 = new com.toedter.calendar.JDateChooser();
+        Fecha35 = new com.toedter.calendar.JDateChooser();
+        Folio39 = new javax.swing.JTextField();
+        ObsV6 = new javax.swing.JTextField();
         Importe35 = new javax.swing.JTextField();
-        Importe36 = new javax.swing.JTextField();
-        Importe37 = new javax.swing.JTextField();
         Importe38 = new javax.swing.JTextField();
+        ObsV2 = new javax.swing.JTextField();
         Importe39 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        Menos27 = new javax.swing.JButton();
+        Folio32 = new javax.swing.JTextField();
+        ObsV8 = new javax.swing.JTextField();
+        Importe36 = new javax.swing.JTextField();
+        Fecha32 = new com.toedter.calendar.JDateChooser();
+        ObsV1 = new javax.swing.JTextField();
+        ObsV7 = new javax.swing.JTextField();
+        ObsV5 = new javax.swing.JTextField();
         Mas27 = new javax.swing.JButton();
-        Menos28 = new javax.swing.JButton();
+        Menos27 = new javax.swing.JButton();
         Mas28 = new javax.swing.JButton();
+        Menos28 = new javax.swing.JButton();
         Mas29 = new javax.swing.JButton();
         Menos29 = new javax.swing.JButton();
         Menos30 = new javax.swing.JButton();
@@ -998,17 +1056,19 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Menos31 = new javax.swing.JButton();
         Menos32 = new javax.swing.JButton();
         Mas31 = new javax.swing.JButton();
-        Menos33 = new javax.swing.JButton();
         Mas32 = new javax.swing.JButton();
+        Menos33 = new javax.swing.JButton();
         Mas33 = new javax.swing.JButton();
         Menos34 = new javax.swing.JButton();
-        Menos35 = new javax.swing.JButton();
         Mas34 = new javax.swing.JButton();
         Mas35 = new javax.swing.JButton();
-        Folio30 = new javax.swing.JTextField();
-        ObsV = new javax.swing.JTextField();
-        Importe30 = new javax.swing.JTextField();
-        Fecha30 = new com.toedter.calendar.JDateChooser();
+        Menos35 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        TMG = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        EEntrega = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        DBe = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -2036,45 +2096,46 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                         .addComponent(jLabel18)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(TDIDP))))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel2Layout.createSequentialGroup()
-                                .addComponent(Mas9)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas17))
-                            .addGroup(Panel2Layout.createSequentialGroup()
-                                .addComponent(Menos9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos17))))
+                                .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(Panel2Layout.createSequentialGroup()
+                                        .addComponent(Mas9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas14)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas15)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas17))
+                                    .addGroup(Panel2Layout.createSequentialGroup()
+                                        .addComponent(Menos9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos14)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos15)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos17))))))
                     .addGroup(Panel2Layout.createSequentialGroup()
                         .addGap(207, 207, 207)
                         .addComponent(jLabel13)))
@@ -2625,10 +2686,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(Mas25)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas26)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Mas18)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Mas19)
@@ -2641,26 +2698,30 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Mas23)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas24))
+                                        .addComponent(Mas24)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas25)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas26))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(Menos18)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos26)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos25)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Menos19)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Menos20)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos23)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Menos21)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Menos22)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos24)))))))
-                .addContainerGap(12, Short.MAX_VALUE))
+                                        .addComponent(Menos23)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos24)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos25)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos26)))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2692,33 +2753,31 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addComponent(Servicio20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Folio20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Mas25)
-                            .addComponent(Mas26)
                             .addComponent(Mas18)
                             .addComponent(Mas19)
                             .addComponent(Mas20)
                             .addComponent(Mas21)
                             .addComponent(Mas22)
                             .addComponent(Mas23)
-                            .addComponent(Mas24))
+                            .addComponent(Mas24)
+                            .addComponent(Mas25)
+                            .addComponent(Mas26))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Menos25)
-                            .addComponent(Menos26)
                             .addComponent(Menos18)
                             .addComponent(Menos19)
                             .addComponent(Menos20)
                             .addComponent(Menos21)
                             .addComponent(Menos22)
                             .addComponent(Menos23)
-                            .addComponent(Menos24))))
+                            .addComponent(Menos24)
+                            .addComponent(Menos25)
+                            .addComponent(Menos26))))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -2747,53 +2806,39 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
         jLabel29.setText("Importe");
 
-        Folio31.setText("0");
+        jLabel11.setText("Observaciones");
 
-        Folio32.setText("0");
+        Folio30.setText("0");
 
-        Folio33.setText("0");
-
-        Folio34.setText("0");
-
-        Folio35.setText("0");
-
-        Folio36.setText("0");
-
-        Folio37.setText("0");
-
-        Folio38.setText("0");
-
-        Folio39.setText("0");
-
-        Fecha31.setDateFormatString("dd MMM yyyy ");
-
-        Fecha32.setDateFormatString("dd MMM yyyy ");
-
-        Fecha33.setDateFormatString("dd MMM yyyy ");
-
-        Fecha34.setDateFormatString("dd MMM yyyy ");
-
-        Fecha35.setDateFormatString("dd MMM yyyy ");
-
-        Fecha36.setDateFormatString("dd MMM yyyy ");
-
-        Fecha37.setDateFormatString("dd MMM yyyy ");
-
-        Fecha38.setDateFormatString("dd MMM yyyy ");
-
-        Fecha39.setDateFormatString("dd MMM yyyy ");
-
-        Importe31.setText("0");
-        Importe31.addKeyListener(new java.awt.event.KeyAdapter() {
+        Importe30.setText("0");
+        Importe30.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                Importe31KeyReleased(evt);
+                Importe30KeyReleased(evt);
             }
         });
+
+        Fecha30.setDateFormatString("dd MMM yyyy ");
+
+        Folio33.setText("0");
 
         Importe32.setText("0");
         Importe32.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe32KeyReleased(evt);
+            }
+        });
+
+        Importe37.setText("0");
+        Importe37.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe37KeyReleased(evt);
+            }
+        });
+
+        Importe31.setText("0");
+        Importe31.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe31KeyReleased(evt);
             }
         });
 
@@ -2804,6 +2849,14 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
+        Folio36.setText("0");
+
+        Folio38.setText("0");
+
+        Folio31.setText("0");
+
+        Fecha36.setDateFormatString("dd MMM yyyy ");
+
         Importe34.setText("0");
         Importe34.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -2811,24 +2864,32 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
+        Fecha31.setDateFormatString("dd MMM yyyy ");
+
+        Fecha38.setDateFormatString("dd MMM yyyy ");
+
+        Fecha39.setDateFormatString("dd MMM yyyy ");
+
+        Fecha33.setDateFormatString("dd MMM yyyy ");
+
+        Folio37.setText("0");
+
+        Folio35.setText("0");
+
+        Fecha37.setDateFormatString("dd MMM yyyy ");
+
+        Folio34.setText("0");
+
+        Fecha34.setDateFormatString("dd MMM yyyy ");
+
+        Fecha35.setDateFormatString("dd MMM yyyy ");
+
+        Folio39.setText("0");
+
         Importe35.setText("0");
         Importe35.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe35KeyReleased(evt);
-            }
-        });
-
-        Importe36.setText("0");
-        Importe36.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Importe36KeyPressed(evt);
-            }
-        });
-
-        Importe37.setText("0");
-        Importe37.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Importe37KeyReleased(evt);
             }
         });
 
@@ -2846,18 +2907,29 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+        Folio32.setText("0");
+
+        Importe36.setText("0");
+        Importe36.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Importe36KeyPressed(evt);
+            }
+        });
+
+        Fecha32.setDateFormatString("dd MMM yyyy ");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(Folio39, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Folio31, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Folio32, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Folio33, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2867,7 +2939,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                             .addComponent(Folio37, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Folio38, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha31, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Fecha32, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Fecha33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2877,96 +2949,87 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                             .addComponent(Fecha37, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Fecha38, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe39, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ObsV2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ObsV3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ObsV4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ObsV5, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ObsV6, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ObsV7, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ObsV1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Importe31, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Importe32, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Importe33, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Importe34, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Importe35, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Importe36, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Importe37, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Importe38, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(137, 137, 137))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ObsV2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV5, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV6, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV7, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Importe31, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe32, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe33, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe35, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe36, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe37, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe38, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe39, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe34, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(Importe31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe34)
-                        .addGap(6, 6, 6)
+                        .addComponent(Importe34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(Importe38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Importe39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(Fecha31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(Fecha32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(Folio31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ObsV1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(Folio32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ObsV2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(Folio33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ObsV3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(Folio34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ObsV4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(Folio35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ObsV5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(Folio36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ObsV6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(Folio37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ObsV7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Folio38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addComponent(ObsV7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(Fecha33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Fecha34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2975,27 +3038,20 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Fecha36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Fecha38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Importe39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(Fecha37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Fecha38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(Folio38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Folio39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-
-        jLabel11.setText("Observaciones");
-
-        Menos27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
-        Menos27.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Menos27ActionPerformed(evt);
-            }
-        });
 
         Mas27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/37770.png"))); // NOI18N
         Mas27.addActionListener(new java.awt.event.ActionListener() {
@@ -3004,10 +3060,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        Menos28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
-        Menos28.addActionListener(new java.awt.event.ActionListener() {
+        Menos27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
+        Menos27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Menos28ActionPerformed(evt);
+                Menos27ActionPerformed(evt);
             }
         });
 
@@ -3015,6 +3071,13 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Mas28.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Mas28ActionPerformed(evt);
+            }
+        });
+
+        Menos28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
+        Menos28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Menos28ActionPerformed(evt);
             }
         });
 
@@ -3067,17 +3130,17 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        Menos33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
-        Menos33.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Menos33ActionPerformed(evt);
-            }
-        });
-
         Mas32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/37770.png"))); // NOI18N
         Mas32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Mas32ActionPerformed(evt);
+            }
+        });
+
+        Menos33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
+        Menos33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Menos33ActionPerformed(evt);
             }
         });
 
@@ -3095,13 +3158,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        Menos35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
-        Menos35.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Menos35ActionPerformed(evt);
-            }
-        });
-
         Mas34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/37770.png"))); // NOI18N
         Mas34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3116,97 +3172,90 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        Folio30.setText("0");
-
-        Importe30.setText("0");
-        Importe30.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Importe30KeyReleased(evt);
+        Menos35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
+        Menos35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Menos35ActionPerformed(evt);
             }
         });
-
-        Fecha30.setDateFormatString("dd MMM yyyy ");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel25))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(114, 114, 114)
+                                        .addComponent(jLabel28)
+                                        .addGap(170, 170, 170)
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TDV))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(195, 195, 195)
+                                        .addComponent(jLabel11)
+                                        .addGap(83, 83, 83)
+                                        .addComponent(jLabel29))))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel24)
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                                .addGap(114, 114, 114)
-                                                .addComponent(jLabel28)
-                                                .addGap(170, 170, 170)
-                                                .addComponent(jLabel12)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(TDV))
-                                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                                .addGap(195, 195, 195)
-                                                .addComponent(jLabel11)
-                                                .addGap(83, 83, 83)
-                                                .addComponent(jLabel29))))
+                                        .addComponent(Folio30, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(66, 66, 66)
-                                        .addComponent(jLabel25)))
-                                .addGap(10, 10, 10))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(Mas29)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas30)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas32)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas33)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas34)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas35)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas31)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas27)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas28))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(Menos33)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos30)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos29)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos34)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos35)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos27)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos32)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos31)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos28))))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(Folio30, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                        .addComponent(Mas27)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas28)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas29)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas30)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas31)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas32)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas33)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas34)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas35))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(Menos27)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos28)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos29)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos30)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos31)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos32)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos33)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos34)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos35)))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3224,30 +3273,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                     .addComponent(jLabel11))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Mas29)
-                            .addComponent(Mas30)
-                            .addComponent(Mas32)
-                            .addComponent(Mas33)
-                            .addComponent(Mas34)
-                            .addComponent(Mas35)
-                            .addComponent(Mas31)
-                            .addComponent(Mas27)
-                            .addComponent(Mas28))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Menos29)
-                            .addComponent(Menos30)
-                            .addComponent(Menos33)
-                            .addComponent(Menos34)
-                            .addComponent(Menos35)
-                            .addComponent(Menos32)
-                            .addComponent(Menos31)
-                            .addComponent(Menos27)
-                            .addComponent(Menos28)))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Folio30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3255,11 +3280,51 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                 .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Mas27)
+                            .addComponent(Mas28)
+                            .addComponent(Mas29)
+                            .addComponent(Mas30)
+                            .addComponent(Mas31)
+                            .addComponent(Mas32)
+                            .addComponent(Mas33)
+                            .addComponent(Mas34)
+                            .addComponent(Mas35))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Menos27)
+                            .addComponent(Menos28)
+                            .addComponent(Menos29)
+                            .addComponent(Menos30)
+                            .addComponent(Menos31)
+                            .addComponent(Menos32)
+                            .addComponent(Menos33)
+                            .addComponent(Menos34)
+                            .addComponent(Menos35))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane5.setViewportView(jPanel5);
+
+        jLabel27.setText("Total restando gastos:");
+
+        TMG.setText("0");
+
+        jLabel30.setText("El entrega:");
+
+        EEntrega.setText("0");
+        EEntrega.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                EEntregaKeyReleased(evt);
+            }
+        });
+
+        jLabel31.setText("Debe:");
+
+        DBe.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -3268,47 +3333,68 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
+                                .addGap(53, 53, 53)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel30)
+                                    .addComponent(jLabel31))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TDSYP))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DE)))))
-                .addContainerGap(368, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TDSYP)
+                                    .addComponent(TMG)
+                                    .addComponent(DE)
+                                    .addComponent(EEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DBe)))))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)))
+                .addContainerGap(213, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
                             .addComponent(TDSYP))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel27)
+                            .addComponent(TMG))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(DE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel30)
+                            .addComponent(EEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel31)
+                            .addComponent(DBe))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -3540,50 +3626,50 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos8ActionPerformed
 
     private void ImporteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_ImporteKeyReleased
 
     private void Importe1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe1KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe1KeyReleased
 
     private void Importe2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe2KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe2KeyReleased
 
     private void Importe3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe3KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe3KeyReleased
 
     private void Importe4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe4KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe4KeyReleased
 
     private void Importe5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe5KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe5KeyReleased
 
     private void Importe6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe6KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe6KeyReleased
 
     private void Importe7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe7KeyPressed
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe7KeyPressed
 
     private void Importe8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe8KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe8KeyReleased
 
     private void Importe9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe9KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe9KeyReleased
 
@@ -3592,43 +3678,43 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void Importe10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe10KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe10KeyReleased
 
     private void Importe11KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe11KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe11KeyReleased
 
     private void Importe12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe12KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe12KeyReleased
 
     private void Importe13KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe13KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe13KeyReleased
 
     private void Importe14KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe14KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe14KeyReleased
 
     private void Importe15KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe15KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe15KeyReleased
 
     private void Importe16KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe16KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe16KeyReleased
 
     private void Importe17KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe17KeyPressed
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe17KeyPressed
 
     private void Importe18KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe18KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe18KeyReleased
 
     private void Importe19KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe19KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe19KeyReleased
 
     private void Mas9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas9ActionPerformed
@@ -3640,6 +3726,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Menos9.setVisible(true);
         Mas9.setVisible(false);
         Mas10.setVisible(true);
+
+
     }//GEN-LAST:event_Mas9ActionPerformed
 
     private void Menos11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos11ActionPerformed
@@ -3846,43 +3934,43 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas17ActionPerformed
 
     private void Importe20KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe20KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe20KeyReleased
 
     private void Importe21KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe21KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe21KeyReleased
 
     private void Importe22KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe22KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe22KeyReleased
 
     private void Importe23KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe23KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe23KeyReleased
 
     private void Importe24KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe24KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe24KeyReleased
 
     private void Importe25KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe25KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe25KeyReleased
 
     private void Importe26KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe26KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe26KeyReleased
 
     private void Importe27KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe27KeyPressed
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe27KeyPressed
 
     private void Importe28KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe28KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe28KeyReleased
 
     private void Importe29KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe29KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe29KeyReleased
 
     private void Menos18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos18ActionPerformed
@@ -4100,43 +4188,45 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas26ActionPerformed
 
     private void Importe30KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe30KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
+
     }//GEN-LAST:event_Importe30KeyReleased
 
     private void Importe31KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe31KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
+
     }//GEN-LAST:event_Importe31KeyReleased
 
     private void Importe32KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe32KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe32KeyReleased
 
     private void Importe33KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe33KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe33KeyReleased
 
     private void Importe34KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe34KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe34KeyReleased
 
     private void Importe35KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe35KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe35KeyReleased
 
     private void Importe36KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe36KeyPressed
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe36KeyPressed
 
     private void Importe37KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe37KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe37KeyReleased
 
     private void Importe38KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe38KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe38KeyReleased
 
     private void Importe39KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe39KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe39KeyReleased
 
     private void Menos27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos27ActionPerformed
@@ -4164,6 +4254,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha32.setVisible(false);
         ObsV2.setVisible(false);
         Importe32.setVisible(false);
+        Menos27.setVisible(true);
         Menos28.setVisible(false);
         Mas28.setVisible(true);
         Mas29.setVisible(false);
@@ -4174,6 +4265,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha32.setVisible(true);
         ObsV2.setVisible(true);
         Importe32.setVisible(true);
+        Menos27.setVisible(false);
         Menos28.setVisible(true);
         Mas28.setVisible(false);
         Mas29.setVisible(true);
@@ -4184,9 +4276,11 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha33.setVisible(true);
         ObsV3.setVisible(true);
         Importe33.setVisible(true);
+        Menos28.setVisible(false);
         Menos29.setVisible(true);
         Mas29.setVisible(false);
         Mas30.setVisible(true);
+
     }//GEN-LAST:event_Mas29ActionPerformed
 
     private void Menos29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos29ActionPerformed
@@ -4194,6 +4288,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha33.setVisible(false);
         ObsV3.setVisible(false);
         Importe33.setVisible(false);
+        Menos28.setVisible(true);
         Menos29.setVisible(false);
         Mas29.setVisible(true);
         Mas30.setVisible(false);
@@ -4204,6 +4299,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha34.setVisible(false);
         ObsV4.setVisible(false);
         Importe34.setVisible(false);
+        Menos29.setVisible(true);
         Menos30.setVisible(false);
         Mas30.setVisible(true);
         Mas31.setVisible(false);
@@ -4214,6 +4310,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha34.setVisible(true);
         ObsV4.setVisible(true);
         Importe34.setVisible(true);
+        Menos29.setVisible(false);
         Menos30.setVisible(true);
         Mas30.setVisible(false);
         Mas31.setVisible(true);
@@ -4224,6 +4321,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha35.setVisible(false);
         ObsV5.setVisible(false);
         Importe35.setVisible(false);
+        Menos30.setVisible(true);
         Menos31.setVisible(false);
         Mas31.setVisible(true);
         Mas32.setVisible(false);
@@ -4234,6 +4332,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha36.setVisible(false);
         ObsV6.setVisible(false);
         Importe36.setVisible(false);
+        Menos31.setVisible(true);
         Menos32.setVisible(false);
         Mas32.setVisible(true);
         Mas33.setVisible(false);
@@ -4244,6 +4343,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha35.setVisible(true);
         ObsV5.setVisible(true);
         Importe35.setVisible(true);
+        Menos30.setVisible(false);
         Menos31.setVisible(true);
         Mas31.setVisible(false);
         Mas32.setVisible(true);
@@ -4254,6 +4354,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha37.setVisible(false);
         ObsV7.setVisible(false);
         Importe37.setVisible(false);
+        Menos32.setVisible(true);
         Menos33.setVisible(false);
         Mas33.setVisible(true);
         Mas34.setVisible(false);
@@ -4264,6 +4365,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha36.setVisible(true);
         ObsV6.setVisible(true);
         Importe36.setVisible(true);
+        Menos31.setVisible(false);
         Menos32.setVisible(true);
         Mas32.setVisible(false);
         Mas33.setVisible(true);
@@ -4274,6 +4376,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha37.setVisible(true);
         ObsV7.setVisible(true);
         Importe37.setVisible(true);
+        Menos32.setVisible(false);
         Menos33.setVisible(true);
         Mas33.setVisible(false);
         Mas34.setVisible(true);
@@ -4284,6 +4387,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha38.setVisible(false);
         ObsV8.setVisible(false);
         Importe38.setVisible(false);
+        Menos33.setVisible(true);
         Menos34.setVisible(false);
         Mas34.setVisible(true);
         Mas35.setVisible(false);
@@ -4294,6 +4398,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha39.setVisible(false);
         ObsV9.setVisible(false);
         Importe39.setVisible(false);
+        Menos34.setVisible(true);
         Menos35.setVisible(false);
         Mas35.setVisible(true);
         //Mas36.setVisible(false);
@@ -4304,6 +4409,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha38.setVisible(true);
         ObsV8.setVisible(true);
         Importe38.setVisible(true);
+        Menos33.setVisible(false);
         Menos34.setVisible(true);
         Mas34.setVisible(false);
         Mas35.setVisible(true);
@@ -4314,10 +4420,15 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha39.setVisible(true);
         ObsV9.setVisible(true);
         Importe39.setVisible(true);
+        Menos34.setVisible(false);
         Menos35.setVisible(true);
         Mas35.setVisible(false);
 //        Mas36.setVisible(true);
     }//GEN-LAST:event_Mas35ActionPerformed
+
+    private void EEntregaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EEntregaKeyReleased
+        Operaciones();
+    }//GEN-LAST:event_EEntregaKeyReleased
 
     /**
      * @param args the command line arguments
@@ -4353,7 +4464,9 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel DBe;
     private javax.swing.JLabel DE;
+    private javax.swing.JTextField EEntrega;
     private com.toedter.calendar.JDateChooser Fecha;
     private com.toedter.calendar.JDateChooser Fecha1;
     private com.toedter.calendar.JDateChooser Fecha10;
@@ -4613,6 +4726,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JLabel TDIDS;
     private javax.swing.JLabel TDSYP;
     private javax.swing.JLabel TDV;
+    private javax.swing.JLabel TMG;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -4633,9 +4747,12 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -4650,7 +4767,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
