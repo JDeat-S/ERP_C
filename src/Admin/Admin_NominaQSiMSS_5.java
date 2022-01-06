@@ -22266,34 +22266,34 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Bampag8KeyReleased
 
     private void Imprimir8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir8ActionPerformed
-             int FP = FiltrosP8.getSelectedIndex();
+        int FP = FiltrosP8.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total: "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total: "
                     + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 1) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total con filtro Apellido P "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total con filtro Apellido P "
                     + BAppag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 2) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total con filtro Apellido M "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total con filtro Apellido M "
                     + Bampag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 3) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total con filtro Nombre(s) "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total con filtro Nombre(s) "
                     + busp8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 4) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total del servicio "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total del servicio "
                     + FiltroServP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 5) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total de la "
-                    + FiltroQP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())+ " (" + FDP8.getSelectedItem().toString() + ")"), true);
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total de la "
+                    + FiltroQP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText()) + " (" + FDP8.getSelectedItem().toString() + ")"), true);
         }
         if (FP == 6) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total con filtro # Lista "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total con filtro # Lista "
                     + filtroNDFP8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
     }//GEN-LAST:event_Imprimir8ActionPerformed

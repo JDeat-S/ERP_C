@@ -8206,7 +8206,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir))
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2527, Short.MAX_VALUE))
+                .addContainerGap(2569, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8407,7 +8407,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir1))
                     .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2527, Short.MAX_VALUE))
+                .addContainerGap(2569, Short.MAX_VALUE))
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8607,7 +8607,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir2))
                     .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2527, Short.MAX_VALUE))
+                .addContainerGap(2569, Short.MAX_VALUE))
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8807,7 +8807,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir3))
                     .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2527, Short.MAX_VALUE))
+                .addContainerGap(2569, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9007,7 +9007,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir4))
                     .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2527, Short.MAX_VALUE))
+                .addContainerGap(2569, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9151,11 +9151,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         LabelFDP5.setText("Forma de pago:");
 
         FDP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "BANCOMER", "SANTANDER", "BAJAS", "EFECTIVO" }));
-        FDP5.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FDP5ItemStateChanged(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
@@ -9207,7 +9202,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir5))
                     .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2527, Short.MAX_VALUE))
+                .addContainerGap(2569, Short.MAX_VALUE))
         );
         jPanel33Layout.setVerticalGroup(
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9407,7 +9402,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir6))
                     .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2527, Short.MAX_VALUE))
+                .addContainerGap(2569, Short.MAX_VALUE))
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9607,7 +9602,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir7))
                     .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2527, Short.MAX_VALUE))
+                .addContainerGap(2569, Short.MAX_VALUE))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9807,7 +9802,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir8))
                     .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2527, Short.MAX_VALUE))
+                .addContainerGap(2569, Short.MAX_VALUE))
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -20679,7 +20674,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         }
         if (FP == 5) {
             Funimprimir(pago7, getTitle() + " Sur 2", "Monto total de la "
-                    + FiltroQP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())+ " (" + FDP7.getSelectedItem().toString() + ")"), true);
+                    + FiltroQP7.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText()) + " (" + FDP7.getSelectedItem().toString() + ")"), true);
         }
         if (FP == 6) {
             Funimprimir(pago7, getTitle() + " Sur 2", "Monto total con filtro # Lista "
@@ -20945,7 +20940,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         }
         if (FP == 5) {
             Funimprimir(pago6, getTitle() + " Sur 1", "Monto total de la "
-                    + FiltroQP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())+ " (" + FDP6.getSelectedItem().toString() + ")"), true);
+                    + FiltroQP6.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText()) + " (" + FDP6.getSelectedItem().toString() + ")"), true);
         }
         if (FP == 6) {
             Funimprimir(pago6, getTitle() + " Sur 1", "Monto total con filtro # Lista "
@@ -21212,7 +21207,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         }
         if (FP == 5) {
             Funimprimir(pago5, getTitle() + " Oficina", "Monto total de la "
-                    + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())+ " (" + FDP5.getSelectedItem().toString() + ")"), true);
+                    + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText()) + " (" + FDP5.getSelectedItem().toString() + ")"), true);
         }
         if (FP == 6) {
             Funimprimir(pago5, getTitle() + " Oficina", "Monto total con filtro # Lista "
@@ -22066,34 +22061,34 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Bampag8KeyReleased
 
     private void Imprimir8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir8ActionPerformed
-               int FP = FiltrosP8.getSelectedIndex();
+        int FP = FiltrosP8.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total: "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total: "
                     + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 1) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total con filtro Apellido P "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total con filtro Apellido P "
                     + BAppag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 2) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total con filtro Apellido M "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total con filtro Apellido M "
                     + Bampag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 3) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total con filtro Nombre(s) "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total con filtro Nombre(s) "
                     + busp8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 4) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total del servicio "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total del servicio "
                     + FiltroServP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 5) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total de la "
-                    + FiltroQP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())+ " (" + FDP8.getSelectedItem().toString() + ")"), true);
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total de la "
+                    + FiltroQP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText()) + " (" + FDP8.getSelectedItem().toString() + ")"), true);
         }
         if (FP == 6) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total con filtro # Lista "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total con filtro # Lista "
                     + filtroNDFP8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
     }//GEN-LAST:event_Imprimir8ActionPerformed
@@ -22133,10 +22128,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void FDP6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDP6ItemStateChanged
         FunMD();
     }//GEN-LAST:event_FDP6ItemStateChanged
-
-    private void FDP5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDP5ItemStateChanged
-        FunMD();
-    }//GEN-LAST:event_FDP5ItemStateChanged
 
     private void FDP4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDP4ItemStateChanged
         FunMD();
