@@ -34,29 +34,29 @@ public class ColorRH extends DefaultTableCellRenderer {
             setBackground(imss);
         }else if (table.getValueAt(row, 1).toString().equals("Si")) {
             setBackground(imss);
-        } else if(table.getValueAt(row, 19).toString().equals("BAJA")) {
+        } else if(table.getValueAt(row, 15).toString().equals("BAJA")) {
             setBackground(RyB);
-        } else if (table.getValueAt(row, 19).toString().equals("VIGENTE (TEMPORAL)")) {
+        } else if (table.getValueAt(row, 15).toString().equals("VIGENTE (TEMPORAL)")) {
             setBackground(Pen);
-        } else if (table.getValueAt(row, 19).toString().equals("VIGENTE")) {
+        } else if (table.getValueAt(row, 15).toString().equals("VIGENTE")) {
             setBackground(Color.yellow);
-        } else if (table.getValueAt(row, 19).toString().equals("RECHAZADO")) {
+        } else if (table.getValueAt(row, 15).toString().equals("RECHAZADO")) {
             setBackground(RyB);
-        } else if (table.getValueAt(row, 19).toString().equals("EN ESPERA")) {
+        } else if (table.getValueAt(row, 15).toString().equals("EN ESPERA")) {
             setBackground(EEs);
-        } else if (table.getValueAt(row, 19).toString().equals("PENDIENTE")) {
+        } else if (table.getValueAt(row, 15).toString().equals("PENDIENTE")) {
             setBackground(Pen);
-        } else if (table.getValueAt(row, 19).toString().equals("BOLETINADO")) {
+        } else if (table.getValueAt(row, 15).toString().equals("BOLETINADO")) {
             setBackground(RyB);
-        } else if (table.getValueAt(row, 19).toString().equals("DEPURADO")) {
+        } else if (table.getValueAt(row, 15).toString().equals("DEPURADO")) {
             setBackground(Dep);
-        } else if (table.getValueAt(row, 19).toString().equals("RECHAZADO/DEPURADO")) {
+        } else if (table.getValueAt(row, 15).toString().equals("RECHAZADO/DEPURADO")) {
             setBackground(Dep);
-        } else if (table.getValueAt(row, 19).toString().equals("NO CONTRATAR/DEPURADO")) {
+        } else if (table.getValueAt(row, 15).toString().equals("NO CONTRATAR/DEPURADO")) {
             setBackground(Dep);
-        } else if (table.getValueAt(row, 19).toString().equals("BOLETINADO/DEPURADO")) {
+        } else if (table.getValueAt(row, 15).toString().equals("BOLETINADO/DEPURADO")) {
             setBackground(Dep);
-        } else if (table.getValueAt(row, 19).toString().equals("BAJA/DEPURADO")) {
+        } else if (table.getValueAt(row, 15).toString().equals("BAJA/DEPURADO")) {
             setBackground(Dep);
         } else {
             setBackground(Color.CYAN);
