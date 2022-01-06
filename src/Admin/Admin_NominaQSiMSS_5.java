@@ -39,6 +39,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             f = 4, g = 6, h = 8;
     ButtonGroup DAB;
     double dd, in, dv, df, dft,
+            DO1, DO2, R1, R2, dt1, dt2, dt3, dt4, DL1, DL2, dt5, dt6, F1, F2, FJ1, FJ2, FJ3, FJ4, FJ5, dt7,dt8,dt9,dt10,dt11,dt12,dt13,dt14,dt15,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15,
+            DO3,DO4,DO5,DO6,DO7,DO8,DO9,DO10,DO11,DO12,DO13,DO14,DO15,DL3,DL4,DL5,DL6,DL7,DL8,DL9,DL10,DL11,DL12,DL13,DL14,DL15,dt16,R16,DO16,FJ16,F16,FJ6,FJ7,FJ8,FJ9,FJ10,FJ11,FJ12,FJ13,FJ14,FJ15,
+            DSGS3,DSGS4,DSGS5,DSGS6,DSGS7,DSGS8,DSGS9,DSGS10,DSGS11,DSGS12,DSGS13,DSGS14,DSGS15,DSGS16,
             dd2, in2, dv2, df2, dft2,
             dd3, in3, dv3, df3, dft3,
             dd4, in4, dv4, df4, dft4,
@@ -130,6 +133,36 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         DAB.add(Bsi);
         DAB.add(Bno);
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        busp8.setVisible(false);
+        BAppag8.setVisible(false);
+        Bampag8.setVisible(false);
+        LabelBEP8.setVisible(false);
+        LabelBQP8.setVisible(false);
+        FiltroQP8.setVisible(false);
+        FiltroServP8.setVisible(false);
+        LabelBSP8.setVisible(false);
+        FiltroSZP8.setVisible(false);
+        LabelSZP8.setVisible(false);
+        filtroNDFP8.setVisible(false);
+        LabelNDFP8.setVisible(false);
+        FDP.setVisible(false);
+        FDP1.setVisible(false);
+        FDP2.setVisible(false);
+        FDP3.setVisible(false);
+        FDP4.setVisible(false);
+        FDP5.setVisible(false);
+        FDP6.setVisible(false);
+        FDP7.setVisible(false);
+        FDP8.setVisible(false);
+        LabelFDP.setVisible(false);
+        LabelFDP1.setVisible(false);
+        LabelFDP2.setVisible(false);
+        LabelFDP3.setVisible(false);
+        LabelFDP4.setVisible(false);
+        LabelFDP5.setVisible(false);
+        LabelFDP6.setVisible(false);
+        LabelFDP7.setVisible(false);
+        LabelFDP8.setVisible(false);
         LabelBE.setVisible(false);
         LabelBQ.setVisible(false);
         LabelBS.setVisible(false);
@@ -457,6 +490,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                 + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`";
         String FiltroSpago = FiltroServP8.getSelectedItem().toString();
+        String FilFDP = FDP8.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP8.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP8.getText();
 
@@ -483,7 +517,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`, "
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.corporativo santander quincenal`"
-                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+                    + " Where `Banco` LIKE '%" + FilFDP + "%' AND `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
 
         try {
@@ -1439,17 +1473,17 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String ShareAP = BAPNom.getText();
         String ShareAM = BAMNom.getText();
         String where = "select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`"
-                + " from empleados where `Status` LIKE '%Vigente%'";
+                + " from empleados";// where `Status` LIKE '%Vigente%'";
 
         if (!"".equals(Share)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
+                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%'";// AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
+                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%'";// AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
             where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
+                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%'";// AND `Status` LIKE '%Vigente%'";
         }
 
         try {
@@ -1539,6 +1573,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                 + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco.simss`";
         String FiltroSpago = FiltroServP.getSelectedItem().toString();
+        String FilFDP = FDP.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP.getText();
 
@@ -1565,7 +1600,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos acapulco.simss`"
-                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+                    + " Where `Banco` LIKE '%" + FilFDP + "%' AND `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
 
         try {
@@ -1631,6 +1666,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                 + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla.simss`";
         String FiltroSpago = FiltroServP1.getSelectedItem().toString();
+        String FilFDP = FDP1.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP1.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP1.getText();
 
@@ -1657,7 +1693,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos puebla.simss`"
-                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+                    + " Where `Banco` LIKE '%" + FilFDP + "%' AND `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
 
         try {
@@ -1723,6 +1759,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                 + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca.simss`";
         String FiltroSpago = FiltroServP2.getSelectedItem().toString();
+        String FilFDP = FDP2.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP2.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP2.getText();
 
@@ -1749,7 +1786,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.foraneos toluca.simss`"
-                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+                    + " Where `Banco` LIKE '%" + FilFDP + "%' AND `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
 
         try {
@@ -1820,6 +1857,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                 + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte.simss`";
         String FiltroSpago = FiltroServP3.getSelectedItem().toString();
+        String FilFDP = FDP3.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP3.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP3.getText();
 
@@ -1846,7 +1884,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.norte.simss`"
-                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+                    + " Where `Banco` LIKE '%" + FilFDP + "%' AND `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
 
         try {
@@ -1912,6 +1950,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                 + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente.simss`";
         String FiltroSpago = FiltroServP4.getSelectedItem().toString();
+        String FilFDP = FDP4.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP4.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP4.getText();
 
@@ -1938,7 +1977,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.poniente.simss`"
-                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+                    + " Where `Banco` LIKE '%" + FilFDP + "%' AND `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
 
         try {
@@ -2004,6 +2043,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                 + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina.simss`";
         String FiltroSpago = FiltroServP5.getSelectedItem().toString();
+        String FilFDP = FDP5.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP5.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP5.getText();
 
@@ -2030,7 +2070,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.oficina.simss`"
-                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+                    + " Where `Banco` LIKE '%" + FilFDP + "%' AND `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
 
         try {
@@ -2096,6 +2136,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                 + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 1.simss`";
         String FiltroSpago = FiltroServP6.getSelectedItem().toString();
+        String FilFDP = FDP6.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP6.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP6.getText();
 
@@ -2122,7 +2163,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 1.simss`"
-                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+                    + " Where `Banco` LIKE '%" + FilFDP + "%' AND `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
 
         try {
@@ -2188,6 +2229,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                 + "`Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 2.simss`";
         String FiltroSpago = FiltroServP7.getSelectedItem().toString();
+        String FilFDP = FDP7.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP7.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP7.getText();
 
@@ -2214,7 +2256,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
                     + " `Cuenta de banco`, `Sueldo`, `Deposito` FROM `nomina.detallada.sur 2.simss`"
-                    + " Where `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
+                    + " Where `Banco` LIKE '%" + FilFDP + "%' AND `quincena del mes` LIKE '%" + FiltroQuinpago + "%'";
         }
 
         try {
@@ -4018,7 +4060,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         PDDF.setText("" + Double.parseDouble(DF.getText()) * Double.parseDouble(pd.getText()));
 
         //dia festivo laborado
-        PDDFT.setText("" + (2 * Double.parseDouble(pd.getText())) * Double.parseDouble(DFT.getText()));
+        PDDFT.setText("" + (3 * Double.parseDouble(pd.getText())) * Double.parseDouble(DFT.getText()));
 
 //descanso
         PDDT.setText("" + (2 * Double.parseDouble(pd.getText())) * Double.parseDouble(dt.getText()));
@@ -4052,118 +4094,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DO1 = new javax.swing.JLabel();
-        DO2 = new javax.swing.JLabel();
-        R1 = new javax.swing.JLabel();
-        R2 = new javax.swing.JLabel();
-        dt1 = new javax.swing.JLabel();
-        dt2 = new javax.swing.JLabel();
-        dt3 = new javax.swing.JLabel();
-        dt4 = new javax.swing.JLabel();
-        DL1 = new javax.swing.JLabel();
-        dt5 = new javax.swing.JLabel();
-        DL2 = new javax.swing.JLabel();
-        dt6 = new javax.swing.JLabel();
-        F1 = new javax.swing.JLabel();
-        F2 = new javax.swing.JLabel();
-        FJ1 = new javax.swing.JLabel();
-        FJ2 = new javax.swing.JLabel();
-        FJ3 = new javax.swing.JLabel();
-        FJ4 = new javax.swing.JLabel();
-        FJ5 = new javax.swing.JLabel();
-        dt7 = new javax.swing.JLabel();
-        dt8 = new javax.swing.JLabel();
-        dt9 = new javax.swing.JLabel();
-        dt10 = new javax.swing.JLabel();
-        dt11 = new javax.swing.JLabel();
-        dt12 = new javax.swing.JLabel();
-        dt13 = new javax.swing.JLabel();
-        dt14 = new javax.swing.JLabel();
-        dt15 = new javax.swing.JLabel();
-        R3 = new javax.swing.JLabel();
-        R4 = new javax.swing.JLabel();
-        R5 = new javax.swing.JLabel();
-        R6 = new javax.swing.JLabel();
-        R7 = new javax.swing.JLabel();
-        R8 = new javax.swing.JLabel();
-        R9 = new javax.swing.JLabel();
-        R10 = new javax.swing.JLabel();
-        R11 = new javax.swing.JLabel();
-        R12 = new javax.swing.JLabel();
-        R13 = new javax.swing.JLabel();
-        R14 = new javax.swing.JLabel();
-        R15 = new javax.swing.JLabel();
-        DO3 = new javax.swing.JLabel();
-        DO4 = new javax.swing.JLabel();
-        DO5 = new javax.swing.JLabel();
-        DO6 = new javax.swing.JLabel();
-        DO7 = new javax.swing.JLabel();
-        DO8 = new javax.swing.JLabel();
-        DO9 = new javax.swing.JLabel();
-        DO10 = new javax.swing.JLabel();
-        DO11 = new javax.swing.JLabel();
-        DO12 = new javax.swing.JLabel();
-        DO13 = new javax.swing.JLabel();
-        DO14 = new javax.swing.JLabel();
-        DO15 = new javax.swing.JLabel();
-        F3 = new javax.swing.JLabel();
-        F4 = new javax.swing.JLabel();
-        F5 = new javax.swing.JLabel();
-        F6 = new javax.swing.JLabel();
-        F7 = new javax.swing.JLabel();
-        F8 = new javax.swing.JLabel();
-        F9 = new javax.swing.JLabel();
-        F10 = new javax.swing.JLabel();
-        F11 = new javax.swing.JLabel();
-        F12 = new javax.swing.JLabel();
-        F13 = new javax.swing.JLabel();
-        F14 = new javax.swing.JLabel();
-        F15 = new javax.swing.JLabel();
-        DL3 = new javax.swing.JLabel();
-        DL4 = new javax.swing.JLabel();
-        DL5 = new javax.swing.JLabel();
-        DL6 = new javax.swing.JLabel();
-        DL7 = new javax.swing.JLabel();
-        DL8 = new javax.swing.JLabel();
-        DL9 = new javax.swing.JLabel();
-        DL10 = new javax.swing.JLabel();
-        DL11 = new javax.swing.JLabel();
-        DL12 = new javax.swing.JLabel();
-        DL13 = new javax.swing.JLabel();
-        DL14 = new javax.swing.JLabel();
-        DL15 = new javax.swing.JLabel();
-        DL16 = new javax.swing.JLabel();
-        dt16 = new javax.swing.JLabel();
-        R16 = new javax.swing.JLabel();
-        DO16 = new javax.swing.JLabel();
-        FJ16 = new javax.swing.JLabel();
-        F16 = new javax.swing.JLabel();
-        FJ6 = new javax.swing.JLabel();
-        FJ7 = new javax.swing.JLabel();
-        FJ8 = new javax.swing.JLabel();
-        FJ9 = new javax.swing.JLabel();
-        FJ10 = new javax.swing.JLabel();
-        FJ11 = new javax.swing.JLabel();
-        FJ12 = new javax.swing.JLabel();
-        FJ13 = new javax.swing.JLabel();
-        FJ14 = new javax.swing.JLabel();
-        FJ15 = new javax.swing.JLabel();
-        DSGS1 = new javax.swing.JLabel();
-        DSGS2 = new javax.swing.JLabel();
-        DSGS3 = new javax.swing.JLabel();
-        DSGS4 = new javax.swing.JLabel();
-        DSGS5 = new javax.swing.JLabel();
-        DSGS6 = new javax.swing.JLabel();
-        DSGS7 = new javax.swing.JLabel();
-        DSGS8 = new javax.swing.JLabel();
-        DSGS9 = new javax.swing.JLabel();
-        DSGS10 = new javax.swing.JLabel();
-        DSGS11 = new javax.swing.JLabel();
-        DSGS12 = new javax.swing.JLabel();
-        DSGS13 = new javax.swing.JLabel();
-        DSGS14 = new javax.swing.JLabel();
-        DSGS15 = new javax.swing.JLabel();
-        DSGS16 = new javax.swing.JLabel();
         PestañasPrin = new javax.swing.JTabbedPane();
         Nomina = new javax.swing.JScrollPane();
         jPanel17 = new javax.swing.JPanel();
@@ -4615,6 +4545,8 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         MTDsum = new javax.swing.JLabel();
         Imprimir = new javax.swing.JButton();
+        LabelFDP = new javax.swing.JLabel();
+        FDP = new javax.swing.JComboBox<>();
         TPagos1 = new javax.swing.JScrollPane();
         jPanel29 = new javax.swing.JPanel();
         jScrollPane29 = new javax.swing.JScrollPane();
@@ -4638,6 +4570,8 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         MTDsum1 = new javax.swing.JLabel();
         Imprimir1 = new javax.swing.JButton();
+        LabelFDP1 = new javax.swing.JLabel();
+        FDP1 = new javax.swing.JComboBox<>();
         TPagos2 = new javax.swing.JScrollPane();
         jPanel30 = new javax.swing.JPanel();
         jScrollPane30 = new javax.swing.JScrollPane();
@@ -4661,6 +4595,8 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         MTDsum2 = new javax.swing.JLabel();
         Imprimir2 = new javax.swing.JButton();
+        LabelFDP2 = new javax.swing.JLabel();
+        FDP2 = new javax.swing.JComboBox<>();
         TPagos3 = new javax.swing.JScrollPane();
         jPanel31 = new javax.swing.JPanel();
         jScrollPane31 = new javax.swing.JScrollPane();
@@ -4684,6 +4620,8 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         MTDsum3 = new javax.swing.JLabel();
         Imprimir3 = new javax.swing.JButton();
+        LabelFDP3 = new javax.swing.JLabel();
+        FDP3 = new javax.swing.JComboBox<>();
         TPagos4 = new javax.swing.JScrollPane();
         jPanel32 = new javax.swing.JPanel();
         jScrollPane32 = new javax.swing.JScrollPane();
@@ -4707,6 +4645,8 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         MTDsum4 = new javax.swing.JLabel();
         Imprimir4 = new javax.swing.JButton();
+        LabelFDP4 = new javax.swing.JLabel();
+        FDP4 = new javax.swing.JComboBox<>();
         TPagos5 = new javax.swing.JScrollPane();
         jPanel33 = new javax.swing.JPanel();
         jScrollPane33 = new javax.swing.JScrollPane();
@@ -4730,6 +4670,8 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         Imprimir5 = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         MTDsum5 = new javax.swing.JLabel();
+        LabelFDP5 = new javax.swing.JLabel();
+        FDP5 = new javax.swing.JComboBox<>();
         TPagos6 = new javax.swing.JScrollPane();
         jPanel34 = new javax.swing.JPanel();
         jScrollPane34 = new javax.swing.JScrollPane();
@@ -4753,6 +4695,8 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         MTDsum6 = new javax.swing.JLabel();
         Imprimir6 = new javax.swing.JButton();
+        LabelFDP6 = new javax.swing.JLabel();
+        FDP6 = new javax.swing.JComboBox<>();
         TPagos7 = new javax.swing.JScrollPane();
         jPanel35 = new javax.swing.JPanel();
         jScrollPane35 = new javax.swing.JScrollPane();
@@ -4776,6 +4720,8 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         MTDsum7 = new javax.swing.JLabel();
         Imprimir7 = new javax.swing.JButton();
+        LabelFDP7 = new javax.swing.JLabel();
+        FDP7 = new javax.swing.JComboBox<>();
         TPagos8 = new javax.swing.JScrollPane();
         jPanel36 = new javax.swing.JPanel();
         jScrollPane36 = new javax.swing.JScrollPane();
@@ -4798,7 +4744,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         botonWeb23 = new botones.BotonWeb();
         jLabel43 = new javax.swing.JLabel();
         MTDsum8 = new javax.swing.JLabel();
-        Imprimir9 = new javax.swing.JButton();
+        Imprimir8 = new javax.swing.JButton();
+        LabelFDP8 = new javax.swing.JLabel();
+        FDP8 = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         Nomina1 = new javax.swing.JMenuItem();
@@ -4819,230 +4767,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         PRES = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-
-        DO1.setText("0");
-
-        DO2.setText("0");
-
-        R1.setText("0");
-
-        R2.setText("0");
-
-        dt1.setText("0");
-
-        dt2.setText("0");
-
-        dt3.setText("0");
-
-        dt4.setText("0");
-
-        DL1.setText("0");
-
-        dt5.setText("0");
-
-        DL2.setText("0");
-
-        dt6.setText("0");
-
-        F1.setText("0");
-
-        F2.setText("0");
-
-        FJ1.setText("0");
-
-        FJ2.setText("0");
-
-        FJ3.setText("0");
-
-        FJ4.setText("0");
-
-        FJ5.setText("0");
-
-        dt7.setText("0");
-
-        dt8.setText("0");
-
-        dt9.setText("0");
-
-        dt10.setText("0");
-
-        dt11.setText("0");
-
-        dt12.setText("0");
-
-        dt13.setText("0");
-
-        dt14.setText("0");
-
-        dt15.setText("0");
-
-        R3.setText("0");
-
-        R4.setText("0");
-
-        R5.setText("0");
-
-        R6.setText("0");
-
-        R7.setText("0");
-
-        R8.setText("0");
-
-        R9.setText("0");
-
-        R10.setText("0");
-
-        R11.setText("0");
-
-        R12.setText("0");
-
-        R13.setText("0");
-
-        R14.setText("0");
-
-        R15.setText("0");
-
-        DO3.setText("0");
-
-        DO4.setText("0");
-
-        DO5.setText("0");
-
-        DO6.setText("0");
-
-        DO7.setText("0");
-
-        DO8.setText("0");
-
-        DO9.setText("0");
-
-        DO10.setText("0");
-
-        DO11.setText("0");
-
-        DO12.setText("0");
-
-        DO13.setText("0");
-
-        DO14.setText("0");
-
-        DO15.setText("0");
-
-        F3.setText("0");
-
-        F4.setText("0");
-
-        F5.setText("0");
-
-        F6.setText("0");
-
-        F7.setText("0");
-
-        F8.setText("0");
-
-        F9.setText("0");
-
-        F10.setText("0");
-
-        F11.setText("0");
-
-        F12.setText("0");
-
-        F13.setText("0");
-
-        F14.setText("0");
-
-        F15.setText("0");
-
-        DL3.setText("0");
-
-        DL4.setText("0");
-
-        DL5.setText("0");
-
-        DL6.setText("0");
-
-        DL7.setText("0");
-
-        DL8.setText("0");
-
-        DL9.setText("0");
-
-        DL10.setText("0");
-
-        DL11.setText("0");
-
-        DL12.setText("0");
-
-        DL13.setText("0");
-
-        DL14.setText("0");
-
-        DL15.setText("0");
-
-        DL16.setText("0");
-
-        dt16.setText("0");
-
-        R16.setText("0");
-
-        DO16.setText("0");
-
-        FJ16.setText("0");
-
-        F16.setText("0");
-
-        FJ6.setText("0");
-
-        FJ7.setText("0");
-
-        FJ8.setText("0");
-
-        FJ9.setText("0");
-
-        FJ10.setText("0");
-
-        FJ11.setText("0");
-
-        FJ12.setText("0");
-
-        FJ13.setText("0");
-
-        FJ14.setText("0");
-
-        FJ15.setText("0");
-
-        DSGS1.setText("0");
-
-        DSGS2.setText("0");
-
-        DSGS3.setText("0");
-
-        DSGS4.setText("0");
-
-        DSGS5.setText("0");
-
-        DSGS6.setText("0");
-
-        DSGS7.setText("0");
-
-        DSGS8.setText("0");
-
-        DSGS9.setText("0");
-
-        DSGS10.setText("0");
-
-        DSGS11.setText("0");
-
-        DSGS12.setText("0");
-
-        DSGS13.setText("0");
-
-        DSGS14.setText("0");
-
-        DSGS15.setText("0");
-
-        DSGS16.setText("0");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nomina Quincenal General");
@@ -5605,7 +5329,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         jLabel24.setText("Desc IMSS:");
 
-        DI.setText("26.98");
+        DI.setText("0");
         DI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DIActionPerformed(evt);
@@ -8518,6 +8242,15 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         });
 
+        LabelFDP.setText("Forma de pago");
+
+        FDP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "BANCOMER", "SANTANDER", "BAJAS", "EFECTIVO" }));
+        FDP.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FDPItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -8554,7 +8287,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelBQP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroQP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FiltroQP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelFDP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(CS3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8564,7 +8301,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir))
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2031, Short.MAX_VALUE))
+                .addContainerGap(2402, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8585,7 +8322,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelFDP)
+                    .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8704,6 +8443,15 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         });
 
+        LabelFDP1.setText("Forma de pago: ");
+
+        FDP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "BANCOMER", "SANTANDER", "BAJAS", "EFECTIVO" }));
+        FDP1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FDP1ItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
         jPanel29Layout.setHorizontalGroup(
@@ -8740,7 +8488,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelBQP1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroQP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FiltroQP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelFDP1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FDP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel29Layout.createSequentialGroup()
                         .addComponent(CS15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8750,7 +8502,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir1))
                     .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2031, Short.MAX_VALUE))
+                .addContainerGap(2396, Short.MAX_VALUE))
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8771,7 +8523,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelFDP1)
+                    .addComponent(FDP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8889,6 +8643,15 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         });
 
+        LabelFDP2.setText("Forma de pago:");
+
+        FDP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "BANCOMER", "SANTANDER", "BAJAS", "EFECTIVO" }));
+        FDP2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FDP2ItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
@@ -8925,7 +8688,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelBQP2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroQP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FiltroQP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelFDP2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FDP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addComponent(CS16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8935,7 +8702,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir2))
                     .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2031, Short.MAX_VALUE))
+                .addContainerGap(2399, Short.MAX_VALUE))
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8956,7 +8723,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelFDP2)
+                    .addComponent(FDP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9074,6 +8843,15 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         });
 
+        LabelFDP3.setText("Forma de pago:");
+
+        FDP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "BANCOMER", "SANTANDER", "BAJAS", "EFECTIVO" }));
+        FDP3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FDP3ItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
@@ -9110,7 +8888,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelBQP3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroQP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FiltroQP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelFDP3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FDP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel31Layout.createSequentialGroup()
                         .addComponent(CS17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9120,7 +8902,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir3))
                     .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2031, Short.MAX_VALUE))
+                .addContainerGap(2399, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9141,7 +8923,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelFDP3)
+                    .addComponent(FDP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9259,6 +9043,15 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         });
 
+        LabelFDP4.setText("Forma de pago:");
+
+        FDP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "BANCOMER", "SANTANDER", "BAJAS", "EFECTIVO" }));
+        FDP4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FDP4ItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
         jPanel32Layout.setHorizontalGroup(
@@ -9295,7 +9088,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelBQP4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroQP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FiltroQP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelFDP4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FDP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel32Layout.createSequentialGroup()
                         .addComponent(CS18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9305,7 +9102,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir4))
                     .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2031, Short.MAX_VALUE))
+                .addContainerGap(2399, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9326,7 +9123,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelFDP4)
+                    .addComponent(FDP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9444,6 +9243,15 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         MTDsum5.setText("0");
 
+        LabelFDP5.setText("Forma de pago:");
+
+        FDP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "BANCOMER", "SANTANDER", "BAJAS", "EFECTIVO" }));
+        FDP5.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FDP5ItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
         jPanel33Layout.setHorizontalGroup(
@@ -9480,7 +9288,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelBQP5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroQP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FiltroQP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelFDP5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FDP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel33Layout.createSequentialGroup()
                         .addComponent(CS19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9490,7 +9302,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir5))
                     .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2031, Short.MAX_VALUE))
+                .addContainerGap(2399, Short.MAX_VALUE))
         );
         jPanel33Layout.setVerticalGroup(
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9511,7 +9323,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelFDP5)
+                    .addComponent(FDP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9629,6 +9443,15 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         });
 
+        LabelFDP6.setText("Forma de pago:");
+
+        FDP6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "BANCOMER", "SANTANDER", "BAJAS", "EFECTIVO" }));
+        FDP6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FDP6ItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
         jPanel34Layout.setHorizontalGroup(
@@ -9665,7 +9488,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelBQP6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroQP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FiltroQP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelFDP6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FDP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel34Layout.createSequentialGroup()
                         .addComponent(CS20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9675,7 +9502,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir6))
                     .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2031, Short.MAX_VALUE))
+                .addContainerGap(2399, Short.MAX_VALUE))
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9696,7 +9523,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelFDP6)
+                    .addComponent(FDP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9814,6 +9643,15 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         });
 
+        LabelFDP7.setText("Forma de pago:");
+
+        FDP7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "BANCOMER", "SANTANDER", "BAJAS", "EFECTIVO" }));
+        FDP7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FDP7ItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
         jPanel35Layout.setHorizontalGroup(
@@ -9850,7 +9688,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelBQP7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroQP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FiltroQP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelFDP7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FDP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel35Layout.createSequentialGroup()
                         .addComponent(CS21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9860,7 +9702,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir7))
                     .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2031, Short.MAX_VALUE))
+                .addContainerGap(2399, Short.MAX_VALUE))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9881,7 +9723,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelFDP7)
+                    .addComponent(FDP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9992,10 +9836,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         MTDsum8.setText("0");
 
-        Imprimir9.setText("Imprimir tabla");
-        Imprimir9.addActionListener(new java.awt.event.ActionListener() {
+        Imprimir8.setText("Imprimir tabla");
+        Imprimir8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Imprimir9ActionPerformed(evt);
+                Imprimir8ActionPerformed(evt);
+            }
+        });
+
+        LabelFDP8.setText("Forma de pago:");
+
+        FDP8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "BANCOMER", "SANTANDER", "BAJAS", "EFECTIVO" }));
+        FDP8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FDP8ItemStateChanged(evt);
             }
         });
 
@@ -10035,7 +9888,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelBQP8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroQP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(FiltroQP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelFDP8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FDP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel36Layout.createSequentialGroup()
                         .addComponent(CS22)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -10043,9 +9900,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MTDsum8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Imprimir9))
+                        .addComponent(Imprimir8))
                     .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(2031, Short.MAX_VALUE))
+                .addContainerGap(2399, Short.MAX_VALUE))
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -10066,7 +9923,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addComponent(FiltrosP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonWeb23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelFDP8)
+                    .addComponent(FDP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -10074,7 +9933,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
                     .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel43)
                         .addComponent(MTDsum8)
-                        .addComponent(Imprimir9))
+                        .addComponent(Imprimir8))
                     .addComponent(CS22))
                 .addContainerGap(183, Short.MAX_VALUE))
         );
@@ -16223,6 +16082,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String dt = (String) FiltrosNom.getSelectedItem();
         if (dt.equals("Selecciona filtro")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             Filtro1.setVisible(false);
             Filtro1.setText("");
             BNameNom.setVisible(false);
@@ -16290,6 +16152,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FP = (String) FiltrosP.getSelectedItem();
         if (FP.equals("Selecciona filtro")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             busp.setVisible(false);
             BAppag.setVisible(false);
             BAppag.setText("");
@@ -16309,10 +16174,14 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             filtroNDFP.setVisible(false);
             filtroNDFP.setText("");
             LabelNDFP.setVisible(false);
+
             FunMD();
 
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             busp.setVisible(true);
             LabelBEP.setVisible(true);
             LabelBEP.setText("Buscar por nombre:");
@@ -16336,6 +16205,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Apellido P")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             busp.setVisible(false);
             LabelBEP.setVisible(true);
             LabelBEP.setText("Buscar por apellido P:");
@@ -16359,6 +16231,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Apellido M")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             busp.setVisible(false);
             LabelBEP.setVisible(true);
             LabelBEP.setText("Buscar por apellido M: ");
@@ -16382,6 +16257,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Servicio")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             busp.setVisible(false);
             LabelBEP.setVisible(false);
             BAppag.setVisible(false);
@@ -16404,6 +16282,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por quincena")) {
+            FDP.setVisible(true);
+            LabelFDP.setVisible(true);
+            FDP.setSelectedIndex(0);
             busp.setVisible(false);
             LabelBEP.setVisible(false);
             BAppag.setVisible(false);
@@ -16426,6 +16307,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por # Lista")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             busp.setVisible(false);
             LabelBEP.setVisible(false);
             BAppag.setVisible(false);
@@ -16653,6 +16537,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private void FiltrosP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP1ItemStateChanged
         String FP = (String) FiltrosP1.getSelectedItem();
         if (FP.equals("Selecciona filtro")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(false);
+            FDP1.setSelectedIndex(0);
             busp1.setVisible(false);
             BAppag1.setVisible(false);
             BAppag1.setText("");
@@ -16676,6 +16563,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(false);
+            FDP1.setSelectedIndex(0);
             busp1.setVisible(true);
             LabelBEP1.setVisible(true);
             LabelBEP1.setText("Buscar por nombre:");
@@ -16699,6 +16589,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Apellido P")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(false);
+            FDP1.setSelectedIndex(0);
             busp1.setVisible(false);
             LabelBEP1.setVisible(true);
             LabelBEP1.setText("Buscar por apellido P:");
@@ -16722,6 +16615,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Apellido M")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(false);
+            FDP1.setSelectedIndex(0);
             busp1.setVisible(false);
             LabelBEP1.setVisible(true);
             LabelBEP1.setText("Buscar por apellido M: ");
@@ -16745,6 +16641,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Servicio")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(false);
+            FDP1.setSelectedIndex(0);
             busp1.setVisible(false);
             LabelBEP1.setVisible(false);
             BAppag1.setVisible(false);
@@ -16767,6 +16666,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por quincena")) {
+            FDP1.setVisible(true);
+            LabelFDP1.setVisible(true);
+            FDP1.setSelectedIndex(0);
             busp1.setVisible(false);
             LabelBEP1.setVisible(false);
             BAppag1.setVisible(false);
@@ -16789,6 +16691,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por # Lista")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(false);
+            FDP1.setSelectedIndex(0);
             busp1.setVisible(false);
             LabelBEP1.setVisible(false);
             BAppag1.setVisible(false);
@@ -16866,6 +16771,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FP2 = (String) FiltrosP2.getSelectedItem();
         if (FP2.equals("Selecciona filtro")) {
+            FDP2.setVisible(false);
+            LabelFDP2.setVisible(false);
+            FDP2.setSelectedIndex(0);
             busp2.setVisible(false);
             BAppag2.setVisible(false);
             BAppag2.setText("");
@@ -16889,6 +16797,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FP2.equals("Filtrar por Nombre(s)")) {
+            FDP2.setVisible(false);
+            LabelFDP2.setVisible(false);
+            FDP2.setSelectedIndex(0);
             busp2.setVisible(true);
             LabelBEP2.setVisible(true);
             LabelBEP2.setText("Buscar por nombre:");
@@ -16912,6 +16823,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP2.equals("Filtrar por Apellido P")) {
+            FDP2.setVisible(false);
+            LabelFDP2.setVisible(false);
+            FDP2.setSelectedIndex(0);
             busp2.setVisible(false);
             LabelBEP2.setVisible(true);
             LabelBEP2.setText("Buscar por apellido P:");
@@ -16935,6 +16849,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP2.equals("Filtrar por Apellido M")) {
+            FDP2.setVisible(false);
+            LabelFDP2.setVisible(false);
+            FDP2.setSelectedIndex(0);
             busp2.setVisible(false);
             LabelBEP2.setVisible(true);
             LabelBEP2.setText("Buscar por apellido M: ");
@@ -16959,6 +16876,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         }
 
         if (FP2.equals("Filtrar por Servicio")) {
+            FDP2.setVisible(false);
+            LabelFDP2.setVisible(false);
+            FDP2.setSelectedIndex(0);
             busp2.setVisible(false);
             LabelBEP2.setVisible(false);
             BAppag2.setVisible(false);
@@ -16981,6 +16901,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP2.equals("Filtrar por quincena")) {
+            FDP2.setVisible(true);
+            LabelFDP2.setVisible(true);
+            FDP2.setSelectedIndex(0);
             busp2.setVisible(false);
             LabelBEP2.setVisible(false);
             BAppag2.setVisible(false);
@@ -17003,6 +16926,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP2.equals("Filtrar por # Lista")) {
+            FDP2.setVisible(false);
+            LabelFDP2.setVisible(false);
+            FDP2.setSelectedIndex(0);
             busp2.setVisible(false);
             LabelBEP2.setVisible(false);
             BAppag2.setVisible(false);
@@ -17080,6 +17006,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FP3 = (String) FiltrosP3.getSelectedItem();
         if (FP3.equals("Selecciona filtro")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(false);
+            FDP3.setSelectedIndex(0);
             busp3.setVisible(false);
             BAppag3.setVisible(false);
             BAppag3.setText("");
@@ -17103,6 +17032,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FP3.equals("Filtrar por Nombre(s)")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(false);
+            FDP3.setSelectedIndex(0);
             busp3.setVisible(true);
             LabelBEP3.setVisible(true);
             LabelBEP3.setText("Buscar por nombre:");
@@ -17126,6 +17058,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP3.equals("Filtrar por Apellido P")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(false);
+            FDP3.setSelectedIndex(0);
             busp3.setVisible(false);
             LabelBEP3.setVisible(true);
             LabelBEP3.setText("Buscar por apellido P:");
@@ -17149,6 +17084,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP3.equals("Filtrar por Apellido M")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(false);
+            FDP3.setSelectedIndex(0);
             busp3.setVisible(false);
             LabelBEP3.setVisible(true);
             LabelBEP3.setText("Buscar por apellido M: ");
@@ -17172,6 +17110,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP3.equals("Filtrar por Servicio")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(false);
+            FDP3.setSelectedIndex(0);
             busp3.setVisible(false);
             LabelBEP3.setVisible(false);
             BAppag3.setVisible(false);
@@ -17194,6 +17135,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP3.equals("Filtrar por quincena")) {
+            FDP3.setVisible(true);
+            LabelFDP3.setVisible(true);
+            FDP3.setSelectedIndex(0);
             busp3.setVisible(false);
             LabelBEP3.setVisible(false);
             BAppag3.setVisible(false);
@@ -17216,6 +17160,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP3.equals("Filtrar por # Lista")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(false);
+            FDP3.setSelectedIndex(0);
             busp3.setVisible(false);
             LabelBEP3.setVisible(false);
             BAppag3.setVisible(false);
@@ -17293,6 +17240,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FP = (String) FiltrosP4.getSelectedItem();
         if (FP.equals("Selecciona filtro")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(false);
+            FDP4.setSelectedIndex(0);
             busp4.setVisible(false);
             BAppag4.setVisible(false);
             BAppag4.setText("");
@@ -17317,6 +17267,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(false);
+            FDP4.setSelectedIndex(0);
             busp4.setVisible(true);
             LabelBEP4.setVisible(true);
             LabelBEP4.setText("Buscar por nombre:");
@@ -17340,6 +17293,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Apellido P")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(false);
+            FDP4.setSelectedIndex(0);
             busp4.setVisible(false);
             LabelBEP4.setVisible(true);
             LabelBEP4.setText("Buscar por apellido P:");
@@ -17363,6 +17319,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Apellido M")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(false);
+            FDP4.setSelectedIndex(0);
             busp4.setVisible(false);
             LabelBEP4.setVisible(true);
             LabelBEP4.setText("Buscar por apellido M: ");
@@ -17386,6 +17345,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Servicio")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(false);
+            FDP4.setSelectedIndex(0);
             busp4.setVisible(false);
             LabelBEP4.setVisible(false);
             BAppag4.setVisible(false);
@@ -17408,6 +17370,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por quincena")) {
+            FDP4.setVisible(true);
+            LabelFDP4.setVisible(true);
+            FDP4.setSelectedIndex(0);
             busp4.setVisible(false);
             LabelBEP4.setVisible(false);
             BAppag4.setVisible(false);
@@ -17430,6 +17395,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por # Lista")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(false);
+            FDP4.setSelectedIndex(0);
             busp4.setVisible(false);
             LabelBEP4.setVisible(false);
             BAppag4.setVisible(false);
@@ -17482,6 +17450,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FTD7 = (String) FiltrosTD7.getSelectedItem();
         if (FTD7.equals("Selecciona filtro")) {
+            FDP7.setVisible(false);
+            LabelFDP7.setVisible(false);
+            FDP7.setSelectedIndex(0);
             Nominab7.setText("");
             LabelBE7.setVisible(false);
             FApT7.setText("");
@@ -17505,6 +17476,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FTD7.equals("Filtrar por Apellido P")) {
+            FDP7.setVisible(false);
+            LabelFDP7.setVisible(false);
+            FDP7.setSelectedIndex(0);
             Nominab7.setText("");
             LabelBE7.setVisible(true);
             LabelBE7.setText("Buscar Apellido P:");
@@ -17527,6 +17501,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD7.equals("Filtrar por Apellido M")) {
+            FDP7.setVisible(false);
+            LabelFDP7.setVisible(false);
+            FDP7.setSelectedIndex(0);
             Nominab7.setText("");
             LabelBE7.setVisible(true);
             LabelBE7.setText("Buscar Apellido M:");
@@ -17550,6 +17527,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD7.equals("Filtrar por Nombre(s)")) {
+            FDP7.setVisible(false);
+            LabelFDP7.setVisible(false);
+            FDP7.setSelectedIndex(0);
             Nominab7.setText("");
             LabelBE7.setVisible(true);
             LabelBE7.setText("Buscar Nombre(s):");
@@ -17573,6 +17553,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD7.equals("Filtrar por Servicio")) {
+            FDP7.setVisible(false);
+            LabelFDP7.setVisible(false);
+            FDP7.setSelectedIndex(0);
             Nominab7.setText("");
             LabelBE7.setVisible(false);
             FApT7.setText("");
@@ -17595,6 +17578,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD7.equals("Filtrar por quincena")) {
+            FDP7.setVisible(true);
+            LabelFDP7.setVisible(true);
+            FDP7.setSelectedIndex(0);
             Nominab7.setText("");
             LabelBE7.setVisible(false);
             FApT7.setText("");
@@ -17617,6 +17603,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD7.equals("Filtrar por # Lista")) {
+            FDP7.setVisible(false);
+            LabelFDP7.setVisible(false);
+            FDP7.setSelectedIndex(0);
             Nominab7.setText("");
             LabelBE7.setVisible(false);
             FApT7.setText("");
@@ -17875,6 +17864,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FTD6 = (String) FiltrosTD6.getSelectedItem();
         if (FTD6.equals("Selecciona filtro")) {
+            FDP6.setVisible(false);
+            LabelFDP6.setVisible(false);
+            FDP6.setSelectedIndex(0);
             Nominab6.setText("");
             LabelBE6.setVisible(false);
             FApT6.setText("");
@@ -17898,6 +17890,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FTD6.equals("Filtrar por Apellido P")) {
+            FDP6.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP6.setSelectedIndex(0);
             Nominab6.setText("");
             LabelBE6.setVisible(true);
             LabelBE6.setText("Buscar Apellido P:");
@@ -17920,6 +17915,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD6.equals("Filtrar por Apellido M")) {
+            FDP6.setVisible(false);
+            LabelFDP6.setVisible(false);
+            FDP6.setSelectedIndex(0);
             Nominab6.setText("");
             LabelBE6.setVisible(true);
             LabelBE6.setText("Buscar Apellido M:");
@@ -17943,6 +17941,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD6.equals("Filtrar por Nombre(s)")) {
+            FDP6.setVisible(false);
+            LabelFDP6.setVisible(false);
+            FDP6.setSelectedIndex(0);
             Nominab6.setText("");
             LabelBE6.setVisible(true);
             LabelBE6.setText("Buscar Nombre(s):");
@@ -17966,6 +17967,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD6.equals("Filtrar por Servicio")) {
+            FDP6.setVisible(false);
+            LabelFDP6.setVisible(false);
+            FDP6.setSelectedIndex(0);
             Nominab6.setText("");
             LabelBE6.setVisible(false);
             FApT6.setText("");
@@ -17988,6 +17992,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD6.equals("Filtrar por quincena")) {
+            FDP6.setVisible(true);
+            LabelFDP6.setVisible(true);
+            FDP6.setSelectedIndex(0);
             Nominab6.setText("");
             LabelBE6.setVisible(false);
             FApT6.setText("");
@@ -18010,6 +18017,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD6.equals("Filtrar por # Lista")) {
+            FDP6.setVisible(false);
+            LabelFDP6.setVisible(false);
+            FDP6.setSelectedIndex(0);
             Nominab6.setText("");
             LabelBE6.setVisible(false);
             FApT6.setText("");
@@ -18259,6 +18269,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FTD5 = (String) FiltrosTD5.getSelectedItem();
         if (FTD5.equals("Selecciona filtro")) {
+            FDP5.setVisible(false);
+            LabelFDP5.setVisible(false);
+            FDP5.setSelectedIndex(0);
             Nominab5.setText("");
             LabelBE5.setVisible(false);
             FApT5.setText("");
@@ -18282,6 +18295,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FTD5.equals("Filtrar por Apellido P")) {
+            FDP5.setVisible(false);
+            LabelFDP5.setVisible(false);
+            FDP5.setSelectedIndex(0);
             Nominab5.setText("");
             LabelBE5.setVisible(true);
             LabelBE5.setText("Buscar Apellido P:");
@@ -18304,6 +18320,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD5.equals("Filtrar por Apellido M")) {
+            FDP5.setVisible(false);
+            LabelFDP5.setVisible(false);
+            FDP5.setSelectedIndex(0);
             Nominab5.setText("");
             LabelBE5.setVisible(true);
             LabelBE5.setText("Buscar Apellido M:");
@@ -18327,6 +18346,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD5.equals("Filtrar por Nombre(s)")) {
+            FDP5.setVisible(false);
+            LabelFDP5.setVisible(false);
+            FDP5.setSelectedIndex(0);
             Nominab5.setText("");
             LabelBE5.setVisible(true);
             LabelBE5.setText("Buscar Nombre(s):");
@@ -18350,6 +18372,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD5.equals("Filtrar por Servicio")) {
+            FDP5.setVisible(false);
+            LabelFDP5.setVisible(false);
+            FDP5.setSelectedIndex(0);
             Nominab5.setText("");
             LabelBE5.setVisible(false);
             FApT5.setText("");
@@ -18372,6 +18397,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD5.equals("Filtrar por quincena")) {
+            FDP5.setVisible(true);
+            LabelFDP5.setVisible(true);
+            FDP5.setSelectedIndex(0);
             Nominab5.setText("");
             LabelBE5.setVisible(false);
             FApT5.setText("");
@@ -18394,6 +18422,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD5.equals("Filtrar por # Lista")) {
+            FDP5.setVisible(false);
+            LabelFDP5.setVisible(false);
+            FDP5.setSelectedIndex(0);
             Nominab5.setText("");
             LabelBE5.setVisible(false);
             FApT5.setText("");
@@ -18651,6 +18682,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FTD4 = (String) FiltrosTD4.getSelectedItem();
         if (FTD4.equals("Selecciona filtro")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(false);
+            FDP4.setSelectedIndex(0);
             Nominab4.setText("");
             LabelBE4.setVisible(false);
             FApT4.setText("");
@@ -18674,6 +18708,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FTD4.equals("Filtrar por Apellido P")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(false);
+            FDP4.setSelectedIndex(0);
             Nominab4.setText("");
             LabelBE4.setVisible(true);
             LabelBE4.setText("Buscar Apellido P:");
@@ -18696,6 +18733,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD4.equals("Filtrar por Apellido M")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(false);
+            FDP4.setSelectedIndex(0);
             Nominab4.setText("");
             LabelBE4.setVisible(true);
             LabelBE4.setText("Buscar Apellido M:");
@@ -18719,6 +18759,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD4.equals("Filtrar por Nombre(s)")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(false);
+            FDP4.setSelectedIndex(0);
             Nominab4.setText("");
             LabelBE4.setVisible(true);
             LabelBE4.setText("Buscar Nombre(s):");
@@ -18742,6 +18785,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD4.equals("Filtrar por Servicio")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(false);
+            FDP4.setSelectedIndex(0);
             Nominab4.setText("");
             LabelBE4.setVisible(false);
             FApT4.setText("");
@@ -18764,6 +18810,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD4.equals("Filtrar por quincena")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(true);
+            FDP4.setSelectedIndex(0);
             Nominab4.setText("");
             LabelBE4.setVisible(false);
             FApT4.setText("");
@@ -18786,6 +18835,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD4.equals("Filtrar por # Lista")) {
+            FDP4.setVisible(false);
+            LabelFDP4.setVisible(false);
+            FDP4.setSelectedIndex(0);
             Nominab4.setText("");
             LabelBE4.setVisible(false);
             FApT4.setText("");
@@ -19043,6 +19095,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FTD3 = (String) FiltrosTD3.getSelectedItem();
         if (FTD3.equals("Selecciona filtro")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(false);
+            FDP3.setSelectedIndex(0);
             Nominab3.setText("");
             LabelBE3.setVisible(false);
             FApT3.setText("");
@@ -19066,6 +19121,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FTD3.equals("Filtrar por Apellido P")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(false);
+            FDP3.setSelectedIndex(0);
             Nominab3.setText("");
             LabelBE3.setVisible(true);
             LabelBE3.setText("Buscar Apellido P:");
@@ -19088,6 +19146,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD3.equals("Filtrar por Apellido M")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(false);
+            FDP3.setSelectedIndex(0);
             Nominab3.setText("");
             LabelBE3.setVisible(true);
             LabelBE3.setText("Buscar Apellido M:");
@@ -19111,6 +19172,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD3.equals("Filtrar por Nombre(s)")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(false);
+            FDP3.setSelectedIndex(0);
             Nominab3.setText("");
             LabelBE3.setVisible(true);
             LabelBE3.setText("Buscar Nombre(s):");
@@ -19134,6 +19198,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD3.equals("Filtrar por Servicio")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(false);
+            FDP3.setSelectedIndex(0);
             Nominab3.setText("");
             LabelBE3.setVisible(false);
             FApT3.setText("");
@@ -19156,6 +19223,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD3.equals("Filtrar por quincena")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(true);
+            FDP3.setSelectedIndex(0);
             Nominab3.setText("");
             LabelBE3.setVisible(false);
             FApT3.setText("");
@@ -19178,6 +19248,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD3.equals("Filtrar por # Lista")) {
+            FDP3.setVisible(false);
+            LabelFDP3.setVisible(false);
+            FDP3.setSelectedIndex(0);
             Nominab3.setText("");
             LabelBE3.setVisible(false);
             FApT3.setText("");
@@ -19434,6 +19507,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FTD2 = (String) FiltrosTD2.getSelectedItem();
         if (FTD2.equals("Selecciona filtro")) {
+            FDP2.setVisible(false);
+            LabelFDP2.setVisible(false);
+            FDP2.setSelectedIndex(0);
             Nominab2.setText("");
             LabelBE2.setVisible(false);
             FApT2.setText("");
@@ -19457,6 +19533,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FTD2.equals("Filtrar por Apellido P")) {
+            FDP2.setVisible(false);
+            LabelFDP2.setVisible(false);
+            FDP2.setSelectedIndex(0);
             Nominab2.setText("");
             LabelBE2.setVisible(true);
             LabelBE2.setText("Buscar Apellido P:");
@@ -19479,6 +19558,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD2.equals("Filtrar por Apellido M")) {
+            FDP2.setVisible(false);
+            LabelFDP2.setVisible(false);
+            FDP2.setSelectedIndex(0);
             Nominab2.setText("");
             LabelBE2.setVisible(true);
             LabelBE2.setText("Buscar Apellido M:");
@@ -19502,6 +19584,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD2.equals("Filtrar por Nombre(s)")) {
+            FDP2.setVisible(false);
+            LabelFDP2.setVisible(false);
+            FDP2.setSelectedIndex(0);
             Nominab2.setText("");
             LabelBE2.setVisible(true);
             LabelBE2.setText("Buscar Nombre(s):");
@@ -19525,6 +19610,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD2.equals("Filtrar por Servicio")) {
+            FDP2.setVisible(false);
+            LabelFDP2.setVisible(false);
+            FDP2.setSelectedIndex(0);
             Nominab2.setText("");
             LabelBE2.setVisible(false);
             FApT2.setText("");
@@ -19547,6 +19635,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD2.equals("Filtrar por quincena")) {
+            FDP2.setVisible(false);
+            LabelFDP.setVisible(true);
+            FDP.setSelectedIndex(0);
             Nominab2.setText("");
             LabelBE2.setVisible(false);
             FApT2.setText("");
@@ -19569,6 +19660,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD2.equals("Filtrar por # Lista")) {
+            FDP2.setVisible(false);
+            LabelFDP2.setVisible(false);
+            FDP2.setSelectedIndex(0);
             Nominab2.setText("");
             LabelBE2.setVisible(false);
             FApT2.setText("");
@@ -19827,6 +19921,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FTD1 = (String) FiltrosTD1.getSelectedItem();
         if (FTD1.equals("Selecciona filtro")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(false);
+            FDP1.setSelectedIndex(0);
             Nominab1.setText("");
             LabelBE1.setVisible(false);
             FApT1.setText("");
@@ -19850,6 +19947,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FTD1.equals("Filtrar por Apellido P")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(false);
+            FDP1.setSelectedIndex(0);
             Nominab1.setText("");
             LabelBE1.setVisible(true);
             LabelBE1.setText("Buscar Apellido P:");
@@ -19872,6 +19972,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD1.equals("Filtrar por Apellido M")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(false);
+            FDP1.setSelectedIndex(0);
             Nominab1.setText("");
             LabelBE1.setVisible(true);
             LabelBE1.setText("Buscar Apellido M:");
@@ -19895,6 +19998,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD1.equals("Filtrar por Nombre(s)")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(false);
+            FDP1.setSelectedIndex(0);
             Nominab1.setText("");
             LabelBE1.setVisible(true);
             LabelBE1.setText("Buscar Nombre(s):");
@@ -19918,6 +20024,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD1.equals("Filtrar por Servicio")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(false);
+            FDP1.setSelectedIndex(0);
             Nominab1.setText("");
             LabelBE1.setVisible(false);
             FApT1.setText("");
@@ -19940,6 +20049,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD1.equals("Filtrar por quincena")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(true);
+            FDP1.setSelectedIndex(0);
             Nominab1.setText("");
             LabelBE1.setVisible(false);
             FApT1.setText("");
@@ -19962,6 +20074,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD1.equals("Filtrar por # Lista")) {
+            FDP1.setVisible(false);
+            LabelFDP1.setVisible(false);
+            FDP1.setSelectedIndex(0);
             Nominab1.setText("");
             LabelBE1.setVisible(false);
             FApT1.setText("");
@@ -20219,6 +20334,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FTD = (String) FiltrosTD.getSelectedItem();
         if (FTD.equals("Selecciona filtro")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             Nominab.setText("");
             LabelBE.setVisible(false);
             FApT.setText("");
@@ -20242,6 +20360,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FTD.equals("Filtrar por Apellido P")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             Nominab.setText("");
             LabelBE.setVisible(true);
             LabelBE.setText("Buscar Apellido P:");
@@ -20264,6 +20385,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD.equals("Filtrar por Apellido M")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             Nominab.setText("");
             LabelBE.setVisible(true);
             LabelBE.setText("Buscar Apellido M:");
@@ -20287,6 +20411,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD.equals("Filtrar por Nombre(s)")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             Nominab.setText("");
             LabelBE.setVisible(true);
             LabelBE.setText("Buscar Nombre(s):");
@@ -20310,6 +20437,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD.equals("Filtrar por Servicio")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             Nominab.setText("");
             LabelBE.setVisible(false);
             FApT.setText("");
@@ -20332,6 +20462,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD.equals("Filtrar por quincena")) {
+            FDP.setVisible(true);
+            LabelFDP.setVisible(true);
+            FDP.setSelectedIndex(0);
             Nominab.setText("");
             LabelBE.setVisible(false);
             FApT.setText("");
@@ -20354,6 +20487,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD.equals("Filtrar por # Lista")) {
+            FDP.setVisible(false);
+            LabelFDP.setVisible(false);
+            FDP.setSelectedIndex(0);
             Nominab.setText("");
             LabelBE.setVisible(false);
             FApT.setText("");
@@ -20770,11 +20906,11 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 5) {
             Funimprimir(pago4, getTitle() + " Poniente", "Monto total de la "
-                    + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + FiltroQP5.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
         }
         if (FP == 6) {
             Funimprimir(pago4, getTitle() + " Poniente", "Monto total con filtro # Lista "
-                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())), true);
         }
     }//GEN-LAST:event_Imprimir4ActionPerformed
 
@@ -20846,6 +20982,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FP = (String) FiltrosP7.getSelectedItem();
         if (FP.equals("Selecciona filtro")) {
+            FDP7.setVisible(false);
+            LabelFDP7.setVisible(false);
+            FDP7.setSelectedIndex(0);
             busp7.setVisible(false);
             BAppag7.setVisible(false);
             BAppag7.setText("");
@@ -20869,6 +21008,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
+            FDP7.setVisible(false);
+            LabelFDP7.setVisible(false);
+            FDP7.setSelectedIndex(0);
             busp7.setVisible(true);
             LabelBEP7.setVisible(true);
             LabelBEP7.setText("Buscar por nombre:");
@@ -20892,6 +21034,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Apellido P")) {
+            FDP7.setVisible(false);
+            LabelFDP7.setVisible(false);
+            FDP7.setSelectedIndex(0);
             busp7.setVisible(false);
             LabelBEP7.setVisible(true);
             LabelBEP7.setText("Buscar por apellido P:");
@@ -20915,6 +21060,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Apellido M")) {
+            FDP7.setVisible(false);
+            LabelFDP7.setVisible(false);
+            FDP7.setSelectedIndex(0);
             busp7.setVisible(false);
             LabelBEP7.setVisible(true);
             LabelBEP7.setText("Buscar por apellido M: ");
@@ -20938,6 +21086,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Servicio")) {
+            FDP7.setVisible(false);
+            LabelFDP7.setVisible(false);
+            FDP7.setSelectedIndex(0);
             busp7.setVisible(false);
             LabelBEP7.setVisible(false);
             BAppag7.setVisible(false);
@@ -20960,6 +21111,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por quincena")) {
+            FDP7.setVisible(true);
+            LabelFDP7.setVisible(true);
+            FDP7.setSelectedIndex(0);
             busp7.setVisible(false);
             LabelBEP7.setVisible(false);
             BAppag7.setVisible(false);
@@ -20982,6 +21136,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por # Lista")) {
+            FDP7.setVisible(false);
+            LabelFDP7.setVisible(false);
+            FDP7.setSelectedIndex(0);
             busp7.setVisible(false);
             LabelBEP7.setVisible(false);
             BAppag7.setVisible(false);
@@ -21092,6 +21249,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FP6 = (String) FiltrosP6.getSelectedItem();
         if (FP6.equals("Selecciona filtro")) {
+            FDP6.setVisible(false);
+            LabelFDP6.setVisible(false);
+            FDP6.setSelectedIndex(0);
             busp6.setVisible(false);
             BAppag6.setVisible(false);
             BAppag6.setText("");
@@ -21115,6 +21275,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FP6.equals("Filtrar por Nombre(s)")) {
+            FDP6.setVisible(false);
+            LabelFDP6.setVisible(false);
+            FDP6.setSelectedIndex(0);
             busp6.setVisible(true);
             LabelBEP6.setVisible(true);
             LabelBEP6.setText("Buscar por nombre:");
@@ -21138,6 +21301,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP6.equals("Filtrar por Apellido P")) {
+            FDP6.setVisible(false);
+            LabelFDP6.setVisible(false);
+            FDP6.setSelectedIndex(0);
             busp6.setVisible(false);
             LabelBEP6.setVisible(true);
             LabelBEP6.setText("Buscar por apellido P:");
@@ -21161,6 +21327,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP6.equals("Filtrar por Apellido M")) {
+            FDP6.setVisible(false);
+            LabelFDP6.setVisible(false);
+            FDP6.setSelectedIndex(0);
             busp6.setVisible(false);
             LabelBEP6.setVisible(true);
             LabelBEP6.setText("Buscar por apellido M: ");
@@ -21184,6 +21353,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP6.equals("Filtrar por Servicio")) {
+            FDP6.setVisible(false);
+            LabelFDP6.setVisible(false);
+            FDP6.setSelectedIndex(0);
             busp6.setVisible(false);
             LabelBEP6.setVisible(false);
             BAppag6.setVisible(false);
@@ -21206,6 +21378,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP6.equals("Filtrar por quincena")) {
+            FDP6.setVisible(true);
+            LabelFDP6.setVisible(true);
+            FDP6.setSelectedIndex(0);
             busp6.setVisible(false);
             LabelBEP6.setVisible(false);
             BAppag6.setVisible(false);
@@ -21228,6 +21403,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP6.equals("Filtrar por # Lista")) {
+            FDP6.setVisible(false);
+            LabelFDP6.setVisible(false);
+            FDP6.setSelectedIndex(0);
             busp6.setVisible(false);
             LabelBEP6.setVisible(false);
             BAppag6.setVisible(false);
@@ -21337,6 +21515,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private void FiltrosP5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP5ItemStateChanged
         String FP = (String) FiltrosP5.getSelectedItem();
         if (FP.equals("Selecciona filtro")) {
+            FDP5.setVisible(false);
+            LabelFDP5.setVisible(false);
+            FDP5.setSelectedIndex(0);
             busp5.setVisible(false);
             BAppag5.setVisible(false);
             BAppag5.setText("");
@@ -21360,6 +21541,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
+            FDP5.setVisible(false);
+            LabelFDP5.setVisible(false);
+            FDP5.setSelectedIndex(0);
             busp5.setVisible(true);
             LabelBEP5.setVisible(true);
             LabelBEP5.setText("Buscar por nombre:");
@@ -21383,6 +21567,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Apellido P")) {
+            FDP5.setVisible(false);
+            LabelFDP5.setVisible(false);
+            FDP5.setSelectedIndex(0);
             busp5.setVisible(false);
             LabelBEP5.setVisible(true);
             LabelBEP5.setText("Buscar por apellido P:");
@@ -21406,6 +21593,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Apellido M")) {
+            FDP5.setVisible(false);
+            LabelFDP5.setVisible(false);
+            FDP5.setSelectedIndex(0);
             busp5.setVisible(false);
             LabelBEP5.setVisible(true);
             LabelBEP5.setText("Buscar por apellido M: ");
@@ -21429,6 +21619,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Servicio")) {
+            FDP5.setVisible(false);
+            LabelFDP5.setVisible(false);
+            FDP5.setSelectedIndex(0);
             busp5.setVisible(false);
             LabelBEP5.setVisible(false);
             BAppag5.setVisible(false);
@@ -21451,6 +21644,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por quincena")) {
+            FDP5.setVisible(true);
+            LabelFDP5.setVisible(true);
+            FDP5.setSelectedIndex(0);
             busp5.setVisible(false);
             LabelBEP5.setVisible(false);
             BAppag5.setVisible(false);
@@ -21473,6 +21669,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por # Lista")) {
+            FDP5.setVisible(false);
+            LabelFDP5.setVisible(false);
+            FDP5.setSelectedIndex(0);
             busp5.setVisible(false);
             LabelBEP5.setVisible(false);
             BAppag5.setVisible(false);
@@ -21696,7 +21895,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             Odtp.setText(String.valueOf(Tnom8.getValueAt(fila, 78)));
             deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 79)));
             obs.setText(String.valueOf(Tnom8.getValueAt(fila, 80)));
-            
+
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaQSiMSS_5.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -21741,6 +21940,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private void FiltrosTD8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD8ItemStateChanged
         String FTD8 = (String) FiltrosTD8.getSelectedItem();
         if (FTD8.equals("Selecciona filtro")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(false);
+            FDP8.setSelectedIndex(0);
             Nominab8.setText("");
             LabelBE8.setVisible(false);
             FApT8.setText("");
@@ -21764,6 +21966,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FTD8.equals("Filtrar por Apellido P")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(false);
+            FDP8.setSelectedIndex(0);
             Nominab8.setText("");
             LabelBE8.setVisible(true);
             LabelBE8.setText("Buscar Apellido P:");
@@ -21786,6 +21991,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD8.equals("Filtrar por Apellido M")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(false);
+            FDP8.setSelectedIndex(0);
             Nominab8.setText("");
             LabelBE8.setVisible(true);
             LabelBE8.setText("Buscar Apellido M:");
@@ -21809,6 +22017,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD8.equals("Filtrar por Nombre(s)")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(false);
+            FDP8.setSelectedIndex(0);
             Nominab8.setText("");
             LabelBE8.setVisible(true);
             LabelBE8.setText("Buscar Nombre(s):");
@@ -21832,6 +22043,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD8.equals("Filtrar por Servicio")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(false);
+            FDP8.setSelectedIndex(0);
             Nominab8.setText("");
             LabelBE8.setVisible(false);
             FApT8.setText("");
@@ -21854,6 +22068,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD8.equals("Filtrar por quincena")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(true);
+            FDP8.setSelectedIndex(0);
             Nominab8.setText("");
             LabelBE8.setVisible(false);
             FApT8.setText("");
@@ -21876,6 +22093,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FTD8.equals("Filtrar por # Lista")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(false);
+            FDP8.setSelectedIndex(0);
             Nominab8.setText("");
             LabelBE8.setVisible(false);
             FApT8.setText("");
@@ -21960,6 +22180,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         String FP = (String) FiltrosP8.getSelectedItem();
         if (FP.equals("Selecciona filtro")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(false);
+            FDP8.setSelectedIndex(0);
             busp8.setVisible(false);
             BAppag8.setVisible(false);
             BAppag8.setText("");
@@ -21983,6 +22206,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
 
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(false);
+            FDP8.setSelectedIndex(0);
             busp8.setVisible(true);
             LabelBEP8.setVisible(true);
             LabelBEP8.setText("Buscar por nombre:");
@@ -22006,6 +22232,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Apellido P")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(false);
+            FDP8.setSelectedIndex(0);
             busp8.setVisible(false);
             LabelBEP8.setVisible(true);
             LabelBEP8.setText("Buscar por apellido P:");
@@ -22029,6 +22258,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Apellido M")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(false);
+            FDP8.setSelectedIndex(0);
             busp8.setVisible(false);
             LabelBEP8.setVisible(true);
             LabelBEP8.setText("Buscar por apellido M: ");
@@ -22052,6 +22284,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por Servicio")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(false);
+            FDP8.setSelectedIndex(0);
             busp8.setVisible(false);
             LabelBEP8.setVisible(false);
             BAppag8.setVisible(false);
@@ -22074,6 +22309,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por quincena")) {
+            FDP8.setVisible(true);
+            LabelFDP8.setVisible(true);
+            FDP8.setSelectedIndex(0);
             busp8.setVisible(false);
             LabelBEP8.setVisible(false);
             BAppag8.setVisible(false);
@@ -22096,6 +22334,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
             FunMD();
         }
         if (FP.equals("Filtrar por # Lista")) {
+            FDP8.setVisible(false);
+            LabelFDP8.setVisible(false);
+            FDP8.setSelectedIndex(0);
             busp8.setVisible(false);
             LabelBEP8.setVisible(false);
             BAppag8.setVisible(false);
@@ -22127,10 +22368,10 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         FunMD();
     }//GEN-LAST:event_Bampag8KeyReleased
 
-    private void Imprimir9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir9ActionPerformed
+    private void Imprimir8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir8ActionPerformed
         DecimalFormat dimp = new DecimalFormat("#.00");
         Funimprimir(pago8, getTitle(), "Monto total de la " + FiltroQP.getSelectedItem().toString() + " en Santander corporativo quincenal: " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
-    }//GEN-LAST:event_Imprimir9ActionPerformed
+    }//GEN-LAST:event_Imprimir8ActionPerformed
 
     private void RIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RIKeyReleased
         deposito();
@@ -22151,6 +22392,42 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void FDPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDPItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FDPItemStateChanged
+
+    private void FDP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDP8ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FDP8ItemStateChanged
+
+    private void FDP7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDP7ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FDP7ItemStateChanged
+
+    private void FDP6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDP6ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FDP6ItemStateChanged
+
+    private void FDP5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDP5ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FDP5ItemStateChanged
+
+    private void FDP4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDP4ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FDP4ItemStateChanged
+
+    private void FDP3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDP3ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FDP3ItemStateChanged
+
+    private void FDP2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDP2ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FDP2ItemStateChanged
+
+    private void FDP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDP1ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FDP1ItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -22765,57 +23042,9 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel DFT;
     private javax.swing.JTextField DI;
     private javax.swing.JLabel DL;
-    private javax.swing.JLabel DL1;
-    private javax.swing.JLabel DL10;
-    private javax.swing.JLabel DL11;
-    private javax.swing.JLabel DL12;
-    private javax.swing.JLabel DL13;
-    private javax.swing.JLabel DL14;
-    private javax.swing.JLabel DL15;
-    private javax.swing.JLabel DL16;
-    private javax.swing.JLabel DL2;
-    private javax.swing.JLabel DL3;
-    private javax.swing.JLabel DL4;
-    private javax.swing.JLabel DL5;
-    private javax.swing.JLabel DL6;
-    private javax.swing.JLabel DL7;
-    private javax.swing.JLabel DL8;
-    private javax.swing.JLabel DL9;
     private javax.swing.JLabel DO;
-    private javax.swing.JLabel DO1;
-    private javax.swing.JLabel DO10;
-    private javax.swing.JLabel DO11;
-    private javax.swing.JLabel DO12;
-    private javax.swing.JLabel DO13;
-    private javax.swing.JLabel DO14;
-    private javax.swing.JLabel DO15;
-    private javax.swing.JLabel DO16;
-    private javax.swing.JLabel DO2;
-    private javax.swing.JLabel DO3;
-    private javax.swing.JLabel DO4;
-    private javax.swing.JLabel DO5;
-    private javax.swing.JLabel DO6;
-    private javax.swing.JLabel DO7;
-    private javax.swing.JLabel DO8;
-    private javax.swing.JLabel DO9;
     private javax.swing.JLabel DPF;
     private javax.swing.JLabel DSGS;
-    private javax.swing.JLabel DSGS1;
-    private javax.swing.JLabel DSGS10;
-    private javax.swing.JLabel DSGS11;
-    private javax.swing.JLabel DSGS12;
-    private javax.swing.JLabel DSGS13;
-    private javax.swing.JLabel DSGS14;
-    private javax.swing.JLabel DSGS15;
-    private javax.swing.JLabel DSGS16;
-    private javax.swing.JLabel DSGS2;
-    private javax.swing.JLabel DSGS3;
-    private javax.swing.JLabel DSGS4;
-    private javax.swing.JLabel DSGS5;
-    private javax.swing.JLabel DSGS6;
-    private javax.swing.JLabel DSGS7;
-    private javax.swing.JLabel DSGS8;
-    private javax.swing.JLabel DSGS9;
     private javax.swing.JLabel DVT;
     private javax.swing.JPanel Datgen;
     private javax.swing.JLabel Ddv;
@@ -22847,22 +23076,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JButton Eliminar8;
     private javax.swing.JMenuItem Estadias;
     private javax.swing.JLabel F;
-    private javax.swing.JLabel F1;
-    private javax.swing.JLabel F10;
-    private javax.swing.JLabel F11;
-    private javax.swing.JLabel F12;
-    private javax.swing.JLabel F13;
-    private javax.swing.JLabel F14;
-    private javax.swing.JLabel F15;
-    private javax.swing.JLabel F16;
-    private javax.swing.JLabel F2;
-    private javax.swing.JLabel F3;
-    private javax.swing.JLabel F4;
-    private javax.swing.JLabel F5;
-    private javax.swing.JLabel F6;
-    private javax.swing.JLabel F7;
-    private javax.swing.JLabel F8;
-    private javax.swing.JLabel F9;
     private javax.swing.JTextField FAmT;
     private javax.swing.JTextField FAmT1;
     private javax.swing.JTextField FAmT2;
@@ -22881,23 +23094,16 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FApT6;
     private javax.swing.JTextField FApT7;
     private javax.swing.JTextField FApT8;
+    private javax.swing.JComboBox<String> FDP;
+    private javax.swing.JComboBox<String> FDP1;
+    private javax.swing.JComboBox<String> FDP2;
+    private javax.swing.JComboBox<String> FDP3;
+    private javax.swing.JComboBox<String> FDP4;
+    private javax.swing.JComboBox<String> FDP5;
+    private javax.swing.JComboBox<String> FDP6;
+    private javax.swing.JComboBox<String> FDP7;
+    private javax.swing.JComboBox<String> FDP8;
     private javax.swing.JLabel FJ;
-    private javax.swing.JLabel FJ1;
-    private javax.swing.JLabel FJ10;
-    private javax.swing.JLabel FJ11;
-    private javax.swing.JLabel FJ12;
-    private javax.swing.JLabel FJ13;
-    private javax.swing.JLabel FJ14;
-    private javax.swing.JLabel FJ15;
-    private javax.swing.JLabel FJ16;
-    private javax.swing.JLabel FJ2;
-    private javax.swing.JLabel FJ3;
-    private javax.swing.JLabel FJ4;
-    private javax.swing.JLabel FJ5;
-    private javax.swing.JLabel FJ6;
-    private javax.swing.JLabel FJ7;
-    private javax.swing.JLabel FJ8;
-    private javax.swing.JLabel FJ9;
     private javax.swing.JComboBox<String> FZservicio;
     private javax.swing.JComboBox<String> FZservicio1;
     private javax.swing.JComboBox<String> FZservicio2;
@@ -22994,7 +23200,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JButton Imprimir5;
     private javax.swing.JButton Imprimir6;
     private javax.swing.JButton Imprimir7;
-    private javax.swing.JButton Imprimir9;
+    private javax.swing.JButton Imprimir8;
     private javax.swing.JLabel LabelBE;
     private javax.swing.JLabel LabelBE1;
     private javax.swing.JLabel LabelBE2;
@@ -23059,6 +23265,15 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBSP7;
     private javax.swing.JLabel LabelBSP8;
     private javax.swing.JLabel LabelDSGS;
+    private javax.swing.JLabel LabelFDP;
+    private javax.swing.JLabel LabelFDP1;
+    private javax.swing.JLabel LabelFDP2;
+    private javax.swing.JLabel LabelFDP3;
+    private javax.swing.JLabel LabelFDP4;
+    private javax.swing.JLabel LabelFDP5;
+    private javax.swing.JLabel LabelFDP6;
+    private javax.swing.JLabel LabelFDP7;
+    private javax.swing.JLabel LabelFDP8;
     private javax.swing.JLabel LabelNDFP;
     private javax.swing.JLabel LabelNDFP1;
     private javax.swing.JLabel LabelNDFP2;
@@ -23144,22 +23359,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField QAcdanom;
     private javax.swing.JComboBox<String> Quincenas;
     private javax.swing.JLabel R;
-    private javax.swing.JLabel R1;
-    private javax.swing.JLabel R10;
-    private javax.swing.JLabel R11;
-    private javax.swing.JLabel R12;
-    private javax.swing.JLabel R13;
-    private javax.swing.JLabel R14;
-    private javax.swing.JLabel R15;
-    private javax.swing.JLabel R16;
-    private javax.swing.JLabel R2;
-    private javax.swing.JLabel R3;
-    private javax.swing.JLabel R4;
-    private javax.swing.JLabel R5;
-    private javax.swing.JLabel R6;
-    private javax.swing.JLabel R7;
-    private javax.swing.JLabel R8;
-    private javax.swing.JLabel R9;
     private javax.swing.JTextField RF;
     private javax.swing.JTextField RI;
     private javax.swing.JTextField Rembolso;
@@ -23252,22 +23451,6 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel d9;
     private javax.swing.JTextField deposito;
     private javax.swing.JLabel dt;
-    private javax.swing.JLabel dt1;
-    private javax.swing.JLabel dt10;
-    private javax.swing.JLabel dt11;
-    private javax.swing.JLabel dt12;
-    private javax.swing.JLabel dt13;
-    private javax.swing.JLabel dt14;
-    private javax.swing.JLabel dt15;
-    private javax.swing.JLabel dt16;
-    private javax.swing.JLabel dt2;
-    private javax.swing.JLabel dt3;
-    private javax.swing.JLabel dt4;
-    private javax.swing.JLabel dt5;
-    private javax.swing.JLabel dt6;
-    private javax.swing.JLabel dt7;
-    private javax.swing.JLabel dt8;
-    private javax.swing.JLabel dt9;
     private javax.swing.JTextField filtroNDFP;
     private javax.swing.JTextField filtroNDFP1;
     private javax.swing.JTextField filtroNDFP2;

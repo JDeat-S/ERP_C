@@ -1,13 +1,28 @@
 package Admin;
 
 import Conexion.ConexionSQL;
+import java.awt.Desktop;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.DateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -21,6 +36,9 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
+    String hora, min, seg, ampm;
+    Calendar calendario;
+    Thread h1;
 
     public Admin_Sem_4() {
         initComponents();
@@ -256,7 +274,43 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Importe38.setVisible(false);
         Importe39.setVisible(false);
 
-        // </editor-fold>                        
+        // </editor-fold>     
+        h1 = new Thread((Runnable) this);
+        h1.start();
+
+    }
+
+    public void run() {
+        Thread ct = Thread.currentThread();
+        while (ct == h1) {
+            calcula();
+            Autofecha.setText(hora + ":" + min + ":" + seg + " " + ampm);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException error) {
+
+            }
+        }
+    }
+
+    private void calcula() {
+        Calendar Fechaactual = new GregorianCalendar();
+        Date fechaHoraactual = new Date();
+        Fechaactual.setTime(fechaHoraactual);
+        ampm = Fechaactual.get(Calendar.AM_PM) == Calendar.AM ? "AM" : "PM";
+        if (ampm.equals("PM")) {
+            int h = Fechaactual.get(Calendar.HOUR_OF_DAY) - 12;
+            hora = h > 9 ? "" + h : "0" + h;
+            if (h == 00) {
+                hora = "12";
+            } else {
+                hora = h > 9 ? "" + h : "0" + h;
+            }
+        } else {
+            hora = Fechaactual.get(Calendar.HOUR_OF_DAY) > 9 ? "" + Fechaactual.get(Calendar.HOUR_OF_DAY) : "0" + Fechaactual.get(Calendar.HOUR_OF_DAY);
+        }
+        min = Fechaactual.get(Calendar.MINUTE) > 9 ? "" + Fechaactual.get(Calendar.MINUTE) : "0" + Fechaactual.get(Calendar.MINUTE);
+        seg = Fechaactual.get(Calendar.SECOND) > 9 ? "" + Fechaactual.get(Calendar.SECOND) : "0" + Fechaactual.get(Calendar.SECOND);
     }
 
     public void Operaciones() {
@@ -1069,6 +1123,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         EEntrega = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         DBe = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        Autofecha = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -3326,6 +3382,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
         DBe.setText("0");
 
+        jLabel32.setText("Fecha:");
+
+        Autofecha.setText("Autofecha");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -3339,7 +3399,12 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Autofecha))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(53, 53, 53)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -3367,7 +3432,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jLabel32)
+                            .addComponent(Autofecha)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
@@ -3674,7 +3742,33 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Importe9KeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AddEst();
+        JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de texto", "txt");
+        chooser.setSelectedFile(new File("Semanal prueba"));
+        chooser.setFileFilter(filter);
+        chooser.setDialogTitle("Guardar archivo");
+        chooser.setAcceptAllFileFilterUsed(false);
+        if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            String ruta = chooser.getSelectedFile().toString().concat(".txt"); //extención del archivo excel
+        }
+        String ruta = chooser.getSelectedFile().toString().concat(".txt");
+        File archivo = new File(ruta);
+        if (archivo.exists()) {
+            archivo.delete();
+        }
+        try ( PrintWriter Escritura = new PrintWriter(new FileWriter(archivo))) {
+            Escritura.println("Primera línea");
+            Escritura.println("Segunda línea");
+        } catch (IOException ex) {
+            Logger.getLogger(Admin_Sem_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            Desktop.getDesktop().open(archivo);
+        } catch (IOException ex) {
+            Logger.getLogger(Admin_Sem_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void Importe10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe10KeyReleased
@@ -4464,6 +4558,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Autofecha;
     private javax.swing.JLabel DBe;
     private javax.swing.JLabel DE;
     private javax.swing.JTextField EEntrega;
@@ -4753,6 +4848,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
