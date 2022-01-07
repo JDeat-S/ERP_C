@@ -40,7 +40,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     public Admin_Sem_4() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
-        Folio1.setVisible(false);
+
         NPadron1.setVisible(false);
         NPadron2.setVisible(false);
         NPadron3.setVisible(false);
@@ -53,11 +53,11 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         Fecha1.setVisible(false);
         Servicio1.setVisible(false);
         Importe1.setVisible(false);
-        Folio2.setVisible(false);
+
         Fecha2.setVisible(false);
         Servicio2.setVisible(false);
         Importe2.setVisible(false);
-        Folio3.setVisible(false);
+
         Fecha3.setVisible(false);
         Servicio3.setVisible(false);
         Importe3.setVisible(false);
@@ -78,27 +78,24 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         Menos6.setVisible(false);
         Menos7.setVisible(false);
         Menos8.setVisible(false);
-        Folio9.setVisible(false);
         Fecha9.setVisible(false);
         Servicio9.setVisible(false);
         Importe9.setVisible(false);
-        Folio8.setVisible(false);
+
         Fecha8.setVisible(false);
         Servicio8.setVisible(false);
         Importe8.setVisible(false);
-        Folio7.setVisible(false);
         Fecha7.setVisible(false);
         Servicio7.setVisible(false);
         Importe7.setVisible(false);
-        Folio6.setVisible(false);
         Fecha6.setVisible(false);
         Servicio6.setVisible(false);
         Importe6.setVisible(false);
-        Folio5.setVisible(false);
+
         Fecha5.setVisible(false);
         Servicio5.setVisible(false);
         Importe5.setVisible(false);
-        Folio4.setVisible(false);
+
         Fecha4.setVisible(false);
         Servicio4.setVisible(false);
         Importe4.setVisible(false);
@@ -119,39 +116,30 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         Mas15.setVisible(false);
         Mas16.setVisible(false);
         Mas17.setVisible(false);
-        Folio11.setVisible(false);
         Fecha11.setVisible(false);
         Servicio11.setVisible(false);
         Importe11.setVisible(false);
-        Folio12.setVisible(false);
         Fecha12.setVisible(false);
         Servicio12.setVisible(false);
         Importe12.setVisible(false);
-        Folio13.setVisible(false);
         Fecha13.setVisible(false);
         Servicio13.setVisible(false);
         Importe13.setVisible(false);
-        Folio19.setVisible(false);
         Fecha19.setVisible(false);
         Servicio19.setVisible(false);
         Importe19.setVisible(false);
-        Folio18.setVisible(false);
         Fecha18.setVisible(false);
         Servicio18.setVisible(false);
         Importe18.setVisible(false);
-        Folio17.setVisible(false);
         Fecha17.setVisible(false);
         Servicio17.setVisible(false);
         Importe17.setVisible(false);
-        Folio16.setVisible(false);
         Fecha16.setVisible(false);
         Servicio16.setVisible(false);
         Importe16.setVisible(false);
-        Folio15.setVisible(false);
         Fecha15.setVisible(false);
         Servicio15.setVisible(false);
         Importe15.setVisible(false);
-        Folio14.setVisible(false);
         Fecha14.setVisible(false);
         Servicio14.setVisible(false);
         Importe14.setVisible(false);
@@ -172,39 +160,30 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         Mas24.setVisible(false);
         Mas25.setVisible(false);
         Mas26.setVisible(false);
-        Folio21.setVisible(false);
         Fecha21.setVisible(false);
         Servicio21.setVisible(false);
         Importe21.setVisible(false);
-        Folio22.setVisible(false);
         Fecha22.setVisible(false);
         Servicio22.setVisible(false);
         Importe22.setVisible(false);
-        Folio23.setVisible(false);
         Fecha23.setVisible(false);
         Servicio23.setVisible(false);
         Importe23.setVisible(false);
-        Folio29.setVisible(false);
         Fecha29.setVisible(false);
         Servicio29.setVisible(false);
         Importe29.setVisible(false);
-        Folio28.setVisible(false);
         Fecha28.setVisible(false);
         Servicio28.setVisible(false);
         Importe28.setVisible(false);
-        Folio27.setVisible(false);
         Fecha27.setVisible(false);
         Servicio27.setVisible(false);
         Importe27.setVisible(false);
-        Folio26.setVisible(false);
         Fecha26.setVisible(false);
         Servicio26.setVisible(false);
         Importe26.setVisible(false);
-        Folio25.setVisible(false);
         Fecha25.setVisible(false);
         Servicio25.setVisible(false);
         Importe25.setVisible(false);
-        Folio24.setVisible(false);
         Fecha24.setVisible(false);
         Servicio24.setVisible(false);
         Importe24.setVisible(false);
@@ -234,15 +213,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         Mas33.setVisible(false);
         Mas34.setVisible(false);
         Mas35.setVisible(false);
-        Folio31.setVisible(false);
-        Folio32.setVisible(false);
-        Folio33.setVisible(false);
-        Folio34.setVisible(false);
-        Folio35.setVisible(false);
-        Folio36.setVisible(false);
-        Folio37.setVisible(false);
-        Folio38.setVisible(false);
-        Folio39.setVisible(false);
         ObsV1.setVisible(false);
         ObsV2.setVisible(false);
         ObsV3.setVisible(false);
@@ -400,10 +370,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     public void AddEst() {
         if (Mas.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
                 pst.setString(3, Servicio.getSelectedItem().toString());
                 pst.setString(4, Importe.getText());
@@ -418,15 +388,15 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas1.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
                 pst.setString(3, Servicio.getSelectedItem().toString());
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
                 pst.setString(8, Servicio1.getSelectedItem().toString());
                 pst.setString(9, Importe1.getText());
@@ -441,21 +411,21 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas2.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
                 pst.setString(3, Servicio.getSelectedItem().toString());
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
                 pst.setString(8, Servicio1.getSelectedItem().toString());
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
                 pst.setString(13, Servicio2.getSelectedItem().toString());
                 pst.setString(14, Importe2.getText());
@@ -470,26 +440,26 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas3.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
                 pst.setString(3, Servicio.getSelectedItem().toString());
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
                 pst.setString(8, Servicio1.getSelectedItem().toString());
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
                 pst.setString(13, Servicio2.getSelectedItem().toString());
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
                 pst.setString(18, Servicio3.getSelectedItem().toString());
                 pst.setString(19, Importe3.getText());
@@ -504,31 +474,31 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas4.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
                 pst.setString(3, Servicio.getSelectedItem().toString());
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
                 pst.setString(8, Servicio1.getSelectedItem().toString());
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
                 pst.setString(13, Servicio2.getSelectedItem().toString());
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
                 pst.setString(18, Servicio3.getSelectedItem().toString());
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
-                pst.setInt(21, Integer.parseInt(Folio4.getText()));
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
                 pst.setString(23, Servicio4.getSelectedItem().toString());
                 pst.setString(24, Importe4.getText());
@@ -543,36 +513,36 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas5.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
                 pst.setString(3, Servicio.getSelectedItem().toString());
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
                 pst.setString(8, Servicio1.getSelectedItem().toString());
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
                 pst.setString(13, Servicio2.getSelectedItem().toString());
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
                 pst.setString(18, Servicio3.getSelectedItem().toString());
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
-                pst.setInt(21, Integer.parseInt(Folio4.getText()));
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
                 pst.setString(23, Servicio4.getSelectedItem().toString());
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
-                pst.setInt(26, Integer.parseInt(Folio5.getText()));
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
                 pst.setString(28, Servicio5.getSelectedItem().toString());
                 pst.setString(29, Importe5.getText());
@@ -587,41 +557,41 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas6.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
                 pst.setString(3, Servicio.getSelectedItem().toString());
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
                 pst.setString(8, Servicio1.getSelectedItem().toString());
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
                 pst.setString(13, Servicio2.getSelectedItem().toString());
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
                 pst.setString(18, Servicio3.getSelectedItem().toString());
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
-                pst.setInt(21, Integer.parseInt(Folio4.getText()));
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
                 pst.setString(23, Servicio4.getSelectedItem().toString());
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
-                pst.setInt(26, Integer.parseInt(Folio5.getText()));
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
                 pst.setString(28, Servicio5.getSelectedItem().toString());
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
-                pst.setInt(31, Integer.parseInt(Folio6.getText()));
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
                 pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
                 pst.setString(33, Servicio6.getSelectedItem().toString());
                 pst.setString(34, Importe6.getText());
@@ -636,46 +606,46 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas7.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
                 pst.setString(3, Servicio.getSelectedItem().toString());
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
                 pst.setString(8, Servicio1.getSelectedItem().toString());
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
                 pst.setString(13, Servicio2.getSelectedItem().toString());
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
                 pst.setString(18, Servicio3.getSelectedItem().toString());
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
-                pst.setInt(21, Integer.parseInt(Folio4.getText()));
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
                 pst.setString(23, Servicio4.getSelectedItem().toString());
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
-                pst.setInt(26, Integer.parseInt(Folio5.getText()));
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
                 pst.setString(28, Servicio5.getSelectedItem().toString());
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
-                pst.setInt(31, Integer.parseInt(Folio6.getText()));
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
                 pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
                 pst.setString(33, Servicio6.getSelectedItem().toString());
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
-                pst.setInt(36, Integer.parseInt(Folio7.getText()));
+                pst.setInt(36, Integer.parseInt(NDS.getText()));
                 pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
                 pst.setString(38, Servicio7.getSelectedItem().toString());
                 pst.setString(39, Importe7.getText());
@@ -690,51 +660,51 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas8.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
                 pst.setString(3, Servicio.getSelectedItem().toString());
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
                 pst.setString(8, Servicio1.getSelectedItem().toString());
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
                 pst.setString(13, Servicio2.getSelectedItem().toString());
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
                 pst.setString(18, Servicio3.getSelectedItem().toString());
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
-                pst.setInt(21, Integer.parseInt(Folio4.getText()));
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
                 pst.setString(23, Servicio4.getSelectedItem().toString());
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
-                pst.setInt(26, Integer.parseInt(Folio5.getText()));
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
                 pst.setString(28, Servicio5.getSelectedItem().toString());
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
-                pst.setInt(31, Integer.parseInt(Folio6.getText()));
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
                 pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
                 pst.setString(33, Servicio6.getSelectedItem().toString());
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
-                pst.setInt(36, Integer.parseInt(Folio7.getText()));
+                pst.setInt(36, Integer.parseInt(NDS.getText()));
                 pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
                 pst.setString(38, Servicio7.getSelectedItem().toString());
                 pst.setString(39, Importe7.getText());
                 pst.setString(40, TDIDS.getText());
-                pst.setInt(41, Integer.parseInt(Folio8.getText()));
+                pst.setInt(41, Integer.parseInt(NDS.getText()));
                 pst.setString(42, DateFormat.getDateInstance().format(Fecha8.getDate()));
                 pst.setString(43, Servicio8.getSelectedItem().toString());
                 pst.setString(44, Importe8.getText());
@@ -749,57 +719,57 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Menos8.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
                 pst.setString(3, Servicio.getSelectedItem().toString());
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
                 pst.setString(8, Servicio1.getSelectedItem().toString());
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
                 pst.setString(13, Servicio2.getSelectedItem().toString());
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
                 pst.setString(18, Servicio3.getSelectedItem().toString());
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
-                pst.setInt(21, Integer.parseInt(Folio4.getText()));
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
                 pst.setString(23, Servicio4.getSelectedItem().toString());
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
-                pst.setInt(26, Integer.parseInt(Folio5.getText()));
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
                 pst.setString(28, Servicio5.getSelectedItem().toString());
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
-                pst.setInt(31, Integer.parseInt(Folio6.getText()));
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
                 pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
                 pst.setString(33, Servicio6.getSelectedItem().toString());
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
-                pst.setInt(36, Integer.parseInt(Folio7.getText()));
+                pst.setInt(36, Integer.parseInt(NDS.getText()));
                 pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
                 pst.setString(38, Servicio7.getSelectedItem().toString());
                 pst.setString(39, Importe7.getText());
                 pst.setString(40, TDIDS.getText());
-                pst.setInt(41, Integer.parseInt(Folio8.getText()));
+                pst.setInt(41, Integer.parseInt(NDS.getText()));
                 pst.setString(42, DateFormat.getDateInstance().format(Fecha8.getDate()));
                 pst.setString(43, Servicio8.getSelectedItem().toString());
                 pst.setString(44, Importe8.getText());
                 pst.setString(45, TDIDS.getText());
-                pst.setInt(46, Integer.parseInt(Folio9.getText()));
+                pst.setInt(46, Integer.parseInt(NDS.getText()));
                 pst.setString(47, DateFormat.getDateInstance().format(Fecha9.getDate()));
                 pst.setString(48, Servicio9.getSelectedItem().toString());
                 pst.setString(49, Importe9.getText());
@@ -828,22 +798,11 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         Fecha = new com.toedter.calendar.JDateChooser();
         Importe = new javax.swing.JTextField();
         Servicio = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        Folio = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         TDIDS = new javax.swing.JLabel();
-        Folio1 = new javax.swing.JTextField();
-        Folio2 = new javax.swing.JTextField();
-        Folio3 = new javax.swing.JTextField();
-        Folio4 = new javax.swing.JTextField();
-        Folio5 = new javax.swing.JTextField();
-        Folio6 = new javax.swing.JTextField();
-        Folio7 = new javax.swing.JTextField();
-        Folio8 = new javax.swing.JTextField();
-        Folio9 = new javax.swing.JTextField();
         Servicio1 = new javax.swing.JComboBox<>();
         Servicio2 = new javax.swing.JComboBox<>();
         Servicio3 = new javax.swing.JComboBox<>();
@@ -895,8 +854,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         jLabel13 = new javax.swing.JLabel();
         Fecha10 = new com.toedter.calendar.JDateChooser();
         Importe10 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        Folio10 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -922,15 +879,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         Mas17 = new javax.swing.JButton();
         Servicio10 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        Folio11 = new javax.swing.JTextField();
-        Folio12 = new javax.swing.JTextField();
-        Folio13 = new javax.swing.JTextField();
-        Folio14 = new javax.swing.JTextField();
-        Folio15 = new javax.swing.JTextField();
-        Folio16 = new javax.swing.JTextField();
-        Folio17 = new javax.swing.JTextField();
-        Folio18 = new javax.swing.JTextField();
-        Folio19 = new javax.swing.JTextField();
         Servicio11 = new javax.swing.JTextField();
         Servicio12 = new javax.swing.JTextField();
         Servicio13 = new javax.swing.JTextField();
@@ -974,20 +922,9 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         jLabel19 = new javax.swing.JLabel();
         Fecha20 = new com.toedter.calendar.JDateChooser();
         Importe20 = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        Folio20 = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         Servicio20 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        Folio21 = new javax.swing.JTextField();
-        Folio22 = new javax.swing.JTextField();
-        Folio23 = new javax.swing.JTextField();
-        Folio24 = new javax.swing.JTextField();
-        Folio25 = new javax.swing.JTextField();
-        Folio26 = new javax.swing.JTextField();
-        Folio27 = new javax.swing.JTextField();
-        Folio28 = new javax.swing.JTextField();
-        Folio29 = new javax.swing.JTextField();
         Servicio21 = new javax.swing.JTextField();
         Servicio22 = new javax.swing.JTextField();
         Servicio23 = new javax.swing.JTextField();
@@ -1054,28 +991,22 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         DE = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
-        jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         TDV = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        Folio30 = new javax.swing.JTextField();
         ObsV = new javax.swing.JTextField();
         Importe30 = new javax.swing.JTextField();
         Fecha30 = new com.toedter.calendar.JDateChooser();
         jPanel7 = new javax.swing.JPanel();
-        Folio33 = new javax.swing.JTextField();
         Importe32 = new javax.swing.JTextField();
         Importe37 = new javax.swing.JTextField();
         Importe31 = new javax.swing.JTextField();
         Importe33 = new javax.swing.JTextField();
-        Folio36 = new javax.swing.JTextField();
-        Folio38 = new javax.swing.JTextField();
         ObsV4 = new javax.swing.JTextField();
         ObsV9 = new javax.swing.JTextField();
-        Folio31 = new javax.swing.JTextField();
         Fecha36 = new com.toedter.calendar.JDateChooser();
         Importe34 = new javax.swing.JTextField();
         ObsV3 = new javax.swing.JTextField();
@@ -1083,19 +1014,14 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         Fecha38 = new com.toedter.calendar.JDateChooser();
         Fecha39 = new com.toedter.calendar.JDateChooser();
         Fecha33 = new com.toedter.calendar.JDateChooser();
-        Folio37 = new javax.swing.JTextField();
-        Folio35 = new javax.swing.JTextField();
         Fecha37 = new com.toedter.calendar.JDateChooser();
-        Folio34 = new javax.swing.JTextField();
         Fecha34 = new com.toedter.calendar.JDateChooser();
         Fecha35 = new com.toedter.calendar.JDateChooser();
-        Folio39 = new javax.swing.JTextField();
         ObsV6 = new javax.swing.JTextField();
         Importe35 = new javax.swing.JTextField();
         Importe38 = new javax.swing.JTextField();
         ObsV2 = new javax.swing.JTextField();
         Importe39 = new javax.swing.JTextField();
-        Folio32 = new javax.swing.JTextField();
         ObsV8 = new javax.swing.JTextField();
         Importe36 = new javax.swing.JTextField();
         Fecha32 = new com.toedter.calendar.JDateChooser();
@@ -1130,6 +1056,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         Autohora = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         AutoFecha = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        NDS = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -1152,10 +1080,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
         Servicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
-        jLabel1.setText("Folio");
-
-        Folio.setText("0");
-
         jLabel2.setText("Fecha");
 
         jLabel3.setText("Servicio");
@@ -1167,24 +1091,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
         TDIDS.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         TDIDS.setText("0");
-
-        Folio1.setText("0");
-
-        Folio2.setText("0");
-
-        Folio3.setText("0");
-
-        Folio4.setText("0");
-
-        Folio5.setText("0");
-
-        Folio6.setText("0");
-
-        Folio7.setText("0");
-
-        Folio8.setText("0");
-
-        Folio9.setText("0");
 
         Servicio1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
@@ -1421,50 +1327,35 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addGap(128, 128, 128)
                         .addComponent(jLabel10))
                     .addGroup(PanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Folio1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(72, 72, 72)
                         .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createSequentialGroup()
-                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Folio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(72, 72, 72)
                                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2)))
                             .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(Folio2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(72, 72, 72)
                                 .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(Folio3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(72, 72, 72)
                                 .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(Folio6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(72, 72, 72)
                                 .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(Folio7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(72, 72, 72)
                                 .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(Folio8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(72, 72, 72)
                                 .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(Folio9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(72, 72, 72)
                                 .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
-                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Folio4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Folio5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(72, 72, 72)
                                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -1566,9 +1457,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)))
+                        .addComponent(jLabel2))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1583,35 +1472,30 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                     .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Importe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Servicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Folio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Servicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(6, 6, 6)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1619,27 +1503,23 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1647,7 +1527,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(PanelLayout.createSequentialGroup()
@@ -1696,10 +1575,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                 Importe10KeyReleased(evt);
             }
         });
-
-        jLabel14.setText("Folio");
-
-        Folio10.setText("0");
 
         jLabel15.setText("Fecha");
 
@@ -1839,24 +1714,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        Folio11.setText("0");
-
-        Folio12.setText("0");
-
-        Folio13.setText("0");
-
-        Folio14.setText("0");
-
-        Folio15.setText("0");
-
-        Folio16.setText("0");
-
-        Folio17.setText("0");
-
-        Folio18.setText("0");
-
-        Folio19.setText("0");
-
         Fecha11.setDateFormatString("dd MMM yyyy ");
 
         Fecha12.setDateFormatString("dd MMM yyyy ");
@@ -1945,40 +1802,31 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio15, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio17, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha17, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio18, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha18, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio19, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha19, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -2042,9 +1890,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Importe11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Importe11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Servicio11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2054,7 +1900,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(NPadron2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2062,7 +1907,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(NPadron3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2070,25 +1914,20 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(NPadron4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Servicio14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(Fecha14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Importe15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Importe15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Servicio15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(NPadron5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Importe16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Importe16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Servicio16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2096,7 +1935,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Importe17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(NPadron7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Fecha17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2104,7 +1942,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Servicio18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Importe18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(NPadron8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2112,7 +1949,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Servicio19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Importe19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(NPadron9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2132,10 +1968,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addContainerGap()
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel2Layout.createSequentialGroup()
-                                .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Folio10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel14))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(66, 66, 66)
                                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel15))
@@ -2208,9 +2041,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(Panel2Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15)))
+                        .addComponent(jLabel15))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2231,8 +2062,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                     .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Importe10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Servicio10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(NPadron, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Folio10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(NPadron, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel2Layout.createSequentialGroup()
@@ -2275,29 +2105,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        jLabel20.setText("Folio");
-
-        Folio20.setText("0");
-
         jLabel21.setText("Fecha");
-
-        Folio21.setText("0");
-
-        Folio22.setText("0");
-
-        Folio23.setText("0");
-
-        Folio24.setText("0");
-
-        Folio25.setText("0");
-
-        Folio26.setText("0");
-
-        Folio27.setText("0");
-
-        Folio28.setText("0");
-
-        Folio29.setText("0");
 
         Fecha21.setDateFormatString("dd MMM yyyy ");
 
@@ -2387,40 +2195,31 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio21, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha21, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio22, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha22, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio23, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha23, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio24, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha24, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio25, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha25, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio26, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha26, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio27, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha27, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio28, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha28, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio29, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha29, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2480,7 +2279,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2489,20 +2287,17 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(Folio22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(Servicio22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(Importe22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(Fecha22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(Folio23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(Servicio23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(Importe23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(Fecha23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Folio24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Servicio24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Importe24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(Fecha24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2510,9 +2305,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(Folio25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Servicio25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Servicio25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Fecha25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -2520,28 +2313,24 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                                 .addGap(6, 6, 6)))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2717,10 +2506,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Folio20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel20))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(66, 66, 66)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Fecha20, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel21))
@@ -2796,9 +2582,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel21)))
+                        .addComponent(jLabel21))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2812,8 +2596,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Importe20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Servicio20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Folio20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2852,8 +2635,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
         DE.setText("0");
 
-        jLabel24.setText("Folio");
-
         jLabel25.setText("Fecha");
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -2869,8 +2650,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
         jLabel11.setText("Observaciones");
 
-        Folio30.setText("0");
-
         Importe30.setText("0");
         Importe30.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -2879,8 +2658,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         });
 
         Fecha30.setDateFormatString("dd MMM yyyy ");
-
-        Folio33.setText("0");
 
         Importe32.setText("0");
         Importe32.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -2910,12 +2687,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        Folio36.setText("0");
-
-        Folio38.setText("0");
-
-        Folio31.setText("0");
-
         Fecha36.setDateFormatString("dd MMM yyyy ");
 
         Importe34.setText("0");
@@ -2933,19 +2704,11 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
         Fecha33.setDateFormatString("dd MMM yyyy ");
 
-        Folio37.setText("0");
-
-        Folio35.setText("0");
-
         Fecha37.setDateFormatString("dd MMM yyyy ");
-
-        Folio34.setText("0");
 
         Fecha34.setDateFormatString("dd MMM yyyy ");
 
         Fecha35.setDateFormatString("dd MMM yyyy ");
-
-        Folio39.setText("0");
 
         Importe35.setText("0");
         Importe35.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -2968,8 +2731,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        Folio32.setText("0");
-
         Importe36.setText("0");
         Importe36.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -2986,20 +2747,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(Folio39, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Folio31, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Folio32, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Folio33, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Folio34, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Folio35, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Folio36, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Folio37, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Folio38, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(66, 66, 66)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha31, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Fecha32, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3061,35 +2812,21 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(Fecha32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Folio31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ObsV1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ObsV1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Folio32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ObsV2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(ObsV2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Folio33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ObsV3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ObsV3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Folio34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ObsV4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ObsV4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Folio35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ObsV5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ObsV5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Folio36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ObsV6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ObsV6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Folio37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ObsV7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(ObsV7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(Fecha33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3103,12 +2840,9 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Folio39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -3253,25 +2987,21 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addContainerGap()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel24)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(114, 114, 114)
-                                        .addComponent(jLabel28)
-                                        .addGap(170, 170, 170)
-                                        .addComponent(jLabel12)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TDV))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(195, 195, 195)
-                                        .addComponent(jLabel11)
-                                        .addGap(83, 83, 83)
-                                        .addComponent(jLabel29))))
+                                .addGap(141, 141, 141)
+                                .addComponent(jLabel28)
+                                .addGap(170, 170, 170)
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TDV))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(222, 222, 222)
+                                .addComponent(jLabel11)
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel29))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(Folio30, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGap(66, 66, 66)
                                         .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3328,7 +3058,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                     .addComponent(TDV))
                 .addGap(1, 1, 1)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
                     .addComponent(jLabel25)
                     .addComponent(jLabel29)
                     .addComponent(jLabel11))
@@ -3336,7 +3065,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Folio30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -3399,6 +3127,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         AutoFecha.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         AutoFecha.setText("jLabel34");
 
+        jLabel34.setText("Numero de semanal:");
+
+        NDS.setText("0");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -3410,7 +3142,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE))
-                        .addContainerGap(502, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3427,8 +3159,17 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                                     .addComponent(jLabel31))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(EEntrega, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(DBe, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(DE)
+                                                .addGap(114, 114, 114)
+                                                .addComponent(jLabel34))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(TMG)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -3440,14 +3181,9 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(AutoFecha)
-                                            .addComponent(Autohora))
-                                        .addGap(92, 92, 92))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(DE, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(EEntrega, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(DBe, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                            .addComponent(Autohora)
+                                            .addComponent(NDS))
+                                        .addGap(92, 92, 92))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addContainerGap())))))
@@ -3482,7 +3218,9 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(DE))
+                            .addComponent(DE)
+                            .addComponent(jLabel34)
+                            .addComponent(NDS))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel30)
@@ -3491,7 +3229,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel31)
                             .addComponent(DBe))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -3508,7 +3246,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1186, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3519,7 +3257,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasActionPerformed
-        Folio1.setVisible(true);
         Fecha1.setVisible(true);
         Servicio1.setVisible(true);
         Importe1.setVisible(true);
@@ -3530,7 +3267,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_MasActionPerformed
 
     private void Mas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas1ActionPerformed
-        Folio2.setVisible(true);
         Fecha2.setVisible(true);
         Servicio2.setVisible(true);
         Importe2.setVisible(true);
@@ -3542,7 +3278,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas1ActionPerformed
 
     private void Mas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas2ActionPerformed
-        Folio3.setVisible(true);
         Fecha3.setVisible(true);
         Servicio3.setVisible(true);
         Importe3.setVisible(true);
@@ -3554,7 +3289,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas2ActionPerformed
 
     private void MenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosActionPerformed
-        Folio1.setVisible(false);
         Fecha1.setVisible(false);
         Servicio1.setVisible(false);
         Importe1.setVisible(false);
@@ -3564,7 +3298,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_MenosActionPerformed
 
     private void Menos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos1ActionPerformed
-        Folio2.setVisible(false);
         Fecha2.setVisible(false);
         Servicio2.setVisible(false);
         Importe2.setVisible(false);
@@ -3575,7 +3308,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos1ActionPerformed
 
     private void Menos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos2ActionPerformed
-        Folio3.setVisible(false);
         Fecha3.setVisible(false);
         Servicio3.setVisible(false);
         Importe3.setVisible(false);
@@ -3587,7 +3319,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos2ActionPerformed
 
     private void Mas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas3ActionPerformed
-        Folio4.setVisible(true);
         Fecha4.setVisible(true);
         Servicio4.setVisible(true);
         Importe4.setVisible(true);
@@ -3598,7 +3329,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas3ActionPerformed
 
     private void Mas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas4ActionPerformed
-        Folio5.setVisible(true);
         Fecha5.setVisible(true);
         Servicio5.setVisible(true);
         Importe5.setVisible(true);
@@ -3609,7 +3339,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas4ActionPerformed
 
     private void Menos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos3ActionPerformed
-        Folio4.setVisible(false);
         Fecha4.setVisible(false);
         Servicio4.setVisible(false);
         Importe4.setVisible(false);
@@ -3620,7 +3349,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos3ActionPerformed
 
     private void Menos4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos4ActionPerformed
-        Folio5.setVisible(false);
         Fecha5.setVisible(false);
         Servicio5.setVisible(false);
         Importe5.setVisible(false);
@@ -3631,7 +3359,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos4ActionPerformed
 
     private void Mas5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas5ActionPerformed
-        Folio6.setVisible(true);
         Fecha6.setVisible(true);
         Servicio6.setVisible(true);
         Importe6.setVisible(true);
@@ -3642,7 +3369,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas5ActionPerformed
 
     private void Mas6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas6ActionPerformed
-        Folio7.setVisible(true);
         Fecha7.setVisible(true);
         Servicio7.setVisible(true);
         Importe7.setVisible(true);
@@ -3653,7 +3379,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas6ActionPerformed
 
     private void Menos5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos5ActionPerformed
-        Folio6.setVisible(false);
         Fecha6.setVisible(false);
         Servicio6.setVisible(false);
         Importe6.setVisible(false);
@@ -3664,7 +3389,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos5ActionPerformed
 
     private void Mas7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas7ActionPerformed
-        Folio8.setVisible(true);
         Fecha8.setVisible(true);
         Servicio8.setVisible(true);
         Importe8.setVisible(true);
@@ -3675,7 +3399,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas7ActionPerformed
 
     private void Mas8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas8ActionPerformed
-        Folio9.setVisible(true);
         Fecha9.setVisible(true);
         Servicio9.setVisible(true);
         Importe9.setVisible(true);
@@ -3686,7 +3409,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas8ActionPerformed
 
     private void Menos6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos6ActionPerformed
-        Folio7.setVisible(false);
         Fecha7.setVisible(false);
         Servicio7.setVisible(false);
         Importe7.setVisible(false);
@@ -3697,7 +3419,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos6ActionPerformed
 
     private void Menos7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos7ActionPerformed
-        Folio8.setVisible(false);
         Fecha8.setVisible(false);
         Servicio8.setVisible(false);
         Importe8.setVisible(false);
@@ -3708,7 +3429,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos7ActionPerformed
 
     private void Menos8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos8ActionPerformed
-        Folio9.setVisible(false);
         Fecha9.setVisible(false);
         Servicio9.setVisible(false);
         Importe9.setVisible(false);
@@ -3782,7 +3502,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             archivo.delete();
         }
         try ( PrintWriter Escritura = new PrintWriter(new FileWriter(archivo))) {
-            Escritura.println("Primera línea");
+            Escritura.println("CONFORT SERVICE PRESTIGE DE MEXICO, S.A. DE C.V.");
             Escritura.println("Segunda línea");
 
         } catch (IOException ex) {
@@ -3841,7 +3561,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Importe19KeyReleased
 
     private void Mas9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas9ActionPerformed
-        Folio11.setVisible(true);
         NPadron1.setVisible(true);
         Fecha11.setVisible(true);
         Servicio11.setVisible(true);
@@ -3849,13 +3568,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         Menos9.setVisible(true);
         Mas9.setVisible(false);
         Mas10.setVisible(true);
-
-
     }//GEN-LAST:event_Mas9ActionPerformed
 
     private void Menos11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos11ActionPerformed
         NPadron3.setVisible(false);
-        Folio13.setVisible(false);
         Fecha13.setVisible(false);
         Servicio13.setVisible(false);
         Importe13.setVisible(false);
@@ -3867,7 +3583,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Menos10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos10ActionPerformed
         NPadron2.setVisible(false);
-        Folio12.setVisible(false);
         Fecha12.setVisible(false);
         Servicio12.setVisible(false);
         Importe12.setVisible(false);
@@ -3879,7 +3594,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Mas10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas10ActionPerformed
         NPadron2.setVisible(true);
-        Folio12.setVisible(true);
         Fecha12.setVisible(true);
         Servicio12.setVisible(true);
         Importe12.setVisible(true);
@@ -3891,7 +3605,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Menos9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos9ActionPerformed
         NPadron1.setVisible(false);
-        Folio11.setVisible(false);
         Fecha11.setVisible(false);
         Servicio11.setVisible(false);
         Importe11.setVisible(false);
@@ -3902,7 +3615,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Mas11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas11ActionPerformed
         NPadron3.setVisible(true);
-        Folio13.setVisible(true);
         Fecha13.setVisible(true);
         Servicio13.setVisible(true);
         Importe13.setVisible(true);
@@ -3914,7 +3626,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Mas12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas12ActionPerformed
         NPadron4.setVisible(true);
-        Folio14.setVisible(true);
         Fecha14.setVisible(true);
         Servicio14.setVisible(true);
         Importe14.setVisible(true);
@@ -3926,7 +3637,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Menos12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos12ActionPerformed
         NPadron4.setVisible(false);
-        Folio14.setVisible(false);
         Fecha14.setVisible(false);
         Servicio14.setVisible(false);
         Importe14.setVisible(false);
@@ -3938,7 +3648,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Menos13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos13ActionPerformed
         NPadron5.setVisible(false);
-        Folio15.setVisible(false);
         Fecha15.setVisible(false);
         Servicio15.setVisible(false);
         Importe15.setVisible(false);
@@ -3950,7 +3659,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Mas13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas13ActionPerformed
         NPadron5.setVisible(true);
-        Folio15.setVisible(true);
         Fecha15.setVisible(true);
         Servicio15.setVisible(true);
         Importe15.setVisible(true);
@@ -3962,7 +3670,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Mas14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas14ActionPerformed
         NPadron6.setVisible(true);
-        Folio16.setVisible(true);
         Fecha16.setVisible(true);
         Servicio16.setVisible(true);
         Importe16.setVisible(true);
@@ -3974,7 +3681,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Menos15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos15ActionPerformed
         NPadron7.setVisible(false);
-        Folio17.setVisible(false);
         Fecha17.setVisible(false);
         Servicio17.setVisible(false);
         Importe17.setVisible(false);
@@ -3986,7 +3692,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Mas15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas15ActionPerformed
         NPadron7.setVisible(true);
-        Folio17.setVisible(true);
         Fecha17.setVisible(true);
         Servicio17.setVisible(true);
         Importe17.setVisible(true);
@@ -3998,7 +3703,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Menos16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos16ActionPerformed
         NPadron8.setVisible(false);
-        Folio18.setVisible(false);
         Fecha18.setVisible(false);
         Servicio18.setVisible(false);
         Importe18.setVisible(false);
@@ -4010,7 +3714,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Menos14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos14ActionPerformed
         NPadron6.setVisible(false);
-        Folio16.setVisible(false);
         Fecha16.setVisible(false);
         Servicio16.setVisible(false);
         Importe16.setVisible(false);
@@ -4022,7 +3725,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Mas16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas16ActionPerformed
         NPadron8.setVisible(true);
-        Folio18.setVisible(true);
         Fecha18.setVisible(true);
         Servicio18.setVisible(true);
         Importe18.setVisible(true);
@@ -4034,7 +3736,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Menos17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos17ActionPerformed
         NPadron9.setVisible(false);
-        Folio19.setVisible(false);
         Fecha19.setVisible(false);
         Servicio19.setVisible(false);
         Importe19.setVisible(false);
@@ -4046,7 +3747,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     private void Mas17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas17ActionPerformed
         NPadron9.setVisible(true);
-        Folio19.setVisible(true);
         Fecha19.setVisible(true);
         Servicio19.setVisible(true);
         Importe19.setVisible(true);
@@ -4097,7 +3797,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Importe29KeyReleased
 
     private void Menos18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos18ActionPerformed
-        Folio21.setVisible(false);
         Fecha21.setVisible(false);
         Servicio21.setVisible(false);
         Importe21.setVisible(false);
@@ -4108,7 +3807,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos18ActionPerformed
 
     private void Mas18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas18ActionPerformed
-        Folio21.setVisible(true);
         Fecha21.setVisible(true);
         Servicio21.setVisible(true);
         Importe21.setVisible(true);
@@ -4119,7 +3817,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas18ActionPerformed
 
     private void Mas19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas19ActionPerformed
-        Folio22.setVisible(true);
         Fecha22.setVisible(true);
         Servicio22.setVisible(true);
         Importe22.setVisible(true);
@@ -4131,7 +3828,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas19ActionPerformed
 
     private void Menos19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos19ActionPerformed
-        Folio22.setVisible(false);
         Fecha22.setVisible(false);
         Servicio22.setVisible(false);
         Importe22.setVisible(false);
@@ -4143,7 +3839,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos19ActionPerformed
 
     private void Menos20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos20ActionPerformed
-        Folio23.setVisible(false);
         Fecha23.setVisible(false);
         Servicio23.setVisible(false);
         Importe23.setVisible(false);
@@ -4155,7 +3850,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos20ActionPerformed
 
     private void Mas20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas20ActionPerformed
-        Folio23.setVisible(true);
         Fecha23.setVisible(true);
         Servicio23.setVisible(true);
         Importe23.setVisible(true);
@@ -4167,7 +3861,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas20ActionPerformed
 
     private void Mas21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas21ActionPerformed
-        Folio24.setVisible(true);
         Fecha24.setVisible(true);
         Servicio24.setVisible(true);
         Importe24.setVisible(true);
@@ -4179,7 +3872,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas21ActionPerformed
 
     private void Menos21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos21ActionPerformed
-        Folio24.setVisible(false);
         Fecha24.setVisible(false);
         Servicio24.setVisible(false);
         Importe24.setVisible(false);
@@ -4191,7 +3883,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos21ActionPerformed
 
     private void Mas22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas22ActionPerformed
-        Folio25.setVisible(true);
         Fecha25.setVisible(true);
         Servicio25.setVisible(true);
         Importe25.setVisible(true);
@@ -4203,7 +3894,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas22ActionPerformed
 
     private void Menos22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos22ActionPerformed
-        Folio25.setVisible(false);
         Fecha25.setVisible(false);
         Servicio25.setVisible(false);
         Importe25.setVisible(false);
@@ -4215,7 +3905,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos22ActionPerformed
 
     private void Menos23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos23ActionPerformed
-        Folio26.setVisible(false);
         Fecha26.setVisible(false);
         Servicio26.setVisible(false);
         Importe26.setVisible(false);
@@ -4227,7 +3916,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos23ActionPerformed
 
     private void Mas23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas23ActionPerformed
-        Folio26.setVisible(true);
         Fecha26.setVisible(true);
         Servicio26.setVisible(true);
         Importe26.setVisible(true);
@@ -4239,7 +3927,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas23ActionPerformed
 
     private void Menos24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos24ActionPerformed
-        Folio27.setVisible(false);
         Fecha27.setVisible(false);
         Servicio27.setVisible(false);
         Importe27.setVisible(false);
@@ -4251,7 +3938,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos24ActionPerformed
 
     private void Mas24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas24ActionPerformed
-        Folio27.setVisible(true);
         Fecha27.setVisible(true);
         Servicio27.setVisible(true);
         Importe27.setVisible(true);
@@ -4263,7 +3949,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas24ActionPerformed
 
     private void Mas25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas25ActionPerformed
-        Folio28.setVisible(true);
         Fecha28.setVisible(true);
         Servicio28.setVisible(true);
         Importe28.setVisible(true);
@@ -4275,7 +3960,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas25ActionPerformed
 
     private void Menos25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos25ActionPerformed
-        Folio28.setVisible(false);
         Fecha28.setVisible(false);
         Servicio28.setVisible(false);
         Importe28.setVisible(false);
@@ -4287,7 +3971,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos25ActionPerformed
 
     private void Menos26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos26ActionPerformed
-        Folio29.setVisible(false);
         Fecha29.setVisible(false);
         Servicio29.setVisible(false);
         Importe29.setVisible(false);
@@ -4299,7 +3982,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos26ActionPerformed
 
     private void Mas26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas26ActionPerformed
-        Folio29.setVisible(true);
         Fecha29.setVisible(true);
         Servicio29.setVisible(true);
         Importe29.setVisible(true);
@@ -4353,7 +4035,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Importe39KeyReleased
 
     private void Menos27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos27ActionPerformed
-        Folio31.setVisible(false);
         Fecha31.setVisible(false);
         ObsV1.setVisible(false);
         Importe31.setVisible(false);
@@ -4363,7 +4044,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos27ActionPerformed
 
     private void Mas27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas27ActionPerformed
-        Folio31.setVisible(true);
         Fecha31.setVisible(true);
         ObsV1.setVisible(true);
         Importe31.setVisible(true);
@@ -4373,7 +4053,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas27ActionPerformed
 
     private void Menos28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos28ActionPerformed
-        Folio32.setVisible(false);
         Fecha32.setVisible(false);
         ObsV2.setVisible(false);
         Importe32.setVisible(false);
@@ -4384,7 +4063,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos28ActionPerformed
 
     private void Mas28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas28ActionPerformed
-        Folio32.setVisible(true);
         Fecha32.setVisible(true);
         ObsV2.setVisible(true);
         Importe32.setVisible(true);
@@ -4395,7 +4073,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas28ActionPerformed
 
     private void Mas29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas29ActionPerformed
-        Folio33.setVisible(true);
         Fecha33.setVisible(true);
         ObsV3.setVisible(true);
         Importe33.setVisible(true);
@@ -4407,7 +4084,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas29ActionPerformed
 
     private void Menos29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos29ActionPerformed
-        Folio33.setVisible(false);
         Fecha33.setVisible(false);
         ObsV3.setVisible(false);
         Importe33.setVisible(false);
@@ -4418,7 +4094,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos29ActionPerformed
 
     private void Menos30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos30ActionPerformed
-        Folio34.setVisible(false);
         Fecha34.setVisible(false);
         ObsV4.setVisible(false);
         Importe34.setVisible(false);
@@ -4429,7 +4104,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos30ActionPerformed
 
     private void Mas30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas30ActionPerformed
-        Folio34.setVisible(true);
         Fecha34.setVisible(true);
         ObsV4.setVisible(true);
         Importe34.setVisible(true);
@@ -4440,7 +4114,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas30ActionPerformed
 
     private void Menos31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos31ActionPerformed
-        Folio35.setVisible(false);
         Fecha35.setVisible(false);
         ObsV5.setVisible(false);
         Importe35.setVisible(false);
@@ -4451,7 +4124,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos31ActionPerformed
 
     private void Menos32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos32ActionPerformed
-        Folio36.setVisible(false);
         Fecha36.setVisible(false);
         ObsV6.setVisible(false);
         Importe36.setVisible(false);
@@ -4462,7 +4134,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos32ActionPerformed
 
     private void Mas31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas31ActionPerformed
-        Folio35.setVisible(true);
         Fecha35.setVisible(true);
         ObsV5.setVisible(true);
         Importe35.setVisible(true);
@@ -4473,7 +4144,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas31ActionPerformed
 
     private void Menos33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos33ActionPerformed
-        Folio37.setVisible(false);
         Fecha37.setVisible(false);
         ObsV7.setVisible(false);
         Importe37.setVisible(false);
@@ -4484,7 +4154,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos33ActionPerformed
 
     private void Mas32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas32ActionPerformed
-        Folio36.setVisible(true);
         Fecha36.setVisible(true);
         ObsV6.setVisible(true);
         Importe36.setVisible(true);
@@ -4495,7 +4164,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas32ActionPerformed
 
     private void Mas33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas33ActionPerformed
-        Folio37.setVisible(true);
         Fecha37.setVisible(true);
         ObsV7.setVisible(true);
         Importe37.setVisible(true);
@@ -4506,7 +4174,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas33ActionPerformed
 
     private void Menos34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos34ActionPerformed
-        Folio38.setVisible(false);
         Fecha38.setVisible(false);
         ObsV8.setVisible(false);
         Importe38.setVisible(false);
@@ -4517,7 +4184,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos34ActionPerformed
 
     private void Menos35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos35ActionPerformed
-        Folio39.setVisible(false);
         Fecha39.setVisible(false);
         ObsV9.setVisible(false);
         Importe39.setVisible(false);
@@ -4528,7 +4194,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos35ActionPerformed
 
     private void Mas34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas34ActionPerformed
-        Folio38.setVisible(true);
         Fecha38.setVisible(true);
         ObsV8.setVisible(true);
         Importe38.setVisible(true);
@@ -4539,7 +4204,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas34ActionPerformed
 
     private void Mas35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas35ActionPerformed
-        Folio39.setVisible(true);
         Fecha39.setVisible(true);
         ObsV9.setVisible(true);
         Importe39.setVisible(true);
@@ -4640,46 +4304,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     private com.toedter.calendar.JDateChooser Fecha7;
     private com.toedter.calendar.JDateChooser Fecha8;
     private com.toedter.calendar.JDateChooser Fecha9;
-    private javax.swing.JTextField Folio;
-    private javax.swing.JTextField Folio1;
-    private javax.swing.JTextField Folio10;
-    private javax.swing.JTextField Folio11;
-    private javax.swing.JTextField Folio12;
-    private javax.swing.JTextField Folio13;
-    private javax.swing.JTextField Folio14;
-    private javax.swing.JTextField Folio15;
-    private javax.swing.JTextField Folio16;
-    private javax.swing.JTextField Folio17;
-    private javax.swing.JTextField Folio18;
-    private javax.swing.JTextField Folio19;
-    private javax.swing.JTextField Folio2;
-    private javax.swing.JTextField Folio20;
-    private javax.swing.JTextField Folio21;
-    private javax.swing.JTextField Folio22;
-    private javax.swing.JTextField Folio23;
-    private javax.swing.JTextField Folio24;
-    private javax.swing.JTextField Folio25;
-    private javax.swing.JTextField Folio26;
-    private javax.swing.JTextField Folio27;
-    private javax.swing.JTextField Folio28;
-    private javax.swing.JTextField Folio29;
-    private javax.swing.JTextField Folio3;
-    private javax.swing.JTextField Folio30;
-    private javax.swing.JTextField Folio31;
-    private javax.swing.JTextField Folio32;
-    private javax.swing.JTextField Folio33;
-    private javax.swing.JTextField Folio34;
-    private javax.swing.JTextField Folio35;
-    private javax.swing.JTextField Folio36;
-    private javax.swing.JTextField Folio37;
-    private javax.swing.JTextField Folio38;
-    private javax.swing.JTextField Folio39;
-    private javax.swing.JTextField Folio4;
-    private javax.swing.JTextField Folio5;
-    private javax.swing.JTextField Folio6;
-    private javax.swing.JTextField Folio7;
-    private javax.swing.JTextField Folio8;
-    private javax.swing.JTextField Folio9;
     private javax.swing.JTextField Importe;
     private javax.swing.JTextField Importe1;
     private javax.swing.JTextField Importe10;
@@ -4802,6 +4426,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton Menos7;
     private javax.swing.JButton Menos8;
     private javax.swing.JButton Menos9;
+    private javax.swing.JLabel NDS;
     private javax.swing.JTextField NPadron;
     private javax.swing.JTextField NPadron1;
     private javax.swing.JTextField NPadron2;
@@ -4861,23 +4486,19 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel TDV;
     private javax.swing.JLabel TMG;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -4888,6 +4509,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
