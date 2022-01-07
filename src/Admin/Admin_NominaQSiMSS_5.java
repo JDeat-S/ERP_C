@@ -1367,20 +1367,19 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         String Share = BNameNom.getText();
         String ShareAP = BAPNom.getText();
         String ShareAM = BAMNom.getText();
-        String where = "select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`"
-                + " from empleados";// where `Status` LIKE '%Vigente%'";
+        String where = "SELECT `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono` FROM `rh.empleados`"
+                + " where `Status` LIKE '%Vigente%'";
 
         if (!"".equals(Share)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%'";// AND `Status` LIKE '%Vigente%'";
+            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
+                    + "from `rh.empleados` WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%'";// AND `Status` LIKE '%Vigente%'";
+            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
+                    + "from `rh.empleados` WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%'";// AND `Status` LIKE '%Vigente%'";
+            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
+                    + "from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }
-
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -20670,7 +20669,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 5) {
             Funimprimir(pago, getTitle() + " Foraneos acapulco", "Monto total de la "
-                    + FiltroQP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())+ " (" + FDP.getSelectedItem().toString() + ")"), true);
+                    + FiltroQP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText()) + " (" + FDP.getSelectedItem().toString() + ")"), true);
         }
         if (FP == 6) {
             Funimprimir(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro # Lista "
@@ -20707,7 +20706,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 6) {
             Funimprimir(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro # Lista "
-                    + filtroNDFP1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())+ " (" + FDP1.getSelectedItem().toString() + ")"), true);
+                    + filtroNDFP1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText()) + " (" + FDP1.getSelectedItem().toString() + ")"), true);
         }
     }//GEN-LAST:event_Imprimir1ActionPerformed
 
@@ -20740,7 +20739,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 6) {
             Funimprimir(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro # Lista "
-                    + filtroNDFP2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())+ " (" + FDP2.getSelectedItem().toString() + ")"), true);
+                    + filtroNDFP2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText()) + " (" + FDP2.getSelectedItem().toString() + ")"), true);
         }
     }//GEN-LAST:event_Imprimir2ActionPerformed
 
@@ -20769,7 +20768,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 5) {
             Funimprimir(pago3, getTitle() + " Norte", "Monto total de la "
-                    + FiltroQP3.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())+ " (" + FDP3.getSelectedItem().toString() + ")"), true);
+                    + FiltroQP3.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText()) + " (" + FDP3.getSelectedItem().toString() + ")"), true);
         }
         if (FP == 6) {
             Funimprimir(pago3, getTitle() + " Norte", "Monto total con filtro # Lista "
@@ -20803,7 +20802,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 5) {
             Funimprimir(pago4, getTitle() + " Poniente", "Monto total de la "
-                    + FiltroQP4.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())+ " (" + FDP4.getSelectedItem().toString() + ")"), true);
+                    + FiltroQP4.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText()) + " (" + FDP4.getSelectedItem().toString() + ")"), true);
         }
         if (FP == 6) {
             Funimprimir(pago4, getTitle() + " Poniente", "Monto total con filtro # Lista "
@@ -20861,7 +20860,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 6) {
             Funimprimir(pago7, getTitle() + " Sur 2", "Monto total con filtro # Lista "
-                    + filtroNDFP7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())+ " (" + FDP7.getSelectedItem().toString() + ")"), true);
+                    + filtroNDFP7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText()) + " (" + FDP7.getSelectedItem().toString() + ")"), true);
         }
     }//GEN-LAST:event_Imprimir7ActionPerformed
 
@@ -21128,7 +21127,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 6) {
             Funimprimir(pago6, getTitle() + " Sur 1", "Monto total con filtro # Lista "
-                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())+ " (" + FDP6.getSelectedItem().toString() + ")"), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText()) + " (" + FDP6.getSelectedItem().toString() + ")"), true);
         }
     }//GEN-LAST:event_Imprimir6ActionPerformed
 
@@ -21395,7 +21394,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 6) {
             Funimprimir(pago5, getTitle() + " Oficina", "Monto total con filtro # Lista "
-                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())+ " (" + FDP5.getSelectedItem().toString() + ")"), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText()) + " (" + FDP5.getSelectedItem().toString() + ")"), true);
         }
     }//GEN-LAST:event_Imprimir5ActionPerformed
 

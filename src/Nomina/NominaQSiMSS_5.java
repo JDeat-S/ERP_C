@@ -1367,20 +1367,19 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         String Share = BNameNom.getText();
         String ShareAP = BAPNom.getText();
         String ShareAM = BAMNom.getText();
-        String where = "select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`"
-                + " from empleados";// where `Status` LIKE '%Vigente%'";
+        String where = "SELECT `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono` FROM `rh.empleados`"
+                + " where `Status` LIKE '%Vigente%'";
 
         if (!"".equals(Share)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%'";// AND `Status` LIKE '%Vigente%'";
+            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
+                    + "from `rh.empleados` WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%'";// AND `Status` LIKE '%Vigente%'";
+            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
+                    + "from `rh.empleados` WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%'";// AND `Status` LIKE '%Vigente%'";
+            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
+                    + "from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }
-
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -20560,7 +20559,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 5) {
             Funimprimir(pago, getTitle() + " Foraneos acapulco", "Monto total de la "
-                    + FiltroQP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText())+ " (" + FDP.getSelectedItem().toString() + ")"), true);
+                    + FiltroQP.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum.getText()) + " (" + FDP.getSelectedItem().toString() + ")"), true);
         }
         if (FP == 6) {
             Funimprimir(pago, getTitle() + " Foraneos acapulco", "Monto total con filtro # Lista "
@@ -20597,7 +20596,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 6) {
             Funimprimir(pago1, getTitle() + " Foraneos puebla", "Monto total con filtro # Lista "
-                    + filtroNDFP1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText())+ " (" + FDP1.getSelectedItem().toString() + ")"), true);
+                    + filtroNDFP1.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum1.getText()) + " (" + FDP1.getSelectedItem().toString() + ")"), true);
         }
     }//GEN-LAST:event_Imprimir1ActionPerformed
 
@@ -20630,7 +20629,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 6) {
             Funimprimir(pago2, getTitle() + " Foraneos toluca", "Monto total con filtro # Lista "
-                    + filtroNDFP2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText())+ " (" + FDP2.getSelectedItem().toString() + ")"), true);
+                    + filtroNDFP2.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum2.getText()) + " (" + FDP2.getSelectedItem().toString() + ")"), true);
         }
     }//GEN-LAST:event_Imprimir2ActionPerformed
 
@@ -20659,7 +20658,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 5) {
             Funimprimir(pago3, getTitle() + " Norte", "Monto total de la "
-                    + FiltroQP3.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText())+ " (" + FDP3.getSelectedItem().toString() + ")"), true);
+                    + FiltroQP3.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum3.getText()) + " (" + FDP3.getSelectedItem().toString() + ")"), true);
         }
         if (FP == 6) {
             Funimprimir(pago3, getTitle() + " Norte", "Monto total con filtro # Lista "
@@ -20693,7 +20692,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 5) {
             Funimprimir(pago4, getTitle() + " Poniente", "Monto total de la "
-                    + FiltroQP4.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText())+ " (" + FDP4.getSelectedItem().toString() + ")"), true);
+                    + FiltroQP4.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum4.getText()) + " (" + FDP4.getSelectedItem().toString() + ")"), true);
         }
         if (FP == 6) {
             Funimprimir(pago4, getTitle() + " Poniente", "Monto total con filtro # Lista "
@@ -20751,7 +20750,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 6) {
             Funimprimir(pago7, getTitle() + " Sur 2", "Monto total con filtro # Lista "
-                    + filtroNDFP7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText())+ " (" + FDP7.getSelectedItem().toString() + ")"), true);
+                    + filtroNDFP7.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum7.getText()) + " (" + FDP7.getSelectedItem().toString() + ")"), true);
         }
     }//GEN-LAST:event_Imprimir7ActionPerformed
 
@@ -21018,7 +21017,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 6) {
             Funimprimir(pago6, getTitle() + " Sur 1", "Monto total con filtro # Lista "
-                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText())+ " (" + FDP6.getSelectedItem().toString() + ")"), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum6.getText()) + " (" + FDP6.getSelectedItem().toString() + ")"), true);
         }
     }//GEN-LAST:event_Imprimir6ActionPerformed
 
@@ -21285,7 +21284,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         }
         if (FP == 6) {
             Funimprimir(pago5, getTitle() + " Oficina", "Monto total con filtro # Lista "
-                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText())+ " (" + FDP5.getSelectedItem().toString() + ")"), true);
+                    + filtroNDFP.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum5.getText()) + " (" + FDP5.getSelectedItem().toString() + ")"), true);
         }
     }//GEN-LAST:event_Imprimir5ActionPerformed
 
@@ -22156,34 +22155,34 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Bampag8KeyReleased
 
     private void Imprimir8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir8ActionPerformed
-             int FP = FiltrosP8.getSelectedIndex();
+        int FP = FiltrosP8.getSelectedIndex();
         DecimalFormat dimp = new DecimalFormat("#.00");
         if (FP == 0) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total: "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total: "
                     + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 1) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total con filtro Apellido P "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total con filtro Apellido P "
                     + BAppag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 2) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total con filtro Apellido M "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total con filtro Apellido M "
                     + Bampag8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 3) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total con filtro Nombre(s) "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total con filtro Nombre(s) "
                     + busp8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 4) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total del servicio "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total del servicio "
                     + FiltroServP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
         if (FP == 5) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total de la "
-                    + FiltroQP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())+ " (" + FDP8.getSelectedItem().toString() + ")"), true);
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total de la "
+                    + FiltroQP8.getSelectedItem().toString() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText()) + " (" + FDP8.getSelectedItem().toString() + ")"), true);
         }
         if (FP == 6) {
-            Funimprimir(pago8, getTitle() + " Sur 2", "Monto total con filtro # Lista "
+            Funimprimir(pago8, getTitle() + " Santander corporativo Quincenal", "Monto total con filtro # Lista "
                     + filtroNDFP8.getText() + ": " + dimp.format(Double.parseDouble(this.MTDsum8.getText())), true);
         }
     }//GEN-LAST:event_Imprimir8ActionPerformed

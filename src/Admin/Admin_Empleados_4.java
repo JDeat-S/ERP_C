@@ -18,6 +18,10 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 /**
  *
@@ -152,7 +156,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
                 + " `Correo electronico` = ?, `Calle` = ?, `# Exterior` = ?, `# Interior` = ?, "
                 + "`Colonia` = ?, `DLG o Mun` = ?, `C.P` = ?, `Documentos originales` = ?,"
                 + " `Documentos faltantes` = ?, `Documentos entregados` = ?, `# Recepcion` = ?"
-                + ", `Observaciones` = ? WHERE `rh.empleados`.`# Exp` = " + NExp.getText() + "";
+                + ", `Observaciones` = ? WHERE `rh.empleados`.`# Exp` = ?";
 
         String EI = "";
         if (EIMSS.isSelected() == true) {
@@ -1223,6 +1227,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         FFB = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         ADA = new javax.swing.JLabel();
+        AADA = new javax.swing.JButton();
         mod = new javax.swing.JButton();
         add = new javax.swing.JButton();
         Cs = new javax.swing.JButton();
@@ -1499,7 +1504,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         Serv.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "IMSS", "PENDIENTE", "EN ESPERA", "RECHAZADO", "TEMPORAL", "VIGENTE", "BOLETINADO", "DEPURADO", "RECHAZADO/DEPURADO", "NO CONTRATAR/DEPURADO", "BOLETINADO/DEPURADO", "BAJA/DEPURADO" }));
+        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "PENDIENTE", "EN ESPERA", "RECHAZADO", "TEMPORAL", "VIGENTE", "BOLETINADO", "DEPURADO", "RECHAZADO/DEPURADO", "NO CONTRATAR/DEPURADO", "BOLETINADO/DEPURADO", "BAJA/DEPURADO" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1703,9 +1708,16 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         jLabel71.setText("# recepcion personal:");
 
-        jLabel26.setText("Años de antiguedad:");
+        jLabel26.setText("Antiguedad del empelado:");
 
         ADA.setText("0");
+
+        AADA.setText("Actualizar antiguedad");
+        AADA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AADAActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1743,7 +1755,10 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
                     .addComponent(FI, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(UDL, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FFB, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ADA))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(ADA)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AADA)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -1794,7 +1809,8 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(ADA))
+                    .addComponent(ADA)
+                    .addComponent(AADA))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel71)
@@ -1848,7 +1864,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
                         .addComponent(add)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Cs)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(284, Short.MAX_VALUE))
         );
         GeneralLayout.setVerticalGroup(
             GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2737,42 +2753,80 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         }
         int fila = data.getSelectedRow();
+        NExp.setText(String.valueOf(data.getValueAt(fila, 0)));
+        APgen.setText(String.valueOf(data.getValueAt(fila, 2)));
+        AMgen.setText(String.valueOf(data.getValueAt(fila, 3)));
+        NameGen.setText(String.valueOf(data.getValueAt(fila, 4)));
+        Celular.setText(String.valueOf(data.getValueAt(fila, 5)));
+        Casa.setText(String.valueOf(data.getValueAt(fila, 6)));
+        Rec.setText(String.valueOf(data.getValueAt(fila, 7)));
+
 //combobox1
-        String combo1 = model.getValueAt(fila, 12).toString();
+        String combo1 = model.getValueAt(fila, 8).toString();
         for (int i = 0; i < fdp.getItemCount(); i++) {
             if (fdp.getItemAt(i).equalsIgnoreCase(combo1)) {
                 fdp.setSelectedIndex(i);
             }
         }
+
+        Sueldo.setText(String.valueOf(data.getValueAt(fila, 9)));
+        Bono.setText(String.valueOf(data.getValueAt(fila, 10)));
+
         //combobox2
-        String combo2 = model.getValueAt(fila, 15).toString();
+        String combo2 = model.getValueAt(fila, 11).toString();
         for (int i = 0; i < Banco.getItemCount(); i++) {
             if (Banco.getItemAt(i).equalsIgnoreCase(combo2)) {
                 Banco.setSelectedIndex(i);
             }
         }
+        cta.setText(String.valueOf(data.getValueAt(fila, 12)));
 
         //combobox5
-        String combo5 = model.getValueAt(fila, 19).toString();
+        String combo5 = model.getValueAt(fila, 15).toString();
         for (int i = 0; i < Status.getItemCount(); i++) {
             if (Status.getItemAt(i).equalsIgnoreCase(combo5)) {
                 Status.setSelectedIndex(i);
             }
         }
+        FE.setText(String.valueOf(data.getValueAt(fila, 16)));
+        FI.setText(String.valueOf(data.getValueAt(fila, 17)));
+        UDL.setText(String.valueOf(data.getValueAt(fila, 18)));
+        FFB.setText(String.valueOf(data.getValueAt(fila, 19)));
+
         //combobox7
-        String combo7 = model.getValueAt(fila, 33).toString();
+        String combo7 = model.getValueAt(fila, 20).toString();
         for (int i = 0; i < bf.getItemCount(); i++) {
             if (bf.getItemAt(i).equalsIgnoreCase(combo7)) {
                 bf.setSelectedIndex(i);
             }
         }
-        //combobox8
-        String combo8 = model.getValueAt(fila, 34).toString();
+        String combo8 = model.getValueAt(fila, 21).toString();
         for (int i = 0; i < cfin.getItemCount(); i++) {
             if (cfin.getItemAt(i).equalsIgnoreCase(combo8)) {
                 cfin.setSelectedIndex(i);
             }
         }
+
+        ADA.setText(String.valueOf(data.getValueAt(fila, 22)));
+        RFC.setText(String.valueOf(data.getValueAt(fila, 23)));
+        NSS.setText(String.valueOf(data.getValueAt(fila, 24)));
+        CURP.setText(String.valueOf(data.getValueAt(fila, 25)));
+        Correo.setText(String.valueOf(data.getValueAt(fila, 26)));
+        Calle.setText(String.valueOf(data.getValueAt(fila, 27)));
+        INT.setText(String.valueOf(data.getValueAt(fila, 28)));
+        Exterior.setText(String.valueOf(data.getValueAt(fila, 29)));
+        Colonia.setText(String.valueOf(data.getValueAt(fila, 30)));
+        DLGMUN.setText(String.valueOf(data.getValueAt(fila, 31)));
+        CP.setText(String.valueOf(data.getValueAt(fila, 32)));
+        DO.setText(String.valueOf(data.getValueAt(fila, 33)));
+        DF.setText(String.valueOf(data.getValueAt(fila, 34)));
+        DE.setText(String.valueOf(data.getValueAt(fila, 35)));
+        NRP.setText(String.valueOf(data.getValueAt(fila, 36)));
+        Obs.setText(String.valueOf(data.getValueAt(fila, 37)));
+        ObsTgen.setText(String.valueOf(data.getValueAt(fila, 37)));
+
+        //combobox8
+
     }//GEN-LAST:event_dataMouseClicked
 
     private void FiltroNGKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNGKeyReleased
@@ -3799,6 +3853,25 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void AADAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AADAActionPerformed
+        if (FI.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Llena el campo fecha de ingreso con el siguiente formato de fecha: dd/MM/yyyy (01/11/2021)");
+        } else {
+            try {
+
+                DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                LocalDate fechaNac = LocalDate.parse(FI.getText(), fmt);
+                LocalDate ahora = LocalDate.now();
+
+                Period periodo = Period.between(fechaNac, ahora);
+                ADA.setText("" + periodo.getYears() + " Años, " + periodo.getMonths() + " Meses, " + periodo.getDays() + " Dias");
+
+            } catch (DateTimeParseException e) {
+                JOptionPane.showMessageDialog(null, "Llena el campo fecha de ingreso con el siguiente formato de fecha: dd/MM/yyyy (01/11/2021)");
+            }
+        }
+    }//GEN-LAST:event_AADAActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3826,6 +3899,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AADA;
     private javax.swing.JLabel ADA;
     private javax.swing.JTextField AMgen;
     private javax.swing.JTextField AMimss;

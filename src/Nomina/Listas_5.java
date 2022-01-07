@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Nomina;
 
 import Conexion.ConexionSQL;
@@ -3128,17 +3123,17 @@ public final class Listas_5 extends javax.swing.JFrame {
         String ShareAP = LDAfilap.getText();
         String ShareAM = LDAfilam.getText();
         String SQL = "select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                + " from empleados where `Status` LIKE '%Vigente%'";
+                + " from `rh.empleados` where `Status` LIKE '%Vigente%'";
 
         if (!"".equals(Share)) {
             SQL = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%'";
+                    + "from `rh.empleados` WHERE `Nombre(s)` LIKE '%" + Share + "%'";
         } else if (!"".equals(ShareAP)) {
             SQL = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
+                    + "from `rh.empleados` WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
         } else if (!"".equals(ShareAM)) {
             SQL = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
+                    + "from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
         }
 
         try {

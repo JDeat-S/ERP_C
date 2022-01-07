@@ -1226,17 +1226,17 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
         String ShareAP = Busapshpre.getText();
         String ShareAM = Busamshpre.getText();
         String where = "select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
-                + " from empleados  where `Status` LIKE '%Vigente%'";
+                + " from `rh.empleados`  where `Status` LIKE '%Vigente%'";
         
         if (!"".equals(Share)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
+                    + "from `rh.empleados` WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
+                    + "from `rh.empleados` WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
             where = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Zona` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
+                    + "from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }
         
         try {

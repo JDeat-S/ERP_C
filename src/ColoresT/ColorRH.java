@@ -21,6 +21,7 @@ public class ColorRH extends DefaultTableCellRenderer {
     Color Pen = new Color(146, 199, 255);
     Color EEs = new Color(152, 244, 147);
     Color Dep = new Color(153, 51, 255);
+    Color Bol = new Color(150, 140, 255);
 
     @Override
 
@@ -47,7 +48,7 @@ public class ColorRH extends DefaultTableCellRenderer {
         } else if (table.getValueAt(row, 15).toString().equals("PENDIENTE")) {
             setBackground(Pen);
         } else if (table.getValueAt(row, 15).toString().equals("BOLETINADO")) {
-            setBackground(RyB);
+            setBackground(Bol);
         } else if (table.getValueAt(row, 15).toString().equals("DEPURADO")) {
             setBackground(Dep);
         } else if (table.getValueAt(row, 15).toString().equals("RECHAZADO/DEPURADO")) {
