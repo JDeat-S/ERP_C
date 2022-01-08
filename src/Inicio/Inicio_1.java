@@ -1,6 +1,5 @@
 package Inicio;
 
-import Admin.Admin_Listas_5;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -49,7 +48,7 @@ public class Inicio_1 extends javax.swing.JFrame {
             }
         });
 
-        BActualizaciones.setText("Ver 1.17.0");
+        BActualizaciones.setText("Ver 1.19.0");
         BActualizaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BActualizacionesActionPerformed(evt);

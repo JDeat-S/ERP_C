@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Admin;
 
 import Conexion.ConexionSQL;
@@ -76,7 +71,106 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         DiaCor14.setVisible(false);
         DiaCor15.setVisible(false);
         DiaCor16.setVisible(false);
-
+        FillLSIabel.setVisible(false);
+        FillLSIabel1.setVisible(false);
+        FillLSIabel2.setVisible(false);
+        FillLSIabel3.setVisible(false);
+        FillLSIabel4.setVisible(false);
+        FillLSIabel5.setVisible(false);
+        FillLSIabel6.setVisible(false);
+        FillLSIabel7.setVisible(false);
+        FillLSIabel8.setVisible(false);
+        FillLSIabel9.setVisible(false);
+        FillLSIAm.setVisible(false);
+        FillLSIAm1.setVisible(false);
+        FillLSIAm2.setVisible(false);
+        FillLSIAm3.setVisible(false);
+        FillLSIAm4.setVisible(false);
+        FillLSIAm5.setVisible(false);
+        FillLSIAm6.setVisible(false);
+        FillLSIAm7.setVisible(false);
+        FillLSIAm8.setVisible(false);
+        FillLSIAm9.setVisible(false);
+        FillLSIAp.setVisible(false);
+        FillLSIAp1.setVisible(false);
+        FillLSIAp2.setVisible(false);
+        FillLSIAp3.setVisible(false);
+        FillLSIAp4.setVisible(false);
+        FillLSIAp5.setVisible(false);
+        FillLSIAp6.setVisible(false);
+        FillLSIAp7.setVisible(false);
+        FillLSIAp8.setVisible(false);
+        FillLSIAp9.setVisible(false);
+        FillLSIName.setVisible(false);
+        FillLSIName1.setVisible(false);
+        FillLSIName2.setVisible(false);
+        FillLSIName3.setVisible(false);
+        FillLSIName4.setVisible(false);
+        FillLSIName5.setVisible(false);
+        FillLSIName6.setVisible(false);
+        FillLSIName7.setVisible(false);
+        FillLSIName8.setVisible(false);
+        FillLSIName9.setVisible(false);
+        FillLSIQuin.setVisible(false);
+        FillLSIQuin1.setVisible(false);
+        FillLSIQuin2.setVisible(false);
+        FillLSIQuin3.setVisible(false);
+        FillLSIQuin4.setVisible(false);
+        FillLSIQuin5.setVisible(false);
+        FillLSIQuin6.setVisible(false);
+        FillLSIQuin7.setVisible(false);
+        FillLSIQuin8.setVisible(false);
+        FillLSIQuin9.setVisible(false);
+        FillLCIabel.setVisible(false);
+        FillLCIabel1.setVisible(false);
+        FillLCIabel2.setVisible(false);
+        FillLCIabel3.setVisible(false);
+        FillLCIabel4.setVisible(false);
+        FillLCIabel5.setVisible(false);
+        FillLCIabel6.setVisible(false);
+        FillLCIabel7.setVisible(false);
+        FillLCIabel8.setVisible(false);
+        FillLCIabel9.setVisible(false);
+        FillLCIAm.setVisible(false);
+        FillLCIAm1.setVisible(false);
+        FillLCIAm2.setVisible(false);
+        FillLCIAm3.setVisible(false);
+        FillLCIAm4.setVisible(false);
+        FillLCIAm5.setVisible(false);
+        FillLCIAm6.setVisible(false);
+        FillLCIAm7.setVisible(false);
+        FillLCIAm8.setVisible(false);
+        FillLCIAm9.setVisible(false);
+        FillLCIAp.setVisible(false);
+        FillLCIAp1.setVisible(false);
+        FillLCIAp2.setVisible(false);
+        FillLCIAp3.setVisible(false);
+        FillLCIAp4.setVisible(false);
+        FillLCIAp5.setVisible(false);
+        FillLCIAp6.setVisible(false);
+        FillLCIAp7.setVisible(false);
+        FillLCIAp8.setVisible(false);
+        FillLCIAp9.setVisible(false);
+        FillLCIName.setVisible(false);
+        FillLCIName1.setVisible(false);
+        FillLCIName2.setVisible(false);
+        FillLCIName3.setVisible(false);
+        FillLCIName4.setVisible(false);
+        FillLCIName5.setVisible(false);
+        FillLCIName6.setVisible(false);
+        FillLCIName7.setVisible(false);
+        FillLCIName8.setVisible(false);
+        FillLCIName9.setVisible(false);
+        FillLCIQuin.setVisible(false);
+        FillLCIQuin1.setVisible(false);
+        FillLCIQuin2.setVisible(false);
+        FillLCIQuin3.setVisible(false);
+        FillLCIQuin4.setVisible(false);
+        FillLCIQuin5.setVisible(false);
+        FillLCIQuin6.setVisible(false);
+        FillLCIQuin7.setVisible(false);
+        FillLCIQuin8.setVisible(false);
+        FillLCIQuin9.setVisible(false);
         DiaCom1.setVisible(false);
         DiaCom2.setVisible(false);
         DiaCom3.setVisible(false);
@@ -99,6 +193,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         MDLDASIMSS();
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
+        ExcelSI.setVisible(false);
         setIconImage(new ImageIcon(Admin_Listas_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
     }
 
@@ -148,244 +243,224 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         FillLCI = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
+        FillLCIabel = new javax.swing.JLabel();
         FillLCIAp = new javax.swing.JTextField();
         FillLCIAm = new javax.swing.JTextField();
         FillLCIName = new javax.swing.JTextField();
         FillLCIQuin = new javax.swing.JComboBox<>();
         jScrollPane7 = new javax.swing.JScrollPane();
         TableLDACI = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         FillLCI1 = new javax.swing.JComboBox<>();
-        jLabel14 = new javax.swing.JLabel();
+        FillLCIabel1 = new javax.swing.JLabel();
         FillLCIAp1 = new javax.swing.JTextField();
         FillLCIAm1 = new javax.swing.JTextField();
         FillLCIName1 = new javax.swing.JTextField();
         FillLCIQuin1 = new javax.swing.JComboBox<>();
         jScrollPane9 = new javax.swing.JScrollPane();
         TableLDACI1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
         jScrollPane10 = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         FillLCI2 = new javax.swing.JComboBox<>();
-        jLabel16 = new javax.swing.JLabel();
+        FillLCIabel2 = new javax.swing.JLabel();
         FillLCIAp2 = new javax.swing.JTextField();
         FillLCIAm2 = new javax.swing.JTextField();
         FillLCIName2 = new javax.swing.JTextField();
         FillLCIQuin2 = new javax.swing.JComboBox<>();
         jScrollPane11 = new javax.swing.JScrollPane();
         TableLDACI2 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
         jScrollPane12 = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         FillLCI3 = new javax.swing.JComboBox<>();
-        jLabel18 = new javax.swing.JLabel();
+        FillLCIabel3 = new javax.swing.JLabel();
         FillLCIAp3 = new javax.swing.JTextField();
         FillLCIAm3 = new javax.swing.JTextField();
         FillLCIName3 = new javax.swing.JTextField();
         FillLCIQuin3 = new javax.swing.JComboBox<>();
         jScrollPane13 = new javax.swing.JScrollPane();
         TableLDACI3 = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
         jScrollPane14 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         FillLCI4 = new javax.swing.JComboBox<>();
-        jLabel20 = new javax.swing.JLabel();
+        FillLCIabel4 = new javax.swing.JLabel();
         FillLCIAp4 = new javax.swing.JTextField();
         FillLCIAm4 = new javax.swing.JTextField();
         FillLCIName4 = new javax.swing.JTextField();
         FillLCIQuin4 = new javax.swing.JComboBox<>();
         jScrollPane15 = new javax.swing.JScrollPane();
         TableLDACI4 = new javax.swing.JTable();
-        jButton5 = new javax.swing.JButton();
         jScrollPane16 = new javax.swing.JScrollPane();
         jPanel7 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         FillLCI5 = new javax.swing.JComboBox<>();
-        jLabel22 = new javax.swing.JLabel();
+        FillLCIabel5 = new javax.swing.JLabel();
         FillLCIAp5 = new javax.swing.JTextField();
         FillLCIAm5 = new javax.swing.JTextField();
         FillLCIName5 = new javax.swing.JTextField();
         FillLCIQuin5 = new javax.swing.JComboBox<>();
         jScrollPane17 = new javax.swing.JScrollPane();
         TableLDACI5 = new javax.swing.JTable();
-        jButton6 = new javax.swing.JButton();
         jScrollPane18 = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         FillLCI6 = new javax.swing.JComboBox<>();
-        jLabel24 = new javax.swing.JLabel();
+        FillLCIabel6 = new javax.swing.JLabel();
         FillLCIAp6 = new javax.swing.JTextField();
         FillLCIAm6 = new javax.swing.JTextField();
         FillLCIName6 = new javax.swing.JTextField();
         FillLCIQuin6 = new javax.swing.JComboBox<>();
         jScrollPane19 = new javax.swing.JScrollPane();
         TableLDACI6 = new javax.swing.JTable();
-        jButton8 = new javax.swing.JButton();
         jScrollPane20 = new javax.swing.JScrollPane();
         jPanel9 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         FillLCI7 = new javax.swing.JComboBox<>();
-        jLabel26 = new javax.swing.JLabel();
+        FillLCIabel7 = new javax.swing.JLabel();
         FillLCIAp7 = new javax.swing.JTextField();
         FillLCIAm7 = new javax.swing.JTextField();
         FillLCIName7 = new javax.swing.JTextField();
         FillLCIQuin7 = new javax.swing.JComboBox<>();
         jScrollPane21 = new javax.swing.JScrollPane();
         TableLDACI7 = new javax.swing.JTable();
-        jButton9 = new javax.swing.JButton();
         jScrollPane22 = new javax.swing.JScrollPane();
         jPanel10 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         FillLCI8 = new javax.swing.JComboBox<>();
-        jLabel28 = new javax.swing.JLabel();
+        FillLCIabel8 = new javax.swing.JLabel();
         FillLCIAp8 = new javax.swing.JTextField();
         FillLCIAm8 = new javax.swing.JTextField();
         FillLCIName8 = new javax.swing.JTextField();
         FillLCIQuin8 = new javax.swing.JComboBox<>();
         jScrollPane23 = new javax.swing.JScrollPane();
         TableLDACI8 = new javax.swing.JTable();
-        jButton10 = new javax.swing.JButton();
         jScrollPane24 = new javax.swing.JScrollPane();
         jPanel11 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         FillLCI9 = new javax.swing.JComboBox<>();
-        jLabel30 = new javax.swing.JLabel();
+        FillLCIabel9 = new javax.swing.JLabel();
         FillLCIAp9 = new javax.swing.JTextField();
         FillLCIAm9 = new javax.swing.JTextField();
         FillLCIName9 = new javax.swing.JTextField();
         FillLCIQuin9 = new javax.swing.JComboBox<>();
         jScrollPane25 = new javax.swing.JScrollPane();
         TableLDACI9 = new javax.swing.JTable();
-        jButton11 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jScrollPane26 = new javax.swing.JScrollPane();
         jPanel12 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         FillLSI = new javax.swing.JComboBox<>();
-        jLabel32 = new javax.swing.JLabel();
+        FillLSIabel = new javax.swing.JLabel();
         FillLSIAp = new javax.swing.JTextField();
         FillLSIAm = new javax.swing.JTextField();
         FillLSIName = new javax.swing.JTextField();
         FillLSIQuin = new javax.swing.JComboBox<>();
         jScrollPane27 = new javax.swing.JScrollPane();
         TableLDASI = new javax.swing.JTable();
-        jButton12 = new javax.swing.JButton();
         jScrollPane28 = new javax.swing.JScrollPane();
         jPanel13 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         FillLSI1 = new javax.swing.JComboBox<>();
-        jLabel34 = new javax.swing.JLabel();
+        FillLSIabel1 = new javax.swing.JLabel();
         FillLSIAp1 = new javax.swing.JTextField();
         FillLSIAm1 = new javax.swing.JTextField();
         FillLSIName1 = new javax.swing.JTextField();
         FillLSIQuin1 = new javax.swing.JComboBox<>();
         jScrollPane29 = new javax.swing.JScrollPane();
         TableLDASI1 = new javax.swing.JTable();
-        jButton13 = new javax.swing.JButton();
         jScrollPane30 = new javax.swing.JScrollPane();
         jPanel14 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         FillLSI2 = new javax.swing.JComboBox<>();
-        jLabel36 = new javax.swing.JLabel();
+        FillLSIabel2 = new javax.swing.JLabel();
         FillLSIAp2 = new javax.swing.JTextField();
         FillLSIAm2 = new javax.swing.JTextField();
         FillLSIName2 = new javax.swing.JTextField();
         FillLSIQuin2 = new javax.swing.JComboBox<>();
         jScrollPane31 = new javax.swing.JScrollPane();
         TableLDASI2 = new javax.swing.JTable();
-        jButton14 = new javax.swing.JButton();
         jScrollPane32 = new javax.swing.JScrollPane();
         jPanel15 = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
         FillLSI3 = new javax.swing.JComboBox<>();
-        jLabel38 = new javax.swing.JLabel();
+        FillLSIabel3 = new javax.swing.JLabel();
         FillLSIAp3 = new javax.swing.JTextField();
         FillLSIAm3 = new javax.swing.JTextField();
         FillLSIName3 = new javax.swing.JTextField();
         FillLSIQuin3 = new javax.swing.JComboBox<>();
         jScrollPane33 = new javax.swing.JScrollPane();
         TableLDASI3 = new javax.swing.JTable();
-        jButton15 = new javax.swing.JButton();
         jScrollPane34 = new javax.swing.JScrollPane();
         jPanel16 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
         FillLSI4 = new javax.swing.JComboBox<>();
-        jLabel40 = new javax.swing.JLabel();
+        FillLSIabel4 = new javax.swing.JLabel();
         FillLSIAp4 = new javax.swing.JTextField();
         FillLSIAm4 = new javax.swing.JTextField();
         FillLSIName4 = new javax.swing.JTextField();
         FillLSIQuin4 = new javax.swing.JComboBox<>();
         jScrollPane35 = new javax.swing.JScrollPane();
         TableLDASI4 = new javax.swing.JTable();
-        jButton16 = new javax.swing.JButton();
         jScrollPane36 = new javax.swing.JScrollPane();
         jPanel17 = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
         FillLSI5 = new javax.swing.JComboBox<>();
-        jLabel42 = new javax.swing.JLabel();
+        FillLSIabel5 = new javax.swing.JLabel();
         FillLSIAp5 = new javax.swing.JTextField();
         FillLSIAm5 = new javax.swing.JTextField();
         FillLSIName5 = new javax.swing.JTextField();
         FillLSIQuin5 = new javax.swing.JComboBox<>();
         jScrollPane37 = new javax.swing.JScrollPane();
         TableLDASI5 = new javax.swing.JTable();
-        jButton17 = new javax.swing.JButton();
         jScrollPane38 = new javax.swing.JScrollPane();
         jPanel18 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
         FillLSI6 = new javax.swing.JComboBox<>();
-        jLabel44 = new javax.swing.JLabel();
+        FillLSIabel6 = new javax.swing.JLabel();
         FillLSIAp6 = new javax.swing.JTextField();
         FillLSIAm6 = new javax.swing.JTextField();
         FillLSIName6 = new javax.swing.JTextField();
         FillLSIQuin6 = new javax.swing.JComboBox<>();
         jScrollPane39 = new javax.swing.JScrollPane();
         TableLDASI6 = new javax.swing.JTable();
-        jButton18 = new javax.swing.JButton();
         jScrollPane40 = new javax.swing.JScrollPane();
         jPanel19 = new javax.swing.JPanel();
         jLabel45 = new javax.swing.JLabel();
         FillLSI7 = new javax.swing.JComboBox<>();
-        jLabel46 = new javax.swing.JLabel();
+        FillLSIabel7 = new javax.swing.JLabel();
         FillLSIAp7 = new javax.swing.JTextField();
         FillLSIAm7 = new javax.swing.JTextField();
         FillLSIName7 = new javax.swing.JTextField();
         FillLSIQuin7 = new javax.swing.JComboBox<>();
         jScrollPane41 = new javax.swing.JScrollPane();
         TableLDASI7 = new javax.swing.JTable();
-        jButton19 = new javax.swing.JButton();
         jScrollPane42 = new javax.swing.JScrollPane();
         jPanel20 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
         FillLSI8 = new javax.swing.JComboBox<>();
-        jLabel48 = new javax.swing.JLabel();
+        FillLSIabel8 = new javax.swing.JLabel();
         FillLSIAp8 = new javax.swing.JTextField();
         FillLSIAm8 = new javax.swing.JTextField();
         FillLSIName8 = new javax.swing.JTextField();
         FillLSIQuin8 = new javax.swing.JComboBox<>();
         jScrollPane43 = new javax.swing.JScrollPane();
         TableLDASI8 = new javax.swing.JTable();
-        jButton20 = new javax.swing.JButton();
         jScrollPane44 = new javax.swing.JScrollPane();
         jPanel21 = new javax.swing.JPanel();
         jLabel49 = new javax.swing.JLabel();
         FillLSI9 = new javax.swing.JComboBox<>();
-        jLabel50 = new javax.swing.JLabel();
+        FillLSIabel9 = new javax.swing.JLabel();
         FillLSIAp9 = new javax.swing.JTextField();
         FillLSIAm9 = new javax.swing.JTextField();
         FillLSIName9 = new javax.swing.JTextField();
         FillLSIQuin9 = new javax.swing.JComboBox<>();
         jScrollPane45 = new javax.swing.JScrollPane();
         TableLDASI9 = new javax.swing.JTable();
-        jButton21 = new javax.swing.JButton();
         DiaCor1 = new com.toedter.calendar.JDateChooser();
         DiaCor2 = new com.toedter.calendar.JDateChooser();
         DiaCor3 = new com.toedter.calendar.JDateChooser();
@@ -418,6 +493,29 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         DiaCom14 = new com.toedter.calendar.JDateChooser();
         DiaCom15 = new com.toedter.calendar.JDateChooser();
         DiaCom16 = new com.toedter.calendar.JDateChooser();
+        ExcelCI = new javax.swing.JButton();
+        ExcelSI = new javax.swing.JButton();
+        jLabel51 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        Menuadm = new javax.swing.JMenu();
+        Nomina1 = new javax.swing.JMenuItem();
+        Administradores = new javax.swing.JMenuItem();
+        ZYS = new javax.swing.JMenuItem();
+        UsuariosRH = new javax.swing.JMenuItem();
+        General = new javax.swing.JMenuItem();
+        Estadias = new javax.swing.JMenuItem();
+        Torteria = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        ODT = new javax.swing.JMenuItem();
+        CDA = new javax.swing.JMenuItem();
+        PRES = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Listas de asistencia");
@@ -557,7 +655,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setText("jLabel12");
+        FillLCIabel.setText("jLabel12");
 
         FillLCIAp.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -595,9 +693,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACIMouseClicked(evt);
+            }
+        });
         jScrollPane7.setViewportView(TableLDACI);
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -612,7 +713,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12)
+                        .addComponent(FillLCIabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIAp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -620,25 +721,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
+                        .addComponent(FillLCIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel10)
-                        .addComponent(FillLCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel12)
-                        .addComponent(FillLCIAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(FillLCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIabel)
+                    .addComponent(FillLCIAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -659,7 +756,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel14.setText("jLabel12");
+        FillLCIabel1.setText("jLabel12");
 
         FillLCIAp1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -697,9 +794,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TableLDACI1KeyReleased(evt);
+            }
+        });
         jScrollPane9.setViewportView(TableLDACI1);
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -714,7 +814,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel14)
+                        .addComponent(FillLCIabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIAp1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -722,25 +822,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIName1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLCIQuin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel13)
-                        .addComponent(FillLCI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel14)
-                        .addComponent(FillLCIAp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIAm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIQuin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton2))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(FillLCI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIabel1)
+                    .addComponent(FillLCIAp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIAm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIQuin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -759,7 +855,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setText("jLabel12");
+        FillLCIabel2.setText("jLabel12");
 
         FillLCIAp2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -797,9 +893,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI2MouseClicked(evt);
+            }
+        });
         jScrollPane11.setViewportView(TableLDACI2);
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -814,7 +913,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel16)
+                        .addComponent(FillLCIabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIAp2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -822,25 +921,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIName2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLCIQuin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel15)
-                        .addComponent(FillLCI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel16)
-                        .addComponent(FillLCIAp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIAm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIQuin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton3))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(FillLCI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIabel2)
+                    .addComponent(FillLCIAp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIAm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIQuin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -859,7 +954,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel18.setText("jLabel12");
+        FillLCIabel3.setText("jLabel12");
 
         FillLCIAp3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -897,9 +992,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI3MouseClicked(evt);
+            }
+        });
         jScrollPane13.setViewportView(TableLDACI3);
-
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -914,7 +1012,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCI3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel18)
+                        .addComponent(FillLCIabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIAp3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -922,25 +1020,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIName3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLCIQuin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel17)
-                        .addComponent(FillLCI3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel18)
-                        .addComponent(FillLCIAp3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIAm3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIName3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIQuin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton4))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(FillLCI3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIabel3)
+                    .addComponent(FillLCIAp3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIAm3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIName3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIQuin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -959,7 +1053,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel20.setText("jLabel12");
+        FillLCIabel4.setText("jLabel12");
 
         FillLCIAp4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -997,9 +1091,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI4MouseClicked(evt);
+            }
+        });
         jScrollPane15.setViewportView(TableLDACI4);
-
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -1014,7 +1111,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCI4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel20)
+                        .addComponent(FillLCIabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIAp4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1022,25 +1119,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIName4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLCIQuin4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel19)
-                        .addComponent(FillLCI4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel20)
-                        .addComponent(FillLCIAp4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIAm4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIName4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIQuin4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton5))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(FillLCI4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIabel4)
+                    .addComponent(FillLCIAp4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIAm4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIName4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIQuin4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1059,7 +1152,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel22.setText("jLabel12");
+        FillLCIabel5.setText("jLabel12");
 
         FillLCIAp5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -1097,9 +1190,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI5MouseClicked(evt);
+            }
+        });
         jScrollPane17.setViewportView(TableLDACI5);
-
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1114,7 +1210,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCI5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel22)
+                        .addComponent(FillLCIabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIAp5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1122,25 +1218,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIName5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLCIQuin5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel21)
-                        .addComponent(FillLCI5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel22)
-                        .addComponent(FillLCIAp5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIAm5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIName5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIQuin5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton6))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(FillLCI5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIabel5)
+                    .addComponent(FillLCIAp5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIAm5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIName5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIQuin5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1159,7 +1251,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel24.setText("jLabel12");
+        FillLCIabel6.setText("jLabel12");
 
         FillLCIAp6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -1197,9 +1289,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI6MouseClicked(evt);
+            }
+        });
         jScrollPane19.setViewportView(TableLDACI6);
-
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1214,7 +1309,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCI6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel24)
+                        .addComponent(FillLCIabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIAp6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1222,25 +1317,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIName6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLCIQuin6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel23)
-                        .addComponent(FillLCI6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel24)
-                        .addComponent(FillLCIAp6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIAm6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIName6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIQuin6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton8))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(FillLCI6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIabel6)
+                    .addComponent(FillLCIAp6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIAm6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIName6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIQuin6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1259,7 +1350,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel26.setText("jLabel12");
+        FillLCIabel7.setText("jLabel12");
 
         FillLCIAp7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -1297,9 +1388,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI7MouseClicked(evt);
+            }
+        });
         jScrollPane21.setViewportView(TableLDACI7);
-
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1314,7 +1408,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCI7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel26)
+                        .addComponent(FillLCIabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIAp7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1322,25 +1416,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIName7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton9)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLCIQuin7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel25)
-                        .addComponent(FillLCI7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel26)
-                        .addComponent(FillLCIAp7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIAm7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIName7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIQuin7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton9))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(FillLCI7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIabel7)
+                    .addComponent(FillLCIAp7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIAm7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIName7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIQuin7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1359,7 +1449,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel28.setText("jLabel12");
+        FillLCIabel8.setText("jLabel12");
 
         FillLCIAp8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -1397,9 +1487,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDACI8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDACI8MouseClicked(evt);
+            }
+        });
         jScrollPane23.setViewportView(TableLDACI8);
-
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1414,7 +1507,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCI8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel28)
+                        .addComponent(FillLCIabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIAp8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1422,25 +1515,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIName8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton10)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLCIQuin8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel27)
-                        .addComponent(FillLCI8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel28)
-                        .addComponent(FillLCIAp8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIAm8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIName8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIQuin8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton10))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(FillLCI8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIabel8)
+                    .addComponent(FillLCIAp8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIAm8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIName8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIQuin8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane23, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1459,7 +1548,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel30.setText("jLabel12");
+        FillLCIabel9.setText("jLabel12");
 
         FillLCIAp9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -1504,13 +1593,6 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         });
         jScrollPane25.setViewportView(TableLDACI9);
 
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
@@ -1524,7 +1606,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel30)
+                        .addComponent(FillLCIabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIAp9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1532,25 +1614,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLCIName9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton11)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLCIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel29)
-                        .addComponent(FillLCI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel30)
-                        .addComponent(FillLCIAp9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIAm9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIName9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLCIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton11))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(FillLCI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIabel9)
+                    .addComponent(FillLCIAp9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIAm9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIName9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLCIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane25, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1573,7 +1651,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel32.setText("jLabel12");
+        FillLSIabel.setText("jLabel12");
 
         FillLSIAp.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -1611,9 +1689,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASIMouseClicked(evt);
+            }
+        });
         jScrollPane27.setViewportView(TableLDASI);
-
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -1628,7 +1709,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel32)
+                        .addComponent(FillLSIabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIAp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1636,25 +1717,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton12)))
+                        .addComponent(FillLSIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel31)
-                        .addComponent(FillLSI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel32)
-                        .addComponent(FillLSIAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton12))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(FillLSI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel)
+                    .addComponent(FillLSIAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1673,7 +1750,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel34.setText("jLabel12");
+        FillLSIabel1.setText("jLabel12");
 
         FillLSIAp1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -1711,9 +1788,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI1MouseClicked(evt);
+            }
+        });
         jScrollPane29.setViewportView(TableLDASI1);
-
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -1728,7 +1808,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel34)
+                        .addComponent(FillLSIabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIAp1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1736,25 +1816,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIName1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIQuin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton13)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLSIQuin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel33)
-                        .addComponent(FillLSI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel34)
-                        .addComponent(FillLSIAp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIAm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIQuin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton13))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(FillLSI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel1)
+                    .addComponent(FillLSIAp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane29, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1773,7 +1849,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel36.setText("jLabel12");
+        FillLSIabel2.setText("jLabel12");
 
         FillLSIAp2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -1811,9 +1887,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI2MouseClicked(evt);
+            }
+        });
         jScrollPane31.setViewportView(TableLDASI2);
-
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -1828,7 +1907,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel36)
+                        .addComponent(FillLSIabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIAp2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1836,25 +1915,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIName2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIQuin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton14)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLSIQuin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel35)
-                        .addComponent(FillLSI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel36)
-                        .addComponent(FillLSIAp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIAm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIQuin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton14))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(FillLSI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel2)
+                    .addComponent(FillLSIAp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane31, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1867,8 +1942,13 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         jLabel37.setText("Filtro:");
 
         FillLSI3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSI3ItemStateChanged(evt);
+            }
+        });
 
-        jLabel38.setText("jLabel12");
+        FillLSIabel3.setText("jLabel12");
 
         FillLSIQuin3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FillLSIQuin3.addItemListener(new java.awt.event.ItemListener() {
@@ -1888,9 +1968,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI3MouseClicked(evt);
+            }
+        });
         jScrollPane33.setViewportView(TableLDASI3);
-
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -1905,7 +1988,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSI3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel38)
+                        .addComponent(FillLSIabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIAp3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1913,25 +1996,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIName3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIQuin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton15)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLSIQuin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel37)
-                        .addComponent(FillLSI3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel38)
-                        .addComponent(FillLSIAp3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIAm3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIName3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIQuin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton15))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(FillLSI3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel3)
+                    .addComponent(FillLSIAp3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane33, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1950,7 +2029,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel40.setText("jLabel12");
+        FillLSIabel4.setText("jLabel12");
 
         FillLSIAp4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -1988,9 +2067,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI4MouseClicked(evt);
+            }
+        });
         jScrollPane35.setViewportView(TableLDASI4);
-
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -2005,7 +2087,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSI4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel40)
+                        .addComponent(FillLSIabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIAp4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2013,25 +2095,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIName4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIQuin4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton16)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLSIQuin4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel39)
-                        .addComponent(FillLSI4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel40)
-                        .addComponent(FillLSIAp4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIAm4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIName4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIQuin4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton16))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(FillLSI4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel4)
+                    .addComponent(FillLSIAp4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane35, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -2050,7 +2128,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel42.setText("jLabel12");
+        FillLSIabel5.setText("jLabel12");
 
         FillLSIAp5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -2088,9 +2166,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI5MouseClicked(evt);
+            }
+        });
         jScrollPane37.setViewportView(TableLDASI5);
-
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -2105,7 +2186,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSI5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel42)
+                        .addComponent(FillLSIabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIAp5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2113,25 +2194,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIName5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIQuin5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton17)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLSIQuin5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel41)
-                        .addComponent(FillLSI5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel42)
-                        .addComponent(FillLSIAp5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIAm5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIName5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIQuin5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton17))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(FillLSI5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel5)
+                    .addComponent(FillLSIAp5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane37, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -2150,7 +2227,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel44.setText("jLabel12");
+        FillLSIabel6.setText("jLabel12");
 
         FillLSIAp6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -2188,9 +2265,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI6MouseClicked(evt);
+            }
+        });
         jScrollPane39.setViewportView(TableLDASI6);
-
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -2205,7 +2285,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSI6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel44)
+                        .addComponent(FillLSIabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIAp6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2213,25 +2293,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIName6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIQuin6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton18)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLSIQuin6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel43)
-                        .addComponent(FillLSI6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel44)
-                        .addComponent(FillLSIAp6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIAm6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIName6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIQuin6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton18))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(FillLSI6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel6)
+                    .addComponent(FillLSIAp6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane39, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -2250,7 +2326,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel46.setText("jLabel12");
+        FillLSIabel7.setText("jLabel12");
 
         FillLSIAp7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -2288,9 +2364,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI7MouseClicked(evt);
+            }
+        });
         jScrollPane41.setViewportView(TableLDASI7);
-
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -2305,7 +2384,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSI7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel46)
+                        .addComponent(FillLSIabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIAp7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2313,25 +2392,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIName7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIQuin7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton19)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLSIQuin7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel45)
-                        .addComponent(FillLSI7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel46)
-                        .addComponent(FillLSIAp7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIAm7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIName7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIQuin7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton19))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(FillLSI7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel7)
+                    .addComponent(FillLSIAp7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane41, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -2350,7 +2425,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel48.setText("jLabel12");
+        FillLSIabel8.setText("jLabel12");
 
         FillLSIAp8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -2388,9 +2463,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI8MouseClicked(evt);
+            }
+        });
         jScrollPane43.setViewportView(TableLDASI8);
-
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -2405,7 +2483,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSI8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel48)
+                        .addComponent(FillLSIabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIAp8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2413,25 +2491,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIName8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIQuin8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton20)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLSIQuin8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel47)
-                        .addComponent(FillLSI8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel48)
-                        .addComponent(FillLSIAp8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIAm8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIName8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIQuin8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton20))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47)
+                    .addComponent(FillLSI8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel8)
+                    .addComponent(FillLSIAp8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane43, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -2450,7 +2524,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel50.setText("jLabel12");
+        FillLSIabel9.setText("jLabel12");
 
         FillLSIAp9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -2488,9 +2562,12 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableLDASI9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI9MouseClicked(evt);
+            }
+        });
         jScrollPane45.setViewportView(TableLDASI9);
-
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -2505,7 +2582,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel50)
+                        .addComponent(FillLSIabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIAp9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2513,25 +2590,21 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FillLSIName9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton21)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FillLSIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel49)
-                        .addComponent(FillLSI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel50)
-                        .addComponent(FillLSIAp9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIAm9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIName9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillLSIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton21))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(FillLSI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel9)
+                    .addComponent(FillLSIAp9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane45, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
@@ -2608,6 +2681,22 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         DiaCom15.setDateFormatString("EEEE");
 
         DiaCom16.setDateFormatString("EEEE");
+
+        ExcelCI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        ExcelCI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExcelCIActionPerformed(evt);
+            }
+        });
+
+        ExcelSI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        ExcelSI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExcelSIActionPerformed(evt);
+            }
+        });
+
+        jLabel51.setText("Re-imprimir lista:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -2706,7 +2795,14 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                                                 .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(Agregar))
-                                            .addComponent(jLabel4)))
+                                            .addComponent(jLabel4))
+                                        .addGap(228, 228, 228)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(ExcelCI)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(ExcelSI))
+                                            .addComponent(jLabel51)))
                                     .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2866,22 +2962,176 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                             .addComponent(DiaCor16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DiaCom16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LDAAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LDAAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Agregar))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(LDAAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LDAAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LDAName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Agregar)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel51)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ExcelCI, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ExcelSI, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
+
+        Menuadm.setText("Todas las ventanas");
+
+        Nomina1.setText("Ventana Nomina");
+        Nomina1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Nomina1ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(Nomina1);
+
+        Administradores.setText("Administradores");
+        Administradores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdministradoresActionPerformed(evt);
+            }
+        });
+        Menuadm.add(Administradores);
+
+        ZYS.setText("Zonas y Servicios");
+        ZYS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ZYSActionPerformed(evt);
+            }
+        });
+        Menuadm.add(ZYS);
+
+        UsuariosRH.setText("Usuarios RH");
+        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsuariosRHActionPerformed(evt);
+            }
+        });
+        Menuadm.add(UsuariosRH);
+
+        General.setText("Empleados General");
+        General.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GeneralActionPerformed(evt);
+            }
+        });
+        Menuadm.add(General);
+
+        Estadias.setText("Alumno de estadia");
+        Estadias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstadiasActionPerformed(evt);
+            }
+        });
+        Menuadm.add(Estadias);
+
+        Torteria.setText("Empleados Torteria");
+        Torteria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TorteriaActionPerformed(evt);
+            }
+        });
+        Menuadm.add(Torteria);
+
+        jMenuBar1.add(Menuadm);
+
+        jMenu1.setText("Cambiar a:");
+
+        jMenu3.setText("Semanal");
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem1.setText("Nomina Semanal IMSS");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem1);
+
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem4.setText("Nomina Semanal General");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem4);
+
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem3.setText("Prestamos Semanales");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem3);
+
+        jMenu1.add(jMenu3);
+
+        jMenu2.setText("Nomina quincenal");
+
+        ODT.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        ODT.setText("Ordenes de taller");
+        ODT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODTActionPerformed(evt);
+            }
+        });
+        jMenu2.add(ODT);
+
+        CDA.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CDA.setText("Caja de ahorro");
+        CDA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDAActionPerformed(evt);
+            }
+        });
+        jMenu2.add(CDA);
+
+        PRES.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        PRES.setText("Prestamos");
+        PRES.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PRESActionPerformed(evt);
+            }
+        });
+        jMenu2.add(PRES);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem2.setText("Nomina General");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
+        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem6.setText("Nomina IMSS");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem6);
+
+        jMenu1.add(jMenu2);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -2891,7 +3141,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE)
         );
 
         pack();
@@ -2941,17 +3191,17 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         String ShareAP = LDAfilap.getText();
         String ShareAM = LDAfilam.getText();
         String SQL = "select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                + " from empleados where `Status` LIKE '%Vigente%'";
+                + " from `rh.empleados` where `Status` LIKE '%Vigente%'";
 
         if (!"".equals(Share)) {
             SQL = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%'";
+                    + "from `rh.empleados` WHERE `Nombre(s)` LIKE '%" + Share + "%'";
         } else if (!"".equals(ShareAP)) {
             SQL = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
+                    + "from `rh.empleados` WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
         } else if (!"".equals(ShareAM)) {
             SQL = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
+                    + "from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
         }
 
         try {
@@ -3064,7 +3314,8 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
                 JFileChooser chooser = new JFileChooser();
                 FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-                chooser.setSelectedFile(new File("Lista de la "));
+                chooser.setSelectedFile(new File("Lista de la " + LDAQuin.getSelectedItem().toString() + " de " + LDAZon.getText() + " de "
+                        + LDAAp.getText() + " " + " " + LDAAm.getText() + " " + LDAName.getText()));
                 chooser.setFileFilter(filter);
                 chooser.setDialogTitle("Guardar archivo");
                 chooser.setAcceptAllFileFilterUsed(false);
@@ -3087,7 +3338,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
                     );
 
                     Statement statement = connect.createStatement();
-                    ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + ".simss` WHERE " + ULDA.getText());
+                    ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + "` WHERE " + ULDA.getText());
                     try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                         XSSFWorkbook libro = new XSSFWorkbook();
                         XSSFSheet spreadsheet = libro.createSheet(("Lista"));
@@ -3877,8 +4128,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
 
         }
 
-        if (CI.isSelected()
-                == false) {
+        if (CI.isSelected() == false) {
             String SQL = "INSERT INTO `nomina.listas." + LDAZon.getText() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
@@ -17584,13 +17834,113 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FillLCIQuinItemStateChanged
 
     private void FillLCIItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIItemStateChanged
+        if (FillLCI.getSelectedIndex() == 0) {
+            FillLCIabel.setVisible(false);
+            FillLCIAm.setVisible(false);
+            FillLCIAm.setText("");
+            FillLCIAp.setVisible(false);
+            FillLCIAp.setText("");
+            FillLCIName.setVisible(false);
+            FillLCIName.setText("");
+            FillLCIQuin.setVisible(false);
+            FillLCIQuin.setSelectedIndex(0);
 
+        }
+        if (FillLCI.getSelectedIndex() == 1) {
+            FillLCIabel.setVisible(true);
+            FillLCIabel.setText("Buscar apellido P:");
+            FillLCIAm.setVisible(false);
+            FillLCIAm.setText("");
+            FillLCIAp.setVisible(true);
+            FillLCIAp.setText("");
+            FillLCIName.setVisible(false);
+            FillLCIName.setText("");
+            FillLCIQuin.setVisible(false);
+            FillLCIQuin.setSelectedIndex(0);
+
+        }
+        if (FillLCI.getSelectedIndex() == 2) {
+            FillLCIabel.setVisible(true);
+            FillLCIabel.setText("Buscar apellido M:");
+            FillLCIAm.setVisible(true);
+            FillLCIAm.setText("");
+            FillLCIAp.setVisible(false);
+            FillLCIAp.setText("");
+            FillLCIName.setVisible(false);
+            FillLCIName.setText("");
+            FillLCIQuin.setVisible(false);
+            FillLCIQuin.setSelectedIndex(0);
+
+        }
+        if (FillLCI.getSelectedIndex() == 3) {
+            FillLCIabel.setVisible(true);
+            FillLCIabel.setText("Buscar Quincena:");
+            FillLCIAm.setVisible(false);
+            FillLCIAm.setText("");
+            FillLCIAp.setVisible(false);
+            FillLCIAp.setText("");
+            FillLCIName.setVisible(false);
+            FillLCIName.setText("");
+            FillLCIQuin.setVisible(true);
+            FillLCIQuin.setSelectedIndex(0);
+
+        }
         MDLDA();
 
     }//GEN-LAST:event_FillLCIItemStateChanged
 
     private void FillLCI1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI1ItemStateChanged
+        if (FillLCI1.getSelectedIndex() == 0) {
+            FillLCIabel1.setVisible(false);
+            FillLCIAm1.setVisible(false);
+            FillLCIAm1.setText("");
+            FillLCIAp1.setVisible(false);
+            FillLCIAp1.setText("");
+            FillLCIName1.setVisible(false);
+            FillLCIName1.setText("");
+            FillLCIQuin1.setVisible(false);
+            FillLCIQuin1.setSelectedIndex(0);
 
+        }
+        if (FillLCI1.getSelectedIndex() == 1) {
+            FillLCIabel1.setVisible(true);
+            FillLCIabel1.setText("Buscar apellido P:");
+            FillLCIAm1.setVisible(false);
+            FillLCIAm1.setText("");
+            FillLCIAp1.setVisible(true);
+            FillLCIAp1.setText("");
+            FillLCIName1.setVisible(false);
+            FillLCIName1.setText("");
+            FillLCIQuin1.setVisible(false);
+            FillLCIQuin1.setSelectedIndex(0);
+
+        }
+        if (FillLCI1.getSelectedIndex() == 2) {
+            FillLCIabel1.setVisible(true);
+            FillLCIabel1.setText("Buscar apellido M:");
+            FillLCIAm1.setVisible(true);
+            FillLCIAm1.setText("");
+            FillLCIAp1.setVisible(false);
+            FillLCIAp1.setText("");
+            FillLCIName1.setVisible(false);
+            FillLCIName1.setText("");
+            FillLCIQuin1.setVisible(false);
+            FillLCIQuin1.setSelectedIndex(0);
+
+        }
+        if (FillLCI1.getSelectedIndex() == 3) {
+            FillLCIabel1.setVisible(true);
+            FillLCIabel1.setText("Buscar Quincena:");
+            FillLCIAm1.setVisible(false);
+            FillLCIAm1.setText("");
+            FillLCIAp1.setVisible(false);
+            FillLCIAp1.setText("");
+            FillLCIName1.setVisible(false);
+            FillLCIName1.setText("");
+            FillLCIQuin1.setVisible(true);
+            FillLCIQuin1.setSelectedIndex(0);
+
+        }
         MDLDA();
 
     }//GEN-LAST:event_FillLCI1ItemStateChanged
@@ -17612,6 +17962,57 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FillLCIQuin1ItemStateChanged
 
     private void FillLCI2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI2ItemStateChanged
+        if (FillLCI2.getSelectedIndex() == 0) {
+            FillLCIabel2.setVisible(false);
+            FillLCIAm2.setVisible(false);
+            FillLCIAm2.setText("");
+            FillLCIAp2.setVisible(false);
+            FillLCIAp2.setText("");
+            FillLCIName2.setVisible(false);
+            FillLCIName2.setText("");
+            FillLCIQuin2.setVisible(false);
+            FillLCIQuin2.setSelectedIndex(0);
+
+        }
+        if (FillLCI2.getSelectedIndex() == 1) {
+            FillLCIabel2.setVisible(true);
+            FillLCIabel2.setText("Buscar apellido P:");
+            FillLCIAm2.setVisible(false);
+            FillLCIAm2.setText("");
+            FillLCIAp2.setVisible(true);
+            FillLCIAp2.setText("");
+            FillLCIName2.setVisible(false);
+            FillLCIName2.setText("");
+            FillLCIQuin2.setVisible(false);
+            FillLCIQuin2.setSelectedIndex(0);
+
+        }
+        if (FillLCI2.getSelectedIndex() == 2) {
+            FillLCIabel2.setVisible(true);
+            FillLCIabel2.setText("Buscar apellido M:");
+            FillLCIAm2.setVisible(true);
+            FillLCIAm2.setText("");
+            FillLCIAp2.setVisible(false);
+            FillLCIAp2.setText("");
+            FillLCIName2.setVisible(false);
+            FillLCIName2.setText("");
+            FillLCIQuin2.setVisible(false);
+            FillLCIQuin2.setSelectedIndex(0);
+
+        }
+        if (FillLCI2.getSelectedIndex() == 3) {
+            FillLCIabel2.setVisible(true);
+            FillLCIabel2.setText("Buscar Quincena:");
+            FillLCIAm2.setVisible(false);
+            FillLCIAm2.setText("");
+            FillLCIAp2.setVisible(false);
+            FillLCIAp2.setText("");
+            FillLCIName2.setVisible(false);
+            FillLCIName2.setText("");
+            FillLCIQuin2.setVisible(true);
+            FillLCIQuin2.setSelectedIndex(0);
+
+        }
         MDLDA();
     }//GEN-LAST:event_FillLCI2ItemStateChanged
 
@@ -17628,6 +18029,57 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FillLCIQuin2KeyReleased
 
     private void FillLCI3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI3ItemStateChanged
+        if (FillLCI3.getSelectedIndex() == 0) {
+            FillLCIabel3.setVisible(false);
+            FillLCIAm3.setVisible(false);
+            FillLCIAm3.setText("");
+            FillLCIAp3.setVisible(false);
+            FillLCIAp3.setText("");
+            FillLCIName3.setVisible(false);
+            FillLCIName3.setText("");
+            FillLCIQuin3.setVisible(false);
+            FillLCIQuin3.setSelectedIndex(0);
+
+        }
+        if (FillLCI3.getSelectedIndex() == 1) {
+            FillLCIabel3.setVisible(true);
+            FillLCIabel3.setText("Buscar apellido P:");
+            FillLCIAm3.setVisible(false);
+            FillLCIAm3.setText("");
+            FillLCIAp3.setVisible(true);
+            FillLCIAp3.setText("");
+            FillLCIName3.setVisible(false);
+            FillLCIName3.setText("");
+            FillLCIQuin3.setVisible(false);
+            FillLCIQuin3.setSelectedIndex(0);
+
+        }
+        if (FillLCI3.getSelectedIndex() == 2) {
+            FillLCIabel3.setVisible(true);
+            FillLCIabel3.setText("Buscar apellido M:");
+            FillLCIAm3.setVisible(true);
+            FillLCIAm3.setText("");
+            FillLCIAp3.setVisible(false);
+            FillLCIAp3.setText("");
+            FillLCIName3.setVisible(false);
+            FillLCIName3.setText("");
+            FillLCIQuin3.setVisible(false);
+            FillLCIQuin3.setSelectedIndex(0);
+
+        }
+        if (FillLCI3.getSelectedIndex() == 3) {
+            FillLCIabel3.setVisible(true);
+            FillLCIabel3.setText("Buscar Quincena:");
+            FillLCIAm3.setVisible(false);
+            FillLCIAm3.setText("");
+            FillLCIAp3.setVisible(false);
+            FillLCIAp3.setText("");
+            FillLCIName3.setVisible(false);
+            FillLCIName3.setText("");
+            FillLCIQuin3.setVisible(true);
+            FillLCIQuin3.setSelectedIndex(0);
+
+        }
         MDLDA();
     }//GEN-LAST:event_FillLCI3ItemStateChanged
 
@@ -17667,11 +18119,113 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FillLCIAp4KeyReleased
 
     private void FillLCI4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI4ItemStateChanged
+        if (FillLCI4.getSelectedIndex() == 0) {
+            FillLCIabel4.setVisible(false);
+            FillLCIAm4.setVisible(false);
+            FillLCIAm4.setText("");
+            FillLCIAp4.setVisible(false);
+            FillLCIAp4.setText("");
+            FillLCIName4.setVisible(false);
+            FillLCIName4.setText("");
+            FillLCIQuin4.setVisible(false);
+            FillLCIQuin4.setSelectedIndex(0);
+
+        }
+        if (FillLCI4.getSelectedIndex() == 1) {
+            FillLCIabel4.setVisible(false);
+            FillLCIabel4.setText("Buscar apellido P:");
+            FillLCIAm4.setVisible(false);
+            FillLCIAm4.setText("");
+            FillLCIAp4.setVisible(true);
+            FillLCIAp4.setText("");
+            FillLCIName4.setVisible(false);
+            FillLCIName4.setText("");
+            FillLCIQuin4.setVisible(false);
+            FillLCIQuin4.setSelectedIndex(0);
+
+        }
+        if (FillLCI4.getSelectedIndex() == 2) {
+            FillLCIabel4.setVisible(false);
+            FillLCIabel4.setText("Buscar apellido M:");
+            FillLCIAm4.setVisible(true);
+            FillLCIAm4.setText("");
+            FillLCIAp4.setVisible(false);
+            FillLCIAp4.setText("");
+            FillLCIName4.setVisible(false);
+            FillLCIName4.setText("");
+            FillLCIQuin4.setVisible(false);
+            FillLCIQuin4.setSelectedIndex(0);
+
+        }
+        if (FillLCI4.getSelectedIndex() == 3) {
+            FillLCIabel4.setVisible(false);
+            FillLCIabel4.setText("Buscar Quincena:");
+            FillLCIAm4.setVisible(false);
+            FillLCIAm4.setText("");
+            FillLCIAp4.setVisible(false);
+            FillLCIAp4.setText("");
+            FillLCIName4.setVisible(false);
+            FillLCIName4.setText("");
+            FillLCIQuin4.setVisible(true);
+            FillLCIQuin4.setSelectedIndex(0);
+
+        }
         MDLDA();
 
     }//GEN-LAST:event_FillLCI4ItemStateChanged
 
     private void FillLCI5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI5ItemStateChanged
+        if (FillLCI5.getSelectedIndex() == 0) {
+            FillLCIabel5.setVisible(false);
+            FillLCIAm5.setVisible(false);
+            FillLCIAm5.setText("");
+            FillLCIAp5.setVisible(false);
+            FillLCIAp5.setText("");
+            FillLCIName5.setVisible(false);
+            FillLCIName5.setText("");
+            FillLCIQuin5.setVisible(false);
+            FillLCIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLCI5.getSelectedIndex() == 1) {
+            FillLCIabel5.setVisible(true);
+            FillLCIabel5.setText("Buscar apellido P:");
+            FillLCIAm5.setVisible(true);
+            FillLCIAm5.setText("");
+            FillLCIAp5.setVisible(true);
+            FillLCIAp5.setText("");
+            FillLCIName5.setVisible(false);
+            FillLCIName5.setText("");
+            FillLCIQuin5.setVisible(false);
+            FillLCIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLCI5.getSelectedIndex() == 2) {
+            FillLCIabel5.setVisible(true);
+            FillLCIabel5.setText("Buscar apellido M:");
+            FillLCIAm5.setVisible(true);
+            FillLCIAm5.setText("");
+            FillLCIAp5.setVisible(false);
+            FillLCIAp5.setText("");
+            FillLCIName5.setVisible(false);
+            FillLCIName5.setText("");
+            FillLCIQuin5.setVisible(false);
+            FillLCIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLCI5.getSelectedIndex() == 3) {
+            FillLCIabel5.setVisible(true);
+            FillLCIabel5.setText("Buscar Quincena:");
+            FillLCIAm5.setVisible(false);
+            FillLCIAm5.setText("");
+            FillLCIAp5.setVisible(false);
+            FillLCIAp5.setText("");
+            FillLCIName5.setVisible(false);
+            FillLCIName5.setText("");
+            FillLCIQuin5.setVisible(true);
+            FillLCIQuin5.setSelectedIndex(0);
+
+        }
         MDLDA();
 
     }//GEN-LAST:event_FillLCI5ItemStateChanged
@@ -17697,6 +18251,57 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FillLCIQuin5KeyReleased
 
     private void FillLCI6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI6ItemStateChanged
+        if (FillLCI6.getSelectedIndex() == 0) {
+            FillLCIabel6.setVisible(false);
+            FillLCIAm6.setVisible(false);
+            FillLCIAm6.setText("");
+            FillLCIAp6.setVisible(false);
+            FillLCIAp6.setText("");
+            FillLCIName6.setVisible(false);
+            FillLCIName6.setText("");
+            FillLCIQuin6.setVisible(false);
+            FillLCIQuin6.setSelectedIndex(0);
+
+        }
+        if (FillLCI6.getSelectedIndex() == 1) {
+            FillLCIabel6.setVisible(true);
+            FillLCIabel6.setText("Buscar apellido P:");
+            FillLCIAm6.setVisible(false);
+            FillLCIAm6.setText("");
+            FillLCIAp6.setVisible(true);
+            FillLCIAp6.setText("");
+            FillLCIName6.setVisible(false);
+            FillLCIName6.setText("");
+            FillLCIQuin6.setVisible(false);
+            FillLCIQuin6.setSelectedIndex(0);
+
+        }
+        if (FillLCI6.getSelectedIndex() == 2) {
+            FillLCIabel6.setVisible(true);
+            FillLCIabel6.setText("Buscar apellido M:");
+            FillLCIAm6.setVisible(true);
+            FillLCIAm6.setText("");
+            FillLCIAp6.setVisible(false);
+            FillLCIAp6.setText("");
+            FillLCIName6.setVisible(false);
+            FillLCIName6.setText("");
+            FillLCIQuin6.setVisible(false);
+            FillLCIQuin6.setSelectedIndex(0);
+
+        }
+        if (FillLCI6.getSelectedIndex() == 3) {
+            FillLCIabel6.setVisible(true);
+            FillLCIabel6.setText("Buscar Quincena:");
+            FillLCIAm6.setVisible(false);
+            FillLCIAm6.setText("");
+            FillLCIAp6.setVisible(false);
+            FillLCIAp6.setText("");
+            FillLCIName6.setVisible(false);
+            FillLCIName6.setText("");
+            FillLCIQuin6.setVisible(true);
+            FillLCIQuin6.setSelectedIndex(0);
+
+        }
         MDLDA();
 
     }//GEN-LAST:event_FillLCI6ItemStateChanged
@@ -17722,6 +18327,57 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FillLCIQuin6ItemStateChanged
 
     private void FillLCI7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI7ItemStateChanged
+        if (FillLCI7.getSelectedIndex() == 0) {
+            FillLCIabel7.setVisible(false);
+            FillLCIAm7.setVisible(false);
+            FillLCIAm7.setText("");
+            FillLCIAp7.setVisible(false);
+            FillLCIAp7.setText("");
+            FillLCIName7.setVisible(false);
+            FillLCIName7.setText("");
+            FillLCIQuin7.setVisible(false);
+            FillLCIQuin7.setSelectedIndex(0);
+
+        }
+        if (FillLCI7.getSelectedIndex() == 1) {
+            FillLCIabel7.setVisible(true);
+            FillLCIabel7.setText("Buscar apellido P:");
+            FillLCIAm7.setVisible(false);
+            FillLCIAm7.setText("");
+            FillLCIAp7.setVisible(true);
+            FillLCIAp7.setText("");
+            FillLCIName7.setVisible(false);
+            FillLCIName7.setText("");
+            FillLCIQuin7.setVisible(false);
+            FillLCIQuin7.setSelectedIndex(0);
+
+        }
+        if (FillLCI7.getSelectedIndex() == 2) {
+            FillLCIabel7.setVisible(true);
+            FillLCIabel7.setText("Buscar apellido M:");
+            FillLCIAm7.setVisible(true);
+            FillLCIAm7.setText("");
+            FillLCIAp7.setVisible(false);
+            FillLCIAp7.setText("");
+            FillLCIName7.setVisible(false);
+            FillLCIName7.setText("");
+            FillLCIQuin7.setVisible(false);
+            FillLCIQuin7.setSelectedIndex(0);
+
+        }
+        if (FillLCI7.getSelectedIndex() == 3) {
+            FillLCIabel7.setVisible(true);
+            FillLCIabel7.setText("Buscar Quincena:");
+            FillLCIAm7.setVisible(false);
+            FillLCIAm7.setText("");
+            FillLCIAp7.setVisible(false);
+            FillLCIAp7.setText("");
+            FillLCIName7.setVisible(false);
+            FillLCIName7.setText("");
+            FillLCIQuin7.setVisible(true);
+            FillLCIQuin7.setSelectedIndex(0);
+
+        }
         MDLDA();
 
     }//GEN-LAST:event_FillLCI7ItemStateChanged
@@ -17747,6 +18403,57 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FillLCIQuin7ItemStateChanged
 
     private void FillLCI8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI8ItemStateChanged
+        if (FillLCI8.getSelectedIndex() == 0) {
+            FillLCIabel8.setVisible(false);
+            FillLCIAm8.setVisible(false);
+            FillLCIAm8.setText("");
+            FillLCIAp8.setVisible(false);
+            FillLCIAp8.setText("");
+            FillLCIName8.setVisible(false);
+            FillLCIName8.setText("");
+            FillLCIQuin8.setVisible(false);
+            FillLCIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLCI8.getSelectedIndex() == 1) {
+            FillLCIabel8.setVisible(true);
+            FillLCIabel8.setText("Buscar apellido P:");
+            FillLCIAm8.setVisible(false);
+            FillLCIAm8.setText("");
+            FillLCIAp8.setVisible(true);
+            FillLCIAp8.setText("");
+            FillLCIName8.setVisible(false);
+            FillLCIName8.setText("");
+            FillLCIQuin8.setVisible(false);
+            FillLCIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLCI8.getSelectedIndex() == 2) {
+            FillLCIabel8.setVisible(true);
+            FillLCIabel8.setText("Buscar apellido M:");
+            FillLCIAm8.setVisible(true);
+            FillLCIAm8.setText("");
+            FillLCIAp8.setVisible(false);
+            FillLCIAp8.setText("");
+            FillLCIName8.setVisible(false);
+            FillLCIName8.setText("");
+            FillLCIQuin8.setVisible(false);
+            FillLCIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLCI8.getSelectedIndex() == 3) {
+            FillLCIabel8.setVisible(true);
+            FillLCIabel8.setText("Buscar Quincena:");
+            FillLCIAm8.setVisible(false);
+            FillLCIAm8.setText("");
+            FillLCIAp8.setVisible(false);
+            FillLCIAp8.setText("");
+            FillLCIName8.setVisible(false);
+            FillLCIName8.setText("");
+            FillLCIQuin8.setVisible(true);
+            FillLCIQuin8.setSelectedIndex(0);
+
+        }
         MDLDA();
 
     }//GEN-LAST:event_FillLCI8ItemStateChanged
@@ -17792,1015 +18499,2793 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FillLCIAp9KeyReleased
 
     private void FillLCI9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI9ItemStateChanged
+        if (FillLCI9.getSelectedIndex() == 0) {
+            FillLCIabel9.setVisible(false);
+            FillLCIAm9.setVisible(false);
+            FillLCIAm9.setText("");
+            FillLCIAp9.setVisible(false);
+            FillLCIAp9.setText("");
+            FillLCIName9.setVisible(false);
+            FillLCIName9.setText("");
+            FillLCIQuin9.setVisible(false);
+            FillLCIQuin9.setSelectedIndex(0);
+
+        }
+        if (FillLCI9.getSelectedIndex() == 1) {
+            FillLCIabel9.setVisible(true);
+            FillLCIabel9.setText("Buscar apellido P:");
+            FillLCIAm9.setVisible(false);
+            FillLCIAm9.setText("");
+            FillLCIAp9.setVisible(true);
+            FillLCIAp9.setText("");
+            FillLCIName9.setVisible(false);
+            FillLCIName9.setText("");
+            FillLCIQuin9.setVisible(false);
+            FillLCIQuin9.setSelectedIndex(0);
+
+        }
+        if (FillLCI9.getSelectedIndex() == 2) {
+            FillLCIabel9.setVisible(true);
+            FillLCIabel9.setText("Buscar apellido M:");
+            FillLCIAm9.setVisible(true);
+            FillLCIAm9.setText("");
+            FillLCIAp9.setVisible(false);
+            FillLCIAp9.setText("");
+            FillLCIName9.setVisible(false);
+            FillLCIName9.setText("");
+            FillLCIQuin9.setVisible(false);
+            FillLCIQuin9.setSelectedIndex(0);
+
+        }
+        if (FillLCI9.getSelectedIndex() == 3) {
+            FillLCIabel9.setVisible(true);
+            FillLCIabel9.setText("Buscar Quincena:");
+            FillLCIAm9.setVisible(false);
+            FillLCIAm9.setText("");
+            FillLCIAp9.setVisible(false);
+            FillLCIAp9.setText("");
+            FillLCIName9.setVisible(false);
+            FillLCIName9.setText("");
+            FillLCIQuin9.setVisible(true);
+            FillLCIQuin9.setSelectedIndex(0);
+
+        }
         MDLDA();
 
     }//GEN-LAST:event_FillLCI9ItemStateChanged
 
-    private void FillLSIItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIItemStateChanged
-
-    private void FillLSIApKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIApKeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIApKeyReleased
-
-    private void FillLSIAmKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAmKeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAmKeyReleased
-
-    private void FillLSINameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSINameKeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSINameKeyReleased
-
-    private void FillLSIQuinKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIQuinKeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIQuinKeyReleased
-
-    private void FillLSI1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI1ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSI1ItemStateChanged
-
-    private void FillLSIAp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp1KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAp1KeyReleased
-
-    private void FillLSIAm1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm1KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAm1KeyReleased
-
-    private void FillLSIName1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName1KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIName1KeyReleased
-
-    private void FillLSIQuin1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin1ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIQuin1ItemStateChanged
-
-    private void FillLSI2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI2ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSI2ItemStateChanged
-
-    private void FillLSIAp2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp2KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAp2KeyReleased
-
-    private void FillLSIAm2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm2KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAm2KeyReleased
-
-    private void FillLSIName2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName2KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIName2KeyReleased
-
-    private void FillLSIQuin2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin2ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIQuin2ItemStateChanged
-
-    private void FillLSIQuin3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin3ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIQuin3ItemStateChanged
-
-    private void FillLSI4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI4ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSI4ItemStateChanged
-
-    private void FillLSIAp4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp4KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAp4KeyReleased
-
-    private void FillLSIAm4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm4KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAm4KeyReleased
-
-    private void FillLSIName4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName4KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIName4KeyReleased
-
-    private void FillLSIQuin4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIQuin4KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIQuin4KeyReleased
-
-    private void FillLSI5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI5ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSI5ItemStateChanged
-
-    private void FillLSIAp5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp5KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAp5KeyReleased
-
-    private void FillLSIAm5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm5KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAm5KeyReleased
-
-    private void FillLSIName5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName5KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIName5KeyReleased
-
-    private void FillLSIQuin5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin5ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIQuin5ItemStateChanged
-
-    private void FillLSI6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI6ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSI6ItemStateChanged
-
-    private void FillLSIAp6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp6KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAp6KeyReleased
-
-    private void FillLSIAm6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm6KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAm6KeyReleased
-
-    private void FillLSIName6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName6KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIName6KeyReleased
-
-    private void FillLSIQuin6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin6ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIQuin6ItemStateChanged
-
-    private void FillLSIQuin7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin7ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIQuin7ItemStateChanged
-
-    private void FillLSIName7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName7KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIName7KeyReleased
-
-    private void FillLSIAm7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm7KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAm7KeyReleased
-
-    private void FillLSIAp7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp7KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAp7KeyReleased
-
-    private void FillLSI7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI7ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSI7ItemStateChanged
-
-    private void FillLSI8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI8ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSI8ItemStateChanged
-
-    private void FillLSIAp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp8KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAp8KeyReleased
-
-    private void FillLSIAm8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm8KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAm8KeyReleased
-
-    private void FillLSIName8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName8KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIName8KeyReleased
-
-    private void FillLSIQuin8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin8ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIQuin8ItemStateChanged
-
-    private void FillLSIQuin9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin9ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIQuin9ItemStateChanged
-
-    private void FillLSIName9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName9KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIName9KeyReleased
-
-    private void FillLSIAm9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm9KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAm9KeyReleased
-
-    private void FillLSIAp9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp9KeyReleased
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSIAp9KeyReleased
-
-    private void FillLSI9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI9ItemStateChanged
-        MDLDASIMSS();
-
-    }//GEN-LAST:event_FillLSI9ItemStateChanged
-
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-
-        
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void TableLDACI9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI9MouseClicked
-                JFileChooser chooser = new JFileChooser();
-                FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-                chooser.setSelectedFile(new File("Lista de la "));
-                chooser.setFileFilter(filter);
-                chooser.setDialogTitle("Guardar archivo");
-                chooser.setAcceptAllFileFilterUsed(false);
-                if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-                    String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+    private void ExcelCIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcelCIActionPerformed
+        if (LDA.getText().equals("0")) {
+            JOptionPane.showMessageDialog(this, "Selecciona una lista.");
+
+        } else {
+            JFileChooser chooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
+            chooser.setSelectedFile(new File("Lista de la " + LDAQuin.getSelectedItem().toString() + " de " + LDAZon.getText() + " de "
+                    + LDAAp.getText() + " " + " " + LDAAm.getText() + " " + LDAName.getText()));
+            chooser.setFileFilter(filter);
+            chooser.setDialogTitle("Guardar archivo");
+            chooser.setAcceptAllFileFilterUsed(false);
+            if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+            }
+            try {
+                String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
+                File archivoXLS = new File(ruta);
+                if (archivoXLS.exists()) {
+                    archivoXLS.delete();
                 }
-                try {
-                    String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
-                    File archivoXLS = new File(ruta);
-                    if (archivoXLS.exists()) {
-                        archivoXLS.delete();
-                    }
-                    archivoXLS.createNewFile();
+                archivoXLS.createNewFile();
 
-                    Class.forName("com.mysql.cj.jdbc.Driver");
-                    Connection connect = DriverManager.getConnection(
-                            "jdbc:mysql://192.168.1.170:3306/confort",
-                            "Servidor",
-                            "Confort1022"
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection connect = DriverManager.getConnection(
+                        "jdbc:mysql://192.168.1.170:3306/confort",
+                        "Servidor",
+                        "Confort1022"
+                );
+
+                Statement statement = connect.createStatement();
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + "` WHERE " + LDA.getText());
+                try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                    XSSFWorkbook libro = new XSSFWorkbook();
+                    XSSFSheet spreadsheet = libro.createSheet(("Lista"));
+
+                    XSSFRow row = spreadsheet.createRow((short) 0);
+                    XSSFCell cell = (XSSFCell) row.createCell((short) 0);
+
+                    XSSFCellStyle Encabezado = libro.createCellStyle();
+                    Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                    Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+
+                    XSSFCellStyle Stilodd = libro.createCellStyle();
+
+                    Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                    Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                    Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                    Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
+                    Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                    XSSFCellStyle StiloEEEE = libro.createCellStyle();
+
+                    StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                    StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                    StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                    StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
+                    StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                    XSSFCellStyle Contenido = libro.createCellStyle();
+                    Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                    Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+                    Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                    Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                    Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                    Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
+
+                    cell.setCellValue("L I S T A  D E  A S I S T E N C I A");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    0, //first row (0-based)
+                                    0, //last row (0-based)
+                                    0, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
                     );
 
-                    Statement statement = connect.createStatement();
-                    ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + ".simss` WHERE " + ULDA.getText());
-                    try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
-                        XSSFWorkbook libro = new XSSFWorkbook();
-                        XSSFSheet spreadsheet = libro.createSheet(("Lista"));
+                    row = spreadsheet.createRow(1);
+                    cell = row.createCell(2);
+                    cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
+                    cell.setCellStyle(Encabezado);
 
-                        XSSFRow row = spreadsheet.createRow((short) 0);
-                        XSSFCell cell = (XSSFCell) row.createCell((short) 0);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    2, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+//quincena etc mañana
+                    row = spreadsheet.createRow(4);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    4, //first row (0-based)
+                                    4, //last row (0-based)
+                                    0, //first column (0-based)
+                                    1 //last column (0-based)
+                            )
+                    );
+                    row.setHeight((short) 500);
+                    cell = row.createCell(0);
+                    spreadsheet.setColumnWidth(0, 750);
+                    cell.setCellValue("Fecha");
+                    cell.setCellStyle(Contenido);
 
-                        XSSFCellStyle Encabezado = libro.createCellStyle();
-                        Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
-                        Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+                    spreadsheet.setColumnWidth(1, 2500);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
 
-                        XSSFCellStyle Stilodd = libro.createCellStyle();
+                    cell = row.createCell(2);
+                    spreadsheet.setColumnWidth(2, 9500);
+                    cell.setCellValue("Nombre completo");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    4, //first row (0-based)
+                                    4, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(3);
+                    cell.setCellValue("Entrada");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellValue("Salida");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    spreadsheet.setColumnWidth(5, 5000);
+                    cell.setCellValue("Firma");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    spreadsheet.setColumnWidth(6, 5000);
+                    cell.setCellValue("Lugar");
 
-                        Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
-                        Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
-                        Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
-                        Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
-                        Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    spreadsheet.setColumnWidth(7, 1800);
+                    cell.setCellValue("Doble");
 
-                        XSSFCellStyle StiloEEEE = libro.createCellStyle();
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    spreadsheet.setColumnWidth(8, 5650);
+                    cell.setCellValue("Observaciones");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    4, //first row (0-based)
+                                    4, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
 
-                        StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
-                        StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
-                        StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
-                        StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
-                        StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-
-                        XSSFCellStyle Contenido = libro.createCellStyle();
-                        Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
-                        Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-                        Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
-                        Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
-                        Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
-                        Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
-
-                        cell.setCellValue("L I S T A  D E  A S I S T E N C I A");
-                        cell.setCellStyle(Encabezado);
+                    //  int i = 2;
+                    while (resultSet.next()) {
+                        row = spreadsheet.createRow(2);
+                        row.setHeight((short) 400);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getString("Quincena") + " " + resultSet.getString("y 1/16"));
+                        cell.setCellStyle(Contenido);
 
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
-                                        0, //first row (0-based)
-                                        0, //last row (0-based)
+                                        2, //first row (0-based)
+                                        2, //last row (0-based)
                                         0, //first column (0-based)
-                                        9 //last column (0-based)
+                                        2 //last column (0-based)
                                 )
                         );
-
-                        row = spreadsheet.createRow(1);
+                        cell = row.createCell(1);
+                        cell.setCellStyle(Contenido);
                         cell = row.createCell(2);
-                        cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
-                        cell.setCellStyle(Encabezado);
+                        cell.setCellStyle(Contenido);
 
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
-                                        1, //first row (0-based)
-                                        1, //last row (0-based)
-                                        2, //first column (0-based)
+                                        2, //first row (0-based)
+                                        2, //last row (0-based)
+                                        4, //first column (0-based)
                                         7 //last column (0-based)
                                 )
                         );
-//quincena etc mañana
-                        row = spreadsheet.createRow(4);
-                        spreadsheet.addMergedRegion(
-                                new CellRangeAddress(
-                                        4, //first row (0-based)
-                                        4, //last row (0-based)
-                                        0, //first column (0-based)
-                                        1 //last column (0-based)
-                                )
-                        );
-                        row.setHeight((short) 500);
+                        cell = row.createCell(4);
+                        cell.setCellValue(resultSet.getString("Apellido P") + " "
+                                + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                        cell.setCellStyle(Encabezado);
+
+                        cell = row.createCell(5);
+                        cell.setCellValue(resultSet.getString("Apellido P") + " "
+                                + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Encabezado);
+
+                        cell.setCellValue(resultSet.getString("Apellido P") + " "
+                                + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                        cell.setCellStyle(Encabezado);
+
+                        cell = row.createCell(7);
+                        cell.setCellValue(resultSet.getString("Apellido P") + " "
+                                + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                        cell.setCellStyle(Encabezado);
+
+                        cell = row.createCell(8);
+                        cell.setCellValue(resultSet.getString("Zona"));
+                        spreadsheet.setColumnWidth(8, 4250);
+                        cell.setCellStyle(Contenido);
+
+                        cell = row.createCell(9);
+                        spreadsheet.setColumnWidth(9, 1500);
+                        cell.setCellValue(resultSet.getInt("NDL"));
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(5);
+                        row.setHeight((short) 600);
                         cell = row.createCell(0);
-                        spreadsheet.setColumnWidth(0, 750);
-                        cell.setCellValue("Fecha");
-                        cell.setCellStyle(Contenido);
-
-                        spreadsheet.setColumnWidth(1, 2500);
+                        cell.setCellStyle(Stilodd);
+                        cell.setCellValue(resultSet.getInt("dd 1/16"));
                         cell = row.createCell(1);
-                        cell.setCellStyle(Contenido);
-
+                        cell.setCellValue(resultSet.getString("EEEE 1/16"));
+                        cell.setCellStyle(StiloEEEE);
                         cell = row.createCell(2);
-                        spreadsheet.setColumnWidth(2, 9500);
-                        cell.setCellValue("Nombre completo");
                         cell.setCellStyle(Contenido);
-                        spreadsheet.addMergedRegion(
-                                new CellRangeAddress(
-                                        4, //first row (0-based)
-                                        4, //last row (0-based)
-                                        1, //first column (0-based)
-                                        3 //last column (0-based)
-                                )
-                        );
                         cell = row.createCell(3);
-                        cell.setCellValue("Entrada");
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(4);
-                        cell.setCellValue("Salida");
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(5);
-                        spreadsheet.setColumnWidth(5, 5000);
-                        cell.setCellValue("Firma");
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(6);
-                        spreadsheet.setColumnWidth(6, 5000);
-                        cell.setCellValue("Lugar");
-
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(7);
-                        spreadsheet.setColumnWidth(7, 1800);
-                        cell.setCellValue("Doble");
-
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(8);
-                        spreadsheet.setColumnWidth(8, 5650);
-                        cell.setCellValue("Observaciones");
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(9);
                         cell.setCellStyle(Contenido);
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
-                                        4, //first row (0-based)
-                                        4, //last row (0-based)
+                                        5, //first row (0-based)
+                                        5, //last row (0-based)
                                         8, //first column (0-based)
                                         9 //last column (0-based)
                                 )
                         );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                        //  int i = 2;
-                        while (resultSet.next()) {
-                            row = spreadsheet.createRow(2);
-                            row.setHeight((short) 400);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("Quincena") + " " + resultSet.getString("y 1/16"));
-                            cell.setCellStyle(Contenido);
+                        row = spreadsheet.createRow(6);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 2/17"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 2/17"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        6, //first row (0-based)
+                                        6, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            2, //first row (0-based)
-                                            2, //last row (0-based)
-                                            0, //first column (0-based)
-                                            2 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(1);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
+                        row = spreadsheet.createRow(7);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 3/18"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 3/18"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        7, //first row (0-based)
+                                        7, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            2, //first row (0-based)
-                                            2, //last row (0-based)
-                                            4, //first column (0-based)
-                                            7 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(4);
-                            cell.setCellValue(resultSet.getString("Apellido P") + " "
-                                    + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                            cell.setCellStyle(Encabezado);
+                        row = spreadsheet.createRow(8);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 4/19"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 4/19"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        8, //first row (0-based)
+                                        8, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            cell = row.createCell(5);
-                            cell.setCellValue(resultSet.getString("Apellido P") + " "
-                                    + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Encabezado);
+                        row = spreadsheet.createRow(9);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 5/20"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 5/20"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        9, //first row (0-based)
+                                        9, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            cell.setCellValue(resultSet.getString("Apellido P") + " "
-                                    + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                            cell.setCellStyle(Encabezado);
+                        row = spreadsheet.createRow(10);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 6/21"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 6/21"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        10, //first row (0-based)
+                                        10, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            cell = row.createCell(7);
-                            cell.setCellValue(resultSet.getString("Apellido P") + " "
-                                    + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                            cell.setCellStyle(Encabezado);
+                        row = spreadsheet.createRow(11);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 7/22"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 7/22"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        11, //first row (0-based)
+                                        11, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            cell = row.createCell(8);
-                            cell.setCellValue(resultSet.getString("Zona"));
-                            spreadsheet.setColumnWidth(8, 4250);
-                            cell.setCellStyle(Contenido);
+                        row = spreadsheet.createRow(12);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 8/23"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 8/23"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        12, //first row (0-based)
+                                        12, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            cell = row.createCell(9);
-                            spreadsheet.setColumnWidth(9, 1500);
-                            cell.setCellValue(resultSet.getInt("NDL"));
-                            cell.setCellStyle(Contenido);
+                        row = spreadsheet.createRow(13);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 9/24"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 9/24"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        13, //first row (0-based)
+                                        13, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            row = spreadsheet.createRow(5);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellStyle(Stilodd);
-                            cell.setCellValue(resultSet.getInt("dd 1/16"));
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 1/16"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            5, //first row (0-based)
-                                            5, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
+                        row = spreadsheet.createRow(14);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 10/25"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 10/25"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        14, //first row (0-based)
+                                        14, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            row = spreadsheet.createRow(6);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 2/17"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 2/17"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            6, //first row (0-based)
-                                            6, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
+                        row = spreadsheet.createRow(15);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 11/26"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 11/26"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        15, //first row (0-based)
+                                        15, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            row = spreadsheet.createRow(7);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 3/18"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 3/18"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            7, //first row (0-based)
-                                            7, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
+                        row = spreadsheet.createRow(16);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 12/27"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 12/27"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        16, //first row (0-based)
+                                        16, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            row = spreadsheet.createRow(8);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 4/19"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 4/19"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            8, //first row (0-based)
-                                            8, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
+                        row = spreadsheet.createRow(17);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 13/28"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 13/28"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        17, //first row (0-based)
+                                        17, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            row = spreadsheet.createRow(9);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 5/20"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 5/20"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            9, //first row (0-based)
-                                            9, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
+                        row = spreadsheet.createRow(18);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 14/29"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 14/29"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        18, //first row (0-based)
+                                        18, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            row = spreadsheet.createRow(10);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 6/21"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 6/21"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            10, //first row (0-based)
-                                            10, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
+                        row = spreadsheet.createRow(19);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 15/30"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 15/30"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        19, //first row (0-based)
+                                        19, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            row = spreadsheet.createRow(11);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 7/22"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 7/22"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            11, //first row (0-based)
-                                            11, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
+                        row = spreadsheet.createRow(20);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getString("dd 31"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 31"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        20, //first row (0-based)
+                                        20, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
 
-                            row = spreadsheet.createRow(12);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 8/23"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 8/23"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            12, //first row (0-based)
-                                            12, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(13);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 9/24"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 9/24"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            13, //first row (0-based)
-                                            13, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(14);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 10/25"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 10/25"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            14, //first row (0-based)
-                                            14, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(15);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 11/26"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 11/26"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            15, //first row (0-based)
-                                            15, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(16);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 12/27"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 12/27"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            16, //first row (0-based)
-                                            16, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(17);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 13/28"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 13/28"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            17, //first row (0-based)
-                                            17, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(18);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 14/29"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 14/29"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            18, //first row (0-based)
-                                            18, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(19);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getInt("dd 15/30"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 15/30"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            19, //first row (0-based)
-                                            19, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                            row = spreadsheet.createRow(20);
-                            row.setHeight((short) 600);
-                            cell = row.createCell(0);
-                            cell.setCellValue(resultSet.getString("dd 31"));
-                            cell.setCellStyle(Stilodd);
-                            cell = row.createCell(1);
-                            cell.setCellValue(resultSet.getString("EEEE 31"));
-                            cell.setCellStyle(StiloEEEE);
-                            cell = row.createCell(2);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(3);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(4);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(5);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(6);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(7);
-                            cell.setCellStyle(Contenido);
-                            spreadsheet.addMergedRegion(
-                                    new CellRangeAddress(
-                                            20, //first row (0-based)
-                                            20, //last row (0-based)
-                                            8, //first column (0-based)
-                                            9 //last column (0-based)
-                                    )
-                            );
-                            cell = row.createCell(8);
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(9);
-                            cell.setCellStyle(Contenido);
-
-                        }
-                        spreadsheet.getPrintSetup();
-                        spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
-                        spreadsheet.getPrintSetup().setLandscape(true); // Dirección de impresión, true: horizontal, false: vertical
-                        spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.49); // Margen (abajo)  
-                        spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
-                        spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
-                        spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
-                        spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
-                        spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
-
-                        spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
-                        libro.write(archivo);
-                    } catch (SQLException ex) {
-                        Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    Desktop.getDesktop().open(archivoXLS);
-                } catch (IOException | NumberFormatException e) {
+                    spreadsheet.getPrintSetup();
+                    spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
+                    spreadsheet.getPrintSetup().setLandscape(true); // Dirección de impresión, true: horizontal, false: vertical
+                    spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.49); // Margen (abajo)  
+                    spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
+                    spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
+                    spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
+                    spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
+                    spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
 
-                    try {
-                        throw e;
-                    } catch (IOException | NumberFormatException ex) {
-                        Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
+                    libro.write(archivo);
+                }
+                Desktop.getDesktop().open(archivoXLS);
+            } catch (IOException | NumberFormatException e) {
 
-                } catch (ClassNotFoundException | SQLException ex) {
+                try {
+                    throw e;
+                } catch (IOException | NumberFormatException ex) {
                     Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
                 }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            LDAZon.setText("");
+            LDAQuin.setSelectedIndex(0);
+            LDAAp.setText("");
+            LDAAm.setText("");
+            LDAName.setText("");
+        }
+    }//GEN-LAST:event_ExcelCIActionPerformed
+
+    private void TableLDACI9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI9MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI9.getModel();
+
+        int fila = TableLDACI9.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI9.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI9.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI9.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI9.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI9.getValueAt(fila, 5)));
+        ExcelSI.setVisible(false);
+        ExcelCI.setVisible(true);
+
     }//GEN-LAST:event_TableLDACI9MouseClicked
+
+    private void TableLDACIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACIMouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI.getModel();
+
+        int fila = TableLDACI.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI.getValueAt(fila, 5)));
+        ExcelSI.setVisible(false);
+        ExcelCI.setVisible(true);
+
+
+    }//GEN-LAST:event_TableLDACIMouseClicked
+
+    private void ExcelSIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcelSIActionPerformed
+        if (LDA.getText().equals("0")) {
+            JOptionPane.showMessageDialog(this, "Selecciona una lista.");
+
+        } else {
+            JFileChooser chooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
+            chooser.setSelectedFile(new File("Lista " + LDA.getText() + " de " + LDAZon.getText() + " de la " + LDAQuin.getSelectedItem().toString()));
+            chooser.setFileFilter(filter);
+            chooser.setDialogTitle("Guardar archivo");
+            chooser.setAcceptAllFileFilterUsed(false);
+            if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+            }
+            try {
+                String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
+                File archivoXLS = new File(ruta);
+                if (archivoXLS.exists()) {
+                    archivoXLS.delete();
+                }
+                archivoXLS.createNewFile();
+
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection connect = DriverManager.getConnection(
+                        "jdbc:mysql://192.168.1.170:3306/confort",
+                        "Servidor",
+                        "Confort1022"
+                );
+
+                Statement statement = connect.createStatement();
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + ".simss` WHERE " + LDA.getText());
+                try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                    XSSFWorkbook libro = new XSSFWorkbook();
+                    XSSFSheet spreadsheet = libro.createSheet("Lista " + LDA.getText() + " de " + LDAZon.getText() + "de la " + LDAQuin.getSelectedItem().toString());
+
+                    XSSFRow row = spreadsheet.createRow((short) 0);
+                    XSSFCell cell = (XSSFCell) row.createCell((short) 0);
+
+                    XSSFCellStyle Encabezado = libro.createCellStyle();
+                    Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                    Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+
+                    XSSFCellStyle Stilodd = libro.createCellStyle();
+
+                    Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                    Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                    Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                    Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
+                    Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                    XSSFCellStyle StiloEEEE = libro.createCellStyle();
+
+                    StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                    StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                    StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                    StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
+                    StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                    XSSFCellStyle Contenido = libro.createCellStyle();
+                    Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                    Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+                    Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                    Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                    Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                    Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
+
+                    cell.setCellValue("L I S T A  D E  A S I S T E N C I A");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    0, //first row (0-based)
+                                    0, //last row (0-based)
+                                    0, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+
+                    row = spreadsheet.createRow(1);
+                    cell = row.createCell(2);
+                    cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    2, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+//quincena etc mañana
+                    row = spreadsheet.createRow(4);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    4, //first row (0-based)
+                                    4, //last row (0-based)
+                                    0, //first column (0-based)
+                                    1 //last column (0-based)
+                            )
+                    );
+                    row.setHeight((short) 500);
+                    cell = row.createCell(0);
+                    spreadsheet.setColumnWidth(0, 750);
+                    cell.setCellValue("Fecha");
+                    cell.setCellStyle(Contenido);
+
+                    spreadsheet.setColumnWidth(1, 2500);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(2);
+                    spreadsheet.setColumnWidth(2, 9500);
+                    cell.setCellValue("Nombre completo");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    4, //first row (0-based)
+                                    4, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(3);
+                    cell.setCellValue("Entrada");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellValue("Salida");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    spreadsheet.setColumnWidth(5, 5000);
+                    cell.setCellValue("Firma");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    spreadsheet.setColumnWidth(6, 5000);
+                    cell.setCellValue("Lugar");
+
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    spreadsheet.setColumnWidth(7, 1800);
+                    cell.setCellValue("Doble");
+
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    spreadsheet.setColumnWidth(8, 5650);
+                    cell.setCellValue("Observaciones");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    4, //first row (0-based)
+                                    4, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+
+                    //  int i = 2;
+                    while (resultSet.next()) {
+                        row = spreadsheet.createRow(2);
+                        row.setHeight((short) 400);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getString("Quincena") + " " + resultSet.getString("y 1/16"));
+                        cell.setCellStyle(Contenido);
+
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        2, //first row (0-based)
+                                        2, //last row (0-based)
+                                        0, //first column (0-based)
+                                        2 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(1);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellValue("Servicio");
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        2, //first row (0-based)
+                                        2, //last row (0-based)
+                                        4, //first column (0-based)
+                                        6 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        //cell = row.createCell(7);
+                        //cell.setCellStyle(Contenido);
+                        cell = row.createCell(8);
+                        cell.setCellValue(resultSet.getString("Zona"));
+                        spreadsheet.setColumnWidth(8, 4250);
+                        cell.setCellStyle(Contenido);
+
+                        cell = row.createCell(9);
+                        spreadsheet.setColumnWidth(9, 1500);
+                        cell.setCellValue(resultSet.getInt("NDL"));
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(5);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellStyle(Stilodd);
+                        cell.setCellValue(resultSet.getInt("dd 1/16"));
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 1/16"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        5, //first row (0-based)
+                                        5, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(6);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 2/17"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 2/17"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        6, //first row (0-based)
+                                        6, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(7);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 3/18"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 3/18"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        7, //first row (0-based)
+                                        7, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(8);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 4/19"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 4/19"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        8, //first row (0-based)
+                                        8, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(9);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 5/20"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 5/20"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        9, //first row (0-based)
+                                        9, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(10);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 6/21"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 6/21"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        10, //first row (0-based)
+                                        10, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(11);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 7/22"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 7/22"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        11, //first row (0-based)
+                                        11, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(12);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 8/23"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 8/23"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        12, //first row (0-based)
+                                        12, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(13);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 9/24"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 9/24"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        13, //first row (0-based)
+                                        13, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(14);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 10/25"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 10/25"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        14, //first row (0-based)
+                                        14, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(15);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 11/26"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 11/26"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        15, //first row (0-based)
+                                        15, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(16);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 12/27"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 12/27"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        16, //first row (0-based)
+                                        16, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(17);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 13/28"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 13/28"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        17, //first row (0-based)
+                                        17, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(18);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 14/29"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 14/29"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        18, //first row (0-based)
+                                        18, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(19);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getInt("dd 15/30"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 15/30"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        19, //first row (0-based)
+                                        19, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                        row = spreadsheet.createRow(20);
+                        row.setHeight((short) 600);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSet.getString("dd 31"));
+                        cell.setCellStyle(Stilodd);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSet.getString("EEEE 31"));
+                        cell.setCellStyle(StiloEEEE);
+                        cell = row.createCell(2);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellStyle(Contenido);
+                        spreadsheet.addMergedRegion(
+                                new CellRangeAddress(
+                                        20, //first row (0-based)
+                                        20, //last row (0-based)
+                                        8, //first column (0-based)
+                                        9 //last column (0-based)
+                                )
+                        );
+                        cell = row.createCell(8);
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellStyle(Contenido);
+
+                    }
+                    spreadsheet.getPrintSetup();
+                    spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
+                    spreadsheet.getPrintSetup().setLandscape(true); // Dirección de impresión, true: horizontal, false: vertical
+                    spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.49); // Margen (abajo)  
+                    spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
+                    spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
+                    spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
+                    spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
+                    spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
+
+                    spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
+                    libro.write(archivo);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                Desktop.getDesktop().open(archivoXLS);
+            } catch (IOException | NumberFormatException e) {
+
+                try {
+                    throw e;
+                } catch (IOException | NumberFormatException ex) {
+                    Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(Admin_Listas_5.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            LDAZon.setText("");
+            LDAQuin.setSelectedIndex(0);
+            LDAAp.setText("");
+            LDAAm.setText("");
+            LDAName.setText("");
+        }
+    }//GEN-LAST:event_ExcelSIActionPerformed
+
+    private void FillLSIQuin9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin9ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin9ItemStateChanged
+
+    private void FillLSIName9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName9KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName9KeyReleased
+
+    private void FillLSIAm9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm9KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm9KeyReleased
+
+    private void FillLSIAp9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp9KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp9KeyReleased
+
+    private void FillLSI9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI9ItemStateChanged
+
+        if (FillLSI9.getSelectedIndex() == 0) {
+            FillLSIabel9.setVisible(false);
+            FillLSIAm9.setVisible(false);
+            FillLSIAm9.setText("");
+            FillLSIAp9.setVisible(false);
+            FillLSIAp9.setText("");
+            FillLSIName9.setVisible(false);
+            FillLSIName9.setText("");
+            FillLSIQuin9.setVisible(false);
+            FillLSIQuin9.setSelectedIndex(0);
+
+        }
+        if (FillLSI9.getSelectedIndex() == 1) {
+            FillLSIabel9.setVisible(true);
+            FillLSIabel9.setText("Buscar apellido P:");
+            FillLSIAm9.setVisible(false);
+            FillLSIAm9.setText("");
+            FillLSIAp9.setVisible(true);
+            FillLSIAp9.setText("");
+            FillLSIName9.setVisible(false);
+            FillLSIName9.setText("");
+            FillLSIQuin9.setVisible(false);
+            FillLSIQuin9.setSelectedIndex(0);
+
+        }
+        if (FillLSI9.getSelectedIndex() == 2) {
+            FillLSIabel9.setVisible(true);
+            FillLSIabel9.setText("Buscar apellido M:");
+            FillLSIAm9.setVisible(true);
+            FillLSIAm9.setText("");
+            FillLSIAp9.setVisible(false);
+            FillLSIAp9.setText("");
+            FillLSIName9.setVisible(false);
+            FillLSIName9.setText("");
+            FillLSIQuin9.setVisible(false);
+            FillLSIQuin9.setSelectedIndex(0);
+
+        }
+        if (FillLSI9.getSelectedIndex() == 3) {
+            FillLSIabel9.setVisible(true);
+            FillLSIabel9.setText("Buscar Quincena:");
+            FillLSIAm9.setVisible(false);
+            FillLSIAm9.setText("");
+            FillLSIAp9.setVisible(false);
+            FillLSIAp9.setText("");
+            FillLSIName9.setVisible(false);
+            FillLSIName9.setText("");
+            FillLSIQuin9.setVisible(true);
+            FillLSIQuin9.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI9ItemStateChanged
+
+    private void FillLSIQuin8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin8ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin8ItemStateChanged
+
+    private void FillLSIName8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName8KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName8KeyReleased
+
+    private void FillLSIAm8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm8KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm8KeyReleased
+
+    private void FillLSIAp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp8KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp8KeyReleased
+
+    private void FillLSI8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI8ItemStateChanged
+        if (FillLSI8.getSelectedIndex() == 0) {
+            FillLSIabel8.setVisible(false);
+            FillLSIAm8.setVisible(false);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(false);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(false);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(false);
+            FillLSIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLSI8.getSelectedIndex() == 1) {
+            FillLSIabel8.setVisible(true);
+            FillLSIabel8.setText("Buscar apellido P:");
+            FillLSIAm8.setVisible(false);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(true);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(false);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(false);
+            FillLSIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLSI8.getSelectedIndex() == 2) {
+            FillLSIabel8.setVisible(true);
+            FillLSIabel8.setText("Buscar apellido M:");
+            FillLSIAm8.setVisible(true);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(false);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(false);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(false);
+            FillLSIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLSI8.getSelectedIndex() == 3) {
+            FillLSIabel8.setVisible(true);
+            FillLSIabel8.setText("Buscar Quincena:");
+            FillLSIAm8.setVisible(false);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(false);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(false);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(true);
+            FillLSIQuin8.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI8ItemStateChanged
+
+    private void FillLSIQuin7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin7ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin7ItemStateChanged
+
+    private void FillLSIName7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName7KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName7KeyReleased
+
+    private void FillLSIAm7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm7KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm7KeyReleased
+
+    private void FillLSIAp7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp7KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp7KeyReleased
+
+    private void FillLSI7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI7ItemStateChanged
+        if (FillLSI7.getSelectedIndex() == 0) {
+            FillLSIabel7.setVisible(true);
+            FillLSIAm7.setVisible(false);
+            FillLSIAm7.setText("");
+            FillLSIAp7.setVisible(false);
+            FillLSIAp7.setText("");
+            FillLSIName7.setVisible(false);
+            FillLSIName7.setText("");
+            FillLSIQuin7.setVisible(false);
+            FillLSIQuin7.setSelectedIndex(0);
+
+        }
+        if (FillLSI7.getSelectedIndex() == 1) {
+            FillLSIabel7.setVisible(true);
+            FillLSIabel7.setText("Buscar apellido P:");
+            FillLSIAm7.setVisible(false);
+            FillLSIAm7.setText("");
+            FillLSIAp7.setVisible(true);
+            FillLSIAp7.setText("");
+            FillLSIName7.setVisible(false);
+            FillLSIName7.setText("");
+            FillLSIQuin7.setVisible(false);
+            FillLSIQuin7.setSelectedIndex(0);
+
+        }
+        if (FillLSI7.getSelectedIndex() == 2) {
+            FillLSIabel7.setVisible(true);
+            FillLSIabel7.setText("Buscar apellido M:");
+            FillLSIAm7.setVisible(true);
+            FillLSIAm7.setText("");
+            FillLSIAp7.setVisible(false);
+            FillLSIAp7.setText("");
+            FillLSIName7.setVisible(false);
+            FillLSIName7.setText("");
+            FillLSIQuin7.setVisible(false);
+            FillLSIQuin7.setSelectedIndex(0);
+
+        }
+        if (FillLSI7.getSelectedIndex() == 3) {
+            FillLSIabel7.setVisible(true);
+            FillLSIabel7.setText("Buscar Quincena:");
+            FillLSIAm7.setVisible(false);
+            FillLSIAm7.setText("");
+            FillLSIAp7.setVisible(false);
+            FillLSIAp7.setText("");
+            FillLSIName7.setVisible(false);
+            FillLSIName7.setText("");
+            FillLSIQuin7.setVisible(true);
+            FillLSIQuin7.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI7ItemStateChanged
+
+    private void FillLSIQuin6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin6ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin6ItemStateChanged
+
+    private void FillLSIName6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName6KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName6KeyReleased
+
+    private void FillLSIAm6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm6KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm6KeyReleased
+
+    private void FillLSIAp6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp6KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp6KeyReleased
+
+    private void FillLSI6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI6ItemStateChanged
+        if (FillLSI6.getSelectedIndex() == 0) {
+            FillLSIabel6.setVisible(true);
+            FillLSIAm6.setVisible(false);
+            FillLSIAm6.setText("");
+            FillLSIAp6.setVisible(false);
+            FillLSIAp6.setText("");
+            FillLSIName6.setVisible(false);
+            FillLSIName6.setText("");
+            FillLSIQuin6.setVisible(false);
+            FillLSIQuin6.setSelectedIndex(0);
+
+        }
+        if (FillLSI6.getSelectedIndex() == 1) {
+            FillLSIabel6.setVisible(true);
+            FillLSIabel6.setText("Buscar apellido P:");
+            FillLSIAm6.setVisible(false);
+            FillLSIAm6.setText("");
+            FillLSIAp6.setVisible(true);
+            FillLSIAp6.setText("");
+            FillLSIName6.setVisible(false);
+            FillLSIName6.setText("");
+            FillLSIQuin6.setVisible(false);
+            FillLSIQuin6.setSelectedIndex(0);
+
+        }
+        if (FillLSI6.getSelectedIndex() == 2) {
+            FillLSIabel6.setVisible(true);
+            FillLSIabel6.setText("Buscar apellido M:");
+            FillLSIAm6.setVisible(true);
+            FillLSIAm6.setText("");
+            FillLSIAp6.setVisible(false);
+            FillLSIAp6.setText("");
+            FillLSIName6.setVisible(false);
+            FillLSIName6.setText("");
+            FillLSIQuin6.setVisible(false);
+            FillLSIQuin6.setSelectedIndex(0);
+
+        }
+        if (FillLSI6.getSelectedIndex() == 3) {
+            FillLSIabel6.setVisible(true);
+            FillLSIabel6.setText("Buscar Quincena:");
+            FillLSIAm6.setVisible(false);
+            FillLSIAm6.setText("");
+            FillLSIAp6.setVisible(false);
+            FillLSIAp6.setText("");
+            FillLSIName6.setVisible(false);
+            FillLSIName6.setText("");
+            FillLSIQuin6.setVisible(true);
+            FillLSIQuin6.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI6ItemStateChanged
+
+    private void FillLSIQuin5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin5ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin5ItemStateChanged
+
+    private void FillLSIName5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName5KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName5KeyReleased
+
+    private void FillLSIAm5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm5KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm5KeyReleased
+
+    private void FillLSIAp5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp5KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp5KeyReleased
+
+    private void FillLSI5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI5ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI5ItemStateChanged
+
+    private void FillLSIQuin4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIQuin4KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin4KeyReleased
+
+    private void FillLSIName4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName4KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName4KeyReleased
+
+    private void FillLSIAm4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm4KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm4KeyReleased
+
+    private void FillLSIAp4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp4KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp4KeyReleased
+
+    private void FillLSI4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI4ItemStateChanged
+        if (FillLSI5.getSelectedIndex() == 0) {
+            FillLSIabel5.setVisible(true);
+            FillLSIAm5.setVisible(false);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(false);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(false);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(false);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLSI5.getSelectedIndex() == 1) {
+            FillLSIabel5.setVisible(true);
+            FillLSIabel5.setText("Buscar apellido P:");
+            FillLSIAm5.setVisible(false);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(true);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(false);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(false);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLSI5.getSelectedIndex() == 2) {
+            FillLSIabel5.setVisible(true);
+            FillLSIabel5.setText("Buscar apellido M:");
+            FillLSIAm5.setVisible(true);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(false);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(false);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(false);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLSI5.getSelectedIndex() == 3) {
+            FillLSIabel5.setVisible(true);
+            FillLSIabel5.setText("Buscar Quincena:");
+            FillLSIAm5.setVisible(false);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(false);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(false);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(true);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI4ItemStateChanged
+
+    private void FillLSIQuin3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin3ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin3ItemStateChanged
+
+    private void FillLSIQuin2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin2ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin2ItemStateChanged
+
+    private void FillLSIName2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName2KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName2KeyReleased
+
+    private void FillLSIAm2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm2KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm2KeyReleased
+
+    private void FillLSIAp2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp2KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp2KeyReleased
+
+    private void FillLSI2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI2ItemStateChanged
+        if (FillLSI2.getSelectedIndex() == 0) {
+            FillLSIabel2.setVisible(false);
+            FillLSIAm2.setVisible(false);
+            FillLSIAm2.setText("");
+            FillLSIAp2.setVisible(false);
+            FillLSIAp2.setText("");
+            FillLSIName2.setVisible(false);
+            FillLSIName2.setText("");
+            FillLSIQuin2.setVisible(false);
+            FillLSIQuin2.setSelectedIndex(0);
+
+        }
+        if (FillLSI2.getSelectedIndex() == 1) {
+            FillLSIabel2.setVisible(true);
+            FillLSIabel2.setText("Buscar apellido P:");
+            FillLSIAm2.setVisible(false);
+            FillLSIAm2.setText("");
+            FillLSIAp2.setVisible(true);
+            FillLSIAp2.setText("");
+            FillLSIName2.setVisible(false);
+            FillLSIName2.setText("");
+            FillLSIQuin2.setVisible(false);
+            FillLSIQuin2.setSelectedIndex(0);
+
+        }
+        if (FillLSI2.getSelectedIndex() == 2) {
+            FillLSIabel2.setVisible(true);
+            FillLSIabel2.setText("Buscar apellido M:");
+            FillLSIAm2.setVisible(true);
+            FillLSIAm2.setText("");
+            FillLSIAp2.setVisible(false);
+            FillLSIAp2.setText("");
+            FillLSIName2.setVisible(false);
+            FillLSIName2.setText("");
+            FillLSIQuin2.setVisible(false);
+            FillLSIQuin2.setSelectedIndex(0);
+
+        }
+        if (FillLSI2.getSelectedIndex() == 3) {
+            FillLSIabel2.setVisible(true);
+            FillLSIabel2.setText("Buscar Quincena:");
+            FillLSIAm2.setVisible(false);
+            FillLSIAm2.setText("");
+            FillLSIAp2.setVisible(false);
+            FillLSIAp2.setText("");
+            FillLSIName2.setVisible(false);
+            FillLSIName2.setText("");
+            FillLSIQuin2.setVisible(true);
+            FillLSIQuin2.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI2ItemStateChanged
+
+    private void FillLSIQuin1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin1ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin1ItemStateChanged
+
+    private void FillLSIName1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName1KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName1KeyReleased
+
+    private void FillLSIAm1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm1KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm1KeyReleased
+
+    private void FillLSIAp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp1KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp1KeyReleased
+
+    private void FillLSI1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI1ItemStateChanged
+        if (FillLSI1.getSelectedIndex() == 0) {
+            FillLSIabel1.setVisible(false);
+            FillLSIAm1.setVisible(false);
+            FillLSIAm1.setText("");
+            FillLSIAp1.setVisible(false);
+            FillLSIAp1.setText("");
+            FillLSIName1.setVisible(false);
+            FillLSIName1.setText("");
+            FillLSIQuin1.setVisible(false);
+            FillLSIQuin1.setSelectedIndex(0);
+
+        }
+        if (FillLSI1.getSelectedIndex() == 1) {
+            FillLSIabel1.setVisible(true);
+            FillLSIabel1.setText("Buscar apellido P:");
+            FillLSIAm1.setVisible(false);
+            FillLSIAm1.setText("");
+            FillLSIAp1.setVisible(true);
+            FillLSIAp1.setText("");
+            FillLSIName1.setVisible(false);
+            FillLSIName1.setText("");
+            FillLSIQuin1.setVisible(false);
+            FillLSIQuin1.setSelectedIndex(0);
+
+        }
+        if (FillLSI1.getSelectedIndex() == 2) {
+            FillLSIabel1.setVisible(true);
+            FillLSIabel1.setText("Buscar apellido M:");
+            FillLSIAm1.setVisible(true);
+            FillLSIAm1.setText("");
+            FillLSIAp1.setVisible(false);
+            FillLSIAp1.setText("");
+            FillLSIName1.setVisible(false);
+            FillLSIName1.setText("");
+            FillLSIQuin1.setVisible(false);
+            FillLSIQuin1.setSelectedIndex(0);
+
+        }
+        if (FillLSI1.getSelectedIndex() == 3) {
+            FillLSIabel1.setVisible(true);
+            FillLSIabel1.setText("Buscar Quincena:");
+            FillLSIAm1.setVisible(false);
+            FillLSIAm1.setText("");
+            FillLSIAp1.setVisible(false);
+            FillLSIAp1.setText("");
+            FillLSIName1.setVisible(false);
+            FillLSIName1.setText("");
+            FillLSIQuin1.setVisible(true);
+            FillLSIQuin1.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI1ItemStateChanged
+
+    private void FillLSIQuinKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIQuinKeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuinKeyReleased
+
+    private void FillLSINameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSINameKeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSINameKeyReleased
+
+    private void FillLSIAmKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAmKeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAmKeyReleased
+
+    private void FillLSIApKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIApKeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIApKeyReleased
+
+    private void FillLSIItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIItemStateChanged
+        if (FillLSI.getSelectedIndex() == 0) {
+            FillLSIabel.setVisible(false);
+            FillLSIAm.setVisible(false);
+            FillLSIAm.setText("");
+            FillLSIAp.setVisible(false);
+            FillLSIAp.setText("");
+            FillLSIName.setVisible(false);
+            FillLSIName.setText("");
+            FillLSIQuin.setVisible(false);
+            FillLSIQuin.setSelectedIndex(0);
+
+        }
+        if (FillLSI.getSelectedIndex() == 1) {
+            FillLSIabel.setVisible(true);
+            FillLSIabel.setText("Buscar apellido P:");
+            FillLSIAm.setVisible(false);
+            FillLSIAm.setText("");
+            FillLSIAp.setVisible(true);
+            FillLSIAp.setText("");
+            FillLSIName.setVisible(false);
+            FillLSIName.setText("");
+            FillLSIQuin.setVisible(false);
+            FillLSIQuin.setSelectedIndex(0);
+
+        }
+        if (FillLSI.getSelectedIndex() == 2) {
+            FillLSIabel.setVisible(true);
+            FillLSIabel.setText("Buscar apellido M:");
+            FillLSIAm.setVisible(true);
+            FillLSIAm.setText("");
+            FillLSIAp.setVisible(false);
+            FillLSIAp.setText("");
+            FillLSIName.setVisible(false);
+            FillLSIName.setText("");
+            FillLSIQuin.setVisible(false);
+            FillLSIQuin.setSelectedIndex(0);
+
+        }
+        if (FillLSI.getSelectedIndex() == 3) {
+            FillLSIabel.setVisible(true);
+            FillLSIabel.setText("Buscar Quincena:");
+            FillLSIAm.setVisible(false);
+            FillLSIAm.setText("");
+            FillLSIAp.setVisible(false);
+            FillLSIAp.setText("");
+            FillLSIName.setVisible(false);
+            FillLSIName.setText("");
+            FillLSIQuin.setVisible(true);
+            FillLSIQuin.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIItemStateChanged
+
+    private void TableLDACI1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TableLDACI1KeyReleased
+        DefaultTableModel model = (DefaultTableModel) TableLDACI1.getModel();
+
+        int fila = TableLDACI1.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI1.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI1.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI1.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI1.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI1.getValueAt(fila, 5)));
+        ExcelSI.setVisible(false);
+        ExcelCI.setVisible(true);
+
+    }//GEN-LAST:event_TableLDACI1KeyReleased
+
+    private void TableLDACI2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI2MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI2.getModel();
+
+        int fila = TableLDACI2.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI2.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI2.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI2.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI2.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI2.getValueAt(fila, 5)));
+        ExcelSI.setVisible(false);
+        ExcelCI.setVisible(true);
+
+    }//GEN-LAST:event_TableLDACI2MouseClicked
+
+    private void TableLDACI3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI3MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI3.getModel();
+
+        int fila = TableLDACI3.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI3.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI3.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI3.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI3.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI3.getValueAt(fila, 5)));
+        ExcelSI.setVisible(false);
+        ExcelCI.setVisible(true);
+
+    }//GEN-LAST:event_TableLDACI3MouseClicked
+
+    private void TableLDACI4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI4MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI4.getModel();
+
+        int fila = TableLDACI4.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI4.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI4.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI4.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI4.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI4.getValueAt(fila, 5)));
+        ExcelSI.setVisible(false);
+        ExcelCI.setVisible(true);
+
+    }//GEN-LAST:event_TableLDACI4MouseClicked
+
+    private void TableLDACI5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI5MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI5.getModel();
+
+        int fila = TableLDACI5.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI5.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI5.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI5.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI5.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI5.getValueAt(fila, 5)));
+        ExcelSI.setVisible(false);
+        ExcelCI.setVisible(true);
+
+    }//GEN-LAST:event_TableLDACI5MouseClicked
+
+    private void TableLDACI6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI6MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI6.getModel();
+
+        int fila = TableLDACI6.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI6.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI6.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI6.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI6.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI6.getValueAt(fila, 5)));
+        ExcelSI.setVisible(false);
+        ExcelCI.setVisible(true);
+
+    }//GEN-LAST:event_TableLDACI6MouseClicked
+
+    private void TableLDACI8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI8MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI8.getModel();
+
+        int fila = TableLDACI8.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI8.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI8.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI8.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI8.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI8.getValueAt(fila, 5)));
+        ExcelSI.setVisible(false);
+        ExcelCI.setVisible(true);
+    }//GEN-LAST:event_TableLDACI8MouseClicked
+
+    private void TableLDASIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASIMouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI.getModel();
+
+        int fila = TableLDASI.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI.getValueAt(fila, 5)));
+        ExcelSI.setVisible(true);
+        ExcelCI.setVisible(false);
+    }//GEN-LAST:event_TableLDASIMouseClicked
+
+    private void TableLDASI1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI1MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI1.getModel();
+
+        int fila = TableLDASI1.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI1.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI1.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI1.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI1.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI1.getValueAt(fila, 5)));
+        ExcelSI.setVisible(true);
+        ExcelCI.setVisible(false);
+    }//GEN-LAST:event_TableLDASI1MouseClicked
+
+    private void TableLDASI2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI2MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI2.getModel();
+
+        int fila = TableLDASI2.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI2.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI2.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI2.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI2.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI2.getValueAt(fila, 5)));
+        ExcelSI.setVisible(true);
+        ExcelCI.setVisible(false);
+    }//GEN-LAST:event_TableLDASI2MouseClicked
+
+    private void TableLDASI3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI3MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI3.getModel();
+
+        int fila = TableLDASI3.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI3.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI3.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI3.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI3.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI3.getValueAt(fila, 5)));
+        ExcelSI.setVisible(true);
+        ExcelCI.setVisible(false);
+    }//GEN-LAST:event_TableLDASI3MouseClicked
+
+    private void TableLDASI4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI4MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI4.getModel();
+
+        int fila = TableLDASI4.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI4.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI4.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI4.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI4.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI4.getValueAt(fila, 5)));
+        ExcelSI.setVisible(true);
+        ExcelCI.setVisible(false);
+    }//GEN-LAST:event_TableLDASI4MouseClicked
+
+    private void TableLDASI5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI5MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI5.getModel();
+
+        int fila = TableLDASI5.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI5.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI5.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI5.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI5.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI5.getValueAt(fila, 5)));
+        ExcelSI.setVisible(true);
+        ExcelCI.setVisible(false);
+    }//GEN-LAST:event_TableLDASI5MouseClicked
+
+    private void TableLDASI6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI6MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI6.getModel();
+
+        int fila = TableLDASI6.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI6.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI6.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI6.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI6.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI6.getValueAt(fila, 5)));
+        ExcelSI.setVisible(true);
+        ExcelCI.setVisible(false);
+    }//GEN-LAST:event_TableLDASI6MouseClicked
+
+    private void TableLDASI7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI7MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI7.getModel();
+
+        int fila = TableLDASI7.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI7.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI7.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI7.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI7.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI7.getValueAt(fila, 5)));
+        ExcelSI.setVisible(true);
+        ExcelCI.setVisible(false);
+    }//GEN-LAST:event_TableLDASI7MouseClicked
+
+    private void TableLDASI8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI8MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI8.getModel();
+
+        int fila = TableLDASI8.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI8.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI8.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI8.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI8.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI8.getValueAt(fila, 5)));
+        ExcelSI.setVisible(true);
+        ExcelCI.setVisible(false);
+    }//GEN-LAST:event_TableLDASI8MouseClicked
+
+    private void TableLDASI9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI9MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI9.getModel();
+
+        int fila = TableLDASI9.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI9.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDASI9.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDASI9.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDASI9.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDASI9.getValueAt(fila, 5)));
+        ExcelSI.setVisible(true);
+        ExcelCI.setVisible(false);
+    }//GEN-LAST:event_TableLDASI9MouseClicked
+
+    private void TableLDACI7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI7MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDACI7.getModel();
+
+        int fila = TableLDACI7.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDACI7.getValueAt(fila, 0)));
+        LDAZon.setText(String.valueOf(TableLDACI7.getValueAt(fila, 1)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        LDAAp.setText(String.valueOf(TableLDACI7.getValueAt(fila, 3)));
+        LDAAm.setText(String.valueOf(TableLDACI7.getValueAt(fila, 4)));
+        LDAName.setText(String.valueOf(TableLDACI7.getValueAt(fila, 5)));
+        ExcelSI.setVisible(false);
+        ExcelCI.setVisible(true);
+    }//GEN-LAST:event_TableLDACI7MouseClicked
+
+    private void FillLSI3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI3ItemStateChanged
+
+        if (FillLSI4.getSelectedIndex() == 0) {
+            FillLSIabel4.setVisible(false);
+            FillLSIAm4.setVisible(false);
+            FillLSIAm4.setText("");
+            FillLSIAp4.setVisible(false);
+            FillLSIAp4.setText("");
+            FillLSIName4.setVisible(false);
+            FillLSIName4.setText("");
+            FillLSIQuin4.setVisible(false);
+            FillLSIQuin4.setSelectedIndex(0);
+
+        }
+        if (FillLSI4.getSelectedIndex() == 1) {
+            FillLSIabel4.setVisible(false);
+            FillLSIabel4.setText("Buscar apellido P:");
+            FillLSIAm4.setVisible(false);
+            FillLSIAm4.setText("");
+            FillLSIAp4.setVisible(true);
+            FillLSIAp4.setText("");
+            FillLSIName4.setVisible(false);
+            FillLSIName4.setText("");
+            FillLSIQuin4.setVisible(false);
+            FillLSIQuin4.setSelectedIndex(0);
+
+        }
+        if (FillLSI4.getSelectedIndex() == 2) {
+            FillLSIabel4.setVisible(false);
+            FillLSIabel4.setText("Buscar apellido M:");
+            FillLSIAm4.setVisible(true);
+            FillLSIAm4.setText("");
+            FillLSIAp4.setVisible(false);
+            FillLSIAp4.setText("");
+            FillLSIName4.setVisible(false);
+            FillLSIName4.setText("");
+            FillLSIQuin4.setVisible(false);
+            FillLSIQuin4.setSelectedIndex(0);
+
+        }
+        if (FillLSI4.getSelectedIndex() == 3) {
+            FillLSIabel4.setVisible(false);
+            FillLSIabel4.setText("Buscar Quincena:");
+            FillLSIAm4.setVisible(false);
+            FillLSIAm4.setText("");
+            FillLSIAp4.setVisible(false);
+            FillLSIAp4.setText("");
+            FillLSIName4.setVisible(false);
+            FillLSIName4.setText("");
+            FillLSIQuin4.setVisible(true);
+            FillLSIQuin4.setSelectedIndex(0);
+
+        }
+
+        if (FillLSI3.getSelectedIndex() == 0) {
+            FillLSIabel3.setVisible(false);
+            FillLSIAm3.setVisible(false);
+            FillLSIAm3.setText("");
+            FillLSIAp3.setVisible(false);
+            FillLSIAp3.setText("");
+            FillLSIName3.setVisible(false);
+            FillLSIName3.setText("");
+            FillLSIQuin3.setVisible(false);
+            FillLSIQuin3.setSelectedIndex(0);
+
+        }
+        if (FillLSI3.getSelectedIndex() == 1) {
+            FillLSIabel3.setVisible(false);
+            FillLSIabel3.setText("Buscar apellido P:");
+            FillLSIAm3.setVisible(false);
+            FillLSIAm3.setText("");
+            FillLSIAp3.setVisible(true);
+            FillLSIAp3.setText("");
+            FillLSIName3.setVisible(false);
+            FillLSIName3.setText("");
+            FillLSIQuin3.setVisible(false);
+            FillLSIQuin3.setSelectedIndex(0);
+
+        }
+        if (FillLSI3.getSelectedIndex() == 2) {
+            FillLSIabel3.setVisible(false);
+            FillLSIabel3.setText("Buscar apellido M:");
+            FillLSIAm3.setVisible(true);
+            FillLSIAm3.setText("");
+            FillLSIAp3.setVisible(false);
+            FillLSIAp3.setText("");
+            FillLSIName3.setVisible(false);
+            FillLSIName3.setText("");
+            FillLSIQuin3.setVisible(false);
+            FillLSIQuin3.setSelectedIndex(0);
+
+        }
+        if (FillLSI3.getSelectedIndex() == 3) {
+            FillLSIabel3.setVisible(false);
+            FillLSIabel3.setText("Buscar Quincena:");
+            FillLSIAm3.setVisible(false);
+            FillLSIAm3.setText("");
+            FillLSIAp3.setVisible(false);
+            FillLSIAp3.setText("");
+            FillLSIName3.setVisible(false);
+            FillLSIName3.setText("");
+            FillLSIQuin3.setVisible(true);
+            FillLSIQuin3.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI3ItemStateChanged
+
+    private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
+        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Nomina1ActionPerformed
+
+    private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
+        Administradores_3 regr = new Administradores_3();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_AdministradoresActionPerformed
+
+    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
+        AltasZyS_3 regr = new AltasZyS_3();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ZYSActionPerformed
+
+    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
+        Usuarios_RH_3 regr = new Usuarios_RH_3();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_UsuariosRHActionPerformed
+
+    private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
+        Admin_Empleados_4 regr = new Admin_Empleados_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_GeneralActionPerformed
+
+    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
+        Admin_Estadias_4 regr = new Admin_Estadias_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EstadiasActionPerformed
+
+    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
+        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_TorteriaActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Admin_NominaS_5 regr = new Admin_NominaS_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        Admin_PresS_5 regr = new Admin_PresS_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
+        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODTActionPerformed
+
+    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
+        Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDAActionPerformed
+
+    private void PRESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESActionPerformed
+        Admin_PresQ_5 regr = new Admin_PresQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PRESActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -18837,7 +21322,9 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Administradores;
     private javax.swing.JButton Agregar;
+    private javax.swing.JMenuItem CDA;
     private javax.swing.JCheckBox CI;
     private com.toedter.calendar.JDateChooser DiaCom1;
     private com.toedter.calendar.JDateChooser DiaCom10;
@@ -18872,6 +21359,9 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser DiaCor8;
     private com.toedter.calendar.JDateChooser DiaCor9;
     private javax.swing.JTable EmpleadosSh;
+    private javax.swing.JMenuItem Estadias;
+    private javax.swing.JButton ExcelCI;
+    private javax.swing.JButton ExcelSI;
     private com.toedter.calendar.JDateChooser Fecha1;
     private javax.swing.JComboBox<String> FillLCI;
     private javax.swing.JComboBox<String> FillLCI1;
@@ -18923,6 +21413,16 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FillLCIQuin7;
     private javax.swing.JComboBox<String> FillLCIQuin8;
     private javax.swing.JComboBox<String> FillLCIQuin9;
+    private javax.swing.JLabel FillLCIabel;
+    private javax.swing.JLabel FillLCIabel1;
+    private javax.swing.JLabel FillLCIabel2;
+    private javax.swing.JLabel FillLCIabel3;
+    private javax.swing.JLabel FillLCIabel4;
+    private javax.swing.JLabel FillLCIabel5;
+    private javax.swing.JLabel FillLCIabel6;
+    private javax.swing.JLabel FillLCIabel7;
+    private javax.swing.JLabel FillLCIabel8;
+    private javax.swing.JLabel FillLCIabel9;
     private javax.swing.JComboBox<String> FillLSI;
     private javax.swing.JComboBox<String> FillLSI1;
     private javax.swing.JComboBox<String> FillLSI2;
@@ -18973,6 +21473,17 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FillLSIQuin7;
     private javax.swing.JComboBox<String> FillLSIQuin8;
     private javax.swing.JComboBox<String> FillLSIQuin9;
+    private javax.swing.JLabel FillLSIabel;
+    private javax.swing.JLabel FillLSIabel1;
+    private javax.swing.JLabel FillLSIabel2;
+    private javax.swing.JLabel FillLSIabel3;
+    private javax.swing.JLabel FillLSIabel4;
+    private javax.swing.JLabel FillLSIabel5;
+    private javax.swing.JLabel FillLSIabel6;
+    private javax.swing.JLabel FillLSIabel7;
+    private javax.swing.JLabel FillLSIabel8;
+    private javax.swing.JLabel FillLSIabel9;
+    private javax.swing.JMenuItem General;
     private javax.swing.JTextField LDA;
     private javax.swing.JTextField LDAAm;
     private javax.swing.JTextField LDAAp;
@@ -18984,7 +21495,11 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     private javax.swing.JTextField LDAfilap;
     private javax.swing.JTextField LDAfilname;
     private javax.swing.JLabel LabelFil;
+    private javax.swing.JMenu Menuadm;
     private javax.swing.JCheckBox NYear;
+    private javax.swing.JMenuItem Nomina1;
+    private javax.swing.JMenuItem ODT;
+    private javax.swing.JMenuItem PRES;
     private javax.swing.JTable TableLDACI;
     private javax.swing.JTable TableLDACI1;
     private javax.swing.JTable TableLDACI2;
@@ -19005,77 +21520,50 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     private javax.swing.JTable TableLDASI7;
     private javax.swing.JTable TableLDASI8;
     private javax.swing.JTable TableLDASI9;
+    private javax.swing.JMenuItem Torteria;
     private javax.swing.JLabel ULDA;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JMenuItem UsuariosRH;
+    private javax.swing.JMenuItem ZYS;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

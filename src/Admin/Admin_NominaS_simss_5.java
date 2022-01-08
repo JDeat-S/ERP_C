@@ -481,6 +481,12 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         jLabel164 = new javax.swing.JLabel();
         jLabel165 = new javax.swing.JLabel();
         jLabel166 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        ISR = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        RF = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        ADN = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
         deposito = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -905,6 +911,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         CNQ = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nomina Semanal IMSS");
@@ -1650,6 +1657,33 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel40.setText("ISR");
+
+        ISR.setText("0");
+        ISR.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ISRKeyReleased(evt);
+            }
+        });
+
+        jLabel41.setText("Fonacot");
+
+        RF.setText("0");
+        RF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                RFKeyReleased(evt);
+            }
+        });
+
+        jLabel42.setText("Adelanto de nomina:");
+
+        ADN.setText("0");
+        ADN.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ADNKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -1690,6 +1724,18 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ISR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel41)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel42)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ADN, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1705,7 +1751,13 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
-                    .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel40)
+                    .addComponent(ISR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel41)
+                    .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel42)
+                    .addComponent(ADN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel50)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5321,6 +5373,14 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem3);
 
+        jMenuItem5.setText("Listas de asistencia");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem5);
+
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -5450,6 +5510,9 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -5460,7 +5523,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -5796,6 +5859,9 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -5806,7 +5872,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -5908,6 +5974,9 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -5918,7 +5987,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -6021,6 +6090,9 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -6031,7 +6103,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -6133,6 +6205,9 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -6143,7 +6218,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -6246,6 +6321,9 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -6256,7 +6334,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -6359,6 +6437,9 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -6369,7 +6450,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -6472,6 +6553,9 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -6482,7 +6566,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -6585,6 +6669,9 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total horas extra");//30
             modelo.addColumn("Retencion infonavit");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Adelanto");
             modelo.addColumn("Prestamos");//32
             modelo.addColumn("Rembolso");
             modelo.addColumn("Deposito");//34
@@ -6595,7 +6682,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/,
+                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
                 50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -7481,7 +7568,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
 // nomina semanal
     public void editarNS() {
 
-        String SQL = "UPDATE `nominasem.detallada." + Zon.getText() + "` SET `#Lista` = ?, `#Empleado` = ?,  `Apellido P` = ?,"
+        String SQL = "UPDATE `nominasem.detallada." + Zon.getText() + ".simss` SET `#Lista` = ?, `#Empleado` = ?,  `Apellido P` = ?,"
                 + " `Apellido M` = ?, `Nombre(s)` = ?, `Bono` = ?,"
                 + " `Cuenta de banco` = ?, `Banco` = ?, `Zona` = ?,"
                 + " `Servicio` = ?, `Sueldo` = ?, `Por dia` = ?, `Por hora` = ?,"
@@ -7490,9 +7577,9 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
                 + " `Fecha jueves` = ?, `Fecha viernes` = ?, `Sabado` = ?, "
                 + "`Domingo` = ?, `Lunes` = ?, `Martes` = ?, `Miercoles` = ?,"
                 + " `Jueves` = ?, `Viernes` = ?, `Fecha de pago` = ?, `Horas extras` = ?,"
-                + " `Total horas extra` = ?, `Retencion infonavit` = ?, "
-                + "`Prestamos` = ?, `Rembolso` = ?, `Deposito` = ?, "
-                + "`Observaciones` = ? WHERE `nominasem.detallada." + Zon.getText() + "`.`#Lista` = ?";
+                + " `Total horas extra` = ?, `Retencion infonavit` = ?, `ISR` = ?, `Fonacot` = ?, "
+                + " `Adelanto de nomina` = ?, `Prestamos` = ?, `Rembolso` = ?, `Deposito` = ?, "
+                + "`Observaciones` = ? WHERE `nominasem.detallada." + Zon.getText() + ".simss`.`#Lista` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -7530,16 +7617,22 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             pst.setString(31, HE.getText());
             pst.setString(32, THE.getText());
             pst.setString(33, RI.getText());
-            pst.setString(34, Presp.getText());
-            pst.setString(35, Rembolso.getText());
-            pst.setString(36, deposito.getText());
-            pst.setString(37, obs.getText());
-            pst.setInt(38, Integer.parseInt(NDL.getText()));
+            pst.setString(34, ISR.getText());
+            pst.setString(35, RF.getText());
+            pst.setString(36, ADN.getText());
+            pst.setString(37, Presp.getText());
+            pst.setString(38, Rembolso.getText());
+            pst.setString(39, deposito.getText());
+            pst.setString(40, obs.getText());
+            pst.setInt(41, Integer.parseInt(NDL.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Modificada");
 
             DAB.clearSelection();
+            ADN.setText("0");
+            ISR.setText("0");
+            RF.setText("0");
             NDL.setText("0");
             Ap.setText("");
             am.setText("");
@@ -7572,15 +7665,15 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
 //Agregar nomina semanal
     public void AgregarNs() {
 
-        String SQL = "INSERT INTO `nominasem.detallada." + Zon.getText() + "` (`#Lista`, `#Empleado`, `Apellido P`, `Apellido M`,"
+        String SQL = "INSERT INTO `nominasem.detallada." + Zon.getText() + ".simss` (`#Lista`, `#Empleado`, `Apellido P`, `Apellido M`,"
                 + " `Nombre(s)`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`,"
                 + " `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,"
                 + " `Fecha sabado`, `Fecha domingo`, `Fecha lunes`, `Fecha martes`, "
                 + "`Fecha miercoles`, `Fecha jueves`, `Fecha viernes`, `Sabado`, `Domingo`, "
                 + "`Lunes`, `Martes`, `Miercoles`, `Jueves`, `Viernes`, `Fecha de pago`, `Horas extras`,"
-                + " `Total horas extra`, `Retencion infonavit`, `Prestamos`, `Rembolso`, "
-                + "`Deposito`, `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + " `Total horas extra`, `Retencion infonavit`, `ISR`, `Fonacot`, `Adelanto de nomina`, `Prestamos`, `Rembolso`, "
+                + " `Deposito`, `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -7617,10 +7710,13 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             pst.setString(31, HE.getText());
             pst.setString(32, THE.getText());
             pst.setString(33, RI.getText());
-            pst.setString(34, Presp.getText());
-            pst.setString(35, Rembolso.getText());
-            pst.setString(36, deposito.getText());
-            pst.setString(37, obs.getText());
+            pst.setString(34, ISR.getText());
+            pst.setString(35, RF.getText());
+            pst.setString(36, ADN.getText());
+            pst.setString(37, Presp.getText());
+            pst.setString(38, Rembolso.getText());
+            pst.setString(39, deposito.getText());
+            pst.setString(40, obs.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Semanal Agregada");
@@ -7641,6 +7737,9 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             FunMD();
             DAB.clearSelection();
             NDL.setText("0");
+            ADN.setText("0");
+            ISR.setText("0");
+            RF.setText("0");
             Ap.setText("");
             am.setText("");
             name.setText("");
@@ -7675,18 +7774,18 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         String Share = BNameNom.getText();
         String ShareAP = BAPNom.getText();
         String ShareAM = BAMNom.getText();
-        String where = "select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`"
-                + " from empleados  where `Status` LIKE '%Vigente%'";
+        String where = "SELECT `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono` FROM `rh.empleados`"
+                + " where `Status` LIKE '%Vigente%'";
 
         if (!"".equals(Share)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
+            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
+                    + "from `rh.empleados` WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
+            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
+                    + "from `rh.empleados` WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta banco`, `Zona`, `Servicio`, `Sueldo`, `Bono` "
-                    + "from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
+            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
+                    + "from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }
 
         try {
@@ -7762,8 +7861,11 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         double d10 = Double.parseDouble(this.Bono.getText());
         double d11 = (d1 + d10 + d9 + d6);
         double d12 = (d2 + d8);
-        double total = d11 - d12;
-        this.deposito.setText("" + total + "");
+        double total = d11 - d12 - Double.parseDouble(ISR.getText()) - Double.parseDouble(RF.getText()) - Double.parseDouble(ADN.getText());
+
+        DecimalFormat dDeposito = new DecimalFormat("#.00");
+        this.deposito.setText(dDeposito.format(total));
+
     }
 
     private void BAPNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAPNomKeyReleased
@@ -12534,10 +12636,13 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom2.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom2.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom2.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom2.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaS_simss_5.class
@@ -12635,10 +12740,13 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom3.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom3.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom3.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom3.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom3.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom3.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaS_simss_5.class
@@ -12736,10 +12844,13 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom1.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom1.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom1.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom1.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaS_simss_5.class
@@ -12837,10 +12948,13 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaS_simss_5.class
@@ -12938,10 +13052,13 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom4.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom4.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom4.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom4.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaS_simss_5.class
@@ -13039,10 +13156,13 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom5.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom5.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom5.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom5.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaS_simss_5.class
@@ -13140,10 +13260,13 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom6.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom6.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom6.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom6.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaS_simss_5.class
@@ -13241,10 +13364,13 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom7.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom7.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom7.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom7.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaS_simss_5.class
@@ -13342,10 +13468,13 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom8.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom8.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom8.getValueAt(fila, 32)));
-            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 34)));
-            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 35)));
-            obs.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
+            ISR.setText(String.valueOf(Tnom8.getValueAt(fila, 33)));
+            RF.setText(String.valueOf(Tnom8.getValueAt(fila, 34)));
+            ADN.setText(String.valueOf(Tnom8.getValueAt(fila, 35)));
+            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
+            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 37)));
+            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 38)));
+            obs.setText(String.valueOf(Tnom8.getValueAt(fila, 39)));
 
         } catch (ParseException ex) {
             Logger.getLogger(Admin_NominaS_simss_5.class
@@ -13386,6 +13515,24 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void ISRKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ISRKeyReleased
+        deposito();
+    }//GEN-LAST:event_ISRKeyReleased
+
+    private void RFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RFKeyReleased
+        deposito();
+    }//GEN-LAST:event_RFKeyReleased
+
+    private void ADNKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADNKeyReleased
+        deposito();
+    }//GEN-LAST:event_ADNKeyReleased
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        Admin_Listas_5 regr = new Admin_Listas_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -13417,6 +13564,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ADN;
     private javax.swing.JMenuItem Administradores;
     private javax.swing.JButton AgregarNP;
     private javax.swing.JTextField Ap;
@@ -13591,6 +13739,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser Fvier;
     private javax.swing.JMenuItem General;
     private javax.swing.JTextField HE;
+    private javax.swing.JTextField ISR;
     private javax.swing.JButton Imprimir;
     private javax.swing.JButton Imprimir1;
     private javax.swing.JButton Imprimir2;
@@ -13731,6 +13880,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JTabbedPane PestanañasND;
     private javax.swing.JTabbedPane PestañasPagos;
     private javax.swing.JTextField Presp;
+    private javax.swing.JTextField RF;
     private javax.swing.JTextField RI;
     private javax.swing.JTextField Rembolso;
     private javax.swing.JTable SHPresnom;
@@ -13856,6 +14006,9 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
@@ -13888,6 +14041,7 @@ public final class Admin_NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

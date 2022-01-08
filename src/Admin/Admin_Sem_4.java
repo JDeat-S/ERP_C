@@ -1,19 +1,33 @@
 package Admin;
 
 import Conexion.ConexionSQL;
+import java.awt.Desktop;
+import java.awt.HeadlessException;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
  * @author JDeat
  */
-public class Admin_Sem_4 extends javax.swing.JFrame {
+public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
 
     /**
      * Creates new form Admin_Sem_4
@@ -21,11 +35,13 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
+    String hora, min, seg, ampm;
+    Calendar calendario;
+    Thread h1;
 
     public Admin_Sem_4() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
-        Folio1.setVisible(false);
         NPadron1.setVisible(false);
         NPadron2.setVisible(false);
         NPadron3.setVisible(false);
@@ -38,11 +54,9 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha1.setVisible(false);
         Servicio1.setVisible(false);
         Importe1.setVisible(false);
-        Folio2.setVisible(false);
         Fecha2.setVisible(false);
         Servicio2.setVisible(false);
         Importe2.setVisible(false);
-        Folio3.setVisible(false);
         Fecha3.setVisible(false);
         Servicio3.setVisible(false);
         Importe3.setVisible(false);
@@ -63,27 +77,24 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Menos6.setVisible(false);
         Menos7.setVisible(false);
         Menos8.setVisible(false);
-        Folio9.setVisible(false);
         Fecha9.setVisible(false);
         Servicio9.setVisible(false);
         Importe9.setVisible(false);
-        Folio8.setVisible(false);
+
         Fecha8.setVisible(false);
         Servicio8.setVisible(false);
         Importe8.setVisible(false);
-        Folio7.setVisible(false);
         Fecha7.setVisible(false);
         Servicio7.setVisible(false);
         Importe7.setVisible(false);
-        Folio6.setVisible(false);
         Fecha6.setVisible(false);
         Servicio6.setVisible(false);
         Importe6.setVisible(false);
-        Folio5.setVisible(false);
+
         Fecha5.setVisible(false);
         Servicio5.setVisible(false);
         Importe5.setVisible(false);
-        Folio4.setVisible(false);
+
         Fecha4.setVisible(false);
         Servicio4.setVisible(false);
         Importe4.setVisible(false);
@@ -104,39 +115,30 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Mas15.setVisible(false);
         Mas16.setVisible(false);
         Mas17.setVisible(false);
-        Folio11.setVisible(false);
         Fecha11.setVisible(false);
         Servicio11.setVisible(false);
         Importe11.setVisible(false);
-        Folio12.setVisible(false);
         Fecha12.setVisible(false);
         Servicio12.setVisible(false);
         Importe12.setVisible(false);
-        Folio13.setVisible(false);
         Fecha13.setVisible(false);
         Servicio13.setVisible(false);
         Importe13.setVisible(false);
-        Folio19.setVisible(false);
         Fecha19.setVisible(false);
         Servicio19.setVisible(false);
         Importe19.setVisible(false);
-        Folio18.setVisible(false);
         Fecha18.setVisible(false);
         Servicio18.setVisible(false);
         Importe18.setVisible(false);
-        Folio17.setVisible(false);
         Fecha17.setVisible(false);
         Servicio17.setVisible(false);
         Importe17.setVisible(false);
-        Folio16.setVisible(false);
         Fecha16.setVisible(false);
         Servicio16.setVisible(false);
         Importe16.setVisible(false);
-        Folio15.setVisible(false);
         Fecha15.setVisible(false);
         Servicio15.setVisible(false);
         Importe15.setVisible(false);
-        Folio14.setVisible(false);
         Fecha14.setVisible(false);
         Servicio14.setVisible(false);
         Importe14.setVisible(false);
@@ -157,41 +159,32 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Mas24.setVisible(false);
         Mas25.setVisible(false);
         Mas26.setVisible(false);
-        Folio21.setVisible(false);
         Fecha21.setVisible(false);
-        Servicio21.setVisible(false);
+        Concepto1.setVisible(false);
         Importe21.setVisible(false);
-        Folio22.setVisible(false);
         Fecha22.setVisible(false);
-        Servicio22.setVisible(false);
+        Concepto2.setVisible(false);
         Importe22.setVisible(false);
-        Folio23.setVisible(false);
         Fecha23.setVisible(false);
-        Servicio23.setVisible(false);
+        Concepto3.setVisible(false);
         Importe23.setVisible(false);
-        Folio29.setVisible(false);
         Fecha29.setVisible(false);
-        Servicio29.setVisible(false);
+        Concepto9.setVisible(false);
         Importe29.setVisible(false);
-        Folio28.setVisible(false);
         Fecha28.setVisible(false);
-        Servicio28.setVisible(false);
+        Concepto8.setVisible(false);
         Importe28.setVisible(false);
-        Folio27.setVisible(false);
         Fecha27.setVisible(false);
-        Servicio27.setVisible(false);
+        Concepto7.setVisible(false);
         Importe27.setVisible(false);
-        Folio26.setVisible(false);
         Fecha26.setVisible(false);
-        Servicio26.setVisible(false);
+        Concepto6.setVisible(false);
         Importe26.setVisible(false);
-        Folio25.setVisible(false);
         Fecha25.setVisible(false);
-        Servicio25.setVisible(false);
+        Concepto5.setVisible(false);
         Importe25.setVisible(false);
-        Folio24.setVisible(false);
         Fecha24.setVisible(false);
-        Servicio24.setVisible(false);
+        Concepto4.setVisible(false);
         Importe24.setVisible(false);
         LDA1.setVisible(false);
         LDA2.setVisible(false);
@@ -202,11 +195,1899 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         LDA7.setVisible(false);
         LDA8.setVisible(false);
         LDA9.setVisible(false);
-        // </editor-fold>                        
+        Menos27.setVisible(false);
+        Menos28.setVisible(false);
+        Menos29.setVisible(false);
+        Menos30.setVisible(false);
+        Menos31.setVisible(false);
+        Menos32.setVisible(false);
+        Menos33.setVisible(false);
+        Menos34.setVisible(false);
+        Menos35.setVisible(false);
+        Mas28.setVisible(false);
+        Mas29.setVisible(false);
+        Mas30.setVisible(false);
+        Mas31.setVisible(false);
+        Mas32.setVisible(false);
+        Mas33.setVisible(false);
+        Mas34.setVisible(false);
+        Mas35.setVisible(false);
+        ObsV1.setVisible(false);
+        ObsV2.setVisible(false);
+        ObsV3.setVisible(false);
+        ObsV4.setVisible(false);
+        ObsV5.setVisible(false);
+        ObsV6.setVisible(false);
+        ObsV7.setVisible(false);
+        ObsV8.setVisible(false);
+        ObsV9.setVisible(false);
+        Fecha31.setVisible(false);
+        Fecha32.setVisible(false);
+        Fecha33.setVisible(false);
+        Fecha34.setVisible(false);
+        Fecha35.setVisible(false);
+        Fecha36.setVisible(false);
+        Fecha37.setVisible(false);
+        Fecha38.setVisible(false);
+        Fecha39.setVisible(false);
+        Importe31.setVisible(false);
+        Importe32.setVisible(false);
+        Importe33.setVisible(false);
+        Importe34.setVisible(false);
+        Importe35.setVisible(false);
+        Importe36.setVisible(false);
+        Importe37.setVisible(false);
+        Importe38.setVisible(false);
+        Importe39.setVisible(false);
 
+        // </editor-fold>     
+        h1 = new Thread((Runnable) this);
+        h1.start();
+        String timeStamp = new SimpleDateFormat("EEEE, dd/MMMM/yyyy").format(Calendar.getInstance().getTime());
+        AutoFecha.setText("" + timeStamp);
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(6);
+        setIconImage(new ImageIcon(Admin_Sem_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        MostrarNDS();
     }
 
-    public void Imtotal() {
+    public void ADDSemanal() {
+        String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
+        String SQL = "INSERT INTO `rh.semanal.inturbide.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`,"
+                + " `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`, `el entrega`, `Debe`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setInt(1, Integer.parseInt(NDS.getText()));
+            pst.setString(2, AutoFecha.getText());
+            pst.setString(3, Autohora.getText());
+            pst.setString(4, mmyy);
+            pst.setString(5, TDSYP.getText());
+            pst.setString(6, TMG.getText());
+            pst.setString(7, DE.getText());
+            pst.setString(8, EEntrega.getText());
+            pst.setString(9, DBe.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Semanal agregado");
+
+        } catch (HeadlessException | SQLException error_add_cda) {
+            JOptionPane.showMessageDialog(null, "Error al agregar semanal: " + error_add_cda.getMessage());
+        }
+    }
+
+    public void Addscc() {
+        if (Mas.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
+
+            }
+        }
+        if (Mas1.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
+
+            }
+        }
+        if (Mas2.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
+                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(14, Importe2.getText());
+                pst.setString(15, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
+
+            }
+        }
+        if (Mas3.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
+                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(14, Importe2.getText());
+                pst.setString(15, TDIDS.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
+                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(19, Importe3.getText());
+                pst.setString(20, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro:  " + error_semanal);
+
+            }
+        }
+        if (Mas4.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
+                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(14, Importe2.getText());
+                pst.setString(15, TDIDS.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
+                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(19, Importe3.getText());
+                pst.setString(20, TDIDS.getText());
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
+                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(24, Importe4.getText());
+                pst.setString(25, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
+
+            }
+        }
+        if (Mas5.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
+                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(14, Importe2.getText());
+                pst.setString(15, TDIDS.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
+                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(19, Importe3.getText());
+                pst.setString(20, TDIDS.getText());
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
+                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(24, Importe4.getText());
+                pst.setString(25, TDIDS.getText());
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
+                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(29, Importe5.getText());
+                pst.setString(30, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
+
+            }
+        }
+        if (Mas6.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
+                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(14, Importe2.getText());
+                pst.setString(15, TDIDS.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
+                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(19, Importe3.getText());
+                pst.setString(20, TDIDS.getText());
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
+                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(24, Importe4.getText());
+                pst.setString(25, TDIDS.getText());
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
+                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(29, Importe5.getText());
+                pst.setString(30, TDIDS.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
+                pst.setString(33, Servicio6.getSelectedItem().toString());
+                pst.setString(34, Importe6.getText());
+                pst.setString(35, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
+
+            }
+        }
+        if (Mas7.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
+                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(14, Importe2.getText());
+                pst.setString(15, TDIDS.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
+                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(19, Importe3.getText());
+                pst.setString(20, TDIDS.getText());
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
+                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(24, Importe4.getText());
+                pst.setString(25, TDIDS.getText());
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
+                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(29, Importe5.getText());
+                pst.setString(30, TDIDS.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
+                pst.setString(33, Servicio6.getSelectedItem().toString());
+                pst.setString(34, Importe6.getText());
+                pst.setString(35, TDIDS.getText());
+                pst.setInt(36, Integer.parseInt(NDS.getText()));
+                pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
+                pst.setString(38, Servicio7.getSelectedItem().toString());
+                pst.setString(39, Importe7.getText());
+                pst.setString(40, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
+
+            }
+        }
+        if (Mas8.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
+                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(14, Importe2.getText());
+                pst.setString(15, TDIDS.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
+                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(19, Importe3.getText());
+                pst.setString(20, TDIDS.getText());
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
+                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(24, Importe4.getText());
+                pst.setString(25, TDIDS.getText());
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
+                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(29, Importe5.getText());
+                pst.setString(30, TDIDS.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
+                pst.setString(33, Servicio6.getSelectedItem().toString());
+                pst.setString(34, Importe6.getText());
+                pst.setString(35, TDIDS.getText());
+                pst.setInt(36, Integer.parseInt(NDS.getText()));
+                pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
+                pst.setString(38, Servicio7.getSelectedItem().toString());
+                pst.setString(39, Importe7.getText());
+                pst.setString(40, TDIDS.getText());
+                pst.setInt(41, Integer.parseInt(NDS.getText()));
+                pst.setString(42, DateFormat.getDateInstance().format(Fecha8.getDate()));
+                pst.setString(43, Servicio8.getSelectedItem().toString());
+                pst.setString(44, Importe8.getText());
+                pst.setString(45, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
+
+            }
+        }
+        if (Menos8.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
+                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(4, Importe.getText());
+                pst.setString(5, TDIDS.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
+                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDIDS.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
+                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(14, Importe2.getText());
+                pst.setString(15, TDIDS.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
+                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(19, Importe3.getText());
+                pst.setString(20, TDIDS.getText());
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
+                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(24, Importe4.getText());
+                pst.setString(25, TDIDS.getText());
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
+                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(29, Importe5.getText());
+                pst.setString(30, TDIDS.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
+                pst.setString(33, Servicio6.getSelectedItem().toString());
+                pst.setString(34, Importe6.getText());
+                pst.setString(35, TDIDS.getText());
+                pst.setInt(36, Integer.parseInt(NDS.getText()));
+                pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
+                pst.setString(38, Servicio7.getSelectedItem().toString());
+                pst.setString(39, Importe7.getText());
+                pst.setString(40, TDIDS.getText());
+                pst.setInt(41, Integer.parseInt(NDS.getText()));
+                pst.setString(42, DateFormat.getDateInstance().format(Fecha8.getDate()));
+                pst.setString(43, Servicio8.getSelectedItem().toString());
+                pst.setString(44, Importe8.getText());
+                pst.setString(45, TDIDS.getText());
+                pst.setInt(46, Integer.parseInt(NDS.getText()));
+                pst.setString(47, DateFormat.getDateInstance().format(Fecha9.getDate()));
+                pst.setString(48, Servicio9.getSelectedItem().toString());
+                pst.setString(49, Importe9.getText());
+                pst.setString(50, TDIDS.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
+
+            }
+        }
+    }
+
+    public void Addval() {
+        if (Mas27.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(3, ObsV.getText());
+                pst.setString(4, Importe30.getText());
+                pst.setString(5, TDV.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+
+            }
+        }
+        if (Mas28.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(3, ObsV.getText());
+                pst.setString(4, Importe30.getText());
+                pst.setString(5, TDV.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(8, ObsV1.getText());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDV.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+
+            }
+        }
+        if (Mas29.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(3, ObsV.getText());
+                pst.setString(4, Importe30.getText());
+                pst.setString(5, TDV.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(8, ObsV1.getText());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDV.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(13, ObsV2.getText());
+                pst.setString(14, Importe32.getText());
+                pst.setString(15, TDV.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+
+            }
+        }
+        if (Mas30.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(3, ObsV.getText());
+                pst.setString(4, Importe30.getText());
+                pst.setString(5, TDV.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(8, ObsV1.getText());
+                pst.setString(9, Importe1.getText());
+                pst.setString(10, TDV.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(13, ObsV2.getText());
+                pst.setString(14, Importe32.getText());
+                pst.setString(15, TDV.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(18, ObsV3.getText());
+                pst.setString(19, Importe33.getText());
+                pst.setString(20, TDV.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de vales:  " + error_semanal);
+
+            }
+        }
+        if (Mas31.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(3, ObsV.getText());
+                pst.setString(4, Importe30.getText());
+                pst.setString(5, TDV.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(8, ObsV1.getText());
+                pst.setString(9, Importe31.getText());
+                pst.setString(10, TDV.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(13, ObsV2.getText());
+                pst.setString(14, Importe32.getText());
+                pst.setString(15, TDV.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(18, ObsV3.getText());
+                pst.setString(19, Importe33.getText());
+                pst.setString(20, TDV.getText());
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(23, ObsV4.getText());
+                pst.setString(24, Importe34.getText());
+                pst.setString(25, TDV.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+
+            }
+        }
+        if (Mas32.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(3, ObsV.getText());
+                pst.setString(4, Importe30.getText());
+                pst.setString(5, TDV.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(8, ObsV1.getText());
+                pst.setString(9, Importe31.getText());
+                pst.setString(10, TDV.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(13, ObsV2.getText());
+                pst.setString(14, Importe32.getText());
+                pst.setString(15, TDV.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(18, ObsV3.getText());
+                pst.setString(19, Importe33.getText());
+                pst.setString(20, TDV.getText());
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(23, ObsV4.getText());
+                pst.setString(24, Importe34.getText());
+                pst.setString(25, TDV.getText());
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(28, ObsV5.getText());
+                pst.setString(29, Importe35.getText());
+                pst.setString(30, TDV.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+
+            }
+        }
+        if (Mas33.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(3, ObsV.getText());
+                pst.setString(4, Importe30.getText());
+                pst.setString(5, TDV.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(8, ObsV1.getText());
+                pst.setString(9, Importe31.getText());
+                pst.setString(10, TDV.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(13, ObsV2.getText());
+                pst.setString(14, Importe32.getText());
+                pst.setString(15, TDV.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(18, ObsV3.getText());
+                pst.setString(19, Importe33.getText());
+                pst.setString(20, TDV.getText());
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(23, ObsV4.getText());
+                pst.setString(24, Importe34.getText());
+                pst.setString(25, TDV.getText());
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(28, ObsV5.getText());
+                pst.setString(29, Importe35.getText());
+                pst.setString(30, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(33, ObsV6.getText());
+                pst.setString(34, Importe36.getText());
+                pst.setString(35, TDV.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+
+            }
+        }
+        if (Mas34.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(3, ObsV.getText());
+                pst.setString(4, Importe30.getText());
+                pst.setString(5, TDV.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(8, ObsV1.getText());
+                pst.setString(9, Importe31.getText());
+                pst.setString(10, TDV.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(13, ObsV2.getText());
+                pst.setString(14, Importe32.getText());
+                pst.setString(15, TDV.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(18, ObsV3.getText());
+                pst.setString(19, Importe33.getText());
+                pst.setString(20, TDV.getText());
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(23, ObsV4.getText());
+                pst.setString(24, Importe34.getText());
+                pst.setString(25, TDV.getText());
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(28, ObsV5.getText());
+                pst.setString(29, Importe35.getText());
+                pst.setString(30, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(33, ObsV6.getText());
+                pst.setString(34, Importe36.getText());
+                pst.setString(35, TDV.getText());
+                pst.setInt(36, Integer.parseInt(NDS.getText()));
+                pst.setString(37, DateFormat.getDateInstance().format(Fecha37.getDate()));
+                pst.setString(38, ObsV7.getText());
+                pst.setString(39, Importe37.getText());
+                pst.setString(40, TDV.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+
+            }
+        }
+        if (Mas35.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(3, ObsV.getText());
+                pst.setString(4, Importe30.getText());
+                pst.setString(5, TDV.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(8, ObsV1.getText());
+                pst.setString(9, Importe31.getText());
+                pst.setString(10, TDV.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(13, ObsV2.getText());
+                pst.setString(14, Importe32.getText());
+                pst.setString(15, TDV.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(18, ObsV3.getText());
+                pst.setString(19, Importe33.getText());
+                pst.setString(20, TDV.getText());
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(23, ObsV4.getText());
+                pst.setString(24, Importe34.getText());
+                pst.setString(25, TDV.getText());
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(28, ObsV5.getText());
+                pst.setString(29, Importe35.getText());
+                pst.setString(30, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(33, ObsV6.getText());
+                pst.setString(34, Importe36.getText());
+                pst.setString(35, TDV.getText());
+                pst.setInt(36, Integer.parseInt(NDS.getText()));
+                pst.setString(37, DateFormat.getDateInstance().format(Fecha37.getDate()));
+                pst.setString(38, ObsV7.getText());
+                pst.setString(39, Importe37.getText());
+                pst.setString(40, TDV.getText());
+                pst.setInt(41, Integer.parseInt(NDS.getText()));
+                pst.setString(42, DateFormat.getDateInstance().format(Fecha38.getDate()));
+                pst.setString(43, ObsV8.getText());
+                pst.setString(44, Importe38.getText());
+                pst.setString(45, TDV.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+
+            }
+        }
+        if (Menos35.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(3, ObsV.getText());
+                pst.setString(4, Importe30.getText());
+                pst.setString(5, TDV.getText());
+                pst.setInt(6, Integer.parseInt(NDS.getText()));
+                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(8, ObsV1.getText());
+                pst.setString(9, Importe31.getText());
+                pst.setString(10, TDV.getText());
+                pst.setInt(11, Integer.parseInt(NDS.getText()));
+                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(13, ObsV2.getText());
+                pst.setString(14, Importe32.getText());
+                pst.setString(15, TDV.getText());
+                pst.setInt(16, Integer.parseInt(NDS.getText()));
+                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(18, ObsV3.getText());
+                pst.setString(19, Importe33.getText());
+                pst.setString(20, TDV.getText());
+                pst.setInt(21, Integer.parseInt(NDS.getText()));
+                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(23, ObsV4.getText());
+                pst.setString(24, Importe34.getText());
+                pst.setString(25, TDV.getText());
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(28, ObsV5.getText());
+                pst.setString(29, Importe35.getText());
+                pst.setString(30, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(33, ObsV6.getText());
+                pst.setString(34, Importe36.getText());
+                pst.setString(35, TDV.getText());
+                pst.setInt(36, Integer.parseInt(NDS.getText()));
+                pst.setString(37, DateFormat.getDateInstance().format(Fecha37.getDate()));
+                pst.setString(38, ObsV7.getText());
+                pst.setString(39, Importe37.getText());
+                pst.setString(40, TDV.getText());
+                pst.setInt(41, Integer.parseInt(NDS.getText()));
+                pst.setString(42, DateFormat.getDateInstance().format(Fecha38.getDate()));
+                pst.setString(43, ObsV8.getText());
+                pst.setString(44, Importe38.getText());
+                pst.setString(45, TDV.getText());
+                pst.setInt(46, Integer.parseInt(NDS.getText()));
+                pst.setString(47, DateFormat.getDateInstance().format(Fecha39.getDate()));
+                pst.setString(48, ObsV9.getText());
+                pst.setString(49, Importe39.getText());
+                pst.setString(50, TDV.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+
+            }
+        }
+    }
+
+    public void Addspen() {
+        if (Mas9.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha10.getDate()));
+                pst.setString(3, Servicio10.getText());
+                pst.setString(4, NPadron.getText());
+                pst.setString(5, Importe10.getText());
+                pst.setString(6, TDIDP.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+            }
+        }
+        if (Mas10.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha10.getDate()));
+                pst.setString(3, Servicio10.getText());
+                pst.setString(4, NPadron.getText());
+                pst.setString(5, Importe10.getText());
+                pst.setString(6, TDIDP.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha11.getDate()));
+                pst.setString(9, Servicio11.getText());
+                pst.setString(10, NPadron1.getText());
+                pst.setString(11, Importe11.getText());
+                pst.setString(12, TDIDP.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+            }
+        }
+        if (Mas11.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha10.getDate()));
+                pst.setString(3, Servicio10.getText());
+                pst.setString(4, NPadron.getText());
+                pst.setString(5, Importe10.getText());
+                pst.setString(6, TDIDP.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha11.getDate()));
+                pst.setString(9, Servicio12.getText());
+                pst.setString(10, NPadron1.getText());
+                pst.setString(11, Importe12.getText());
+                pst.setString(12, TDIDP.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha12.getDate()));
+                pst.setString(15, Servicio12.getText());
+                pst.setString(16, NPadron2.getText());
+                pst.setString(17, Importe12.getText());
+                pst.setString(18, TDIDP.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+            }
+        }
+        if (Mas12.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha10.getDate()));
+                pst.setString(3, Servicio10.getText());
+                pst.setString(4, NPadron.getText());
+                pst.setString(5, Importe10.getText());
+                pst.setString(6, TDIDP.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha11.getDate()));
+                pst.setString(9, Servicio12.getText());
+                pst.setString(10, NPadron1.getText());
+                pst.setString(11, Importe12.getText());
+                pst.setString(12, TDIDP.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha12.getDate()));
+                pst.setString(15, Servicio12.getText());
+                pst.setString(16, NPadron2.getText());
+                pst.setString(17, Importe12.getText());
+                pst.setString(18, TDIDP.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha13.getDate()));
+                pst.setString(21, Servicio13.getText());
+                pst.setString(22, NPadron3.getText());
+                pst.setString(23, Importe13.getText());
+                pst.setString(24, TDIDP.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones:  " + error_semanal);
+
+            }
+        }
+        if (Mas13.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha10.getDate()));
+                pst.setString(3, Servicio10.getText());
+                pst.setString(4, NPadron.getText());
+                pst.setString(5, Importe10.getText());
+                pst.setString(6, TDIDP.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha11.getDate()));
+                pst.setString(9, Servicio12.getText());
+                pst.setString(10, NPadron1.getText());
+                pst.setString(11, Importe12.getText());
+                pst.setString(12, TDIDP.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha12.getDate()));
+                pst.setString(15, Servicio12.getText());
+                pst.setString(16, NPadron2.getText());
+                pst.setString(17, Importe12.getText());
+                pst.setString(18, TDIDP.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha13.getDate()));
+                pst.setString(21, Servicio13.getText());
+                pst.setString(22, NPadron3.getText());
+                pst.setString(23, Importe13.getText());
+                pst.setString(24, TDIDP.getText());
+                pst.setString(26, DateFormat.getDateInstance().format(Fecha14.getDate()));
+                pst.setString(27, Servicio14.getText());
+                pst.setString(28, NPadron4.getText());
+                pst.setString(29, Importe14.getText());
+                pst.setString(30, TDIDP.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+            }
+        }
+        if (Mas14.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha10.getDate()));
+                pst.setString(3, Servicio10.getText());
+                pst.setString(4, NPadron.getText());
+                pst.setString(5, Importe10.getText());
+                pst.setString(6, TDIDP.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha11.getDate()));
+                pst.setString(9, Servicio12.getText());
+                pst.setString(10, NPadron1.getText());
+                pst.setString(11, Importe12.getText());
+                pst.setString(12, TDIDP.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha12.getDate()));
+                pst.setString(15, Servicio12.getText());
+                pst.setString(16, NPadron2.getText());
+                pst.setString(17, Importe12.getText());
+                pst.setString(18, TDIDP.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha13.getDate()));
+                pst.setString(21, Servicio13.getText());
+                pst.setString(22, NPadron3.getText());
+                pst.setString(23, Importe13.getText());
+                pst.setString(24, TDIDP.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
+                pst.setString(26, DateFormat.getDateInstance().format(Fecha14.getDate()));
+                pst.setString(27, Servicio14.getText());
+                pst.setString(28, NPadron4.getText());
+                pst.setString(29, Importe14.getText());
+                pst.setString(30, TDIDP.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha15.getDate()));
+                pst.setString(33, Servicio15.getText());
+                pst.setString(34, NPadron5.getText());
+                pst.setString(35, Importe15.getText());
+                pst.setString(36, TDIDP.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+            }
+        }
+        if (Mas15.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha10.getDate()));
+                pst.setString(3, Servicio10.getText());
+                pst.setString(4, NPadron.getText());
+                pst.setString(5, Importe10.getText());
+                pst.setString(6, TDIDP.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha11.getDate()));
+                pst.setString(9, Servicio12.getText());
+                pst.setString(10, NPadron1.getText());
+                pst.setString(11, Importe12.getText());
+                pst.setString(12, TDIDP.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha12.getDate()));
+                pst.setString(15, Servicio12.getText());
+                pst.setString(16, NPadron2.getText());
+                pst.setString(17, Importe12.getText());
+                pst.setString(18, TDIDP.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha13.getDate()));
+                pst.setString(21, Servicio13.getText());
+                pst.setString(22, NPadron3.getText());
+                pst.setString(23, Importe13.getText());
+                pst.setString(24, TDIDP.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
+                pst.setString(26, DateFormat.getDateInstance().format(Fecha14.getDate()));
+                pst.setString(27, Servicio14.getText());
+                pst.setString(28, NPadron4.getText());
+                pst.setString(29, Importe14.getText());
+                pst.setString(30, TDIDP.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha15.getDate()));
+                pst.setString(33, Servicio15.getText());
+                pst.setString(34, NPadron5.getText());
+                pst.setString(35, Importe15.getText());
+                pst.setString(36, TDIDP.getText());
+                pst.setInt(37, Integer.parseInt(NDS.getText()));
+                pst.setString(38, DateFormat.getDateInstance().format(Fecha16.getDate()));
+                pst.setString(39, Servicio16.getText());
+                pst.setString(40, NPadron6.getText());
+                pst.setString(41, Importe16.getText());
+                pst.setString(42, TDIDP.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+            }
+        }
+        if (Mas16.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha10.getDate()));
+                pst.setString(3, Servicio10.getText());
+                pst.setString(4, NPadron.getText());
+                pst.setString(5, Importe10.getText());
+                pst.setString(6, TDIDP.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha11.getDate()));
+                pst.setString(9, Servicio12.getText());
+                pst.setString(10, NPadron1.getText());
+                pst.setString(11, Importe12.getText());
+                pst.setString(12, TDIDP.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha12.getDate()));
+                pst.setString(15, Servicio12.getText());
+                pst.setString(16, NPadron2.getText());
+                pst.setString(17, Importe12.getText());
+                pst.setString(18, TDIDP.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha13.getDate()));
+                pst.setString(21, Servicio13.getText());
+                pst.setString(22, NPadron3.getText());
+                pst.setString(23, Importe13.getText());
+                pst.setString(24, TDIDP.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
+                pst.setString(26, DateFormat.getDateInstance().format(Fecha14.getDate()));
+                pst.setString(27, Servicio14.getText());
+                pst.setString(28, NPadron4.getText());
+                pst.setString(29, Importe14.getText());
+                pst.setString(30, TDIDP.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha15.getDate()));
+                pst.setString(33, Servicio15.getText());
+                pst.setString(34, NPadron5.getText());
+                pst.setString(35, Importe15.getText());
+                pst.setString(36, TDIDP.getText());
+                pst.setInt(37, Integer.parseInt(NDS.getText()));
+                pst.setString(38, DateFormat.getDateInstance().format(Fecha16.getDate()));
+                pst.setString(39, Servicio16.getText());
+                pst.setString(40, NPadron6.getText());
+                pst.setString(41, Importe16.getText());
+                pst.setString(42, TDIDP.getText());
+                pst.setInt(43, Integer.parseInt(NDS.getText()));
+                pst.setString(44, DateFormat.getDateInstance().format(Fecha17.getDate()));
+                pst.setString(45, Servicio17.getText());
+                pst.setString(46, NPadron7.getText());
+                pst.setString(47, Importe17.getText());
+                pst.setString(48, TDIDP.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+            }
+        }
+        if (Mas17.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha10.getDate()));
+                pst.setString(3, Servicio10.getText());
+                pst.setString(4, NPadron.getText());
+                pst.setString(5, Importe10.getText());
+                pst.setString(6, TDIDP.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha11.getDate()));
+                pst.setString(9, Servicio12.getText());
+                pst.setString(10, NPadron1.getText());
+                pst.setString(11, Importe12.getText());
+                pst.setString(12, TDIDP.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha12.getDate()));
+                pst.setString(15, Servicio12.getText());
+                pst.setString(16, NPadron2.getText());
+                pst.setString(17, Importe12.getText());
+                pst.setString(18, TDIDP.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha13.getDate()));
+                pst.setString(21, Servicio13.getText());
+                pst.setString(22, NPadron3.getText());
+                pst.setString(23, Importe13.getText());
+                pst.setString(24, TDIDP.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
+                pst.setString(26, DateFormat.getDateInstance().format(Fecha14.getDate()));
+                pst.setString(27, Servicio14.getText());
+                pst.setString(28, NPadron4.getText());
+                pst.setString(29, Importe14.getText());
+                pst.setString(30, TDIDP.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha15.getDate()));
+                pst.setString(33, Servicio15.getText());
+                pst.setString(34, NPadron5.getText());
+                pst.setString(35, Importe15.getText());
+                pst.setString(36, TDIDP.getText());
+                pst.setInt(37, Integer.parseInt(NDS.getText()));
+                pst.setString(38, DateFormat.getDateInstance().format(Fecha16.getDate()));
+                pst.setString(39, Servicio16.getText());
+                pst.setString(40, NPadron6.getText());
+                pst.setString(41, Importe16.getText());
+                pst.setString(42, TDIDP.getText());
+                pst.setInt(43, Integer.parseInt(NDS.getText()));
+                pst.setString(44, DateFormat.getDateInstance().format(Fecha17.getDate()));
+                pst.setString(45, Servicio17.getText());
+                pst.setString(46, NPadron7.getText());
+                pst.setString(47, Importe17.getText());
+                pst.setString(48, TDIDP.getText());
+                pst.setInt(49, Integer.parseInt(NDS.getText()));
+                pst.setString(50, DateFormat.getDateInstance().format(Fecha18.getDate()));
+                pst.setString(51, Servicio18.getText());
+                pst.setString(52, NPadron8.getText());
+                pst.setString(53, Importe18.getText());
+                pst.setString(54, TDIDP.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+            }
+        }
+        if (Menos17.isVisible()) {
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha10.getDate()));
+                pst.setString(3, Servicio10.getText());
+                pst.setString(4, NPadron.getText());
+                pst.setString(5, Importe10.getText());
+                pst.setString(6, TDIDP.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha11.getDate()));
+                pst.setString(9, Servicio12.getText());
+                pst.setString(10, NPadron1.getText());
+                pst.setString(11, Importe12.getText());
+                pst.setString(12, TDIDP.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha12.getDate()));
+                pst.setString(15, Servicio12.getText());
+                pst.setString(16, NPadron2.getText());
+                pst.setString(17, Importe12.getText());
+                pst.setString(18, TDIDP.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha13.getDate()));
+                pst.setString(21, Servicio13.getText());
+                pst.setString(22, NPadron3.getText());
+                pst.setString(23, Importe13.getText());
+                pst.setString(24, TDIDP.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
+                pst.setString(26, DateFormat.getDateInstance().format(Fecha14.getDate()));
+                pst.setString(27, Servicio14.getText());
+                pst.setString(28, NPadron4.getText());
+                pst.setString(29, Importe14.getText());
+                pst.setString(30, TDIDP.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha15.getDate()));
+                pst.setString(33, Servicio15.getText());
+                pst.setString(34, NPadron5.getText());
+                pst.setString(35, Importe15.getText());
+                pst.setString(36, TDIDP.getText());
+                pst.setInt(37, Integer.parseInt(NDS.getText()));
+                pst.setString(38, DateFormat.getDateInstance().format(Fecha16.getDate()));
+                pst.setString(39, Servicio16.getText());
+                pst.setString(40, NPadron6.getText());
+                pst.setString(41, Importe16.getText());
+                pst.setString(42, TDIDP.getText());
+                pst.setInt(43, Integer.parseInt(NDS.getText()));
+                pst.setString(44, DateFormat.getDateInstance().format(Fecha17.getDate()));
+                pst.setString(45, Servicio17.getText());
+                pst.setString(46, NPadron7.getText());
+                pst.setString(47, Importe17.getText());
+                pst.setString(48, TDIDP.getText());
+                pst.setInt(49, Integer.parseInt(NDS.getText()));
+                pst.setString(50, DateFormat.getDateInstance().format(Fecha18.getDate()));
+                pst.setString(51, Servicio18.getText());
+                pst.setString(52, NPadron8.getText());
+                pst.setString(53, Importe18.getText());
+                pst.setString(54, TDIDP.getText());
+                pst.setInt(55, Integer.parseInt(NDS.getText()));
+                pst.setString(56, DateFormat.getDateInstance().format(Fecha19.getDate()));
+                pst.setString(57, Servicio19.getText());
+                pst.setString(58, NPadron9.getText());
+                pst.setString(59, Importe19.getText());
+                pst.setString(60, TDIDP.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+            }
+        }
+    }
+
+    public void Addsgast() {
+        if (Mas18.isVisible()) {
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha20.getDate()));
+                pst.setString(3, Concepto.getText());
+                pst.setString(4, Importe20.getText());
+                pst.setString(5, LDA.getText());
+                pst.setString(6, TDG.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
+
+            }
+        }
+        if (Mas19.isVisible()) {
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha20.getDate()));
+                pst.setString(3, Concepto.getText());
+                pst.setString(4, Importe20.getText());
+                pst.setString(5, LDA.getText());
+                pst.setString(6, TDG.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha21.getDate()));
+                pst.setString(9, Concepto1.getText());
+                pst.setString(10, Importe21.getText());
+                pst.setString(11, LDA1.getText());
+                pst.setString(12, TDG.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
+
+            }
+        }
+        if (Mas20.isVisible()) {
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha20.getDate()));
+                pst.setString(3, Concepto.getText());
+                pst.setString(4, Importe20.getText());
+                pst.setString(5, LDA.getText());
+                pst.setString(6, TDG.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha21.getDate()));
+                pst.setString(9, Concepto1.getText());
+                pst.setString(10, Importe21.getText());
+                pst.setString(11, LDA1.getText());
+                pst.setString(12, TDG.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha22.getDate()));
+                pst.setString(15, Concepto2.getText());
+                pst.setString(16, Importe22.getText());
+                pst.setString(17, LDA2.getText());
+                pst.setString(18, TDG.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
+
+            }
+        }
+        if (Mas21.isVisible()) {
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha20.getDate()));
+                pst.setString(3, Concepto.getText());
+                pst.setString(4, Importe20.getText());
+                pst.setString(5, LDA.getText());
+                pst.setString(6, TDG.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha21.getDate()));
+                pst.setString(9, Concepto1.getText());
+                pst.setString(10, Importe21.getText());
+                pst.setString(11, LDA1.getText());
+                pst.setString(12, TDG.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha22.getDate()));
+                pst.setString(15, Concepto2.getText());
+                pst.setString(16, Importe22.getText());
+                pst.setString(17, LDA2.getText());
+                pst.setString(18, TDG.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha23.getDate()));
+                pst.setString(21, Concepto3.getText());
+                pst.setString(22, Importe23.getText());
+                pst.setString(23, LDA3.getText());
+                pst.setString(24, TDG.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.:  " + error_semanal);
+
+            }
+        }
+        if (Mas22.isVisible()) {
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha20.getDate()));
+                pst.setString(3, Concepto.getText());
+                pst.setString(4, Importe20.getText());
+                pst.setString(5, LDA.getText());
+                pst.setString(6, TDG.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha21.getDate()));
+                pst.setString(9, Concepto1.getText());
+                pst.setString(10, Importe21.getText());
+                pst.setString(11, LDA1.getText());
+                pst.setString(12, TDG.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha22.getDate()));
+                pst.setString(15, Concepto2.getText());
+                pst.setString(16, Importe22.getText());
+                pst.setString(17, LDA2.getText());
+                pst.setString(18, TDG.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha23.getDate()));
+                pst.setString(21, Concepto3.getText());
+                pst.setString(22, Importe23.getText());
+                pst.setString(23, LDA3.getText());
+                pst.setString(24, TDG.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
+                pst.setString(26, DateFormat.getDateInstance().format(Fecha24.getDate()));
+                pst.setString(27, Concepto4.getText());
+                pst.setString(28, Importe24.getText());
+                pst.setString(29, LDA4.getText());
+                pst.setString(30, TDG.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
+
+            }
+        }
+        if (Mas23.isVisible()) {
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha20.getDate()));
+                pst.setString(3, Concepto.getText());
+                pst.setString(4, Importe20.getText());
+                pst.setString(5, LDA.getText());
+                pst.setString(6, TDG.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha21.getDate()));
+                pst.setString(9, Concepto1.getText());
+                pst.setString(10, Importe21.getText());
+                pst.setString(11, LDA1.getText());
+                pst.setString(12, TDG.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha22.getDate()));
+                pst.setString(15, Concepto2.getText());
+                pst.setString(16, Importe22.getText());
+                pst.setString(17, LDA2.getText());
+                pst.setString(18, TDG.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha23.getDate()));
+                pst.setString(21, Concepto3.getText());
+                pst.setString(22, Importe23.getText());
+                pst.setString(23, LDA3.getText());
+                pst.setString(24, TDG.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
+                pst.setString(26, DateFormat.getDateInstance().format(Fecha24.getDate()));
+                pst.setString(27, Concepto4.getText());
+                pst.setString(28, Importe24.getText());
+                pst.setString(29, LDA4.getText());
+                pst.setString(30, TDG.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha25.getDate()));
+                pst.setString(33, Concepto5.getText());
+                pst.setString(34, Importe25.getText());
+                pst.setString(35, LDA5.getText());
+                pst.setString(36, TDG.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
+
+            }
+        }
+        if (Mas24.isVisible()) {
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha20.getDate()));
+                pst.setString(3, Concepto.getText());
+                pst.setString(4, Importe20.getText());
+                pst.setString(5, LDA.getText());
+                pst.setString(6, TDG.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha21.getDate()));
+                pst.setString(9, Concepto1.getText());
+                pst.setString(10, Importe21.getText());
+                pst.setString(11, LDA1.getText());
+                pst.setString(12, TDG.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha22.getDate()));
+                pst.setString(15, Concepto2.getText());
+                pst.setString(16, Importe22.getText());
+                pst.setString(17, LDA2.getText());
+                pst.setString(18, TDG.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha23.getDate()));
+                pst.setString(21, Concepto3.getText());
+                pst.setString(22, Importe23.getText());
+                pst.setString(23, LDA3.getText());
+                pst.setString(24, TDG.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
+                pst.setString(26, DateFormat.getDateInstance().format(Fecha24.getDate()));
+                pst.setString(27, Concepto4.getText());
+                pst.setString(28, Importe24.getText());
+                pst.setString(29, LDA4.getText());
+                pst.setString(30, TDG.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha25.getDate()));
+                pst.setString(33, Concepto5.getText());
+                pst.setString(34, Importe25.getText());
+                pst.setString(35, LDA5.getText());
+                pst.setString(36, TDG.getText());
+                pst.setInt(37, Integer.parseInt(NDS.getText()));
+                pst.setString(38, DateFormat.getDateInstance().format(Fecha26.getDate()));
+                pst.setString(39, Concepto6.getText());
+                pst.setString(40, Importe26.getText());
+                pst.setString(41, LDA6.getText());
+                pst.setString(42, TDG.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
+
+            }
+        }
+        if (Mas25.isVisible()) {
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha20.getDate()));
+                pst.setString(3, Concepto.getText());
+                pst.setString(4, Importe20.getText());
+                pst.setString(5, LDA.getText());
+                pst.setString(6, TDG.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha21.getDate()));
+                pst.setString(9, Concepto1.getText());
+                pst.setString(10, Importe21.getText());
+                pst.setString(11, LDA1.getText());
+                pst.setString(12, TDG.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha22.getDate()));
+                pst.setString(15, Concepto2.getText());
+                pst.setString(16, Importe22.getText());
+                pst.setString(17, LDA2.getText());
+                pst.setString(18, TDG.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha23.getDate()));
+                pst.setString(21, Concepto3.getText());
+                pst.setString(22, Importe23.getText());
+                pst.setString(23, LDA3.getText());
+                pst.setString(24, TDG.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
+                pst.setString(26, DateFormat.getDateInstance().format(Fecha24.getDate()));
+                pst.setString(27, Concepto4.getText());
+                pst.setString(28, Importe24.getText());
+                pst.setString(29, LDA4.getText());
+                pst.setString(30, TDG.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha25.getDate()));
+                pst.setString(33, Concepto5.getText());
+                pst.setString(34, Importe25.getText());
+                pst.setString(35, LDA5.getText());
+                pst.setString(36, TDG.getText());
+                pst.setInt(37, Integer.parseInt(NDS.getText()));
+                pst.setString(38, DateFormat.getDateInstance().format(Fecha26.getDate()));
+                pst.setString(39, Concepto6.getText());
+                pst.setString(40, Importe26.getText());
+                pst.setString(41, LDA6.getText());
+                pst.setString(42, TDG.getText());
+                pst.setInt(43, Integer.parseInt(NDS.getText()));
+                pst.setString(44, DateFormat.getDateInstance().format(Fecha27.getDate()));
+                pst.setString(45, Concepto7.getText());
+                pst.setString(46, Importe7.getText());
+                pst.setString(47, LDA7.getText());
+                pst.setString(48, TDG.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
+
+            }
+        }
+        if (Mas26.isVisible()) {
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha20.getDate()));
+                pst.setString(3, Concepto.getText());
+                pst.setString(4, Importe20.getText());
+                pst.setString(5, LDA.getText());
+                pst.setString(6, TDG.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha21.getDate()));
+                pst.setString(9, Concepto1.getText());
+                pst.setString(10, Importe21.getText());
+                pst.setString(11, LDA1.getText());
+                pst.setString(12, TDG.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha22.getDate()));
+                pst.setString(15, Concepto2.getText());
+                pst.setString(16, Importe22.getText());
+                pst.setString(17, LDA2.getText());
+                pst.setString(18, TDG.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha23.getDate()));
+                pst.setString(21, Concepto3.getText());
+                pst.setString(22, Importe23.getText());
+                pst.setString(23, LDA3.getText());
+                pst.setString(24, TDG.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
+                pst.setString(26, DateFormat.getDateInstance().format(Fecha24.getDate()));
+                pst.setString(27, Concepto4.getText());
+                pst.setString(28, Importe24.getText());
+                pst.setString(29, LDA4.getText());
+                pst.setString(30, TDG.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha25.getDate()));
+                pst.setString(33, Concepto5.getText());
+                pst.setString(34, Importe25.getText());
+                pst.setString(35, LDA5.getText());
+                pst.setString(36, TDG.getText());
+                pst.setInt(37, Integer.parseInt(NDS.getText()));
+                pst.setString(38, DateFormat.getDateInstance().format(Fecha26.getDate()));
+                pst.setString(39, Concepto6.getText());
+                pst.setString(40, Importe26.getText());
+                pst.setString(41, LDA6.getText());
+                pst.setString(42, TDG.getText());
+                pst.setInt(43, Integer.parseInt(NDS.getText()));
+                pst.setString(44, DateFormat.getDateInstance().format(Fecha27.getDate()));
+                pst.setString(45, Concepto7.getText());
+                pst.setString(46, Importe7.getText());
+                pst.setString(47, LDA7.getText());
+                pst.setString(48, TDG.getText());
+                pst.setInt(49, Integer.parseInt(NDS.getText()));
+                pst.setString(50, DateFormat.getDateInstance().format(Fecha28.getDate()));
+                pst.setString(51, Concepto8.getText());
+                pst.setString(52, Importe28.getText());
+                pst.setString(53, LDA8.getText());
+                pst.setString(54, TDG.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
+
+            }
+        }
+        if (Menos26.isVisible()) {
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+                    + ", (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(NDS.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha20.getDate()));
+                pst.setString(3, Concepto.getText());
+                pst.setString(4, Importe20.getText());
+                pst.setString(5, LDA.getText());
+                pst.setString(6, TDG.getText());
+                pst.setInt(7, Integer.parseInt(NDS.getText()));
+                pst.setString(8, DateFormat.getDateInstance().format(Fecha21.getDate()));
+                pst.setString(9, Concepto1.getText());
+                pst.setString(10, Importe21.getText());
+                pst.setString(11, LDA1.getText());
+                pst.setString(12, TDG.getText());
+                pst.setInt(13, Integer.parseInt(NDS.getText()));
+                pst.setString(14, DateFormat.getDateInstance().format(Fecha22.getDate()));
+                pst.setString(15, Concepto2.getText());
+                pst.setString(16, Importe22.getText());
+                pst.setString(17, LDA2.getText());
+                pst.setString(18, TDG.getText());
+                pst.setInt(19, Integer.parseInt(NDS.getText()));
+                pst.setString(20, DateFormat.getDateInstance().format(Fecha23.getDate()));
+                pst.setString(21, Concepto3.getText());
+                pst.setString(22, Importe23.getText());
+                pst.setString(23, LDA3.getText());
+                pst.setString(24, TDG.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
+                pst.setString(26, DateFormat.getDateInstance().format(Fecha24.getDate()));
+                pst.setString(27, Concepto4.getText());
+                pst.setString(28, Importe24.getText());
+                pst.setString(29, LDA4.getText());
+                pst.setString(30, TDG.getText());
+                pst.setInt(31, Integer.parseInt(NDS.getText()));
+                pst.setString(32, DateFormat.getDateInstance().format(Fecha25.getDate()));
+                pst.setString(33, Concepto5.getText());
+                pst.setString(34, Importe25.getText());
+                pst.setString(35, LDA5.getText());
+                pst.setString(36, TDG.getText());
+                pst.setInt(37, Integer.parseInt(NDS.getText()));
+                pst.setString(38, DateFormat.getDateInstance().format(Fecha26.getDate()));
+                pst.setString(39, Concepto6.getText());
+                pst.setString(40, Importe26.getText());
+                pst.setString(41, LDA6.getText());
+                pst.setString(42, TDG.getText());
+                pst.setInt(43, Integer.parseInt(NDS.getText()));
+                pst.setString(44, DateFormat.getDateInstance().format(Fecha27.getDate()));
+                pst.setString(45, Concepto7.getText());
+                pst.setString(46, Importe7.getText());
+                pst.setString(47, LDA7.getText());
+                pst.setString(48, TDG.getText());
+                pst.setInt(49, Integer.parseInt(NDS.getText()));
+                pst.setString(50, DateFormat.getDateInstance().format(Fecha28.getDate()));
+                pst.setString(51, Concepto8.getText());
+                pst.setString(52, Importe28.getText());
+                pst.setString(53, LDA8.getText());
+                pst.setString(54, TDG.getText());
+                pst.setInt(55, Integer.parseInt(NDS.getText()));
+                pst.setString(56, DateFormat.getDateInstance().format(Fecha29.getDate()));
+                pst.setString(57, Concepto9.getText());
+                pst.setString(58, Importe29.getText());
+                pst.setString(59, LDA9.getText());
+                pst.setString(60, TDG.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
+
+            }
+        }
+    }
+
+    @Override
+    public void run() {
+        Thread ct = Thread.currentThread();
+        while (ct == h1) {
+            calcula();
+            Autohora.setText(hora + ":" + min + ":" + seg + " " + ampm);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException error) {
+
+            }
+        }
+    }
+
+    private void calcula() {
+        Calendar Fechaactual = new GregorianCalendar();
+        Date fechaHoraactual = new Date();
+        Fechaactual.setTime(fechaHoraactual);
+        ampm = Fechaactual.get(Calendar.AM_PM) == Calendar.AM ? "AM" : "PM";
+        if (ampm.equals("PM")) {
+            int h = Fechaactual.get(Calendar.HOUR_OF_DAY) - 12;
+            hora = h > 9 ? "" + h : "0" + h;
+            if (h == 00) {
+                hora = "12";
+            } else {
+                hora = h > 9 ? "" + h : "0" + h;
+            }
+        } else {
+            hora = Fechaactual.get(Calendar.HOUR_OF_DAY) > 9 ? "" + Fechaactual.get(Calendar.HOUR_OF_DAY) : "0" + Fechaactual.get(Calendar.HOUR_OF_DAY);
+        }
+        min = Fechaactual.get(Calendar.MINUTE) > 9 ? "" + Fechaactual.get(Calendar.MINUTE) : "0" + Fechaactual.get(Calendar.MINUTE);
+        seg = Fechaactual.get(Calendar.SECOND) > 9 ? "" + Fechaactual.get(Calendar.SECOND) : "0" + Fechaactual.get(Calendar.SECOND);
+    }
+
+    public void Operaciones() {
         // <editor-fold defaultstate="collapsed" desc="Suma Servicios">
         double ImServ1 = Double.parseDouble(Importe.getText());
         double ImServ2 = Double.parseDouble(Importe1.getText());
@@ -258,6 +2139,14 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         TDG.setText("" + TotalGas);
         //</editor-fold>
 
+        // <editor-fold defaultstate="collapsed" desc="Suma vales">
+        TDV.setText("" + (Double.parseDouble(Importe30.getText()) + Double.parseDouble(Importe31.getText())
+                + Double.parseDouble(Importe32.getText()) + Double.parseDouble(Importe33.getText())
+                + Double.parseDouble(Importe34.getText()) + Double.parseDouble(Importe35.getText())
+                + Double.parseDouble(Importe36.getText()) + Double.parseDouble(Importe37.getText())
+                + Double.parseDouble(Importe38.getText()) + Double.parseDouble(Importe39.getText())));
+        //</editor-fold>
+
         // <editor-fold defaultstate="collapsed" desc="Total SYP">
         double TDSYP1 = Double.parseDouble(TDIDS.getText());
         double TDSYP2 = Double.parseDouble(TDIDP.getText());
@@ -266,430 +2155,35 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         TDSYP.setText("" + TotalSYP);
         //</editor-fold>
 
-        // <editor-fold defaultstate="collapsed" desc="Diferencia TG y Gastos">
-        double DIF1 = Double.parseDouble(TDSYP.getText());
-        double DIF2 = Double.parseDouble(TDG.getText());
+        // <editor-fold defaultstate="collapsed" desc="Total menos gastos">
+        TMG.setText("" + (Double.parseDouble(TDSYP.getText()) - Double.parseDouble(TDG.getText())));
+        //</editor-fold>
 
-        double TotalDif = DIF1 - DIF2;
-        DE.setText("" + TotalDif);
+        // <editor-fold defaultstate="collapsed" desc="Debe entregar">
+        DE.setText("" + (Double.parseDouble(TMG.getText()) - Double.parseDouble(TDV.getText())));
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Debe">
+        DBe.setText("" + (Double.parseDouble(DE.getText()) - Double.parseDouble(EEntrega.getText())));
         //</editor-fold>
 
     }
 
-    public void AddEst() {
-        if (Mas.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
-                pst.setString(4, Importe.getText());
-                pst.setString(5, TDIDS.getText());
+    public void MostrarNDS() {
+        String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort' AND TABLE_NAME = 'rh.semanal.inturbide.nsem'";
+        try {
+            java.sql.Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            while (rs.next()) {
 
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
-            } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
-
+                NDS.setText("" + (Integer.parseInt(rs.getString("AUTO_INCREMENT"))));
             }
-        }
-        if (Mas1.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
-                pst.setString(4, Importe.getText());
-                pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDIDS.getText());
+            st.isClosed();
+            rs.isClosed();
+        } catch (SQLException e) {
 
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+            JOptionPane.showMessageDialog(null, "Error al mostrar numero de padron " + e);
 
-            } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
-
-            }
-        }
-        if (Mas2.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?)";
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
-                pst.setString(4, Importe.getText());
-                pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
-                pst.setString(14, Importe2.getText());
-                pst.setString(15, TDIDS.getText());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
-            } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
-
-            }
-        }
-        if (Mas3.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
-                pst.setString(4, Importe.getText());
-                pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
-                pst.setString(14, Importe2.getText());
-                pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
-                pst.setString(19, Importe3.getText());
-                pst.setString(20, TDIDS.getText());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
-            } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal:  " + error_semanal);
-
-            }
-        }
-        if (Mas4.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
-                pst.setString(4, Importe.getText());
-                pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
-                pst.setString(14, Importe2.getText());
-                pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
-                pst.setString(19, Importe3.getText());
-                pst.setString(20, TDIDS.getText());
-                pst.setInt(21, Integer.parseInt(Folio4.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
-                pst.setString(24, Importe4.getText());
-                pst.setString(25, TDIDS.getText());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
-            } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
-
-            }
-        }
-        if (Mas5.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
-                pst.setString(4, Importe.getText());
-                pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
-                pst.setString(14, Importe2.getText());
-                pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
-                pst.setString(19, Importe3.getText());
-                pst.setString(20, TDIDS.getText());
-                pst.setInt(21, Integer.parseInt(Folio4.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
-                pst.setString(24, Importe4.getText());
-                pst.setString(25, TDIDS.getText());
-                pst.setInt(26, Integer.parseInt(Folio5.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
-                pst.setString(29, Importe5.getText());
-                pst.setString(30, TDIDS.getText());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
-            } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
-
-            }
-        }
-        if (Mas6.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
-                pst.setString(4, Importe.getText());
-                pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
-                pst.setString(14, Importe2.getText());
-                pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
-                pst.setString(19, Importe3.getText());
-                pst.setString(20, TDIDS.getText());
-                pst.setInt(21, Integer.parseInt(Folio4.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
-                pst.setString(24, Importe4.getText());
-                pst.setString(25, TDIDS.getText());
-                pst.setInt(26, Integer.parseInt(Folio5.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
-                pst.setString(29, Importe5.getText());
-                pst.setString(30, TDIDS.getText());
-                pst.setInt(31, Integer.parseInt(Folio6.getText()));
-                pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
-                pst.setString(33, Servicio6.getSelectedItem().toString());
-                pst.setString(34, Importe6.getText());
-                pst.setString(35, TDIDS.getText());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
-            } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
-
-            }
-        }
-        if (Mas7.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
-                pst.setString(4, Importe.getText());
-                pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
-                pst.setString(14, Importe2.getText());
-                pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
-                pst.setString(19, Importe3.getText());
-                pst.setString(20, TDIDS.getText());
-                pst.setInt(21, Integer.parseInt(Folio4.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
-                pst.setString(24, Importe4.getText());
-                pst.setString(25, TDIDS.getText());
-                pst.setInt(26, Integer.parseInt(Folio5.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
-                pst.setString(29, Importe5.getText());
-                pst.setString(30, TDIDS.getText());
-                pst.setInt(31, Integer.parseInt(Folio6.getText()));
-                pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
-                pst.setString(33, Servicio6.getSelectedItem().toString());
-                pst.setString(34, Importe6.getText());
-                pst.setString(35, TDIDS.getText());
-                pst.setInt(36, Integer.parseInt(Folio7.getText()));
-                pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
-                pst.setString(38, Servicio7.getSelectedItem().toString());
-                pst.setString(39, Importe7.getText());
-                pst.setString(40, TDIDS.getText());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
-            } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
-
-            }
-        }
-        if (Mas8.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
-                pst.setString(4, Importe.getText());
-                pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
-                pst.setString(14, Importe2.getText());
-                pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
-                pst.setString(19, Importe3.getText());
-                pst.setString(20, TDIDS.getText());
-                pst.setInt(21, Integer.parseInt(Folio4.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
-                pst.setString(24, Importe4.getText());
-                pst.setString(25, TDIDS.getText());
-                pst.setInt(26, Integer.parseInt(Folio5.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
-                pst.setString(29, Importe5.getText());
-                pst.setString(30, TDIDS.getText());
-                pst.setInt(31, Integer.parseInt(Folio6.getText()));
-                pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
-                pst.setString(33, Servicio6.getSelectedItem().toString());
-                pst.setString(34, Importe6.getText());
-                pst.setString(35, TDIDS.getText());
-                pst.setInt(36, Integer.parseInt(Folio7.getText()));
-                pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
-                pst.setString(38, Servicio7.getSelectedItem().toString());
-                pst.setString(39, Importe7.getText());
-                pst.setString(40, TDIDS.getText());
-                pst.setInt(41, Integer.parseInt(Folio8.getText()));
-                pst.setString(42, DateFormat.getDateInstance().format(Fecha8.getDate()));
-                pst.setString(43, Servicio8.getSelectedItem().toString());
-                pst.setString(44, Importe8.getText());
-                pst.setString(45, TDIDS.getText());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
-            } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
-
-            }
-        }
-        if (Menos8.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide` (`#Folio`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?)";
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(Folio.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
-                pst.setString(4, Importe.getText());
-                pst.setString(5, TDIDS.getText());
-                pst.setInt(6, Integer.parseInt(Folio1.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDIDS.getText());
-                pst.setInt(11, Integer.parseInt(Folio.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
-                pst.setString(14, Importe2.getText());
-                pst.setString(15, TDIDS.getText());
-                pst.setInt(16, Integer.parseInt(Folio3.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
-                pst.setString(19, Importe3.getText());
-                pst.setString(20, TDIDS.getText());
-                pst.setInt(21, Integer.parseInt(Folio4.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
-                pst.setString(24, Importe4.getText());
-                pst.setString(25, TDIDS.getText());
-                pst.setInt(26, Integer.parseInt(Folio5.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
-                pst.setString(29, Importe5.getText());
-                pst.setString(30, TDIDS.getText());
-                pst.setInt(31, Integer.parseInt(Folio6.getText()));
-                pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
-                pst.setString(33, Servicio6.getSelectedItem().toString());
-                pst.setString(34, Importe6.getText());
-                pst.setString(35, TDIDS.getText());
-                pst.setInt(36, Integer.parseInt(Folio7.getText()));
-                pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
-                pst.setString(38, Servicio7.getSelectedItem().toString());
-                pst.setString(39, Importe7.getText());
-                pst.setString(40, TDIDS.getText());
-                pst.setInt(41, Integer.parseInt(Folio8.getText()));
-                pst.setString(42, DateFormat.getDateInstance().format(Fecha8.getDate()));
-                pst.setString(43, Servicio8.getSelectedItem().toString());
-                pst.setString(44, Importe8.getText());
-                pst.setString(45, TDIDS.getText());
-                pst.setInt(46, Integer.parseInt(Folio9.getText()));
-                pst.setString(47, DateFormat.getDateInstance().format(Fecha9.getDate()));
-                pst.setString(48, Servicio9.getSelectedItem().toString());
-                pst.setString(49, Importe9.getText());
-                pst.setString(50, TDIDS.getText());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
-            } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "Error al agregar reporte semanal: " + error_semanal);
-
-            }
         }
     }
 
@@ -706,22 +2200,11 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Fecha = new com.toedter.calendar.JDateChooser();
         Importe = new javax.swing.JTextField();
         Servicio = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        Folio = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         TDIDS = new javax.swing.JLabel();
-        Folio1 = new javax.swing.JTextField();
-        Folio2 = new javax.swing.JTextField();
-        Folio3 = new javax.swing.JTextField();
-        Folio4 = new javax.swing.JTextField();
-        Folio5 = new javax.swing.JTextField();
-        Folio6 = new javax.swing.JTextField();
-        Folio7 = new javax.swing.JTextField();
-        Folio8 = new javax.swing.JTextField();
-        Folio9 = new javax.swing.JTextField();
         Servicio1 = new javax.swing.JComboBox<>();
         Servicio2 = new javax.swing.JComboBox<>();
         Servicio3 = new javax.swing.JComboBox<>();
@@ -773,8 +2256,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         Fecha10 = new com.toedter.calendar.JDateChooser();
         Importe10 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        Folio10 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -800,15 +2281,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Mas17 = new javax.swing.JButton();
         Servicio10 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        Folio11 = new javax.swing.JTextField();
-        Folio12 = new javax.swing.JTextField();
-        Folio13 = new javax.swing.JTextField();
-        Folio14 = new javax.swing.JTextField();
-        Folio15 = new javax.swing.JTextField();
-        Folio16 = new javax.swing.JTextField();
-        Folio17 = new javax.swing.JTextField();
-        Folio18 = new javax.swing.JTextField();
-        Folio19 = new javax.swing.JTextField();
         Servicio11 = new javax.swing.JTextField();
         Servicio12 = new javax.swing.JTextField();
         Servicio13 = new javax.swing.JTextField();
@@ -850,31 +2322,20 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        Fecha30 = new com.toedter.calendar.JDateChooser();
+        Fecha20 = new com.toedter.calendar.JDateChooser();
         Importe20 = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        Folio20 = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        Servicio20 = new javax.swing.JTextField();
+        Concepto = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        Folio21 = new javax.swing.JTextField();
-        Folio22 = new javax.swing.JTextField();
-        Folio23 = new javax.swing.JTextField();
-        Folio24 = new javax.swing.JTextField();
-        Folio25 = new javax.swing.JTextField();
-        Folio26 = new javax.swing.JTextField();
-        Folio27 = new javax.swing.JTextField();
-        Folio28 = new javax.swing.JTextField();
-        Folio29 = new javax.swing.JTextField();
-        Servicio21 = new javax.swing.JTextField();
-        Servicio22 = new javax.swing.JTextField();
-        Servicio23 = new javax.swing.JTextField();
-        Servicio24 = new javax.swing.JTextField();
-        Servicio25 = new javax.swing.JTextField();
-        Servicio26 = new javax.swing.JTextField();
-        Servicio27 = new javax.swing.JTextField();
-        Servicio28 = new javax.swing.JTextField();
-        Servicio29 = new javax.swing.JTextField();
+        Concepto1 = new javax.swing.JTextField();
+        Concepto2 = new javax.swing.JTextField();
+        Concepto3 = new javax.swing.JTextField();
+        Concepto4 = new javax.swing.JTextField();
+        Concepto5 = new javax.swing.JTextField();
+        Concepto6 = new javax.swing.JTextField();
+        Concepto7 = new javax.swing.JTextField();
+        Concepto8 = new javax.swing.JTextField();
+        Concepto9 = new javax.swing.JTextField();
         Fecha21 = new com.toedter.calendar.JDateChooser();
         Fecha22 = new com.toedter.calendar.JDateChooser();
         Fecha23 = new com.toedter.calendar.JDateChooser();
@@ -932,58 +2393,47 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         DE = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
-        jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        TDG1 = new javax.swing.JLabel();
+        TDV = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        Folio30 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
         ObsV = new javax.swing.JTextField();
-        jPanel6 = new javax.swing.JPanel();
-        Folio31 = new javax.swing.JTextField();
-        Folio32 = new javax.swing.JTextField();
-        Folio33 = new javax.swing.JTextField();
-        Folio34 = new javax.swing.JTextField();
-        Folio35 = new javax.swing.JTextField();
-        Folio36 = new javax.swing.JTextField();
-        Folio37 = new javax.swing.JTextField();
-        Folio38 = new javax.swing.JTextField();
-        Folio39 = new javax.swing.JTextField();
-        ObsV1 = new javax.swing.JTextField();
-        ObsV2 = new javax.swing.JTextField();
-        ObsV3 = new javax.swing.JTextField();
+        Importe30 = new javax.swing.JTextField();
+        Fecha30 = new com.toedter.calendar.JDateChooser();
+        jPanel7 = new javax.swing.JPanel();
+        Importe32 = new javax.swing.JTextField();
+        Importe37 = new javax.swing.JTextField();
+        Importe31 = new javax.swing.JTextField();
+        Importe33 = new javax.swing.JTextField();
         ObsV4 = new javax.swing.JTextField();
-        ObsV5 = new javax.swing.JTextField();
-        ObsV6 = new javax.swing.JTextField();
-        ObsV7 = new javax.swing.JTextField();
-        ObsV8 = new javax.swing.JTextField();
         ObsV9 = new javax.swing.JTextField();
-        Fecha31 = new com.toedter.calendar.JDateChooser();
-        Fecha32 = new com.toedter.calendar.JDateChooser();
-        Fecha33 = new com.toedter.calendar.JDateChooser();
-        Fecha34 = new com.toedter.calendar.JDateChooser();
-        Fecha35 = new com.toedter.calendar.JDateChooser();
         Fecha36 = new com.toedter.calendar.JDateChooser();
-        Fecha37 = new com.toedter.calendar.JDateChooser();
+        Importe34 = new javax.swing.JTextField();
+        ObsV3 = new javax.swing.JTextField();
+        Fecha31 = new com.toedter.calendar.JDateChooser();
         Fecha38 = new com.toedter.calendar.JDateChooser();
         Fecha39 = new com.toedter.calendar.JDateChooser();
-        Importe30 = new javax.swing.JTextField();
-        Importe31 = new javax.swing.JTextField();
-        Importe32 = new javax.swing.JTextField();
-        Importe33 = new javax.swing.JTextField();
-        Importe34 = new javax.swing.JTextField();
+        Fecha33 = new com.toedter.calendar.JDateChooser();
+        Fecha37 = new com.toedter.calendar.JDateChooser();
+        Fecha34 = new com.toedter.calendar.JDateChooser();
+        Fecha35 = new com.toedter.calendar.JDateChooser();
+        ObsV6 = new javax.swing.JTextField();
         Importe35 = new javax.swing.JTextField();
-        Importe36 = new javax.swing.JTextField();
-        Importe37 = new javax.swing.JTextField();
         Importe38 = new javax.swing.JTextField();
-        Fecha40 = new com.toedter.calendar.JDateChooser();
+        ObsV2 = new javax.swing.JTextField();
         Importe39 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        Menos27 = new javax.swing.JButton();
+        ObsV8 = new javax.swing.JTextField();
+        Importe36 = new javax.swing.JTextField();
+        Fecha32 = new com.toedter.calendar.JDateChooser();
+        ObsV1 = new javax.swing.JTextField();
+        ObsV7 = new javax.swing.JTextField();
+        ObsV5 = new javax.swing.JTextField();
         Mas27 = new javax.swing.JButton();
-        Menos28 = new javax.swing.JButton();
+        Menos27 = new javax.swing.JButton();
         Mas28 = new javax.swing.JButton();
+        Menos28 = new javax.swing.JButton();
         Mas29 = new javax.swing.JButton();
         Menos29 = new javax.swing.JButton();
         Menos30 = new javax.swing.JButton();
@@ -991,13 +2441,25 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Menos31 = new javax.swing.JButton();
         Menos32 = new javax.swing.JButton();
         Mas31 = new javax.swing.JButton();
-        Menos33 = new javax.swing.JButton();
         Mas32 = new javax.swing.JButton();
+        Menos33 = new javax.swing.JButton();
         Mas33 = new javax.swing.JButton();
         Menos34 = new javax.swing.JButton();
-        Menos35 = new javax.swing.JButton();
         Mas34 = new javax.swing.JButton();
         Mas35 = new javax.swing.JButton();
+        Menos35 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        TMG = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        EEntrega = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        DBe = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        Autohora = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        AutoFecha = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        NDS = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -1020,10 +2482,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
         Servicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
-        jLabel1.setText("Folio");
-
-        Folio.setText("0");
-
         jLabel2.setText("Fecha");
 
         jLabel3.setText("Servicio");
@@ -1035,24 +2493,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
         TDIDS.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         TDIDS.setText("0");
-
-        Folio1.setText("0");
-
-        Folio2.setText("0");
-
-        Folio3.setText("0");
-
-        Folio4.setText("0");
-
-        Folio5.setText("0");
-
-        Folio6.setText("0");
-
-        Folio7.setText("0");
-
-        Folio8.setText("0");
-
-        Folio9.setText("0");
 
         Servicio1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
@@ -1289,53 +2729,21 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addGap(128, 128, 128)
                         .addComponent(jLabel10))
                     .addGroup(PanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Folio1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(72, 72, 72)
                         .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(72, 72, 72)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Folio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2)))
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(Folio2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(Folio3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(Folio6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(Folio7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(Folio8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addComponent(Folio9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelLayout.createSequentialGroup()
-                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Folio4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Folio5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)
+                            .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createSequentialGroup()
@@ -1434,9 +2842,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)))
+                        .addComponent(jLabel2))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1451,35 +2857,30 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                     .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Importe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Servicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Folio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Servicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(6, 6, 6)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1487,27 +2888,23 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1515,7 +2912,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(PanelLayout.createSequentialGroup()
@@ -1564,10 +2960,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 Importe10KeyReleased(evt);
             }
         });
-
-        jLabel14.setText("Folio");
-
-        Folio10.setText("0");
 
         jLabel15.setText("Fecha");
 
@@ -1707,24 +3099,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        Folio11.setText("0");
-
-        Folio12.setText("0");
-
-        Folio13.setText("0");
-
-        Folio14.setText("0");
-
-        Folio15.setText("0");
-
-        Folio16.setText("0");
-
-        Folio17.setText("0");
-
-        Folio18.setText("0");
-
-        Folio19.setText("0");
-
         Fecha11.setDateFormatString("dd MMM yyyy ");
 
         Fecha12.setDateFormatString("dd MMM yyyy ");
@@ -1811,43 +3185,17 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio15, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio17, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha17, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio18, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha18, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Folio19, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha19, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha12, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha14, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha17, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha18, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha19, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -1910,9 +3258,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Importe11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Importe11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Fecha11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Servicio11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1922,7 +3268,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Servicio12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(NPadron2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1930,7 +3275,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(NPadron3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1938,25 +3282,20 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(NPadron4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Servicio14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(Fecha14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Importe15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Importe15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Fecha15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Servicio15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(NPadron5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Importe16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Importe16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Fecha16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Servicio16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1964,7 +3303,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Importe17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(NPadron7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Fecha17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1972,7 +3310,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Servicio18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Importe18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(NPadron8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1980,7 +3317,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Servicio19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Importe19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(NPadron9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1998,12 +3334,9 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Panel2Layout.createSequentialGroup()
-                                .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Folio10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel14))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(66, 66, 66)
                                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Fecha10, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel15))
@@ -2013,55 +3346,58 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                     .addComponent(Servicio10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NPadron, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel26))
+                                    .addGroup(Panel2Layout.createSequentialGroup()
+                                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(NPadron, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel26))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel17)
+                                            .addComponent(Importe10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(Panel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel18)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TDIDP))))
+                            .addGroup(Panel2Layout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel17)
-                                    .addComponent(Importe10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Panel2Layout.createSequentialGroup()
-                                .addComponent(jLabel18)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TDIDP))
-                            .addGroup(Panel2Layout.createSequentialGroup()
-                                .addComponent(Mas9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas17))
-                            .addGroup(Panel2Layout.createSequentialGroup()
-                                .addComponent(Menos9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos17))))
+                                    .addGroup(Panel2Layout.createSequentialGroup()
+                                        .addComponent(Mas9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas14)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas15)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas17))
+                                    .addGroup(Panel2Layout.createSequentialGroup()
+                                        .addComponent(Menos9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos14)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos15)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos17))))))
                     .addGroup(Panel2Layout.createSequentialGroup()
                         .addGap(207, 207, 207)
                         .addComponent(jLabel13)))
@@ -2073,18 +3409,18 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(Panel2Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15)))
+                        .addComponent(jLabel15))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel13)
+                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel18)
+                                .addComponent(TDIDP))
+                            .addComponent(jLabel13))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel17)
-                                .addComponent(jLabel18)
-                                .addComponent(TDIDP)
                                 .addComponent(jLabel26))
                             .addComponent(jLabel16))
                         .addGap(3, 3, 3)))
@@ -2094,11 +3430,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                     .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Importe10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Servicio10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(NPadron, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Folio10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(NPadron, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel2Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Mas9)
                             .addComponent(Mas10)
@@ -2120,9 +3455,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                             .addComponent(Menos16)
                             .addComponent(Menos14)
                             .addComponent(Menos17)))
-                    .addGroup(Panel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2131,7 +3464,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel19.setText("Gastos");
 
-        Fecha30.setDateFormatString("dd MMM yyyy ");
+        Fecha20.setDateFormatString("dd MMM yyyy ");
 
         Importe20.setText("0");
         Importe20.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -2140,29 +3473,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        jLabel20.setText("Folio");
-
-        Folio20.setText("0");
-
         jLabel21.setText("Fecha");
-
-        Folio21.setText("0");
-
-        Folio22.setText("0");
-
-        Folio23.setText("0");
-
-        Folio24.setText("0");
-
-        Folio25.setText("0");
-
-        Folio26.setText("0");
-
-        Folio27.setText("0");
-
-        Folio28.setText("0");
-
-        Folio29.setText("0");
 
         Fecha21.setDateFormatString("dd MMM yyyy ");
 
@@ -2250,79 +3561,53 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio21, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha21, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio22, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha22, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio23, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha23, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio24, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha24, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio25, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha25, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio26, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha26, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio27, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha27, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio28, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha28, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Folio29, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha29, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Fecha21, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha22, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha23, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha24, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha25, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha26, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha27, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha28, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha29, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Servicio22, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Concepto2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe22, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Servicio23, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Concepto3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe23, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Servicio24, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Concepto4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe24, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Servicio25, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Concepto5, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe25, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Servicio26, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Concepto6, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe26, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Servicio27, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Concepto7, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe27, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Servicio28, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Concepto8, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe28, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Servicio29, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Concepto9, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe29, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Servicio21, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Concepto1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Importe21, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2345,8 +3630,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Servicio21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Concepto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2354,30 +3638,25 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(Folio22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Servicio22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Concepto2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(Importe22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(Fecha22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(Folio23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Servicio23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Concepto3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(Importe23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(Fecha23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Folio24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Servicio24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Concepto4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Importe24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(Fecha24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(Folio25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Servicio25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Concepto5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Fecha25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -2385,29 +3664,25 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Servicio26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Concepto6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Servicio27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Concepto7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Servicio28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Concepto8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Servicio29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Concepto9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Importe29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -2582,17 +3857,14 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(66, 66, 66)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Folio20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel20))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Fecha20, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel21))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel22)
-                                    .addComponent(Servicio20, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Concepto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -2612,10 +3884,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(Mas25)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas26)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Mas18)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Mas19)
@@ -2628,26 +3896,30 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Mas23)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas24))
+                                        .addComponent(Mas24)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas25)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas26))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(Menos18)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos26)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos25)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Menos19)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Menos20)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos23)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Menos21)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Menos22)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos24)))))))
-                .addContainerGap(12, Short.MAX_VALUE))
+                                        .addComponent(Menos23)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos24)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos25)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos26)))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2661,9 +3933,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel21)))
+                        .addComponent(jLabel21))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2673,39 +3943,36 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                         .addGap(3, 3, 3)))
                 .addGap(3, 3, 3)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Fecha20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Importe20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Servicio20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Folio20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Concepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Mas25)
-                            .addComponent(Mas26)
                             .addComponent(Mas18)
                             .addComponent(Mas19)
                             .addComponent(Mas20)
                             .addComponent(Mas21)
                             .addComponent(Mas22)
                             .addComponent(Mas23)
-                            .addComponent(Mas24))
+                            .addComponent(Mas24)
+                            .addComponent(Mas25)
+                            .addComponent(Mas26))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Menos25)
-                            .addComponent(Menos26)
                             .addComponent(Menos18)
                             .addComponent(Menos19)
                             .addComponent(Menos20)
                             .addComponent(Menos21)
                             .addComponent(Menos22)
                             .addComponent(Menos23)
-                            .addComponent(Menos24))))
+                            .addComponent(Menos24)
+                            .addComponent(Menos25)
+                            .addComponent(Menos26))))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -2719,8 +3986,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
         DE.setText("0");
 
-        jLabel24.setText("Folio");
-
         jLabel25.setText("Fecha");
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -2729,48 +3994,12 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel12.setText("Total de Vales:");
 
-        TDG1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        TDG1.setText("0");
+        TDV.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        TDV.setText("0");
 
         jLabel29.setText("Importe");
 
-        Folio30.setText("0");
-
-        Folio31.setText("0");
-
-        Folio32.setText("0");
-
-        Folio33.setText("0");
-
-        Folio34.setText("0");
-
-        Folio35.setText("0");
-
-        Folio36.setText("0");
-
-        Folio37.setText("0");
-
-        Folio38.setText("0");
-
-        Folio39.setText("0");
-
-        Fecha31.setDateFormatString("dd MMM yyyy ");
-
-        Fecha32.setDateFormatString("dd MMM yyyy ");
-
-        Fecha33.setDateFormatString("dd MMM yyyy ");
-
-        Fecha34.setDateFormatString("dd MMM yyyy ");
-
-        Fecha35.setDateFormatString("dd MMM yyyy ");
-
-        Fecha36.setDateFormatString("dd MMM yyyy ");
-
-        Fecha37.setDateFormatString("dd MMM yyyy ");
-
-        Fecha38.setDateFormatString("dd MMM yyyy ");
-
-        Fecha39.setDateFormatString("dd MMM yyyy ");
+        jLabel11.setText("Observaciones");
 
         Importe30.setText("0");
         Importe30.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -2779,45 +4008,12 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        Importe31.setText("0");
-        Importe31.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Importe31KeyReleased(evt);
-            }
-        });
+        Fecha30.setDateFormatString("dd MMM yyyy ");
 
         Importe32.setText("0");
         Importe32.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe32KeyReleased(evt);
-            }
-        });
-
-        Importe33.setText("0");
-        Importe33.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Importe33KeyReleased(evt);
-            }
-        });
-
-        Importe34.setText("0");
-        Importe34.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Importe34KeyReleased(evt);
-            }
-        });
-
-        Importe35.setText("0");
-        Importe35.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Importe35KeyReleased(evt);
-            }
-        });
-
-        Importe36.setText("0");
-        Importe36.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Importe36KeyPressed(evt);
             }
         });
 
@@ -2828,169 +4024,56 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
+        Importe31.setText("0");
+        Importe31.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe31KeyReleased(evt);
+            }
+        });
+
+        Importe33.setText("0");
+        Importe33.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe33KeyReleased(evt);
+            }
+        });
+
+        Fecha36.setDateFormatString("dd MMM yyyy ");
+
+        Importe34.setText("0");
+        Importe34.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe34KeyReleased(evt);
+            }
+        });
+
+        Fecha31.setDateFormatString("dd MMM yyyy ");
+
+        Fecha38.setDateFormatString("dd MMM yyyy ");
+
+        Fecha39.setDateFormatString("dd MMM yyyy ");
+
+        Fecha33.setDateFormatString("dd MMM yyyy ");
+
+        Fecha37.setDateFormatString("dd MMM yyyy ");
+
+        Fecha34.setDateFormatString("dd MMM yyyy ");
+
+        Fecha35.setDateFormatString("dd MMM yyyy ");
+
+        Importe35.setText("0");
+        Importe35.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe35KeyReleased(evt);
+            }
+        });
+
         Importe38.setText("0");
         Importe38.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe38KeyReleased(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Folio31, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha31, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Folio32, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha32, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Folio33, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha33, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Folio34, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha34, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Folio35, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha35, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Folio36, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha36, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Folio37, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha37, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Folio38, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha38, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Folio39, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(ObsV2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe31, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(ObsV3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe32, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(ObsV4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe33, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(ObsV5, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe34, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(ObsV6, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe35, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(ObsV7, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe36, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe37, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe38, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(ObsV1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(137, 137, 137))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ObsV1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Fecha31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ObsV2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Fecha32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ObsV3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Fecha33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Folio34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ObsV4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Importe33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(Fecha34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Folio35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ObsV5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Fecha35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Importe34)
-                        .addGap(6, 6, 6)))
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ObsV6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Importe35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Fecha36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ObsV7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Importe36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Fecha37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Importe37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Fecha38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Folio39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Importe38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        Fecha40.setDateFormatString("dd MMM yyyy ");
 
         Importe39.setText("0");
         Importe39.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -2999,14 +4082,119 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setText("Observaciones");
-
-        Menos27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
-        Menos27.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Menos27ActionPerformed(evt);
+        Importe36.setText("0");
+        Importe36.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Importe36KeyPressed(evt);
             }
         });
+
+        Fecha32.setDateFormatString("dd MMM yyyy ");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Fecha31, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fecha32, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fecha33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fecha34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fecha35, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fecha36, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fecha37, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Fecha38, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ObsV2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV5, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV6, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV7, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Importe31, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe32, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe33, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe35, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe36, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe37, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe38, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe39, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Importe34, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(Importe31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Importe32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Importe33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Importe34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Importe35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Importe36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Importe37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Importe38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Importe39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(Fecha31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Fecha32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(ObsV1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ObsV2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(ObsV3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ObsV4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ObsV5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ObsV6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ObsV7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(Fecha33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Fecha34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Fecha35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Fecha36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Fecha37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Fecha38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         Mas27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/37770.png"))); // NOI18N
         Mas27.addActionListener(new java.awt.event.ActionListener() {
@@ -3015,10 +4203,10 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        Menos28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
-        Menos28.addActionListener(new java.awt.event.ActionListener() {
+        Menos27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
+        Menos27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Menos28ActionPerformed(evt);
+                Menos27ActionPerformed(evt);
             }
         });
 
@@ -3026,6 +4214,13 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         Mas28.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Mas28ActionPerformed(evt);
+            }
+        });
+
+        Menos28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
+        Menos28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Menos28ActionPerformed(evt);
             }
         });
 
@@ -3078,17 +4273,17 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        Menos33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
-        Menos33.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Menos33ActionPerformed(evt);
-            }
-        });
-
         Mas32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/37770.png"))); // NOI18N
         Mas32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Mas32ActionPerformed(evt);
+            }
+        });
+
+        Menos33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
+        Menos33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Menos33ActionPerformed(evt);
             }
         });
 
@@ -3106,13 +4301,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
-        Menos35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
-        Menos35.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Menos35ActionPerformed(evt);
-            }
-        });
-
         Mas34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/37770.png"))); // NOI18N
         Mas34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3127,81 +4315,85 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             }
         });
 
+        Menos35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/25336.png"))); // NOI18N
+        Menos35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Menos35ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel24)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(114, 114, 114)
-                                        .addComponent(jLabel28)
-                                        .addGap(170, 170, 170)
-                                        .addComponent(jLabel12)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TDG1))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(195, 195, 195)
-                                        .addComponent(jLabel11)
-                                        .addGap(83, 83, 83)
-                                        .addComponent(jLabel29))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(Folio30, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel25))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(141, 141, 141)
+                                .addComponent(jLabel28)
+                                .addGap(170, 170, 170)
+                                .addComponent(jLabel12)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TDV))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(222, 222, 222)
+                                .addComponent(jLabel11)
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel29))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel25)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(Fecha40, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(66, 66, 66)
+                                        .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Importe39, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(6, 6, 6)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(Mas29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Mas30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Mas32)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Mas33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Mas34)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Mas35)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Mas31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Mas27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Mas28))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(Menos33)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Menos30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Menos29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Menos34)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Menos35)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Menos27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Menos32)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Menos31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Menos28)))
+                                        .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(Mas27)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas28)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas29)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas30)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas31)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas32)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas33)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas34)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas35))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(Menos27)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos28)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos29)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos30)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos31)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos32)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos33)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos34)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos35)))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -3211,51 +4403,83 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(jLabel12)
-                    .addComponent(TDG1))
+                    .addComponent(TDV))
                 .addGap(1, 1, 1)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
                     .addComponent(jLabel25)
                     .addComponent(jLabel29)
                     .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Fecha40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Importe39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Folio30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addGap(15, 15, 15)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Mas27)
+                            .addComponent(Mas28)
                             .addComponent(Mas29)
                             .addComponent(Mas30)
+                            .addComponent(Mas31)
                             .addComponent(Mas32)
                             .addComponent(Mas33)
                             .addComponent(Mas34)
-                            .addComponent(Mas35)
-                            .addComponent(Mas31)
-                            .addComponent(Mas27)
-                            .addComponent(Mas28))
+                            .addComponent(Mas35))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Menos27)
+                            .addComponent(Menos28)
                             .addComponent(Menos29)
                             .addComponent(Menos30)
+                            .addComponent(Menos31)
+                            .addComponent(Menos32)
                             .addComponent(Menos33)
                             .addComponent(Menos34)
-                            .addComponent(Menos35)
-                            .addComponent(Menos32)
-                            .addComponent(Menos31)
-                            .addComponent(Menos27)
-                            .addComponent(Menos28))))
+                            .addComponent(Menos35))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane5.setViewportView(jPanel5);
+
+        jLabel27.setText("Total restando gastos:");
+
+        TMG.setText("0");
+
+        jLabel30.setText("El entrega:");
+
+        EEntrega.setText("0");
+        EEntrega.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                EEntregaKeyReleased(evt);
+            }
+        });
+
+        jLabel31.setText("Debe:");
+
+        DBe.setText("0");
+
+        jLabel32.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel32.setText("Hora:");
+
+        Autohora.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        Autohora.setText("Autofecha");
+
+        jLabel33.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel33.setText("Fecha:");
+
+        AutoFecha.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        AutoFecha.setText("jLabel34");
+
+        jLabel34.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel34.setText("Numero de semanal:");
+
+        NDS.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        NDS.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -3264,47 +4488,104 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TDSYP))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(53, 53, 53)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel27)
+                                            .addComponent(jLabel8)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel30)
+                                            .addComponent(jLabel31))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(TMG)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jLabel32))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(TDSYP)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
+                                                        .addComponent(jLabel33)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(AutoFecha)
+                                                    .addComponent(Autohora))
+                                                .addGap(92, 92, 92))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(EEntrega, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(DBe, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(DE, javax.swing.GroupLayout.Alignment.LEADING))
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jButton1)
+                                        .addContainerGap())))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
+                                .addGap(199, 199, 199)
+                                .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DE)))))
-                .addContainerGap(368, Short.MAX_VALUE))
+                                .addComponent(NDS)
+                                .addGap(0, 0, Short.MAX_VALUE))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(TDSYP))
+                            .addComponent(TDSYP)
+                            .addComponent(jLabel33)
+                            .addComponent(AutoFecha))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel27)
+                            .addComponent(TMG)
+                            .addComponent(jLabel32)
+                            .addComponent(Autohora))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(DE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(109, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel30)
+                            .addComponent(EEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel31)
+                            .addComponent(DBe))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel34)
+                            .addComponent(NDS))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -3321,22 +4602,17 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 939, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void MasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasActionPerformed
-        Folio1.setVisible(true);
         Fecha1.setVisible(true);
         Servicio1.setVisible(true);
         Importe1.setVisible(true);
@@ -3347,7 +4623,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_MasActionPerformed
 
     private void Mas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas1ActionPerformed
-        Folio2.setVisible(true);
         Fecha2.setVisible(true);
         Servicio2.setVisible(true);
         Importe2.setVisible(true);
@@ -3359,7 +4634,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas1ActionPerformed
 
     private void Mas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas2ActionPerformed
-        Folio3.setVisible(true);
         Fecha3.setVisible(true);
         Servicio3.setVisible(true);
         Importe3.setVisible(true);
@@ -3371,7 +4645,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas2ActionPerformed
 
     private void MenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosActionPerformed
-        Folio1.setVisible(false);
         Fecha1.setVisible(false);
         Servicio1.setVisible(false);
         Importe1.setVisible(false);
@@ -3381,7 +4654,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_MenosActionPerformed
 
     private void Menos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos1ActionPerformed
-        Folio2.setVisible(false);
         Fecha2.setVisible(false);
         Servicio2.setVisible(false);
         Importe2.setVisible(false);
@@ -3392,7 +4664,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos1ActionPerformed
 
     private void Menos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos2ActionPerformed
-        Folio3.setVisible(false);
         Fecha3.setVisible(false);
         Servicio3.setVisible(false);
         Importe3.setVisible(false);
@@ -3404,7 +4675,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos2ActionPerformed
 
     private void Mas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas3ActionPerformed
-        Folio4.setVisible(true);
         Fecha4.setVisible(true);
         Servicio4.setVisible(true);
         Importe4.setVisible(true);
@@ -3415,7 +4685,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas3ActionPerformed
 
     private void Mas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas4ActionPerformed
-        Folio5.setVisible(true);
         Fecha5.setVisible(true);
         Servicio5.setVisible(true);
         Importe5.setVisible(true);
@@ -3426,7 +4695,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas4ActionPerformed
 
     private void Menos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos3ActionPerformed
-        Folio4.setVisible(false);
         Fecha4.setVisible(false);
         Servicio4.setVisible(false);
         Importe4.setVisible(false);
@@ -3437,7 +4705,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos3ActionPerformed
 
     private void Menos4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos4ActionPerformed
-        Folio5.setVisible(false);
         Fecha5.setVisible(false);
         Servicio5.setVisible(false);
         Importe5.setVisible(false);
@@ -3448,7 +4715,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos4ActionPerformed
 
     private void Mas5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas5ActionPerformed
-        Folio6.setVisible(true);
         Fecha6.setVisible(true);
         Servicio6.setVisible(true);
         Importe6.setVisible(true);
@@ -3459,7 +4725,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas5ActionPerformed
 
     private void Mas6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas6ActionPerformed
-        Folio7.setVisible(true);
         Fecha7.setVisible(true);
         Servicio7.setVisible(true);
         Importe7.setVisible(true);
@@ -3470,7 +4735,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas6ActionPerformed
 
     private void Menos5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos5ActionPerformed
-        Folio6.setVisible(false);
         Fecha6.setVisible(false);
         Servicio6.setVisible(false);
         Importe6.setVisible(false);
@@ -3481,7 +4745,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos5ActionPerformed
 
     private void Mas7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas7ActionPerformed
-        Folio8.setVisible(true);
         Fecha8.setVisible(true);
         Servicio8.setVisible(true);
         Importe8.setVisible(true);
@@ -3492,7 +4755,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas7ActionPerformed
 
     private void Mas8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas8ActionPerformed
-        Folio9.setVisible(true);
         Fecha9.setVisible(true);
         Servicio9.setVisible(true);
         Importe9.setVisible(true);
@@ -3503,7 +4765,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas8ActionPerformed
 
     private void Menos6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos6ActionPerformed
-        Folio7.setVisible(false);
         Fecha7.setVisible(false);
         Servicio7.setVisible(false);
         Importe7.setVisible(false);
@@ -3514,7 +4775,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos6ActionPerformed
 
     private void Menos7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos7ActionPerformed
-        Folio8.setVisible(false);
         Fecha8.setVisible(false);
         Servicio8.setVisible(false);
         Importe8.setVisible(false);
@@ -3525,7 +4785,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos7ActionPerformed
 
     private void Menos8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos8ActionPerformed
-        Folio9.setVisible(false);
         Fecha9.setVisible(false);
         Servicio9.setVisible(false);
         Importe9.setVisible(false);
@@ -3536,99 +4795,103 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos8ActionPerformed
 
     private void ImporteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_ImporteKeyReleased
 
     private void Importe1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe1KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe1KeyReleased
 
     private void Importe2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe2KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe2KeyReleased
 
     private void Importe3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe3KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe3KeyReleased
 
     private void Importe4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe4KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe4KeyReleased
 
     private void Importe5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe5KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe5KeyReleased
 
     private void Importe6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe6KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe6KeyReleased
 
     private void Importe7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe7KeyPressed
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe7KeyPressed
 
     private void Importe8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe8KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe8KeyReleased
 
     private void Importe9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe9KeyReleased
-        Imtotal();
+        Operaciones();
 
     }//GEN-LAST:event_Importe9KeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AddEst();
+        ADDSemanal();
+        Addscc();
+        Addsgast();
+        Addspen();
+        Addval();
+        MostrarNDS();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void Importe10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe10KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe10KeyReleased
 
     private void Importe11KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe11KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe11KeyReleased
 
     private void Importe12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe12KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe12KeyReleased
 
     private void Importe13KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe13KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe13KeyReleased
 
     private void Importe14KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe14KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe14KeyReleased
 
     private void Importe15KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe15KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe15KeyReleased
 
     private void Importe16KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe16KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe16KeyReleased
 
     private void Importe17KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe17KeyPressed
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe17KeyPressed
 
     private void Importe18KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe18KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe18KeyReleased
 
     private void Importe19KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe19KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe19KeyReleased
 
     private void Mas9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas9ActionPerformed
-        Folio11.setVisible(true);
         NPadron1.setVisible(true);
         Fecha11.setVisible(true);
         Servicio11.setVisible(true);
@@ -3640,7 +4903,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Menos11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos11ActionPerformed
         NPadron3.setVisible(false);
-        Folio13.setVisible(false);
         Fecha13.setVisible(false);
         Servicio13.setVisible(false);
         Importe13.setVisible(false);
@@ -3652,7 +4914,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Menos10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos10ActionPerformed
         NPadron2.setVisible(false);
-        Folio12.setVisible(false);
         Fecha12.setVisible(false);
         Servicio12.setVisible(false);
         Importe12.setVisible(false);
@@ -3664,7 +4925,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Mas10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas10ActionPerformed
         NPadron2.setVisible(true);
-        Folio12.setVisible(true);
         Fecha12.setVisible(true);
         Servicio12.setVisible(true);
         Importe12.setVisible(true);
@@ -3676,7 +4936,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Menos9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos9ActionPerformed
         NPadron1.setVisible(false);
-        Folio11.setVisible(false);
         Fecha11.setVisible(false);
         Servicio11.setVisible(false);
         Importe11.setVisible(false);
@@ -3687,7 +4946,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Mas11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas11ActionPerformed
         NPadron3.setVisible(true);
-        Folio13.setVisible(true);
         Fecha13.setVisible(true);
         Servicio13.setVisible(true);
         Importe13.setVisible(true);
@@ -3699,7 +4957,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Mas12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas12ActionPerformed
         NPadron4.setVisible(true);
-        Folio14.setVisible(true);
         Fecha14.setVisible(true);
         Servicio14.setVisible(true);
         Importe14.setVisible(true);
@@ -3711,7 +4968,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Menos12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos12ActionPerformed
         NPadron4.setVisible(false);
-        Folio14.setVisible(false);
         Fecha14.setVisible(false);
         Servicio14.setVisible(false);
         Importe14.setVisible(false);
@@ -3723,7 +4979,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Menos13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos13ActionPerformed
         NPadron5.setVisible(false);
-        Folio15.setVisible(false);
         Fecha15.setVisible(false);
         Servicio15.setVisible(false);
         Importe15.setVisible(false);
@@ -3735,7 +4990,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Mas13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas13ActionPerformed
         NPadron5.setVisible(true);
-        Folio15.setVisible(true);
         Fecha15.setVisible(true);
         Servicio15.setVisible(true);
         Importe15.setVisible(true);
@@ -3747,7 +5001,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Mas14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas14ActionPerformed
         NPadron6.setVisible(true);
-        Folio16.setVisible(true);
         Fecha16.setVisible(true);
         Servicio16.setVisible(true);
         Importe16.setVisible(true);
@@ -3759,7 +5012,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Menos15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos15ActionPerformed
         NPadron7.setVisible(false);
-        Folio17.setVisible(false);
         Fecha17.setVisible(false);
         Servicio17.setVisible(false);
         Importe17.setVisible(false);
@@ -3771,7 +5023,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Mas15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas15ActionPerformed
         NPadron7.setVisible(true);
-        Folio17.setVisible(true);
         Fecha17.setVisible(true);
         Servicio17.setVisible(true);
         Importe17.setVisible(true);
@@ -3783,7 +5034,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Menos16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos16ActionPerformed
         NPadron8.setVisible(false);
-        Folio18.setVisible(false);
         Fecha18.setVisible(false);
         Servicio18.setVisible(false);
         Importe18.setVisible(false);
@@ -3795,7 +5045,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Menos14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos14ActionPerformed
         NPadron6.setVisible(false);
-        Folio16.setVisible(false);
         Fecha16.setVisible(false);
         Servicio16.setVisible(false);
         Importe16.setVisible(false);
@@ -3807,7 +5056,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Mas16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas16ActionPerformed
         NPadron8.setVisible(true);
-        Folio18.setVisible(true);
         Fecha18.setVisible(true);
         Servicio18.setVisible(true);
         Importe18.setVisible(true);
@@ -3819,7 +5067,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Menos17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos17ActionPerformed
         NPadron9.setVisible(false);
-        Folio19.setVisible(false);
         Fecha19.setVisible(false);
         Servicio19.setVisible(false);
         Importe19.setVisible(false);
@@ -3831,7 +5078,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
 
     private void Mas17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas17ActionPerformed
         NPadron9.setVisible(true);
-        Folio19.setVisible(true);
         Fecha19.setVisible(true);
         Servicio19.setVisible(true);
         Importe19.setVisible(true);
@@ -3842,49 +5088,48 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas17ActionPerformed
 
     private void Importe20KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe20KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe20KeyReleased
 
     private void Importe21KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe21KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe21KeyReleased
 
     private void Importe22KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe22KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe22KeyReleased
 
     private void Importe23KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe23KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe23KeyReleased
 
     private void Importe24KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe24KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe24KeyReleased
 
     private void Importe25KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe25KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe25KeyReleased
 
     private void Importe26KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe26KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe26KeyReleased
 
     private void Importe27KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe27KeyPressed
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe27KeyPressed
 
     private void Importe28KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe28KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe28KeyReleased
 
     private void Importe29KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe29KeyReleased
-        Imtotal();
+        Operaciones();
     }//GEN-LAST:event_Importe29KeyReleased
 
     private void Menos18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos18ActionPerformed
-        Folio21.setVisible(false);
         Fecha21.setVisible(false);
-        Servicio21.setVisible(false);
+        Concepto1.setVisible(false);
         Importe21.setVisible(false);
         LDA1.setVisible(false);
         Menos18.setVisible(false);
@@ -3893,9 +5138,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos18ActionPerformed
 
     private void Mas18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas18ActionPerformed
-        Folio21.setVisible(true);
         Fecha21.setVisible(true);
-        Servicio21.setVisible(true);
+        Concepto1.setVisible(true);
         Importe21.setVisible(true);
         LDA1.setVisible(true);
         Menos18.setVisible(true);
@@ -3904,9 +5148,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas18ActionPerformed
 
     private void Mas19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas19ActionPerformed
-        Folio22.setVisible(true);
         Fecha22.setVisible(true);
-        Servicio22.setVisible(true);
+        Concepto2.setVisible(true);
         Importe22.setVisible(true);
         LDA2.setVisible(true);
         Menos18.setVisible(false);
@@ -3916,9 +5159,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas19ActionPerformed
 
     private void Menos19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos19ActionPerformed
-        Folio22.setVisible(false);
         Fecha22.setVisible(false);
-        Servicio22.setVisible(false);
+        Concepto2.setVisible(false);
         Importe22.setVisible(false);
         LDA2.setVisible(false);
         Menos18.setVisible(true);
@@ -3928,9 +5170,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos19ActionPerformed
 
     private void Menos20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos20ActionPerformed
-        Folio23.setVisible(false);
         Fecha23.setVisible(false);
-        Servicio23.setVisible(false);
+        Concepto3.setVisible(false);
         Importe23.setVisible(false);
         LDA3.setVisible(false);
         Menos19.setVisible(true);
@@ -3940,9 +5181,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos20ActionPerformed
 
     private void Mas20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas20ActionPerformed
-        Folio23.setVisible(true);
         Fecha23.setVisible(true);
-        Servicio23.setVisible(true);
+        Concepto3.setVisible(true);
         Importe23.setVisible(true);
         LDA3.setVisible(true);
         Menos19.setVisible(false);
@@ -3952,9 +5192,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas20ActionPerformed
 
     private void Mas21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas21ActionPerformed
-        Folio24.setVisible(true);
         Fecha24.setVisible(true);
-        Servicio24.setVisible(true);
+        Concepto4.setVisible(true);
         Importe24.setVisible(true);
         LDA4.setVisible(true);
         Menos20.setVisible(false);
@@ -3964,9 +5203,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas21ActionPerformed
 
     private void Menos21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos21ActionPerformed
-        Folio24.setVisible(false);
         Fecha24.setVisible(false);
-        Servicio24.setVisible(false);
+        Concepto4.setVisible(false);
         Importe24.setVisible(false);
         LDA4.setVisible(false);
         Menos20.setVisible(true);
@@ -3976,9 +5214,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos21ActionPerformed
 
     private void Mas22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas22ActionPerformed
-        Folio25.setVisible(true);
         Fecha25.setVisible(true);
-        Servicio25.setVisible(true);
+        Concepto5.setVisible(true);
         Importe25.setVisible(true);
         LDA5.setVisible(true);
         Menos21.setVisible(false);
@@ -3988,9 +5225,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas22ActionPerformed
 
     private void Menos22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos22ActionPerformed
-        Folio25.setVisible(false);
         Fecha25.setVisible(false);
-        Servicio25.setVisible(false);
+        Concepto5.setVisible(false);
         Importe25.setVisible(false);
         LDA5.setVisible(false);
         Menos21.setVisible(true);
@@ -4000,9 +5236,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos22ActionPerformed
 
     private void Menos23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos23ActionPerformed
-        Folio26.setVisible(false);
         Fecha26.setVisible(false);
-        Servicio26.setVisible(false);
+        Concepto6.setVisible(false);
         Importe26.setVisible(false);
         LDA6.setVisible(false);
         Menos22.setVisible(true);
@@ -4012,9 +5247,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos23ActionPerformed
 
     private void Mas23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas23ActionPerformed
-        Folio26.setVisible(true);
         Fecha26.setVisible(true);
-        Servicio26.setVisible(true);
+        Concepto6.setVisible(true);
         Importe26.setVisible(true);
         LDA6.setVisible(true);
         Menos22.setVisible(false);
@@ -4024,9 +5258,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas23ActionPerformed
 
     private void Menos24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos24ActionPerformed
-        Folio27.setVisible(false);
         Fecha27.setVisible(false);
-        Servicio27.setVisible(false);
+        Concepto7.setVisible(false);
         Importe27.setVisible(false);
         LDA7.setVisible(false);
         Menos23.setVisible(true);
@@ -4036,9 +5269,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos24ActionPerformed
 
     private void Mas24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas24ActionPerformed
-        Folio27.setVisible(true);
         Fecha27.setVisible(true);
-        Servicio27.setVisible(true);
+        Concepto7.setVisible(true);
         Importe27.setVisible(true);
         LDA7.setVisible(true);
         Menos23.setVisible(false);
@@ -4048,9 +5280,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas24ActionPerformed
 
     private void Mas25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas25ActionPerformed
-        Folio28.setVisible(true);
         Fecha28.setVisible(true);
-        Servicio28.setVisible(true);
+        Concepto8.setVisible(true);
         Importe28.setVisible(true);
         LDA8.setVisible(true);
         Menos24.setVisible(false);
@@ -4060,9 +5291,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas25ActionPerformed
 
     private void Menos25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos25ActionPerformed
-        Folio28.setVisible(false);
         Fecha28.setVisible(false);
-        Servicio28.setVisible(false);
+        Concepto8.setVisible(false);
         Importe28.setVisible(false);
         LDA8.setVisible(false);
         Menos24.setVisible(true);
@@ -4072,9 +5302,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos25ActionPerformed
 
     private void Menos26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos26ActionPerformed
-        Folio29.setVisible(false);
         Fecha29.setVisible(false);
-        Servicio29.setVisible(false);
+        Concepto9.setVisible(false);
         Importe29.setVisible(false);
         LDA9.setVisible(false);
         Menos25.setVisible(true);
@@ -4084,9 +5313,8 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Menos26ActionPerformed
 
     private void Mas26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas26ActionPerformed
-        Folio29.setVisible(true);
         Fecha29.setVisible(true);
-        Servicio29.setVisible(true);
+        Concepto9.setVisible(true);
         Importe29.setVisible(true);
         LDA9.setVisible(true);
         Menos25.setVisible(false);
@@ -4096,116 +5324,229 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Mas26ActionPerformed
 
     private void Importe30KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe30KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
+
     }//GEN-LAST:event_Importe30KeyReleased
 
     private void Importe31KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe31KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
+
     }//GEN-LAST:event_Importe31KeyReleased
 
     private void Importe32KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe32KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe32KeyReleased
 
     private void Importe33KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe33KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe33KeyReleased
 
     private void Importe34KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe34KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe34KeyReleased
 
     private void Importe35KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe35KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe35KeyReleased
 
     private void Importe36KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe36KeyPressed
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe36KeyPressed
 
     private void Importe37KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe37KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe37KeyReleased
 
     private void Importe38KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe38KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe38KeyReleased
 
     private void Importe39KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe39KeyReleased
-        // TODO add your handling code here:
+        Operaciones();
     }//GEN-LAST:event_Importe39KeyReleased
 
     private void Menos27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos27ActionPerformed
-        // TODO add your handling code here:
+        Fecha31.setVisible(false);
+        ObsV1.setVisible(false);
+        Importe31.setVisible(false);
+        Menos27.setVisible(false);
+        Mas27.setVisible(true);
+        Mas28.setVisible(false);
     }//GEN-LAST:event_Menos27ActionPerformed
 
     private void Mas27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas27ActionPerformed
-        // TODO add your handling code here:
+        Fecha31.setVisible(true);
+        ObsV1.setVisible(true);
+        Importe31.setVisible(true);
+        Menos27.setVisible(true);
+        Mas27.setVisible(false);
+        Mas28.setVisible(true);
     }//GEN-LAST:event_Mas27ActionPerformed
 
     private void Menos28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos28ActionPerformed
-        // TODO add your handling code here:
+        Fecha32.setVisible(false);
+        ObsV2.setVisible(false);
+        Importe32.setVisible(false);
+        Menos27.setVisible(true);
+        Menos28.setVisible(false);
+        Mas28.setVisible(true);
+        Mas29.setVisible(false);
     }//GEN-LAST:event_Menos28ActionPerformed
 
     private void Mas28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas28ActionPerformed
-        // TODO add your handling code here:
+        Fecha32.setVisible(true);
+        ObsV2.setVisible(true);
+        Importe32.setVisible(true);
+        Menos27.setVisible(false);
+        Menos28.setVisible(true);
+        Mas28.setVisible(false);
+        Mas29.setVisible(true);
     }//GEN-LAST:event_Mas28ActionPerformed
 
     private void Mas29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas29ActionPerformed
-        // TODO add your handling code here:
+        Fecha33.setVisible(true);
+        ObsV3.setVisible(true);
+        Importe33.setVisible(true);
+        Menos28.setVisible(false);
+        Menos29.setVisible(true);
+        Mas29.setVisible(false);
+        Mas30.setVisible(true);
+
     }//GEN-LAST:event_Mas29ActionPerformed
 
     private void Menos29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos29ActionPerformed
-        // TODO add your handling code here:
+        Fecha33.setVisible(false);
+        ObsV3.setVisible(false);
+        Importe33.setVisible(false);
+        Menos28.setVisible(true);
+        Menos29.setVisible(false);
+        Mas29.setVisible(true);
+        Mas30.setVisible(false);
     }//GEN-LAST:event_Menos29ActionPerformed
 
     private void Menos30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos30ActionPerformed
-        // TODO add your handling code here:
+        Fecha34.setVisible(false);
+        ObsV4.setVisible(false);
+        Importe34.setVisible(false);
+        Menos29.setVisible(true);
+        Menos30.setVisible(false);
+        Mas30.setVisible(true);
+        Mas31.setVisible(false);
     }//GEN-LAST:event_Menos30ActionPerformed
 
     private void Mas30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas30ActionPerformed
-        // TODO add your handling code here:
+        Fecha34.setVisible(true);
+        ObsV4.setVisible(true);
+        Importe34.setVisible(true);
+        Menos29.setVisible(false);
+        Menos30.setVisible(true);
+        Mas30.setVisible(false);
+        Mas31.setVisible(true);
     }//GEN-LAST:event_Mas30ActionPerformed
 
     private void Menos31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos31ActionPerformed
-        // TODO add your handling code here:
+        Fecha35.setVisible(false);
+        ObsV5.setVisible(false);
+        Importe35.setVisible(false);
+        Menos30.setVisible(true);
+        Menos31.setVisible(false);
+        Mas31.setVisible(true);
+        Mas32.setVisible(false);
     }//GEN-LAST:event_Menos31ActionPerformed
 
     private void Menos32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos32ActionPerformed
-        // TODO add your handling code here:
+        Fecha36.setVisible(false);
+        ObsV6.setVisible(false);
+        Importe36.setVisible(false);
+        Menos31.setVisible(true);
+        Menos32.setVisible(false);
+        Mas32.setVisible(true);
+        Mas33.setVisible(false);
     }//GEN-LAST:event_Menos32ActionPerformed
 
     private void Mas31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas31ActionPerformed
-        // TODO add your handling code here:
+        Fecha35.setVisible(true);
+        ObsV5.setVisible(true);
+        Importe35.setVisible(true);
+        Menos30.setVisible(false);
+        Menos31.setVisible(true);
+        Mas31.setVisible(false);
+        Mas32.setVisible(true);
     }//GEN-LAST:event_Mas31ActionPerformed
 
     private void Menos33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos33ActionPerformed
-        // TODO add your handling code here:
+        Fecha37.setVisible(false);
+        ObsV7.setVisible(false);
+        Importe37.setVisible(false);
+        Menos32.setVisible(true);
+        Menos33.setVisible(false);
+        Mas33.setVisible(true);
+        Mas34.setVisible(false);
     }//GEN-LAST:event_Menos33ActionPerformed
 
     private void Mas32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas32ActionPerformed
-        // TODO add your handling code here:
+        Fecha36.setVisible(true);
+        ObsV6.setVisible(true);
+        Importe36.setVisible(true);
+        Menos31.setVisible(false);
+        Menos32.setVisible(true);
+        Mas32.setVisible(false);
+        Mas33.setVisible(true);
     }//GEN-LAST:event_Mas32ActionPerformed
 
     private void Mas33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas33ActionPerformed
-        // TODO add your handling code here:
+        Fecha37.setVisible(true);
+        ObsV7.setVisible(true);
+        Importe37.setVisible(true);
+        Menos32.setVisible(false);
+        Menos33.setVisible(true);
+        Mas33.setVisible(false);
+        Mas34.setVisible(true);
     }//GEN-LAST:event_Mas33ActionPerformed
 
     private void Menos34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos34ActionPerformed
-        // TODO add your handling code here:
+        Fecha38.setVisible(false);
+        ObsV8.setVisible(false);
+        Importe38.setVisible(false);
+        Menos33.setVisible(true);
+        Menos34.setVisible(false);
+        Mas34.setVisible(true);
+        Mas35.setVisible(false);
     }//GEN-LAST:event_Menos34ActionPerformed
 
     private void Menos35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos35ActionPerformed
-        // TODO add your handling code here:
+        Fecha39.setVisible(false);
+        ObsV9.setVisible(false);
+        Importe39.setVisible(false);
+        Menos34.setVisible(true);
+        Menos35.setVisible(false);
+        Mas35.setVisible(true);
+        //Mas36.setVisible(false);
     }//GEN-LAST:event_Menos35ActionPerformed
 
     private void Mas34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas34ActionPerformed
-        // TODO add your handling code here:
+        Fecha38.setVisible(true);
+        ObsV8.setVisible(true);
+        Importe38.setVisible(true);
+        Menos33.setVisible(false);
+        Menos34.setVisible(true);
+        Mas34.setVisible(false);
+        Mas35.setVisible(true);
     }//GEN-LAST:event_Mas34ActionPerformed
 
     private void Mas35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas35ActionPerformed
-        // TODO add your handling code here:
+        Fecha39.setVisible(true);
+        ObsV9.setVisible(true);
+        Importe39.setVisible(true);
+        Menos34.setVisible(false);
+        Menos35.setVisible(true);
+        Mas35.setVisible(false);
+//        Mas36.setVisible(true);
     }//GEN-LAST:event_Mas35ActionPerformed
+
+    private void EEntregaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EEntregaKeyReleased
+        Operaciones();
+    }//GEN-LAST:event_EEntregaKeyReleased
 
     /**
      * @param args the command line arguments
@@ -4221,16 +5562,24 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin_Sem_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_Sem_4.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin_Sem_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_Sem_4.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin_Sem_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_Sem_4.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_Sem_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_Sem_4.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -4241,7 +5590,21 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AutoFecha;
+    private javax.swing.JLabel Autohora;
+    private javax.swing.JTextField Concepto;
+    private javax.swing.JTextField Concepto1;
+    private javax.swing.JTextField Concepto2;
+    private javax.swing.JTextField Concepto3;
+    private javax.swing.JTextField Concepto4;
+    private javax.swing.JTextField Concepto5;
+    private javax.swing.JTextField Concepto6;
+    private javax.swing.JTextField Concepto7;
+    private javax.swing.JTextField Concepto8;
+    private javax.swing.JTextField Concepto9;
+    private javax.swing.JLabel DBe;
     private javax.swing.JLabel DE;
+    private javax.swing.JTextField EEntrega;
     private com.toedter.calendar.JDateChooser Fecha;
     private com.toedter.calendar.JDateChooser Fecha1;
     private com.toedter.calendar.JDateChooser Fecha10;
@@ -4255,6 +5618,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser Fecha18;
     private com.toedter.calendar.JDateChooser Fecha19;
     private com.toedter.calendar.JDateChooser Fecha2;
+    private com.toedter.calendar.JDateChooser Fecha20;
     private com.toedter.calendar.JDateChooser Fecha21;
     private com.toedter.calendar.JDateChooser Fecha22;
     private com.toedter.calendar.JDateChooser Fecha23;
@@ -4276,52 +5640,11 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser Fecha38;
     private com.toedter.calendar.JDateChooser Fecha39;
     private com.toedter.calendar.JDateChooser Fecha4;
-    private com.toedter.calendar.JDateChooser Fecha40;
     private com.toedter.calendar.JDateChooser Fecha5;
     private com.toedter.calendar.JDateChooser Fecha6;
     private com.toedter.calendar.JDateChooser Fecha7;
     private com.toedter.calendar.JDateChooser Fecha8;
     private com.toedter.calendar.JDateChooser Fecha9;
-    private javax.swing.JTextField Folio;
-    private javax.swing.JTextField Folio1;
-    private javax.swing.JTextField Folio10;
-    private javax.swing.JTextField Folio11;
-    private javax.swing.JTextField Folio12;
-    private javax.swing.JTextField Folio13;
-    private javax.swing.JTextField Folio14;
-    private javax.swing.JTextField Folio15;
-    private javax.swing.JTextField Folio16;
-    private javax.swing.JTextField Folio17;
-    private javax.swing.JTextField Folio18;
-    private javax.swing.JTextField Folio19;
-    private javax.swing.JTextField Folio2;
-    private javax.swing.JTextField Folio20;
-    private javax.swing.JTextField Folio21;
-    private javax.swing.JTextField Folio22;
-    private javax.swing.JTextField Folio23;
-    private javax.swing.JTextField Folio24;
-    private javax.swing.JTextField Folio25;
-    private javax.swing.JTextField Folio26;
-    private javax.swing.JTextField Folio27;
-    private javax.swing.JTextField Folio28;
-    private javax.swing.JTextField Folio29;
-    private javax.swing.JTextField Folio3;
-    private javax.swing.JTextField Folio30;
-    private javax.swing.JTextField Folio31;
-    private javax.swing.JTextField Folio32;
-    private javax.swing.JTextField Folio33;
-    private javax.swing.JTextField Folio34;
-    private javax.swing.JTextField Folio35;
-    private javax.swing.JTextField Folio36;
-    private javax.swing.JTextField Folio37;
-    private javax.swing.JTextField Folio38;
-    private javax.swing.JTextField Folio39;
-    private javax.swing.JTextField Folio4;
-    private javax.swing.JTextField Folio5;
-    private javax.swing.JTextField Folio6;
-    private javax.swing.JTextField Folio7;
-    private javax.swing.JTextField Folio8;
-    private javax.swing.JTextField Folio9;
     private javax.swing.JTextField Importe;
     private javax.swing.JTextField Importe1;
     private javax.swing.JTextField Importe10;
@@ -4444,6 +5767,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JButton Menos7;
     private javax.swing.JButton Menos8;
     private javax.swing.JButton Menos9;
+    private javax.swing.JLabel NDS;
     private javax.swing.JTextField NPadron;
     private javax.swing.JTextField NPadron1;
     private javax.swing.JTextField NPadron2;
@@ -4479,16 +5803,6 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Servicio18;
     private javax.swing.JTextField Servicio19;
     private javax.swing.JComboBox<String> Servicio2;
-    private javax.swing.JTextField Servicio20;
-    private javax.swing.JTextField Servicio21;
-    private javax.swing.JTextField Servicio22;
-    private javax.swing.JTextField Servicio23;
-    private javax.swing.JTextField Servicio24;
-    private javax.swing.JTextField Servicio25;
-    private javax.swing.JTextField Servicio26;
-    private javax.swing.JTextField Servicio27;
-    private javax.swing.JTextField Servicio28;
-    private javax.swing.JTextField Servicio29;
     private javax.swing.JComboBox<String> Servicio3;
     private javax.swing.JComboBox<String> Servicio4;
     private javax.swing.JComboBox<String> Servicio5;
@@ -4497,33 +5811,36 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Servicio8;
     private javax.swing.JComboBox<String> Servicio9;
     private javax.swing.JLabel TDG;
-    private javax.swing.JLabel TDG1;
     private javax.swing.JLabel TDIDP;
     private javax.swing.JLabel TDIDS;
     private javax.swing.JLabel TDSYP;
+    private javax.swing.JLabel TDV;
+    private javax.swing.JLabel TMG;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -4538,7 +5855,7 @@ public class Admin_Sem_4 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

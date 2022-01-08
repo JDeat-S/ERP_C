@@ -1,3 +1,4 @@
+
 package Nomina;
 
 import Conexion.ConexionSQL;
@@ -50,18 +51,18 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         String Share = Busnamecdash.getText();
         String ShareAP = BusAPcdash.getText();
         String ShareAM = BusAMcdash.getText();
-        String where = "select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Zona`, `Servicio` from empleados  where `Status` LIKE '%Vigente%'";
+        String where = "select `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Zona`, `Servicio` from `rh.empleados`  where `Status` LIKE '%Vigente%'";
 
         if (!"".equals(Share)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
-                    + " `Servicio` from empleados WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
+            where = " select `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
+                    + " `Servicio` from `rh.empleados` WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAP)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
-                    + " `Servicio` from empleados WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
+            where = " select `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
+                    + " `Servicio` from `rh.empleados` WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
         } else if (!"".equals(ShareAM)) {
-            where = " select `id_bd`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
-                    + " `Servicio` from empleados WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
+            where = " select `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
+                    + " `Servicio` from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }
 
         try {
@@ -536,8 +537,8 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         MADE = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ADCDA = new javax.swing.JTextField();
-        NQna = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        NQna = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -549,6 +550,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Caja de ahorro");
@@ -1139,9 +1141,9 @@ public final class CDAQ_5 extends javax.swing.JFrame {
 
         ADCDA.setText("0");
 
-        NQna.setText("0");
-
         jLabel3.setText("# Quincena");
+
+        NQna.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1212,13 +1214,13 @@ public final class CDAQ_5 extends javax.swing.JFrame {
                             .addComponent(jLabel129)
                             .addComponent(NREcda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(NQna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(ADCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(NQna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel150)
@@ -1312,6 +1314,14 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         jMenu3.add(jMenuItem4);
 
         jMenu1.add(jMenu3);
+
+        jMenuItem7.setText("Listas de asistencia");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem7);
 
         jMenuBar1.add(jMenu1);
 
@@ -1613,6 +1623,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
             MADE.setText("0");
 
         }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void FilPCDAItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FilPCDAItemStateChanged
@@ -1788,6 +1799,12 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_MMAPagosActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        Listas_5 regr = new Listas_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1913,6 +1930,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
