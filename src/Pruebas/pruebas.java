@@ -193,11 +193,12 @@ public class pruebas {
                     cell = row.createCell(5);
                     cell.setCellValue("TERMINO");
                     cell.setCellStyle(Contenido);
+                    spreadsheet.setColumnWidth(6, 3000);
                     cell = row.createCell(6);
                     cell.setCellValue("# REPORTE");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    cell.setCellValue("# IMPORTE");
+                    cell.setCellValue("IMPORTE");
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(3);
@@ -216,6 +217,7 @@ public class pruebas {
                                     6 //last column (0-based)
                             )
                     );
+
                     cell = row.createCell(4);
                     cell.setCellValue(NSem.getString("Fecha"));
                     cell.setCellStyle(Contenido);
@@ -248,6 +250,7 @@ public class pruebas {
                 int i = 9;
                 while (scc.next()) {
                     row = spreadsheet.createRow(i);
+                    spreadsheet.setColumnWidth(0, 3500);
                     cell = row.createCell(0);
                     cell.setCellValue(scc.getString("Fecha"));
                     cell.setCellStyle(Contenido);
@@ -353,7 +356,7 @@ public class pruebas {
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    cell.setCellValue("# IMPORTE");
+                    cell.setCellValue("IMPORTE");
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(x);

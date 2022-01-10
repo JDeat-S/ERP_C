@@ -1,16 +1,18 @@
 package Admin;
 
 import Conexion.ConexionSQL;
+import Pruebas.pruebas;
 import java.awt.Desktop;
 import java.awt.HeadlessException;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -22,6 +24,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.ss.usermodel.PaperSize;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -249,6 +259,138 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         this.setExtendedState(6);
         setIconImage(new ImageIcon(Admin_Sem_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MostrarNDS();
+    }
+
+    public void limpiar() {
+        Fecha.setDate(null);
+        Fecha1.setDate(null);
+        Fecha2.setDate(null);
+        Fecha3.setDate(null);
+        Fecha4.setDate(null);
+        Fecha5.setDate(null);
+        Fecha6.setDate(null);
+        Fecha7.setDate(null);
+        Fecha8.setDate(null);
+        Fecha9.setDate(null);
+        Fecha10.setDate(null);
+        Fecha11.setDate(null);
+        Fecha12.setDate(null);
+        Fecha13.setDate(null);
+        Fecha14.setDate(null);
+        Fecha15.setDate(null);
+        Fecha16.setDate(null);
+        Fecha17.setDate(null);
+        Fecha18.setDate(null);
+        Fecha19.setDate(null);
+        Fecha20.setDate(null);
+        Fecha21.setDate(null);
+        Fecha22.setDate(null);
+        Fecha23.setDate(null);
+        Fecha24.setDate(null);
+        Fecha25.setDate(null);
+        Fecha26.setDate(null);
+        Fecha27.setDate(null);
+        Fecha28.setDate(null);
+        Fecha29.setDate(null);
+        Fecha30.setDate(null);
+        Fecha31.setDate(null);
+        Fecha32.setDate(null);
+        Fecha33.setDate(null);
+        Fecha34.setDate(null);
+        Fecha35.setDate(null);
+        Fecha36.setDate(null);
+        Fecha37.setDate(null);
+        Fecha38.setDate(null);
+        Fecha39.setDate(null);
+        Servicio3.setSelectedIndex(0);
+        Importe3.setText("0");
+        NPadron3.setText("");
+        Concepto3.setText("");
+        Servicio4.setSelectedIndex(0);
+        Importe4.setText("0");
+        NPadron4.setText("");
+        Concepto4.setText("");
+        Servicio5.setSelectedIndex(0);
+        Importe5.setText("0");
+        NPadron5.setText("");
+        Concepto5.setText("");
+        Servicio6.setSelectedIndex(0);
+        Importe6.setText("0");
+        NPadron6.setText("");
+        Concepto6.setText("");
+        Servicio7.setSelectedIndex(0);
+        Importe7.setText("0");
+        NPadron7.setText("");
+        Concepto7.setText("");
+        Servicio8.setSelectedIndex(0);
+        Importe8.setText("0");
+        NPadron8.setText("");
+        Concepto8.setText("");
+        Servicio9.setSelectedIndex(0);
+        Importe9.setText("0");
+        NPadron9.setText("");
+        Concepto9.setText("");
+        Importe10.setText("0");
+        Servicio10.setText("");
+        Importe11.setText("0");
+        LDA.setText("");
+        ObsV.setText("");
+        Servicio11.setText("");
+        Importe12.setText("0");
+        LDA1.setText("");
+        ObsV1.setText("");
+        Servicio12.setText("");
+        Importe13.setText("0");
+        LDA2.setText("");
+        ObsV2.setText("");
+        Servicio13.setText("");
+        Importe14.setText("0");
+        LDA3.setText("");
+        ObsV3.setText("");
+        Servicio14.setText("");
+        Importe15.setText("0");
+        LDA4.setText("");
+        ObsV4.setText("");
+        Servicio15.setText("");
+        Importe16.setText("0");
+        LDA5.setText("");
+        ObsV5.setText("");
+        Servicio16.setText("");
+        Importe17.setText("0");
+        LDA6.setText("");
+        ObsV6.setText("");
+        Servicio17.setText("");
+        Importe18.setText("0");
+        LDA7.setText("");
+        ObsV7.setText("");
+        Servicio18.setText("");
+        Importe19.setText("0");
+        LDA8.setText("");
+        ObsV8.setText("");
+        Servicio19.setText("");
+        Importe20.setText("0");
+        LDA9.setText("");
+        ObsV9.setText("");
+        Importe21.setText("0");
+        Importe22.setText("0");
+        Importe23.setText("0");
+        Importe24.setText("0");
+        Importe25.setText("0");
+        Importe26.setText("0");
+        Importe27.setText("0");
+        Importe28.setText("0");
+        Importe29.setText("0");
+        Importe30.setText("0");
+        Importe31.setText("0");
+        Importe32.setText("0");
+        Importe33.setText("0");
+        Importe34.setText("0");
+        Importe35.setText("0");
+        Importe36.setText("0");
+        Importe37.setText("0");
+        Importe38.setText("0");
+        Importe39.setText("0");
+
     }
 
     public void ADDSemanal() {
@@ -2465,6 +2607,18 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         AutoFecha = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         NDS = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jPanel9 = new javax.swing.JPanel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jPanel10 = new javax.swing.JPanel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jPanel11 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -4486,6 +4640,84 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         NDS.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         NDS.setText("0");
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel1.setText("Datos de Semanales");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 705, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 287, Short.MAX_VALUE)
+        );
+
+        jScrollPane7.setViewportView(jPanel6);
+
+        jTabbedPane1.addTab("tab1", jScrollPane7);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 705, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 287, Short.MAX_VALUE)
+        );
+
+        jScrollPane8.setViewportView(jPanel8);
+
+        jTabbedPane1.addTab("tab2", jScrollPane8);
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 705, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 287, Short.MAX_VALUE)
+        );
+
+        jScrollPane9.setViewportView(jPanel9);
+
+        jTabbedPane1.addTab("tab3", jScrollPane9);
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 705, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 287, Short.MAX_VALUE)
+        );
+
+        jScrollPane10.setViewportView(jPanel10);
+
+        jTabbedPane1.addTab("tab4", jScrollPane10);
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 705, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 287, Short.MAX_VALUE)
+        );
+
+        jScrollPane11.setViewportView(jPanel11);
+
+        jTabbedPane1.addTab("tab5", jScrollPane11);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -4493,75 +4725,73 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(53, 53, 53)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel30)
+                                    .addComponent(jLabel31))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(53, 53, 53)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel27)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel9)
-                                            .addComponent(jLabel30)
-                                            .addComponent(jLabel31))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(TMG)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(jLabel32))
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(TDSYP)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
-                                                        .addComponent(jLabel33)))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(AutoFecha)
-                                                    .addComponent(Autohora))
-                                                .addGap(92, 92, 92))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(EEntrega, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(DBe, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(DE, javax.swing.GroupLayout.Alignment.LEADING))
-                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jButton1)
-                                        .addContainerGap())))
+                                                .addComponent(TMG)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabel32))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(TDSYP)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabel33)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(AutoFecha)
+                                            .addComponent(Autohora))
+                                        .addGap(92, 92, 92))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(EEntrega, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(DBe, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(DE, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addContainerGap())))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(199, 199, 199)
                                 .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(NDS)
-                                .addGap(0, 0, Short.MAX_VALUE))))))
+                                .addComponent(NDS))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(188, 188, 188)
+                                .addComponent(jLabel1)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jTabbedPane1))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
@@ -4590,6 +4820,18 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel34)
                             .addComponent(NDS))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -4607,7 +4849,7 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1401, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4853,6 +5095,680 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         Addsgast();
         Addspen();
         Addval();
+        JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
+        chooser.setSelectedFile(new File("Semanal"));
+        chooser.setFileFilter(filter);
+        chooser.setDialogTitle("Guardar archivo");
+        chooser.setAcceptAllFileFilterUsed(false);
+        if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+        }
+        try {
+            String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
+            File archivoXLS = new File(ruta);
+            if (archivoXLS.exists()) {
+                archivoXLS.delete();
+            }
+            archivoXLS.createNewFile();
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connect = DriverManager.getConnection(
+                    "jdbc:mysql://192.168.1.170:3306/confort",
+                    "Servidor",
+                    "Confort1022"
+            );
+
+            Statement statementscc = connect.createStatement();
+            Statement statementpen = connect.createStatement();
+            Statement statementgast = connect.createStatement();
+            Statement statementval = connect.createStatement();
+            Statement statementNsem = connect.createStatement();
+            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
+
+            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                XSSFWorkbook libro = new XSSFWorkbook();
+                XSSFSheet spreadsheet = libro.createSheet(("Semanal"));
+
+                XSSFCellStyle Encabezado = libro.createCellStyle();
+                Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+
+                XSSFCellStyle Stilodd = libro.createCellStyle();
+
+                Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
+                Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                XSSFCellStyle StiloEEEE = libro.createCellStyle();
+
+                StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
+                StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                XSSFCellStyle Contenido = libro.createCellStyle();
+                Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+                Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                XSSFRow row = spreadsheet.createRow((short) 0);
+                XSSFCell cell = (XSSFCell) row.createCell((short) 0);
+
+//  int i = 2;
+                while (NSem.next()) {
+
+                    cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    0, //first row (0-based)
+                                    0, //last row (0-based)
+                                    0, //first column (0-based)
+                                    5 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(6);
+                    cell.setCellValue(NSem.getString("MMM/YY"));
+
+                    row = spreadsheet.createRow(1);
+                    cell = row.createCell(2);
+                    cell.setCellValue("Reporte General de Zona");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    2, //first column (0-based)
+                                    5 //last column (0-based)
+                            )
+                    );
+
+                    row = spreadsheet.createRow(2);
+                    cell = row.createCell(2);
+                    cell.setCellValue("Zona Sur 1");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    2, //first row (0-based)
+                                    2, //last row (0-based)
+                                    2, //first column (0-based)
+                                    5 //last column (0-based)
+                            )
+                    );
+
+                    row = spreadsheet.createRow(7);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    7, //first row (0-based)
+                                    7, //last row (0-based)
+                                    0, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(0);
+                    cell.setCellValue("SERVICIO C/COBRO PUENTE TITLA");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(8);
+                    cell = row.createCell(0);
+                    cell.setCellValue("FECHA");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    8, //first row (0-based)
+                                    8, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue("SERVICIO");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(4);
+                    cell.setCellValue("INICIO");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue("TERMINO");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.setColumnWidth(6, 3000);
+                    cell = row.createCell(6);
+                    cell.setCellValue("# REPORTE");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("IMPORTE");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total de servicios y pensiones");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Total de servicios y pensiones"));
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(11);
+                    cell.setCellValue("el entrega");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(12);
+                    cell.setCellValue(NSem.getString("el entrega"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(3);
+                    cell = row.createCell(6);
+                    cell.setCellValue(NSem.getString("#Nsem"));
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total restando gastos");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Total restando gastos"));
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(11);
+                    cell.setCellValue("Debe");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(12);
+                    cell.setCellValue(NSem.getString("Debe"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(4);
+                    cell = row.createCell(3);
+                    cell.setCellValue("FECHA: ");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    4, //first row (0-based)
+                                    4, //last row (0-based)
+                                    4, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+
+                    cell = row.createCell(4);
+                    cell.setCellValue(NSem.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total restando gastos");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Total restando gastos"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(11);
+
+                    row = spreadsheet.createRow(5);
+                    cell = row.createCell(3);
+                    cell.setCellValue("HORA: ");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    5, //first row (0-based)
+                                    5, //last row (0-based)
+                                    4, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(4);
+                    cell.setCellValue(NSem.getString("hora"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Debe entregar");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Debe entregar"));
+                    cell.setCellStyle(Contenido);
+
+                    NSem.isClosed();
+                }
+                int i = 9;
+                while (scc.next()) {
+                    row = spreadsheet.createRow(i);
+                    spreadsheet.setColumnWidth(0, 3500);
+                    cell = row.createCell(0);
+                    cell.setCellValue(scc.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    i, //first row (0-based)
+                                    i, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue(scc.getString("Servicio"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue(scc.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    i++;
+
+                    row = spreadsheet.createRow(i);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("TOTAL: ");
+                    cell = row.createCell(7);
+                    cell.setCellValue(scc.getString("Total"));
+                    cell.setCellStyle(Contenido);
+                    scc.isClosed();
+                    statementscc.isClosed();
+
+                }
+                int x = 22;
+
+                while (pen.next()) {
+                    row = spreadsheet.createRow(20);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    20, //first row (0-based)
+                                    20, //last row (0-based)
+                                    0, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(0);
+                    cell.setCellValue("PENSIONES");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(21);
+                    cell = row.createCell(0);
+                    cell.setCellValue("FECHA");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    21, //first row (0-based)
+                                    21, //last row (0-based)
+                                    1, //first column (0-based)
+                                    4 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue("SERVICIO");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue("# de padron");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    21, //first row (0-based)
+                                    21, //last row (0-based)
+                                    5, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("IMPORTE");
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(0);
+                    cell.setCellValue(pen.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    1, //first column (0-based)
+                                    4 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue(pen.getString("Servicio"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("# de padron");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    5, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(5);
+                    cell.setCellValue(pen.getString("# de padron"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue(pen.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    x++;
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("TOTAL: ");
+                    cell = row.createCell(7);
+                    cell.setCellValue(pen.getString("Total"));
+                    cell.setCellStyle(Contenido);
+                    pen.isClosed();
+
+                }
+                x = 35;
+
+                while (gast.next()) {
+                    row = spreadsheet.createRow(33);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    33, //first row (0-based)
+                                    33, //last row (0-based)
+                                    0, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(0);
+                    cell.setCellValue("GASTOS");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(34);
+                    cell = row.createCell(0);
+                    cell.setCellValue("FECHA");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    34, //first row (0-based)
+                                    34, //last row (0-based)
+                                    1, //first column (0-based)
+                                    4 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue("Concepto");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    34, //first row (0-based)
+                                    34, //last row (0-based)
+                                    5, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("# LISTA");
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(0);
+                    cell.setCellValue(gast.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    1, //first column (0-based)
+                                    4 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue(gast.getString("Concepto"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue(gast.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    5, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue(gast.getString("#Lista"));
+                    cell.setCellStyle(Contenido);
+                    x++;
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("TOTAL: ");
+                    cell = row.createCell(7);
+                    cell.setCellValue(gast.getString("Total"));
+                    cell.setCellStyle(Contenido);
+                    gast.isClosed();
+
+                }
+                x = 48;
+
+                while (val.next()) {
+                    row = spreadsheet.createRow(46);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    46, //first row (0-based)
+                                    46, //last row (0-based)
+                                    0, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(0);
+                    cell.setCellValue("VALES");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(47);
+                    cell = row.createCell(0);
+                    cell.setCellValue("FECHA");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    47, //first row (0-based)
+                                    47, //last row (0-based)
+                                    1, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue("Observaciones");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(0);
+                    cell.setCellValue(val.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    1, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue(val.getString("Observaciones"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue(val.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    x++;
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("TOTAL: ");
+                    cell = row.createCell(7);
+                    cell.setCellValue(val.getString("Total"));
+                    cell.setCellStyle(Contenido);
+                    pen.isClosed();
+
+                }
+
+                spreadsheet.getPrintSetup();
+                spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
+                spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
+                spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.49); // Margen (abajo)  
+                spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
+                spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
+                spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
+                spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
+                spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
+
+                spreadsheet.setVerticallyCenter(true);
+                libro.write(archivo);
+            }
+            Desktop.getDesktop().open(archivoXLS);
+        } catch (IOException | NumberFormatException e) {
+
+            try {
+                throw e;
+            } catch (IOException | NumberFormatException ex) {
+                Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         MostrarNDS();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -5822,6 +6738,7 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel TDV;
     private javax.swing.JLabel TMG;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -5856,15 +6773,26 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
