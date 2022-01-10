@@ -7097,7 +7097,7 @@ public final class Admin_Inturbide_4 extends javax.swing.JFrame implements Runna
                             )
                     );
                     cell = row.createCell(0);
-                    cell.setCellValue("SERVICIO C/COBRO PUENTE TITLA");
+                    cell.setCellValue("SERVICIO C/COBRO INTURBIDE");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(1);
                     cell.setCellStyle(Contenido);

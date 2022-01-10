@@ -269,10 +269,10 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
         String sem = txtsem.getText();
         /*String ShareAP = BusAPcdash.getText();
         String ShareAM = BusAMcdash.getText();*/
-        String SQL = "SELECT * FROM `rh.semanal.inturbide.nsem`";
+        String SQL = "SELECT * FROM `rh.semanal.ptetitla.nsem`";
 
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.inturbide.nsem` where `#Nsem` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.ptetitla.nsem` where `#Nsem` LIKE '%" + sem + "%'";
         }
         /*else if (!"".equals(ShareAP)) {
             where = " select `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
@@ -337,9 +337,9 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
 
         }
 
-        SQL = "SELECT * FROM `rh.semanal.inturbide.scc` where `Semanal` LIKE '%" + sem + "%'";
+        SQL = "SELECT * FROM `rh.semanal.ptetitla.scc` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.inturbide.scc` where `Semanal` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.ptetitla.scc` where `Semanal` LIKE '%" + sem + "%'";
         }
 
         try {
@@ -390,9 +390,9 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
 
         }
 
-        SQL = "SELECT * FROM `rh.semanal.inturbide.pen` where `Semanal` LIKE '%" + sem + "%'";
+        SQL = "SELECT * FROM `rh.semanal.ptetitla.pen` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.inturbide.pen` where `Semanal` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.ptetitla.pen` where `Semanal` LIKE '%" + sem + "%'";
         }
 
         try {
@@ -444,9 +444,9 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
 
         }
 
-        SQL = "SELECT * FROM `rh.semanal.inturbide.gast` where `Semanal` LIKE '%" + sem + "%'";
+        SQL = "SELECT * FROM `rh.semanal.ptetitla.gast` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.inturbide.gast` where `Semanal` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.ptetitla.gast` where `Semanal` LIKE '%" + sem + "%'";
         }
 
         try {
@@ -498,9 +498,9 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
 
         }
 
-        SQL = "SELECT * FROM `rh.semanal.inturbide.val` where `Semanal` LIKE '%" + sem + "%'";
+        SQL = "SELECT * FROM `rh.semanal.ptetitla.val` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.inturbide.val` where `Semanal` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.ptetitla.val` where `Semanal` LIKE '%" + sem + "%'";
         }
 
         try {
@@ -695,7 +695,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
 
     public void ADDSemanal() {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
-        String SQL = "INSERT INTO `rh.semanal.inturbide.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`,"
+        String SQL = "INSERT INTO `rh.semanal.ptetitla.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`,"
                 + " `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`,"
                 + " `el entrega`, `Debe`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
@@ -725,7 +725,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
 
     public void Addscc() {
         if (Mas.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -743,7 +743,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas1.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -766,7 +766,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas2.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -795,7 +795,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas3.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -829,7 +829,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas4.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -868,7 +868,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas5.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -912,7 +912,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas6.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -961,7 +961,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas7.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1015,7 +1015,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas8.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1074,7 +1074,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Menos8.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?)";
             try {
@@ -1142,7 +1142,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
 
     public void Addval() {
         if (Mas27.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -1160,7 +1160,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas28.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -1183,7 +1183,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas29.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1212,7 +1212,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas30.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1246,7 +1246,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas31.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1285,7 +1285,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas32.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1329,7 +1329,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas33.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1378,7 +1378,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas34.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1432,7 +1432,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas35.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1491,7 +1491,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Menos35.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?)";
             try {
@@ -1559,7 +1559,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
 
     public void Addspen() {
         if (Mas9.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -1578,7 +1578,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas10.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -1603,7 +1603,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas11.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1635,7 +1635,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas12.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1673,7 +1673,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas13.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1716,7 +1716,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas14.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1766,7 +1766,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas15.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1822,7 +1822,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas16.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1884,7 +1884,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas17.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1952,7 +1952,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Menos17.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?)";
             try {
@@ -2030,7 +2030,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
 
     public void Addsgast() {
         if (Mas18.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -2049,7 +2049,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas19.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -2074,7 +2074,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas20.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2106,7 +2106,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas21.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2144,7 +2144,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas22.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2188,7 +2188,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas23.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2238,7 +2238,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas24.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2294,7 +2294,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas25.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2356,7 +2356,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas26.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2424,7 +2424,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Menos26.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?)";
             try {
@@ -2617,7 +2617,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
     }
 
     public void MostrarNDS() {
-        String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort' AND TABLE_NAME = 'rh.semanal.inturbide.nsem'";
+        String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort' AND TABLE_NAME = 'rh.semanal.ptetitla.nsem'";
         try {
             java.sql.Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
@@ -2949,7 +2949,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setText("Servicios c/cobro ITURBIDE");
+        jLabel10.setText("Servicios c/cobro Puente Titla");
 
         Fecha.setDateFormatString("dd MMM yyyy ");
 
@@ -2960,7 +2960,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        Servicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
 
         jLabel2.setText("Fecha");
 
@@ -2974,23 +2974,23 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
         TDIDS.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         TDIDS.setText("0");
 
-        Servicio1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
 
-        Servicio2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
 
-        Servicio3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
 
-        Servicio4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
 
-        Servicio5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
 
-        Servicio6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
 
-        Servicio7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
 
-        Servicio8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
 
-        Servicio9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
 
         Importe1.setText("0");
         Importe1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -5618,11 +5618,11 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             Statement statementgast = connect.createStatement();
             Statement statementval = connect.createStatement();
             Statement statementNsem = connect.createStatement();
-            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
-            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
-            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
-            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
-            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.ptetitla.scc` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.ptetitla.pen` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.ptetitla.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
 
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
@@ -7002,11 +7002,11 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
             Statement statementgast = connect.createStatement();
             Statement statementval = connect.createStatement();
             Statement statementNsem = connect.createStatement();
-            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
-            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
-            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
-            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
-            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.ptetitla.scc` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.ptetitla.pen` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.ptetitla.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
 
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();

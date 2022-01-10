@@ -524,7 +524,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Servicios c/cobro ITURBIDE"/>
+                        <Property name="text" type="java.lang.String" value="Servicios c/cobro Puente Titla"/>
                       </Properties>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha">
@@ -543,14 +543,12 @@
                     <Component class="javax.swing.JComboBox" name="Servicio">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="7">
-                            <StringItem index="0" value="  "/>
-                            <StringItem index="1" value="Iturbide x 1 dia"/>
-                            <StringItem index="2" value="Iturbide x 12 hrs"/>
-                            <StringItem index="3" value="Iturbide x hora"/>
-                            <StringItem index="4" value="Iturbide ba&#xf1;o"/>
-                            <StringItem index="5" value="Cafe"/>
-                            <StringItem index="6" value="Division"/>
+                          <StringArray count="5">
+                            <StringItem index="0" value=" "/>
+                            <StringItem index="1" value="Pte titla x 1 dia"/>
+                            <StringItem index="2" value="Pte titla x 12 hrs"/>
+                            <StringItem index="3" value="Pte titla x hora"/>
+                            <StringItem index="4" value="Pte titla ba&#xf1;o"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -592,14 +590,12 @@
                     <Component class="javax.swing.JComboBox" name="Servicio1">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="7">
-                            <StringItem index="0" value="  "/>
-                            <StringItem index="1" value="Iturbide x 1 dia"/>
-                            <StringItem index="2" value="Iturbide x 12 hrs"/>
-                            <StringItem index="3" value="Iturbide x hora"/>
-                            <StringItem index="4" value="Iturbide ba&#xf1;o"/>
-                            <StringItem index="5" value="Cafe"/>
-                            <StringItem index="6" value="Division"/>
+                          <StringArray count="5">
+                            <StringItem index="0" value=" "/>
+                            <StringItem index="1" value="Pte titla x 1 dia"/>
+                            <StringItem index="2" value="Pte titla x 12 hrs"/>
+                            <StringItem index="3" value="Pte titla x hora"/>
+                            <StringItem index="4" value="Pte titla ba&#xf1;o"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -610,14 +606,12 @@
                     <Component class="javax.swing.JComboBox" name="Servicio2">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="7">
-                            <StringItem index="0" value="  "/>
-                            <StringItem index="1" value="Iturbide x 1 dia"/>
-                            <StringItem index="2" value="Iturbide x 12 hrs"/>
-                            <StringItem index="3" value="Iturbide x hora"/>
-                            <StringItem index="4" value="Iturbide ba&#xf1;o"/>
-                            <StringItem index="5" value="Cafe"/>
-                            <StringItem index="6" value="Division"/>
+                          <StringArray count="5">
+                            <StringItem index="0" value=" "/>
+                            <StringItem index="1" value="Pte titla x 1 dia"/>
+                            <StringItem index="2" value="Pte titla x 12 hrs"/>
+                            <StringItem index="3" value="Pte titla x hora"/>
+                            <StringItem index="4" value="Pte titla ba&#xf1;o"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -628,14 +622,12 @@
                     <Component class="javax.swing.JComboBox" name="Servicio3">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="7">
-                            <StringItem index="0" value="  "/>
-                            <StringItem index="1" value="Iturbide x 1 dia"/>
-                            <StringItem index="2" value="Iturbide x 12 hrs"/>
-                            <StringItem index="3" value="Iturbide x hora"/>
-                            <StringItem index="4" value="Iturbide ba&#xf1;o"/>
-                            <StringItem index="5" value="Cafe"/>
-                            <StringItem index="6" value="Division"/>
+                          <StringArray count="5">
+                            <StringItem index="0" value=" "/>
+                            <StringItem index="1" value="Pte titla x 1 dia"/>
+                            <StringItem index="2" value="Pte titla x 12 hrs"/>
+                            <StringItem index="3" value="Pte titla x hora"/>
+                            <StringItem index="4" value="Pte titla ba&#xf1;o"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -646,14 +638,12 @@
                     <Component class="javax.swing.JComboBox" name="Servicio4">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="7">
-                            <StringItem index="0" value="  "/>
-                            <StringItem index="1" value="Iturbide x 1 dia"/>
-                            <StringItem index="2" value="Iturbide x 12 hrs"/>
-                            <StringItem index="3" value="Iturbide x hora"/>
-                            <StringItem index="4" value="Iturbide ba&#xf1;o"/>
-                            <StringItem index="5" value="Cafe"/>
-                            <StringItem index="6" value="Division"/>
+                          <StringArray count="5">
+                            <StringItem index="0" value=" "/>
+                            <StringItem index="1" value="Pte titla x 1 dia"/>
+                            <StringItem index="2" value="Pte titla x 12 hrs"/>
+                            <StringItem index="3" value="Pte titla x hora"/>
+                            <StringItem index="4" value="Pte titla ba&#xf1;o"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -664,14 +654,12 @@
                     <Component class="javax.swing.JComboBox" name="Servicio5">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="7">
-                            <StringItem index="0" value="  "/>
-                            <StringItem index="1" value="Iturbide x 1 dia"/>
-                            <StringItem index="2" value="Iturbide x 12 hrs"/>
-                            <StringItem index="3" value="Iturbide x hora"/>
-                            <StringItem index="4" value="Iturbide ba&#xf1;o"/>
-                            <StringItem index="5" value="Cafe"/>
-                            <StringItem index="6" value="Division"/>
+                          <StringArray count="5">
+                            <StringItem index="0" value=" "/>
+                            <StringItem index="1" value="Pte titla x 1 dia"/>
+                            <StringItem index="2" value="Pte titla x 12 hrs"/>
+                            <StringItem index="3" value="Pte titla x hora"/>
+                            <StringItem index="4" value="Pte titla ba&#xf1;o"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -682,14 +670,12 @@
                     <Component class="javax.swing.JComboBox" name="Servicio6">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="7">
-                            <StringItem index="0" value="  "/>
-                            <StringItem index="1" value="Iturbide x 1 dia"/>
-                            <StringItem index="2" value="Iturbide x 12 hrs"/>
-                            <StringItem index="3" value="Iturbide x hora"/>
-                            <StringItem index="4" value="Iturbide ba&#xf1;o"/>
-                            <StringItem index="5" value="Cafe"/>
-                            <StringItem index="6" value="Division"/>
+                          <StringArray count="5">
+                            <StringItem index="0" value=" "/>
+                            <StringItem index="1" value="Pte titla x 1 dia"/>
+                            <StringItem index="2" value="Pte titla x 12 hrs"/>
+                            <StringItem index="3" value="Pte titla x hora"/>
+                            <StringItem index="4" value="Pte titla ba&#xf1;o"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -700,14 +686,12 @@
                     <Component class="javax.swing.JComboBox" name="Servicio7">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="7">
-                            <StringItem index="0" value="  "/>
-                            <StringItem index="1" value="Iturbide x 1 dia"/>
-                            <StringItem index="2" value="Iturbide x 12 hrs"/>
-                            <StringItem index="3" value="Iturbide x hora"/>
-                            <StringItem index="4" value="Iturbide ba&#xf1;o"/>
-                            <StringItem index="5" value="Cafe"/>
-                            <StringItem index="6" value="Division"/>
+                          <StringArray count="5">
+                            <StringItem index="0" value=" "/>
+                            <StringItem index="1" value="Pte titla x 1 dia"/>
+                            <StringItem index="2" value="Pte titla x 12 hrs"/>
+                            <StringItem index="3" value="Pte titla x hora"/>
+                            <StringItem index="4" value="Pte titla ba&#xf1;o"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -718,14 +702,12 @@
                     <Component class="javax.swing.JComboBox" name="Servicio8">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="7">
-                            <StringItem index="0" value="  "/>
-                            <StringItem index="1" value="Iturbide x 1 dia"/>
-                            <StringItem index="2" value="Iturbide x 12 hrs"/>
-                            <StringItem index="3" value="Iturbide x hora"/>
-                            <StringItem index="4" value="Iturbide ba&#xf1;o"/>
-                            <StringItem index="5" value="Cafe"/>
-                            <StringItem index="6" value="Division"/>
+                          <StringArray count="5">
+                            <StringItem index="0" value=" "/>
+                            <StringItem index="1" value="Pte titla x 1 dia"/>
+                            <StringItem index="2" value="Pte titla x 12 hrs"/>
+                            <StringItem index="3" value="Pte titla x hora"/>
+                            <StringItem index="4" value="Pte titla ba&#xf1;o"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -736,14 +718,12 @@
                     <Component class="javax.swing.JComboBox" name="Servicio9">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="7">
-                            <StringItem index="0" value="  "/>
-                            <StringItem index="1" value="Iturbide x 1 dia"/>
-                            <StringItem index="2" value="Iturbide x 12 hrs"/>
-                            <StringItem index="3" value="Iturbide x hora"/>
-                            <StringItem index="4" value="Iturbide ba&#xf1;o"/>
-                            <StringItem index="5" value="Cafe"/>
-                            <StringItem index="6" value="Division"/>
+                          <StringArray count="5">
+                            <StringItem index="0" value=" "/>
+                            <StringItem index="1" value="Pte titla x 1 dia"/>
+                            <StringItem index="2" value="Pte titla x 12 hrs"/>
+                            <StringItem index="3" value="Pte titla x hora"/>
+                            <StringItem index="4" value="Pte titla ba&#xf1;o"/>
                           </StringArray>
                         </Property>
                       </Properties>

@@ -524,7 +524,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="18" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Servicios c/cobro ITURBIDE"/>
+                        <Property name="text" type="java.lang.String" value="Servicios c/cobro Tehuantepec"/>
                       </Properties>
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha">
