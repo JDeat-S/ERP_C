@@ -74,10 +74,10 @@ public final class Admin_V_Principal_6 extends javax.swing.JFrame {
         if (!"".equals(FilNREntradasBb.getText())) {
             SQL = "select * from `almacen.articulos.entrada.blocks boletaje` where `#registro` like '%" + FilNREntradasBb.getText() + "%'";
 
-        } else if (!"".equals(FilZonEntradasBb.getSelectedItem().toString())) {
+        } else if (!"".equals(FilZonEntradasBb.getSelectedItem().toString().equals(""))) {
             SQL = "select * from `almacen.articulos.entrada.blocks boletaje` where `Zona` like '%" + FilZonEntradasBb.getSelectedItem().toString() + "%'";
 
-        } else if (!"".equals(FilServEntradasBb.getSelectedItem().toString())) {
+        } else if (!"".equals(FilServEntradasBb.getSelectedItem().toString().equals(""))) {
             SQL = "select * from `almacen.articulos.entrada.blocks boletaje` where `Servicio` like '%" + FilServEntradasBb.getSelectedItem().toString() + "%'";
 
         } else if (!"".equals(((JTextField) FilFechaEntradasBb.getDateEditor().getUiComponent()).getText())) {
@@ -92,7 +92,7 @@ public final class Admin_V_Principal_6 extends javax.swing.JFrame {
         } else if (!"".equals(FilFTBb.getText())) {
             SQL = "select * from `almacen.articulos.entrada.blocks boletaje` where `FolioT` like '%" + FilFTBb.getText() + "%'";
 
-        } else if (!"".equals(FilColorEntradasBb.getSelectedItem().toString())) {
+        } else if (!"".equals(FilColorEntradasBb.getSelectedItem().toString().equals(""))) {
             SQL = "select * from `almacen.articulos.entrada.blocks boletaje` where `Color` like '%" + FilColorEntradasBb.getSelectedItem().toString() + "%'";
 
         } else if (!"".equals(FilSerieEntradasBb.getText())) {
@@ -157,11 +157,11 @@ public final class Admin_V_Principal_6 extends javax.swing.JFrame {
         if (!"".equals(FilNRSalidasBb.getText())) {
             SQL = "select * from `almacen.articulos.salida.blocks boletaje` where `#registro` like '%" + FilNRSalidasBb.getText() + "%'";
 
-        } else if (!"".equals(FilZonSalidasBb.getSelectedItem().toString())) {
+        } else if (!"".equals(FilZonSalidasBb.getSelectedItem().toString().equals(""))) {
             SQL = "select * from `almacen.articulos.salida.blocks boletaje` where `Zona` like '%" + FilZonSalidasBb.getSelectedItem().toString() + "%'";
 
-        } else if (!"".equals(FilServSalidasBb.getSelectedItem().toString())) {
-            SQL = "select * from `almacen.articulos.salida.blocks boletaje` where `Servicio` like '%" + FilServSalidasBb.getSelectedItem().toString() + "%'";
+        } else if (!"".equals(FilColorSalidasBb.getSelectedItem().toString().equals(""))) {
+            SQL = "select * from `almacen.articulos.salida.blocks boletaje` where `Servicio` like '%" + FilColorSalidasBb.getSelectedItem().toString() + "%'";
 
         } else if (!"".equals(((JTextField) FilFechaSalidasBb.getDateEditor().getUiComponent()).getText())) {
             SQL = "select * from `almacen.articulos.salida.blocks boletaje` where `Fecha` like '%" + ((JTextField) FilFechaSalidasBb.getDateEditor().getUiComponent()).getText() + "%'";
@@ -175,8 +175,8 @@ public final class Admin_V_Principal_6 extends javax.swing.JFrame {
         } else if (!"".equals(FilFTBb.getText())) {
             SQL = "select * from `almacen.articulos.salida.blocks boletaje` where `FolioT` like '%" + FilFTBb.getText() + "%'";
 
-        } else if (!"".equals(FilColorSalidasBb.getSelectedItem().toString())) {
-            SQL = "select * from `almacen.articulos.salida.blocks boletaje` where `Color` like '%" + FilColorSalidasBb.getSelectedItem().toString() + "%'";
+        } else if (!"".equals(FilServSalidasBb.getSelectedItem().toString().equals(""))) {
+            SQL = "select * from `almacen.articulos.salida.blocks boletaje` where `Color` like '%" + FilServSalidasBb.getSelectedItem().toString() + "%'";
 
         } else if (!"".equals(FilSerieSalidasBb.getText())) {
             SQL = "select * from ´almacen.articulos.salida.blocks boletaje´ where `Serie` like '%" + FilSerieSalidasBb.getText() + "%'";
@@ -1276,7 +1276,7 @@ public final class Admin_V_Principal_6 extends javax.swing.JFrame {
                     .addComponent(AgregarBb)
                     .addComponent(ModBb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(68, Short.MAX_VALUE))
         );
 
