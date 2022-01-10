@@ -39,7 +39,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDeat
  */
-public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
+public final class Admin_Inturbide_4 extends javax.swing.JFrame implements Runnable {
 
     /**
      * Creates new form Admin_Sem_4
@@ -51,7 +51,7 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     Calendar calendario;
     Thread h1;
 
-    public Admin_Sem_4() {
+    public Admin_Inturbide_4() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         NPadron1.setVisible(false);
@@ -259,7 +259,7 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
         AutoFecha.setText("" + timeStamp);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        setIconImage(new ImageIcon(Admin_Sem_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Admin_Inturbide_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MostrarNDS();
         MDsem();
     }
@@ -7666,26 +7666,27 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin_Sem_4.class
+            java.util.logging.Logger.getLogger(Admin_Inturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin_Sem_4.class
+            java.util.logging.Logger.getLogger(Admin_Inturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin_Sem_4.class
+            java.util.logging.Logger.getLogger(Admin_Inturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_Sem_4.class
+            java.util.logging.Logger.getLogger(Admin_Inturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Admin_Sem_4().setVisible(true);
+            new Admin_Inturbide_4().setVisible(true);
         });
     }
 
