@@ -2942,7 +2942,12 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
         jLabel37 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        Alumnos = new javax.swing.JMenuItem();
+        EmpleadosT = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -5331,10 +5336,55 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
 
         jScrollPane1.setViewportView(jPanel1);
 
-        jMenu1.setText("File");
+        jMenu1.setText("Semanales");
+
+        jMenuItem1.setText("Inturbide");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Tehuantepec");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("General");
+
+        Alumnos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        Alumnos.setText("Alumnos estadia");
+        Alumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlumnosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Alumnos);
+
+        EmpleadosT.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        EmpleadosT.setText("Empelados torteria");
+        EmpleadosT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmpleadosTActionPerformed(evt);
+            }
+        });
+        jMenu2.add(EmpleadosT);
+
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem4.setText("Depositos C/ IMSS");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem4);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -7648,6 +7698,38 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
         }
     }//GEN-LAST:event_jLabel38MousePressed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Admin_Inturbide_4 regr = new Admin_Inturbide_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Admin_Tehueantepec_4 regr = new Admin_Tehueantepec_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
+
+        Admin_Estadias_4 regr = new Admin_Estadias_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_AlumnosActionPerformed
+
+    private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
+
+        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EmpleadosTActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        Admin_Depositos_4 regr = new Admin_Depositos_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -7691,6 +7773,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Alumnos;
     private javax.swing.JLabel AutoFecha;
     private javax.swing.JLabel Autohora;
     private javax.swing.JTextField Concepto;
@@ -7706,6 +7789,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel DBe;
     private javax.swing.JLabel DE;
     private javax.swing.JTextField EEntrega;
+    private javax.swing.JMenuItem EmpleadosT;
     private com.toedter.calendar.JDateChooser Fecha;
     private com.toedter.calendar.JDateChooser Fecha1;
     private com.toedter.calendar.JDateChooser Fecha10;
@@ -7967,6 +8051,9 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
