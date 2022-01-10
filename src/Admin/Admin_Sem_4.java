@@ -254,7 +254,8 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
     public void ADDSemanal() {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
         String SQL = "INSERT INTO `rh.semanal.inturbide.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`,"
-                + " `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`, `el entrega`, `Debe`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + " `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`,"
+                + " `el entrega`, `Debe`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -267,6 +268,10 @@ public final class Admin_Sem_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(7, DE.getText());
             pst.setString(8, EEntrega.getText());
             pst.setString(9, DBe.getText());
+            pst.setString(10, TDIDS.getText());
+            pst.setString(11, TDIDP.getText());
+            pst.setString(12, TDG.getText());
+            pst.setString(13, TDV.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Semanal agregado");

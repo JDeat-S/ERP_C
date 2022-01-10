@@ -287,58 +287,346 @@ public class pruebas {
                     scc.isClosed();
                     statementscc.isClosed();
 
-                    
-                    int x=i+i-9;
-                    
-                    while (pen.next()) {
-                         
-                         
+                }
+                int x = 22;
 
-                        row = spreadsheet.createRow(x);
-                        cell = row.createCell(0);
-                        cell.setCellValue(pen.getString("Fecha"));
-                        cell.setCellStyle(Contenido);
-                        spreadsheet.addMergedRegion(
-                                new CellRangeAddress(
-                                        x, //first row (0-based)
-                                        x, //last row (0-based)
-                                        1, //first column (0-based)
-                                        3 //last column (0-based)
-                                )
-                        );
-                        cell = row.createCell(1);
-                        cell.setCellValue(pen.getString("Servicio"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(2);
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(3);
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(4);
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(5);
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(6);
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(7);
-                        cell.setCellValue(pen.getString("# de padron"));
-                        cell.setCellStyle(Contenido);
-                        x++;
+                while (pen.next()) {
+                    row = spreadsheet.createRow(20);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    20, //first row (0-based)
+                                    20, //last row (0-based)
+                                    0, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(0);
+                    cell.setCellValue("PENSIONES");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
 
-                        row = spreadsheet.createRow(x);
-                        cell = row.createCell(6);
-                        cell.setCellStyle(Contenido);
-                        cell.setCellValue("TOTAL: ");
-                        cell = row.createCell(7);
-                        cell.setCellValue(pen.getString("Total"));
-                        cell.setCellStyle(Contenido);
-                        pen.isClosed();
+                    row = spreadsheet.createRow(21);
+                    cell = row.createCell(0);
+                    cell.setCellValue("FECHA");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    21, //first row (0-based)
+                                    21, //last row (0-based)
+                                    1, //first column (0-based)
+                                    4 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue("SERVICIO");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue("# de padron");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    21, //first row (0-based)
+                                    21, //last row (0-based)
+                                    5, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("# IMPORTE");
+                    cell.setCellStyle(Contenido);
 
-                    }
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(0);
+                    cell.setCellValue(pen.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    1, //first column (0-based)
+                                    4 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue(pen.getString("Servicio"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("# de padron");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    5, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(5);
+                    cell.setCellValue(pen.getString("# de padron"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue(pen.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    x++;
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("TOTAL: ");
+                    cell = row.createCell(7);
+                    cell.setCellValue(pen.getString("Total"));
+                    cell.setCellStyle(Contenido);
+                    pen.isClosed();
+
+                }
+                x = 35;
+
+                while (gast.next()) {
+                    row = spreadsheet.createRow(33);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    33, //first row (0-based)
+                                    33, //last row (0-based)
+                                    0, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(0);
+                    cell.setCellValue("GASTOS");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(34);
+                    cell = row.createCell(0);
+                    cell.setCellValue("FECHA");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    34, //first row (0-based)
+                                    34, //last row (0-based)
+                                    1, //first column (0-based)
+                                    4 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue("Concepto");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    34, //first row (0-based)
+                                    34, //last row (0-based)
+                                    5, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("# LISTA");
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(0);
+                    cell.setCellValue(gast.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    1, //first column (0-based)
+                                    4 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue(gast.getString("Concepto"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue(gast.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    5, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue(gast.getString("#Lista"));
+                    cell.setCellStyle(Contenido);
+                    x++;
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("TOTAL: ");
+                    cell = row.createCell(7);
+                    cell.setCellValue(gast.getString("Total"));
+                    cell.setCellStyle(Contenido);
+                    gast.isClosed();
+
+                }
+                x = 48;
+
+                while (val.next()) {
+                    row = spreadsheet.createRow(46);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    46, //first row (0-based)
+                                    46, //last row (0-based)
+                                    0, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(0);
+                    cell.setCellValue("VALES");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(47);
+                    cell = row.createCell(0);
+                    cell.setCellValue("FECHA");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    47, //first row (0-based)
+                                    47, //last row (0-based)
+                                    1, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue("Observaciones");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(0);
+                    cell.setCellValue(val.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    1, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue(val.getString("Observaciones"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue(val.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    x++;
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("TOTAL: ");
+                    cell = row.createCell(7);
+                    cell.setCellValue(val.getString("Total"));
+                    cell.setCellStyle(Contenido);
+                    pen.isClosed();
+
                 }
 
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
-                spreadsheet.getPrintSetup().setLandscape(true); // Dirección de impresión, true: horizontal, false: vertical
+                spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
                 spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.49); // Margen (abajo)  
                 spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
                 spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
@@ -346,7 +634,7 @@ public class pruebas {
                 spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
                 spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
 
-                spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
+                spreadsheet.setVerticallyCenter(true);
                 libro.write(archivo);
             }
             Desktop.getDesktop().open(archivoXLS);
