@@ -2950,6 +2950,7 @@ public final class Admin_Inturbide_4 extends javax.swing.JFrame implements Runna
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Semanal Inturbide");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

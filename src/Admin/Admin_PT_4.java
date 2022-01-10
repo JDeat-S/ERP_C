@@ -2950,6 +2950,7 @@ public final class Admin_PT_4 extends javax.swing.JFrame implements Runnable {
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Semanal Puente titla");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
