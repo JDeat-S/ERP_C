@@ -1,7 +1,6 @@
 package Admin;
 
 import Conexion.ConexionSQL;
-import Pruebas.pruebas;
 import java.awt.Desktop;
 import java.awt.HeadlessException;
 import java.io.File;
@@ -6307,11 +6306,11 @@ public final class Admin_Tehueantepec_4 extends javax.swing.JFrame implements Ru
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Admin_Tehueantepec_4.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Admin_Tehueantepec_4.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         MostrarNDS();
@@ -7691,11 +7690,11 @@ public final class Admin_Tehueantepec_4 extends javax.swing.JFrame implements Ru
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Admin_Tehueantepec_4.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Admin_Tehueantepec_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel38MousePressed
 

@@ -1,8 +1,8 @@
 package Inicio;
 
+import Admin.Admin_Ventana_3;
 import Nomina.NominaQ_5;
 import RH.Empleados_4;
-import Admin.Administradores_3;
 import Conexion.ConexionSQL;
 import java.awt.HeadlessException;
 import java.sql.Connection;
@@ -44,7 +44,7 @@ public class Login_2 extends javax.swing.JFrame {
             if (rs.next()) {
                 resultado = 1;
                 if (resultado == 1) {
-                    Administradores_3 Form = new Administradores_3();
+                    Admin_Ventana_3 Form = new Admin_Ventana_3();
                     Form.setVisible(true);
                     this.dispose();
 
