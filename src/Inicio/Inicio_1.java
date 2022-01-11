@@ -38,7 +38,6 @@ public class Inicio_1 extends javax.swing.JFrame {
         VerERP = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocationByPlatform(true);
         setUndecorated(true);
         setResizable(false);
 
