@@ -4,8 +4,7 @@ import Admin.*;
 import Conexion.ConexionSQL;
 import java.awt.Color;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +18,7 @@ public class Inicio_1 extends javax.swing.JFrame {
     public Inicio_1() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(Inicio_1.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
 
@@ -30,6 +30,7 @@ public class Inicio_1 extends javax.swing.JFrame {
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         fondologo = new javax.swing.JLabel();
@@ -100,15 +101,21 @@ public class Inicio_1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("ERP CONFORT");
+
         javax.swing.GroupLayout Harder1Layout = new javax.swing.GroupLayout(Harder1);
         Harder1.setLayout(Harder1Layout);
         Harder1Layout.setHorizontalGroup(
             Harder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
         );
         Harder1Layout.setVerticalGroup(
             Harder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(Harder1Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         Backgraund.add(Harder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, -1));
@@ -285,7 +292,7 @@ public class Inicio_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtpassMouseClicked
 
     private void txtingresarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtingresarMousePressed
-        String SQL = "SELECT `Usuario`, `Contraseña`,`Tipo de usuario` FROM"
+        String SQL = "SELECT `Usuario`, `Contraseña`,`Ventana de acceso` FROM"
                 + " `admin.usuarios` WHERE `Activo` LIKE '%1%' AND `Usuario` LIKE '%" + txtuser.getText() + "%'";
         try {
 
@@ -297,19 +304,19 @@ public class Inicio_1 extends javax.swing.JFrame {
 
                 String u = rs.getString("Usuario");
                 String p = rs.getString("Contraseña");
-                String tdu = rs.getString("Tipo de usuario");
+                String tdu = rs.getString("Ventana de acceso");
                 if (String.valueOf(txtpass.getPassword()).equals(p)) {
                     switch (tdu) {
-                        case "Administrador" -> {
+                        case "0" -> {
                             Admin_Ventana_3 Admin = new Admin_Ventana_3();
                             Admin.setVisible(true);
                         }
-                        case "Recursos Humanos" ->  {
+                        case "1" -> {
                             Admin_Empleados_4 RH = new Admin_Empleados_4();
                             RH.setVisible(true);
                         }
-                        case "Nomina" ->  {
-                            Admin_Ventana_3 RH = new Admin_Ventana_3();
+                        case "2" -> {
+                            Admin_Empleados_4 RH = new Admin_Empleados_4();
                             RH.setVisible(true);
                         }
                         default -> {
@@ -399,6 +406,7 @@ public class Inicio_1 extends javax.swing.JFrame {
     private javax.swing.JPanel btnexit;
     private javax.swing.JLabel fondologo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel logo;

@@ -1192,10 +1192,8 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Admin_Tortas_4().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Admin_Tortas_4().setVisible(true);
         });
     }
 
