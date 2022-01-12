@@ -48,7 +48,6 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         CbxTDR = new javax.swing.JComboBox<>();
@@ -65,6 +64,7 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
+        Move = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -83,9 +83,6 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
         jLabel1.setText("Tipo de reporte:");
 
         jLabel2.setText("Quincena:");
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel3.setText("Reportes Nomina.");
 
         jLabel4.setText("Zona:");
 
@@ -157,18 +154,13 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
                                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(SantanderISI)
                                     .addComponent(BBVAISI)
-                                    .addComponent(EfectivoISI)))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(jLabel3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(EfectivoISI))))))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(CbxTDR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -199,7 +191,7 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(jLabel5)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel3);
@@ -208,7 +200,7 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jTabbedPane1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 38, 584, 340));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 48, 620, 350));
 
         btnexit.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -233,18 +225,18 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
         btnexit.setLayout(btnexitLayout);
         btnexitLayout.setHorizontalGroup(
             btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnexitLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(btnexitLayout.createSequentialGroup()
+                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         btnexitLayout.setVerticalGroup(
             btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnexitLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(btnexitLayout.createSequentialGroup()
+                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 0, -1, -1));
+        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, -1, -1));
 
         Harder1.setBackground(new java.awt.Color(255, 255, 255));
         Harder1.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
@@ -259,35 +251,50 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
             }
         });
 
+        Move.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        Move.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Move.setText("Reportes Nomina.");
+        Move.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                MoveMouseDragged(evt);
+            }
+        });
+        Move.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MoveMousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Harder1Layout = new javax.swing.GroupLayout(Harder1);
         Harder1.setLayout(Harder1Layout);
         Harder1Layout.setHorizontalGroup(
             Harder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(Move, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
         );
         Harder1Layout.setVerticalGroup(
             Harder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(Harder1Layout.createSequentialGroup()
+                .addComponent(Move, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Harder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 40));
+        getContentPane().add(Harder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtbtnexitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnexitMouseClicked
-
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_txtbtnexitMouseClicked
 
     private void txtbtnexitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnexitMouseEntered
         btnexit.setBackground(Color.red);
-        txtbtnexit.setForeground(Color.black);
+        txtbtnexit.setForeground(Color.white);
     }//GEN-LAST:event_txtbtnexitMouseEntered
 
     private void txtbtnexitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnexitMouseExited
-        btnexit.setBackground(Color.black);
-        txtbtnexit.setForeground(Color.white);
+        btnexit.setBackground(Color.white);
+        txtbtnexit.setForeground(Color.black);
     }//GEN-LAST:event_txtbtnexitMouseExited
 
     private void Harder1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Harder1MouseDragged
@@ -1846,6 +1853,17 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jLabel5MousePressed
 
+    private void MoveMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoveMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_MoveMouseDragged
+
+    private void MoveMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoveMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_MoveMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -1889,13 +1907,13 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
     private javax.swing.JCheckBox IDSant;
     private javax.swing.JCheckBox IDbaj;
     private javax.swing.JCheckBox IDeEfec;
+    private javax.swing.JLabel Move;
     private javax.swing.JCheckBox SantanderISI;
     private javax.swing.JPanel btnexit;
     private javax.swing.JComboBox<String> cbxQuincena;
     private javax.swing.JComboBox<String> cbxZona;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel3;
