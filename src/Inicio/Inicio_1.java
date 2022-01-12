@@ -1,6 +1,11 @@
 package Inicio;
 
+import Admin.*;
+import Conexion.ConexionSQL;
 import java.awt.Color;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -154,6 +159,11 @@ public class Inicio_1 extends javax.swing.JFrame {
                 txtpassMouseClicked(evt);
             }
         });
+        txtpass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtpassKeyReleased(evt);
+            }
+        });
         Backgraund.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 470, 40));
         Backgraund.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 470, -1));
 
@@ -170,6 +180,9 @@ public class Inicio_1 extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 txtingresarMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtingresarMousePressed(evt);
             }
         });
 
@@ -270,6 +283,62 @@ public class Inicio_1 extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_txtpassMouseClicked
+
+    private void txtingresarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtingresarMousePressed
+        String SQL = "SELECT `Usuario`, `Contraseña`,`Tipo de usuario` FROM"
+                + " `admin.usuarios` WHERE `Activo` LIKE '%1%' AND `Usuario` LIKE '%" + txtuser.getText() + "%'";
+        try {
+
+            ConexionSQL cc = new ConexionSQL();
+            Connection con = cc.conexion();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+
+                String u = rs.getString("Usuario");
+                String p = rs.getString("Contraseña");
+                String tdu = rs.getString("Tipo de usuario");
+                if (String.valueOf(txtpass.getPassword()).equals(p)) {
+                    switch (tdu) {
+                        case "Administrador" -> {
+                            Admin_Ventana_3 Admin = new Admin_Ventana_3();
+                            Admin.setVisible(true);
+                        }
+                        case "Recursos Humanos" ->  {
+                            Admin_Empleados_4 RH = new Admin_Empleados_4();
+                            RH.setVisible(true);
+                        }
+                        case "Nomina" ->  {
+                            Admin_Ventana_3 RH = new Admin_Ventana_3();
+                            RH.setVisible(true);
+                        }
+                        default -> {
+                        }
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "La contraseña no es correcta.");
+
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "El usuario no existe");
+
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error:" + ex);
+        }
+
+    }//GEN-LAST:event_txtingresarMousePressed
+
+    private void txtpassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyReleased
+        if (String.valueOf(txtpass.getPassword()).equals("***************")) {
+            txtpass.setText("");
+            txtpass.setForeground(Color.black);
+
+        }
+
+    }//GEN-LAST:event_txtpassKeyReleased
 
     /**
      * @param args the command line arguments

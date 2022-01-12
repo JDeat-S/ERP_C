@@ -6,10 +6,12 @@
 package Admin;
 
 import Conexion.ConexionSQL;
+import Logica_login.Logica;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -26,13 +28,23 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setIconImage(new ImageIcon(Admin_Ventana_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        Logica FZS = new Logica();
+        DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
+        TOUadd.setModel(MODELFZS);
 
     }
 
     public void AgregarUser() {
         String SQL = "INSERT INTO `admin.usuarios` (`id_user`, `Apellido P`,"
                 + " `Apellido M`, `Nombre(s)`, `Tipo de usuario`, `Usuario`, `Contraseña`,"
-                + " `Ultimo inicio de sesion`) VALUES (?, ?, ?, ?, ?, ?,?,'')";
+                + " `Ultimo inicio de sesion`, `Activo`) VALUES (?, ?, ?, ?, ?, ?, ?, '', ?)";
+        String active = null;
+        if (AAS.isSelected() == true) {
+            active = "1";
+        }
+        if (AAS.isSelected() == false) {
+            active = "0";
+        }
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -43,6 +55,7 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
             pst.setString(5, TOUadd.getSelectedItem().toString());
             pst.setString(6, Useradd.getText());
             pst.setString(7, passuserad.getText());
+            pst.setString(8, active);
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Usuario agregado.");
@@ -76,6 +89,7 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
         IDuser = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        AAS = new javax.swing.JCheckBox();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jComboBox2 = new javax.swing.JComboBox<>();
@@ -188,6 +202,9 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
             }
         });
 
+        AAS.setSelected(true);
+        AAS.setText("Acceso al sistema");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -213,8 +230,13 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
                             .addComponent(passuserad, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                             .addComponent(TOUadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(IDuser))
-                        .addGap(300, 300, 300)
-                        .addComponent(jLabel21))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(300, 300, 300)
+                                .addComponent(jLabel21))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(AAS))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addComponent(jButton2)))
@@ -251,7 +273,8 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(TOUadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TOUadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AAS))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addContainerGap())
@@ -968,6 +991,7 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox AAS;
     private javax.swing.JTextField Amadduser;
     private javax.swing.JTextField Apadduser;
     private javax.swing.JMenuItem CDA;
