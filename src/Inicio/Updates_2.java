@@ -21,15 +21,15 @@ import javax.swing.ImageIcon;
  *
  * @author JDeat
  */
-public class Updates extends javax.swing.JFrame {
+public class Updates_2 extends javax.swing.JFrame {
 
     /**
      * Creates new form Updates
      */
-    public Updates() {
+    public Updates_2() {
         initComponents();
         btnDesc.setVisible(false);
-        setIconImage(new ImageIcon(Updates.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Updates_2.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         this.setLocationRelativeTo(null);
 
     }
@@ -171,9 +171,9 @@ public class Updates extends javax.swing.JFrame {
             return true;
 
         } catch (MalformedURLException ex) {
-            Logger.getLogger(Updates.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Updates_2.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(Updates.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Updates_2.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -186,9 +186,9 @@ public class Updates extends javax.swing.JFrame {
             con.connect();
             return Contenido(url);
         } catch (MalformedURLException ex) {
-            Logger.getLogger(Updates.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Updates_2.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(Updates.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Updates_2.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -199,7 +199,7 @@ public class Updates extends javax.swing.JFrame {
             String contenido = S.next();
             return contenido;
         } catch (IOException ex) {
-            Logger.getLogger(Updates.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Updates_2.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -210,7 +210,7 @@ public class Updates extends javax.swing.JFrame {
             Desktop.getDesktop().browse(new URI(url));
 
         } catch (URISyntaxException | IOException ex) {
-            Logger.getLogger(Updates.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Updates_2.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
@@ -232,7 +232,7 @@ public class Updates extends javax.swing.JFrame {
                 }
 
             } catch (InterruptedException ex) {
-                Logger.getLogger(Updates.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Updates_2.class.getName()).log(Level.SEVERE, null, ex);
             }
         }).start();
     }//GEN-LAST:event_SearchActionPerformed
@@ -264,19 +264,20 @@ public class Updates extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Updates.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Updates_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Updates.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Updates_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Updates.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Updates_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Updates.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Updates_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Updates().setVisible(true);
+            new Updates_2().setVisible(true);
         });
     }
 

@@ -2,7 +2,7 @@
 package Nomina;
 
 import Conexion.ConexionSQL;
-import Inicio.Login_2;
+import Inicio.Inicio_1;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -1325,7 +1325,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
         
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -1467,7 +1467,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
         
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }

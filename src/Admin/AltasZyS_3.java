@@ -1401,7 +1401,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         // TODO add your handling code here:
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres a la ventana de administrador?");
         if (i == 0) {
-            Administradores_3 regr = new Administradores_3();
+            Admin_Ventana_3 regr = new Admin_Ventana_3();
             regr.setVisible(true);
             this.dispose();
         }
@@ -1639,7 +1639,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         // TODO add your handling code here:
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres a la ventana de administrador?");
         if (i == 0) {
-            Administradores_3 regr = new Administradores_3();
+            Admin_Ventana_3 regr = new Admin_Ventana_3();
             regr.setVisible(true);
             this.dispose();
         }
@@ -1673,7 +1673,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         // TODO add your handling code here:
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres a la ventana de administrador?");
         if (i == 0) {
-            Administradores_3 regr = new Administradores_3();
+            Admin_Ventana_3 regr = new Admin_Ventana_3();
             regr.setVisible(true);
             this.dispose();
         }
