@@ -7259,7 +7259,6 @@ public final class Admin_Tehueantepec_4 extends javax.swing.JFrame implements Ru
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Total restando gastos"));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(11);
 
                     row = spreadsheet.createRow(5);
                     cell = row.createCell(3);
