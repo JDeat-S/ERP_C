@@ -13,6 +13,8 @@ public class Inicio_1 extends javax.swing.JFrame {
 
     public Inicio_1() {
         initComponents();
+        this.setLocationRelativeTo(null);
+
     }
 
     @SuppressWarnings("unchecked")

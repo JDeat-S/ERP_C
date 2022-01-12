@@ -616,7 +616,6 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
         Nomina1 = new javax.swing.JMenuItem();
         Administradores = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
         General = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
         Torteria = new javax.swing.JMenuItem();
@@ -1222,14 +1221,6 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
         });
         Menuadm.add(ZYS);
 
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
-
         General.setText("Empleados General");
         General.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1355,12 +1346,6 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_Nomina1ActionPerformed
-
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
         Administradores_3 regr = new Administradores_3();
         regr.setVisible(true);
@@ -1372,12 +1357,6 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
         Admin_Empleados_4 regr = new Admin_Empleados_4();
@@ -1757,6 +1736,12 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+    private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
+        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Nomina1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1844,7 +1829,6 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
     private javax.swing.JTable TPPRES;
     private javax.swing.JScrollPane TablasPrestamos;
     private javax.swing.JMenuItem Torteria;
-    private javax.swing.JMenuItem UsuariosRH;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zona;
     private botones.BotonWeb botonWeb3;

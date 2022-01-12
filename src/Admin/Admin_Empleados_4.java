@@ -1328,8 +1328,6 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         Nomina = new javax.swing.JMenuItem();
         Administradores = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
-        Usuariosnom = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         Alumnos = new javax.swing.JMenuItem();
         EmpleadosT = new javax.swing.JMenuItem();
@@ -2637,22 +2635,6 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         });
         Menuadm.add(ZYS);
 
-        Usuariosnom.setText("Usuarios Nomina");
-        Usuariosnom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosnomActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Usuariosnom);
-
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
-
         jMenuBar1.add(Menuadm);
 
         jMenu1.setText("Cambiar a:");
@@ -3339,20 +3321,6 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
 
-    private void UsuariosnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosnomActionPerformed
-
-        Usuarios_Nomina_3 regr = new Usuarios_Nomina_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosnomActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
-
     private void FBimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FBimssFKeyReleased
         MDIMSS();
     }//GEN-LAST:event_FBimssFKeyReleased
@@ -4029,8 +3997,6 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Sueldo;
     private javax.swing.JTable Timss;
     private javax.swing.JTextField UDL;
-    private javax.swing.JMenuItem UsuariosRH;
-    private javax.swing.JMenuItem Usuariosnom;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JButton add;
     private javax.swing.JButton addimss;

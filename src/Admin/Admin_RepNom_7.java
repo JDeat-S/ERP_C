@@ -5806,7 +5806,7 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
                     spreadsheet.getPrintSetup();
                     spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                     spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
-                    spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.49); // Margen (abajo)
+                    spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.1); // Margen (abajo)
                     spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
                     spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
                     spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
@@ -6680,7 +6680,7 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
                     spreadsheet.getPrintSetup();
                     spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                     spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
-                    spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.49); // Margen (abajo)
+                    spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.1); // Margen (abajo)
                     spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
                     spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
                     spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)

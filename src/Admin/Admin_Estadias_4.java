@@ -415,8 +415,6 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         Nomina = new javax.swing.JMenuItem();
         Administradores = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
-        Usuariosnom = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -858,22 +856,6 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         });
         Menuadm.add(ZYS);
 
-        Usuariosnom.setText("Usuarios Nomina");
-        Usuariosnom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosnomActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Usuariosnom);
-
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
-
         jMenuBar1.add(Menuadm);
 
         setJMenuBar(jMenuBar1);
@@ -1087,18 +1069,6 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
 
-    private void UsuariosnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosnomActionPerformed
-        Usuarios_Nomina_3 regr = new Usuarios_Nomina_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosnomActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         Admin_Depositos_4 regr = new Admin_Depositos_4();
         regr.setVisible(true);
@@ -1198,8 +1168,6 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
     private javax.swing.JCheckBox Taest;
     private javax.swing.JTable Testadia;
     private javax.swing.JMenuItem Torteria;
-    private javax.swing.JMenuItem UsuariosRH;
-    private javax.swing.JMenuItem Usuariosnom;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JButton add;
     private botones.BotonWeb botonWeb1;

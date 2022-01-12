@@ -242,8 +242,6 @@ public final class Administradores_3 extends javax.swing.JFrame {
         txtpass = new javax.swing.JPasswordField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        UdRH = new javax.swing.JMenuItem();
-        UsN = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         IDRH = new javax.swing.JMenuItem();
         IDN = new javax.swing.JMenuItem();
@@ -450,25 +448,6 @@ public final class Administradores_3 extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jPanel1);
 
         jMenu1.setText("Cambiar a");
-
-        UdRH.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        UdRH.setText("Usuarios de Recursos Humanos");
-        UdRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UdRHActionPerformed(evt);
-            }
-        });
-        jMenu1.add(UdRH);
-
-        UsN.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        UsN.setText("Usuarios de Nomina");
-        UsN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsNActionPerformed(evt);
-            }
-        });
-        jMenu1.add(UsN);
-
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Ir a");
@@ -528,18 +507,6 @@ public final class Administradores_3 extends javax.swing.JFrame {
         mostrardatos();
         limpiar();
     }//GEN-LAST:event_bntdelActionPerformed
-
-    private void UdRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UdRHActionPerformed
-        Usuarios_RH_3 Form = new Usuarios_RH_3();
-        Form.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UdRHActionPerformed
-
-    private void UsNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsNActionPerformed
-        Usuarios_Nomina_3 Form = new Usuarios_Nomina_3();
-        Form.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsNActionPerformed
 
     private void CSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
@@ -659,8 +626,6 @@ public final class Administradores_3 extends javax.swing.JFrame {
     private javax.swing.JMenuItem IDN;
     private javax.swing.JMenuItem IDRH;
     private com.toedter.calendar.JDateChooser UM;
-    private javax.swing.JMenuItem UdRH;
-    private javax.swing.JMenuItem UsN;
     private javax.swing.JButton bntdel;
     private javax.swing.JButton btnadd;
     private javax.swing.JButton jButton3;
