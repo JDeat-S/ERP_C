@@ -1,7 +1,7 @@
 package Admin;
 
 import Conexion.ConexionSQL;
-import Logica_login.Logica;
+import Logicas.Logica_TDU;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,7 +23,7 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setIconImage(new ImageIcon(Admin_Ventana_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
-        Logica FZS = new Logica();
+        Logica_TDU FZS = new Logica_TDU();
         DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
         TOUadd.setModel(MODELFZS);
 

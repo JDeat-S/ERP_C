@@ -1,4 +1,4 @@
-package Logica_login;
+package Logicas;
 
 import Conexion.ConexionSQL;
 import java.sql.Connection;
@@ -11,8 +11,8 @@ import java.util.Vector;
  *
  * @author JDeat
  */
-public class Logica {
-     ConexionSQL cc = new ConexionSQL();
+public class Logica_TDU {
+    ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     int id;
     String nombre;
@@ -38,27 +38,27 @@ public class Logica {
         return this.nombre;
     }
 
-    public Vector<Logica> mostrarzonas() {
+    public Vector<Logica_TDU> mostrarzonas() {
 
         PreparedStatement ps;
         ResultSet rs;
         
 
-        Vector<Logica> datos = new Vector<Logica>();
-        Logica dat;
+        Vector<Logica_TDU> datos = new Vector<Logica_TDU>();
+        Logica_TDU dat;
         try {
 
             String sql = "SELECT * FROM `admin.tou`";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
-            dat = new Logica();
+            dat = new Logica_TDU();
             dat.setId(0);
             dat.setNombre("");
             datos.add(dat);
 
             while (rs.next()) {
-                dat = new Logica();
+                dat = new Logica_TDU();
                 dat.setId(rs.getInt("id_TDO"));
                 dat.setNombre(rs.getString("Usuario"));
                 datos.add(dat);
