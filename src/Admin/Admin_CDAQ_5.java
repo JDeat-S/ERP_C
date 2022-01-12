@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Admin;
 
 import Conexion.ConexionSQL;
@@ -548,7 +543,6 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         Nomina1 = new javax.swing.JMenuItem();
         Administradores = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
         General = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
         Torteria = new javax.swing.JMenuItem();
@@ -1280,14 +1274,6 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         });
         Menuadm.add(ZYS);
 
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
-
         General.setText("Empleados General");
         General.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1420,7 +1406,7 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nomina1ActionPerformed
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        Administradores_3 regr = new Administradores_3();
+        Admin_Ventana_3 regr = new Admin_Ventana_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed
@@ -1430,12 +1416,6 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
         Admin_Empleados_4 regr = new Admin_Empleados_4();
@@ -2008,7 +1988,6 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JTable Tablacda;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JTextField Totalap;
-    private javax.swing.JMenuItem UsuariosRH;
     private javax.swing.JMenuItem ZYS;
     private botones.BotonWeb botonWeb7;
     private botones.BotonWeb botonWeb8;
@@ -2051,8 +2030,6 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel14;
