@@ -2,6 +2,7 @@ package Inicio;
 
 import Admin.*;
 import Conexion.ConexionSQL;
+import Logicas.*;
 import Logicas.Logica_usuarios;
 import java.awt.Color;
 import java.sql.*;
@@ -338,6 +339,28 @@ public class Inicio_1 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error:" + ex);
         }
          */
+        Logica_SQL log = new Logica_SQL();
+        Logica_usuarios usr = new Logica_usuarios();
+
+        if (!txtuser.getText().equals("") && !String.valueOf(txtpass.getPassword()).equals("")) {
+            usr.setUsuario(txtuser.getText());
+            usr.setPass(String.valueOf(txtpass.getPassword()));
+
+            if (log.login(usr)) {
+                usr.setUsuario(txtuser.getText());
+                usr.setPass(String.valueOf(txtpass.getPassword()));
+                
+                Admin_Empleados_4 logrh = new Admin_Empleados_4();
+                logrh.setVisible(true);
+                this.dispose();
+                
+            } else {
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Favor de llenar los campos");
+
+        }
 
 
     }//GEN-LAST:event_txtingresarMousePressed
@@ -348,7 +371,11 @@ public class Inicio_1 extends javax.swing.JFrame {
             txtpass.setForeground(Color.black);
 
         }
+if (String.valueOf(txtpass.getPassword()).equals("")) {
+            txtpass.setText("");
+            txtpass.setForeground(Color.black);
 
+        }
     }//GEN-LAST:event_txtpassKeyReleased
 
     /**

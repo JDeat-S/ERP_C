@@ -33,7 +33,8 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     ColorRH colores = new ColorRH();
-    Logica_bd_RH obj;
+    Inicio_1 frmLog;
+    
 
     public Admin_Empleados_4() {
         initComponents();
@@ -2008,6 +2009,9 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb1.setLink("http://192.168.3.10/Reportes/ReporteRH/EPCEmpleados.php");
         botonWeb1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonWeb1MouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 botonWeb1MousePressed(evt);
             }
@@ -3898,9 +3902,13 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void botonWeb1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonWeb1MousePressed
-        obj = new Logica_bd_RH();
+        Logica_bd_RH obj = new Logica_bd_RH();
         obj.BDRH();
     }//GEN-LAST:event_botonWeb1MousePressed
+
+    private void botonWeb1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonWeb1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonWeb1MouseExited
 
     /**
      * @param args the command line arguments
