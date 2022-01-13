@@ -42,7 +42,6 @@ public final class Empleados_4 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     ColorRH colores = new ColorRH();
-    Inicio_1 frmLog;
     Logica_usuarios usr;
 
     public Empleados_4() {
@@ -141,7 +140,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         MDEm();
         MDIMSS();
         setTitle("Interface de Recursos Humanos # Usuario: " + usr.getId_user() + " " + usr.getApellidop()+ " " + usr.getApellidoM()+ " " + usr.getNombre()
-        + " Tipo de ususario" + usr.getNombre_tipo()+ " Usuario: " + usr.getUsuario() );
+        + " Tipo de ususario: " + usr.getNombre_tipo()+ " Usuario: " + usr.getUsuario() );
         if (usr.getNombre_tipo().equals("Administrador")) {
 
         } else if (usr.getNombre_tipo().equals("Recursos Humanos")) {

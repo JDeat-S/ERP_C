@@ -299,50 +299,7 @@ public class Inicio_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtpassMouseClicked
 
     private void txtingresarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtingresarMousePressed
-        /*String SQL = "SELECT `Usuario`, `Contraseña`,`Ventana de acceso` FROM"
-                + " `admin.usuarios` WHERE `Activo` LIKE '%1%' AND `Usuario` LIKE '%" + txtuser.getText() + "%'";
-        try {
 
-            ConexionSQL cc = new ConexionSQL();
-            Connection con = cc.conexion();
-            PreparedStatement ps = con.prepareStatement(SQL);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-
-                String u = rs.getString("Usuario");
-                String p = rs.getString("Contraseña");
-                String tdu = rs.getString("Ventana de acceso");
-                if (String.valueOf(txtpass.getPassword()).equals(p)) {
-                    switch (tdu) {
-                        case "0" -> {
-                            Admin_VentanaADM_3 Admin = new Admin_VentanaADM_3();
-                            Admin.setVisible(true);
-                        }
-                        case "1" -> {
-                            Admin_Empleados_4 RH = new Admin_Empleados_4();
-                            RH.setVisible(true);
-                        }
-                        case "2" -> {
-                            Admin_Empleados_4 RH = new Admin_Empleados_4();
-                            RH.setVisible(true);
-                        }
-                        default -> {
-                        }
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(null, "La contraseña no es correcta.");
-
-                }
-
-            } else {
-                JOptionPane.showMessageDialog(null, "El usuario no existe");
-
-            }
-
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error:" + ex);
-        }
-         */
         Logica_SQL log = new Logica_SQL();
         Logica_usuarios usr = new Logica_usuarios();
 
@@ -354,9 +311,43 @@ public class Inicio_1 extends javax.swing.JFrame {
                 usr.setUsuario(txtuser.getText());
                 usr.setPass(String.valueOf(txtpass.getPassword()));
 
-                Empleados_4 logrh = new Empleados_4(usr);
-                logrh.setVisible(true);
-                this.dispose();
+                String SQL = "SELECT`Ventana de acceso` FROM"
+                        + " `admin.usuarios` WHERE `Activo` LIKE '%1%' AND `Usuario` LIKE '%" + txtuser.getText() + "%'";
+                try {
+
+                    ConexionSQL cc = new ConexionSQL();
+                    Connection con = cc.conexion();
+                    PreparedStatement ps = con.prepareStatement(SQL);
+                    ResultSet rs = ps.executeQuery();
+                    if (rs.next()) {
+
+                        String tdu = rs.getString("Ventana de acceso");
+                        switch (tdu) {
+                            case "0" -> {
+                                Admin_VentanaADM_3 Admin = new Admin_VentanaADM_3();
+                                Admin.setVisible(true);
+                                this.dispose();
+                            }
+                            case "1" -> {
+                                Empleados_4 RH = new Empleados_4(usr);
+                                RH.setVisible(true);
+                                this.dispose();
+                            }
+                            case "2" -> {
+                                Admin_NominaQ_5 Nom = new Admin_NominaQ_5();
+                                Nom.setVisible(true);
+                                this.dispose();
+                            }
+                            default -> {
+                            }
+                        }
+                        ps.isClosed();
+                        con.isClosed();
+                    }
+
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Error:" + ex);
+                }
 
             } else {
 
