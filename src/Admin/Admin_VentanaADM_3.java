@@ -1,11 +1,9 @@
 package Admin;
 
 import Conexion.ConexionSQL;
-import Logicas.Logica_TDU;
-import java.awt.HeadlessException;
+import Logicas.*;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -18,6 +16,7 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
+    ButtonGroup VDA;
 
     public Admin_VentanaADM_3() {
         initComponents();
@@ -26,13 +25,11 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         Logica_TDU FZS = new Logica_TDU();
         DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
         TOUadd.setModel(MODELFZS);
+        VDA.add(AAS);
 
     }
 
     public void AgregarUser() {
-        String SQL = "INSERT INTO `admin.usuarios` (`id_user`, `Apellido P`,"
-                + " `Apellido M`, `Nombre(s)`, `Tipo de usuario`, `Usuario`, `Contraseña`,"
-                + " `Ultimo inicio de sesion`, `Activo`) VALUES (?, ?, ?, ?, ?, ?, ?, '', ?)";
         String active = null;
         if (AAS.isSelected() == true) {
             active = "1";
@@ -40,24 +37,27 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         if (AAS.isSelected() == false) {
             active = "0";
         }
-        try {
-            PreparedStatement pst = con.prepareStatement(SQL);
+        Logica_SQL logica = new Logica_SQL();
+        Logica_usuarios usr = new Logica_usuarios();
+        usr.setId_user(0);
+        usr.setApellidop(Apadduser.getText());
+        usr.setApellidoM(Amadduser.getText());
+        usr.setNombre(Nameadduser.getText());
+        usr.setTDU(TOUadd.getSelectedItem().toString());
+        usr.setUsuario(Useradd.getText());
+        usr.setPass(passuserad.getText());
+        usr.setUIDS("");
+        usr.setActivo(active);
+        usr.setVDA(active);
 
-            pst.setInt(1, Integer.parseInt(IDuser.getText()));
-            pst.setString(2, Apadduser.getText());
-            pst.setString(3, Amadduser.getText());
-            pst.setString(4, Nameadduser.getText());
-            pst.setString(5, TOUadd.getSelectedItem().toString());
-            pst.setString(6, Useradd.getText());
-            pst.setString(7, passuserad.getText());
-            pst.setString(8, active);
-
-            pst.executeUpdate();
+        if (logica.registrar(usr)) {
             JOptionPane.showMessageDialog(null, "Usuario agregado.");
-            pst.isClosed();
-        } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al agregar Usuario: " + e.getMessage());
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al guardar ususario");
+
         }
+
     }
 
     @SuppressWarnings("unchecked")
@@ -114,7 +114,6 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox5 = new javax.swing.JCheckBox();
         jCheckBox6 = new javax.swing.JCheckBox();
         jCheckBox7 = new javax.swing.JCheckBox();
@@ -125,19 +124,14 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         jCheckBox12 = new javax.swing.JCheckBox();
         jCheckBox13 = new javax.swing.JCheckBox();
         jCheckBox15 = new javax.swing.JCheckBox();
+        AAADN = new javax.swing.JRadioButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        jCheckBox16 = new javax.swing.JCheckBox();
         jCheckBox17 = new javax.swing.JCheckBox();
         jCheckBox18 = new javax.swing.JCheckBox();
         jCheckBox19 = new javax.swing.JCheckBox();
         jCheckBox20 = new javax.swing.JCheckBox();
-        jCheckBox21 = new javax.swing.JCheckBox();
-        jCheckBox22 = new javax.swing.JCheckBox();
-        jCheckBox23 = new javax.swing.JCheckBox();
-        jCheckBox24 = new javax.swing.JCheckBox();
-        jCheckBox25 = new javax.swing.JCheckBox();
-        jCheckBox26 = new javax.swing.JCheckBox();
+        AAADRH = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jCheckBox3 = new javax.swing.JCheckBox();
@@ -272,7 +266,7 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                     .addComponent(AAS))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addContainerGap())
+                .addContainerGap(825, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel1);
@@ -401,7 +395,7 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                             .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(751, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane3.setViewportView(jPanel2);
@@ -426,9 +420,6 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel14.setText("Area Nomina");
-
-        jCheckBox2.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox2.setText("Acceso a Area de Nomina");
 
         jCheckBox5.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         jCheckBox5.setText("Acceso a ordenes de taller");
@@ -460,6 +451,13 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         jCheckBox15.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         jCheckBox15.setText("Modificacion de Nominas");
 
+        AAADN.setText("Acceso a Area de Nomina");
+        AAADN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AAADNActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -472,12 +470,12 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox2)
                             .addComponent(jCheckBox5)
                             .addComponent(jCheckBox6)
                             .addComponent(jCheckBox7)
                             .addComponent(jCheckBox8)
-                            .addComponent(jCheckBox9))
+                            .addComponent(jCheckBox9)
+                            .addComponent(AAADN))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jCheckBox15)
@@ -487,7 +485,7 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(134, 134, 134)
                         .addComponent(jLabel14)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -496,8 +494,8 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox11))
+                    .addComponent(jCheckBox11)
+                    .addComponent(AAADN))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox5)
@@ -522,9 +520,6 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel17.setText("Area Recursos Humanos");
 
-        jCheckBox16.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox16.setText("Acesso a Area de Recursos humanos");
-
         jCheckBox17.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         jCheckBox17.setText("Acesso a Alumnos de estadia");
 
@@ -537,23 +532,7 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         jCheckBox20.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         jCheckBox20.setText("Acceso a Semanal");
 
-        jCheckBox21.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox21.setText("Creacion de resportes de nomina");
-
-        jCheckBox22.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox22.setText("Creacion de reportes");
-
-        jCheckBox23.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox23.setText("Acceso a Prestamos");
-
-        jCheckBox24.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox24.setText("Acceso a Nomina Semanal");
-
-        jCheckBox25.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox25.setText("Acceso a Prestamo Semanales");
-
-        jCheckBox26.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox26.setText("Modificacion de Nominas");
+        AAADRH.setText("Acesso a Area de Recursos humanos");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -562,26 +541,18 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox22))
+                        .addGap(134, 134, 134)
+                        .addComponent(jLabel17))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox16)
                             .addComponent(jCheckBox17)
                             .addComponent(jCheckBox18)
                             .addComponent(jCheckBox19)
-                            .addComponent(jCheckBox20)
-                            .addComponent(jCheckBox21))
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox26)
-                            .addComponent(jCheckBox25)
-                            .addComponent(jCheckBox24)
-                            .addComponent(jCheckBox23)))
+                            .addComponent(jCheckBox20)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(jLabel17)))
+                        .addContainerGap()
+                        .addComponent(AAADRH)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -590,28 +561,16 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox16)
-                    .addComponent(jCheckBox23))
+                .addComponent(AAADRH)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox17)
-                    .addComponent(jCheckBox24))
+                .addComponent(jCheckBox17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox18)
-                    .addComponent(jCheckBox25))
+                .addComponent(jCheckBox18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox19)
-                    .addComponent(jCheckBox26))
+                .addComponent(jCheckBox19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBox20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox22)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         jButton1.setText("Agregar");
@@ -640,11 +599,11 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox3))
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBox3)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -665,7 +624,7 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                             .addComponent(jLabel22))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(485, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane4.setViewportView(jPanel3);
@@ -950,6 +909,10 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         AgregarUser();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void AAADNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AAADNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AAADNActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -987,6 +950,8 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton AAADN;
+    private javax.swing.JRadioButton AAADRH;
     private javax.swing.JCheckBox AAS;
     private javax.swing.JTextField Amadduser;
     private javax.swing.JTextField Apadduser;
@@ -1013,18 +978,10 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox13;
     private javax.swing.JCheckBox jCheckBox14;
     private javax.swing.JCheckBox jCheckBox15;
-    private javax.swing.JCheckBox jCheckBox16;
     private javax.swing.JCheckBox jCheckBox17;
     private javax.swing.JCheckBox jCheckBox18;
     private javax.swing.JCheckBox jCheckBox19;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox20;
-    private javax.swing.JCheckBox jCheckBox21;
-    private javax.swing.JCheckBox jCheckBox22;
-    private javax.swing.JCheckBox jCheckBox23;
-    private javax.swing.JCheckBox jCheckBox24;
-    private javax.swing.JCheckBox jCheckBox25;
-    private javax.swing.JCheckBox jCheckBox26;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;

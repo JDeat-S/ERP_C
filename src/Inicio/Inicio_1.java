@@ -2,6 +2,7 @@ package Inicio;
 
 import Admin.*;
 import Conexion.ConexionSQL;
+import Logicas.Logica_usuarios;
 import java.awt.Color;
 import java.sql.*;
 import javax.swing.ImageIcon;
@@ -14,6 +15,7 @@ import javax.swing.JOptionPane;
 public class Inicio_1 extends javax.swing.JFrame {
 
     int xMouse, yMouse;
+    Logica_usuarios MOD;
 
     public Inicio_1() {
         initComponents();
@@ -292,7 +294,7 @@ public class Inicio_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtpassMouseClicked
 
     private void txtingresarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtingresarMousePressed
-        String SQL = "SELECT `Usuario`, `Contraseña`,`Ventana de acceso` FROM"
+        /*String SQL = "SELECT `Usuario`, `Contraseña`,`Ventana de acceso` FROM"
                 + " `admin.usuarios` WHERE `Activo` LIKE '%1%' AND `Usuario` LIKE '%" + txtuser.getText() + "%'";
         try {
 
@@ -335,6 +337,8 @@ public class Inicio_1 extends javax.swing.JFrame {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error:" + ex);
         }
+         */
+
 
     }//GEN-LAST:event_txtingresarMousePressed
 
