@@ -98,29 +98,43 @@ public class Logica_SQL extends ConexionSQL {
 
     }
 
-    /* {
-        String u = rs.getString("Usuario");
-        String p = rs.getString("Contraseña");
-        String tdu = rs.getString("Ventana de acceso");
-        if (String.valueOf(txtpass.getPassword()).equals(p)) {
-            switch (tdu) {
-                case "0" -> {
-                    Admin_VentanaADM_3 Admin = new Admin_VentanaADM_3();
-                    Admin.setVisible(true);
-                }
-                case "1" -> {
-                    Admin_Empleados_4 RH = new Admin_Empleados_4();
-                    RH.setVisible(true);
-                }
-                case "2" -> {
-                    Admin_Empleados_4 RH = new Admin_Empleados_4();
-                    RH.setVisible(true);
-                }
-                default -> {
-                }
-            }
-        }
+    public boolean Restricciones(Logica_permisos LP) {
+        PreparedStatement ps;
+        ConexionSQL cc = new ConexionSQL();
+        Connection con = cc.conexion();
+        String SQL = "SELECT u.`Usuario`, u.`Ventana de acceso`, u.`P1`, u.`P2`, u.`P3`, u.`P4`, u.`P5`,"
+                + " u.`P6`, u.`P7`, u.`P8`, u.`P9`, t.`Tipo de usuario` FROM "
+                + "`admin.tou` AS u INNER JOIN `admin.usuarios` AS t ON t.`Tipo"
+                + " de usuario`=u.`Usuario` Where t.`Tipo de usuario` LIKE '%" + LP.getNombreusuario() + "%'";
+        try {
+            ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
 
+            if (rs.next()) {
+
+                LP.setTDU(rs.getString(1));
+                LP.setP1(rs.getInt(2));
+                LP.setP2(rs.getInt(3));
+                LP.setP3(rs.getInt(4));
+                LP.setP4(rs.getInt(5));
+                LP.setP5(rs.getInt(6));
+                LP.setP6(rs.getInt(7));
+                LP.setP7(rs.getInt(8));
+                LP.setP8(rs.getInt(9));
+                LP.setP9(rs.getInt(10));
+                LP.setNombreusuario(rs.getString(11));
+                ps.isClosed();
+                return true;
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al obtener permisos.");
+                return false;
+            }
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error logistica SQL: " + e);
+
+            return false;
+
+        }
     }
-     */
 }

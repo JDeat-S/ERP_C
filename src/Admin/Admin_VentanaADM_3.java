@@ -26,38 +26,9 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         Logica_TDU FZS = new Logica_TDU();
         DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
         TOUadd.setModel(MODELFZS);
-        VDA.add(AAS);
-
-    }
-
-    public void AgregarUser() {
-        String active = null;
-        if (AAS.isSelected() == true) {
-            active = "1";
-        }
-        if (AAS.isSelected() == false) {
-            active = "0";
-        }
-        Logica_SQL logica = new Logica_SQL();
-        Logica_usuarios usr = new Logica_usuarios();
-        usr.setId_user(0);
-        usr.setApellidop(Apadduser.getText());
-        usr.setApellidoM(Amadduser.getText());
-        usr.setNombre(Nameadduser.getText());
-        usr.setTDU(TOUadd.getSelectedItem().toString());
-        usr.setUsuario(Useradd.getText());
-        usr.setPass(passuserad.getText());
-        usr.setUIDS("");
-        usr.setActivo(active);
-        usr.setVDA(active);
-
-        if (logica.registrar(usr)) {
-            JOptionPane.showMessageDialog(null, "Usuario agregado.");
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Error al guardar ususario");
-
-        }
+        VDA = new ButtonGroup();
+        VDA.add(AAADN);
+        VDA.add(AAADRH);
 
     }
 
@@ -267,7 +238,7 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                     .addComponent(AAS))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addContainerGap(825, Short.MAX_VALUE))
+                .addContainerGap(849, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel1);
@@ -609,7 +580,7 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(4, 4, 4)
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(jCheckBox3))
@@ -621,11 +592,11 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel22))))
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel18))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(448, Short.MAX_VALUE))
         );
 
         jScrollPane4.setViewportView(jPanel3);
@@ -907,7 +878,33 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        AgregarUser();
+        String active = null;
+        if (AAS.isSelected() == true) {
+            active = "1";
+        }
+        if (AAS.isSelected() == false) {
+            active = "0";
+        }
+        Logica_SQL logica = new Logica_SQL();
+        Logica_usuarios usr = new Logica_usuarios();
+        usr.setId_user(0);
+        usr.setApellidop(Apadduser.getText());
+        usr.setApellidoM(Amadduser.getText());
+        usr.setNombre(Nameadduser.getText());
+        usr.setTDU(TOUadd.getSelectedItem().toString());
+        usr.setUsuario(Useradd.getText());
+        usr.setPass(passuserad.getText());
+        usr.setUIDS("");
+        usr.setActivo(active);
+        usr.setVDA(active);
+
+        if (logica.registrar(usr)) {
+            JOptionPane.showMessageDialog(null, "Usuario agregado.");
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al guardar ususario");
+
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void AAADNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AAADNActionPerformed
@@ -943,10 +940,8 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Admin_VentanaADM_3().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Admin_VentanaADM_3().setVisible(true);
         });
     }
 
