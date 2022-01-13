@@ -1053,7 +1053,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_NominaActionPerformed
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        Admin_Ventana_3 regr = new Admin_Ventana_3();
+        Admin_VentanaADM_3 regr = new Admin_VentanaADM_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed

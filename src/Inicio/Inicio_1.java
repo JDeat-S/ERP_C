@@ -308,7 +308,7 @@ public class Inicio_1 extends javax.swing.JFrame {
                 if (String.valueOf(txtpass.getPassword()).equals(p)) {
                     switch (tdu) {
                         case "0" -> {
-                            Admin_Ventana_3 Admin = new Admin_Ventana_3();
+                            Admin_VentanaADM_3 Admin = new Admin_VentanaADM_3();
                             Admin.setVisible(true);
                         }
                         case "1" -> {

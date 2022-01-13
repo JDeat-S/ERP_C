@@ -14,15 +14,15 @@ import javax.swing.JOptionPane;
  *
  * @author JDeat
  */
-public class Admin_Ventana_3 extends javax.swing.JFrame {
+public class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
 
-    public Admin_Ventana_3() {
+    public Admin_VentanaADM_3() {
         initComponents();
         this.setLocationRelativeTo(null);
-        setIconImage(new ImageIcon(Admin_Ventana_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Admin_VentanaADM_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         Logica_TDU FZS = new Logica_TDU();
         DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
         TOUadd.setModel(MODELFZS);
@@ -103,14 +103,14 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jTextField12 = new javax.swing.JTextField();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        TUser = new javax.swing.JTable();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Troles = new javax.swing.JTable();
         jLabel13 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -297,7 +297,7 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
 
         jLabel15.setText("# Usuario");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        TUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -308,7 +308,7 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane6.setViewportView(jTable2);
+        jScrollPane6.setViewportView(TUser);
 
         jLabel19.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel19.setText("Lista de usuarios.");
@@ -408,7 +408,7 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Modificacion de usuarios", jScrollPane3);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Troles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -419,7 +419,7 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane5.setViewportView(jTable1);
+        jScrollPane5.setViewportView(Troles);
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel13.setText("Roles de usuarios:");
@@ -616,7 +616,7 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
 
         jButton1.setText("Agregar");
 
-        jLabel18.setText("Rol de usuario:");
+        jLabel18.setText("Rol de seleccionado:");
 
         jCheckBox3.setText("Administrador");
 
@@ -967,20 +967,21 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin_Ventana_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_VentanaADM_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin_Ventana_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_VentanaADM_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin_Ventana_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_VentanaADM_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_Ventana_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_VentanaADM_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Admin_Ventana_3().setVisible(true);
+                new Admin_VentanaADM_3().setVisible(true);
             }
         });
     }
@@ -999,7 +1000,9 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem PRESQ;
     private javax.swing.JComboBox<String> TOUadd;
+    private javax.swing.JTable TUser;
     private javax.swing.JMenuItem Torteria;
+    private javax.swing.JTable Troles;
     private javax.swing.JTextField Useradd;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JButton jButton1;
@@ -1078,8 +1081,6 @@ public class Admin_Ventana_3 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField6;

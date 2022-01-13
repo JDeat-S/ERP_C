@@ -14,6 +14,6 @@ public class Login {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     
-    String SQL ="";
+    String SQL ="Select ";
     
 }
