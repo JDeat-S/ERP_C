@@ -5,6 +5,7 @@ import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
 import ColoresT.ColorRH;
 import Inicio.Inicio_1;
+import Logicas.Logica_bd_RH;
 import ZyS.Servicios;
 import ZyS.Zonas;
 import java.awt.HeadlessException;
@@ -32,6 +33,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     ColorRH colores = new ColorRH();
+    Logica_bd_RH obj;
 
     public Admin_Empleados_4() {
         initComponents();
@@ -2005,6 +2007,11 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb1.setLink("http://192.168.3.10/Reportes/ReporteRH/EPCEmpleados.php");
+        botonWeb1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                botonWeb1MousePressed(evt);
+            }
+        });
 
         ObsTgen.setColumns(20);
         ObsTgen.setLineWrap(true);
@@ -3889,6 +3896,11 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void botonWeb1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonWeb1MousePressed
+        obj = new Logica_bd_RH();
+        obj.BDRH();
+    }//GEN-LAST:event_botonWeb1MousePressed
 
     /**
      * @param args the command line arguments

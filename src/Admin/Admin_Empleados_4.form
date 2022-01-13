@@ -1735,6 +1735,9 @@
                     </Property>
                     <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReporteRH/EPCEmpleados.php"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonWeb1MousePressed"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane2">
                   <AuxValues>
