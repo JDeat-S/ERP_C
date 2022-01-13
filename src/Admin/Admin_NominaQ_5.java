@@ -3,7 +3,7 @@ package Admin;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
-import Inicio.Login_2;
+import Inicio.Inicio_1;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.awt.print.PrinterException;
@@ -4645,10 +4645,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         FDP8 = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
-        Nomina1 = new javax.swing.JMenuItem();
         Administradores = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
         General = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
         Torteria = new javax.swing.JMenuItem();
@@ -9850,14 +9848,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         Menuadm.setText("Todas las ventanas");
 
-        Nomina1.setText("Ventana Nomina");
-        Nomina1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nomina1ActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Nomina1);
-
         Administradores.setText("Administradores");
         Administradores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -9873,14 +9863,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
             }
         });
         Menuadm.add(ZYS);
-
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
 
         General.setText("Empleados General");
         General.addActionListener(new java.awt.event.ActionListener() {
@@ -10019,14 +10001,8 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_Nomina1ActionPerformed
-
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        Administradores_3 regr = new Administradores_3();
+        Admin_VentanaADM_3 regr = new Admin_VentanaADM_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed
@@ -10036,12 +10012,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
         Admin_Empleados_4 regr = new Admin_Empleados_4();
@@ -15970,7 +15940,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -16258,7 +16228,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -16397,7 +16367,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS15ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -16630,7 +16600,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS16ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -16865,7 +16835,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS17ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -17099,7 +17069,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS18ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -17527,7 +17497,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS14ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -18304,7 +18274,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS12ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -18696,7 +18666,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS11ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -19088,7 +19058,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS10ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -19480,7 +19450,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS9ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -19873,7 +19843,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS8ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -20266,7 +20236,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -20657,7 +20627,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS13ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -20918,7 +20888,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS21ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -21185,7 +21155,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS20ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -21451,7 +21421,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS19ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -21654,7 +21624,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS24ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -21854,7 +21824,7 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private void CS22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS22ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -22791,7 +22761,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField NomISR;
     private javax.swing.JScrollPane NomPagos;
     private javax.swing.JScrollPane Nomina;
-    private javax.swing.JMenuItem Nomina1;
     private javax.swing.JTextField Nominab;
     private javax.swing.JTextField Nominab1;
     private javax.swing.JTextField Nominab2;
@@ -22866,7 +22835,6 @@ public final class Admin_NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTable Tnom7;
     private javax.swing.JTable Tnom8;
     private javax.swing.JMenuItem Torteria;
-    private javax.swing.JMenuItem UsuariosRH;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zon;
     private javax.swing.JTextField am;

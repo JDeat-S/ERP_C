@@ -4,7 +4,8 @@ import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
 import ColoresT.ColorRH;
-import Inicio.Login_2;
+import Inicio.Inicio_1;
+import Logicas.Logica_bd_RH;
 import ZyS.Servicios;
 import ZyS.Zonas;
 import java.awt.HeadlessException;
@@ -32,6 +33,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     ColorRH colores = new ColorRH();
+    Logica_bd_RH obj;
 
     public Admin_Empleados_4() {
         initComponents();
@@ -1328,8 +1330,6 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         Nomina = new javax.swing.JMenuItem();
         Administradores = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
-        Usuariosnom = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         Alumnos = new javax.swing.JMenuItem();
         EmpleadosT = new javax.swing.JMenuItem();
@@ -2007,6 +2007,11 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb1.setLink("http://192.168.3.10/Reportes/ReporteRH/EPCEmpleados.php");
+        botonWeb1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                botonWeb1MousePressed(evt);
+            }
+        });
 
         ObsTgen.setColumns(20);
         ObsTgen.setLineWrap(true);
@@ -2637,22 +2642,6 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         });
         Menuadm.add(ZYS);
 
-        Usuariosnom.setText("Usuarios Nomina");
-        Usuariosnom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosnomActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Usuariosnom);
-
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
-
         jMenuBar1.add(Menuadm);
 
         jMenu1.setText("Cambiar a:");
@@ -2907,7 +2896,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -2917,7 +2906,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -2927,7 +2916,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -3327,7 +3316,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
 
-        Administradores_3 regr = new Administradores_3();
+        Admin_VentanaADM_3 regr = new Admin_VentanaADM_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed
@@ -3338,20 +3327,6 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
-
-    private void UsuariosnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosnomActionPerformed
-
-        Usuarios_Nomina_3 regr = new Usuarios_Nomina_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosnomActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
 
     private void FBimssFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FBimssFKeyReleased
         MDIMSS();
@@ -3792,7 +3767,7 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -3922,6 +3897,11 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void botonWeb1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonWeb1MousePressed
+        obj = new Logica_bd_RH();
+        obj.BDRH();
+    }//GEN-LAST:event_botonWeb1MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -4029,8 +4009,6 @@ public final class Admin_Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Sueldo;
     private javax.swing.JTable Timss;
     private javax.swing.JTextField UDL;
-    private javax.swing.JMenuItem UsuariosRH;
-    private javax.swing.JMenuItem Usuariosnom;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JButton add;
     private javax.swing.JButton addimss;

@@ -4,7 +4,7 @@ import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
 import ColoresT.ColorRH;
-import Inicio.Login_2;
+import Inicio.Inicio_1;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.sql.Connection;
@@ -3364,8 +3364,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         Nomina = new javax.swing.JMenuItem();
         Administradores = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
-        Usuariosnom = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         Alumnos = new javax.swing.JMenuItem();
         EmpleadosT = new javax.swing.JMenuItem();
@@ -7019,22 +7017,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         });
         Menuadm.add(ZYS);
 
-        Usuariosnom.setText("Usuarios Nomina");
-        Usuariosnom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosnomActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Usuariosnom);
-
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
-
         jMenuBar1.add(Menuadm);
 
         jMenu1.setText("Cambiar a:");
@@ -7107,7 +7089,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
 
-        Administradores_3 regr = new Administradores_3();
+        Admin_VentanaADM_3 regr = new Admin_VentanaADM_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed
@@ -7118,20 +7100,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
-
-    private void UsuariosnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosnomActionPerformed
-
-        Usuarios_Nomina_3 regr = new Usuarios_Nomina_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosnomActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
 
     private void AdNKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdNKeyReleased
         desv();
@@ -7437,7 +7405,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS14ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -7715,7 +7683,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS13ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -7993,7 +7961,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS12ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -8271,7 +8239,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS11ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -8549,7 +8517,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS10ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -8827,7 +8795,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS9ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -9107,7 +9075,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -9386,7 +9354,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS8ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -9477,7 +9445,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -9685,7 +9653,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS15ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -9890,7 +9858,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS16ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -10097,7 +10065,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS17ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -10303,7 +10271,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS18ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -10510,7 +10478,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS19ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -10715,7 +10683,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS20ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -10921,7 +10889,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private void CS21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS21ActionPerformed
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -11457,8 +11425,6 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JTable Tnom5;
     private javax.swing.JTable Tnom6;
     private javax.swing.JTable Tnom7;
-    private javax.swing.JMenuItem UsuariosRH;
-    private javax.swing.JMenuItem Usuariosnom;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zon;
     private javax.swing.JTextField am;

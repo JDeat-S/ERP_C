@@ -1,7 +1,7 @@
 package Admin;
 
 import Conexion.ConexionSQL;
-import Inicio.Login_2;
+import Inicio.Inicio_1;
 import java.awt.HeadlessException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -134,7 +134,6 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
         Nomina1 = new javax.swing.JMenuItem();
         Administradores = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
-        UsuariosRH = new javax.swing.JMenuItem();
         General = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
         Torteria = new javax.swing.JMenuItem();
@@ -705,14 +704,6 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
             }
         });
         Menuadm.add(ZYS);
-
-        UsuariosRH.setText("Usuarios RH");
-        UsuariosRH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosRHActionPerformed(evt);
-            }
-        });
-        Menuadm.add(UsuariosRH);
 
         General.setText("Empleados General");
         General.addActionListener(new java.awt.event.ActionListener() {
@@ -1329,7 +1320,7 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -1469,7 +1460,7 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
-            Login_2 regr = new Login_2();
+            Inicio_1 regr = new Inicio_1();
             regr.setVisible(true);
             this.dispose();
         }
@@ -1484,7 +1475,7 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
 
-        Administradores_3 regr = new Administradores_3();
+        Admin_VentanaADM_3 regr = new Admin_VentanaADM_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed
@@ -1495,13 +1486,6 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
-
-    private void UsuariosRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosRHActionPerformed
-
-        Usuarios_RH_3 regr = new Usuarios_RH_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_UsuariosRHActionPerformed
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
 
@@ -1719,7 +1703,6 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
     private javax.swing.JTable TPPRES;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JScrollPane Tprestamos;
-    private javax.swing.JMenuItem UsuariosRH;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zona;
     private botones.BotonWeb botonWeb3;

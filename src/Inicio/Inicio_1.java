@@ -1,6 +1,10 @@
 package Inicio;
 
+import Admin.*;
+import Conexion.ConexionSQL;
 import java.awt.Color;
+import java.sql.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,6 +17,9 @@ public class Inicio_1 extends javax.swing.JFrame {
 
     public Inicio_1() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(Inicio_1.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+
     }
 
     @SuppressWarnings("unchecked")
@@ -23,6 +30,7 @@ public class Inicio_1 extends javax.swing.JFrame {
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         fondologo = new javax.swing.JLabel();
@@ -93,15 +101,21 @@ public class Inicio_1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("ERP CONFORT");
+
         javax.swing.GroupLayout Harder1Layout = new javax.swing.GroupLayout(Harder1);
         Harder1.setLayout(Harder1Layout);
         Harder1Layout.setHorizontalGroup(
             Harder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
         );
         Harder1Layout.setVerticalGroup(
             Harder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(Harder1Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         Backgraund.add(Harder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, -1));
@@ -152,6 +166,11 @@ public class Inicio_1 extends javax.swing.JFrame {
                 txtpassMouseClicked(evt);
             }
         });
+        txtpass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtpassKeyReleased(evt);
+            }
+        });
         Backgraund.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 470, 40));
         Backgraund.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 470, -1));
 
@@ -168,6 +187,9 @@ public class Inicio_1 extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 txtingresarMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtingresarMousePressed(evt);
             }
         });
 
@@ -269,6 +291,62 @@ public class Inicio_1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtpassMouseClicked
 
+    private void txtingresarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtingresarMousePressed
+        String SQL = "SELECT `Usuario`, `Contraseña`,`Ventana de acceso` FROM"
+                + " `admin.usuarios` WHERE `Activo` LIKE '%1%' AND `Usuario` LIKE '%" + txtuser.getText() + "%'";
+        try {
+
+            ConexionSQL cc = new ConexionSQL();
+            Connection con = cc.conexion();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+
+                String u = rs.getString("Usuario");
+                String p = rs.getString("Contraseña");
+                String tdu = rs.getString("Ventana de acceso");
+                if (String.valueOf(txtpass.getPassword()).equals(p)) {
+                    switch (tdu) {
+                        case "0" -> {
+                            Admin_VentanaADM_3 Admin = new Admin_VentanaADM_3();
+                            Admin.setVisible(true);
+                        }
+                        case "1" -> {
+                            Admin_Empleados_4 RH = new Admin_Empleados_4();
+                            RH.setVisible(true);
+                        }
+                        case "2" -> {
+                            Admin_Empleados_4 RH = new Admin_Empleados_4();
+                            RH.setVisible(true);
+                        }
+                        default -> {
+                        }
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "La contraseña no es correcta.");
+
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "El usuario no existe");
+
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error:" + ex);
+        }
+
+    }//GEN-LAST:event_txtingresarMousePressed
+
+    private void txtpassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyReleased
+        if (String.valueOf(txtpass.getPassword()).equals("***************")) {
+            txtpass.setText("");
+            txtpass.setForeground(Color.black);
+
+        }
+
+    }//GEN-LAST:event_txtpassKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -298,6 +376,18 @@ public class Inicio_1 extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
@@ -316,6 +406,7 @@ public class Inicio_1 extends javax.swing.JFrame {
     private javax.swing.JPanel btnexit;
     private javax.swing.JLabel fondologo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel logo;
