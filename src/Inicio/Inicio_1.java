@@ -6,6 +6,9 @@ import Logicas.*;
 import Logicas.Logica_usuarios;
 import java.awt.Color;
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -342,6 +345,7 @@ public class Inicio_1 extends javax.swing.JFrame {
         Logica_SQL log = new Logica_SQL();
         Logica_usuarios usr = new Logica_usuarios();
 
+
         if (!txtuser.getText().equals("") && !String.valueOf(txtpass.getPassword()).equals("")) {
             usr.setUsuario(txtuser.getText());
             usr.setPass(String.valueOf(txtpass.getPassword()));
@@ -349,11 +353,11 @@ public class Inicio_1 extends javax.swing.JFrame {
             if (log.login(usr)) {
                 usr.setUsuario(txtuser.getText());
                 usr.setPass(String.valueOf(txtpass.getPassword()));
-                
+
                 Admin_Empleados_4 logrh = new Admin_Empleados_4();
                 logrh.setVisible(true);
                 this.dispose();
-                
+
             } else {
 
             }
@@ -371,7 +375,12 @@ public class Inicio_1 extends javax.swing.JFrame {
             txtpass.setForeground(Color.black);
 
         }
-if (String.valueOf(txtpass.getPassword()).equals("")) {
+        if (String.valueOf(txtpass.getPassword()).equals("")) {
+            txtpass.setText("");
+            txtpass.setForeground(Color.black);
+
+        }
+        if (String.valueOf(txtpass.getPassword()).equals("**************")) {
             txtpass.setText("");
             txtpass.setForeground(Color.black);
 
