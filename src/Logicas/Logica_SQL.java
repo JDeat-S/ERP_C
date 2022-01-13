@@ -61,13 +61,14 @@ public class Logica_SQL extends ConexionSQL {
                     java.util.Date date = new java.util.Date();
                     DateFormat FH = new SimpleDateFormat("dd/MMMM/yyyy HH;mm:ss");
                     usr.setUIDS(FH.format(date));
-                    
+
                     String SQLupdate = "UPDATE `admin.usuarios` SET `Ultimo inicio de sesion` = ? WHERE `admin.usuarios`.`id_user` = ?";
                     ps = con.prepareStatement(SQLupdate);
                     ps.setString(1, usr.getUIDS());
                     ps.setInt(2, rs.getInt(1));
                     ps.execute();
 
+                    usr.setId_user(rs.getInt(1));
                     usr.setApellidop(rs.getString(2));
                     usr.setApellidoM(rs.getString(3));
                     usr.setNombre(rs.getString(4));

@@ -1,5 +1,6 @@
 package Inicio;
 
+import RH.Empleados_4;
 import Admin.*;
 import Conexion.ConexionSQL;
 import Logicas.*;
@@ -345,7 +346,6 @@ public class Inicio_1 extends javax.swing.JFrame {
         Logica_SQL log = new Logica_SQL();
         Logica_usuarios usr = new Logica_usuarios();
 
-
         if (!txtuser.getText().equals("") && !String.valueOf(txtpass.getPassword()).equals("")) {
             usr.setUsuario(txtuser.getText());
             usr.setPass(String.valueOf(txtpass.getPassword()));
@@ -354,7 +354,7 @@ public class Inicio_1 extends javax.swing.JFrame {
                 usr.setUsuario(txtuser.getText());
                 usr.setPass(String.valueOf(txtpass.getPassword()));
 
-                Admin_Empleados_4 logrh = new Admin_Empleados_4();
+                Empleados_4 logrh = new Empleados_4(usr);
                 logrh.setVisible(true);
                 this.dispose();
 
@@ -380,7 +380,7 @@ public class Inicio_1 extends javax.swing.JFrame {
             txtpass.setForeground(Color.black);
 
         }
-        if (String.valueOf(txtpass.getPassword()).equals("**************")) {
+        if (String.valueOf(txtpass.getPassword()).equals("***************")) {
             txtpass.setText("");
             txtpass.setForeground(Color.black);
 

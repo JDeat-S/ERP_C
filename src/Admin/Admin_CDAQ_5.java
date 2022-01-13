@@ -1,5 +1,6 @@
 package Admin;
 
+import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import java.awt.HeadlessException;
 import java.sql.Connection;
@@ -1418,7 +1419,7 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        Admin_Empleados_4 regr = new Admin_Empleados_4();
+        Empleados_4 regr = new Empleados_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed
