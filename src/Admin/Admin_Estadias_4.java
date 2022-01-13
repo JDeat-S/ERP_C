@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.NominaQ_5;
 import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import Inicio.Inicio_1;
@@ -1048,7 +1049,7 @@ public final class Admin_Estadias_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_TorteriaActionPerformed
 
     private void NominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NominaActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NominaActionPerformed

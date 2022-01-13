@@ -95,7 +95,6 @@ public class Logica_SQL extends ConexionSQL {
             return false;
 
         }
-
     }
 
     public boolean Restricciones(Logica_permisos LP) {
@@ -113,16 +112,16 @@ public class Logica_SQL extends ConexionSQL {
             if (rs.next()) {
 
                 LP.setTDU(rs.getString(1));
-                LP.setP1(rs.getInt(2));
-                LP.setP2(rs.getInt(3));
-                LP.setP3(rs.getInt(4));
-                LP.setP4(rs.getInt(5));
-                LP.setP5(rs.getInt(6));
-                LP.setP6(rs.getInt(7));
-                LP.setP7(rs.getInt(8));
-                LP.setP8(rs.getInt(9));
-                LP.setP9(rs.getInt(10));
-                LP.setNombreusuario(rs.getString(11));
+                LP.setVDA(rs.getInt(2));
+                LP.setP1(rs.getInt(3));
+                LP.setP2(rs.getInt(4));
+                LP.setP3(rs.getInt(5));
+                LP.setP4(rs.getInt(6));
+                LP.setP5(rs.getInt(7));
+                LP.setP6(rs.getInt(8));
+                LP.setP7(rs.getInt(9));
+                LP.setP8(rs.getInt(10));
+                LP.setP9(rs.getInt(11));
                 ps.isClosed();
                 return true;
 

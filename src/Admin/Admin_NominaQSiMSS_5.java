@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.NominaQ_5;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
@@ -20715,7 +20716,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Imprimir4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed

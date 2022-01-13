@@ -1,5 +1,6 @@
 package Inicio;
 
+import Nomina.NominaQ_5;
 import RH.Empleados_4;
 import Admin.*;
 import Conexion.ConexionSQL;
@@ -302,6 +303,7 @@ public class Inicio_1 extends javax.swing.JFrame {
 
         Logica_SQL log = new Logica_SQL();
         Logica_usuarios usr = new Logica_usuarios();
+        Logica_permisos LP = new Logica_permisos();
 
         if (!txtuser.getText().equals("") && !String.valueOf(txtpass.getPassword()).equals("")) {
             usr.setUsuario(txtuser.getText());
@@ -310,8 +312,10 @@ public class Inicio_1 extends javax.swing.JFrame {
             if (log.login(usr)) {
                 usr.setUsuario(txtuser.getText());
                 usr.setPass(String.valueOf(txtpass.getPassword()));
+                LP.setNombreusuario(usr.getNombre_tipo());
+                log.Restricciones(LP);
 
-                String SQL = "SELECT`Ventana de acceso` FROM"
+                String SQL = "SELECT `Ventana de acceso` FROM"
                         + " `admin.usuarios` WHERE `Activo` LIKE '%1%' AND `Usuario` LIKE '%" + txtuser.getText() + "%'";
                 try {
 
@@ -324,17 +328,17 @@ public class Inicio_1 extends javax.swing.JFrame {
                         String tdu = rs.getString("Ventana de acceso");
                         switch (tdu) {
                             case "0" -> {
-                                Admin_VentanaADM_3 Admin = new Admin_VentanaADM_3();
+                                Admin_VentanaADM_3 Admin = new Admin_VentanaADM_3(usr, LP);
                                 Admin.setVisible(true);
                                 this.dispose();
                             }
                             case "1" -> {
-                                Empleados_4 RH = new Empleados_4(usr);
+                                Empleados_4 RH = new Empleados_4(usr, LP);
                                 RH.setVisible(true);
                                 this.dispose();
                             }
                             case "2" -> {
-                                Admin_NominaQ_5 Nom = new Admin_NominaQ_5();
+                                NominaQ_5 Nom = new NominaQ_5(usr, LP);
                                 Nom.setVisible(true);
                                 this.dispose();
                             }

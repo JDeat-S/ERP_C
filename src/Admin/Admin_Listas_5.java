@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.NominaQ_5;
 import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import java.awt.Desktop;
@@ -21190,7 +21191,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FillLSI3ItemStateChanged
 
     private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Nomina1ActionPerformed
@@ -21268,7 +21269,7 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem6ActionPerformed

@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.NominaQ_5;
 import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import Logicas.*;
@@ -18,6 +19,8 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     ButtonGroup VDA;
+    Logica_usuarios usr;
+    Logica_permisos LP;
 
     public Admin_VentanaADM_3() {
         initComponents();
@@ -29,6 +32,23 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         VDA = new ButtonGroup();
         VDA.add(AAADN);
         VDA.add(AAADRH);
+
+    }
+
+    public Admin_VentanaADM_3(Logica_usuarios usr, Logica_permisos LP) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        this.usr = usr;
+        this.LP = LP;
+        setIconImage(new ImageIcon(Admin_VentanaADM_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        Logica_TDU FZS = new Logica_TDU();
+        DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
+        TOUadd.setModel(MODELFZS);
+        VDA = new ButtonGroup();
+        VDA.add(AAADN);
+        VDA.add(AAADRH);
+        setTitle("Ventana ADM # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+                + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
 
     }
 
@@ -775,7 +795,7 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
         );
 
         pack();
@@ -788,8 +808,9 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        Empleados_4 regr = new Empleados_4();
-        regr.setVisible(true);
+
+        Empleados_4 RH = new Empleados_4(this.usr, this.LP);
+        RH.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed
 
@@ -812,7 +833,7 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_ODTActionPerformed
 
     private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CNQActionPerformed
