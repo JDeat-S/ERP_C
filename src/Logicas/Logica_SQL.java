@@ -59,7 +59,7 @@ public class Logica_SQL extends ConexionSQL {
             if (rs.next()) {
                 if (usr.getPass().equals(rs.getString(7))) {
                     java.util.Date date = new java.util.Date();
-                    DateFormat FH = new SimpleDateFormat("dd/MMMM/yyyy HH;mm:ss");
+                    DateFormat FH = new SimpleDateFormat("dd/MMMM/yyyy HH:mm:ss");
                     usr.setUIDS(FH.format(date));
 
                     String SQLupdate = "UPDATE `admin.usuarios` SET `Ultimo inicio de sesion` = ? WHERE `admin.usuarios`.`id_user` = ?";

@@ -5,16 +5,21 @@ import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import Logicas.*;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author JDeat
+ * @author CONFORT
  */
-public class Admin_VentanaADM_3 extends javax.swing.JFrame {
+public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
@@ -32,6 +37,7 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         VDA = new ButtonGroup();
         VDA.add(AAADN);
         VDA.add(AAADRH);
+        MDusers();
 
     }
 
@@ -47,8 +53,87 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         VDA = new ButtonGroup();
         VDA.add(AAADN);
         VDA.add(AAADRH);
+        MDusers();
         setTitle("Ventana ADM # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
+
+    }
+
+    public void MDusers() {
+        //Buscar empleado
+        String FIllAM = FillAm.getText();
+        String filname = Filname.getText();
+        String filap = FillAp.getText();
+
+        String SQL = "SELECT `id_user`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Tipo de usuario`, `Usuario`, `Contraseña`, "
+                + "`Ultimo inicio de sesion` FROM `admin.usuarios`";
+
+        if (!"".equals(filname)) {
+            SQL = "SELECT `id_user`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Tipo de usuario`, `Usuario`, `Contraseña`, "
+                    + "`Ultimo inicio de sesion` FROM `admin.usuarios`"
+                    + " where `Nombre(s)` LIKE '%" + filname + "%'";
+        } else if (!"".equals(filap)) {
+            SQL = "SELECT `id_user`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Tipo de usuario`, `Usuario`, `Contraseña`, "
+                    + "`Ultimo inicio de sesion` FROM `admin.usuarios`"
+                    + " Where `Apellido P` LIKE '%" + filap + "%'";
+        } else if (!"".equals(FIllAM)) {
+            SQL = "SELECT `id_user`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Tipo de usuario`, `Usuario`, `Contraseña`, "
+                    + "`Ultimo inicio de sesion` FROM `admin.usuarios` where `Apellido M` LIKE '%" + FIllAM + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            TUser.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Usuario");//1
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Tipo de usuario");
+            modelo.addColumn("Usuario");//8
+            modelo.addColumn("Contraseña");
+            modelo.addColumn("Ultimo Inicio de sesion");
+
+            int[] anchos = {/*idbd*/35, /*ap*/ 70, /*am*/ 70, /*name*/ 100,
+                /*TDU*/ 65, /*USER*/ 65, /*PASS*/ 70, /*UISD*/ 70};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                TUser.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla empleados: " + e.getMessage());
+        }
 
     }
 
@@ -56,53 +141,53 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        TOUadd = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        IDuser = new javax.swing.JTextField();
         Apadduser = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
         Amadduser = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
         Nameadduser = new javax.swing.JTextField();
+        AAS = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         Useradd = new javax.swing.JTextField();
         passuserad = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        TOUadd = new javax.swing.JComboBox<>();
-        jLabel16 = new javax.swing.JLabel();
-        IDuser = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        AAS = new javax.swing.JCheckBox();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
+        Filname = new javax.swing.JTextField();
+        FillAm = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jCheckBox14 = new javax.swing.JCheckBox();
+        jLabel8 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
         jScrollPane6 = new javax.swing.JScrollPane();
         TUser = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
         jComboBox3 = new javax.swing.JComboBox<>();
-        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        FillAp = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        Troles = new javax.swing.JTable();
         jLabel13 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -117,6 +202,12 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         jCheckBox13 = new javax.swing.JCheckBox();
         jCheckBox15 = new javax.swing.JCheckBox();
         AAADN = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jLabel22 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        Troles = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jCheckBox17 = new javax.swing.JCheckBox();
@@ -124,10 +215,6 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         jCheckBox19 = new javax.swing.JCheckBox();
         jCheckBox20 = new javax.swing.JCheckBox();
         AAADRH = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel18 = new javax.swing.JLabel();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jLabel22 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -154,24 +241,19 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Tipo de usuario:");
 
         jLabel1.setText("Apellido P:");
 
-        jLabel2.setText("Apellido M:");
-
-        jLabel3.setText("Nombre(s):");
-
-        jLabel4.setText("Usuario:");
-
-        jLabel5.setText("Contraseña:");
-
-        jLabel6.setText("Tipo de usuario:");
-
         TOUadd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
+
+        jLabel2.setText("Apellido M:");
 
         jLabel16.setText("# Usuario:");
 
+        jLabel3.setText("Nombre(s):");
+
+        IDuser.setEditable(false);
         IDuser.setText("0");
 
         jLabel21.setText("jLabel21");
@@ -185,6 +267,10 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         AAS.setSelected(true);
         AAS.setText("Acceso al sistema");
+
+        jLabel4.setText("Usuario:");
+
+        jLabel5.setText("Contraseña:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -258,30 +344,24 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                     .addComponent(AAS))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addContainerGap(849, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jScrollPane2.setViewportView(jPanel1);
+        jScrollPane1.setViewportView(jPanel1);
 
-        jTabbedPane1.addTab("Registro de usuarios", jScrollPane2);
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
-
-        jLabel7.setText("Tipo de usuario:");
-
-        jLabel8.setText("Apellido P:");
-
-        jLabel9.setText("Contraseña:");
-
-        jLabel10.setText("Usuario:");
-
-        jLabel11.setText("Nombre(s):");
+        jTabbedPane1.addTab("Registro de usuarios", jScrollPane1);
 
         jLabel12.setText("Apellido M:");
 
+        jLabel7.setText("Tipo de usuario:");
+
         jCheckBox14.setText("Acceso al sistema.");
 
+        jLabel8.setText("Apellido P:");
+
         jLabel15.setText("# Usuario");
+
+        jTextField12.setEditable(false);
 
         TUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -296,12 +376,20 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(TUser);
 
+        jLabel9.setText("Contraseña:");
+
+        jLabel10.setText("Usuario:");
+
         jLabel19.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel19.setText("Lista de usuarios.");
 
         jLabel20.setText("Filtro:");
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel11.setText("Nombre(s):");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -336,12 +424,18 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel20)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(155, 155, 155))))
+                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FillAp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FillAm, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -384,28 +478,18 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                         .addGap(1, 1, 1)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel20)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FillAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FillAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jScrollPane3.setViewportView(jPanel2);
+        jScrollPane2.setViewportView(jPanel2);
 
-        jTabbedPane1.addTab("Modificacion de usuarios", jScrollPane3);
-
-        Troles.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane5.setViewportView(Troles);
+        jTabbedPane1.addTab("tab2", jScrollPane2);
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel13.setText("Roles de usuarios:");
@@ -509,6 +593,27 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
+        jButton1.setText("Agregar");
+
+        jLabel18.setText("Rol de seleccionado:");
+
+        jCheckBox3.setText("Administrador");
+
+        jLabel22.setText("jLabel22");
+
+        Troles.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(Troles);
+
         jLabel17.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel17.setText("Area Recursos Humanos");
 
@@ -562,16 +667,8 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 .addComponent(jCheckBox19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBox20)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jButton1.setText("Agregar");
-
-        jLabel18.setText("Rol de seleccionado:");
-
-        jCheckBox3.setText("Administrador");
-
-        jLabel22.setText("jLabel22");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -616,14 +713,12 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
                             .addComponent(jLabel18))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(448, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jScrollPane4.setViewportView(jPanel3);
+        jScrollPane3.setViewportView(jPanel3);
 
-        jTabbedPane1.addTab("Agregar y modificar roles", jScrollPane4);
-
-        jScrollPane1.setViewportView(jTabbedPane1);
+        jTabbedPane1.addTab("tab3", jScrollPane3);
 
         Menuadm.setText("Todas las ventanas");
 
@@ -791,40 +886,15 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 955, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        AltasZyS_3 regr = new AltasZyS_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ZYSActionPerformed
-
-    private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-
-        Empleados_4 RH = new Empleados_4(this.usr, this.LP);
-        RH.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_GeneralActionPerformed
-
-    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_TorteriaActionPerformed
-
-    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
-        Admin_Estadias_4 regr = new Admin_Estadias_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_EstadiasActionPerformed
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
         Admin_ODTQ_5 regr = new Admin_ODTQ_5();
@@ -850,6 +920,12 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
+        Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDAActionPerformed
+
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         Admin_NominaS_5 regr = new Admin_NominaS_5();
         regr.setVisible(true);
@@ -874,11 +950,24 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
-    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+    private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
+
+        Empleados_4 RH = new Empleados_4(this.usr, this.LP);
+        RH.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_GeneralActionPerformed
+
+    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
+        Admin_Estadias_4 regr = new Admin_Estadias_4();
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_CDAActionPerformed
+    }//GEN-LAST:event_EstadiasActionPerformed
+
+    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
+        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_TorteriaActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         Admin_Inturbide_4 regr = new Admin_Inturbide_4();
@@ -897,6 +986,12 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
+        AltasZyS_3 regr = new AltasZyS_3();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ZYSActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String active = null;
@@ -961,8 +1056,10 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Admin_VentanaADM_3().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Admin_VentanaADM_3().setVisible(true);
+            }
         });
     }
 
@@ -975,6 +1072,9 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JMenuItem Estadias;
+    private javax.swing.JTextField FillAm;
+    private javax.swing.JTextField FillAp;
+    private javax.swing.JTextField Filname;
     private javax.swing.JMenuItem General;
     private javax.swing.JTextField IDuser;
     private javax.swing.JMenu Menuadm;
@@ -1051,7 +1151,6 @@ public class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;

@@ -1105,7 +1105,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla empleados: " + e.getMessage());
         }
         
     }
