@@ -10,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -241,32 +243,37 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
-        jCheckBox13 = new javax.swing.JCheckBox();
-        jCheckBox15 = new javax.swing.JCheckBox();
+        P1Nom = new javax.swing.JCheckBox();
+        P2Nom = new javax.swing.JCheckBox();
+        P3Nom = new javax.swing.JCheckBox();
+        P4Nom = new javax.swing.JCheckBox();
+        P5Nom = new javax.swing.JCheckBox();
+        P6Nom = new javax.swing.JCheckBox();
+        P7Nom = new javax.swing.JCheckBox();
+        P8Nom = new javax.swing.JCheckBox();
+        P9Nom = new javax.swing.JCheckBox();
+        P10Nom = new javax.swing.JCheckBox();
         AAADN = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
+        PDUMod = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         Troles = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        jCheckBox17 = new javax.swing.JCheckBox();
-        jCheckBox18 = new javax.swing.JCheckBox();
-        jCheckBox19 = new javax.swing.JCheckBox();
-        jCheckBox20 = new javax.swing.JCheckBox();
+        P1RH = new javax.swing.JCheckBox();
+        P2RH = new javax.swing.JCheckBox();
+        P3RH = new javax.swing.JCheckBox();
+        P4RH = new javax.swing.JCheckBox();
         AAADRH = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        PDUadd = new javax.swing.JTextField();
         ADM = new javax.swing.JRadioButton();
+        jLabel8 = new javax.swing.JLabel();
+        NumP = new javax.swing.JTextField();
+        Btnpduadd = new javax.swing.JPanel();
+        txtbtnpduadd = new javax.swing.JLabel();
+        btnpdumod = new javax.swing.JPanel();
+        txtbtnpdumod = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -513,41 +520,43 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Agregar/Modificar Usuarios", jScrollPane2);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel13.setText("Perfil de usuarios:");
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel14.setText("Area Nomina");
 
-        jCheckBox5.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox5.setText("Acceso a ordenes de taller");
+        P1Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P1Nom.setText("Acceso a ordenes de taller");
 
-        jCheckBox6.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox6.setText("Acceso Caja de ahorro");
+        P2Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P2Nom.setText("Acceso Caja de ahorro");
 
-        jCheckBox7.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox7.setText("Acceso Listas de asistencia");
+        P3Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P3Nom.setText("Acceso Listas de asistencia");
 
-        jCheckBox8.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox8.setText("Creacion de reportes de nomiana");
+        P4Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P4Nom.setText("Creacion de reportes de nomiana");
 
-        jCheckBox9.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox9.setText("Creacion de Nominas");
+        P5Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P5Nom.setText("Creacion de Nominas");
 
-        jCheckBox10.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox10.setText("Creacion de reportes");
+        P6Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P6Nom.setText("Creacion de reportes");
 
-        jCheckBox11.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox11.setText("Acceso a Prestamos");
+        P7Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P7Nom.setText("Acceso a Prestamos");
 
-        jCheckBox12.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox12.setText("Acceso a Nomina Semanal");
+        P8Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P8Nom.setText("Acceso a Nomina Semanal");
 
-        jCheckBox13.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox13.setText("Acceso a Prestamo Semanales");
+        P9Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P9Nom.setText("Acceso a Prestamo Semanales");
 
-        jCheckBox15.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox15.setText("Modificacion de Nominas");
+        P10Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P10Nom.setText("Modificacion de Nominas");
 
         AAADN.setText("Acceso a Area de Nomina");
         AAADN.addActionListener(new java.awt.event.ActionListener() {
@@ -564,22 +573,22 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jCheckBox10))
+                        .addComponent(P6Nom))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox5)
-                            .addComponent(jCheckBox6)
-                            .addComponent(jCheckBox7)
-                            .addComponent(jCheckBox8)
-                            .addComponent(jCheckBox9)
+                            .addComponent(P1Nom)
+                            .addComponent(P2Nom)
+                            .addComponent(P3Nom)
+                            .addComponent(P4Nom)
+                            .addComponent(P5Nom)
                             .addComponent(AAADN))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox15)
-                            .addComponent(jCheckBox13)
-                            .addComponent(jCheckBox12)
-                            .addComponent(jCheckBox11)))
+                            .addComponent(P10Nom)
+                            .addComponent(P9Nom)
+                            .addComponent(P8Nom)
+                            .addComponent(P7Nom)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(134, 134, 134)
                         .addComponent(jLabel14)))
@@ -592,34 +601,32 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox11)
+                    .addComponent(P7Nom)
                     .addComponent(AAADN))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox12))
+                    .addComponent(P1Nom)
+                    .addComponent(P8Nom))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox6)
-                    .addComponent(jCheckBox13))
+                    .addComponent(P2Nom)
+                    .addComponent(P9Nom))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox7)
-                    .addComponent(jCheckBox15))
+                    .addComponent(P3Nom)
+                    .addComponent(P10Nom))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox8)
+                .addComponent(P4Nom)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox9)
+                .addComponent(P5Nom)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox10)
+                .addComponent(P6Nom)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Agregar");
-
         jLabel18.setText("Perfil seleccionado:");
 
-        jLabel22.setText("jLabel22");
+        PDUMod.setText("N/A");
 
         Troles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -632,24 +639,34 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Troles.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TrolesMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(Troles);
 
         jLabel17.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel17.setText("Area Recursos Humanos");
 
-        jCheckBox17.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox17.setText("Acesso a Alumnos de estadia");
+        P1RH.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P1RH.setText("Acesso a Alumnos de estadia");
 
-        jCheckBox18.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox18.setText("Acceso a Empelados de torteria");
+        P2RH.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P2RH.setText("Acceso a Empelados de torteria");
 
-        jCheckBox19.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox19.setText("Acceso a Depositos.");
+        P3RH.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P3RH.setText("Acceso a Depositos.");
 
-        jCheckBox20.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        jCheckBox20.setText("Acceso a Semanal");
+        P4RH.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        P4RH.setText("Acceso a Semanal");
 
         AAADRH.setText("Acesso a Area de Recursos humanos");
+        AAADRH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AAADRHActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -663,10 +680,10 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox17)
-                            .addComponent(jCheckBox18)
-                            .addComponent(jCheckBox19)
-                            .addComponent(jCheckBox20)))
+                            .addComponent(P1RH)
+                            .addComponent(P2RH)
+                            .addComponent(P3RH)
+                            .addComponent(P4RH)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(AAADRH)))
@@ -680,19 +697,61 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AAADRH)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox17)
+                .addComponent(P1RH)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox18)
+                .addComponent(P2RH)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox19)
+                .addComponent(P3RH)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox20)
+                .addComponent(P4RH)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel7.setText("Nombre de nuevo perfil:");
 
         ADM.setText("Administrador");
+        ADM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADMActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("# perfil:");
+
+        txtbtnpduadd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtbtnpduadd.setText("Agregar");
+
+        javax.swing.GroupLayout BtnpduaddLayout = new javax.swing.GroupLayout(Btnpduadd);
+        Btnpduadd.setLayout(BtnpduaddLayout);
+        BtnpduaddLayout.setHorizontalGroup(
+            BtnpduaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtbtnpduadd, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+        BtnpduaddLayout.setVerticalGroup(
+            BtnpduaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtbtnpduadd, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        txtbtnpdumod.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtbtnpdumod.setText("Modificar");
+        txtbtnpdumod.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtbtnpdumodMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnpdumodLayout = new javax.swing.GroupLayout(btnpdumod);
+        btnpdumod.setLayout(btnpdumodLayout);
+        btnpdumodLayout.setHorizontalGroup(
+            btnpdumodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnpdumodLayout.createSequentialGroup()
+                .addComponent(txtbtnpdumod, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        btnpdumodLayout.setVerticalGroup(
+            btnpdumodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtbtnpdumod, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -701,21 +760,24 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(111, 111, 111)
-                            .addComponent(jLabel13))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1)))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(jLabel13))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PDUadd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NumP, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel22)))
+                        .addComponent(PDUMod))
+                    .addComponent(Btnpduadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnpdumod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -733,20 +795,28 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                     .addComponent(ADM))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(NumP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(5, 5, 5)
+                            .addComponent(PDUadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(2, 2, 2)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel22)
-                            .addComponent(jLabel18))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PDUMod)
+                            .addComponent(jLabel18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Btnpduadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnpdumod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1028,7 +1098,22 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void AAADNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AAADNActionPerformed
-        // TODO add your handling code here:
+        if (AAADN.isSelected() == true) {
+            P1Nom.setSelected(true);
+            P2Nom.setSelected(true);
+            P3Nom.setSelected(true);
+            P4Nom.setSelected(true);
+            P5Nom.setSelected(true);
+            P6Nom.setSelected(true);
+            P7Nom.setSelected(true);
+            P8Nom.setSelected(true);
+            P9Nom.setSelected(true);
+            P10Nom.setSelected(true);
+            P1RH.setSelected(false);
+            P2RH.setSelected(false);
+            P3RH.setSelected(false);
+            P4RH.setSelected(false);
+        }
     }//GEN-LAST:event_AAADNActionPerformed
 
     private void TUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TUserMouseClicked
@@ -1062,7 +1147,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         Amadduser.setText(String.valueOf(TUser.getValueAt(fila, 2)));
         Nameadduser.setText(String.valueOf(TUser.getValueAt(fila, 3)));
         Useradd.setText(String.valueOf(TUser.getValueAt(fila, 5)));
-
+        btnadd.setVisible(false);
     }//GEN-LAST:event_TUserMouseClicked
 
     private void txtbtnaddMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnaddMousePressed
@@ -1185,6 +1270,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error en modificar empleado: " + e.getMessage());
         }
+        btnadd.setVisible(true);
 
 
     }//GEN-LAST:event_txtbtnmodMousePressed
@@ -1239,6 +1325,230 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cbxfillusrsItemStateChanged
 
+    private void TrolesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TrolesMouseClicked
+        int fila = Troles.getSelectedRow();
+        NumP.setText(String.valueOf(Troles.getValueAt(fila, 0)));
+        PDUMod.setText(String.valueOf(Troles.getValueAt(fila, 1)));
+        Btnpduadd.setVisible(false);
+        try {
+            int id = Integer.parseInt(TUser.getValueAt(fila, 0).toString());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select * from `admin.tou` where `id_TDO` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                switch (rs.getString("Ventana de acceso")) {
+
+                    case "0" -> {
+                        ADM.setSelected(true);
+                        P1Nom.setSelected(false);
+                        P2Nom.setSelected(false);
+                        P3Nom.setSelected(false);
+                        P4Nom.setSelected(false);
+                        P5Nom.setSelected(false);
+                        P6Nom.setSelected(false);
+                        P7Nom.setSelected(false);
+                        P8Nom.setSelected(false);
+                        P9Nom.setSelected(false);
+                        P10Nom.setSelected(false);
+                        P1RH.setSelected(false);
+                        P2RH.setSelected(false);
+                        P3RH.setSelected(false);
+                        P4RH.setSelected(false);
+
+                    }
+                    case "1" -> {
+                        AAADRH.setSelected(true);
+
+                        switch (rs.getString("P1")) {
+                            case "0" ->
+                                P1RH.setSelected(false);
+                            case "1" ->
+                                P1RH.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P2")) {
+                            case "0" ->
+                                P2RH.setSelected(false);
+                            case "1" ->
+                                P2RH.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P3")) {
+                            case "0" ->
+                                P3RH.setSelected(false);
+                            case "1" ->
+                                P3RH.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P4")) {
+                            case "0" ->
+                                P4RH.setSelected(false);
+                            case "1" ->
+                                P4RH.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        P1Nom.setSelected(false);
+                        P2Nom.setSelected(false);
+                        P3Nom.setSelected(false);
+                        P4Nom.setSelected(false);
+                        P5Nom.setSelected(false);
+                        P6Nom.setSelected(false);
+                        P7Nom.setSelected(false);
+                        P8Nom.setSelected(false);
+                        P9Nom.setSelected(false);
+                        P10Nom.setSelected(false);
+
+                    }
+
+                    case "2" -> {
+                        AAADN.setSelected(true);
+                        switch (rs.getString("P1")) {
+                            case "0" ->
+                                P1Nom.setSelected(false);
+                            case "1" ->
+                                P1Nom.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P2")) {
+                            case "0" ->
+                                P2Nom.setSelected(false);
+                            case "1" ->
+                                P2Nom.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P3")) {
+                            case "0" ->
+                                P3Nom.setSelected(false);
+                            case "1" ->
+                                P3Nom.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P4")) {
+                            case "0" ->
+                                P4Nom.setSelected(false);
+                            case "1" ->
+                                P4Nom.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P5")) {
+                            case "0" ->
+                                P5Nom.setSelected(false);
+                            case "1" ->
+                                P5Nom.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P6")) {
+                            case "0" ->
+                                P6Nom.setSelected(false);
+                            case "1" ->
+                                P6Nom.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P7")) {
+                            case "0" ->
+                                P7Nom.setSelected(false);
+                            case "1" ->
+                                P7Nom.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P8")) {
+                            case "0" ->
+                                P8Nom.setSelected(false);
+                            case "1" ->
+                                P8Nom.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P9")) {
+                            case "0" ->
+                                P9Nom.setSelected(false);
+                            case "1" ->
+                                P9Nom.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P10")) {
+                            case "0" ->
+                                P10Nom.setSelected(false);
+                            case "1" ->
+                                P10Nom.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        P1RH.setSelected(false);
+                        P2RH.setSelected(false);
+                        P3RH.setSelected(false);
+                        P4RH.setSelected(false);
+                    }
+                    default -> {
+                    }
+
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin_VentanaADM_3.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_TrolesMouseClicked
+
+    private void txtbtnpdumodMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnpdumodMousePressed
+
+        Btnpduadd.setVisible(true);
+        PDUMod.setText("N/A");
+
+    }//GEN-LAST:event_txtbtnpdumodMousePressed
+
+    private void ADMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMActionPerformed
+        if (ADM.isSelected() == true) {
+            P1Nom.setSelected(false);
+            P2Nom.setSelected(false);
+            P3Nom.setSelected(false);
+            P4Nom.setSelected(false);
+            P5Nom.setSelected(false);
+            P6Nom.setSelected(false);
+            P7Nom.setSelected(false);
+            P8Nom.setSelected(false);
+            P9Nom.setSelected(false);
+            P10Nom.setSelected(false);
+            P1RH.setSelected(false);
+            P2RH.setSelected(false);
+            P3RH.setSelected(false);
+            P4RH.setSelected(false);
+        }
+    }//GEN-LAST:event_ADMActionPerformed
+
+    private void AAADRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AAADRHActionPerformed
+        if (AAADRH.isSelected() == true) {
+            P1Nom.setSelected(false);
+            P2Nom.setSelected(false);
+            P3Nom.setSelected(false);
+            P4Nom.setSelected(false);
+            P5Nom.setSelected(false);
+            P6Nom.setSelected(false);
+            P7Nom.setSelected(false);
+            P8Nom.setSelected(false);
+            P9Nom.setSelected(false);
+            P10Nom.setSelected(false);
+            P1RH.setSelected(true);
+            P2RH.setSelected(true);
+            P3RH.setSelected(true);
+            P4RH.setSelected(true);
+        }
+    }//GEN-LAST:event_AAADRHActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1280,6 +1590,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JRadioButton ADM;
     private javax.swing.JTextField Amadduser;
     private javax.swing.JTextField Apadduser;
+    private javax.swing.JPanel Btnpduadd;
     private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JMenuItem Estadias;
@@ -1290,7 +1601,24 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JTextField IDuser;
     private javax.swing.JMenu Menuadm;
     private javax.swing.JTextField Nameadduser;
+    private javax.swing.JTextField NumP;
     private javax.swing.JMenuItem ODT;
+    private javax.swing.JCheckBox P10Nom;
+    private javax.swing.JCheckBox P1Nom;
+    private javax.swing.JCheckBox P1RH;
+    private javax.swing.JCheckBox P2Nom;
+    private javax.swing.JCheckBox P2RH;
+    private javax.swing.JCheckBox P3Nom;
+    private javax.swing.JCheckBox P3RH;
+    private javax.swing.JCheckBox P4Nom;
+    private javax.swing.JCheckBox P4RH;
+    private javax.swing.JCheckBox P5Nom;
+    private javax.swing.JCheckBox P6Nom;
+    private javax.swing.JCheckBox P7Nom;
+    private javax.swing.JCheckBox P8Nom;
+    private javax.swing.JCheckBox P9Nom;
+    private javax.swing.JLabel PDUMod;
+    private javax.swing.JTextField PDUadd;
     private javax.swing.JMenuItem PRESQ;
     private javax.swing.JPanel Panebtnmod;
     private javax.swing.JComboBox<String> TOUadd;
@@ -1300,22 +1628,8 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JTextField Useradd;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JPanel btnadd;
+    private javax.swing.JPanel btnpdumod;
     private javax.swing.JComboBox<String> cbxfillusrs;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox13;
-    private javax.swing.JCheckBox jCheckBox15;
-    private javax.swing.JCheckBox jCheckBox17;
-    private javax.swing.JCheckBox jCheckBox18;
-    private javax.swing.JCheckBox jCheckBox19;
-    private javax.swing.JCheckBox jCheckBox20;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1325,12 +1639,12 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -1354,9 +1668,10 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField passuserad;
     private javax.swing.JLabel txtbtnadd;
     private javax.swing.JLabel txtbtnmod;
+    private javax.swing.JLabel txtbtnpduadd;
+    private javax.swing.JLabel txtbtnpdumod;
     // End of variables declaration//GEN-END:variables
 }

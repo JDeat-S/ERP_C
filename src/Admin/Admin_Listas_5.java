@@ -12067,6 +12067,9 @@ public final class Admin_Listas_5 extends javax.swing.JFrame {
         }
         if (CI.isSelected() == false) {
             int fila = EmpleadosSh.getSelectedRow();
+            LDAAp.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 0)));
+            LDAAm.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 1)));
+            LDAName.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 2)));
             LDAZon.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 3)));
 
         }

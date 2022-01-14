@@ -598,6 +598,11 @@
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
             <Container class="javax.swing.JPanel" name="jPanel3">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -605,25 +610,29 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jScrollPane5" alignment="0" min="-2" pref="334" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
+                              <Component id="jScrollPane5" alignment="0" min="-2" pref="334" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField1" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="PDUadd" min="-2" pref="90" max="-2" attributes="0"/>
+                                      <Component id="NumP" min="-2" pref="90" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PDUMod" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="Btnpduadd" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnpdumod" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -647,24 +656,34 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jScrollPane5" min="-2" pref="92" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="NumP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="PDUadd" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="PDUMod" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Btnpduadd" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnpdumod" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -688,24 +707,24 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jCheckBox10" min="-2" max="-2" attributes="0"/>
+                                      <Component id="P6Nom" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jCheckBox5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P1Nom" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P2Nom" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P3Nom" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P4Nom" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P5Nom" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="AAADN" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jCheckBox15" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox12" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P10Nom" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P9Nom" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P8Nom" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P7Nom" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -724,30 +743,30 @@
                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jCheckBox11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="P7Nom" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="AAADN" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jCheckBox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="P1Nom" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="P8Nom" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jCheckBox6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="P2Nom" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="P9Nom" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jCheckBox7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="P3Nom" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="P10Nom" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox8" min="-2" max="-2" attributes="0"/>
+                              <Component id="P4Nom" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox9" min="-2" max="-2" attributes="0"/>
+                              <Component id="P5Nom" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox10" min="-2" max="-2" attributes="0"/>
+                              <Component id="P6Nom" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="26" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -762,7 +781,7 @@
                         <Property name="text" type="java.lang.String" value="Area Nomina"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+                    <Component class="javax.swing.JCheckBox" name="P1Nom">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -770,7 +789,7 @@
                         <Property name="text" type="java.lang.String" value="Acceso a ordenes de taller"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+                    <Component class="javax.swing.JCheckBox" name="P2Nom">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -778,7 +797,7 @@
                         <Property name="text" type="java.lang.String" value="Acceso Caja de ahorro"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox7">
+                    <Component class="javax.swing.JCheckBox" name="P3Nom">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -786,7 +805,7 @@
                         <Property name="text" type="java.lang.String" value="Acceso Listas de asistencia"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox8">
+                    <Component class="javax.swing.JCheckBox" name="P4Nom">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -794,7 +813,7 @@
                         <Property name="text" type="java.lang.String" value="Creacion de reportes de nomiana"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox9">
+                    <Component class="javax.swing.JCheckBox" name="P5Nom">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -802,7 +821,7 @@
                         <Property name="text" type="java.lang.String" value="Creacion de Nominas"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox10">
+                    <Component class="javax.swing.JCheckBox" name="P6Nom">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -810,7 +829,7 @@
                         <Property name="text" type="java.lang.String" value="Creacion de reportes"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox11">
+                    <Component class="javax.swing.JCheckBox" name="P7Nom">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -818,7 +837,7 @@
                         <Property name="text" type="java.lang.String" value="Acceso a Prestamos"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox12">
+                    <Component class="javax.swing.JCheckBox" name="P8Nom">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -826,7 +845,7 @@
                         <Property name="text" type="java.lang.String" value="Acceso a Nomina Semanal"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox13">
+                    <Component class="javax.swing.JCheckBox" name="P9Nom">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -834,7 +853,7 @@
                         <Property name="text" type="java.lang.String" value="Acceso a Prestamo Semanales"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox15">
+                    <Component class="javax.swing.JCheckBox" name="P10Nom">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -852,19 +871,14 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="jButton1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Agregar"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel18">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Perfil seleccionado:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel22">
+                <Component class="javax.swing.JLabel" name="PDUMod">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jLabel22"/>
+                    <Property name="text" type="java.lang.String" value="N/A"/>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane5">
@@ -885,6 +899,9 @@
                           </Table>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TrolesMouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -902,10 +919,10 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jCheckBox17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox19" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox20" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P1RH" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P2RH" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P3RH" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="P4RH" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -925,13 +942,13 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="AAADRH" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox17" min="-2" max="-2" attributes="0"/>
+                              <Component id="P1RH" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox18" min="-2" max="-2" attributes="0"/>
+                              <Component id="P2RH" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox19" min="-2" max="-2" attributes="0"/>
+                              <Component id="P3RH" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCheckBox20" min="-2" max="-2" attributes="0"/>
+                              <Component id="P4RH" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -946,7 +963,7 @@
                         <Property name="text" type="java.lang.String" value="Area Recursos Humanos"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox17">
+                    <Component class="javax.swing.JCheckBox" name="P1RH">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -954,7 +971,7 @@
                         <Property name="text" type="java.lang.String" value="Acesso a Alumnos de estadia"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox18">
+                    <Component class="javax.swing.JCheckBox" name="P2RH">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -962,7 +979,7 @@
                         <Property name="text" type="java.lang.String" value="Acceso a Empelados de torteria"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox19">
+                    <Component class="javax.swing.JCheckBox" name="P3RH">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -970,7 +987,7 @@
                         <Property name="text" type="java.lang.String" value="Acceso a Depositos."/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox20">
+                    <Component class="javax.swing.JCheckBox" name="P4RH">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
@@ -982,6 +999,9 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Acesso a Area de Recursos humanos"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AAADRHActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -990,13 +1010,75 @@
                     <Property name="text" type="java.lang.String" value="Nombre de nuevo perfil:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField1">
+                <Component class="javax.swing.JTextField" name="PDUadd">
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="ADM">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Administrador"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ADMActionPerformed"/>
+                  </Events>
                 </Component>
+                <Component class="javax.swing.JLabel" name="jLabel8">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="# perfil:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="NumP">
+                </Component>
+                <Container class="javax.swing.JPanel" name="Btnpduadd">
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtbtnpduadd" alignment="0" pref="100" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtbtnpduadd" alignment="0" pref="30" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="txtbtnpduadd">
+                      <Properties>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="text" type="java.lang.String" value="Agregar"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="btnpdumod">
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="txtbtnpdumod" min="-2" pref="101" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtbtnpdumod" alignment="0" pref="30" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="txtbtnpdumod">
+                      <Properties>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="text" type="java.lang.String" value="Modificar"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtbtnpdumodMousePressed"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
               </SubComponents>
             </Container>
           </SubComponents>
