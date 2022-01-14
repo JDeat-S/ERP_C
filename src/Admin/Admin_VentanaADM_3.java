@@ -530,33 +530,43 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         P1Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P1Nom.setText("Acceso a ordenes de taller");
+        P1Nom.setEnabled(false);
 
         P2Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P2Nom.setText("Acceso Caja de ahorro");
+        P2Nom.setEnabled(false);
 
         P3Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P3Nom.setText("Acceso Listas de asistencia");
+        P3Nom.setEnabled(false);
 
         P4Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P4Nom.setText("Creacion de reportes de nomiana");
+        P4Nom.setEnabled(false);
 
         P5Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P5Nom.setText("Creacion de Nominas");
+        P5Nom.setEnabled(false);
 
         P6Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P6Nom.setText("Creacion de reportes");
+        P6Nom.setEnabled(false);
 
         P7Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P7Nom.setText("Acceso a Prestamos");
+        P7Nom.setEnabled(false);
 
         P8Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P8Nom.setText("Acceso a Nomina Semanal");
+        P8Nom.setEnabled(false);
 
         P9Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P9Nom.setText("Acceso a Prestamo Semanales");
+        P9Nom.setEnabled(false);
 
         P10Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P10Nom.setText("Modificacion de Nominas");
+        P10Nom.setEnabled(false);
 
         AAADN.setText("Acceso a Area de Nomina");
         AAADN.addActionListener(new java.awt.event.ActionListener() {
@@ -651,15 +661,19 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         P1RH.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P1RH.setText("Acesso a Alumnos de estadia");
+        P1RH.setEnabled(false);
 
         P2RH.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P2RH.setText("Acceso a Empelados de torteria");
+        P2RH.setEnabled(false);
 
         P3RH.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P3RH.setText("Acceso a Depositos.");
+        P3RH.setEnabled(false);
 
         P4RH.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
         P4RH.setText("Acceso a Semanal");
+        P4RH.setEnabled(false);
 
         AAADRH.setText("Acesso a Area de Recursos humanos");
         AAADRH.addActionListener(new java.awt.event.ActionListener() {
@@ -723,6 +737,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         txtbtnpduadd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtbtnpduadd.setText("Agregar");
+        txtbtnpduadd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         txtbtnpduadd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtbtnpduaddMousePressed(evt);
@@ -742,6 +757,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         txtbtnpdumod.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtbtnpdumod.setText("Modificar");
+        txtbtnpdumod.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         txtbtnpdumod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtbtnpdumodMousePressed(evt);
@@ -1064,7 +1080,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
 
-        Empleados_4 RH = new Empleados_4(this.usr, this.LP);
+        Empleados_4 RH = new Empleados_4(usr, LP);
         RH.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed
@@ -1121,6 +1137,20 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
             P2RH.setSelected(false);
             P3RH.setSelected(false);
             P4RH.setSelected(false);
+            P1Nom.setEnabled(true);
+            P2Nom.setEnabled(true);
+            P3Nom.setEnabled(true);
+            P4Nom.setEnabled(true);
+            P5Nom.setEnabled(true);
+            P6Nom.setEnabled(true);
+            P7Nom.setEnabled(true);
+            P8Nom.setEnabled(true);
+            P9Nom.setEnabled(true);
+            P10Nom.setEnabled(true);
+            P1RH.setEnabled(false);
+            P2RH.setEnabled(false);
+            P3RH.setEnabled(false);
+            P4RH.setEnabled(false);
         }
     }//GEN-LAST:event_AAADNActionPerformed
 
@@ -1333,6 +1363,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         NumP.setText(String.valueOf(Troles.getValueAt(fila, 0)));
         PDUMod.setText(String.valueOf(Troles.getValueAt(fila, 1)));
         Btnpduadd.setVisible(false);
+        txtbtnadd.setVisible(false);
         PDUadd.setText(String.valueOf(Troles.getValueAt(fila, 1)));
 
         try {
@@ -1361,7 +1392,20 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                         P2RH.setSelected(false);
                         P3RH.setSelected(false);
                         P4RH.setSelected(false);
-
+                        P1Nom.setEnabled(false);
+                        P2Nom.setEnabled(false);
+                        P3Nom.setEnabled(false);
+                        P4Nom.setEnabled(false);
+                        P5Nom.setEnabled(false);
+                        P6Nom.setEnabled(false);
+                        P7Nom.setEnabled(false);
+                        P8Nom.setEnabled(false);
+                        P9Nom.setEnabled(false);
+                        P10Nom.setEnabled(false);
+                        P1RH.setEnabled(false);
+                        P2RH.setEnabled(false);
+                        P3RH.setEnabled(false);
+                        P4RH.setEnabled(false);
                     }
                     case "1" -> {
                         AAADRH.setSelected(true);
@@ -1408,6 +1452,20 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                         P8Nom.setSelected(false);
                         P9Nom.setSelected(false);
                         P10Nom.setSelected(false);
+                        P1Nom.setEnabled(false);
+                        P2Nom.setEnabled(false);
+                        P3Nom.setEnabled(false);
+                        P4Nom.setEnabled(false);
+                        P5Nom.setEnabled(false);
+                        P6Nom.setEnabled(false);
+                        P7Nom.setEnabled(false);
+                        P8Nom.setEnabled(false);
+                        P9Nom.setEnabled(false);
+                        P10Nom.setEnabled(false);
+                        P1RH.setEnabled(true);
+                        P2RH.setEnabled(true);
+                        P3RH.setEnabled(true);
+                        P4RH.setEnabled(true);
 
                     }
 
@@ -1497,6 +1555,20 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                         P2RH.setSelected(false);
                         P3RH.setSelected(false);
                         P4RH.setSelected(false);
+                        P1Nom.setEnabled(true);
+                        P2Nom.setEnabled(true);
+                        P3Nom.setEnabled(true);
+                        P4Nom.setEnabled(true);
+                        P5Nom.setEnabled(true);
+                        P6Nom.setEnabled(true);
+                        P7Nom.setEnabled(true);
+                        P8Nom.setEnabled(true);
+                        P9Nom.setEnabled(true);
+                        P10Nom.setEnabled(true);
+                        P1RH.setEnabled(false);
+                        P2RH.setEnabled(false);
+                        P3RH.setEnabled(false);
+                        P4RH.setEnabled(false);
                     }
                     default -> {
                     }
@@ -1563,7 +1635,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 MDRoles();
 
             } catch (HeadlessException | SQLException error_add_usr) {
-                JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al modificar perfi de usuario: " + error_add_usr.getMessage());
             }
         }
         if (AAADN.isSelected() == true) {
@@ -1650,7 +1722,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 pst.setInt(14, Integer.parseInt(NumP.getText()));
 
                 pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Perfil de usuario registrado");
+                JOptionPane.showMessageDialog(null, "Perfil de usuario modificado");
 
                 //limpiar
                 NumP.setText("0");
@@ -1659,7 +1731,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 MDRoles();
 
             } catch (HeadlessException | SQLException error_add_usr) {
-                JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al modificar perfi de usuario: " + error_add_usr.getMessage());
             }
         }
         if (AAADRH.isSelected() == true) {
@@ -1721,20 +1793,51 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 pst.setInt(14, Integer.parseInt(NumP.getText()));
 
                 pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Perfil de usuario registrado");
+                JOptionPane.showMessageDialog(null, "Perfil de usuario modificado");
 
                 //limpiar
                 NumP.setText("0");
                 PDUadd.setText("");
 
                 MDRoles();
+                MDusers();
 
             } catch (HeadlessException | SQLException error_add_usr) {
-                JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
+                JOptionPane.showMessageDialog(null, "Error al modificar perfi de usuario: " + error_add_usr.getMessage());
             }
+            P1Nom.setSelected(false);
+            P2Nom.setSelected(false);
+            P3Nom.setSelected(false);
+            P4Nom.setSelected(false);
+            P5Nom.setSelected(false);
+            P6Nom.setSelected(false);
+            P7Nom.setSelected(false);
+            P8Nom.setSelected(false);
+            P9Nom.setSelected(false);
+            P10Nom.setSelected(false);
+            P1RH.setSelected(false);
+            P2RH.setSelected(false);
+            P3RH.setSelected(false);
+            P4RH.setSelected(false);
+            P1Nom.setEnabled(true);
+            P2Nom.setEnabled(true);
+            P3Nom.setEnabled(true);
+            P4Nom.setEnabled(true);
+            P5Nom.setEnabled(true);
+            P6Nom.setEnabled(true);
+            P7Nom.setEnabled(true);
+            P8Nom.setEnabled(true);
+            P9Nom.setEnabled(true);
+            P10Nom.setEnabled(true);
+            P1RH.setEnabled(true);
+            P2RH.setEnabled(true);
+            P3RH.setEnabled(true);
+            P4RH.setEnabled(true);
+            VDA.clearSelection();
         }
 
         Btnpduadd.setVisible(true);
+        txtbtnadd.setVisible(true);
         PDUMod.setText("N/A");
 
     }//GEN-LAST:event_txtbtnpdumodMousePressed
@@ -1755,6 +1858,21 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
             P2RH.setSelected(false);
             P3RH.setSelected(false);
             P4RH.setSelected(false);
+            P1Nom.setEnabled(false);
+            P2Nom.setEnabled(false);
+            P3Nom.setEnabled(false);
+            P4Nom.setEnabled(false);
+            P5Nom.setEnabled(false);
+            P6Nom.setEnabled(false);
+            P7Nom.setEnabled(false);
+            P8Nom.setEnabled(false);
+            P9Nom.setEnabled(false);
+            P10Nom.setEnabled(false);
+            P1RH.setEnabled(false);
+            P2RH.setEnabled(false);
+            P3RH.setEnabled(false);
+            P4RH.setEnabled(false);
+
         }
     }//GEN-LAST:event_ADMActionPerformed
 
@@ -1774,6 +1892,20 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
             P2RH.setSelected(true);
             P3RH.setSelected(true);
             P4RH.setSelected(true);
+            P1Nom.setEnabled(false);
+            P2Nom.setEnabled(false);
+            P3Nom.setEnabled(false);
+            P4Nom.setEnabled(false);
+            P5Nom.setEnabled(false);
+            P6Nom.setEnabled(false);
+            P7Nom.setEnabled(false);
+            P8Nom.setEnabled(false);
+            P9Nom.setEnabled(false);
+            P10Nom.setEnabled(false);
+            P1RH.setEnabled(true);
+            P2RH.setEnabled(true);
+            P3RH.setEnabled(true);
+            P4RH.setEnabled(true);
         }
     }//GEN-LAST:event_AAADRHActionPerformed
 
@@ -1970,6 +2102,35 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
             } catch (HeadlessException | SQLException error_add_usr) {
                 JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
             }
+            P1Nom.setSelected(false);
+            P2Nom.setSelected(false);
+            P3Nom.setSelected(false);
+            P4Nom.setSelected(false);
+            P5Nom.setSelected(false);
+            P6Nom.setSelected(false);
+            P7Nom.setSelected(false);
+            P8Nom.setSelected(false);
+            P9Nom.setSelected(false);
+            P10Nom.setSelected(false);
+            P1RH.setSelected(false);
+            P2RH.setSelected(false);
+            P3RH.setSelected(false);
+            P4RH.setSelected(false);
+            P1Nom.setEnabled(true);
+            P2Nom.setEnabled(true);
+            P3Nom.setEnabled(true);
+            P4Nom.setEnabled(true);
+            P5Nom.setEnabled(true);
+            P6Nom.setEnabled(true);
+            P7Nom.setEnabled(true);
+            P8Nom.setEnabled(true);
+            P9Nom.setEnabled(true);
+            P10Nom.setEnabled(true);
+            P1RH.setEnabled(true);
+            P2RH.setEnabled(true);
+            P3RH.setEnabled(true);
+            P4RH.setEnabled(true);
+            VDA.clearSelection();
         }
 
     }//GEN-LAST:event_txtbtnpduaddMousePressed

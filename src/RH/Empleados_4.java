@@ -38,13 +38,13 @@ import java.time.format.DateTimeParseException;
  * @author JDeat
  */
 public final class Empleados_4 extends javax.swing.JFrame {
-    
+
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     ColorRH colores = new ColorRH();
     Logica_usuarios usr;
     Logica_permisos LP;
-    
+
     public Empleados_4() {
         initComponents();
         data.setDefaultRenderer(data.getColumnClass(0), colores);
@@ -92,7 +92,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         MDEm();
         MDIMSS();
     }
-    
+
     public Empleados_4(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
@@ -143,9 +143,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
         MDIMSS();
         setTitle("Interface de Recursos Humanos # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
-        
+
         if (LP.getVDA() == 0) {
-            
+
         } else if (LP.getVDA() == 1) {
             Menuadm.setVisible(false);
             if (LP.getP1() == 0) {
@@ -160,12 +160,26 @@ public final class Empleados_4 extends javax.swing.JFrame {
             if (LP.getP4() == 0) {
                 Semanales.setVisible(false);
             }
+        } else if (LP.getVDA() == 2) {
+            Menuadm.setVisible(false);
+            if (LP.getP1() == 0) {
+                Alumnos.setVisible(false);
+            }
+            if (LP.getP2() == 0) {
+                EmpleadosT.setVisible(false);
+            }
+            if (LP.getP3() == 0) {
+                Depositos.setVisible(false);
+            }
+            if (LP.getP4() == 0) {
+                Semanales.setVisible(false);
+            }
         }
-        
+
     }
-    
+
     @SuppressWarnings("unchecked")
-    
+
     private void limpimms() {
         expimss.setText("");
         nssimss.setText("");
@@ -187,7 +201,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         FDREimss.setText("");
         FBREimss.setText("");
     }
-    
+
     private void CleanGen() {
         NRP.setText("");
         NExp.setText("0");
@@ -226,9 +240,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
         UDL.setText("");
         FFB.setText("");
     }
-    
+
     public void ModEm() {
-        
+
         String SQL = "UPDATE `rh.empleados` SET `# Exp` = ?, `Entra a IMSS` = ?,"
                 + " `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `# Celular` = ?,"
                 + " `# Casa` = ?, `# Recados` = ?, `Forma de pago` = ?, `Sueldo` = ?, "
@@ -240,17 +254,17 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 + "`Colonia` = ?, `DLG o Mun` = ?, `C.P` = ?, `Documentos originales` = ?,"
                 + " `Documentos faltantes` = ?, `Documentos entregados` = ?, `# Recepcion` = ?"
                 + ", `Observaciones` = ? WHERE `rh.empleados`.`# Exp` = ?";
-        
+
         String EI = "";
         if (EIMSS.isSelected() == true) {
             EI = "Si";
         } else if (EIMSS.isSelected() == false) {
             EI = "No";
-            
+
         }
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            
+
             pst.setInt(1, Integer.parseInt(NExp.getText()));
             pst.setString(2, EI);
             pst.setString(3, APgen.getText());
@@ -290,15 +304,15 @@ public final class Empleados_4 extends javax.swing.JFrame {
             pst.setString(37, NRP.getText());
             pst.setString(38, Obs.getText());
             pst.setInt(39, Integer.parseInt(NExp.getText()));
-            
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Empleado Modificado");
-            
+
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error en modificar empleado: " + e.getMessage());
         }
     }
-    
+
     public void ModIMSS() {
         String Item = gen.getSelectedItem().toString();
         String Item3 = puesto.getSelectedItem().toString();
@@ -308,7 +322,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 + "`rfc_imss` = ?, `curp_imss` = ?,`Puesto` = ?, `Salario` = ?, `Status_imss` = ?, `fecha_baja` = ?,"
                 + "`Fecha de reingreso`  = ?, `fecha baja (re)` = ?, `observaciones` = ?"
                 + " WHERE (`idimss` = ?);";
-        
+
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
             pst.setInt(1, Integer.parseInt(expimss.getText()));
@@ -330,19 +344,19 @@ public final class Empleados_4 extends javax.swing.JFrame {
             pst.setString(17, FBREimss.getText());
             pst.setString(18, obsimss.getText());
             pst.setInt(19, Integer.parseInt(expimss.getText()));
-            
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "IMSS Modificado");
-            
+
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error modificar IMSS: " + e.getMessage());
         }
     }
-    
+
     public void DelGen() {
-        
+
         try {
-            
+
             int filaseleccionada = data.getSelectedRow();
             String sql = "delete from `rh.empleados` where ´# Exp´= " + data.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
@@ -351,17 +365,17 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Empleado eliminado.");
             }
         } catch (HeadlessException | SQLException e) {
-            
+
             JOptionPane.showMessageDialog(null, "Error al eliminar empleado: " + e.getMessage());
-            
+
         }
-        
+
     }
-    
+
     public void DelIMSS() {
-        
+
         try {
-            
+
             int filaseleccionada = Timss.getSelectedRow();
             String sql = "delete from imss where idimss=" + Timss.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
@@ -370,22 +384,22 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "IMSS eliminado.");
             }
         } catch (HeadlessException | SQLException e) {
-            
+
             JOptionPane.showMessageDialog(null, "Error al eliminar IMSS." + e.getMessage());
-            
+
         }
-        
+
     }
-    
+
     public void FStatusimss() {
         //Buscar servicio
         String Statusimss = StatusimssF.getSelectedItem().toString();
         String where = "select * from imss";
-        
+
         if (!"".equals(Statusimss)) {
             where = " select * from imss WHERE `Status_imss` LIKE '%" + Statusimss + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -398,13 +412,13 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Timss.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Exp");//1
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -428,13 +442,13 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 /*GEN*/ 30, /*FDI*/ 50, /*ZONA*/ 50, /*NSS*/ 65, /*RFC*/ 60,
                 /*CURP*/ 60, /*puesto*/ 60, /*salario*/ 50, /*Status*/ 65, /*FDB*/ 70,
                 /*FRE*/ 70, /*FBRE*/ 70, /*OBS*/ 2000};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Timss.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -444,20 +458,20 @@ public final class Empleados_4 extends javax.swing.JFrame {
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos " + e.getMessage());
-            
+
         }
-        
+
     }
-    
+
     public void FPuestoimss() {
         //Buscar servicio
         String puesto = PuestoimssF.getSelectedItem().toString();
         String where = "select * from imss";
-        
+
         if (!"".equals(puesto)) {
             where = " select * from imss WHERE `Puesto` LIKE '%" + puesto + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -470,13 +484,13 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Timss.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Exp");//1
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -500,13 +514,13 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 /*GEN*/ 30, /*FDI*/ 50, /*ZONA*/ 50, /*NSS*/ 65, /*RFC*/ 60,
                 /*CURP*/ 60, /*puesto*/ 60, /*salario*/ 50, /*Status*/ 65, /*FDB*/ 70,
                 /*FRE*/ 70, /*FBRE*/ 70, /*OBS*/ 2000};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Timss.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -516,20 +530,20 @@ public final class Empleados_4 extends javax.swing.JFrame {
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos " + e.getMessage());
-            
+
         }
-        
+
     }
-    
+
     public void FiltroZimss() {
         //Buscar servicio
         String Zonaimms = FZimss.getSelectedItem().toString();
         String where = "select * from imss";
-        
+
         if (!"".equals(Zonaimms)) {
             where = " select * from imss WHERE `Zona_Imss` LIKE '%" + Zonaimms + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -542,13 +556,13 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Timss.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Exp");//1
             modelo.addColumn("# Exp 2021");
             modelo.addColumn("Apellido P");//3
@@ -573,13 +587,13 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 /*GEN*/ 30, /*FDI*/ 50, /*ZONA*/ 50, /*NSS*/ 65, /*RFC*/ 60,
                 /*CURP*/ 60, /*puesto*/ 60, /*salario*/ 50, /*Status*/ 65, /*FDB*/ 70,
                 /*FRE*/ 70, /*FBRE*/ 70, /*OBS*/ 2000};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Timss.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -589,11 +603,11 @@ public final class Empleados_4 extends javax.swing.JFrame {
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos " + e.getMessage());
-            
+
         }
-        
+
     }
-    
+
     public void MDIMSS() {
         //Buscar servicio
         String NIMSS = namesimss.getText();
@@ -606,7 +620,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         String curp = curpimssF.getText();
         String fb = FBimssF.getText();
         String where = "select * from imss";
-        
+
         if (!"".equals(NIMSS)) {
             where = " select * from imss WHERE `Nombre(s)` LIKE '%" + NIMSS + "%'";
         } else if (!"".equals(Exp)) {
@@ -626,7 +640,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         } else if (!"".equals(fb)) {
             where = "select * from imss Where `fecha_baja` LIKE '%" + fb + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -639,13 +653,13 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Timss.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Exp");//1
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -670,13 +684,13 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 /*GEN*/ 30, /*FDI*/ 50, /*ZONA*/ 50, /*serv*/ 100, /*NSS*/ 65, /*RFC*/ 60,
                 /*CURP*/ 60, /*puesto*/ 60, /*salario*/ 50, /*Status*/ 65, /*FDB*/ 70,
                 /*FRE*/ 70, /*FBRE*/ 70, /*OBS*/ 2000};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Timss.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -686,21 +700,21 @@ public final class Empleados_4 extends javax.swing.JFrame {
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos " + e.getMessage());
-            
+
         }
-        
+
     }
-    
+
     public void FstatusGen() {
         //filtro Zonas
 
         String where = "select * from `rh.empleados`";
         String FiltroStatusGen = FiltroStatus.getSelectedItem().toString();
-        
+
         if (!"".equals(FiltroStatusGen)) {
             where = "select * from `rh.empleados` Where `Status` LIKE '%" + FiltroStatusGen + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -708,19 +722,19 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-                
+
             };
 //Nombre de la tabla
             data.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Exp");//1
             modelo.addColumn("Entra IMSS");
             modelo.addColumn("Apellido P");
@@ -772,37 +786,37 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 /*CTA*/ 60, /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
                 /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CZ*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
                 /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 data.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
                     filas[i] = rs.getObject(i + 1);
                 }
                 modelo.addRow(filas);
-                
+
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
         }
-        
+
     }
-    
+
     public void FZGen() {
         //filtro Zonas
 
         String where = "select * from `rh.empleados`";
         String FiltroZGen = FiltroZGe.getSelectedItem().toString();
-        
+
         if (!"".equals(FiltroZGen)) {
             where = "select * from `rh.empleados` where `Zona` LIKE '%" + FiltroZGen + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -810,19 +824,19 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-                
+
             };
 //Nombre de la tabla
             data.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Exp");//1
             modelo.addColumn("Entra IMSS");
             modelo.addColumn("Apellido P");
@@ -873,37 +887,37 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 /*CTA*/ 60, /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
                 /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CZ*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
                 /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 data.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
                     filas[i] = rs.getObject(i + 1);
                 }
                 modelo.addRow(filas);
-                
+
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
         }
-        
+
     }
-    
+
     public void FServGen() {
         //filtro servicio
 
         String where = "select * from `rh.empleados`";
         String FiltroSGen = FiltroServGen.getSelectedItem().toString();
-        
+
         if (!"".equals(FiltroSGen)) {
             where = "select * from `rh.empleados` Where `Servicio` LIKE '%" + FiltroSGen + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -911,19 +925,19 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-                
+
             };
 //Nombre de la tabla
             data.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(where);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Exp");//1
             modelo.addColumn("Entra IMSS");
             modelo.addColumn("Apellido P");
@@ -974,27 +988,27 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 /*CTA*/ 60, /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
                 /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CZ*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
                 /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 data.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
                     filas[i] = rs.getObject(i + 1);
                 }
                 modelo.addRow(filas);
-                
+
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla Nomina: " + e.getMessage());
         }
-        
+
     }
-    
+
     public void MDEm() {
         //Buscar empleado
         String FiltroOBS = Filobs.getText();
@@ -1005,7 +1019,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         String FiltroFDIGen = FiltroFDI.getText();
         String FiltrocurpGen = FiltroCurpGen.getText();
         String FiltroNSSGe = FiltroNSSGen.getText();
-        
+
         if (!"".equals(FiltroNGe)) {
             SQL = "Select * from `rh.empleados` where `Nombre(s)` LIKE '%" + FiltroNGe + "%'";
         } else if (!"".equals(FiltroFDIGen)) {
@@ -1021,7 +1035,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroOBS)) {
             SQL = "select * from `rh.empleados` where `Observaciones` LIKE '%" + FiltroOBS + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1029,19 +1043,19 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-                
+
             };
 //Nombre de la tabla
             data.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Exp");//1
             modelo.addColumn("Entra IMSS");
             modelo.addColumn("Apellido P");
@@ -1089,27 +1103,27 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 /*nss*/ 65, /*curp*/ 70, /*correo*/ 75,
                 /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
                 /*NRP*/ 60, /*OBS*/ 2000};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 data.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
                     filas[i] = rs.getObject(i + 1);
                 }
                 modelo.addRow(filas);
-                
+
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla empleados: " + e.getMessage());
         }
-        
+
     }
-    
+
     public void AgregarI() {
         String Item = gen.getSelectedItem().toString();
         String Item3 = puesto.getSelectedItem().toString();
@@ -1123,7 +1137,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            
+
             pst.setInt(1, Integer.parseInt(expimss.getText()));
             pst.setString(2, APimss.getText());
             pst.setString(3, AMimss.getText());
@@ -1142,17 +1156,17 @@ public final class Empleados_4 extends javax.swing.JFrame {
             pst.setString(16, FDREimss.getText());
             pst.setString(17, FBREimss.getText());
             pst.setString(18, obsimss.getText());
-            
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "IMSS agregado.");
-            
+
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar imss: " + e.getMessage());
         }
     }
-    
+
     public void AgregarE() {
-        
+
         String SQL = "INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`,"
                 + " `Apellido P`, `Apellido M`, `Nombre(s)`, `# Celular`, `# Casa`,"
                 + " `# Recados`, `Forma de pago`, `Sueldo`, `Bono`, `Banco`, `Cuenta bancaria`,"
@@ -1168,11 +1182,11 @@ public final class Empleados_4 extends javax.swing.JFrame {
             EI = "Si";
         } else if (EIMSS.isSelected() == false) {
             EI = "No";
-            
+
         }
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            
+
             pst.setInt(1, Integer.parseInt(NExp.getText()));
             pst.setString(2, EI);
             pst.setString(3, APgen.getText());
@@ -1211,10 +1225,10 @@ public final class Empleados_4 extends javax.swing.JFrame {
             pst.setString(36, DE.getText());
             pst.setString(37, NRP.getText());
             pst.setString(38, Obs.getText());
-            
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Empleado agregado.");
-            
+
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al registrar empleado: " + e.getMessage());
         }
@@ -2809,30 +2823,30 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addimssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addimssActionPerformed
-        
+
         AgregarI();
         MDIMSS();
         limpimms();
     }//GEN-LAST:event_addimssActionPerformed
 
     private void modIMSSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modIMSSActionPerformed
-        
+
         ModIMSS();
         MDIMSS();
         limpimms();
     }//GEN-LAST:event_modIMSSActionPerformed
 
     private void elimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimActionPerformed
-        
+
         DelGen();
         MDEm();
         CleanGen();
     }//GEN-LAST:event_elimActionPerformed
 
     private void dataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dataMouseClicked
-        
+
         DefaultTableModel model = (DefaultTableModel) data.getModel();
-        
+
         try {
             int fila = data.getSelectedRow();
             int id = Integer.parseInt(data.getValueAt(fila, 0).toString());
@@ -2857,10 +2871,10 @@ public final class Empleados_4 extends javax.swing.JFrame {
                     }
                 }
             }
-            
+
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
-            
+
         }
         int fila = data.getSelectedRow();
         NExp.setText(String.valueOf(data.getValueAt(fila, 0)));
@@ -2878,7 +2892,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 fdp.setSelectedIndex(i);
             }
         }
-        
+
         Sueldo.setText(String.valueOf(data.getValueAt(fila, 9)));
         Bono.setText(String.valueOf(data.getValueAt(fila, 10)));
 
@@ -2916,7 +2930,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 cfin.setSelectedIndex(i);
             }
         }
-        
+
         ADA.setText(String.valueOf(data.getValueAt(fila, 22)));
         RFC.setText(String.valueOf(data.getValueAt(fila, 23)));
         NSS.setText(String.valueOf(data.getValueAt(fila, 24)));
@@ -2940,12 +2954,12 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_dataMouseClicked
 
     private void FiltroNGKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNGKeyReleased
-        
+
         MDEm();
     }//GEN-LAST:event_FiltroNGKeyReleased
 
     private void Cs3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs3ActionPerformed
-        
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Inicio_1 regr = new Inicio_1();
@@ -2955,7 +2969,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Cs3ActionPerformed
 
     private void Cs2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs2ActionPerformed
-        
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Inicio_1 regr = new Inicio_1();
@@ -2965,51 +2979,51 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Cs2ActionPerformed
 
     private void FiltroFDIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroFDIKeyReleased
-        
+
         MDEm();
     }//GEN-LAST:event_FiltroFDIKeyReleased
 
     private void FiltroZGeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroZGeItemStateChanged
-        
+
         FZGen();
     }//GEN-LAST:event_FiltroZGeItemStateChanged
 
     private void FiltroServGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServGenItemStateChanged
-        
+
         FServGen();
     }//GEN-LAST:event_FiltroServGenItemStateChanged
 
     private void FiltroStatusItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroStatusItemStateChanged
-        
+
         FstatusGen();
     }//GEN-LAST:event_FiltroStatusItemStateChanged
 
     private void FiltroCurpGenKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroCurpGenKeyReleased
-        
+
         MDEm();
     }//GEN-LAST:event_FiltroCurpGenKeyReleased
 
     private void FiltroNSSGenKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNSSGenKeyReleased
-        
+
         MDEm();
     }//GEN-LAST:event_FiltroNSSGenKeyReleased
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
-        
+
         Admin_Estadias_4 regr = new Admin_Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
-        
+
         Admin_Tortas_4 regr = new Admin_Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed
 
     private void FiltroSZGenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZGenItemStateChanged
-        
+
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             FiltrosZonas zon = (FiltrosZonas) FiltroSZGen.getSelectedItem();
             FiltroServ serv = new FiltroServ();
@@ -3020,7 +3034,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroSZGenItemStateChanged
 
     private void FiltrosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosItemStateChanged
-        
+
         String Filtrosgen = (String) Filtros.getSelectedItem();
         if (Filtrosgen.equals("Selecciona Filtro")) {
             Filtroam.setVisible(false);
@@ -3132,7 +3146,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             FiltroServGen.setSelectedIndex(0);
             FiltroZGe.setSelectedIndex(0);
             MDEm();
-            
+
         }
         if (Filtrosgen.equals("Zona")) {
             Filtroam.setVisible(false);
@@ -3161,7 +3175,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             FiltroServGen.setSelectedIndex(0);
             FiltroZGe.setSelectedIndex(0);
             MDEm();
-            
+
         }
         if (Filtrosgen.equals("Servicio")) {
             Filtroam.setVisible(false);
@@ -3219,7 +3233,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             FiltroServGen.setSelectedIndex(0);
             FiltroZGe.setSelectedIndex(0);
             MDEm();
-            
+
         }
         if (Filtrosgen.equals("CURP")) {
             Filtroam.setVisible(false);
@@ -3248,7 +3262,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             FiltroServGen.setSelectedIndex(0);
             FiltroZGe.setSelectedIndex(0);
             MDEm();
-            
+
         }
         if (Filtrosgen.equals("NSS")) {
             Filtroam.setVisible(false);
@@ -3277,7 +3291,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             FiltroServGen.setSelectedIndex(0);
             FiltroZGe.setSelectedIndex(0);
             MDEm();
-            
+
         }
         if (Filtrosgen.equals("Estatus")) {
             Filtroam.setVisible(false);
@@ -3306,7 +3320,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             FiltroServGen.setSelectedIndex(0);
             FiltroZGe.setSelectedIndex(0);
             MDEm();
-            
+
         }
         if (Filtrosgen.equals("Observaciones")) {
             Filtroam.setVisible(false);
@@ -3340,31 +3354,31 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosItemStateChanged
 
     private void FiltroapKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroapKeyReleased
-        
+
         MDEm();
     }//GEN-LAST:event_FiltroapKeyReleased
 
     private void FiltroamKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroamKeyReleased
-        
+
         MDEm();
     }//GEN-LAST:event_FiltroamKeyReleased
 
     private void NominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NominaActionPerformed
-        
+
         NominaQ_5 regr = new NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NominaActionPerformed
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        
+
         Admin_VentanaADM_3 regr = new Admin_VentanaADM_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed
 
     private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        
+
         AltasZyS_3 regr = new AltasZyS_3();
         regr.setVisible(true);
         this.dispose();
@@ -3415,7 +3429,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_expFimssKeyReleased
 
     private void FimssItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FimssItemStateChanged
-        
+
         String dt = (String) Fimss.getSelectedItem();
         if (dt.equals("Selecciona filtro")) {
             namesimss.setText("");
@@ -3444,7 +3458,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             StatusimssF.setVisible(false);
             Nfilimss.setVisible(false);
             MDIMSS();
-            
+
         }
         if (dt.equals("# Exp")) {
             namesimss.setText("");
@@ -3474,7 +3488,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Nfilimss.setText("Buscar por # de expediente:");
             Nfilimss.setVisible(true);
             MDIMSS();
-            
+
         }
         if (dt.equals("Apellido P")) {
             namesimss.setText("");
@@ -3533,7 +3547,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Nfilimss.setText("Buscar por Apellido Materno: ");
             Nfilimss.setVisible(true);
             MDIMSS();
-            
+
         }
         if (dt.equals("Nombre(s)")) {
             namesimss.setText("");
@@ -3563,7 +3577,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Nfilimss.setText("Buscar por Nombre(s): ");
             Nfilimss.setVisible(true);
             MDIMSS();
-            
+
         }
         if (dt.equals("Fecha de incorporacion")) {
             namesimss.setText("");
@@ -3622,7 +3636,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Nfilimss.setText("Buscar por Zona: ");
             Nfilimss.setVisible(true);
             MDIMSS();
-            
+
         }
         if (dt.equals("NSS")) {
             namesimss.setText("");
@@ -3681,7 +3695,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Nfilimss.setText("Buscar por RFC: ");
             Nfilimss.setVisible(true);
             MDIMSS();
-            
+
         }
         if (dt.equals("CURP")) {
             namesimss.setText("");
@@ -3711,7 +3725,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Nfilimss.setText("Buscar por CURP: ");
             Nfilimss.setVisible(true);
             MDIMSS();
-            
+
         }
         if (dt.equals("Puesto")) {
             namesimss.setText("");
@@ -3741,7 +3755,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Nfilimss.setText("Buscar por Puesto: ");
             Nfilimss.setVisible(true);
             MDIMSS();
-            
+
         }
         if (dt.equals("Status")) {
             namesimss.setText("");
@@ -3771,7 +3785,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Nfilimss.setText("Buscar por Status: ");
             Nfilimss.setVisible(true);
             MDIMSS();
-            
+
         }
         if (dt.equals("Fecha de baja")) {
             namesimss.setText("");
@@ -3801,12 +3815,12 @@ public final class Empleados_4 extends javax.swing.JFrame {
             Nfilimss.setText("Buscar por Fecha baja: ");
             Nfilimss.setVisible(true);
             MDIMSS();
-            
+
         }
     }//GEN-LAST:event_FimssItemStateChanged
 
     private void Cs4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cs4ActionPerformed
-        
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Inicio_1 regr = new Inicio_1();
@@ -3816,16 +3830,16 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Cs4ActionPerformed
 
     private void namesimssKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_namesimssKeyReleased
-        
+
         MDIMSS();
     }//GEN-LAST:event_namesimssKeyReleased
 
     private void TimssMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TimssMouseClicked
-        
+
         DefaultTableModel model = (DefaultTableModel) Timss.getModel();
-        
+
         try {
-            
+
             int fila = Timss.getSelectedRow();
 
             //combo1
@@ -3850,7 +3864,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
                     Status1.setSelectedIndex(i);
                 }
             }
-            
+
             int id = Integer.parseInt(Timss.getValueAt(fila, 0).toString());
             PreparedStatement ps;
             ResultSet rs;
@@ -3878,12 +3892,12 @@ public final class Empleados_4 extends javax.swing.JFrame {
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
-            
+
         }
     }//GEN-LAST:event_TimssMouseClicked
 
     private void deleteimssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteimssActionPerformed
-        
+
         DelIMSS();
         MDIMSS();
         limpimms();
@@ -3930,7 +3944,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_botonWeb1MouseExited
 
     private void CsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CsActionPerformed
-        
+
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
         if (i == 0) {
             Inicio_1 regr = new Inicio_1();
@@ -3940,15 +3954,15 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_CsActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        
+
         AgregarE();
         CleanGen();
-        
+
         MDEm();
     }//GEN-LAST:event_addActionPerformed
 
     private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
-        
+
         int i = JOptionPane.showConfirmDialog(this, "Recuerda que debes volver a seleccionar la zona y servicio. ¿Seguro que quieres realizar la modificacion?");
         if (i == 0) {
             ModEm();
@@ -3962,14 +3976,14 @@ public final class Empleados_4 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Llena el campo fecha de ingreso con el siguiente formato de fecha: dd/MM/yyyy (01/11/2021)");
         } else {
             try {
-                
+
                 DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                 LocalDate fechaNac = LocalDate.parse(FI.getText(), fmt);
                 LocalDate ahora = LocalDate.now();
-                
+
                 Period periodo = Period.between(fechaNac, ahora);
                 ADA.setText("" + periodo.getYears() + " Años, " + periodo.getMonths() + " Meses, " + periodo.getDays() + " Dias");
-                
+
             } catch (DateTimeParseException e) {
                 JOptionPane.showMessageDialog(null, "Llena el campo fecha de ingreso con el siguiente formato de fecha: dd/MM/yyyy (01/11/2021)");
             }
@@ -3981,7 +3995,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_CPActionPerformed
 
     private void zonaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_zonaItemStateChanged
-        
+
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             Zonas zon = (Zonas) zona.getSelectedItem();
             Servicios serv = new Servicios();

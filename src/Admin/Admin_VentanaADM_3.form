@@ -787,6 +787,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Acceso a ordenes de taller"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="P2Nom">
@@ -795,6 +796,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Acceso Caja de ahorro"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="P3Nom">
@@ -803,6 +805,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Acceso Listas de asistencia"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="P4Nom">
@@ -811,6 +814,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Creacion de reportes de nomiana"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="P5Nom">
@@ -819,6 +823,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Creacion de Nominas"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="P6Nom">
@@ -827,6 +832,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Creacion de reportes"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="P7Nom">
@@ -835,6 +841,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Acceso a Prestamos"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="P8Nom">
@@ -843,6 +850,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Acceso a Nomina Semanal"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="P9Nom">
@@ -851,6 +859,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Acceso a Prestamo Semanales"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="P10Nom">
@@ -859,6 +868,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Modificacion de Nominas"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="AAADN">
@@ -969,6 +979,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Acesso a Alumnos de estadia"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="P2RH">
@@ -977,6 +988,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Acceso a Empelados de torteria"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="P3RH">
@@ -985,6 +997,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Acceso a Depositos."/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="P4RH">
@@ -993,6 +1006,7 @@
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Acceso a Semanal"/>
+                        <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="AAADRH">
@@ -1050,6 +1064,9 @@
                       <Properties>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="Agregar"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Hand Cursor"/>
+                        </Property>
                       </Properties>
                       <Events>
                         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtbtnpduaddMousePressed"/>
@@ -1079,6 +1096,9 @@
                       <Properties>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="Modificar"/>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Hand Cursor"/>
+                        </Property>
                       </Properties>
                       <Events>
                         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtbtnpdumodMousePressed"/>
