@@ -718,8 +718,16 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         jLabel8.setText("# perfil:");
 
+        NumP.setEditable(false);
+        NumP.setText("0");
+
         txtbtnpduadd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtbtnpduadd.setText("Agregar");
+        txtbtnpduadd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtbtnpduaddMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout BtnpduaddLayout = new javax.swing.GroupLayout(Btnpduadd);
         Btnpduadd.setLayout(BtnpduaddLayout);
@@ -1176,7 +1184,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         String SQL = "INSERT INTO `admin.usuarios` (`id_user`, `Apellido P`,"
                 + " `Apellido M`, `Nombre(s)`, `Tipo de usuario`, `Usuario`, `Contraseña`,"
-                + " `Ultimo inicio de sesion`, `Activo`, `Ventana de acceso`) VALUES (?, ?, ?, ?, ?, ?, ?, '', ?, ?)";
+                + " `Ultimo inicio de sesion`, `Activo`, `Ventana de acceso`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -1331,7 +1339,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         PDUMod.setText(String.valueOf(Troles.getValueAt(fila, 1)));
         Btnpduadd.setVisible(false);
         try {
-            int id = Integer.parseInt(TUser.getValueAt(fila, 0).toString());
+            int id = Integer.parseInt(Troles.getValueAt(fila, 0).toString());
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select * from `admin.tou` where `id_TDO` = ?");
@@ -1549,6 +1557,203 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AAADRHActionPerformed
 
+    private void txtbtnpduaddMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnpduaddMousePressed
+        int P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, VDAPDU;
+        if (ADM.isSelected() == true) {
+            VDAPDU = 0;
+            P1 = 0;
+            P2 = 0;
+            P3 = 0;
+            P4 = 0;
+            P5 = 0;
+            P6 = 0;
+            P7 = 0;
+            P8 = 0;
+            P9 = 0;
+            P10 = 0;
+            String SQL = "INSERT INTO `admin.tou` (`id_TDO`, `Usuario`,"
+                    + " `Ventana de acceso`, `P1`, `P2`, `P3`, `P4`, `P5`, `P6`, `P7`,"
+                    + " `P8`, `P9`, `P10`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setInt(1, Integer.parseInt(NumP.getText()));
+                pst.setString(2, PDUadd.getText());
+                pst.setInt(3, VDAPDU);
+                pst.setInt(4, P1);
+                pst.setInt(5, P2);
+                pst.setInt(6, P3);
+                pst.setInt(7, P4);
+                pst.setInt(8, P5);
+                pst.setInt(9, P6);
+                pst.setInt(10, P7);
+                pst.setInt(11, P8);
+                pst.setInt(12, P9);
+                pst.setInt(13, P10);
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Perfil de usuario registrado");
+
+                //limpiar
+                NumP.setText("0");
+                PDUadd.setText("");
+
+                MDRoles();
+
+            } catch (HeadlessException | SQLException error_add_usr) {
+                JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
+            }
+        }
+        if (AAADN.isSelected() == true) {
+            VDAPDU = 2;
+
+            if (P1Nom.isSelected() == true) {
+                P1 = 1;
+            } else {
+                P1 = 0;
+            }
+            if (P2Nom.isSelected() == true) {
+                P2 = 1;
+            } else {
+                P2 = 0;
+            }
+            if (P3Nom.isSelected() == true) {
+                P3 = 1;
+            } else {
+                P3 = 0;
+            }
+            if (P4Nom.isSelected() == true) {
+                P4 = 1;
+            } else {
+                P4 = 0;
+            }
+            if (P5Nom.isSelected() == true) {
+                P5 = 1;
+            } else {
+                P5 = 0;
+            }
+            if (P6Nom.isSelected() == true) {
+                P6 = 1;
+            } else {
+                P6 = 0;
+            }
+            if (P7Nom.isSelected() == true) {
+                P7 = 1;
+            } else {
+                P7 = 0;
+            }
+            if (P8Nom.isSelected() == true) {
+                P8 = 1;
+            } else {
+                P8 = 0;
+            }
+            if (P9Nom.isSelected() == true) {
+                P9 = 1;
+            } else {
+                P9 = 0;
+            }
+            if (P10Nom.isSelected() == true) {
+                P10 = 1;
+            } else {
+                P10 = 0;
+            }
+            String SQL = "INSERT INTO `admin.tou` (`id_TDO`, `Usuario`,"
+                    + " `Ventana de acceso`, `P1`, `P2`, `P3`, `P4`, `P5`, `P6`, `P7`,"
+                    + " `P8`, `P9`, `P10`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setInt(1, Integer.parseInt(NumP.getText()));
+                pst.setString(2, PDUadd.getText());
+                pst.setInt(3, VDAPDU);
+                pst.setInt(4, P1);
+                pst.setInt(5, P2);
+                pst.setInt(6, P3);
+                pst.setInt(7, P4);
+                pst.setInt(8, P5);
+                pst.setInt(9, P6);
+                pst.setInt(10, P7);
+                pst.setInt(11, P8);
+                pst.setInt(12, P9);
+                pst.setInt(13, P10);
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Perfil de usuario registrado");
+
+                //limpiar
+                NumP.setText("0");
+                PDUadd.setText("");
+
+                MDRoles();
+
+            } catch (HeadlessException | SQLException error_add_usr) {
+                JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
+            }
+        }
+        if (AAADRH.isSelected() == true) {
+            VDAPDU = 1;
+            if (P1RH.isSelected() == true) {
+                P1 = 1;
+            } else {
+                P1 = 0;
+            }
+            if (P2RH.isSelected() == true) {
+                P2 = 1;
+            } else {
+                P2 = 0;
+            }
+            if (P3RH.isSelected() == true) {
+                P3 = 1;
+            } else {
+                P3 = 0;
+            }
+            if (P4RH.isSelected() == true) {
+                P4 = 1;
+            } else {
+                P4 = 0;
+            }
+            P5 = 0;
+            P6 = 0;
+            P7 = 0;
+            P8 = 0;
+            P9 = 0;
+            P10 = 0;
+            String SQL = "INSERT INTO `admin.tou` (`id_TDO`, `Usuario`,"
+                    + " `Ventana de acceso`, `P1`, `P2`, `P3`, `P4`, `P5`, `P6`, `P7`,"
+                    + " `P8`, `P9`, `P10`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setInt(1, Integer.parseInt(NumP.getText()));
+                pst.setString(2, PDUadd.getText());
+                pst.setInt(3, VDAPDU);
+                pst.setInt(4, P1);
+                pst.setInt(5, P2);
+                pst.setInt(6, P3);
+                pst.setInt(7, P4);
+                pst.setInt(8, P5);
+                pst.setInt(9, P6);
+                pst.setInt(10, P7);
+                pst.setInt(11, P8);
+                pst.setInt(12, P9);
+                pst.setInt(13, P10);
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Perfil de usuario registrado");
+
+                //limpiar
+                NumP.setText("0");
+                PDUadd.setText("");
+
+                MDRoles();
+
+            } catch (HeadlessException | SQLException error_add_usr) {
+                JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
+            }
+        }
+
+    }//GEN-LAST:event_txtbtnpduaddMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -1565,15 +1770,12 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin_VentanaADM_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin_VentanaADM_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin_VentanaADM_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Admin_VentanaADM_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+
         //</editor-fold>
         //</editor-fold>
 
