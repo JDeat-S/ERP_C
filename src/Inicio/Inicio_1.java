@@ -1,9 +1,16 @@
 package Inicio;
 
+import Nomina.NominaQ_5;
+import RH.Empleados_4;
 import Admin.*;
 import Conexion.ConexionSQL;
+import Logicas.*;
+import Logicas.Logica_usuarios;
 import java.awt.Color;
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -14,6 +21,7 @@ import javax.swing.JOptionPane;
 public class Inicio_1 extends javax.swing.JFrame {
 
     int xMouse, yMouse;
+    Logica_usuarios MOD;
 
     public Inicio_1() {
         initComponents();
@@ -292,49 +300,67 @@ public class Inicio_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtpassMouseClicked
 
     private void txtingresarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtingresarMousePressed
-        String SQL = "SELECT `Usuario`, `Contraseña`,`Ventana de acceso` FROM"
-                + " `admin.usuarios` WHERE `Activo` LIKE '%1%' AND `Usuario` LIKE '%" + txtuser.getText() + "%'";
-        try {
 
-            ConexionSQL cc = new ConexionSQL();
-            Connection con = cc.conexion();
-            PreparedStatement ps = con.prepareStatement(SQL);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
+        Logica_SQL log = new Logica_SQL();
+        Logica_usuarios usr = new Logica_usuarios();
+        Logica_permisos LP = new Logica_permisos();
 
-                String u = rs.getString("Usuario");
-                String p = rs.getString("Contraseña");
-                String tdu = rs.getString("Ventana de acceso");
-                if (String.valueOf(txtpass.getPassword()).equals(p)) {
-                    switch (tdu) {
-                        case "0" -> {
-                            Admin_VentanaADM_3 Admin = new Admin_VentanaADM_3();
-                            Admin.setVisible(true);
+        if (!txtuser.getText().equals("") && !String.valueOf(txtpass.getPassword()).equals("")) {
+            usr.setUsuario(txtuser.getText());
+            usr.setPass(String.valueOf(txtpass.getPassword()));
+
+            if (log.login(usr)) {
+                usr.setUsuario(txtuser.getText());
+                usr.setPass(String.valueOf(txtpass.getPassword()));
+                LP.setNombreusuario(usr.getNombre_tipo());
+                log.Restricciones(LP);
+
+                String SQL = "SELECT `Ventana de acceso` FROM"
+                        + " `admin.usuarios` WHERE `Activo` LIKE '%1%' AND `Usuario` LIKE '%" + txtuser.getText() + "%'";
+                try {
+
+                    ConexionSQL cc = new ConexionSQL();
+                    Connection con = cc.conexion();
+                    PreparedStatement ps = con.prepareStatement(SQL);
+                    ResultSet rs = ps.executeQuery();
+                    if (rs.next()) {
+
+                        String tdu = rs.getString("Ventana de acceso");
+                        switch (tdu) {
+                            case "0" -> {
+                                VentanaADM_3 Admin = new VentanaADM_3(usr, LP);
+                                Admin.setVisible(true);
+                                this.dispose();
+                            }
+                            case "1" -> {
+                                Empleados_4 RH = new Empleados_4(usr, LP);
+                                RH.setVisible(true);
+                                this.dispose();
+                            }
+                            case "2" -> {
+                                NominaQ_5 Nom = new NominaQ_5(usr, LP);
+                                Nom.setVisible(true);
+                                this.dispose();
+                            }
+                            default -> {
+                            }
                         }
-                        case "1" -> {
-                            Admin_Empleados_4 RH = new Admin_Empleados_4();
-                            RH.setVisible(true);
-                        }
-                        case "2" -> {
-                            Admin_Empleados_4 RH = new Admin_Empleados_4();
-                            RH.setVisible(true);
-                        }
-                        default -> {
-                        }
+                        ps.isClosed();
+                        con.isClosed();
                     }
-                } else {
-                    JOptionPane.showMessageDialog(null, "La contraseña no es correcta.");
 
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Error:" + ex);
                 }
 
             } else {
-                JOptionPane.showMessageDialog(null, "El usuario no existe");
 
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Favor de llenar los campos");
 
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error:" + ex);
         }
+
 
     }//GEN-LAST:event_txtingresarMousePressed
 
@@ -344,7 +370,16 @@ public class Inicio_1 extends javax.swing.JFrame {
             txtpass.setForeground(Color.black);
 
         }
+        if (String.valueOf(txtpass.getPassword()).equals("")) {
+            txtpass.setText("");
+            txtpass.setForeground(Color.black);
 
+        }
+        if (String.valueOf(txtpass.getPassword()).equals("***************")) {
+            txtpass.setText("");
+            txtpass.setForeground(Color.black);
+
+        }
     }//GEN-LAST:event_txtpassKeyReleased
 
     /**

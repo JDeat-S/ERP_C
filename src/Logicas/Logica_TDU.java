@@ -48,7 +48,7 @@ public class Logica_TDU {
         Logica_TDU dat;
         try {
 
-            String sql = "SELECT * FROM `admin.tou`";
+            String sql = "SELECT `id_TDO`, `Usuario` FROM `admin.tou`";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 

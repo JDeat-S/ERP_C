@@ -1,5 +1,8 @@
 package Admin;
 
+import RH.Tortas_4;
+import RH.Estadias_4;
+import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
@@ -7068,14 +7071,14 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
 
-        Admin_Estadias_4 regr = new Admin_Estadias_4();
+        Estadias_4 regr = new Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
 
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        Tortas_4 regr = new Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed
@@ -7089,7 +7092,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
 
-        Admin_VentanaADM_3 regr = new Admin_VentanaADM_3();
+        VentanaADM_3 regr = new VentanaADM_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed
@@ -11090,7 +11093,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
         // TODO add your handling code here:
-        Admin_Empleados_4 regr = new Admin_Empleados_4();
+        Empleados_4 regr = new Empleados_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed

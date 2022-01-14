@@ -1,7 +1,15 @@
 package RH;
 
+import Admin.Admin_Depositos_4;
+import Admin.Admin_Inturbide_4;
+import Admin.Admin_PT_4;
+import Admin.Admin_Tehueantepec_4;
+import Admin.VentanaADM_3;
+import Admin.AltasZyS_3;
+import Nomina.NominaQ_5;
 import Conexion.ConexionSQL;
 import Inicio.Inicio_1;
+import Logicas.*;
 import java.awt.HeadlessException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,6 +29,8 @@ public final class Estadias_4 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
+    Logica_usuarios usr;
+    Logica_permisos LP;
 
     public Estadias_4() {
         initComponents();
@@ -33,6 +43,56 @@ public final class Estadias_4 extends javax.swing.JFrame {
         MDE();
         setIconImage(new ImageIcon(Estadias_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
+    }
+
+    public Estadias_4(Logica_usuarios usr, Logica_permisos LP) {
+        initComponents();
+        this.usr = usr;
+        this.LP = LP;
+        this.setExtendedState(6);
+        this.setLocationRelativeTo(null);
+        LabelF1.setVisible(false);
+        FilAP.setVisible(false);
+        FilAM.setVisible(false);
+        Filname.setVisible(false);
+        MDE();
+        setIconImage(new ImageIcon(Estadias_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setTitle("Ventana ADM # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+                + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
+       
+
+        switch (LP.getVDA()) {
+            case 0 -> {
+            }
+            case 1 -> {
+                Menuadm.setVisible(false);
+                /*if (LP.getP1() == 0) {
+                Alumnos.setVisible(false);
+                }*/
+                if (LP.getP2() == 0) {
+                    EmpleadosT.setVisible(false);
+                }   if (LP.getP3() == 0) {
+                    Depositos.setVisible(false);
+                }   if (LP.getP4() == 0) {
+                    Semanales.setVisible(false);
+                }
+            }
+            case 2 -> {
+                Menuadm.setVisible(false);
+                /*if (LP.getP1() == 0) {
+                Alumnos.setVisible(false);
+                }*/
+                if (LP.getP2() == 0) {
+                    EmpleadosT.setVisible(false);
+                }   if (LP.getP3() == 0) {
+                    Depositos.setVisible(false);
+                }   if (LP.getP4() == 0) {
+                    Semanales.setVisible(false);
+                }
+            }
+            default -> {
+            }
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -318,7 +378,7 @@ public final class Estadias_4 extends javax.swing.JFrame {
             modelo.addColumn("Evaluacion");//20
             modelo.addColumn("Observaciones");
 
-            int[] anchos = { /*Exp*/ 35, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*celular*/ 65,
+            int[] anchos = { /*Exp*/35, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*celular*/ 65,
                 /*Carr*/ 65, /*TDC*/ 65, /*Curp*/ 65, /*Status*/ 50,
                 /*FDI*/ 75, /*FDT*/ 75, /*CDP*/ 75, /*CDA*/ 75, /*PDA*/ 95, /*1*/ 40, /*2*/ 40, /*3*/ 40, /*CT*/ 40,
                 /*ADE*/ 100, /*Ev*/ 30, /*OBS*/ 1000};
@@ -402,10 +462,19 @@ public final class Estadias_4 extends javax.swing.JFrame {
         Testadia = new javax.swing.JTable();
         botonWeb1 = new botones.BotonWeb();
         jMenuBar1 = new javax.swing.JMenuBar();
+        Menuadm = new javax.swing.JMenu();
+        Nomina = new javax.swing.JMenuItem();
+        Administradores = new javax.swing.JMenuItem();
+        ZYS = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
-        Torteria = new javax.swing.JMenuItem();
+        EmpleadosT = new javax.swing.JMenuItem();
+        Depositos = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        Semanales = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -790,6 +859,34 @@ public final class Estadias_4 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Tabla Estadia", jScrollPane2);
 
+        Menuadm.setText("Todas las ventanas");
+
+        Nomina.setText("Ventana Nomina");
+        Nomina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NominaActionPerformed(evt);
+            }
+        });
+        Menuadm.add(Nomina);
+
+        Administradores.setText("Administradores");
+        Administradores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdministradoresActionPerformed(evt);
+            }
+        });
+        Menuadm.add(Administradores);
+
+        ZYS.setText("Zonas y Servicios");
+        ZYS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ZYSActionPerformed(evt);
+            }
+        });
+        Menuadm.add(ZYS);
+
+        jMenuBar1.add(Menuadm);
+
         jMenu1.setText("Cambiar a");
 
         General.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -801,14 +898,16 @@ public final class Estadias_4 extends javax.swing.JFrame {
         });
         jMenu1.add(General);
 
-        Torteria.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        Torteria.setText("Empleados Torteria");
-        Torteria.addActionListener(new java.awt.event.ActionListener() {
+        EmpleadosT.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        EmpleadosT.setText("Empelados torteria");
+        EmpleadosT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TorteriaActionPerformed(evt);
+                EmpleadosTActionPerformed(evt);
             }
         });
-        jMenu1.add(Torteria);
+        jMenu1.add(EmpleadosT);
+
+        Depositos.setText("Depositos");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem1.setText("Depositos C/ IMSS");
@@ -817,9 +916,39 @@ public final class Estadias_4 extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        Depositos.add(jMenuItem1);
+
+        jMenu1.add(Depositos);
 
         jMenuBar1.add(jMenu1);
+
+        Semanales.setText("Semanales");
+
+        jMenuItem2.setText("Inturbide");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        Semanales.add(jMenuItem2);
+
+        jMenuItem3.setText("Tehuantepec");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        Semanales.add(jMenuItem3);
+
+        jMenuItem4.setText("PTE titla");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        Semanales.add(jMenuItem4);
+
+        jMenuBar1.add(Semanales);
 
         setJMenuBar(jMenuBar1);
 
@@ -1008,17 +1137,23 @@ public final class Estadias_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed
 
-    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        Tortas_4 regr = new Tortas_4();
+    private void NominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NominaActionPerformed
+        NominaQ_5 regr = new NominaQ_5();
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_TorteriaActionPerformed
+    }//GEN-LAST:event_NominaActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Depositos_4 regr = new Depositos_4();
+    private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
+        VentanaADM_3 regr = new VentanaADM_3();
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_AdministradoresActionPerformed
+
+    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
+        AltasZyS_3 regr = new AltasZyS_3();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ZYSActionPerformed
 
     private void CsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CsActionPerformed
 
@@ -1029,6 +1164,37 @@ public final class Estadias_4 extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_CsActionPerformed
+
+    private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
+
+        Tortas_4 regr = new Tortas_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EmpleadosTActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Admin_Depositos_4 regr = new Admin_Depositos_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Admin_Inturbide_4 regr = new Admin_Inturbide_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        Admin_Tehueantepec_4 regr = new Admin_Tehueantepec_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        Admin_PT_4 regr = new Admin_PT_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1092,12 +1258,15 @@ public final class Estadias_4 extends javax.swing.JFrame {
     private javax.swing.JTextField AMest;
     private javax.swing.JTextField APEst;
     private javax.swing.JCheckBox Adeest;
+    private javax.swing.JMenuItem Administradores;
     private javax.swing.JTextField Carrest;
     private javax.swing.JCheckBox Cdaest;
     private javax.swing.JCheckBox Cdpest;
     private javax.swing.JButton Cs;
     private javax.swing.JCheckBox Ctest;
     private javax.swing.JTextField Curpest;
+    private javax.swing.JMenu Depositos;
+    private javax.swing.JMenuItem EmpleadosT;
     private javax.swing.JCheckBox Evest;
     private javax.swing.JTextField Fdiest;
     private javax.swing.JTextField Fdtest;
@@ -1107,17 +1276,20 @@ public final class Estadias_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Filtroest;
     private javax.swing.JMenuItem General;
     private javax.swing.JLabel LabelF1;
+    private javax.swing.JMenu Menuadm;
     private javax.swing.JTextField NCest;
     private javax.swing.JTextField NexpEst;
+    private javax.swing.JMenuItem Nomina;
     private javax.swing.JTextArea Obsest;
     private javax.swing.JCheckBox Paest;
     private javax.swing.JCheckBox Pdaest;
     private javax.swing.JCheckBox Saest;
+    private javax.swing.JMenu Semanales;
     private javax.swing.JComboBox<String> Statusest;
     private javax.swing.JComboBox<String> TDCest;
     private javax.swing.JCheckBox Taest;
     private javax.swing.JTable Testadia;
-    private javax.swing.JMenuItem Torteria;
+    private javax.swing.JMenuItem ZYS;
     private javax.swing.JButton add;
     private botones.BotonWeb botonWeb1;
     private javax.swing.JLabel jLabel1;
@@ -1137,6 +1309,9 @@ public final class Estadias_4 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

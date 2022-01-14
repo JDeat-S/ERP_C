@@ -5,6 +5,10 @@
  */
 package Admin;
 
+import RH.Tortas_4;
+import RH.Estadias_4;
+import Nomina.NominaQ_5;
+import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import Inicio.Inicio_1;
 import java.awt.HeadlessException;
@@ -1347,7 +1351,7 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        Admin_VentanaADM_3 regr = new Admin_VentanaADM_3();
+        VentanaADM_3 regr = new VentanaADM_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed
@@ -1359,19 +1363,19 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        Admin_Empleados_4 regr = new Admin_Empleados_4();
+        Empleados_4 regr = new Empleados_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed
 
     private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
-        Admin_Estadias_4 regr = new Admin_Estadias_4();
+        Estadias_4 regr = new Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EstadiasActionPerformed
 
     private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        Tortas_4 regr = new Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_TorteriaActionPerformed
@@ -1696,7 +1700,7 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CDAActionPerformed
 
     private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CNQActionPerformed
@@ -1737,7 +1741,7 @@ public final class Admin_PresQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void Nomina1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nomina1ActionPerformed
-        Admin_NominaQ_5 regr = new Admin_NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Nomina1ActionPerformed
