@@ -10,7 +10,7 @@ import Admin.Admin_ODTQ_5;
 import Admin.Admin_PresQ_5;
 import Admin.Admin_PresS_5;
 import Admin.Admin_RepNom_7;
-import Admin.Admin_Tortas_4;
+import RH.Tortas_4;
 import Admin.VentanaADM_3;
 import Admin.AltasZyS_3;
 import RH.Empleados_4;
@@ -10465,7 +10465,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_EstadiasActionPerformed
 
     private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        Tortas_4 regr = new Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_TorteriaActionPerformed

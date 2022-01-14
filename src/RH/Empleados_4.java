@@ -3159,7 +3159,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
 
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        Tortas_4 regr = new Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed
@@ -4197,7 +4197,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_EstadiasActionPerformed
 
     private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        Tortas_4 regr = new Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_TorteriaActionPerformed

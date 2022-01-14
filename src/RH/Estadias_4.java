@@ -4,11 +4,9 @@ import Admin.Admin_Depositos_4;
 import Admin.Admin_Inturbide_4;
 import Admin.Admin_PT_4;
 import Admin.Admin_Tehueantepec_4;
-import Admin.Admin_Tortas_4;
 import Admin.VentanaADM_3;
 import Admin.AltasZyS_3;
 import Nomina.NominaQ_5;
-import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import Inicio.Inicio_1;
 import Logicas.*;
@@ -63,35 +61,36 @@ public final class Estadias_4 extends javax.swing.JFrame {
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
        
 
-        if (LP.getVDA() == 0) {
-
-        } else if (LP.getVDA() == 1) {
-            Menuadm.setVisible(false);
-            /*if (LP.getP1() == 0) {
+        switch (LP.getVDA()) {
+            case 0 -> {
+            }
+            case 1 -> {
+                Menuadm.setVisible(false);
+                /*if (LP.getP1() == 0) {
                 Alumnos.setVisible(false);
-            }*/
-            if (LP.getP2() == 0) {
-                EmpleadosT.setVisible(false);
+                }*/
+                if (LP.getP2() == 0) {
+                    EmpleadosT.setVisible(false);
+                }   if (LP.getP3() == 0) {
+                    Depositos.setVisible(false);
+                }   if (LP.getP4() == 0) {
+                    Semanales.setVisible(false);
+                }
             }
-            if (LP.getP3() == 0) {
-                Depositos.setVisible(false);
-            }
-            if (LP.getP4() == 0) {
-                Semanales.setVisible(false);
-            }
-        } else if (LP.getVDA() == 2) {
-            Menuadm.setVisible(false);
-            /*if (LP.getP1() == 0) {
+            case 2 -> {
+                Menuadm.setVisible(false);
+                /*if (LP.getP1() == 0) {
                 Alumnos.setVisible(false);
-            }*/
-            if (LP.getP2() == 0) {
-                EmpleadosT.setVisible(false);
+                }*/
+                if (LP.getP2() == 0) {
+                    EmpleadosT.setVisible(false);
+                }   if (LP.getP3() == 0) {
+                    Depositos.setVisible(false);
+                }   if (LP.getP4() == 0) {
+                    Semanales.setVisible(false);
+                }
             }
-            if (LP.getP3() == 0) {
-                Depositos.setVisible(false);
-            }
-            if (LP.getP4() == 0) {
-                Semanales.setVisible(false);
+            default -> {
             }
         }
     }
@@ -463,15 +462,15 @@ public final class Estadias_4 extends javax.swing.JFrame {
         Testadia = new javax.swing.JTable();
         botonWeb1 = new botones.BotonWeb();
         jMenuBar1 = new javax.swing.JMenuBar();
+        Menuadm = new javax.swing.JMenu();
+        Nomina = new javax.swing.JMenuItem();
+        Administradores = new javax.swing.JMenuItem();
+        ZYS = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
         EmpleadosT = new javax.swing.JMenuItem();
         Depositos = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        Menuadm = new javax.swing.JMenu();
-        Nomina = new javax.swing.JMenuItem();
-        Administradores = new javax.swing.JMenuItem();
-        ZYS = new javax.swing.JMenuItem();
         Semanales = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -860,6 +859,34 @@ public final class Estadias_4 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Tabla Estadia", jScrollPane2);
 
+        Menuadm.setText("Todas las ventanas");
+
+        Nomina.setText("Ventana Nomina");
+        Nomina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NominaActionPerformed(evt);
+            }
+        });
+        Menuadm.add(Nomina);
+
+        Administradores.setText("Administradores");
+        Administradores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdministradoresActionPerformed(evt);
+            }
+        });
+        Menuadm.add(Administradores);
+
+        ZYS.setText("Zonas y Servicios");
+        ZYS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ZYSActionPerformed(evt);
+            }
+        });
+        Menuadm.add(ZYS);
+
+        jMenuBar1.add(Menuadm);
+
         jMenu1.setText("Cambiar a");
 
         General.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -894,34 +921,6 @@ public final class Estadias_4 extends javax.swing.JFrame {
         jMenu1.add(Depositos);
 
         jMenuBar1.add(jMenu1);
-
-        Menuadm.setText("Todas las ventanas");
-
-        Nomina.setText("Ventana Nomina");
-        Nomina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NominaActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Nomina);
-
-        Administradores.setText("Administradores");
-        Administradores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdministradoresActionPerformed(evt);
-            }
-        });
-        Menuadm.add(Administradores);
-
-        ZYS.setText("Zonas y Servicios");
-        ZYS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ZYSActionPerformed(evt);
-            }
-        });
-        Menuadm.add(ZYS);
-
-        jMenuBar1.add(Menuadm);
 
         Semanales.setText("Semanales");
 
@@ -1168,7 +1167,7 @@ public final class Estadias_4 extends javax.swing.JFrame {
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
 
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        Tortas_4 regr = new Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed

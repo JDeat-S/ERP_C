@@ -1,5 +1,6 @@
 package Admin;
 
+import RH.Tortas_4;
 import RH.Estadias_4;
 import RH.Empleados_4;
 import Conexion.ConexionSQL;
@@ -7077,7 +7078,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
 
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        Tortas_4 regr = new Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed

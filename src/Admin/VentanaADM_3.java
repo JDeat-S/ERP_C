@@ -1,5 +1,6 @@
 package Admin;
 
+import RH.Tortas_4;
 import RH.Estadias_4;
 import Nomina.NominaQ_5;
 import RH.Empleados_4;
@@ -1093,7 +1094,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_EstadiasActionPerformed
 
     private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        Admin_Tortas_4 regr = new Admin_Tortas_4();
+        Tortas_4 regr = new Tortas_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_TorteriaActionPerformed
