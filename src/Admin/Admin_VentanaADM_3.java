@@ -39,8 +39,12 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         VDA = new ButtonGroup();
         VDA.add(AAADN);
         VDA.add(AAADRH);
+        VDA.add(ADM);
         MDusers();
         MDRoles();
+        FillAp.setVisible(false);
+        FillAm.setVisible(false);
+        Filname.setVisible(false);
 
     }
 
@@ -56,7 +60,12 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         VDA = new ButtonGroup();
         VDA.add(AAADN);
         VDA.add(AAADRH);
+        VDA.add(ADM);
         MDusers();
+        MDRoles();
+        FillAp.setVisible(false);
+        FillAm.setVisible(false);
+        Filname.setVisible(false);
         setTitle("Ventana ADM # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
 
@@ -206,7 +215,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         TUser = new javax.swing.JTable();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbxfillusrs = new javax.swing.JComboBox<>();
         FillAp = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         TOUadd = new javax.swing.JComboBox<>();
@@ -214,7 +223,6 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         AAS = new javax.swing.JCheckBox();
         Nameadduser = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
         Amadduser = new javax.swing.JTextField();
         Apadduser = new javax.swing.JTextField();
         IDuser = new javax.swing.JTextField();
@@ -224,6 +232,10 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         Useradd = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        Panebtnmod = new javax.swing.JPanel();
+        txtbtnmod = new javax.swing.JLabel();
+        btnadd = new javax.swing.JPanel();
+        txtbtnadd = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -242,7 +254,6 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         AAADN = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
-        jCheckBox3 = new javax.swing.JCheckBox();
         jLabel22 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         Troles = new javax.swing.JTable();
@@ -255,6 +266,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         AAADRH = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        ADM = new javax.swing.JRadioButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -281,6 +293,20 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        Filname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FilnameKeyReleased(evt);
+            }
+        });
+
+        FillAm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillAmKeyReleased(evt);
+            }
+        });
+
         TUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -304,7 +330,18 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         jLabel20.setText("Filtro:");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxfillusrs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
+        cbxfillusrs.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxfillusrsItemStateChanged(evt);
+            }
+        });
+
+        FillAp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillApKeyReleased(evt);
+            }
+        });
 
         jLabel6.setText("Tipo de usuario:");
 
@@ -317,13 +354,6 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         AAS.setSelected(true);
         AAS.setText("Acceso al sistema");
 
-        jButton2.setText("Agregar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         IDuser.setEditable(false);
         IDuser.setText("0");
 
@@ -335,14 +365,54 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         jLabel5.setText("Contraseña:");
 
+        txtbtnmod.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtbtnmod.setText("Modificar");
+        txtbtnmod.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtbtnmod.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtbtnmodMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanebtnmodLayout = new javax.swing.GroupLayout(Panebtnmod);
+        Panebtnmod.setLayout(PanebtnmodLayout);
+        PanebtnmodLayout.setHorizontalGroup(
+            PanebtnmodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtbtnmod, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+        );
+        PanebtnmodLayout.setVerticalGroup(
+            PanebtnmodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtbtnmod, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+        );
+
+        txtbtnadd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtbtnadd.setText("Agregar");
+        txtbtnadd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtbtnadd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtbtnaddMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnaddLayout = new javax.swing.GroupLayout(btnadd);
+        btnadd.setLayout(btnaddLayout);
+        btnaddLayout.setHorizontalGroup(
+            btnaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtbtnadd, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+        );
+        btnaddLayout.setVerticalGroup(
+            btnaddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtbtnadd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel16)
                             .addComponent(jLabel6)
@@ -360,47 +430,36 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                             .addComponent(passuserad)
                             .addComponent(TOUadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(IDuser, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(17, 17, 17)
-                        .addComponent(AAS))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(jButton2)))
+                        .addComponent(btnadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Panebtnmod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AAS))
+                .addGap(6, 6, 6)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(jLabel19)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel20)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FillAp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FillAm, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbxfillusrs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FillAp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FillAm, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(162, 162, 162)
+                        .addComponent(jLabel19))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel19)
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel20)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FillAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FillAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -432,7 +491,21 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                             .addComponent(TOUadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AAS))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Panebtnmod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnadd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel19)
+                        .addGap(4, 4, 4)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(FillAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FillAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Filname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20)
+                            .addComponent(cbxfillusrs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(143, Short.MAX_VALUE))
         );
 
@@ -546,8 +619,6 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         jLabel18.setText("Perfil seleccionado:");
 
-        jCheckBox3.setText("Administrador");
-
         jLabel22.setText("jLabel22");
 
         Troles.setModel(new javax.swing.table.DefaultTableModel(
@@ -621,6 +692,8 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         jLabel7.setText("Nombre de nuevo perfil:");
 
+        ADM.setText("Administrador");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -644,10 +717,11 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel22)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ADM))
                 .addContainerGap(83, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -656,7 +730,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jCheckBox3))
+                    .addComponent(ADM))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -953,7 +1027,45 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void AAADNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AAADNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AAADNActionPerformed
+
+    private void TUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TUserMouseClicked
+        try {
+            int fila = TUser.getSelectedRow();
+            int id = Integer.parseInt(TUser.getValueAt(fila, 0).toString());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `Activo` from `admin.usuarios` where `id_user` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                switch (rs.getString("Activo")) {
+                    case "1" ->
+                        AAS.setSelected(true);
+                    case "0" ->
+                        AAS.setSelected(false);
+                    default -> {
+                    }
+                }
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+
+        }
+
+        int fila = TUser.getSelectedRow();
+        IDuser.setText(String.valueOf(TUser.getValueAt(fila, 0)));
+        Apadduser.setText(String.valueOf(TUser.getValueAt(fila, 1)));
+        Amadduser.setText(String.valueOf(TUser.getValueAt(fila, 2)));
+        Nameadduser.setText(String.valueOf(TUser.getValueAt(fila, 3)));
+        Useradd.setText(String.valueOf(TUser.getValueAt(fila, 5)));
+
+    }//GEN-LAST:event_TUserMouseClicked
+
+    private void txtbtnaddMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnaddMousePressed
         String active = null;
         if (AAS.isSelected() == true) {
             active = "1";
@@ -1008,20 +1120,124 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
             VDAcbx = "";
             MDusers();
 
-        } catch (HeadlessException | SQLException error_add_cda) {
-            JOptionPane.showMessageDialog(null, "Error al agregar usuario: " + error_add_cda.getMessage());
+        } catch (HeadlessException | SQLException error_add_usr) {
+            JOptionPane.showMessageDialog(null, "Error al agregar usuario: " + error_add_usr.getMessage());
+        }
+    }//GEN-LAST:event_txtbtnaddMousePressed
+
+    private void txtbtnmodMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnmodMousePressed
+        String active = null;
+        if (AAS.isSelected() == true) {
+            active = "1";
+        }
+        if (AAS.isSelected() == false) {
+            active = "0";
+        }
+        PreparedStatement ps;
+        String SQL2 = "SELECT u.`Tipo de usuario`, t.`Usuario`, t.`Ventana de acceso`  FROM `admin.usuarios` AS u INNER JOIN `admin.tou`"
+                + " AS t ON t.`Usuario`=u.`Tipo de usuario` WHERE t.`Usuario` LIKE '%" + TOUadd.getSelectedItem().toString() + "%'";
+        String VDAcbx = null;
+        try {
+            ps = con.prepareStatement(SQL2);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                VDAcbx = rs.getString(3);
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "error obtener permisos:" + e);
+
+        }
+        String SQL = "UPDATE `admin.usuarios` SET `Apellido P` = ?, `Apellido M` = ?,"
+                + " `Nombre(s)` = ?, `Tipo de usuario` = ?, `Usuario` = ?, `Contraseña` = ?, `Activo` = ?,"
+                + " `Ventana de acceso` = ? WHERE `admin.usuarios`.`id_user` = ?";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setString(1, Apadduser.getText());
+            pst.setString(2, Amadduser.getText());
+            pst.setString(3, Nameadduser.getText());
+            pst.setString(4, TOUadd.getSelectedItem().toString());
+            pst.setString(5, Useradd.getText());
+            pst.setString(6, passuserad.getText());
+            pst.setString(7, active);
+            pst.setString(8, VDAcbx);
+            pst.setInt(9, Integer.parseInt(IDuser.getText()));
+
+            pst.executeUpdate();
+
+            //limpiar
+            IDuser.setText("0");
+            Apadduser.setText("");
+            Amadduser.setText("");
+            Nameadduser.setText("");
+            TOUadd.setSelectedIndex(0);
+            Useradd.setText("");
+            passuserad.setText("");
+            AAS.setSelected(false);
+            VDAcbx = "";
+            MDusers();
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Usuario Modificado");
+
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error en modificar empleado: " + e.getMessage());
         }
 
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_txtbtnmodMousePressed
 
-    private void AAADNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AAADNActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AAADNActionPerformed
+    private void FillApKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillApKeyReleased
+        MDusers();
 
-    private void TUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TUserMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TUserMouseClicked
+    }//GEN-LAST:event_FillApKeyReleased
+
+    private void FillAmKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillAmKeyReleased
+        MDusers();
+
+    }//GEN-LAST:event_FillAmKeyReleased
+
+    private void FilnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilnameKeyReleased
+        MDusers();
+
+    }//GEN-LAST:event_FilnameKeyReleased
+
+    private void cbxfillusrsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxfillusrsItemStateChanged
+        if (cbxfillusrs.getSelectedIndex() == 0) {
+            FillAp.setVisible(false);
+            FillAm.setVisible(false);
+            Filname.setVisible(false);
+            FillAp.setText("");
+            FillAm.setText("");
+            Filname.setText("");
+        }
+        if (cbxfillusrs.getSelectedIndex() == 1) {
+            FillAp.setVisible(true);
+            FillAm.setVisible(false);
+            Filname.setVisible(false);
+            FillAp.setText("");
+            FillAm.setText("");
+            Filname.setText("");
+        }
+        if (cbxfillusrs.getSelectedIndex() == 2) {
+            FillAp.setVisible(false);
+            FillAm.setVisible(true);
+            Filname.setVisible(false);
+            FillAp.setText("");
+            FillAm.setText("");
+            Filname.setText("");
+        }
+        if (cbxfillusrs.getSelectedIndex() == 2) {
+            FillAp.setVisible(false);
+            FillAm.setVisible(false);
+            Filname.setVisible(true);
+            FillAp.setText("");
+            FillAm.setText("");
+            Filname.setText("");
+        }
+    }//GEN-LAST:event_cbxfillusrsItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -1061,6 +1277,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JRadioButton AAADN;
     private javax.swing.JRadioButton AAADRH;
     private javax.swing.JCheckBox AAS;
+    private javax.swing.JRadioButton ADM;
     private javax.swing.JTextField Amadduser;
     private javax.swing.JTextField Apadduser;
     private javax.swing.JMenuItem CDA;
@@ -1075,14 +1292,16 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JTextField Nameadduser;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem PRESQ;
+    private javax.swing.JPanel Panebtnmod;
     private javax.swing.JComboBox<String> TOUadd;
     private javax.swing.JTable TUser;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JTable Troles;
     private javax.swing.JTextField Useradd;
     private javax.swing.JMenuItem ZYS;
+    private javax.swing.JPanel btnadd;
+    private javax.swing.JComboBox<String> cbxfillusrs;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox10;
     private javax.swing.JCheckBox jCheckBox11;
     private javax.swing.JCheckBox jCheckBox12;
@@ -1092,13 +1311,11 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox18;
     private javax.swing.JCheckBox jCheckBox19;
     private javax.swing.JCheckBox jCheckBox20;
-    private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JCheckBox jCheckBox9;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1139,5 +1356,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField passuserad;
+    private javax.swing.JLabel txtbtnadd;
+    private javax.swing.JLabel txtbtnmod;
     // End of variables declaration//GEN-END:variables
 }
