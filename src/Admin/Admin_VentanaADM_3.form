@@ -1007,7 +1007,7 @@
                 </Container>
                 <Component class="javax.swing.JLabel" name="jLabel7">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Nombre de nuevo perfil:"/>
+                    <Property name="text" type="java.lang.String" value="Nombre de perfil:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="PDUadd">

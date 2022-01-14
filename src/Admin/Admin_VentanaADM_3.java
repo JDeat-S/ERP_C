@@ -707,7 +707,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel7.setText("Nombre de nuevo perfil:");
+        jLabel7.setText("Nombre de perfil:");
 
         ADM.setText("Administrador");
         ADM.addActionListener(new java.awt.event.ActionListener() {
@@ -1167,15 +1167,13 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
             active = "0";
         }
         PreparedStatement ps;
-        String SQL2 = "SELECT u.`Tipo de usuario`, t.`Usuario`, t.`Ventana de acceso`  FROM `admin.usuarios` AS u INNER JOIN `admin.tou`"
-                + " AS t ON t.`Usuario`=u.`Tipo de usuario` WHERE t.`Usuario` LIKE '%" + TOUadd.getSelectedItem().toString() + "%'";
+        String SQL2 = "SELECT `Usuario`, `Ventana de acceso` FROM `admin.tou` WHERE `Usuario` Like '%" + TOUadd.getSelectedItem().toString() + "%'";
         String VDAcbx = null;
         try {
             ps = con.prepareStatement(SQL2);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                VDAcbx = rs.getString(3);
-
+                VDAcbx = rs.getString(2);
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "error obtener permisos:" + e);
@@ -1184,7 +1182,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         String SQL = "INSERT INTO `admin.usuarios` (`id_user`, `Apellido P`,"
                 + " `Apellido M`, `Nombre(s)`, `Tipo de usuario`, `Usuario`, `Contraseña`,"
-                + " `Ultimo inicio de sesion`, `Activo`, `Ventana de acceso`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + " `Ultimo inicio de sesion`, `Activo`, `Ventana de acceso`) VALUES (?, ?, ?, ?, ?, ?, ?, '', ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -1210,7 +1208,6 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
             Useradd.setText("");
             passuserad.setText("");
             AAS.setSelected(false);
-            VDAcbx = "";
             MDusers();
 
         } catch (HeadlessException | SQLException error_add_usr) {
@@ -1227,15 +1224,13 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
             active = "0";
         }
         PreparedStatement ps;
-        String SQL2 = "SELECT u.`Tipo de usuario`, t.`Usuario`, t.`Ventana de acceso`  FROM `admin.usuarios` AS u INNER JOIN `admin.tou`"
-                + " AS t ON t.`Usuario`=u.`Tipo de usuario` WHERE t.`Usuario` LIKE '%" + TOUadd.getSelectedItem().toString() + "%'";
+        String SQL2 = "SELECT `Usuario`, `Ventana de acceso` FROM `admin.tou` WHERE `Usuario` Like '%" + TOUadd.getSelectedItem().toString() + "%'";
         String VDAcbx = null;
         try {
             ps = con.prepareStatement(SQL2);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                VDAcbx = rs.getString(3);
-
+                VDAcbx = rs.getString(2);
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "error obtener permisos:" + e);
@@ -1338,6 +1333,8 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         NumP.setText(String.valueOf(Troles.getValueAt(fila, 0)));
         PDUMod.setText(String.valueOf(Troles.getValueAt(fila, 1)));
         Btnpduadd.setVisible(false);
+        PDUadd.setText(String.valueOf(Troles.getValueAt(fila, 1)));
+
         try {
             int id = Integer.parseInt(Troles.getValueAt(fila, 0).toString());
             PreparedStatement ps;
@@ -1513,6 +1510,229 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_TrolesMouseClicked
 
     private void txtbtnpdumodMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnpdumodMousePressed
+        int P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, VDAPDU;
+        if (ADM.isSelected() == true) {
+            VDAPDU = 0;
+            P1 = 0;
+            P2 = 0;
+            P3 = 0;
+            P4 = 0;
+            P5 = 0;
+            P6 = 0;
+            P7 = 0;
+            P8 = 0;
+            P9 = 0;
+            P10 = 0;
+            String SQLUP = "UPDATE `admin.usuarios` SET `Tipo de usuario` = '" + PDUadd.getText() + "',"
+                    + " `Ventana de acceso` = '" + VDAPDU + "' WHERE `admin.usuarios`.`Tipo de usuario` = '" + PDUMod.getText() + "'";
+            try {
+                PreparedStatement ps = con.prepareStatement(SQLUP);
+                ps.executeUpdate();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "error:" + e);
+            }
+            String SQL = "UPDATE `admin.tou` SET `id_TDO` = ?, `Usuario` = ?,"
+                    + " `Ventana de acceso` = ?, `P1` = ?, `P2` = ?,"
+                    + " `P3` = ?, `P4` = ?, `P5` = ?, `P6` = ?,"
+                    + " `P7` = ?, `P8` = ?, `P9` = ?, `P10` = ? WHERE `admin.tou`.`id_TDO` = ?";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setInt(1, Integer.parseInt(NumP.getText()));
+                pst.setString(2, PDUadd.getText());
+                pst.setInt(3, VDAPDU);
+                pst.setInt(4, P1);
+                pst.setInt(5, P2);
+                pst.setInt(6, P3);
+                pst.setInt(7, P4);
+                pst.setInt(8, P5);
+                pst.setInt(9, P6);
+                pst.setInt(10, P7);
+                pst.setInt(11, P8);
+                pst.setInt(12, P9);
+                pst.setInt(13, P10);
+                pst.setInt(14, Integer.parseInt(NumP.getText()));
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Perfil de usuario modificado");
+
+                //limpiar
+                NumP.setText("0");
+                PDUadd.setText("");
+
+                MDRoles();
+
+            } catch (HeadlessException | SQLException error_add_usr) {
+                JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
+            }
+        }
+        if (AAADN.isSelected() == true) {
+            VDAPDU = 2;
+
+            if (P1Nom.isSelected() == true) {
+                P1 = 1;
+            } else {
+                P1 = 0;
+            }
+            if (P2Nom.isSelected() == true) {
+                P2 = 1;
+            } else {
+                P2 = 0;
+            }
+            if (P3Nom.isSelected() == true) {
+                P3 = 1;
+            } else {
+                P3 = 0;
+            }
+            if (P4Nom.isSelected() == true) {
+                P4 = 1;
+            } else {
+                P4 = 0;
+            }
+            if (P5Nom.isSelected() == true) {
+                P5 = 1;
+            } else {
+                P5 = 0;
+            }
+            if (P6Nom.isSelected() == true) {
+                P6 = 1;
+            } else {
+                P6 = 0;
+            }
+            if (P7Nom.isSelected() == true) {
+                P7 = 1;
+            } else {
+                P7 = 0;
+            }
+            if (P8Nom.isSelected() == true) {
+                P8 = 1;
+            } else {
+                P8 = 0;
+            }
+            if (P9Nom.isSelected() == true) {
+                P9 = 1;
+            } else {
+                P9 = 0;
+            }
+            if (P10Nom.isSelected() == true) {
+                P10 = 1;
+            } else {
+                P10 = 0;
+            }
+            String SQLUP = "UPDATE `admin.usuarios` SET `Tipo de usuario` = '" + PDUadd.getText() + "',"
+                    + " `Ventana de acceso` = '" + VDAPDU + "' WHERE `admin.usuarios`.`Tipo de usuario` = '" + PDUMod.getText() + "'";
+            try {
+                PreparedStatement ps = con.prepareStatement(SQLUP);
+                ps.executeUpdate();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "error:" + e);
+            }
+            String SQL = "UPDATE `admin.tou` SET `id_TDO` = ?, `Usuario` = ?,"
+                    + " `Ventana de acceso` = ?, `P1` = ?, `P2` = ?,"
+                    + " `P3` = ?, `P4` = ?, `P5` = ?, `P6` = ?,"
+                    + " `P7` = ?, `P8` = ?, `P9` = ?, `P10` = ? WHERE `admin.tou`.`id_TDO` = ?";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setInt(1, Integer.parseInt(NumP.getText()));
+                pst.setString(2, PDUadd.getText());
+                pst.setInt(3, VDAPDU);
+                pst.setInt(4, P1);
+                pst.setInt(5, P2);
+                pst.setInt(6, P3);
+                pst.setInt(7, P4);
+                pst.setInt(8, P5);
+                pst.setInt(9, P6);
+                pst.setInt(10, P7);
+                pst.setInt(11, P8);
+                pst.setInt(12, P9);
+                pst.setInt(13, P10);
+                pst.setInt(14, Integer.parseInt(NumP.getText()));
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Perfil de usuario registrado");
+
+                //limpiar
+                NumP.setText("0");
+                PDUadd.setText("");
+
+                MDRoles();
+
+            } catch (HeadlessException | SQLException error_add_usr) {
+                JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
+            }
+        }
+        if (AAADRH.isSelected() == true) {
+            VDAPDU = 1;
+            if (P1RH.isSelected() == true) {
+                P1 = 1;
+            } else {
+                P1 = 0;
+            }
+            if (P2RH.isSelected() == true) {
+                P2 = 1;
+            } else {
+                P2 = 0;
+            }
+            if (P3RH.isSelected() == true) {
+                P3 = 1;
+            } else {
+                P3 = 0;
+            }
+            if (P4RH.isSelected() == true) {
+                P4 = 1;
+            } else {
+                P4 = 0;
+            }
+            P5 = 0;
+            P6 = 0;
+            P7 = 0;
+            P8 = 0;
+            P9 = 0;
+            P10 = 0;
+            String SQLUP = "UPDATE `admin.usuarios` SET `Tipo de usuario` = '" + PDUadd.getText() + "',"
+                    + " `Ventana de acceso` = '" + VDAPDU + "' WHERE `admin.usuarios`.`Tipo de usuario` = '" + PDUMod.getText() + "'";
+            try {
+                PreparedStatement ps = con.prepareStatement(SQLUP);
+                ps.executeUpdate();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "error:" + e);
+            }
+            String SQL = "UPDATE `admin.tou` SET `id_TDO` = ?, `Usuario` = ?,"
+                    + " `Ventana de acceso` = ?, `P1` = ?, `P2` = ?,"
+                    + " `P3` = ?, `P4` = ?, `P5` = ?, `P6` = ?,"
+                    + " `P7` = ?, `P8` = ?, `P9` = ?, `P10` = ? WHERE `admin.tou`.`id_TDO` = ?";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setInt(1, Integer.parseInt(NumP.getText()));
+                pst.setString(2, PDUadd.getText());
+                pst.setInt(3, VDAPDU);
+                pst.setInt(4, P1);
+                pst.setInt(5, P2);
+                pst.setInt(6, P3);
+                pst.setInt(7, P4);
+                pst.setInt(8, P5);
+                pst.setInt(9, P6);
+                pst.setInt(10, P7);
+                pst.setInt(11, P8);
+                pst.setInt(12, P9);
+                pst.setInt(13, P10);
+                pst.setInt(14, Integer.parseInt(NumP.getText()));
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Perfil de usuario registrado");
+
+                //limpiar
+                NumP.setText("0");
+                PDUadd.setText("");
+
+                MDRoles();
+
+            } catch (HeadlessException | SQLException error_add_usr) {
+                JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
+            }
+        }
 
         Btnpduadd.setVisible(true);
         PDUMod.setText("N/A");
