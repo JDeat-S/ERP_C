@@ -13,37 +13,6 @@ import javax.swing.JOptionPane;
  */
 public class Logica_SQL extends ConexionSQL {
 
-    public boolean registrar(Logica_usuarios usr) {
-        PreparedStatement ps;
-        ConexionSQL cc = new ConexionSQL();
-        Connection con = cc.conexion();
-        String SQL = "INSERT INTO `admin.usuarios` (`id_user`, `Apellido P`,"
-                + " `Apellido M`, `Nombre(s)`, `Tipo de usuario`, `Usuario`, `Contraseña`,"
-                + " `Ultimo inicio de sesion`, `Activo`, `Ventana de acceso`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        try {
-            ps = con.prepareStatement(SQL);
-
-            ps.setInt(1, usr.getId_user());
-            ps.setString(2, usr.getApellidop());
-            ps.setString(3, usr.getApellidoM());
-            ps.setString(4, usr.getNombre());
-            ps.setString(5, usr.getTDU());
-            ps.setString(6, usr.getUsuario());
-            ps.setString(7, usr.getPass());
-            ps.setString(8, usr.getUIDS());
-            ps.setString(9, usr.getActivo());
-            ps.setString(10, usr.getVDA());
-
-            ps.executeUpdate();
-            ps.isClosed();
-            return true;
-
-        } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al agregar Usuario: " + e.getMessage());
-        }
-        return false;
-
-    }
 
     public boolean login(Logica_usuarios usr) {
         PreparedStatement ps;

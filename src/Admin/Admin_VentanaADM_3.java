@@ -4,6 +4,7 @@ import Nomina.NominaQ_5;
 import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import Logicas.*;
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +18,8 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author CONFORT
+ * @author JDeat
+ *
  */
 public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
@@ -38,6 +40,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         VDA.add(AAADN);
         VDA.add(AAADRH);
         MDusers();
+        MDRoles();
 
     }
 
@@ -115,7 +118,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
             modelo.addColumn("Ultimo Inicio de sesion");
 
             int[] anchos = {/*idbd*/35, /*ap*/ 70, /*am*/ 70, /*name*/ 100,
-                /*TDU*/ 65, /*USER*/ 65, /*PASS*/ 70, /*UISD*/ 70};
+                /*TDU*/ 65, /*USER*/ 65, /*PASS*/ 70, /*UISD*/ 100};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -129,6 +132,59 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                     filas[i] = rs.getObject(i + 1);
                 }
                 modelo.addRow(filas);
+                ps.isClosed();
+                rs.isClosed();
+
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Tabla empleados: " + e.getMessage());
+        }
+
+    }
+
+    public void MDRoles() {
+
+        String SQL = "SELECT `id_TDO`, `Usuario` FROM `admin.tou`";
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            Troles.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("ID Perfil");//1
+            modelo.addColumn("Nombre Perfil");
+
+            int[] anchos = {/*idbd*/35, /*ap*/ 70};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Troles.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+                ps.isClosed();
+                rs.isClosed();
 
             }
         } catch (SQLException e) {
@@ -197,6 +253,8 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         jCheckBox19 = new javax.swing.JCheckBox();
         jCheckBox20 = new javax.swing.JCheckBox();
         AAADRH = new javax.swing.JRadioButton();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -234,6 +292,11 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TUserMouseClicked(evt);
+            }
+        });
         jScrollPane6.setViewportView(TUser);
 
         jLabel19.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -375,10 +438,10 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jPanel2);
 
-        jTabbedPane1.addTab("Modificar Usuarios", jScrollPane2);
+        jTabbedPane1.addTab("Agregar/Modificar Usuarios", jScrollPane2);
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel13.setText("Roles de usuarios:");
+        jLabel13.setText("Perfil de usuarios:");
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel14.setText("Area Nomina");
@@ -481,7 +544,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         jButton1.setText("Agregar");
 
-        jLabel18.setText("Rol de seleccionado:");
+        jLabel18.setText("Perfil seleccionado:");
 
         jCheckBox3.setText("Administrador");
 
@@ -556,29 +619,36 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel7.setText("Nombre de nuevo perfil:");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGap(111, 111, 111)
+                            .addComponent(jLabel13))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(jLabel13))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(jLabel22)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jCheckBox3)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -595,6 +665,10 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
+                            .addComponent(jLabel7)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel22)
                             .addComponent(jLabel18))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -887,31 +961,67 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         if (AAS.isSelected() == false) {
             active = "0";
         }
-        Logica_SQL logica = new Logica_SQL();
-        Logica_usuarios usr = new Logica_usuarios();
-        usr.setId_user(0);
-        usr.setApellidop(Apadduser.getText());
-        usr.setApellidoM(Amadduser.getText());
-        usr.setNombre(Nameadduser.getText());
-        usr.setTDU(TOUadd.getSelectedItem().toString());
-        usr.setUsuario(Useradd.getText());
-        usr.setPass(passuserad.getText());
-        usr.setUIDS("");
-        usr.setActivo(active);
-        usr.setVDA(active);
+        PreparedStatement ps;
+        String SQL2 = "SELECT u.`Tipo de usuario`, t.`Usuario`, t.`Ventana de acceso`  FROM `admin.usuarios` AS u INNER JOIN `admin.tou`"
+                + " AS t ON t.`Usuario`=u.`Tipo de usuario` WHERE t.`Usuario` LIKE '%" + TOUadd.getSelectedItem().toString() + "%'";
+        String VDAcbx = null;
+        try {
+            ps = con.prepareStatement(SQL2);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                VDAcbx = rs.getString(3);
 
-        if (logica.registrar(usr)) {
-            JOptionPane.showMessageDialog(null, "Usuario agregado.");
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Error al guardar ususario");
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "error obtener permisos:" + e);
 
         }
+
+        String SQL = "INSERT INTO `admin.usuarios` (`id_user`, `Apellido P`,"
+                + " `Apellido M`, `Nombre(s)`, `Tipo de usuario`, `Usuario`, `Contraseña`,"
+                + " `Ultimo inicio de sesion`, `Activo`, `Ventana de acceso`) VALUES (?, ?, ?, ?, ?, ?, ?, '', ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setInt(1, Integer.parseInt(IDuser.getText()));
+            pst.setString(2, Apadduser.getText());
+            pst.setString(3, Amadduser.getText());
+            pst.setString(4, Nameadduser.getText());
+            pst.setString(5, TOUadd.getSelectedItem().toString());
+            pst.setString(6, Useradd.getText());
+            pst.setString(7, passuserad.getText());
+            pst.setString(8, active);
+            pst.setString(9, VDAcbx);
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Usuario registrado");
+
+            //limpiar
+            IDuser.setText("0");
+            Apadduser.setText("");
+            Amadduser.setText("");
+            Nameadduser.setText("");
+            TOUadd.setSelectedIndex(0);
+            Useradd.setText("");
+            passuserad.setText("");
+            AAS.setSelected(false);
+            VDAcbx = "";
+            MDusers();
+
+        } catch (HeadlessException | SQLException error_add_cda) {
+            JOptionPane.showMessageDialog(null, "Error al agregar usuario: " + error_add_cda.getMessage());
+        }
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void AAADNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AAADNActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AAADNActionPerformed
+
+    private void TUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TUserMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TUserMouseClicked
 
     /**
      * @param args the command line arguments
@@ -942,10 +1052,8 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Admin_VentanaADM_3().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Admin_VentanaADM_3().setVisible(true);
         });
     }
 
@@ -1005,6 +1113,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -1028,6 +1137,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField passuserad;
     // End of variables declaration//GEN-END:variables
 }
