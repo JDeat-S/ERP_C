@@ -1,5 +1,6 @@
 package Admin;
 
+import RH.Estadias_4;
 import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
@@ -7069,7 +7070,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
 
-        Admin_Estadias_4 regr = new Admin_Estadias_4();
+        Estadias_4 regr = new Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed
@@ -7090,7 +7091,7 @@ public final class Admin_Depositos_4 extends javax.swing.JFrame {
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
 
-        Admin_VentanaADM_3 regr = new Admin_VentanaADM_3();
+        VentanaADM_3 regr = new VentanaADM_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed

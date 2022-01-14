@@ -1,5 +1,6 @@
 package Admin;
 
+import RH.Estadias_4;
 import Nomina.NominaQ_5;
 import RH.Empleados_4;
 import Conexion.ConexionSQL;
@@ -1120,7 +1121,7 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_GeneralActionPerformed
 
     private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
-        Admin_Estadias_4 regr = new Admin_Estadias_4();
+        Estadias_4 regr = new Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EstadiasActionPerformed
@@ -1132,7 +1133,7 @@ public final class Admin_Tortas_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_NominaActionPerformed
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        Admin_VentanaADM_3 regr = new Admin_VentanaADM_3();
+        VentanaADM_3 regr = new VentanaADM_3();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed

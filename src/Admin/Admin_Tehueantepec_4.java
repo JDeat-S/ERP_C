@@ -1,5 +1,6 @@
 package Admin;
 
+import RH.Estadias_4;
 import Conexion.ConexionSQL;
 import java.awt.Desktop;
 import java.awt.HeadlessException;
@@ -7711,7 +7712,7 @@ public final class Admin_Tehueantepec_4 extends javax.swing.JFrame implements Ru
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
 
-        Admin_Estadias_4 regr = new Admin_Estadias_4();
+        Estadias_4 regr = new Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed

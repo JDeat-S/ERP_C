@@ -328,7 +328,7 @@ public class Inicio_1 extends javax.swing.JFrame {
                         String tdu = rs.getString("Ventana de acceso");
                         switch (tdu) {
                             case "0" -> {
-                                Admin_VentanaADM_3 Admin = new Admin_VentanaADM_3(usr, LP);
+                                VentanaADM_3 Admin = new VentanaADM_3(usr, LP);
                                 Admin.setVisible(true);
                                 this.dispose();
                             }

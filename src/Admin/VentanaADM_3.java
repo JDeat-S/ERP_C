@@ -1,5 +1,6 @@
 package Admin;
 
+import RH.Estadias_4;
 import Nomina.NominaQ_5;
 import RH.Empleados_4;
 import Conexion.ConexionSQL;
@@ -23,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
  * @author JDeat
  *
  */
-public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
+public final class VentanaADM_3 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
@@ -31,10 +32,10 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     Logica_usuarios usr;
     Logica_permisos LP;
 
-    public Admin_VentanaADM_3() {
+    public VentanaADM_3() {
         initComponents();
         this.setLocationRelativeTo(null);
-        setIconImage(new ImageIcon(Admin_VentanaADM_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(VentanaADM_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         Logica_TDU FZS = new Logica_TDU();
         DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
         TOUadd.setModel(MODELFZS);
@@ -50,12 +51,12 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
     }
 
-    public Admin_VentanaADM_3(Logica_usuarios usr, Logica_permisos LP) {
+    public VentanaADM_3(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.usr = usr;
         this.LP = LP;
-        setIconImage(new ImageIcon(Admin_VentanaADM_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(VentanaADM_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         Logica_TDU FZS = new Logica_TDU();
         DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
         TOUadd.setModel(MODELFZS);
@@ -1086,7 +1087,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_GeneralActionPerformed
 
     private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
-        Admin_Estadias_4 regr = new Admin_Estadias_4();
+        Estadias_4 regr = new Estadias_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EstadiasActionPerformed
@@ -1576,7 +1577,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 }
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Admin_VentanaADM_3.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VentanaADM_3.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_TrolesMouseClicked
@@ -2152,8 +2153,10 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_VentanaADM_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaADM_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -2162,7 +2165,7 @@ public final class Admin_VentanaADM_3 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Admin_VentanaADM_3().setVisible(true);
+            new VentanaADM_3().setVisible(true);
         });
     }
 
