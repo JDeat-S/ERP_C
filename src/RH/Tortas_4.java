@@ -1,6 +1,5 @@
 package RH;
 
-import Admin.Admin_Depositos_4;
 import Admin.AltasZyS_3;
 import Admin.VentanaADM_3;
 import Nomina.NominaQ_5;
@@ -1248,7 +1247,7 @@ public final class Tortas_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_EmpleadosTActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Admin_Depositos_4 regr = new Admin_Depositos_4();
+        Depositos_4 regr = new Depositos_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed

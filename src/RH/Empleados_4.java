@@ -4033,7 +4033,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_FilobsKeyReleased
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Admin_Depositos_4 regr = new Admin_Depositos_4();
+        Depositos_4 regr = new Depositos_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed

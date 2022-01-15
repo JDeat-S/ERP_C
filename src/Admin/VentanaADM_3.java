@@ -1,5 +1,6 @@
 package Admin;
 
+import RH.Depositos_4;
 import Nomina.CDAQ_5;
 import RH.*;
 import Nomina.*;
@@ -297,6 +298,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        Depositos = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -996,6 +999,19 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         jMenu5.add(jMenuItem8);
 
         jMenu1.add(jMenu5);
+
+        Depositos.setText("Depositos");
+
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem9.setText("Depositos C/ IMSS");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        Depositos.add(jMenuItem9);
+
+        jMenu1.add(Depositos);
 
         Menuadm.add(jMenu1);
 
@@ -2136,6 +2152,12 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtbtnpduaddMousePressed
 
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        Depositos_4 regr = new Depositos_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2179,6 +2201,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JPanel Btnpduadd;
     private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CNQ;
+    private javax.swing.JMenu Depositos;
     private javax.swing.JMenuItem Estadias;
     private javax.swing.JTextField FillAm;
     private javax.swing.JTextField FillAp;
@@ -2245,6 +2268,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
