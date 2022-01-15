@@ -3,7 +3,7 @@ package RH;
 import Nomina.CDAQ_5;
 import Nomina.Listas_5;
 import Nomina.NominaQSiMSS_5;
-import Admin.Admin_NominaS_5;
+import Nomina.NominaS_5;
 import Admin.Admin_NominaS_simss_5;
 import Admin.Admin_ODTQ_5;
 import Admin.Admin_PresQ_5;
@@ -8216,7 +8216,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
     }//GEN-LAST:event_CDAActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        Admin_NominaS_5 regr = new Admin_NominaS_5();
+        NominaS_5 regr = new NominaS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem6ActionPerformed

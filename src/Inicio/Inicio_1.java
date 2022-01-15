@@ -342,6 +342,11 @@ public class Inicio_1 extends javax.swing.JFrame {
                                 Nom.setVisible(true);
                                 this.dispose();
                             }
+                            case "3" -> {
+                                NominaQ_5 Nom = new NominaQ_5(usr, LP);
+                                Nom.setVisible(true);
+                                this.dispose();
+                            }
                             default -> {
                             }
                         }

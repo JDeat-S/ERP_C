@@ -1,5 +1,6 @@
 package RH;
 
+import Nomina.NominaS_5;
 import Nomina.NominaQSiMSS_5;
 import Nomina.Listas_5;
 import Admin.*;
@@ -11657,7 +11658,7 @@ public final class Depositos_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_CDAActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        Admin_NominaS_5 regr = new Admin_NominaS_5();
+        NominaS_5 regr = new NominaS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem6ActionPerformed

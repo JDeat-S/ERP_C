@@ -5,6 +5,7 @@
  */
 package Admin;
 
+import Nomina.NominaS_5;
 import Nomina.NominaQSiMSS_5;
 import Nomina.Listas_5;
 import Nomina.CDAQ_5;
@@ -2575,7 +2576,7 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Admin_NominaS_5 regr = new Admin_NominaS_5();
+        NominaS_5 regr = new NominaS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed

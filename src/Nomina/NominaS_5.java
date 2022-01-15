@@ -1,9 +1,24 @@
 package Nomina;
 
+import Admin.Admin_NominaS_simss_5;
+import Admin.Admin_ODTQ_5;
+import Admin.Admin_PresQ_5;
+import Admin.Admin_PresS_5;
+import Admin.Admin_RepNom_7;
+import Admin.AltasZyS_3;
+import Nomina.NominaQSiMSS_5;
+import Nomina.Listas_5;
+import Nomina.CDAQ_5;
+import RH.Tortas_4;
+import RH.Estadias_4;
+import Nomina.NominaQ_5;
+import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
 import Inicio.Inicio_1;
+import Logicas.Logica_permisos;
+import Logicas.Logica_usuarios;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.awt.print.PrinterException;
@@ -41,6 +56,8 @@ public final class NominaS_5 extends javax.swing.JFrame {
     Calendar fecha_actual = new GregorianCalendar();
     double DS, DD, DL, DM, DMi, DJ, DV;
     double AS, AD, AL, AM, AMi, AJ, AV;
+    Logica_usuarios usr;
+    Logica_permisos LP;
 
     public NominaS_5() {
         initComponents();
@@ -355,6 +372,367 @@ public final class NominaS_5 extends javax.swing.JFrame {
         setIconImage(new ImageIcon(NominaS_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         sumaDep();
 
+    }
+
+    public NominaS_5(Logica_usuarios usr, Logica_permisos LP) {
+        initComponents();
+        this.usr = usr;
+        this.LP = LP;
+        DAB = new ButtonGroup();
+        DAB.add(Bsi);
+        DAB.add(Bno);
+        // <editor-fold defaultstate="collapsed" desc="Fil Servicios">
+        FiltrosZonas zz8 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
+        FZservicio8.setModel(modelzonas8);
+        FiltrosZonas FSZP8 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP8 = new DefaultComboBoxModel(FSZP8.mostrarzonas());
+        FiltroSZP8.setModel(modelFSZP8);
+        FiltrosZonas zz7 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas7 = new DefaultComboBoxModel(zz7.mostrarzonas());
+        FZservicio7.setModel(modelzonas7);
+        FiltrosZonas zz6 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas6 = new DefaultComboBoxModel(zz6.mostrarzonas());
+        FZservicio6.setModel(modelzonas6);
+        FiltrosZonas zz5 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas5 = new DefaultComboBoxModel(zz5.mostrarzonas());
+        FZservicio5.setModel(modelzonas5);
+        FiltrosZonas zz4 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas4 = new DefaultComboBoxModel(zz4.mostrarzonas());
+        FZservicio4.setModel(modelzonas4);
+        FiltrosZonas zz3 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas3 = new DefaultComboBoxModel(zz3.mostrarzonas());
+        FZservicio3.setModel(modelzonas3);
+        FiltrosZonas zz2 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas2 = new DefaultComboBoxModel(zz2.mostrarzonas());
+        FZservicio2.setModel(modelzonas2);
+        FiltrosZonas zz1 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas1 = new DefaultComboBoxModel(zz1.mostrarzonas());
+        FZservicio1.setModel(modelzonas1);
+        FiltrosZonas zz = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
+        FZservicio.setModel(modelzonas);
+        FiltrosZonas FSZP7 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP7 = new DefaultComboBoxModel(FSZP7.mostrarzonas());
+        FiltroSZP7.setModel(modelFSZP7);
+        FiltrosZonas FSZP6 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP6 = new DefaultComboBoxModel(FSZP6.mostrarzonas());
+        FiltroSZP6.setModel(modelFSZP6);
+        FiltrosZonas FSZP5 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP5 = new DefaultComboBoxModel(FSZP5.mostrarzonas());
+        FiltroSZP5.setModel(modelFSZP5);
+        FiltrosZonas FSZP4 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP4 = new DefaultComboBoxModel(FSZP4.mostrarzonas());
+        FiltroSZP4.setModel(modelFSZP4);
+        FiltrosZonas FSZP3 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP3 = new DefaultComboBoxModel(FSZP3.mostrarzonas());
+        FiltroSZP3.setModel(modelFSZP3);
+        FiltrosZonas FSZP2 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP2 = new DefaultComboBoxModel(FSZP2.mostrarzonas());
+        FiltroSZP2.setModel(modelFSZP2);
+        FiltrosZonas FSZP1 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP1 = new DefaultComboBoxModel(FSZP1.mostrarzonas());
+        FiltroSZP1.setModel(modelFSZP1);
+        FiltrosZonas FSZP = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP = new DefaultComboBoxModel(FSZP.mostrarzonas());
+        FiltroSZP.setModel(modelFSZP);
+        FiltrosZonas FZS = new FiltrosZonas();
+        DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
+        FZservicio.setModel(MODELFZS);
+        //</editor-fold>
+        año.setCalendar(fecha_actual);
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(6);
+        // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        Bono.setVisible(false);
+        busp8.setVisible(false);
+        BAppag8.setVisible(false);
+        Bampag8.setVisible(false);
+        LabelBEP8.setVisible(false);
+        LabelBQP8.setVisible(false);
+        FiltroQP8.setVisible(false);
+        FiltroServP8.setVisible(false);
+        LabelBSP8.setVisible(false);
+        FiltroSZP8.setVisible(false);
+        LabelSZP8.setVisible(false);
+        filtroNDFP8.setVisible(false);
+        LabelNDFP8.setVisible(false);
+        LabelBE8.setVisible(false);
+        FApT8.setVisible(false);
+        FAmT8.setVisible(false);
+        Nominab8.setVisible(false);
+        FiltroSnomina8.setVisible(false);
+        LabelBS8.setVisible(false);
+        FZservicio8.setVisible(false);
+        LabelSZ8.setVisible(false);
+        FiltroQuincenanomina8.setVisible(false);
+        LabelBQ8.setVisible(false);
+        FiltroNDF8.setVisible(false);
+        LabelBNDF8.setVisible(false);
+        LabelBE.setVisible(false);
+        LabelBQ.setVisible(false);
+        LabelBS.setVisible(false);
+        LabelSZ.setVisible(false);
+        Nominab.setVisible(false);
+        FiltroSnomina.setVisible(false);
+        FiltroSnomina.setSelectedIndex(0);
+        FZservicio.setVisible(false);
+        FZservicio.setSelectedIndex(0);
+        FiltroQuincenanomina.setVisible(false);
+        FiltroQuincenanomina.setSelectedIndex(0);
+        FiltroNDF.setVisible(false);
+        LabelBNDF.setVisible(false);
+        busp.setVisible(false);
+        LabelBEP.setVisible(false);
+        FiltroQP.setVisible(false);
+        FiltroServP.setVisible(false);
+        FiltroSZP.setVisible(false);
+        filtroNDFP.setVisible(false);
+        LabelBQP.setVisible(false);
+        LabelBSP.setVisible(false);
+        LabelSZP.setVisible(false);
+        LabelNDFP.setVisible(false);
+        Filtro1.setVisible(false);
+        BNameNom.setVisible(false);
+        BAPNom.setVisible(false);
+        BAMNom.setVisible(false);
+        FApT.setVisible(false);
+        FAmT.setVisible(false);
+        BAppag.setVisible(false);
+        Bampag.setVisible(false);
+        busp7.setVisible(false);
+        BAppag7.setVisible(false);
+        Bampag7.setVisible(false);
+        LabelBEP7.setVisible(false);
+        LabelBQP7.setVisible(false);
+        FiltroQP7.setVisible(false);
+        FiltroServP7.setVisible(false);
+        LabelBSP7.setVisible(false);
+        FiltroSZP7.setVisible(false);
+        LabelSZP7.setVisible(false);
+        filtroNDFP7.setVisible(false);
+        LabelNDFP7.setVisible(false);
+        busp6.setVisible(false);
+        BAppag6.setVisible(false);
+        Bampag6.setVisible(false);
+        LabelBEP6.setVisible(false);
+        LabelBQP6.setVisible(false);
+        FiltroQP6.setVisible(false);
+        FiltroServP6.setVisible(false);
+        LabelBSP6.setVisible(false);
+        FiltroSZP6.setVisible(false);
+        LabelSZP6.setVisible(false);
+        filtroNDFP6.setVisible(false);
+        LabelNDFP6.setVisible(false);
+        busp5.setVisible(false);
+        BAppag5.setVisible(false);
+        Bampag5.setVisible(false);
+        LabelBEP5.setVisible(false);
+        LabelBQP5.setVisible(false);
+        FiltroQP5.setVisible(false);
+        FiltroServP5.setVisible(false);
+        LabelBSP5.setVisible(false);
+        FiltroSZP5.setVisible(false);
+        LabelSZP5.setVisible(false);
+        filtroNDFP5.setVisible(false);
+        LabelNDFP5.setVisible(false);
+        busp4.setVisible(false);
+        BAppag4.setVisible(false);
+        Bampag4.setVisible(false);
+        LabelBEP4.setVisible(false);
+        LabelBQP4.setVisible(false);
+        FiltroQP4.setVisible(false);
+        FiltroServP4.setVisible(false);
+        LabelBSP4.setVisible(false);
+        FiltroSZP4.setVisible(false);
+        LabelSZP4.setVisible(false);
+        filtroNDFP4.setVisible(false);
+        LabelNDFP4.setVisible(false);
+        busp3.setVisible(false);
+        BAppag3.setVisible(false);
+        Bampag3.setVisible(false);
+        LabelBEP3.setVisible(false);
+        LabelBQP3.setVisible(false);
+        FiltroQP3.setVisible(false);
+        FiltroServP3.setVisible(false);
+        LabelBSP3.setVisible(false);
+        FiltroSZP3.setVisible(false);
+        LabelSZP3.setVisible(false);
+        filtroNDFP3.setVisible(false);
+        LabelNDFP3.setVisible(false);
+        busp2.setVisible(false);
+        BAppag2.setVisible(false);
+        Bampag2.setVisible(false);
+        LabelBEP2.setVisible(false);
+        LabelBQP2.setVisible(false);
+        FiltroQP2.setVisible(false);
+        FiltroServP2.setVisible(false);
+        LabelBSP2.setVisible(false);
+        FiltroSZP2.setVisible(false);
+        LabelSZP2.setVisible(false);
+        filtroNDFP2.setVisible(false);
+        LabelNDFP2.setVisible(false);
+        busp1.setVisible(false);
+        BAppag1.setVisible(false);
+        Bampag1.setVisible(false);
+        LabelBEP1.setVisible(false);
+        LabelBQP1.setVisible(false);
+        FiltroQP1.setVisible(false);
+        FiltroServP1.setVisible(false);
+        LabelBSP1.setVisible(false);
+        FiltroSZP1.setVisible(false);
+        LabelSZP1.setVisible(false);
+        filtroNDFP1.setVisible(false);
+        LabelNDFP1.setVisible(false);
+        busp.setVisible(false);
+        BAppag.setVisible(false);
+        Bampag.setVisible(false);
+        LabelBEP.setVisible(false);
+        LabelBQP.setVisible(false);
+        FiltroQP.setVisible(false);
+        FiltroServP.setVisible(false);
+        LabelBSP.setVisible(false);
+        FiltroSZP.setVisible(false);
+        LabelSZP.setVisible(false);
+        filtroNDFP.setVisible(false);
+        LabelNDFP.setVisible(false);
+        LabelBE1.setVisible(false);
+        LabelSZ1.setVisible(false);
+        FApT1.setVisible(false);
+        FAmT1.setVisible(false);
+        Nominab1.setVisible(false);
+        FiltroSnomina1.setVisible(false);
+        LabelBS1.setVisible(false);
+        FZservicio1.setVisible(false);
+        LabelSZ.setVisible(false);
+        FiltroQuincenanomina1.setVisible(false);
+        LabelBQ1.setVisible(false);
+        FiltroNDF1.setVisible(false);
+        LabelBNDF1.setVisible(false);
+        LabelBE2.setVisible(false);
+        FApT2.setVisible(false);
+        FAmT2.setVisible(false);
+        Nominab2.setVisible(false);
+        FiltroSnomina2.setVisible(false);
+        LabelBS2.setVisible(false);
+        FZservicio2.setVisible(false);
+        LabelSZ2.setVisible(false);
+        FiltroQuincenanomina2.setVisible(false);
+        LabelBQ2.setVisible(false);
+        FiltroNDF2.setVisible(false);
+        LabelBNDF2.setVisible(false);
+        LabelBE3.setVisible(false);
+        FApT3.setVisible(false);
+        FAmT3.setVisible(false);
+        Nominab3.setVisible(false);
+        FiltroSnomina3.setVisible(false);
+        LabelBS3.setVisible(false);
+        FZservicio3.setVisible(false);
+        LabelSZ3.setVisible(false);
+        FiltroQuincenanomina3.setVisible(false);
+        LabelBQ3.setVisible(false);
+        FiltroNDF3.setVisible(false);
+        LabelBNDF3.setVisible(false);
+        LabelBE4.setVisible(false);
+        FApT4.setVisible(false);
+        FAmT4.setVisible(false);
+        Nominab4.setVisible(false);
+        FiltroSnomina4.setVisible(false);
+        LabelBS4.setVisible(false);
+        FZservicio4.setVisible(false);
+        LabelSZ4.setVisible(false);
+        FiltroQuincenanomina4.setVisible(false);
+        LabelBQ4.setVisible(false);
+        FiltroNDF4.setVisible(false);
+        LabelBNDF4.setVisible(false);
+        LabelBE5.setVisible(false);
+        FApT5.setVisible(false);
+        FAmT5.setVisible(false);
+        Nominab5.setVisible(false);
+        FiltroSnomina5.setVisible(false);
+        LabelBS5.setVisible(false);
+        FZservicio5.setVisible(false);
+        LabelSZ5.setVisible(false);
+        FiltroQuincenanomina5.setVisible(false);
+        LabelBQ5.setVisible(false);
+        FiltroNDF5.setVisible(false);
+        LabelBNDF5.setVisible(false);
+        LabelBE6.setVisible(false);
+        FApT6.setVisible(false);
+        FAmT6.setVisible(false);
+        Nominab6.setVisible(false);
+        FiltroSnomina6.setVisible(false);
+        LabelBS6.setVisible(false);
+        FZservicio6.setVisible(false);
+        LabelSZ6.setVisible(false);
+        FiltroQuincenanomina6.setVisible(false);
+        LabelBQ6.setVisible(false);
+        FiltroNDF6.setVisible(false);
+        LabelBNDF6.setVisible(false);
+        LabelBE7.setVisible(false);
+        FApT7.setVisible(false);
+        FAmT7.setVisible(false);
+        Nominab7.setVisible(false);
+        FiltroSnomina7.setVisible(false);
+        LabelBS7.setVisible(false);
+        FZservicio7.setVisible(false);
+        LabelSZ7.setVisible(false);
+        FiltroQuincenanomina7.setVisible(false);
+        LabelBQ7.setVisible(false);
+        FiltroNDF7.setVisible(false);
+        LabelBNDF7.setVisible(false);
+        //</editor-fold>
+        shareN();
+        sharepresnom();
+        FunMD();
+        setIconImage(new ImageIcon(NominaS_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        sumaDep();
+        setTitle("Nomina Semanal IMSS. # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+                + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
+        switch (LP.getVDA()) {
+            case 0 -> {
+            }
+            case 1 -> {
+                Menuadm.setVisible(false);
+
+            }
+            case 2 -> {
+                Menuadm.setVisible(false);
+                if (LP.getP1() == 0) {
+                    ODT.setVisible(false);
+                }
+                if (LP.getP2() == 0) {
+                    CDA.setVisible(false);
+                }
+                if (LP.getP3() == 0) {
+                    LDA.setVisible(false);
+                }
+                if (LP.getP4() == 0) {
+                    Reportes.setVisible(false);
+                }
+                if (LP.getP5() == 0) {
+                    NomDetallada.setVisible(false);
+                }
+                if (LP.getP6() == 0) {
+                    NomPagos.setVisible(false);
+                }
+                if (LP.getP7() == 0) {
+                    PRES.setVisible(false);
+                }
+                if (LP.getP8() == 0) {
+                    Nomsem.setVisible(false);
+                    NomSemGen.setVisible(false);
+                }
+                if (LP.getP9() == 0) {
+                    PresSem.setVisible(false);
+                }
+                if (LP.getP10() == 0) {
+                    Modm.setVisible(false);
+                }
+            }
+            default -> {
+            }
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -894,16 +1272,44 @@ public final class NominaS_5 extends javax.swing.JFrame {
         MTDsum8 = new javax.swing.JLabel();
         Imprimir9 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        Menuadm = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        ODT1 = new javax.swing.JMenuItem();
+        CNQ1 = new javax.swing.JMenuItem();
+        PRESQ = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        CDA1 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        General = new javax.swing.JMenuItem();
+        Estadias = new javax.swing.JMenuItem();
+        Torteria = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        Depositos = new javax.swing.JMenu();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        ZYS = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu10 = new javax.swing.JMenu();
+        Nomsem = new javax.swing.JMenuItem();
+        NomSemGen = new javax.swing.JMenuItem();
+        PresSem = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
         ODT = new javax.swing.JMenuItem();
+        CNQ = new javax.swing.JMenuItem();
         CDA = new javax.swing.JMenuItem();
         PRES = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        CNQ = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        LDA = new javax.swing.JMenuItem();
+        Reportes = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nomina Semanal IMSS");
@@ -5238,9 +5644,213 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Tablas de pagos", NomPagos);
 
-        jMenu1.setText("Cambiar a:");
+        Menuadm.setText("Todas las ventanas");
 
-        jMenu2.setText("Nomina quincenal");
+        jMenu5.setText("Area Nomina");
+
+        jMenu6.setText("Nomina quincenal");
+
+        ODT1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        ODT1.setText("Ordenes de taller");
+        ODT1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT1ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(ODT1);
+
+        CNQ1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CNQ1.setText("Nomina IMSS");
+        CNQ1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CNQ1ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(CNQ1);
+
+        PRESQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        PRESQ.setText("Prestamos");
+        PRESQ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PRESQActionPerformed(evt);
+            }
+        });
+        jMenu6.add(PRESQ);
+
+        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem7.setText("Nomina General");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem7);
+
+        CDA1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CDA1.setText("Caja de ahorro");
+        CDA1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA1ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(CDA1);
+
+        jMenu5.add(jMenu6);
+
+        jMenu7.setText("Semanal");
+
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem8.setText("Nomina Semanal IMSS");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem8);
+
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem9.setText("Prestamos Semanales");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem9);
+
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem10.setText("Nomina Semanal General");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem10);
+
+        jMenu5.add(jMenu7);
+
+        jMenuItem11.setText("Listas de asistencia");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem11);
+
+        Menuadm.add(jMenu5);
+
+        jMenu8.setText("Area RH");
+
+        General.setText("Empleados General");
+        General.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GeneralActionPerformed(evt);
+            }
+        });
+        jMenu8.add(General);
+
+        Estadias.setText("Alumno de estadia");
+        Estadias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstadiasActionPerformed(evt);
+            }
+        });
+        jMenu8.add(Estadias);
+
+        Torteria.setText("Empleados Torteria");
+        Torteria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TorteriaActionPerformed(evt);
+            }
+        });
+        jMenu8.add(Torteria);
+
+        jMenu9.setText("Semanales");
+
+        jMenuItem12.setText("Inturbide");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem12);
+
+        jMenuItem13.setText("Tehuantepec");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem13);
+
+        jMenuItem14.setText("PTE titla");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem14);
+
+        jMenu8.add(jMenu9);
+
+        Depositos.setText("Depositos");
+
+        jMenuItem15.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem15.setText("Depositos C/ IMSS");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        Depositos.add(jMenuItem15);
+
+        jMenu8.add(Depositos);
+
+        Menuadm.add(jMenu8);
+
+        ZYS.setText("Zonas y Servicios");
+        ZYS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ZYSActionPerformed(evt);
+            }
+        });
+        Menuadm.add(ZYS);
+
+        jMenuBar1.add(Menuadm);
+
+        jMenu3.setText("Cambiar a:");
+
+        jMenu10.setText("Semanal");
+
+        Nomsem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        Nomsem.setText("Nomina Semanal IMSS");
+        Nomsem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NomsemActionPerformed(evt);
+            }
+        });
+        jMenu10.add(Nomsem);
+
+        NomSemGen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        NomSemGen.setText("Nomina Semanal General");
+        NomSemGen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NomSemGenActionPerformed(evt);
+            }
+        });
+        jMenu10.add(NomSemGen);
+
+        PresSem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        PresSem.setText("Prestamos Semanales");
+        PresSem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PresSemActionPerformed(evt);
+            }
+        });
+        jMenu10.add(PresSem);
+
+        jMenu3.add(jMenu10);
+
+        jMenu11.setText("Nomina quincenal");
 
         ODT.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         ODT.setText("Ordenes de taller");
@@ -5249,34 +5859,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 ODTActionPerformed(evt);
             }
         });
-        jMenu2.add(ODT);
-
-        CDA.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        CDA.setText("Caja de ahorro");
-        CDA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CDAActionPerformed(evt);
-            }
-        });
-        jMenu2.add(CDA);
-
-        PRES.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        PRES.setText("Prestamos");
-        PRES.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PRESActionPerformed(evt);
-            }
-        });
-        jMenu2.add(PRES);
-
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        jMenuItem2.setText("Nomina General");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem2);
+        jMenu11.add(ODT);
 
         CNQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         CNQ.setText("Nomina IMSS");
@@ -5285,35 +5868,58 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 CNQActionPerformed(evt);
             }
         });
-        jMenu2.add(CNQ);
+        jMenu11.add(CNQ);
 
-        jMenu1.add(jMenu2);
-
-        jMenuItem1.setText("Prestamos Sem");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        CDA.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CDA.setText("Caja de ahorro");
+        CDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                CDAActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu11.add(CDA);
 
-        jMenuItem3.setText("Semanal General");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        PRES.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        PRES.setText("Prestamos");
+        PRES.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                PRESActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu11.add(PRES);
 
-        jMenuItem5.setText("Listas de asistencia");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem4.setText("Nomina General");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem5);
+        jMenu11.add(jMenuItem4);
 
-        jMenuBar1.add(jMenu1);
+        jMenu3.add(jMenu11);
+
+        LDA.setText("Listas de asistencia");
+        LDA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDAActionPerformed(evt);
+            }
+        });
+        jMenu3.add(LDA);
+
+        jMenuBar1.add(jMenu3);
+
+        Reportes.setText("Reportes");
+
+        jMenuItem6.setText("Reportes de nomina");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        Reportes.add(jMenuItem6);
+
+        jMenuBar1.add(Reportes);
 
         setJMenuBar(jMenuBar1);
 
@@ -7703,7 +8309,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
 //compartir empleados
     public void shareN() {
         //Buscar empleado
-         String Share = BNameNom.getText();
+        String Share = BNameNom.getText();
         String ShareAP = BAPNom.getText();
         String ShareAM = BAMNom.getText();
         String where = "SELECT `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono` FROM `rh.empleados`"
@@ -8141,42 +8747,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         Pendienteprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 7)));
         deposito();
     }//GEN-LAST:event_SHPresnomMouseClicked
-
-    private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        ODTQ_5 regr = new ODTQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ODTActionPerformed
-
-    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        CDAQ_5 regr = new CDAQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_CDAActionPerformed
-
-    private void PRESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESActionPerformed
-        PresQ_5 regr = new PresQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_PRESActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        NominaQSiMSS_5 regr = new NominaQSiMSS_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
-        NominaQ_5 regr = new NominaQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_CNQActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        PresS_5 regr = new PresS_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void CS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2ActionPerformed
 
@@ -13394,11 +13964,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         Pendienteprenom.setText("0");
     }//GEN-LAST:event_CleanActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        NominaS_simss_5 regr = new NominaS_simss_5();
-        regr.setVisible(true);
-        this.dispose();    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
     private void ISRKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ISRKeyReleased
         deposito();
     }//GEN-LAST:event_ISRKeyReleased
@@ -13411,11 +13976,167 @@ public final class NominaS_5 extends javax.swing.JFrame {
         deposito();
     }//GEN-LAST:event_ADNKeyReleased
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        Listas_5 regr = new Listas_5();
+    private void ODT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT1ActionPerformed
+        Admin_ODTQ_5 regr = new Admin_ODTQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_ODT1ActionPerformed
+
+    private void CNQ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQ1ActionPerformed
+        NominaQ_5 regr = new NominaQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CNQ1ActionPerformed
+
+    private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
+        Admin_PresQ_5 regr = new Admin_PresQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PRESQActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void CDA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA1ActionPerformed
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA1ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        NominaS_5 regr = new NominaS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        Admin_PresS_5 regr = new Admin_PresS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        Listas_5 regr = new Listas_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
+
+        Empleados_4 RH = new Empleados_4(usr, LP);
+        RH.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_GeneralActionPerformed
+
+    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
+        Estadias_4 regr = new Estadias_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EstadiasActionPerformed
+
+    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
+        Tortas_4 regr = new Tortas_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_TorteriaActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        Inturbide_4 regr = new Inturbide_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        PT_4 regr = new PT_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        Depositos_4 regr = new Depositos_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
+        AltasZyS_3 regr = new AltasZyS_3(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ZYSActionPerformed
+
+    private void NomsemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomsemActionPerformed
+        NominaS_5 regr = new NominaS_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_NomsemActionPerformed
+
+    private void NomSemGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomSemGenActionPerformed
+        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_NomSemGenActionPerformed
+
+    private void PresSemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PresSemActionPerformed
+        Admin_PresS_5 regr = new Admin_PresS_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PresSemActionPerformed
+
+    private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
+        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODTActionPerformed
+
+    private void PRESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESActionPerformed
+        Admin_PresQ_5 regr = new Admin_PresQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PRESActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
+        Listas_5 regr = new Listas_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDAActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        Admin_RepNom_7 regr = new Admin_RepNom_7(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
+        CDAQ_5 regr = new CDAQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDAActionPerformed
+
+    private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
+        NominaQ_5 regr = new NominaQ_5();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CNQActionPerformed
 
     /**
      * @param args the command line arguments
@@ -13477,7 +14198,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Bono1;
     private javax.swing.JRadioButton Bsi;
     private javax.swing.JMenuItem CDA;
+    private javax.swing.JMenuItem CDA1;
     private javax.swing.JMenuItem CNQ;
+    private javax.swing.JMenuItem CNQ1;
     private javax.swing.JButton CS;
     private javax.swing.JButton CS10;
     private javax.swing.JButton CS11;
@@ -13500,6 +14223,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JButton Clean;
     private javax.swing.JLabel DDes;
     private javax.swing.JLabel DT;
+    private javax.swing.JMenu Depositos;
     private javax.swing.JComboBox<String> DomT;
     private javax.swing.JButton Eliminar;
     private javax.swing.JButton Eliminar1;
@@ -13510,6 +14234,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JButton Eliminar6;
     private javax.swing.JButton Eliminar7;
     private javax.swing.JButton Eliminar8;
+    private javax.swing.JMenuItem Estadias;
     private javax.swing.JTextField FAmT;
     private javax.swing.JTextField FAmT1;
     private javax.swing.JTextField FAmT2;
@@ -13619,6 +14344,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser Fmier;
     private com.toedter.calendar.JDateChooser Fsab;
     private com.toedter.calendar.JDateChooser Fvier;
+    private javax.swing.JMenuItem General;
     private javax.swing.JTextField HE;
     private javax.swing.JTextField ISR;
     private javax.swing.JButton Imprimir;
@@ -13631,6 +14357,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JButton Imprimir7;
     private javax.swing.JButton Imprimir9;
     private javax.swing.JComboBox<String> JueT;
+    private javax.swing.JMenuItem LDA;
     private javax.swing.JButton LS;
     private javax.swing.JLabel LabelBE;
     private javax.swing.JLabel LabelBE1;
@@ -13733,6 +14460,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel MTDsum7;
     private javax.swing.JLabel MTDsum8;
     private javax.swing.JComboBox<String> MarT;
+    private javax.swing.JMenu Menuadm;
     private javax.swing.JComboBox<String> MierT;
     private javax.swing.JButton Modm;
     private javax.swing.JTextField NDL;
@@ -13740,6 +14468,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField NSprenom;
     private javax.swing.JScrollPane NomDetallada;
     private javax.swing.JScrollPane NomPagos;
+    private javax.swing.JMenuItem NomSemGen;
     private javax.swing.JTextField Nominab;
     private javax.swing.JTextField Nominab1;
     private javax.swing.JTextField Nominab2;
@@ -13749,18 +14478,23 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Nominab6;
     private javax.swing.JTextField Nominab7;
     private javax.swing.JTextField Nominab8;
+    private javax.swing.JMenuItem Nomsem;
     private javax.swing.JTextField NumPrenom;
     private javax.swing.JMenuItem ODT;
+    private javax.swing.JMenuItem ODT1;
     private javax.swing.JTextField PH;
     private javax.swing.JMenuItem PRES;
+    private javax.swing.JMenuItem PRESQ;
     private javax.swing.JTextField Pagadoprenom;
     private javax.swing.JTextField Pendienteprenom;
     private javax.swing.JTabbedPane PestanañasND;
     private javax.swing.JTabbedPane PestañasPagos;
+    private javax.swing.JMenuItem PresSem;
     private javax.swing.JTextField Presp;
     private javax.swing.JTextField RF;
     private javax.swing.JTextField RI;
     private javax.swing.JTextField Rembolso;
+    private javax.swing.JMenu Reportes;
     private javax.swing.JTable SHPresnom;
     private javax.swing.JComboBox<String> SabT;
     private javax.swing.JComboBox<String> Semana;
@@ -13784,7 +14518,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTable Tnom6;
     private javax.swing.JTable Tnom7;
     private javax.swing.JTable Tnom8;
+    private javax.swing.JMenuItem Torteria;
     private javax.swing.JComboBox<String> VieT;
+    private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zon;
     private javax.swing.JTextField am;
     private com.toedter.calendar.JDateChooser año;
@@ -13910,13 +14646,26 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

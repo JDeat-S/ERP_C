@@ -10610,7 +10610,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NomsemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomsemActionPerformed
-        Admin_NominaS_5 regr = new Admin_NominaS_5();
+        NominaS_5 regr = new NominaS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NomsemActionPerformed
@@ -22743,7 +22743,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CDA1ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        Admin_NominaS_5 regr = new Admin_NominaS_5(usr, LP);
+        NominaS_5 regr = new NominaS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem8ActionPerformed

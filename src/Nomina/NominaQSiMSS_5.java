@@ -1,6 +1,5 @@
 package Nomina;
 
-import Admin.Admin_NominaS_5;
 import Admin.Admin_NominaS_simss_5;
 import Admin.Admin_ODTQ_5;
 import Admin.Admin_PresQ_5;
@@ -22922,7 +22921,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CDA1ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        Admin_NominaS_5 regr = new Admin_NominaS_5(usr, LP);
+        NominaS_5 regr = new NominaS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
@@ -22995,7 +22994,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void NomsemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomsemActionPerformed
-        Admin_NominaS_5 regr = new Admin_NominaS_5();
+        NominaS_5 regr = new NominaS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NomsemActionPerformed

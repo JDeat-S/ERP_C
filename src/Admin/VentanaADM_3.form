@@ -840,7 +840,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Mostrar Nominas detalladas"/>
+                        <Property name="text" type="java.lang.String" value="Mostrar Nominas detalladas(S Y Q)"/>
                         <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -849,7 +849,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Mostrar pagos"/>
+                        <Property name="text" type="java.lang.String" value="Mostrar pagos(SYQ)"/>
                         <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -885,7 +885,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Roboto" size="11" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Modificacion de Nominas Quin"/>
+                        <Property name="text" type="java.lang.String" value="Modificacion de Nominas (SYQ)"/>
                         <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>

@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.NominaS_5;
 import Nomina.NominaQSiMSS_5;
 import Nomina.Listas_5;
 import RH.Depositos_4;
@@ -551,11 +552,11 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         P4Nom.setEnabled(false);
 
         P5Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        P5Nom.setText("Mostrar Nominas detalladas");
+        P5Nom.setText("Mostrar Nominas detalladas(S Y Q)");
         P5Nom.setEnabled(false);
 
         P6Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        P6Nom.setText("Mostrar pagos");
+        P6Nom.setText("Mostrar pagos(SYQ)");
         P6Nom.setEnabled(false);
 
         P7Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
@@ -571,7 +572,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         P9Nom.setEnabled(false);
 
         P10Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        P10Nom.setText("Modificacion de Nominas Quin");
+        P10Nom.setText("Modificacion de Nominas (SYQ)");
         P10Nom.setEnabled(false);
 
         AAADN.setText("Acceso a Area de Nomina");
@@ -1074,7 +1075,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_CDAActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Admin_NominaS_5 regr = new Admin_NominaS_5(usr, LP);
+        NominaS_5 regr = new NominaS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
