@@ -1137,25 +1137,25 @@ public final class Estadias_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltroestItemStateChanged
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
-        Empleados_4 regr = new Empleados_4();
+        Empleados_4 regr = new Empleados_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GeneralActionPerformed
 
     private void NominaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NominaActionPerformed
-        NominaQ_5 regr = new NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NominaActionPerformed
 
     private void AdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministradoresActionPerformed
-        VentanaADM_3 regr = new VentanaADM_3();
+        VentanaADM_3 regr = new VentanaADM_3(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AdministradoresActionPerformed
 
     private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        AltasZyS_3 regr = new AltasZyS_3();
+        AltasZyS_3 regr = new AltasZyS_3(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
@@ -1172,37 +1172,37 @@ public final class Estadias_4 extends javax.swing.JFrame {
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
 
-        Tortas_4 regr = new Tortas_4();
+        Tortas_4 regr = new Tortas_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Depositos_4 regr = new Depositos_4();
+        Depositos_4 regr = new Depositos_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Inturbide_4 regr = new Inturbide_4();
+        Inturbide_4 regr = new Inturbide_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Tehueantepec_4 regr = new Tehueantepec_4();
+        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        PT_4 regr = new PT_4();
+        PT_4 regr = new PT_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void ADMV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV1ActionPerformed
-        VentanaADM_3 regr = new VentanaADM_3();
+        VentanaADM_3 regr = new VentanaADM_3(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ADMV1ActionPerformed

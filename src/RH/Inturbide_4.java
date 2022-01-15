@@ -8292,7 +8292,9 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void General2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_General2ActionPerformed
-        // TODO add your handling code here:
+        Empleados_4 RH = new Empleados_4(usr, LP);
+        RH.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_General2ActionPerformed
 
     private void ADMV3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV3ActionPerformed
