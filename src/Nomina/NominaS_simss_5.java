@@ -1,6 +1,5 @@
 package Nomina;
 
-import Admin.Admin_PresQ_5;
 import Admin.Admin_PresS_5;
 import Admin.Admin_RepNom_7;
 import Admin.AltasZyS_3;
@@ -13976,7 +13975,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CNQ1ActionPerformed
 
     private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
-        Admin_PresQ_5 regr = new Admin_PresQ_5(usr, LP);
+        PresQ_5 regr = new PresQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESQActionPerformed
@@ -14097,7 +14096,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CDAActionPerformed
 
     private void PRESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESActionPerformed
-        Admin_PresQ_5 regr = new Admin_PresQ_5();
+        PresQ_5 regr = new PresQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESActionPerformed

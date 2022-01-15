@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.PresQ_5;
 import Nomina.ODTQ_5;
 import Nomina.NominaS_simss_5;
 import Nomina.NominaS_5;
@@ -1059,7 +1060,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_CNQActionPerformed
 
     private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
-        Admin_PresQ_5 regr = new Admin_PresQ_5(usr, LP);
+        PresQ_5 regr = new PresQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESQActionPerformed

@@ -2063,7 +2063,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CNQ1ActionPerformed
 
     private void PRESQ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQ1ActionPerformed
-        Admin_PresQ_5 regr = new Admin_PresQ_5(usr, LP);
+        PresQ_5 regr = new PresQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESQ1ActionPerformed
@@ -2172,7 +2172,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ODTActionPerformed
 
     private void PRESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESActionPerformed
-        Admin_PresQ_5 regr = new Admin_PresQ_5();
+        PresQ_5 regr = new PresQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESActionPerformed
