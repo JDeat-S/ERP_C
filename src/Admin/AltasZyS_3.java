@@ -787,7 +787,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jMenuItem15 = new javax.swing.JMenuItem();
         Depositos = new javax.swing.JMenu();
         jMenuItem16 = new javax.swing.JMenuItem();
-        ZYS = new javax.swing.JMenuItem();
+        ADMV2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Zonas y Servicios");
@@ -1537,13 +1537,13 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         Menuadm.add(jMenu8);
 
-        ZYS.setText("Zonas y Servicios");
-        ZYS.addActionListener(new java.awt.event.ActionListener() {
+        ADMV2.setText("Usuarios");
+        ADMV2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ZYSActionPerformed(evt);
+                ADMV2ActionPerformed(evt);
             }
         });
-        Menuadm.add(ZYS);
+        Menuadm.add(ADMV2);
 
         jMenuBar1.add(Menuadm);
 
@@ -1905,13 +1905,13 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_CbxcostoItemStateChanged
 
     private void ODT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT1ActionPerformed
-        ODTQ_5 regr = new ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODT1ActionPerformed
 
     private void CNQ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQ1ActionPerformed
-        NominaQ_5 regr = new NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CNQ1ActionPerformed
@@ -1947,13 +1947,13 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        NominaS_simss_5 regr = new NominaS_simss_5();
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        Listas_5 regr = new Listas_5();
+        Listas_5 regr = new Listas_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem12ActionPerformed
@@ -1996,16 +1996,16 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
-        Depositos_4 regr = new Depositos_4();
+        Depositos_4 regr = new Depositos_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
-    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        AltasZyS_3 regr = new AltasZyS_3(usr, LP);
+    private void ADMV2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV2ActionPerformed
+        VentanaADM_3 regr = new VentanaADM_3(usr, LP);
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_ZYSActionPerformed
+    }//GEN-LAST:event_ADMV2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2051,6 +2051,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem ADMV2;
     private javax.swing.JTextField Abre;
     private javax.swing.JButton AgregarZ;
     private javax.swing.JButton AgrergarS;
@@ -2103,7 +2104,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JLabel TdServ;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JTable ZSh;
-    private javax.swing.JMenuItem ZYS;
     private botones.BotonWeb botonWeb2;
     private javax.swing.JTextField idZona;
     private javax.swing.JLabel jLabel1;

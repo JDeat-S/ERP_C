@@ -5136,6 +5136,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         Depositos = new javax.swing.JMenu();
         jMenuItem15 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
+        ADMV2 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         Nomsem = new javax.swing.JMenuItem();
@@ -10498,6 +10499,14 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         });
         Menuadm.add(ZYS);
+
+        ADMV2.setText("Usuarios");
+        ADMV2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADMV2ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(ADMV2);
 
         jMenuBar1.add(Menuadm);
 
@@ -21358,7 +21367,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Imprimir4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        NominaQ_5 regr = new NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -22974,7 +22983,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-        Depositos_4 regr = new Depositos_4();
+        Depositos_4 regr = new Depositos_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem15ActionPerformed
@@ -22986,7 +22995,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void NomsemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomsemActionPerformed
-        NominaS_5 regr = new NominaS_5();
+        NominaS_5 regr = new NominaS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NomsemActionPerformed
@@ -22998,25 +23007,25 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_NomSemGenActionPerformed
 
     private void PresSemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PresSemActionPerformed
-        PresS_5 regr = new PresS_5();
+        PresS_5 regr = new PresS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PresSemActionPerformed
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        ODTQ_5 regr = new ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODTActionPerformed
 
     private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        CDAQ_5 regr = new CDAQ_5();
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDAActionPerformed
 
     private void PRESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESActionPerformed
-        PresQ_5 regr = new PresQ_5();
+        PresQ_5 regr = new PresQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESActionPerformed
@@ -23031,6 +23040,12 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         Admin_RepNom_7 regr = new Admin_RepNom_7(usr, LP);
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void ADMV2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV2ActionPerformed
+        VentanaADM_3 regr = new VentanaADM_3(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ADMV2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -24098,6 +24113,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ADD;
+    private javax.swing.JMenuItem ADMV2;
     private javax.swing.JTextField AdN;
     private javax.swing.JButton AgregarNP;
     private javax.swing.JTextField Ap;

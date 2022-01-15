@@ -640,6 +640,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         Depositos = new javax.swing.JMenu();
         jMenuItem16 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
+        ADMV2 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
         Nomsem = new javax.swing.JMenuItem();
@@ -1515,6 +1516,14 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         });
         Menuadm.add(ZYS);
 
+        ADMV2.setText("Usuarios");
+        ADMV2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADMV2ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(ADMV2);
+
         jMenuBar1.add(Menuadm);
 
         jMenu4.setText("Cambiar a:");
@@ -2025,7 +2034,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FilAMPCDAKeyReleased
 
     private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
-        NominaQ_5 regr = new NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CNQActionPerformed
@@ -2051,13 +2060,13 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_MMAPagosActionPerformed
 
     private void ODT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT1ActionPerformed
-        ODTQ_5 regr = new ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODT1ActionPerformed
 
     private void CNQ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQ1ActionPerformed
-        NominaQ_5 regr = new NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CNQ1ActionPerformed
@@ -2093,13 +2102,13 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        NominaS_simss_5 regr = new NominaS_simss_5();
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        Listas_5 regr = new Listas_5();
+        Listas_5 regr = new Listas_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem12ActionPerformed
@@ -2148,57 +2157,63 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void NomsemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomsemActionPerformed
-        NominaS_5 regr = new NominaS_5();
+        NominaS_5 regr = new NominaS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NomsemActionPerformed
 
     private void NomSemGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomSemGenActionPerformed
-        NominaS_simss_5 regr = new NominaS_simss_5();
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NomSemGenActionPerformed
 
     private void PresSemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PresSemActionPerformed
-        PresS_5 regr = new PresS_5();
+        PresS_5 regr = new PresS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PresSemActionPerformed
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        ODTQ_5 regr = new ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODTActionPerformed
 
     private void PRESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESActionPerformed
-        PresQ_5 regr = new PresQ_5();
+        PresQ_5 regr = new PresQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESActionPerformed
 
     private void NomGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomGenActionPerformed
-        NominaQSiMSS_5 regr = new NominaQSiMSS_5();
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NomGenActionPerformed
 
     private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
-        Listas_5 regr = new Listas_5();
+        Listas_5 regr = new Listas_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LDAActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        Admin_RepNom_7 regr = new Admin_RepNom_7();
+        Admin_RepNom_7 regr = new Admin_RepNom_7(usr, LP);
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
-        Depositos_4 regr = new Depositos_4();
+        Depositos_4 regr = new Depositos_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void ADMV2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV2ActionPerformed
+        VentanaADM_3 regr = new VentanaADM_3(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ADMV2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2236,6 +2251,8 @@ public final class CDAQ_5 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ADCDA;
+    private javax.swing.JMenuItem ADMV1;
+    private javax.swing.JMenuItem ADMV2;
     private javax.swing.JTextField AMcda;
     private javax.swing.JTextField APQ;
     private javax.swing.JTextField APcda;

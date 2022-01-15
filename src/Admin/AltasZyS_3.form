@@ -206,12 +206,12 @@
                 </Menu>
               </SubComponents>
             </Menu>
-            <MenuItem class="javax.swing.JMenuItem" name="ZYS">
+            <MenuItem class="javax.swing.JMenuItem" name="ADMV2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Zonas y Servicios"/>
+                <Property name="text" type="java.lang.String" value="Usuarios"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ZYSActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ADMV2ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
