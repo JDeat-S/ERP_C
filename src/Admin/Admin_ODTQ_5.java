@@ -5,6 +5,7 @@
  */
 package Admin;
 
+import Nomina.CDAQ_5;
 import RH.Tortas_4;
 import RH.Estadias_4;
 import Nomina.NominaQ_5;
@@ -2554,7 +2555,7 @@ public final class Admin_ODTQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_CNQActionPerformed
 
     private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+        CDAQ_5 regr = new CDAQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDAActionPerformed

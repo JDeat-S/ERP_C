@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.CDAQ_5;
 import Nomina.NominaQ_5;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
@@ -20538,7 +20539,7 @@ public final class Admin_NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ODTActionPerformed
 
     private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+        CDAQ_5 regr = new CDAQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDAActionPerformed

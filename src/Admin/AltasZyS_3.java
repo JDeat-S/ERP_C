@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.CDAQ_5;
 import ColoresT.*;
 import Conexion.ConexionSQL;
 import Filtros.FiltrosZonas;
@@ -1915,7 +1916,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+        CDAQ_5 regr = new CDAQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDAActionPerformed

@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.CDAQ_5;
 import RH.*;
 import Nomina.*;
 import Conexion.ConexionSQL;
@@ -1049,7 +1050,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        Admin_CDAQ_5 regr = new Admin_CDAQ_5(usr, LP);
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDAActionPerformed

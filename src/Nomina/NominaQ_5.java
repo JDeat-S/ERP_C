@@ -20996,7 +20996,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ODTActionPerformed
 
     private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+        CDAQ_5 regr = new CDAQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDAActionPerformed
@@ -22720,7 +22720,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void CDA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA1ActionPerformed
-        Admin_CDAQ_5 regr = new Admin_CDAQ_5(usr, LP);
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDA1ActionPerformed

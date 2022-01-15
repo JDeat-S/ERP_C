@@ -1,6 +1,6 @@
 package RH;
 
-import Admin.Admin_CDAQ_5;
+import Nomina.CDAQ_5;
 import Admin.Admin_Depositos_4;
 import Admin.Admin_Listas_5;
 import Admin.Admin_NominaQSiMSS_5;
@@ -8211,7 +8211,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+        CDAQ_5 regr = new CDAQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDAActionPerformed

@@ -1,5 +1,6 @@
 package RH;
 
+import Nomina.CDAQ_5;
 import Nomina.NominaQ_5;
 import Admin.*;
 import Conexion.ConexionSQL;
@@ -4154,7 +4155,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+        CDAQ_5 regr = new CDAQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDAActionPerformed
