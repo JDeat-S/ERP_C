@@ -1,22 +1,10 @@
 package RH;
 
-import Nomina.CDAQ_5;
-import Nomina.Listas_5;
-import Nomina.NominaQSiMSS_5;
-import Nomina.NominaS_5;
-import Nomina.NominaS_simss_5;
-import Admin.Admin_ODTQ_5;
-import Admin.Admin_PresQ_5;
-import Admin.Admin_PresS_5;
-import Admin.AltasZyS_3;
-import RH.Inturbide_4;
-import RH.Tortas_4;
-import RH.Estadias_4;
+import Nomina.*;
+import Admin.*;
 import Conexion.ConexionSQL;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
-import Nomina.NominaQ_5;
-import RH.Empleados_4;
 import java.awt.Desktop;
 import java.awt.HeadlessException;
 import java.io.File;
@@ -57,7 +45,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
     /**
-     * Creates new form Admin_Sem_4
+     * Creates new form Sem_4
      */
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
@@ -3233,6 +3221,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
+        ADMV1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         Alumnos = new javax.swing.JMenuItem();
         EmpleadosT = new javax.swing.JMenuItem();
@@ -5789,6 +5778,14 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         });
         Menuadm.add(ZYS);
 
+        ADMV1.setText("Usuarios");
+        ADMV1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADMV1ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(ADMV1);
+
         jMenuBar1.add(Menuadm);
 
         jMenu1.setText("Cambiar a:");
@@ -8166,7 +8163,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jLabel38MousePressed
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODTActionPerformed
@@ -8178,7 +8175,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_CNQActionPerformed
 
     private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
-        Admin_PresQ_5 regr = new Admin_PresQ_5();
+        PresQ_5 regr = new PresQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESQActionPerformed
@@ -8202,7 +8199,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5();
+        PresS_5 regr = new PresS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
@@ -8300,6 +8297,12 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void ADMV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV1ActionPerformed
+        VentanaADM_3 regr = new VentanaADM_3();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ADMV1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -8345,6 +8348,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem ADMV1;
     private javax.swing.JMenuItem Alumnos;
     private javax.swing.JLabel AutoFecha;
     private javax.swing.JLabel Autohora;

@@ -1,11 +1,6 @@
 package RH;
 
-import Nomina.NominaS_simss_5;
-import Nomina.NominaS_5;
-import Nomina.NominaQSiMSS_5;
-import Nomina.Listas_5;
-import Nomina.CDAQ_5;
-import Nomina.NominaQ_5;
+import Nomina.*;
 import Admin.*;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
@@ -1440,6 +1435,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
+        ADMV1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         Alumnos = new javax.swing.JMenuItem();
         EmpleadosT = new javax.swing.JMenuItem();
@@ -2888,6 +2884,14 @@ public final class Empleados_4 extends javax.swing.JFrame {
         });
         Menuadm.add(ZYS);
 
+        ADMV1.setText("Usuarios");
+        ADMV1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADMV1ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(ADMV1);
+
         jMenuBar1.add(Menuadm);
 
         jMenu1.setText("Cambiar a:");
@@ -4135,7 +4139,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_fdpActionPerformed
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODTActionPerformed
@@ -4147,7 +4151,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_CNQActionPerformed
 
     private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
-        Admin_PresQ_5 regr = new Admin_PresQ_5();
+        PresQ_5 regr = new PresQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESQActionPerformed
@@ -4171,7 +4175,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5();
+        PresS_5 regr = new PresS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
@@ -4231,6 +4235,12 @@ public final class Empleados_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
 
+    private void ADMV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV1ActionPerformed
+        VentanaADM_3 regr = new VentanaADM_3();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ADMV1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4260,6 +4270,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AADA;
     private javax.swing.JLabel ADA;
+    private javax.swing.JMenuItem ADMV1;
     private javax.swing.JTextField AMgen;
     private javax.swing.JTextField AMimss;
     private javax.swing.JTextField APgen;

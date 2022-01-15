@@ -21197,7 +21197,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void PresSemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PresSemActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5();
+        PresS_5 regr = new PresS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PresSemActionPerformed
@@ -22749,7 +22749,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5(usr, LP);
+        PresS_5 regr = new PresS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem9ActionPerformed

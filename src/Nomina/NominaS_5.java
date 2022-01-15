@@ -1,12 +1,8 @@
 package Nomina;
 
-import Admin.Admin_PresS_5;
-import Admin.Admin_RepNom_7;
-import Admin.AltasZyS_3;
-import RH.Tortas_4;
-import RH.Estadias_4;
-import RH.Empleados_4;
+import Admin.*;
 import Conexion.ConexionSQL;
+import RH.*;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
 import Inicio.Inicio_1;
@@ -13996,7 +13992,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5(usr, LP);
+        PresS_5 regr = new PresS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
@@ -14069,7 +14065,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_NomSemGenActionPerformed
 
     private void PresSemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PresSemActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5();
+        PresS_5 regr = new PresS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PresSemActionPerformed

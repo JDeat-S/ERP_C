@@ -462,6 +462,7 @@ public final class Estadias_4 extends javax.swing.JFrame {
         Nomina = new javax.swing.JMenuItem();
         Administradores = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
+        ADMV1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
         EmpleadosT = new javax.swing.JMenuItem();
@@ -881,6 +882,14 @@ public final class Estadias_4 extends javax.swing.JFrame {
         });
         Menuadm.add(ZYS);
 
+        ADMV1.setText("Usuarios");
+        ADMV1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADMV1ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(ADMV1);
+
         jMenuBar1.add(Menuadm);
 
         jMenu1.setText("Cambiar a");
@@ -1192,6 +1201,12 @@ public final class Estadias_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void ADMV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV1ActionPerformed
+        VentanaADM_3 regr = new VentanaADM_3();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ADMV1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1251,6 +1266,7 @@ public final class Estadias_4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem ADMV1;
     private javax.swing.JTextField AMest;
     private javax.swing.JTextField APEst;
     private javax.swing.JCheckBox Adeest;

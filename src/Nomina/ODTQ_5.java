@@ -1,18 +1,8 @@
 package Nomina;
 
-import Admin.Admin_PresS_5;
-import Admin.Admin_RepNom_7;
-import Admin.AltasZyS_3;
-import Nomina.NominaS_simss_5;
-import Nomina.NominaS_5;
-import Nomina.NominaQSiMSS_5;
-import Nomina.Listas_5;
-import Nomina.CDAQ_5;
-import RH.Tortas_4;
-import RH.Estadias_4;
-import Nomina.NominaQ_5;
-import RH.Empleados_4;
+import Admin.*;
 import Conexion.ConexionSQL;
+import RH.*;
 import Inicio.Inicio_1;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
@@ -2783,7 +2773,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5(usr, LP);
+        PresS_5 regr = new PresS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed
@@ -2862,7 +2852,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_NomSemGenActionPerformed
 
     private void PresSemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PresSemActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5();
+        PresS_5 regr = new PresS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PresSemActionPerformed

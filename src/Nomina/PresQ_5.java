@@ -1,18 +1,8 @@
 package Nomina;
 
-import Admin.Admin_PresS_5;
-import Admin.Admin_RepNom_7;
-import Admin.AltasZyS_3;
-import Nomina.NominaS_simss_5;
-import Nomina.NominaS_5;
-import Nomina.NominaQSiMSS_5;
-import Nomina.Listas_5;
-import Nomina.CDAQ_5;
-import RH.Tortas_4;
-import RH.Estadias_4;
-import Nomina.NominaQ_5;
-import RH.Empleados_4;
+import Admin.*;
 import Conexion.ConexionSQL;
+import RH.*;
 import Inicio.Inicio_1;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
@@ -118,7 +108,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
                     // NomPagos.setVisible(false);
                 }
                 if (LP.getP7() == 0) {
-                    PRES.setVisible(false);
+                    //PRES.setVisible(false);
                 }
                 if (LP.getP8() == 0) {
                     Nomsem.setVisible(false);
@@ -729,7 +719,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
         ODT = new javax.swing.JMenuItem();
         CNQ = new javax.swing.JMenuItem();
         NomGen = new javax.swing.JMenuItem();
-        PRES = new javax.swing.JMenuItem();
+        CDA = new javax.swing.JMenuItem();
         LDA = new javax.swing.JMenuItem();
         Reportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -1533,14 +1523,14 @@ public final class PresQ_5 extends javax.swing.JFrame {
         });
         jMenu11.add(NomGen);
 
-        PRES.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        PRES.setText("Prestamos");
-        PRES.addActionListener(new java.awt.event.ActionListener() {
+        CDA.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CDA.setText("Caja de ahorro");
+        CDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PRESActionPerformed(evt);
+                CDAActionPerformed(evt);
             }
         });
-        jMenu11.add(PRES);
+        jMenu11.add(CDA);
 
         jMenu4.add(jMenu11);
 
@@ -1931,7 +1921,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5(usr, LP);
+        PresS_5 regr = new PresS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed
@@ -2010,7 +2000,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_NomSemGenActionPerformed
 
     private void PresSemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PresSemActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5();
+        PresS_5 regr = new PresS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PresSemActionPerformed
@@ -2044,9 +2034,9 @@ public final class PresQ_5 extends javax.swing.JFrame {
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
-    private void PRESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESActionPerformed
+    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PRESActionPerformed
+    }//GEN-LAST:event_CDAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2091,6 +2081,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField BE;
     private javax.swing.JTextField Busamshpre;
     private javax.swing.JTextField Busapshpre;
+    private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CDA1;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JMenuItem CNQ1;
@@ -2129,7 +2120,6 @@ public final class PresQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem ODT1;
     private javax.swing.JTextField PQ;
-    private javax.swing.JMenuItem PRES;
     private javax.swing.JMenuItem PRESQ1;
     private javax.swing.JTextField PagadoPres;
     private javax.swing.JTextField Pendientepres;

@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.PresS_5;
 import Nomina.PresQ_5;
 import Nomina.ODTQ_5;
 import Nomina.NominaS_simss_5;
@@ -1084,7 +1085,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5(usr, LP);
+        PresS_5 regr = new PresS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed

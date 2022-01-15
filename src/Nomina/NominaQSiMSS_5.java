@@ -1,17 +1,12 @@
 package Nomina;
 
-import Admin.Admin_PresS_5;
-import Admin.Admin_RepNom_7;
-import Admin.AltasZyS_3;
-import Nomina.Listas_5;
-import Nomina.CDAQ_5;
-import Nomina.NominaQ_5;
+import Admin.*;
+import RH.*;
+import Logicas.*;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
 import Inicio.Inicio_1;
-import Logicas.Logica_permisos;
-import Logicas.Logica_usuarios;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.awt.print.PrinterException;
@@ -77,7 +72,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
-        Logica_usuarios usr;
+    Logica_usuarios usr;
     Logica_permisos LP;
 
     public NominaQSiMSS_5() {
@@ -22924,7 +22919,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5(usr, LP);
+        PresS_5 regr = new PresS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
@@ -23003,7 +22998,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_NomSemGenActionPerformed
 
     private void PresSemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PresSemActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5();
+        PresS_5 regr = new PresS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PresSemActionPerformed

@@ -1,6 +1,7 @@
 package Admin;
 
 import Filtros.FiltrosZonas;
+import Logicas.*;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.io.File;
@@ -33,9 +34,23 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class Admin_RepNom_7 extends javax.swing.JFrame {
 
     int xMouse, yMouse;
+    Logica_usuarios usr;
+    Logica_permisos LP;
 
     public Admin_RepNom_7() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        LabelQuin.setVisible(false);
+        cbxQuincena.setVisible(false);
+        FiltrosZonas zz8 = new FiltrosZonas();
+        DefaultComboBoxModel contenido = new DefaultComboBoxModel(zz8.mostrarzonas());
+        cbxZona.setModel(contenido);
+    }
+
+    public Admin_RepNom_7(Logica_usuarios usr, Logica_permisos LP) {
+        initComponents();
+        this.usr = usr;
+        this.LP = LP;
         this.setLocationRelativeTo(null);
         LabelQuin.setVisible(false);
         cbxQuincena.setVisible(false);
