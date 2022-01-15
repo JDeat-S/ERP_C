@@ -2084,7 +2084,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        Admin_Listas_5 regr = new Admin_Listas_5();
+        Listas_5 regr = new Listas_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem12ActionPerformed
@@ -2169,7 +2169,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_NomGenActionPerformed
 
     private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
-        Admin_Listas_5 regr = new Admin_Listas_5();
+        Listas_5 regr = new Listas_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LDAActionPerformed

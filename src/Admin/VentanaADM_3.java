@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.Listas_5;
 import RH.Depositos_4;
 import Nomina.CDAQ_5;
 import RH.*;
@@ -1090,7 +1091,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        Admin_Listas_5 regr = new Admin_Listas_5();
+        Listas_5 regr = new Listas_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed

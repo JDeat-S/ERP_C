@@ -900,6 +900,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         sharecdanom();
         sharepresnom();
         shareODTnom();
+        setTitle("Nomina Quincenal IMSS. # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+                + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
             case 0 -> {
             }
@@ -22647,13 +22649,13 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_RFKeyReleased
 
     private void NomSemGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomSemGenActionPerformed
-        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5();
+        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NomSemGenActionPerformed
 
     private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
-        Admin_Listas_5 regr = new Admin_Listas_5();
+        Listas_5 regr = new Listas_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LDAActionPerformed
@@ -22691,18 +22693,18 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FDP1ItemStateChanged
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        Admin_RepNom_7 regr = new Admin_RepNom_7();
+        Admin_RepNom_7 regr = new Admin_RepNom_7(usr, LP);
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void ODT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT1ActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        Admin_ODTQ_5 regr = new Admin_ODTQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODT1ActionPerformed
 
     private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
-        NominaQ_5 regr = new NominaQ_5();
+        NominaQ_5 regr = new NominaQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CNQActionPerformed
@@ -22738,13 +22740,13 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5();
+        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        Admin_Listas_5 regr = new Admin_Listas_5();
+        Listas_5 regr = new Listas_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem11ActionPerformed

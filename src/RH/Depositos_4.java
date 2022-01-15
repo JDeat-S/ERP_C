@@ -1,5 +1,6 @@
 package RH;
 
+import Nomina.Listas_5;
 import Admin.*;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
@@ -761,7 +762,7 @@ public final class Depositos_4 extends javax.swing.JFrame {
         FZservicio1.setModel(MODELFZSnomdep);
         setIconImage(new ImageIcon(Depositos_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MDepFA();
-        setTitle("RH: Depositos con imss # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+        setTitle("RH: Depositos con imss Quincenales # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
 
         switch (LP.getVDA()) {
@@ -11673,7 +11674,7 @@ public final class Depositos_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        Admin_Listas_5 regr = new Admin_Listas_5();
+        Listas_5 regr = new Listas_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
