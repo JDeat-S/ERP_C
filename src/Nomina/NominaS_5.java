@@ -1,17 +1,12 @@
 package Nomina;
 
-import Admin.Admin_NominaS_simss_5;
 import Admin.Admin_ODTQ_5;
 import Admin.Admin_PresQ_5;
 import Admin.Admin_PresS_5;
 import Admin.Admin_RepNom_7;
 import Admin.AltasZyS_3;
-import Nomina.NominaQSiMSS_5;
-import Nomina.Listas_5;
-import Nomina.CDAQ_5;
 import RH.Tortas_4;
 import RH.Estadias_4;
-import Nomina.NominaQ_5;
 import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
@@ -720,7 +715,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     PRES.setVisible(false);
                 }
                 if (LP.getP8() == 0) {
-                    Nomsem.setVisible(false);
+                    //Nomsem.setVisible(false);
                     NomSemGen.setVisible(false);
                 }
                 if (LP.getP9() == 0) {
@@ -1298,7 +1293,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         ZYS = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
-        Nomsem = new javax.swing.JMenuItem();
         NomSemGen = new javax.swing.JMenuItem();
         PresSem = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
@@ -5820,15 +5814,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         jMenu3.setText("Cambiar a:");
 
         jMenu10.setText("Semanal");
-
-        Nomsem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        Nomsem.setText("Nomina Semanal IMSS");
-        Nomsem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomsemActionPerformed(evt);
-            }
-        });
-        jMenu10.add(Nomsem);
 
         NomSemGen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         NomSemGen.setText("Nomina Semanal General");
@@ -14019,7 +14004,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5(usr, LP);
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed
@@ -14079,14 +14064,8 @@ public final class NominaS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
 
-    private void NomsemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomsemActionPerformed
-        NominaS_5 regr = new NominaS_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_NomsemActionPerformed
-
     private void NomSemGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomSemGenActionPerformed
-        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5(usr, LP);
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NomSemGenActionPerformed
@@ -14478,7 +14457,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Nominab6;
     private javax.swing.JTextField Nominab7;
     private javax.swing.JTextField Nominab8;
-    private javax.swing.JMenuItem Nomsem;
     private javax.swing.JTextField NumPrenom;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem ODT1;

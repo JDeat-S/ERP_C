@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.NominaS_simss_5;
 import Nomina.NominaS_5;
 import Nomina.NominaQSiMSS_5;
 import Nomina.Listas_5;
@@ -1618,7 +1619,7 @@ public final class Admin_PresS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5();
+        NominaS_simss_5 regr = new NominaS_simss_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed

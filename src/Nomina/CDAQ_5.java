@@ -2093,7 +2093,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5();
+        NominaS_simss_5 regr = new NominaS_simss_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem11ActionPerformed
@@ -2154,7 +2154,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_NomsemActionPerformed
 
     private void NomSemGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomSemGenActionPerformed
-        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5();
+        NominaS_simss_5 regr = new NominaS_simss_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NomSemGenActionPerformed

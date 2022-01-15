@@ -1,6 +1,5 @@
 package Nomina;
 
-import Admin.Admin_NominaS_simss_5;
 import Admin.Admin_ODTQ_5;
 import Admin.Admin_PresQ_5;
 import Admin.Admin_PresS_5;
@@ -21580,7 +21579,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5(usr, LP);
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed
@@ -21641,7 +21640,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_NomsemActionPerformed
 
     private void NomSemGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomSemGenActionPerformed
-        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5(usr, LP);
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NomSemGenActionPerformed
@@ -21730,7 +21729,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
-        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5(usr, LP);
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem18ActionPerformed
@@ -21791,7 +21790,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nomsem1ActionPerformed
 
     private void NomSemGen1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomSemGen1ActionPerformed
-        Admin_NominaS_simss_5 regr = new Admin_NominaS_simss_5(usr, LP);
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NomSemGen1ActionPerformed
