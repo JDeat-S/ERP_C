@@ -637,6 +637,8 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
         jMenuItem15 = new javax.swing.JMenuItem();
+        Depositos = new javax.swing.JMenu();
+        jMenuItem16 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
@@ -1490,6 +1492,19 @@ public final class CDAQ_5 extends javax.swing.JFrame {
 
         jMenu8.add(jMenu9);
 
+        Depositos.setText("Depositos");
+
+        jMenuItem16.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem16.setText("Depositos C/ IMSS");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        Depositos.add(jMenuItem16);
+
+        jMenu8.add(Depositos);
+
         Menuadm.add(jMenu8);
 
         ZYS.setText("Zonas y Servicios");
@@ -2054,7 +2069,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PRESQ1ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5(usr, LP);
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
@@ -2163,7 +2178,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PRESActionPerformed
 
     private void NomGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomGenActionPerformed
-        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5();
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_NomGenActionPerformed
@@ -2178,6 +2193,12 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         Admin_RepNom_7 regr = new Admin_RepNom_7();
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        Depositos_4 regr = new Depositos_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2229,6 +2250,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField CajaA;
     private javax.swing.JScrollPane Cajadeahorro;
     private javax.swing.JCheckBox CalIn;
+    private javax.swing.JMenu Depositos;
     private javax.swing.JButton Eliminarcda;
     private javax.swing.JMenuItem Estadias;
     private javax.swing.JTextField FilAMPCDA;
@@ -2326,6 +2348,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;

@@ -1,6 +1,5 @@
 package Nomina;
 
-import Admin.Admin_NominaQSiMSS_5;
 import Admin.Admin_NominaS_5;
 import Admin.Admin_NominaS_simss_5;
 import Admin.Admin_ODTQ_5;
@@ -21558,7 +21557,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PRESQActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5(usr, LP);
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
@@ -21673,7 +21672,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PRESActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5();
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -21708,7 +21707,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PRESQ1ActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5(usr, LP);
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem15ActionPerformed
@@ -21823,7 +21822,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PRES1ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5();
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem5ActionPerformed

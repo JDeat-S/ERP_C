@@ -5126,6 +5126,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
+        Depositos = new javax.swing.JMenu();
+        jMenuItem15 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -10470,6 +10472,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         jMenu9.add(jMenuItem14);
 
         jMenu8.add(jMenu9);
+
+        Depositos.setText("Depositos");
+
+        jMenuItem15.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem15.setText("Depositos C/ IMSS");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        Depositos.add(jMenuItem15);
+
+        jMenu8.add(Depositos);
 
         Menuadm.add(jMenu8);
 
@@ -21176,7 +21191,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Imprimir4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5();
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -22716,7 +22731,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PRESQActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5(usr, LP);
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
@@ -22793,6 +22808,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        Depositos_4 regr = new Depositos_4();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -23403,6 +23424,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel DVT;
     private javax.swing.JPanel Datgen;
     private javax.swing.JLabel Ddv;
+    private javax.swing.JMenu Depositos;
     private javax.swing.JComboBox<String> Dia1;
     private javax.swing.JComboBox<String> Dia10;
     private javax.swing.JComboBox<String> Dia11;
@@ -23958,6 +23980,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;

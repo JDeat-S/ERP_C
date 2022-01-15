@@ -1,5 +1,6 @@
 package RH;
 
+import Nomina.NominaQSiMSS_5;
 import Nomina.Listas_5;
 import Nomina.CDAQ_5;
 import Nomina.NominaQ_5;
@@ -4150,7 +4151,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_PRESQActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5();
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
