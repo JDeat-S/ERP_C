@@ -1,10 +1,9 @@
 package Admin;
 
-import RH.Tortas_4;
-import RH.Estadias_4;
-import Nomina.NominaQ_5;
-import RH.Empleados_4;
+import RH.*;
+import Nomina.*;
 import Conexion.ConexionSQL;
+import Logicas.*;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,9 +22,37 @@ public final class Admin_CDAQ_5 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
+    Logica_usuarios usr;
+    Logica_permisos LP;
 
     public Admin_CDAQ_5() {
         initComponents();
+        MDCDA();
+        sumaTA();
+        MDTPCDA();
+        sharecda();
+        Labelcda.setVisible(false);
+        Busnamecdash.setVisible(false);
+        BusAPcdash.setVisible(false);
+        BusAMcdash.setVisible(false);
+        Labelfilcda.setVisible(false);
+        BusnameCDA.setVisible(false);
+        FilAPCDA.setVisible(false);
+        FillAMCDA.setVisible(false);
+        labelpcda.setVisible(false);
+        FilnamePCDA.setVisible(false);
+        FilAPPCDA.setVisible(false);
+        FilAMPCDA.setVisible(false);
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(6);
+        setIconImage(new ImageIcon(Admin_CDAQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+
+    }
+
+    public Admin_CDAQ_5(Logica_usuarios usr, Logica_permisos LP) {
+        initComponents();
+        this.usr = usr;
+        this.LP = LP;
         MDCDA();
         sumaTA();
         MDTPCDA();

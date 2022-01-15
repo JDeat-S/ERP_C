@@ -1,12 +1,7 @@
 package Admin;
 
-import RH.Tehueantepec_4;
-import RH.PT_4;
-import RH.Inturbide_4;
-import RH.Tortas_4;
-import RH.Estadias_4;
-import Nomina.NominaQ_5;
-import RH.Empleados_4;
+import RH.*;
+import Nomina.*;
 import Conexion.ConexionSQL;
 import Logicas.*;
 import java.awt.HeadlessException;
@@ -550,11 +545,11 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         P4Nom.setEnabled(false);
 
         P5Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        P5Nom.setText("Creacion de Nominas");
+        P5Nom.setText("Mostrar Nominas detalladas");
         P5Nom.setEnabled(false);
 
         P6Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        P6Nom.setText("Creacion de reportes");
+        P6Nom.setText("Mostrar pagos");
         P6Nom.setEnabled(false);
 
         P7Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
@@ -570,7 +565,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         P9Nom.setEnabled(false);
 
         P10Nom.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        P10Nom.setText("Modificacion de Nominas");
+        P10Nom.setText("Modificacion de Nominas Quin");
         P10Nom.setEnabled(false);
 
         AAADN.setText("Acceso a Area de Nomina");
@@ -1042,31 +1037,31 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_CNQActionPerformed
 
     private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
-        Admin_PresQ_5 regr = new Admin_PresQ_5();
+        Admin_PresQ_5 regr = new Admin_PresQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_PRESQActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5();
+        Admin_NominaQSiMSS_5 regr = new Admin_NominaQSiMSS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        Admin_CDAQ_5 regr = new Admin_CDAQ_5();
+        Admin_CDAQ_5 regr = new Admin_CDAQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDAActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Admin_NominaS_5 regr = new Admin_NominaS_5();
+        Admin_NominaS_5 regr = new Admin_NominaS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Admin_PresS_5 regr = new Admin_PresS_5();
+        Admin_PresS_5 regr = new Admin_PresS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
@@ -1121,7 +1116,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        AltasZyS_3 regr = new AltasZyS_3();
+        AltasZyS_3 regr = new AltasZyS_3(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
