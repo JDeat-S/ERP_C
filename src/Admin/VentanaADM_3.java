@@ -1,5 +1,8 @@
 package Admin;
 
+import RH.Tehueantepec_4;
+import RH.PT_4;
+import RH.Inturbide_4;
 import RH.Tortas_4;
 import RH.Estadias_4;
 import Nomina.NominaQ_5;
@@ -1100,19 +1103,19 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_TorteriaActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        Admin_Inturbide_4 regr = new Admin_Inturbide_4();
+        Inturbide_4 regr = new Inturbide_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        Admin_Tehueantepec_4 regr = new Admin_Tehueantepec_4();
+        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        Admin_PT_4 regr = new Admin_PT_4();
+        PT_4 regr = new PT_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem8ActionPerformed

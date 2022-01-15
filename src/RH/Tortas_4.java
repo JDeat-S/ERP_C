@@ -1,14 +1,9 @@
 package RH;
 
 import Admin.Admin_Depositos_4;
-import Admin.Admin_Inturbide_4;
-import Admin.Admin_PT_4;
-import Admin.Admin_Tehueantepec_4;
 import Admin.AltasZyS_3;
 import Admin.VentanaADM_3;
-import RH.Estadias_4;
 import Nomina.NominaQ_5;
-import RH.Empleados_4;
 import Conexion.ConexionSQL;
 import Inicio.Inicio_1;
 import Logicas.Logica_permisos;
@@ -56,7 +51,7 @@ public final class Tortas_4 extends javax.swing.JFrame {
         setIconImage(new ImageIcon(Tortas_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MDT();
         setIconImage(new ImageIcon(Estadias_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
-        setTitle("Ventana ADM # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+        setTitle("Empleados de torteria # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
 
         switch (LP.getVDA()) {
@@ -1259,19 +1254,19 @@ public final class Tortas_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Admin_Inturbide_4 regr = new Admin_Inturbide_4();
+        Inturbide_4 regr = new Inturbide_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Admin_Tehueantepec_4 regr = new Admin_Tehueantepec_4();
+        Tehueantepec_4 regr = new Tehueantepec_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        Admin_PT_4 regr = new Admin_PT_4();
+        PT_4 regr = new PT_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
