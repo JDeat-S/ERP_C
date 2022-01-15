@@ -2051,7 +2051,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_MMAPagosActionPerformed
 
     private void ODT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT1ActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODT1ActionPerformed
@@ -2166,7 +2166,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PresSemActionPerformed
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODTActionPerformed

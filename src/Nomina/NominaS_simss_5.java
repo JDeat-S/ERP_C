@@ -1,6 +1,5 @@
 package Nomina;
 
-import Admin.Admin_ODTQ_5;
 import Admin.Admin_PresQ_5;
 import Admin.Admin_PresS_5;
 import Admin.Admin_RepNom_7;
@@ -13965,7 +13964,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ADNKeyReleased
 
     private void ODT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT1ActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5(usr, LP);
+        ODTQ_5 regr = new ODTQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODT1ActionPerformed
@@ -14080,7 +14079,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PresSemActionPerformed
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODTActionPerformed

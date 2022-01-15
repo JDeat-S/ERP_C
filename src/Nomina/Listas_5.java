@@ -1,6 +1,5 @@
 package Nomina;
 
-import Admin.Admin_ODTQ_5;
 import Admin.Admin_PresQ_5;
 import Admin.Admin_PresS_5;
 import Admin.Admin_RepNom_7;
@@ -21537,7 +21536,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FillLSI3ItemStateChanged
 
     private void ODT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT1ActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5(usr, LP);
+        ODTQ_5 regr = new ODTQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODT1ActionPerformed
@@ -21652,7 +21651,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PresSemActionPerformed
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODTActionPerformed
@@ -21687,7 +21686,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5(usr, LP);
+        ODTQ_5 regr = new ODTQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODT2ActionPerformed
@@ -21802,7 +21801,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_PresSem1ActionPerformed
 
     private void ODT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT3ActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODT3ActionPerformed

@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.ODTQ_5;
 import Nomina.NominaS_simss_5;
 import Nomina.NominaS_5;
 import Nomina.NominaQSiMSS_5;
@@ -1046,7 +1047,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        Admin_ODTQ_5 regr = new Admin_ODTQ_5();
+        ODTQ_5 regr = new ODTQ_5();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODTActionPerformed
