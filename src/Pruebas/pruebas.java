@@ -58,6 +58,7 @@ public final class pruebas extends javax.swing.JFrame {
     public pruebas() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        ListasGen.setVisible(false);
         FiltrosZonas zz8 = new FiltrosZonas();
         DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
         LDAZon.setModel(modelzonas8);
@@ -209,6 +210,7 @@ public final class pruebas extends javax.swing.JFrame {
         this.usr = usr;
         this.LP = LP;
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        ListasGen.setVisible(false);
         FiltrosZonas zz8 = new FiltrosZonas();
         DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
         LDAZon.setModel(modelzonas8);
@@ -414,11 +416,8 @@ public final class pruebas extends javax.swing.JFrame {
         Fecha1 = new com.toedter.calendar.JDateChooser();
         LDA = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        CI = new javax.swing.JCheckBox();
         jLabel7 = new javax.swing.JLabel();
         Agregar = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        ULDA = new javax.swing.JLabel();
         NYear = new javax.swing.JCheckBox();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -685,6 +684,13 @@ public final class pruebas extends javax.swing.JFrame {
         LDAZon = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         TDL = new javax.swing.JComboBox<>();
+        ListasGen = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        NDL = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        UNR = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        ULDA = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -752,13 +758,6 @@ public final class pruebas extends javax.swing.JFrame {
 
         jLabel8.setText("# Lista");
 
-        CI.setText("Con imss");
-        CI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CIActionPerformed(evt);
-            }
-        });
-
         jLabel7.setText("Zona");
 
         Agregar.setText("Agregar");
@@ -767,10 +766,6 @@ public final class pruebas extends javax.swing.JFrame {
                 AgregarActionPerformed(evt);
             }
         });
-
-        jLabel11.setText("Ultima lista registrada:");
-
-        ULDA.setText("0");
 
         NYear.setText("Año nuevo");
         NYear.addActionListener(new java.awt.event.ActionListener() {
@@ -2856,10 +2851,68 @@ public final class pruebas extends javax.swing.JFrame {
         );
 
         LDAZon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        LDAZon.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                LDAZonItemStateChanged(evt);
+            }
+        });
 
         jLabel5.setText("Tipo de lista:");
 
         TDL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione tipo de lista", "Listas General", "Listas con imss" }));
+        TDL.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                TDLItemStateChanged(evt);
+            }
+        });
+
+        jLabel6.setText("Numero de listas:");
+
+        NDL.setText("0");
+        NDL.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NDLKeyReleased(evt);
+            }
+        });
+
+        jLabel9.setText("Ultimo numero que se registrara:");
+
+        UNR.setText("0");
+
+        javax.swing.GroupLayout ListasGenLayout = new javax.swing.GroupLayout(ListasGen);
+        ListasGen.setLayout(ListasGenLayout);
+        ListasGenLayout.setHorizontalGroup(
+            ListasGenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListasGenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ListasGenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ListasGenLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NDL))
+                    .addGroup(ListasGenLayout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(UNR)))
+                .addContainerGap())
+        );
+        ListasGenLayout.setVerticalGroup(
+            ListasGenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListasGenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ListasGenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(NDL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ListasGenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(UNR))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel11.setText("Ultima lista registrada:");
+
+        ULDA.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -2871,157 +2924,156 @@ public final class pruebas extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(DiaCor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DiaCom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(319, 319, 319)
-                                .addComponent(Agregar)
-                                .addGap(228, 228, 228)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(ExcelCI)
+                                        .addComponent(DiaCor16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ExcelSI))
-                                    .addComponent(jLabel51)))
-                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ULDA))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TDL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8)
+                                        .addComponent(DiaCom16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(DiaCor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DiaCom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGap(319, 319, 319)
+                                        .addComponent(Agregar)
+                                        .addGap(228, 228, 228)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(ExcelCI)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(ExcelSI))
+                                            .addComponent(jLabel51)))
+                                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel1)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel11)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(ULDA))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(TDL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(136, 136, 136)
+                                        .addComponent(jLabel3)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(CI))
+                                        .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(ListasGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(50, 50, 50)
-                                        .addComponent(jLabel3)
-                                        .addGap(110, 110, 110)
-                                        .addComponent(NYear))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(295, 295, 295)
-                                .addComponent(jLabel2)))
-                        .addGap(74, 74, 74)
-                        .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(93, Short.MAX_VALUE))
+                                        .addComponent(NYear)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(295, 295, 295)
+                        .addComponent(jLabel2)))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(jLabel2)
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(TDL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8)
-                            .addComponent(CI)
-                            .addComponent(jLabel7)
-                            .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(TDL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel11)
+                                .addComponent(ULDA)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(ULDA)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NYear)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NYear)
+                            .addComponent(jLabel8)
+                            .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(ListasGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -3095,7 +3147,9 @@ public final class pruebas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(DiaCor16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DiaCom16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(DiaCom16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Agregar)
@@ -3107,7 +3161,7 @@ public final class pruebas extends javax.swing.JFrame {
                                     .addComponent(ExcelSI, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -3407,7 +3461,7 @@ public final class pruebas extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
         );
 
         pack();
@@ -3454,8 +3508,8 @@ public final class pruebas extends javax.swing.JFrame {
     }
 
     public void AgregarLDA() {
-
-        if (CI.isSelected() == true) {
+        /*
+        if (TDL.getSelectedIndex() == 2) {
             String SQL = "INSERT INTO `nomina.listas." + LDAZon.getText() + "` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
@@ -4302,7 +4356,6 @@ public final class pruebas extends javax.swing.JFrame {
                 DiaCor14.setDate(null);
                 DiaCor15.setDate(null);
                 DiaCor16.setDate(null);
-
                 DiaCom1.setDate(null);
                 DiaCom2.setDate(null);
                 DiaCom3.setDate(null);
@@ -4326,12 +4379,10 @@ public final class pruebas extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia: " + error_AddLDA);
             }
 
-        }
+        }*/
 
-        if (CI.isSelected() == false) {
-            
+        if (TDL.getSelectedIndex() == 1) {
 
-            int x = Integer.parseInt(LDA.getText());
             String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
@@ -4342,12 +4393,12 @@ public final class pruebas extends javax.swing.JFrame {
                     + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, x);
+                pst.setInt(1, Integer.parseInt(LDA.getText()));
                 pst.setString(2, LDAZon.getSelectedItem().toString());
                 pst.setString(3, LDAQuin.getSelectedItem().toString());
-                pst.setString(4, LDAAp.getText());
-                pst.setString(5, LDAAm.getText());
-                pst.setString(6, LDAName.getText());
+                pst.setString(4, "");
+                pst.setString(5, "");
+                pst.setString(6, "");
                 pst.setString(7, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
                 pst.setString(8, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
                 pst.setString(9, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
@@ -4388,7 +4439,7 @@ public final class pruebas extends javax.swing.JFrame {
 
                 JFileChooser chooser = new JFileChooser();
                 FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-                chooser.setSelectedFile(new File("Listas de asistencia  de la " + LDAQuin.getSelectedItem().toString() + " de la zona "
+                chooser.setSelectedFile(new File("Listas de asistencia de la " + LDAQuin.getSelectedItem().toString() + " de la zona "
                         + LDAZon.getSelectedItem().toString()));
                 chooser.setFileFilter(filter);
                 chooser.setDialogTitle("Guardar archivo");
@@ -4412,10 +4463,12 @@ public final class pruebas extends javax.swing.JFrame {
                     );
 
                     Statement statement = connect.createStatement();
-                    ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + ".simss` WHERE " + ULDA.getText());
+                    ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` WHERE `NDL`  BETWEEN '"
+                            + (Integer.parseInt(ULDA.getText()) + 1) + "' AND '" + Integer.parseInt(UNR.getText()) + "'");
                     try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                         XSSFWorkbook libro = new XSSFWorkbook();
-                        XSSFSheet spreadsheet = libro.createSheet("Lista " + ULDA.getText() + " de " + LDAZon.getText() + "de la " + LDAQuin.getSelectedItem().toString());
+                        XSSFSheet spreadsheet = libro.createSheet("Listas de asistencia de la " + LDAQuin.getSelectedItem().toString() + " de la zona "
+                                + LDAZon.getSelectedItem().toString());
 
                         XSSFRow row = spreadsheet.createRow((short) 0);
                         XSSFCell cell = (XSSFCell) row.createCell((short) 0);
@@ -4540,7 +4593,6 @@ public final class pruebas extends javax.swing.JFrame {
                                 )
                         );
 
-                        //  int i = 2;
                         while (resultSet.next()) {
                             row = spreadsheet.createRow(2);
                             row.setHeight((short) 400);
@@ -5145,12 +5197,9 @@ public final class pruebas extends javax.swing.JFrame {
                     Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-                LDAZon.setText("");
-                CI.setSelected(false);
+                LDAZon.setSelectedIndex(0);
+                TDL.setSelectedIndex(0);
                 LDAQuin.setSelectedIndex(0);
-                LDAAp.setText("");
-                LDAAm.setText("");
-                LDAName.setText("");
                 Fecha1.setDate(null);
                 DiaCor1.setDate(null);
                 DiaCor2.setDate(null);
@@ -12259,11 +12308,6 @@ public final class pruebas extends javax.swing.JFrame {
         AgregarLDA();
     }//GEN-LAST:event_AgregarActionPerformed
 
-    private void CIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIActionPerformed
-        MostrarULDA();
-
-    }//GEN-LAST:event_CIActionPerformed
-
     private void NYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NYearActionPerformed
         int vari = LDAQuin.getSelectedIndex();
 
@@ -18669,7 +18713,7 @@ public final class pruebas extends javax.swing.JFrame {
                 );
 
                 Statement statement = connect.createStatement();
-                ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + "` WHERE " + LDA.getText());
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getSelectedItem().toString() + "` WHERE " + LDA.getText());
                 try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                     XSSFWorkbook libro = new XSSFWorkbook();
                     XSSFSheet spreadsheet = libro.createSheet(("Lista"));
@@ -19411,11 +19455,8 @@ public final class pruebas extends javax.swing.JFrame {
                 Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            LDAZon.setText("");
+            LDAZon.setSelectedIndex(0);
             LDAQuin.setSelectedIndex(0);
-            LDAAp.setText("");
-            LDAAm.setText("");
-            LDAName.setText("");
         }
     }//GEN-LAST:event_ExcelCIActionPerformed
 
@@ -19424,16 +19465,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDACI9.getSelectedRow();
         LDA.setText(String.valueOf(TableLDACI9.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDACI9.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDACI9.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDACI9.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDACI9.getValueAt(fila, 5)));
         ExcelSI.setVisible(false);
         ExcelCI.setVisible(true);
 
@@ -19444,16 +19481,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDACI.getSelectedRow();
         LDA.setText(String.valueOf(TableLDACI.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDACI.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDACI.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDACI.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDACI.getValueAt(fila, 5)));
         ExcelSI.setVisible(false);
         ExcelCI.setVisible(true);
 
@@ -19467,7 +19500,7 @@ public final class pruebas extends javax.swing.JFrame {
         } else {
             JFileChooser chooser = new JFileChooser();
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-            chooser.setSelectedFile(new File("Lista " + LDA.getText() + " de " + LDAZon.getText() + " de la " + LDAQuin.getSelectedItem().toString()));
+            chooser.setSelectedFile(new File("Lista " + LDA.getText() + " de " + LDAZon.getSelectedItem().toString() + " de la " + LDAQuin.getSelectedItem().toString()));
             chooser.setFileFilter(filter);
             chooser.setDialogTitle("Guardar archivo");
             chooser.setAcceptAllFileFilterUsed(false);
@@ -19490,10 +19523,10 @@ public final class pruebas extends javax.swing.JFrame {
                 );
 
                 Statement statement = connect.createStatement();
-                ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + ".simss` WHERE " + LDA.getText());
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` WHERE " + LDA.getText());
                 try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                     XSSFWorkbook libro = new XSSFWorkbook();
-                    XSSFSheet spreadsheet = libro.createSheet("Lista " + LDA.getText() + " de " + LDAZon.getText() + "de la " + LDAQuin.getSelectedItem().toString());
+                    XSSFSheet spreadsheet = libro.createSheet("Lista " + LDA.getText() + " de " + LDAZon.getSelectedItem().toString() + "de la " + LDAQuin.getSelectedItem().toString());
 
                     XSSFRow row = spreadsheet.createRow((short) 0);
                     XSSFCell cell = (XSSFCell) row.createCell((short) 0);
@@ -20224,11 +20257,8 @@ public final class pruebas extends javax.swing.JFrame {
             } catch (ClassNotFoundException | SQLException ex) {
                 Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
             }
-            LDAZon.setText("");
+            LDAZon.setSelectedIndex(0);
             LDAQuin.setSelectedIndex(0);
-            LDAAp.setText("");
-            LDAAm.setText("");
-            LDAName.setText("");
         }
     }//GEN-LAST:event_ExcelSIActionPerformed
 
@@ -20830,16 +20860,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDACI1.getSelectedRow();
         LDA.setText(String.valueOf(TableLDACI1.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDACI1.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDACI1.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDACI1.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDACI1.getValueAt(fila, 5)));
         ExcelSI.setVisible(false);
         ExcelCI.setVisible(true);
 
@@ -20850,16 +20876,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDACI2.getSelectedRow();
         LDA.setText(String.valueOf(TableLDACI2.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDACI2.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDACI2.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDACI2.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDACI2.getValueAt(fila, 5)));
         ExcelSI.setVisible(false);
         ExcelCI.setVisible(true);
 
@@ -20870,16 +20892,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDACI3.getSelectedRow();
         LDA.setText(String.valueOf(TableLDACI3.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDACI3.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDACI3.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDACI3.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDACI3.getValueAt(fila, 5)));
         ExcelSI.setVisible(false);
         ExcelCI.setVisible(true);
 
@@ -20890,16 +20908,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDACI4.getSelectedRow();
         LDA.setText(String.valueOf(TableLDACI4.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDACI4.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDACI4.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDACI4.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDACI4.getValueAt(fila, 5)));
         ExcelSI.setVisible(false);
         ExcelCI.setVisible(true);
 
@@ -20910,16 +20924,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDACI5.getSelectedRow();
         LDA.setText(String.valueOf(TableLDACI5.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDACI5.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDACI5.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDACI5.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDACI5.getValueAt(fila, 5)));
         ExcelSI.setVisible(false);
         ExcelCI.setVisible(true);
 
@@ -20930,16 +20940,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDACI6.getSelectedRow();
         LDA.setText(String.valueOf(TableLDACI6.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDACI6.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDACI6.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDACI6.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDACI6.getValueAt(fila, 5)));
         ExcelSI.setVisible(false);
         ExcelCI.setVisible(true);
 
@@ -20950,16 +20956,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDACI8.getSelectedRow();
         LDA.setText(String.valueOf(TableLDACI8.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDACI8.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDACI8.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDACI8.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDACI8.getValueAt(fila, 5)));
         ExcelSI.setVisible(false);
         ExcelCI.setVisible(true);
     }//GEN-LAST:event_TableLDACI8MouseClicked
@@ -20969,16 +20971,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDASI.getSelectedRow();
         LDA.setText(String.valueOf(TableLDASI.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDASI.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDASI.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDASI.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDASI.getValueAt(fila, 5)));
         ExcelSI.setVisible(true);
         ExcelCI.setVisible(false);
     }//GEN-LAST:event_TableLDASIMouseClicked
@@ -20988,16 +20986,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDASI1.getSelectedRow();
         LDA.setText(String.valueOf(TableLDASI1.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDASI1.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDASI1.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDASI1.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDASI1.getValueAt(fila, 5)));
         ExcelSI.setVisible(true);
         ExcelCI.setVisible(false);
     }//GEN-LAST:event_TableLDASI1MouseClicked
@@ -21007,16 +21001,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDASI2.getSelectedRow();
         LDA.setText(String.valueOf(TableLDASI2.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDASI2.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDASI2.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDASI2.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDASI2.getValueAt(fila, 5)));
         ExcelSI.setVisible(true);
         ExcelCI.setVisible(false);
     }//GEN-LAST:event_TableLDASI2MouseClicked
@@ -21026,16 +21016,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDASI3.getSelectedRow();
         LDA.setText(String.valueOf(TableLDASI3.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDASI3.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDASI3.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDASI3.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDASI3.getValueAt(fila, 5)));
         ExcelSI.setVisible(true);
         ExcelCI.setVisible(false);
     }//GEN-LAST:event_TableLDASI3MouseClicked
@@ -21045,16 +21031,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDASI4.getSelectedRow();
         LDA.setText(String.valueOf(TableLDASI4.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDASI4.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDASI4.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDASI4.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDASI4.getValueAt(fila, 5)));
         ExcelSI.setVisible(true);
         ExcelCI.setVisible(false);
     }//GEN-LAST:event_TableLDASI4MouseClicked
@@ -21064,16 +21046,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDASI5.getSelectedRow();
         LDA.setText(String.valueOf(TableLDASI5.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDASI5.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDASI5.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDASI5.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDASI5.getValueAt(fila, 5)));
         ExcelSI.setVisible(true);
         ExcelCI.setVisible(false);
     }//GEN-LAST:event_TableLDASI5MouseClicked
@@ -21083,16 +21061,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDASI6.getSelectedRow();
         LDA.setText(String.valueOf(TableLDASI6.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDASI6.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDASI6.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDASI6.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDASI6.getValueAt(fila, 5)));
         ExcelSI.setVisible(true);
         ExcelCI.setVisible(false);
     }//GEN-LAST:event_TableLDASI6MouseClicked
@@ -21102,16 +21076,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDASI7.getSelectedRow();
         LDA.setText(String.valueOf(TableLDASI7.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDASI7.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDASI7.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDASI7.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDASI7.getValueAt(fila, 5)));
         ExcelSI.setVisible(true);
         ExcelCI.setVisible(false);
     }//GEN-LAST:event_TableLDASI7MouseClicked
@@ -21121,16 +21091,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDASI8.getSelectedRow();
         LDA.setText(String.valueOf(TableLDASI8.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDASI8.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDASI8.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDASI8.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDASI8.getValueAt(fila, 5)));
         ExcelSI.setVisible(true);
         ExcelCI.setVisible(false);
     }//GEN-LAST:event_TableLDASI8MouseClicked
@@ -21140,16 +21106,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDASI9.getSelectedRow();
         LDA.setText(String.valueOf(TableLDASI9.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDASI9.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDASI9.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDASI9.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDASI9.getValueAt(fila, 5)));
         ExcelSI.setVisible(true);
         ExcelCI.setVisible(false);
     }//GEN-LAST:event_TableLDASI9MouseClicked
@@ -21159,16 +21121,12 @@ public final class pruebas extends javax.swing.JFrame {
 
         int fila = TableLDACI7.getSelectedRow();
         LDA.setText(String.valueOf(TableLDACI7.getValueAt(fila, 0)));
-        LDAZon.setText(String.valueOf(TableLDACI7.getValueAt(fila, 1)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        LDAAp.setText(String.valueOf(TableLDACI7.getValueAt(fila, 3)));
-        LDAAm.setText(String.valueOf(TableLDACI7.getValueAt(fila, 4)));
-        LDAName.setText(String.valueOf(TableLDACI7.getValueAt(fila, 5)));
         ExcelSI.setVisible(false);
         ExcelCI.setVisible(true);
     }//GEN-LAST:event_TableLDACI7MouseClicked
@@ -21449,6 +21407,33 @@ public final class pruebas extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ADMV2ActionPerformed
 
+    private void TDLItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TDLItemStateChanged
+        if (TDL.getSelectedIndex() == 0) {
+            ListasGen.setVisible(false);
+            NDL.setText("0");
+            UNR.setText("0");
+        }
+        if (TDL.getSelectedIndex() == 1) {
+            ListasGen.setVisible(true);
+            NDL.setText("0");
+            UNR.setText("0");
+        }
+        if (TDL.getSelectedIndex() == 2) {
+            ListasGen.setVisible(false);
+            NDL.setText("0");
+            UNR.setText("0");
+        }
+        MostrarULDA();
+    }//GEN-LAST:event_TDLItemStateChanged
+
+    private void LDAZonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LDAZonItemStateChanged
+        MostrarULDA();
+    }//GEN-LAST:event_LDAZonItemStateChanged
+
+    private void NDLKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NDLKeyReleased
+        UNR.setText("" + (Integer.parseInt(NDL.getText()) + Integer.parseInt(ULDA.getText())));
+    }//GEN-LAST:event_NDLKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -21502,7 +21487,6 @@ public final class pruebas extends javax.swing.JFrame {
     private javax.swing.JButton Agregar;
     private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CDA1;
-    private javax.swing.JCheckBox CI;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JMenu Depositos;
     private com.toedter.calendar.JDateChooser DiaCom1;
@@ -21666,7 +21650,9 @@ public final class pruebas extends javax.swing.JFrame {
     private javax.swing.JMenuItem LDA1;
     private javax.swing.JComboBox<String> LDAQuin;
     private javax.swing.JComboBox<String> LDAZon;
+    private javax.swing.JPanel ListasGen;
     private javax.swing.JMenu Menuadm;
+    private javax.swing.JTextField NDL;
     private javax.swing.JCheckBox NYear;
     private javax.swing.JMenuItem NomSemGen;
     private javax.swing.JMenuItem Nomsem;
@@ -21699,6 +21685,7 @@ public final class pruebas extends javax.swing.JFrame {
     private javax.swing.JTable TableLDASI9;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JLabel ULDA;
+    private javax.swing.JLabel UNR;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -21727,8 +21714,10 @@ public final class pruebas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
