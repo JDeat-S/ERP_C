@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-01-2022 a las 21:08:29
+-- Tiempo de generación: 17-01-2022 a las 17:05:04
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -20,6 +20,67 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `confort`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `admin.tou`
+--
+
+CREATE TABLE `admin.tou` (
+  `id_TDO` int(11) NOT NULL,
+  `Usuario` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Ventana de acceso` int(11) NOT NULL,
+  `P1` int(11) NOT NULL,
+  `P2` int(11) NOT NULL,
+  `P3` int(11) NOT NULL,
+  `P4` int(11) NOT NULL,
+  `P5` int(11) NOT NULL,
+  `P6` int(11) NOT NULL,
+  `P7` int(11) NOT NULL,
+  `P8` int(11) NOT NULL,
+  `P9` int(11) NOT NULL,
+  `P10` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `admin.tou`
+--
+
+INSERT INTO `admin.tou` (`id_TDO`, `Usuario`, `Ventana de acceso`, `P1`, `P2`, `P3`, `P4`, `P5`, `P6`, `P7`, `P8`, `P9`, `P10`) VALUES
+(1, 'Administrador', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(2, 'Capturista', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(3, 'Nomina', 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(4, 'Recursos Humanos', 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `admin.usuarios`
+--
+
+CREATE TABLE `admin.usuarios` (
+  `id_user` int(11) NOT NULL,
+  `Apellido P` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Apellido M` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Nombre(s)` varchar(200) COLLATE utf8_spanish2_ci NOT NULL,
+  `Tipo de usuario` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Usuario` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Contraseña` blob NOT NULL,
+  `Ultimo inicio de sesion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Activo` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `Ventana de acceso` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `admin.usuarios`
+--
+
+INSERT INTO `admin.usuarios` (`id_user`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Tipo de usuario`, `Usuario`, `Contraseña`, `Ultimo inicio de sesion`, `Activo`, `Ventana de acceso`) VALUES
+(1, 'Gallardo', 'Torres', 'Jhovan Alexandro', 'Administrador', 'JDeat', 0x4a4465617435353737, '17/enero/2022 08:39:32', '1', '0'),
+(2, 'Melchor', 'Flores', 'Teresa', 'Nomina', 'Nomina', 0x4e6f6d696e61, '17/enero/2022 09:41:00', '1', '2'),
+(3, 'FUENTES', 'PLATA', 'KARLA JOANA', 'Recursos Humanos', 'RH', 0x5248, '17/enero/2022 10:03:22', '1', '1'),
+(4, 'Neri', 'Milpas', 'Guadalupe cristina', 'Administrador', 'Admin', 0x41646d696e, '17/enero/2022 08:42:43', '1', '0');
 
 -- --------------------------------------------------------
 
@@ -4020,7 +4081,7 @@ INSERT INTO `nomina.detallada.sur 1.simss` (`#lista`, `#empleado`, `Apellido P`,
 (12, 5673, 'CASTILLO', 'MUNOZ', 'JOSUE RUBEN', 'BANCOMER', '1530432374', 'sur 1', 'SANTANDER COPILCO', '1550', '300', '96.875', '', '2da Quincena de Enero', '2021', 'A', 'D', 'A', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'A', '0.0', '0.0', '0.0', '0.0', '3.0', '290.625', '13.0', '1259.375', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '', '0.0', '', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1850.00', '+ $300 BONO'),
 (13, 5236, 'JIMENEZ', 'JORGE', 'MIGUEL', 'BANCOMER', '1568981787', 'sur 1', 'SANTANDER TLALPAN', '1550', '300', '96.875', '', '2da Quincena de Enero', '2021', '.', 'A', 'A', 'A', 'A', '.', '.', '.', '.', '.', '.', '.', 'A', 'A', 'V', '.', '0.0', '0.0', '1.0', '96.875', '0.0', '0.0', '6.0', '581.25', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '', '0.0', '', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '678.12', 'PAGO X 7 DIAS $678.13 \nNO APORTA CAJA ($300) SALIO BAJO'),
 (14, 4843, 'MARTINEZ', 'RAMIREZ', 'JESUS', 'BANCOMER', '1243886042', 'sur 1', 'DIVISION DEL norte', '2000', '300', '125.0', '', '2da Quincena de Enero', '2021', 'D', 'D', 'V', 'A', 'A', 'A', 'A', 'D', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'D', '0.0', '0.0', '1.0', '125.0', '6.0', '750.0', '9.0', '1125.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '', '', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '200', '0', '2100.00', 'SE PAGAN $1000 EN BBVA Y $1100 EN EFECTIVO'),
-(16, 1343, 'GUERCA ', 'CARDENAS ', 'JUAN ANTONIO ', 'BANCOMER ', '1505877560', 'sur 1', 'DIVISION DEL norte', '1550', '200', '96.875', '', '2da Quincena de Enero', '2021', 'D', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'D', '0.0', '0.0', '0.0', '0.0', '6.0', '581.25', '10.0', '968.75', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '', '0.0', '', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '300', '0', '1450.00', '- $300 CAJA + $300 BONO'),
+(16, 1343, 'GUERCA ', 'CARDENAS ', 'JUAN ANTONIO ', 'BANCOMER', '1505877560', 'sur 1', 'DIVISION DEL norte', '1550', '200', '96.875', '', '2da Quincena de Enero', '2021', 'D', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'D', '0.0', '0.0', '0.0', '0.0', '6.0', '581.25', '10.0', '968.75', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '', '0.0', '', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '300', '0', '1450.00', '- $300 CAJA + $300 BONO'),
 (17, 1343, 'GUERCA ', 'CARDENAS ', 'JUAN ANTONIO ', 'BANCOMER ', '1505877560', 'sur 1', 'DIVISION DEL norte', '1550', '200', '103.33333333333333', '', '1ra Quincena de Febrero', '2021', 'DF', 'A', 'A', 'A', 'A', 'D', 'D', 'A', 'A', 'A', 'A', 'A', 'V', 'D', 'V', '.', '0.0', '0.0', '2.0', '206.66666666666666', '3.0', '310.0', '9.0', '930.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '1.0', '103.33333333333333', '0.0', '', '0.0', '', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '300', '0', '1450.00', '- $300 CAJA + $200 BONO'),
 (18, 3662, 'STAVOLI', 'PEREZ', 'JULIO', 'SANTANDER', '60615835165', 'sur 1', 'CITY EXPRESS INSURGENTES', '1000', '200', '66.66666666666667', '', '1ra Quincena de Febrero', '2021', 'DF', 'A', 'A', 'A', 'A', 'D', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'D', 'A', '.', '0.0', '0.0', '0.0', '0.0', '4.0', '266.6666666666667', '10.0', '666.6666666666667', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '1.0', '66.66666666666667', '0.0', '', '0.0', '', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '200', '1000.00', '- $200 ORD + $200 BONO'),
 (19, 5236, 'JIMENEZ', 'JORGE', 'MIGUEL', 'BANCOMER', '1568981787', 'sur 1', 'SANTANDER TLALPAN', '1550', '300', '103.33333333333333', '', '1ra Quincena de Febrero', '2021', 'DF', 'A', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'D', 'A', '.', '0.0', '0.0', '0.0', '0.0', '2.0', '206.66666666666666', '12.0', '1240.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '1.0', '103.33333333333333', '0.0', '', '0.0', '', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1850.00', '+ $300 BONO NO APORTO CAJA ($300)'),
@@ -4123,8 +4184,8 @@ INSERT INTO `nomina.detallada.sur 1.simss` (`#lista`, `#empleado`, `Apellido P`,
 (140, 1343, 'GUERCA ', 'CARDENAS ', 'JUAN ANTONIO ', 'BANCOMER ', '1505877560', 'sur 1', 'DIVISION DEL norte', '1550', '300', '103.33333333333333', '12.916666666666666', '1ra Quincena de Julio', '2021', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', 'A', '.', '0.0', '0.0', '0.0', '0.0', '2.0', '206.66666666666666', '13.0', '1343.3333333333333', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '400', '300', '0', '850.00', '- $300 CAJA - $400 PRST 5/6 / SIN BONO POR RETARDOS, ACTA FALTA DE APOYO EN CAFE '),
 (141, 5412, 'GOMEZ', 'CARRILLO', 'JUAN ', 'BANCOMER ', '1512284327', 'sur 1', 'SANTANDER MIGUEL LAURENT', '1500', '300', '100.0', '12.5', '1ra Quincena de Julio', '2021', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', 'A', '.', '0.0', '0.0', '0.0', '0.0', '2.0', '200.0', '13.0', '1300.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '100', '', '0', '0', '0.0', '0.0', '0', '0', '0', '', '100', '60', '0', '0', '0', '0', '0', '0', '0', '0', '0', '200', '360.0', '0', '400', '0', '1140.00', '- $400 CAJA - $60 FB SIN SELLO BERLAR (26 JUL) - $100 FB PENSION - $200 ADEL (9 JUL) + $100 APOYO + $300 BONO'),
 (142, 4843, 'MARTINEZ', 'RAMIREZ', 'JESUS', 'BANCOMER', '1243886042', 'sur 1', 'DIVISION DEL norte', '2000', '300', '133.33333333333334', '16.666666666666668', '1ra Quincena de Julio', '2021', 'A', 'A', 'D', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'D', 'A', 'A', 'A', 'A', '.', '0.0', '0.0', '0.0', '0.0', '4.0', '533.3333333333334', '11.0', '1466.6666666666667', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '200', '0', '2100.00', '- $200 CAJA + $300 BONO / SE LE PAGAN $1000 EN BBVA Y $1100 EN EFECTIVO'),
-(143, 5735, 'NUNEZ ', 'SANCHEZ ', 'DILAN ALEXANDER ', 'BANCOMER', 'BAJA', 'sur 1', 'CAFETERIA KOWLAAN', '2000', '300', '133.33333333333334', '16.666666666666668', '1ra Quincena de Julio', '2021', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', '.', '0.0', '0.0', '0.0', '0.0', '2.0', '266.6666666666667', '13.0', '1733.3333333333335', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '0', '0', '', '0', '0', '0', '0', '606', '0', '0', '0', '0', '0', '0', '0', '606.0', '0', '0', '0', '1694.00', '- $606 FC (1/$30, 2/$90, 3/$90, 5/$90, 6/$56, 10/$30, 12/$70, 14/$90, 15/$60 JUL) + $300 BONO'),
-(144, 5236, 'JIMENEZ', 'JORGE', 'MIGUEL', 'BANCOMER', 'BAJA', 'sur 1', 'SANTANDER TLALPAN', '1550', '300', '103.33333333333333', '12.916666666666666', '1ra Quincena de Julio', '2021', '.', 'A', 'A', 'A', 'A', 'A', 'A', '.', '.', '.', '.', '.', '.', '.', '.', '.', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '6.0', '620.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '400', '300', '0', '-80.00', '4620 PAGO X 6 DIAS - $400 PRST (PAGADO) - $300 CAJA'),
+(143, 5735, 'NUNEZ ', 'SANCHEZ ', 'DILAN ALEXANDER ', 'BAJA', 'BAJA', 'sur 1', 'CAFETERIA KOWLAAN', '2000', '300', '133.33333333333334', '16.666666666666668', '1ra Quincena de Julio', '2021', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', '.', '0.0', '0.0', '0.0', '0.0', '2.0', '266.6666666666667', '13.0', '1733.3333333333335', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '0', '0', '', '0', '0', '0', '0', '606', '0', '0', '0', '0', '0', '0', '0', '606.0', '0', '0', '0', '1694.00', '- $606 FC (1/$30, 2/$90, 3/$90, 5/$90, 6/$56, 10/$30, 12/$70, 14/$90, 15/$60 JUL) + $300 BONO'),
+(144, 5236, 'JIMENEZ', 'JORGE', 'MIGUEL', 'BAJA', 'BAJA', 'sur 1', 'SANTANDER TLALPAN', '1550', '300', '103.33333333333333', '12.916666666666666', '1ra Quincena de Julio', '2021', '.', 'A', 'A', 'A', 'A', 'A', 'A', '.', '.', '.', '.', '.', '.', '.', '.', '.', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '6.0', '620.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '400', '300', '0', '-80.00', '4620 PAGO X 6 DIAS - $400 PRST (PAGADO) - $300 CAJA'),
 (145, 3662, 'STAVOLI', 'PEREZ', 'JULIO', 'SANTANDER', '60615835165', 'sur 1', 'CITY EXPRESS INSURGENTES', '1000', '200', '66.66666666666667', '8.333333333333334', '1ra Quincena de Julio', '2021', 'A', 'A', 'D', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'D', 'A', 'A', 'A', 'A', '.', '0.0', '0.0', '0.0', '0.0', '4.0', '266.6666666666667', '11.0', '733.3333333333334', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1200.00', '+ $200 BONO'),
 (146, 2885, 'ROMERO', 'MORENO', 'IVAN', 'SANTANDER', '.', 'sur 1', 'SANTANDER NIZA', '1500', '300', '100.0', '12.5', '1ra Quincena de Julio', '2021', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'A', 'A', '.', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '2.0', '200.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '66.50', '0.0', '0.0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '12.50', '12.5', '0', '0', '0', '254.00', '$187.50 PAGO POR 2 DIAS + $66.50 BONO PROP / $12.50 AJUSTE DE NOMINA, NUEVO INGRESO'),
 (155, 5686, 'RAMIREZ', 'MONTERDE', 'MICHEL ALEJANDRO', 'BANCOMER ', '1537056524', 'sur 1', 'EDIFICIO AGATHA', '2000', '1000', '133.33333333333334', '16.666666666666668', '1ra Quincena de Julio', '2021', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', '.', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '15.0', '2000.0000000000002', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '3000.00', '+ $1000 BONO'),
@@ -4850,6 +4911,14 @@ CREATE TABLE `nomina.listas.corporativo santander quincenal` (
   `y 1/16` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `nomina.listas.corporativo santander quincenal`
+--
+
+INSERT INTO `nomina.listas.corporativo santander quincenal` (`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, `dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES
+(3, 'corporativo santander quincenal', '2da Quincena de Enero', 'MORALES', 'MORALES', 'LIZBETH YERLY', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(4, 'corporativo santander quincenal', '2da Quincena de Enero', 'CARBAJAL', 'MARTINEZ', 'GERMAN', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022');
+
 -- --------------------------------------------------------
 
 --
@@ -4945,6 +5014,14 @@ CREATE TABLE `nomina.listas.corporativo santander semanal` (
   `EEEE 31` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `y 1/16` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `nomina.listas.corporativo santander semanal`
+--
+
+INSERT INTO `nomina.listas.corporativo santander semanal` (`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, `dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES
+(1, 'corporativo santander semanal', '1ra Quincena de Enero', 'HERNANDEZ', 'SOLIS', 'MARIA ELENA', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(2, 'corporativo santander semanal', '2da Quincena de Enero', 'HERNANDEZ', 'SOLIS', 'MARIA ELENA', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022');
 
 -- --------------------------------------------------------
 
@@ -5042,6 +5119,15 @@ CREATE TABLE `nomina.listas.foraneos acapulco` (
   `y 1/16` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `nomina.listas.foraneos acapulco`
+--
+
+INSERT INTO `nomina.listas.foraneos acapulco` (`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, `dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES
+(4, 'foraneos acapulco', '2da Quincena de Enero', 'ROMAN', 'MIRANDA', 'EDGAR AGRIPINO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(5, 'foraneos acapulco', '2da Quincena de Enero', 'CABRERA', 'MORALES', 'ANDRES', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(6, 'foraneos acapulco', '2da Quincena de Enero', 'RIOJA', 'CABELLO', 'FRANCISCO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022');
+
 -- --------------------------------------------------------
 
 --
@@ -5090,6 +5176,16 @@ CREATE TABLE `nomina.listas.foraneos acapulco.simss` (
   `y 1/16` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `nomina.listas.foraneos acapulco.simss`
+--
+
+INSERT INTO `nomina.listas.foraneos acapulco.simss` (`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, `dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES
+(1, 'foraneos acapulco', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(2, 'foraneos acapulco', '1ra Quincena de Enero', 'VAZQUEZ ', 'CARMONA', 'CARLOS ENRIQUE', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(3, 'foraneos acapulco', '2da Quincena de Enero', 'OLIVAR', 'VALDOVINOS', 'LEONEL', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(4, 'foraneos acapulco', '2da Quincena de Enero', 'VAZQUEZ ', 'CARMONA', 'CARLOS ENRIQUE', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022');
+
 -- --------------------------------------------------------
 
 --
@@ -5137,6 +5233,14 @@ CREATE TABLE `nomina.listas.foraneos puebla` (
   `EEEE 31` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `y 1/16` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `nomina.listas.foraneos puebla`
+--
+
+INSERT INTO `nomina.listas.foraneos puebla` (`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, `dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES
+(3, 'foraneos puebla', '2da Quincena de Enero', 'DURAN', 'GARCIA', 'DELFINO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(4, 'foraneos puebla', '2da Quincena de Enero', 'LEON ', 'MEZA', 'PEDRO JOSE LUIS', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022');
 
 -- --------------------------------------------------------
 
@@ -5330,6 +5434,16 @@ CREATE TABLE `nomina.listas.norte` (
   `y 1/16` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `nomina.listas.norte`
+--
+
+INSERT INTO `nomina.listas.norte` (`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, `dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES
+(5, 'norte', '2da Quincena de Enero', 'TORRES', 'REMEDIOS', 'JOSE LUIS', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(6, 'norte', '2da Quincena de Enero', 'ALVARADO', 'MIRAMONTES', 'LORENZO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(7, 'norte', '2da Quincena de Enero', 'TELLEZ', 'JIMENEZ', 'NORBERTO ', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(8, 'norte', '2da Quincena de Enero', 'CHANTES', 'XONCLE', 'JOSE DIEGO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022');
+
 -- --------------------------------------------------------
 
 --
@@ -5426,6 +5540,17 @@ CREATE TABLE `nomina.listas.oficina` (
   `y 1/16` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `nomina.listas.oficina`
+--
+
+INSERT INTO `nomina.listas.oficina` (`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, `dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES
+(5, 'oficina', '2da Quincena de Enero', 'RAMIREZ', 'ROSAS', 'CARLOS   ', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(6, 'oficina', '2da Quincena de Enero', 'FUENTES', 'PLATA', 'KARLA JOANA', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(7, 'oficina', '2da Quincena de Enero', 'MELCHOR', 'FLORES', 'TERESA ', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(8, 'oficina', '2da Quincena de Enero', 'SANCHEZ', 'MORALES', 'ANA MINERVA     ', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(9, 'oficina', '2da Quincena de Enero', 'GALLARDO', 'TORRES', 'JHOVAN ALEXANDRO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022');
+
 -- --------------------------------------------------------
 
 --
@@ -5474,6 +5599,19 @@ CREATE TABLE `nomina.listas.oficina.simss` (
   `y 1/16` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `nomina.listas.oficina.simss`
+--
+
+INSERT INTO `nomina.listas.oficina.simss` (`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, `dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES
+(1, 'oficina', '1ra Quincena de Enero', 'GALLARDO', 'TORRES', 'JHOVAN ALEXANDRO', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(2, 'oficina', '1ra Quincena de Enero', 'BAHENA', 'ARMENTA', 'ANGELICA', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(3, 'oficina', '1ra Quincena de Enero', 'AGUILA', 'LOPEZ', 'FATIMA', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(4, 'oficina', 'Selecciona una Quincena', 'ORTIZ', 'ARGUELLO', 'ANTONIO', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(5, 'oficina', '2da Quincena de Enero', 'BAHENA', 'ARMENTA', 'ANGELICA', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(6, 'oficina', '2da Quincena de Enero', 'AGUILA', 'LOPEZ', 'FATIMA', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(7, 'oficina', '2da Quincena de Enero', 'ORTIZ', 'ARGUELLO', 'ANTONIO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022');
+
 -- --------------------------------------------------------
 
 --
@@ -5521,6 +5659,16 @@ CREATE TABLE `nomina.listas.poniente` (
   `EEEE 31` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `y 1/16` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `nomina.listas.poniente`
+--
+
+INSERT INTO `nomina.listas.poniente` (`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, `dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES
+(5, 'poniente', '2da Quincena de Enero', 'MEDRANO', 'OVIEDO', 'JESUS MANUEL', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(6, 'poniente', '2da Quincena de Enero', 'PEREZ', 'SANTIAGO', 'ALBERTO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(7, 'poniente', '2da Quincena de Enero', 'PADILLA', 'PARRADO', 'VICTORINO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(8, 'poniente', '2da Quincena de Enero', 'GONZALEZ', 'MUNOZ', 'JESUS ', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022');
 
 -- --------------------------------------------------------
 
@@ -5618,6 +5766,22 @@ CREATE TABLE `nomina.listas.sur 1` (
   `y 1/16` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `nomina.listas.sur 1`
+--
+
+INSERT INTO `nomina.listas.sur 1` (`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, `dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES
+(11, 'sur 1', '2da Quincena de Enero', 'GARCIA', 'GUARNEROS', 'JOSE ANTONIO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(12, 'sur 1', '2da Quincena de Enero', 'PEREZ', 'DIAZ', 'MARCO ANTONIO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(13, 'sur 1', '2da Quincena de Enero', 'MARTINEZ', 'GARCIA', 'ISAIAS', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(14, 'sur 1', '2da Quincena de Enero', 'ALATRISTE', 'AGUILERA', 'GERARDO ', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(15, 'sur 1', '2da Quincena de Enero', 'PADILLA', 'SIXTO', 'ISAIAS', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(16, 'sur 1', '2da Quincena de Enero', 'ORTIZ', 'LAUREANO', 'PONCIANO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(17, 'sur 1', '2da Quincena de Enero', 'GOMEZ', 'CARRILLO', 'JUAN ', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(18, 'sur 1', '2da Quincena de Enero', 'GUERECA ', 'CARDENAS ', 'JUAN ANTONIO ', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(19, 'sur 1', '2da Quincena de Enero', 'DE LA CRUZ ', 'MARIN ', 'BLAS', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(20, 'sur 1', '2da Quincena de Enero', 'RUIZ', 'LADRILLERO', 'ARTURO GUILLERMO ', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022');
+
 -- --------------------------------------------------------
 
 --
@@ -5713,6 +5877,18 @@ CREATE TABLE `nomina.listas.sur 2` (
   `EEEE 31` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `y 1/16` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `nomina.listas.sur 2`
+--
+
+INSERT INTO `nomina.listas.sur 2` (`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, `dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`, `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`, `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`, `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`, `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES
+(7, 'sur 2', '2da Quincena de Enero', 'GARCIA', 'CRUZ', 'HUMBERTO', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(8, 'sur 2', '2da Quincena de Enero', 'LOPEZ', 'ZEPEDA', 'AARON', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(9, 'sur 2', '2da Quincena de Enero', 'JIMENEZ', 'GOMEZ', 'SILAS', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(10, 'sur 2', '2da Quincena de Enero', 'GONZALEZ', 'GUTIERREZ', 'JUAN CARLOS', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(11, 'sur 2', '2da Quincena de Enero', 'BARRIOS', 'CEDILLO', 'GERARDO ERIK', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(12, 'sur 2', '2da Quincena de Enero', 'RANGEL', 'HERNANDEZ', 'ISRAEL      ', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022');
 
 -- --------------------------------------------------------
 
@@ -13363,7 +13539,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (4764, 'NO', 'GALICIA', 'PLATA', 'LUIS GUILLERMO', '5611195205', '.', '5586511787', 'TARJETA ', '1350', '200', 'BANCOMER', '.', 'sur 2', 'santander palmas', 'BOLETINADO', '21/10/2019', '13/02/2020', '11/12/2020', '', 'SI, PENDIE', '', '', 'GAPL920125FBA', '.', 'GAPL920125HMCLLS05', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'REINGRESO, APARECE EN CONSECUTIVO DE IMSS CON EL NO. 91. REINGRESO EL DIA 22/10/2019 SE DA DE BAJA POR QUE ORINA UN AUTO EN  MONTEVIDEO EL DIA 01/02/2020, VIENE A FIRMAR SU BAJA EL DIA 04/02/2020. ES UN SENOR QUE NO ESTA CONFORME CON LOS SERVICIOS, SE LE HA ESTADO MOVIENDO EN la eraY TEHUANTEPEC Y EN NIGUNO DE LOS SERVICIOS EL SENOR SE ACOPLO, EN AMBOS CASOS FUE POR EL HORARIO. YA NO HAY OPORTUNIDAD DE REINGRESO. PRIMER INGRESO 22/10/2019, ULTIMO DIA LABORADO 01/02/2020, FECHA EN LA QUE SE PRESENTA A FIRMAR BAJA 04/02/2020. CAMBIO DE SERVICIO santander montevideo. FECHA DE BAJA 11/12/2020'),
 (4767, 'NO', 'VEGA', 'RIOS', 'FRANCISCO', '551497 6525', '.', '.', 'TARJETA ', '1500', '300', 'BANCOMER', '.', 'sur 1', 'estacionamiento tehuantepec', 'BAJA', '07/04/2016', '11/02/2017', '23/06/2017', '', '', '', '', '.', '.', 'VERF690812HDFGSR09', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO', '', 'INE Y LICENCIA', 'NA', 'YA HABIA INGRESADO,FALTANTE DE CORTE (ROBABA DINERO), NO REPORTABA ENTRADAS NI SALIDAS DE TODOS LOS CARROS QUE ENTRABAN A ESTACIONAMIENTO, SE ENCUENTRA UN HOYO EN LA PARTE DEL TECHO DEL BANO DE LAS MUJERES LAS ESPIABA, SE PRESENTA A oficinaEL 27/06/2017 PARA ENTREGA DE FINIQUITO SE ALTERA DICE QUE NO LE CORRESPONDE ESE MONTO QUE DEBE DE SER MAYOR, SE PONE MUY AGRESIVO NO CONTRATAR. PRIMER INGRESO 01/06/2016, ULTIMO DIA LABORADO 16/12/2016. CAMBIO DE SERVCIIO estacionamiento iturbide'),
 (4806, 'NO', 'ANDRADE', 'FLORES', 'TERESA DE JESUS', '.', '.', '.', 'TARJETA ', '0', '0', 'BANCOMER', '.', 'oficina', '.', 'BAJA', '04/09/2017', '04/09/2017', '31/12/2017', '31/12/2017', 'SI', '', '', '.', '.', 'AAFT840406MMCNLR03', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', 'NA', ''),
-(4809, 'NO', 'RAMIREZ', 'NAVA', 'MAURO', '.', '.', '.', 'TARJETA ', '1750', '0', 'BANCOMER', '2864917316', 'foraneos acapulco', 'santander costa azul', 'VIGENTE', '', '11/06/2016', '', '', '', '', '', 'RANM8301159T6', '72018327477', 'RANM830115HGRMVR03', 'NO DEJO ', 'LAZARO CARDENAS', '32', '', 'MELCHOR O CAMPO', 'ACAPULCO DE JUAREZ', '39699', '', '', '', 'NA', 'SUP LEONEL ENVIA DOCUMENTOS DEL NUEVO ELEMENTO. COPIAS. SERVICIO DE INGRESO santander renacimiento'),
+(4809, 'No', 'RAMIREZ', 'NAVA', 'MAURO', '.', '.', '.', '.', '1750', '0', 'BANCOMER', '2864917316', 'foraneos acapulco', 'SANTANDER RENACIMIENTO', 'VIGENTE', '', '11/01/2022', '', '', '.', '.', '', 'RANM8301159T6', '72018327477', 'RANM830115HGRMVR03', 'NO DEJO ', 'LAZARO CARDENAS', '', '32', 'MELCHOR O CAMPO', 'ACAPULCO DE JUAREZ', '39699', '', '', '', 'NA', 'PRIMER INGRESO 11/06/2016 SUP LEONEL ENVIA DOCUMENTOS DEL NUEVO ELEMENTO. COPIAS. SERVICIO DE INGRESO santander renacimiento REINGRESO EL DIA 11/ENERO/2022'),
 (4810, 'NO', 'DIAZ', 'PUERTO', 'MOISES', '5565633089', '.', '5510917409', 'TARJETA ', '3000', '500', 'BANCOMER', '.', 'norte y poniente', 'supervisor', 'BAJA', '18/07/2016', '06/02/2018', '24/05/2018', '', 'SI', 'SI', '', '.', '.', 'DIPM910426HDFZRS01', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO,INE Y LICENCIA DE MANEJO', '', 'ACTA DE NACIMIENTO,INE Y LICENCIA DE MANEJO', 'NA', 'SE PRESENTA A oficinaREINGRESO FIRMA CONTRATO. FECHA DE PRIMER INGRESA 19/07/2016, FECHA DE ULTIMO DIA LABORADO 25/10/2017. FECHA DE BAJA 24/05/2018, '),
 (4813, 'NO', 'CRUZ', 'GARCIA', 'OSCAR FRANCISCO', '5544263 4143', '.', '.', 'TARJETA ', '1800', '200', 'BANCOMER', '.', 'volant', 'city expresssanta fe', 'BOLETINADO', '10/12/2014', '28/06/2016', '21/07/2017', '24/07/2017', 'SI', 'SI', '', '.', '.', 'CUGO931112HMCRRS09', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO Y COMPR.DOMICILIO', '', 'INE Y LICENCIA', 'NA', 'CAMBIO DE ADMINISTRACION volantA CONFORT,SE PRESENTA A oficinaFIRMA BAJA ENTREGA CHALECO AMARILLO PENDIENTE  DE ENTREGAR CHALECO NEGRO Y CHAMARRA, POSIBLE REINGRESO RECALCARLE NO TOMAR COSAS AGENAS,SE ENTREGA FINIQUITO 15/08/2017, LO BOLETINA VOLAN PARK POR SE REPORTO VARIAS VECES COMO SOSPECHOSO DE ROBO, APARECE EN FACEBOOK COMO OSCAR CRUZ. cambio de servicio grupo expansion\n'),
 (4817, 'SI', 'LOPEZ', 'ZEPEDA', 'AARON', '5527958338', '.', '50971426', 'TARJETA', '3000', '600', 'SANTANDER', '25002925392', 'sur 2', 'estacionamiento tehuantepec', 'VIGENTE', '11/07/2018', '13/07/2018', '', '', '', '', '', 'LOZA9507019N0', '20109522795', 'LOZA950701HMCPPR04', 'NO DEJO ', 'FELIPE TIJERA', 'MZ. 36 LT. 5', '', 'LA ESPERANZA', 'ECATEPEC DE MORELOS', '55519', 'INE Y ACTA', '2 CARTAS, REFERENCIAS, 2 FOTOS', 'LICENCIA', '75', 'SE PRESENTA A oficinaEN 5 DE FEBRERO DICE QUE LE OFRECIERON OTRO EMPLEO Y QUE FUE TODO DE IMPROVISO NO QUIERE FIRMAR BAJA QUE PARA QUE SI NUNCA SE LE DIO LO QUE SE LE OFRECIO, ESTUVO EN EL estacionamiento tehuantepec, RECIBE FINIQUITO; REINGRESA CON NOSOTROS Y SE ENVIA AL MISMO SERVICIO. FECHA DE SU PRIMER ENTREVISTA 30/07/2016, SERVICIO DE INGRESO grupo expansion'),
@@ -13765,7 +13941,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5406, 'NO', 'MATUS', 'CARACAS', 'AGUSTIN RENE', '.', '.', '.', '', '0', '0', '', '.', '.', '.', 'PENDIENTE', '17/01/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE ENTREVISTA Y SE LE CITA AL DIA SIGUIENTE '),
 (5407, 'NO', 'RANGEL', 'RIOS', 'OSCAR', '.', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '23/01/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CUENTA CON LA IMAGEN TIENE TATUAJES MUY VISIBLES '),
 (5408, 'NO', 'SANCHEZ', 'MARCELO', 'JAIRO', '.', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '24/01/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE ENTREVISTA Y SE LE CITA AL DIA SIGUIENTE Y COMENTA QUE PRIMERO ASISTIRA A OTRA ENTREVISTA'),
-(5409, 'No', 'GARCIA', 'RAMIREZ', 'BLAS', '.', '.', '5628034170', '.', '0', '0', '.', '.', 'Selecciona Zona', '.', 'RECHAZADO', '06/01/2022', '', '', '', '.', '.', '', '.', '.', '.', '', '.', '', '', '', '', '', '', '', '', '', 'CHECAR BIEN ANTES DE CONTRATAR, DEBERA DE TRAER SUS CARTAS DE RECOMENDACIÓN COMPLETAS Y DEBERAN DE SER LABORALES, REVISAR BIEN SU IMAGEN, SE LE DIO LA VACANTE DE KOWLAAN VESPERTINO'),
+(5409, 'No', 'GARCIA', 'RAMIREZ', 'BLAS', '.', '.', '5628034170', '.', '0', '0', '.', '.', 'sur 2', 'KOWLAAN', 'BOLETINADO', '06/01/2022', '11/01/2022', '11/01/2022', '12/01/2022', 'Si', 'Si', '', '.', '.', '.', '', '.', '', '', '', '', '', '', '', '', '', 'CHECAR BIEN ANTES DE CONTRATAR, DEBERA DE TRAER SUS CARTAS DE RECOMENDACIÓN COMPLETAS Y DEBERAN DE SER LABORALES, REVISAR BIEN SU IMAGEN, SE LE DIO LA VACANTE DE KOWLAAN VESPERTINO, INGRESO EL DIA 11/01/2022 Y POR COMENTARIOS DE POSIBLES ROBOS Y CONSUMO DE DROGA SE LIQUIDO EL DIA 12/01/2022 POR EL SR. ISAIAS PADILLA Y AUTORIZACION DE LA LIC'),
 (5410, 'NO', 'MARTINEZ', 'LOZANO', 'ALEJANDRO ROMAN', '.', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '18/01/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE PRESENTA A ENTREVISTA SE LE DA EL SERVICIO DE ITURBIDE SE MANDA A CAPACITACION ESE DIA Y NO LLEGA A LA CAPACITACION, NO CONTRATAR'),
 (5411, 'NO', 'NAVA', 'GACIA', 'JULIO DANIEL', '.', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '17/01/2019', '18/01/2019', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE PRESENTA A SERVICIO entre gauchosY EL DIA 1 DE FEBRERO MANDA MENSAJE AVISANDO QUE YA NO SE PRESENTARA A LABORAR PORQUE SE IRA A TRABAJAR FUERAS.'),
 (5412, 'NO', 'GOMEZ', 'CARRILLO', 'JUAN ', '5587329615', '20761914', '.', 'TARJETA ', '1550', '300', 'BANCOMER ', '1512284327', 'sur 1', 'santander guadalupe inn/ olivo', 'VIGENTE', '05/02/2019', '22/02/2021', '', '', 'SI', 'SI ', '', 'GOCJ790710B86', '20997907884', 'GOCJ790710HMEMCMRS', 'NO DEJO ', 'norte2', 'MZ.78 LT. 15', '', 'PROVIDENCIA', 'VALLE DE CHALCO ', '56616', 'ACTA, INE', 'LICENCIA', '', '', 'SE PRESENTA A ENTREVISTA Y SE LE CONTRATA PARA SERVICIO MIGUEL LAURENT. EL CHOFER SOLICITA LA BAJA POR MOTIVOS PERSONALES, TUVO UN PROBLEMA EN EL ESTACIONAMIENTO DE ITURBIDE DEBIDO A UNA AMBULANTE. SE LE REINGRESA, NO COLOCAR EN UN ESTACIONAMIENTO. SU PRIMER INGRESO FUE EL 06/02/2019, ULTIMO DIA LABORADO 04/01/2021, FECHA EN LA QUE FIRMA SU BAJA 12/01/2021,SERVICIO DE INGRESO santander miguel laurent, CAMBIOS DE SERVICIO comodin, estacionamiento iturbide'),
@@ -13855,9 +14031,9 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5500, 'NO', 'MARTINEZ', 'RAMIREZ', 'EDUARDO', '5561673129', '56087845', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '16/07/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'CITADO PARA EL DIA 17 DE JULIO/NO SE PRESENTA. SE LE CITA EL DIA 21/10/2019 Y NO SE PRESENTA. SE PRESENTA A ENTREVISTA EL 06/08/2021 SE LE CITA AL DIA SIGUIENTE Y NO SE PRESENTA. SE VOLVIO A PRESENTAR A ENTREVISTA EL 18/10/2019'),
 (5501, 'NO', 'SALDANA', 'BOTELLO', 'JOSE CRUZ', '5519677013', '51132165', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '18/07/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR, TIENE MALA IMAGEN. SE DEPURA SOLICITUD CON FECHA 17/01/2020'),
 (5502, 'NO', 'GONZALEZ', 'JARILLO', 'MARY GIOVANNA', '5523569097', '70252795', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '18/07/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO QUISO LA VACANTE POR EL SUELDO '),
-(5503, 'NO', 'TRIGO', 'FLORES', 'ZAIRA SUSANA', '5582915568', '55502592', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '18/07/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CUMPLE CON EL PERFIL '),
-(5504, 'NO', 'GONZALEZ', 'SANTA', 'ANA MOISES', '5549160690', '52590013', '.', 'TARJETA ', '1500', '500', '', '.', 'sur 2', 'grupo expansion', 'BAJA ', '18/07/2019', '19/07/2019', '27/07/2019', '27/07/2019', '43673', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', 'LICENCIA Y ACTA DE NACIMIENTO ', '', '', '', 'QUEDA PENDIENTE LA INE EN ORIGINAL Y COPIA/NO CUMPLE CON EL PERFIL ,SE CONTRATO PARA EXPANSION Y SE LE PASO A hondaY NO CUMPLIA CON EL UNIFORME, EL SUP ISAIAS LE REGALO UNOS ZAPATOS Y SE MOLESTO, NO CONTRATAR  ');
+(5503, 'NO', 'TRIGO', 'FLORES', 'ZAIRA SUSANA', '5582915568', '55502592', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '18/07/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CUMPLE CON EL PERFIL ');
 INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`, `Nombre(s)`, `# Celular`, `# Casa`, `# Recados`, `Forma de pago`, `Sueldo`, `Bono`, `Banco`, `Cuenta bancaria`, `Zona`, `Servicio`, `Status`, `Fecha entrevista`, `Fecha de ingreso`, `Fecha ultimo dia laborado`, `Fecha firma baja`, `Baja Firmada`, `Finiquito`, `Años de antiguedad`, `RFC`, `NSS`, `CURP`, `Correo electronico`, `Calle`, `# Exterior`, `# Interior`, `Colonia`, `DLG o Mun`, `C.P`, `Documentos originales`, `Documentos faltantes`, `Documentos entregados`, `# Recepcion`, `Observaciones`) VALUES
+(5504, 'NO', 'GONZALEZ', 'SANTA', 'ANA MOISES', '5549160690', '52590013', '.', 'TARJETA ', '1500', '500', '', '.', 'sur 2', 'grupo expansion', 'BAJA ', '18/07/2019', '19/07/2019', '27/07/2019', '27/07/2019', '43673', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', 'LICENCIA Y ACTA DE NACIMIENTO ', '', '', '', 'QUEDA PENDIENTE LA INE EN ORIGINAL Y COPIA/NO CUMPLE CON EL PERFIL ,SE CONTRATO PARA EXPANSION Y SE LE PASO A hondaY NO CUMPLIA CON EL UNIFORME, EL SUP ISAIAS LE REGALO UNOS ZAPATOS Y SE MOLESTO, NO CONTRATAR  '),
 (5505, 'NO', 'FLORES', 'ARRIETA', 'JAQUELINE IVANARA', '5561081093', '.', '5571703545', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '22/07/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'RECHAZAR '),
 (5506, 'NO', 'FUENTES', 'ESCALANTE', 'FRANCISCO', '5588401705', '54251823', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '24/07/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'CITADO PARA EL DIA 25 DE JULIO PARA CONTRATACION Y NO SE PRESENTO '),
 (5507, 'NO', 'CASTRO', 'CABRERA', 'JULIO CESAR', '5554973163', '25898325', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '25/07/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'CITADO PARA EL DIA 26 DE JULIO, FIRMA CONTRATO Y DESPUES DICE QUE YA NO LE INTERESA LA VACANTE, NO CONTRATAR, SOLO QUITA EL TIEMPO. SE DEPURA SOLICITUD CON FECHA 17/01/2020'),
@@ -13995,10 +14171,10 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5642, 'NO', 'ANDRADE', 'SANCHEZ', 'JORGE DANIEL', '5526928148', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '24/01/2020', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO QUISO ACEPTAR EXPANSI?N, ES HIJO DEL SENOR JORGE ANDRADE, EL CUAL ESTA EN PALMAS. '),
 (5643, 'NO', 'DOMINGUEZ', 'GARCIA', 'EDUARDO', '5517699796', '.', '5534026195', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '22/01/2020', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE HIZO MUY POCO EL SALARIO'),
 (5644, 'NO', 'MAYA', 'MORA', 'CHRISTIAN EDUARDO', '5614064665', '54271777', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '24/01/2020', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE HIZO MUY POCO EL SALARIO'),
-(5645, 'NO', 'ALVARADO', 'PEREZ', 'IVAN', '5530489514', '.', '5582087150', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '24/01/2020', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', ''),
-(5646, 'NO', 'XOCHIHUA', 'NENGUA', 'LUIS ERNESTO', '5522422890', '.', '.', '', '0', '0', '', '.', '.', '.', 'PENDIENTE', '27/01/2020', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITO EL DIA 28/01/2020, PERO NO SE PRESENTO. SE VUELVE A PRESENTAR A ENTREVISTYA EL DIA 26/05/2020, SE LE ACEPTA SOLICITUD, PENDIENTE PREENTREVISTA'),
-(5647, 'NO', 'LOYOLA', 'MARTINEZ', 'JOSE ALBERTO', '5544626806', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '29/01/2020', '30/01/2020', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE CONTRATA PARA CANAL DEL norte, SE ENVIA AL SERVICIO Y YA ESTANDO ALLA COMENTA QUE NO LE GUSTO, VIENE POR SU DOCUMENTACI?N ');
+(5645, 'NO', 'ALVARADO', 'PEREZ', 'IVAN', '5530489514', '.', '5582087150', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '24/01/2020', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', '');
 INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`, `Nombre(s)`, `# Celular`, `# Casa`, `# Recados`, `Forma de pago`, `Sueldo`, `Bono`, `Banco`, `Cuenta bancaria`, `Zona`, `Servicio`, `Status`, `Fecha entrevista`, `Fecha de ingreso`, `Fecha ultimo dia laborado`, `Fecha firma baja`, `Baja Firmada`, `Finiquito`, `Años de antiguedad`, `RFC`, `NSS`, `CURP`, `Correo electronico`, `Calle`, `# Exterior`, `# Interior`, `Colonia`, `DLG o Mun`, `C.P`, `Documentos originales`, `Documentos faltantes`, `Documentos entregados`, `# Recepcion`, `Observaciones`) VALUES
+(5646, 'NO', 'XOCHIHUA', 'NENGUA', 'LUIS ERNESTO', '5522422890', '.', '.', '', '0', '0', '', '.', '.', '.', 'PENDIENTE', '27/01/2020', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITO EL DIA 28/01/2020, PERO NO SE PRESENTO. SE VUELVE A PRESENTAR A ENTREVISTYA EL DIA 26/05/2020, SE LE ACEPTA SOLICITUD, PENDIENTE PREENTREVISTA'),
+(5647, 'NO', 'LOYOLA', 'MARTINEZ', 'JOSE ALBERTO', '5544626806', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '29/01/2020', '30/01/2020', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE CONTRATA PARA CANAL DEL norte, SE ENVIA AL SERVICIO Y YA ESTANDO ALLA COMENTA QUE NO LE GUSTO, VIENE POR SU DOCUMENTACI?N '),
 (5648, 'NO', 'GUERRERO', 'SANTIAGO', 'RICARDO', '5544863425', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '01/02/2020', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR ES UN SENOR CON UNA ACTITUD MUY PESADA'),
 (5649, 'NO', 'CASTANEDA', 'TERREROS', 'RICARDO', '5514550810', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '11/02/2020', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITO EL DIA 12/02/2020 PERO NO SE PRESENTO'),
 (5650, 'NO', 'RAMIREZ', 'HERNANDEZ', 'GABINO GERARDO', '5568753781', '.', '5520951880', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '17/02/2020', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITO PARA EL DIA 18/02/2020. SE VE DUDOSO. NO SE PRESENTO'),
@@ -14121,7 +14297,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5770, 'NO', 'TORRES', 'HERNANDEZ', 'FRANCISCO JAVIER', '5564652570', '.', '55833260', 'EFECTIVO', '1550', '300', 'EFECTIVO', '0', 'sur 1', 'santander copilco', 'VIGENTE', '27/07/2021', '29/07/2021', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', 'AUT. MEXICO CUERNAVACA', '52', '', '5 DE MAYO', 'CDMX', '14640', '', '', '', '', 'SE CONTRATA Y SE CITA AL DIA SIGUIENTE EN COPILCO'),
 (5771, 'NO', 'NAJERA', 'CARRANZA', 'JESUS', '55364958476', '5589611043', '.', '', '1550', '300', 'BANCOMER', '1555155905', 'sur 1', 'santander copilco', 'BAJA', '05/08/2021', '06/08/2021', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', 'AXOQUEN', 'MZ.572 LT.10', '', 'MINEROS', 'CHIMALHUACAN', '53334', '', '', '', '', 'SE CONTRATA PARA ENVIARLO AL SERVICIO DE COPILCO. '),
 (5772, 'NO', 'TORRES', 'CANCINO', 'MIGUEL', '5529642875', '.', '.', '', '1500', '500', '', '.', 'sur 2', 'kowlaan', 'BAJA', '11/08/2021', '12/08/2021', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', ''),
-(5773, 'No', 'GALLARDO', 'TORRES', 'JHOVAN ALEXANDRO', '5577551705', '.', '.', 'TARJETA', '4000', '1000', 'BANCOMER', '1516921619', 'oficina', 'Sistemas', 'VIGENTE', '.', '09/08/2021', '', '', '.', '.', '0 Años, 4 Meses, 29 Dias', '.', '.', '.', 'NO DEJO ', 'HACIENDA DE LOS CUENTOS', '', 'MZ. 16 LT.6', 'PUEBLO NUEVO', 'CHALCO', '56644', '', '', '', '', 'SE LE OFRECE TRABAJO DESPUES AL TERMINO DE SU ESTADIA '),
+(5773, 'Si', 'GALLARDO', 'TORRES', 'JHOVAN ALEXANDRO', '5577551705', '.', '.', 'TARJETA', '4000', '1000', 'BANCOMER', '1516921619', 'oficina', 'Sistemas', 'VIGENTE', '.', '09/08/2021', '', '', '.', '.', '0 Años, 5 Meses, 3 Dias', '.', '.', '.', 'NO DEJO ', 'HACIENDA DE LOS CUENTOS', 'MZ. 16 LT.6', '', 'PUEBLO NUEVO', 'CHALCO', '56644', '', '', '', '', 'SE LE OFRECE TRABAJO DESPUES AL TERMINO DE SU ESTADIA '),
 (5774, 'NO', 'DOMINGUEZ', 'VEGA', 'KEVIN', '5539208169', '.', '.', 'TARJETA', '2500', '500', 'BANCOMER', '1567174639', 'oficina', 'sistemas', 'BAJA', '.', '09/08/2021', '27/10/2021', '', 'NO', '', '', '.', '.', '.', 'NO DEJO ', 'ROCIO', 'MZ. 9 LT. 79', '', 'GEOVILLAS SANTA BARBARA', 'IXTAPALUCA', '56535', '', '', '', '', 'SE LE OFRECE TRABAJO DESPUES AL TERMINO DE SU ESTADIA. NO SE PRESENTA A FIRMAR BAJA'),
 (5775, 'NO', 'AGUILERA', 'GUERRERO', 'MIGUEL ANGEL', '5528012399', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '09/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA CONTRATACI?N DE kowlaan, PERO NO SE PRESENTA'),
 (5776, 'NO', 'MANIQUE', 'ESTEFES', 'ABIMAEL', '5577606179', '5587530231', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '17/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA CONTRATACI?N EN DESIERTO PERO NO SE PRESENTA'),
@@ -14141,10 +14317,10 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5790, 'NO', 'ACEVEDO', 'MONTES DE OCA ', 'ERNESTO ISRAEL', '5581802962', '5557198872', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '20/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA kowlaanPERO NO SE PRESENTA, VIENE DIAS DESPUES Y COMENTA QUE LE OFRECIERON UN TRABAJO MEJOR'),
 (5791, 'NO', 'APARICIO', 'MORALES', 'HECTOR', '5627455112', '5559716055', '.', '', '0', '0', '', '.', '.', '.', 'BOLETINADO', '18/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR ES AMIGO DEL SENOR MARTIN EL CUAL ROBO EN kowlaan'),
 (5792, 'NO', 'PEREZ', 'RODRIGUEZ', 'JOSE FRANCISCO', '5513567065', '.', '.', '', '0', '0', '', '.', '.', '.', 'NO CONTRATAR', '25/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR TIENE CARA DE RATERO, SALIO MAL DE LA EMPRESA ANTERIOR. '),
-(5793, 'NO', 'ROSAS', 'CARRILLO', 'HUGO', '5564511738', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '26/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA CONTRATACI?N, NO SE PRESENTA'),
-(5794, 'NO', 'ROJANO', 'JIMENEZ', 'VICTOR HUGO', '5611908575', '.', '.', '', '0', '0', '', '.', '.', '.', 'NO CONTRATAR', '26/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR TRAE UN TATUAJE MUY VISIBLE EN EL CUELLO'),
-(5795, 'NO', 'HERNANDEZ', 'LOPEZ', 'JONATHAN ANTONIO', '5512706673', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '26/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', '');
+(5793, 'NO', 'ROSAS', 'CARRILLO', 'HUGO', '5564511738', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '26/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA CONTRATACI?N, NO SE PRESENTA');
 INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`, `Nombre(s)`, `# Celular`, `# Casa`, `# Recados`, `Forma de pago`, `Sueldo`, `Bono`, `Banco`, `Cuenta bancaria`, `Zona`, `Servicio`, `Status`, `Fecha entrevista`, `Fecha de ingreso`, `Fecha ultimo dia laborado`, `Fecha firma baja`, `Baja Firmada`, `Finiquito`, `Años de antiguedad`, `RFC`, `NSS`, `CURP`, `Correo electronico`, `Calle`, `# Exterior`, `# Interior`, `Colonia`, `DLG o Mun`, `C.P`, `Documentos originales`, `Documentos faltantes`, `Documentos entregados`, `# Recepcion`, `Observaciones`) VALUES
+(5794, 'NO', 'ROJANO', 'JIMENEZ', 'VICTOR HUGO', '5611908575', '.', '.', '', '0', '0', '', '.', '.', '.', 'NO CONTRATAR', '26/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR TRAE UN TATUAJE MUY VISIBLE EN EL CUELLO'),
+(5795, 'NO', 'HERNANDEZ', 'LOPEZ', 'JONATHAN ANTONIO', '5512706673', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '26/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', ''),
 (5796, 'NO', 'PARRA', 'GOMEZ', 'JOSE ALFREDO', '5562073917', '5559166200', '.', '', '0', '0', '', '.', '.', '.', 'NO CONTRATAR', '25/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'LLENA LA SOLICITUD A LAPIZ, EL D?A DE AYER (24/08/2021) SE LE MANDO A COMPRAR LA SOLICITUD Y NO LA COMPRO, PUSO CARAS, TIENE UNA PESIMA ACTITUD. '),
 (5797, 'NO', 'PINEDA', 'RIVERA', 'ISRAEL', '5615518860', '5517042564', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '25/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE, NO SE PRESENTA'),
 (5798, 'NO', 'QUIJANO', 'MARRERO', 'RENE', '2321167905', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '30/08/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITA CON DOCUMENTOS Y ALINEADO, PARA VER SU PORTE'),
@@ -14241,7 +14417,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5990, 'NO ', 'OVIEDO ', 'D?AZ ', 'ALBERTO ', '5579749516', '55855119', '55855119', 'TARJETA ', '1550', '300', 'BANCOMER ', '', '', 'santander palmas', 'BOLETINADO', '26/10/2021', '27/10/2021', '29/10/2021', '03/11/2021', 'SI', 'NO', '', '', '', 'OIDA881115HDFVZL08', 'albertooviedo673@gmail.com ', '2DA CERRADA DE EMILIANO ZAPATA ', '', '', 'SAN BERNBE ', 'MAGDALENA CONTRERAS ', '10300', 'ACTA DE NACIMIENTO, INE, LICENCIA ', 'COPIA DE CARTILLA, 2 FOTOS ', '', '', 'BOLETINADO POR ROBO EN PALMAS EL D?A 29 DE OCTUBRE DEL 2021, EL D?A DE LA ENTREGA DE SUS PAPELES SE PUSO MUY PESADO. '),
 (5991, 'NO ', 'GARCIA', 'JASSO', 'MISSAEL', '5554944389', '', '', 'TARJETA ', '1550', '300', 'BBVA ', '', '', 'santander desierto de los leones', 'BOLETINADO', '29/10/2021', '04/11/2021', '04/11/2021', '', '', '', '', '', '', 'GAJM920716HDFRSS05', 'misaeljasso955016@gmail.com', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR EL DIA DE LA CONTRATACION FIRMO TODO, ESTABA ESPERANDO A QUE PASARA EL supervisorPOR EL Y SE FUE, SOLO MANDO UN MENSAJE QUE TENIA UN PROBLEMA FAMILIAR Y SE TUVO QUE IR DE EMERGENCIA'),
 (5992, 'NO', 'DE LA ROSA', 'GARCIA', 'MARTIN', '5588372886', '', '5548263005', 'TARJETA', '1550', '300', 'BANCOMER', '1520364398', 'sur 2', 'santander palmas', 'VIGENTE', '04/11/2021', '05/11/2021', '', '', '', '', '', 'ROGM800719HDFSRR07', '', 'ROGM800719HDFSRR07', 'delarosagarciamartin70@gmail.com', 'IGNACIO LOPEZ RAYON', '3', '', 'VILLA SAN LORENZO', 'CHIMALHUACAN', '56340', 'INE, LICENCIA, ACTA DE NACIMIENTO', '', '', '', ''),
-(5993, 'NO', 'LABRA', 'VALADEZ', 'EDGAR', '5537158638', '', '5583273342', 'TARJETA', '1850', '400', 'BANCOMER', '1542776738', 'sur 2', 'kowlaan', 'VIGENTE', '03/11/2021', '05/11/2021', '', '', '', '', '', 'LAVE820630B26', '45008200037', 'LAVE820630HDFBLD01', 'nodejo', 'IGNACIO ZARAGOZA', '181', '', 'NUEVA JUAREZ PANTITLAN', 'NEZAHUALCOYOTL', '57466', 'INE, LICENCIA, ACTA DE NACIMIENTO', '', '', '', ''),
+(5993, 'No', 'LABRA', 'VALADEZ', 'EDGAR', '5537158638', '', '5583273342', 'TARJETA', '1850', '400', 'BANCOMER', '1542776738', 'sur 2', 'KOWLAAN', 'BAJA', '03/11/2021', '05/11/2021', '', '', '.', '.', '', 'LAVE820630B26', '45008200037', 'LAVE820630HDFBLD01', 'nodejo', 'IGNACIO ZARAGOZA', '', '181', 'NUEVA JUAREZ PANTITLAN', 'NEZAHUALCOYOTL', '57466', 'INE, LICENCIA, ACTA DE NACIMIENTO', '', '', '', 'BAJA 31/12/2021 POR SALUD (CIRUGIA)'),
 (5994, 'NO', 'TREJO', 'APOLINAR', 'ROSALIO', '5621999673', '', '5546801804', 'TARJETA', '1550', '300', 'BANCOMER', '1529024223', 'sur 2', 'santander misisipi', 'VIGENTE', '05/11/2021', '08/11/2021', '', '', '', '', '', 'TEAR671110169', '', 'TEAR671110HDFRPS06', 'trejorosalio33@gmail.com', 'SAN PEDRO ', 'MZ 20 LT 9', '', 'MALACATES', 'GUSTAVO A MADERO', '7119', 'LICENCIA, INE, ACTA DE NACIMIENTO', '', '', '', 'SE LE CITA EL D?A LUNES CON DOCUMENTACI?N, SE LE CONTRATA PARA MISISIPI'),
 (5995, 'NO', 'PEREZ', 'REBOLLAR', 'ANTONIO', '', '', '', '', '0', '0', '', '', '', '', 'BOLETINADO', '05/11/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'TIENE MUY MALA ACTITUD, SE PUSO MUY PESADO DURANTE LA CONTRATACI?N SE LE OFRECIO DESIERTO DE LOS LEONES Y LO RECHAZO, DIJO QUE LE QUEDABA MUY LEJOS, AL SALIR DIJO QUE SE LE HIZO PERDER EL TIEMPO '),
 (5996, 'NO', 'SANCHEZ', 'SANCHEZ', 'DILAN ARTURO', '5528752071', '', '5545544218', '', '0', '0', '', '', '', '', 'BAJA', '05/11/2021', '', '', '', '', '', '', 'SAS9407011948', '30109400892', 'SASD94971HDFNNL08', 'dilanmx2019@gmail.com ', '', '', '', '', '', '', '', '', '', '', 'FIRMO PERO AL DIA SIGUIENTE YA NO SE PRESENTO '),
@@ -14275,7 +14451,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (6024, 'NO ', 'NAVA ', 'MUJICA ', 'JUAN DAVID ', 'NO DEJO ', '5591532382', '.', '.', '0', '0', '.', '.', '.', '.', 'RECHAZADO ', '18/11/2021', '.', '.', '.', '.', '.', '', 'NAMJ900630CB4', '.', 'NAMJ900630HDFUJN05', 'david90nava@gmail.com ', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'NO SE PRESENTO A CONTRATACI?N '),
 (6025, 'NO ', 'TELLEZ ', 'SEGUNDO ', 'ALEJANRO ', '5560790428', 'NO TIENE ', '5532593720', '.', '0', '0', '.', '.', '.', '.', 'RECHAZADO ', '17/11/2021', '.', '.', '.', '.', '.', '', '.', '30007715375', 'TESA770522HDFLGL07', 'NO DEJO ', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'NO CONTRATAR, TIENE RASGOS BRUSCOS '),
 (6026, 'NO ', 'CONTRERAS ', 'MONREAL ', 'CESAR ', 'LO EXTRAVIO ', 'NO DEJO ', '.', '.', '0', '0', '.', '.', '.', '.', 'RECHAZADO ', '16/11/2021', '.', '.', '.', '.', '.', '', '.', '30028434386', 'COMC840109HDFNN500', 'NO DEJO ', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'RECHAZADO PORQUE NO DA MUCHA CONFIANZA '),
-(6027, 'NO ', 'LOPEZ ', 'CHAVEZ ', 'DAVID ', '5541389358', 'NO TIENE ', '5513440629', '.', '0', '0', '.', '.', '.', '.', 'RECHAZADO ', '16/11/2021', '.', '.', '.', '.', '.', '', '.', '30018313754', 'LOCD830807HDFPHU07', 'NO DEJO ', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'RECHAZADO '),
+(6027, 'No', 'LOPEZ ', 'CHAVEZ ', 'DAVID ', '5541389358', 'NO TIENE ', '5513440629', '.', '0', '0', '.', '.', 'Selecciona Zona', '.', 'RECHAZADO', '16/11/2021', '.', '.', '.', '.', '.', '', '.', '30018313754', 'LOCD830807HDFPHU07', 'NO DEJO ', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '18/02/2012 SOLO DEJO SOLICITUD YA NO REGRESO, REGRESO EL DIA 8 DE ENRO CON OTRA SOLICITUD Y LOS DATOS ERAN TOTALMENTE DIFERENTES  ES RATERO, RECHAZADO '),
 (6028, 'NO ', 'NAVA ', 'MUJICA ', 'JUAN DAVID ', '5591542482', '5591532882', '', '.', '0', '0', '.', '', '.', '.', 'RECHAZADO ', '18/11/2021', '', '', '', '', '', '', '', '', 'NAMJ900630HDFUJN05', 'david90nava@gmail.com ', 'EMILIO CARRANZA ', '46', '', 'BUENAVISTA ', 'NAUCALPAN ', '52765', '.', '', '', '', 'RECHAZADO '),
 (6029, 'NO', 'ROMERO ', 'MARCELO', 'MIGUEL ANGEL ', '5524963533', '5590229464', '', '', '0', '0', '', '', '', '', 'RECHAZADO', '24/11/2021', '', '', '', '', '', '', '.', '11988018427', '.', 'NO DEJO ', 'SAN MIGUEL ', '5', '22', 'PLAN DE AYALA ', 'NAUCALPAN ', '53710', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA LA CONTRATACI?N Y NO SE PRESENTA'),
 (6030, 'NO', 'GONZALEZ ', 'LOPEZ', 'IVAN VENI ', '5547928633', '', '5581010377', '', '0', '0', '', '', '', '', 'RECHAZADO ', '18/11/2021', '', '', '', '', '', '', '', '', '', 'gonza.veni66@gmail.com', '', '', '', '', '', '', '', '', '', '', 'REVISAR MUY BIEN ANTES DE CONTRTAR NO DA MUCHA CONFIANZA '),
@@ -14284,16 +14460,16 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (6033, 'NO', 'ORTIZ', 'ARGUELLO', 'ANTONIO', '55 5450 7143', '', '', 'TARJETA', '3500', '1000', 'BANCOMER', '1513556707', 'oficina', 'auditor', 'VIGENTE', '', '23/11/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'POR TEMPORADA'),
 (6034, 'NO', 'VERA', 'LOPEZ', 'CARLOS ROBERTO', '5616420536', '5513140146', '', 'TARJETA', '1500', '500', 'BANCOMER', '1542358207', 'sur 1', 'santander xola', 'VIGENTE', '29/11/2021', '30/11/2021', '', '', '', '', '', '', '', 'VELC860711HDFRPR09', '', 'DURAZNOS', 'MZ 45 LT 11', '45', 'FRACCIONAMIENTO IZCALLI IXTAPALUCA', 'IXTAPALUCA', '56566', 'INE, LICENCIA Y ACTA DE NACIMIENTO', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA CONTATACION. INGRESO EN sur 2EN kowlaan'),
 (6035, 'NO', 'VILLA', 'VIZCAINO', 'RAMIRO', '5614171618', '5589040926', '', 'TARJETA', '1550', '300', 'BANCOMER', '1597351308', 'sur 1', 'santander desierto de los leones', 'BAJA', '14/12/2021', '20/12/2021', '28/12/2021', '28/12/2021', 'SI', '', '', 'VIVR68101367', '', 'VIVR681013HDFLZM07', 'ramirovv10@gmail.com', 'SUPE MANZANA 2', '35', '17 F', 'UNIDAD HABITACIONAL CONSTITUCIONALISTA', 'IZTAPALA', '9220', '', '', '', '', 'CHECAR BIEN ANTES DE CONTRATAR ES UN SE?OR QUE SUELE PONER MUCHOS PEROS CUANDO SE LE PIDE CUBRIR SU SEXTO D?A Y SUS 2 APOYOS ENTRE SEMANA'),
-(6036, 'NO', 'SANTIAGO', 'SANCHEZ', 'MARIANNA DONAJI', '55 3528 0187', '', '', 'TARJETA', '2000', '500', 'BANCOMER', '1589027812', 'oficina', 'capturista', 'VIGENTE', '', '07/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'POR TEMPORADA'),
+(6036, 'No', 'SANTIAGO', 'SANCHEZ', 'MARIANNA DONAJI', '55 3528 0187', '', '', 'TARJETA', '2000', '500', 'BANCOMER', '1589027812', 'oficina', 'Capturista', 'BAJA', '', '07/12/2021', '31/12/2021', '', '.', '.', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'POR TEMPORADA, FIN DE TEMPORADA'),
 (6037, 'NO', 'AGUILA', 'LOPEZ', 'FATIMA', '55 5469 7310', '', '', 'TARJETA', '2000', '500', 'BANCOMER', '1589027820', 'oficina', 'capturista', 'VIGENTE', '', '13/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'POR TEMPORADA'),
 (6038, 'NO', 'BAHENA', 'ARMENTA', 'ANGELICA', '55 4792 3791', '', '', 'TARJETA', '2000', '500', 'BANCOMER', '1555367260', 'oficina', 'capturista', 'VIGENTE', '', '07/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'POR TEMPORADA'),
 (6039, 'NO', 'JACINTO', 'JACINTO', 'CARLOS ROBERTO', '5584562134', '', '', '', '0', '0', '', '', '', '', 'BOLETINADO', '03/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR DEMANDO A COPEMSA, NO ENTEDIA MUY BIEN LAS PREGUNTAS'),
-(6040, 'NO', 'MENDOZA', 'LOPEZ', 'JUAN CARLOS', '5627080786', '', '5561584692', '', '0', '0', '', '', '', '', 'RECHAZADO', '03/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'CHECAR BIEN ANTES DE CONTRATAR SE LE HIZO POCO EL SUELDO, PIDIO SE LE REGRESARA SU SOLICITUD ORIGINAL'),
-(6041, 'NO', 'SANTIAGO', 'MONDRAGON', 'URIEL', '5576025453', '', '5528803455', '', '0', '0', '', '', '', '', 'NO CONTRATAR', '15/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'TIENE UN TATUAJE MUY VISIBLE EN LA MANO '),
+(6040, 'No', 'MENDOZA', 'LOPEZ', 'JUAN CARLOS', '5627080786', '', '5561584692', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'RECHAZADO', '03/12/2021', '', '', '', '.', '.', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'CHECAR BIEN ANTES DE CONTRATAR SE LE HIZO POCO EL SUELDO, PIDIO SE LE REGRESARA SU SOLICITUD ORIGINAL, TIENE CARA DE BORRACHO Y DE RATERO'),
+(6041, 'NO', 'SANTIAGO', 'MONDRAGON', 'URIEL', '5576025453', '', '5528803455', '', '0', '0', '', '', '', '', 'NO CONTRATAR', '15/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'TIENE UN TATUAJE MUY VISIBLE EN LA MANO ');
+INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`, `Nombre(s)`, `# Celular`, `# Casa`, `# Recados`, `Forma de pago`, `Sueldo`, `Bono`, `Banco`, `Cuenta bancaria`, `Zona`, `Servicio`, `Status`, `Fecha entrevista`, `Fecha de ingreso`, `Fecha ultimo dia laborado`, `Fecha firma baja`, `Baja Firmada`, `Finiquito`, `Años de antiguedad`, `RFC`, `NSS`, `CURP`, `Correo electronico`, `Calle`, `# Exterior`, `# Interior`, `Colonia`, `DLG o Mun`, `C.P`, `Documentos originales`, `Documentos faltantes`, `Documentos entregados`, `# Recepcion`, `Observaciones`) VALUES
 (6042, 'NO', 'AVILES', 'MEJIA', 'OSCAR HECTOR', '5548875598', '', '', '', '0', '0', '', '', '', '', 'RECHAZADO', '27/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR TIENE MALA ACTITUD, QUERIA VER QUE ESCRIBIA EN LA SOLICITUD'),
 (6043, 'NO', 'ARIZCORRETA', 'TORRES', 'RAUL', '5525084460', '', '', '', '0', '0', '', '', '', '', 'NO CONTRATAR', '27/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR POR LA EDAD '),
-(6044, 'NO', 'LOPEZ', 'ESPINOZA', 'SERGIO', '5562832796', '', '', '', '0', '0', '', '', '', '', 'RECHAZADO', '27/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'SE LE CITA PARA kowlaanY NO SE PRESENTA');
-INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`, `Nombre(s)`, `# Celular`, `# Casa`, `# Recados`, `Forma de pago`, `Sueldo`, `Bono`, `Banco`, `Cuenta bancaria`, `Zona`, `Servicio`, `Status`, `Fecha entrevista`, `Fecha de ingreso`, `Fecha ultimo dia laborado`, `Fecha firma baja`, `Baja Firmada`, `Finiquito`, `Años de antiguedad`, `RFC`, `NSS`, `CURP`, `Correo electronico`, `Calle`, `# Exterior`, `# Interior`, `Colonia`, `DLG o Mun`, `C.P`, `Documentos originales`, `Documentos faltantes`, `Documentos entregados`, `# Recepcion`, `Observaciones`) VALUES
+(6044, 'NO', 'LOPEZ', 'ESPINOZA', 'SERGIO', '5562832796', '', '', '', '0', '0', '', '', '', '', 'RECHAZADO', '27/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'SE LE CITA PARA kowlaanY NO SE PRESENTA'),
 (6045, 'NO', 'MADRIGAL', 'LOPEZ', 'JUAN DAVID ', '5614146928', '5588453466', '', '', '0', '0', '', '', '', '', 'RECHAZADO', '27/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'YA NO SE PRESENTO '),
 (6046, 'NO', 'CHAVEZ', 'ALCANTARA', 'SAMUEL', '5532644165', '', '5548178946', '', '0', '0', '', '', '', '', 'RECHAZADO', '03/01/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'CITADO PARA DESIERTO, NO SE PRESENTO '),
 (6047, 'NO', 'CARTUJANO', 'ALAVEZ', 'FELICIANO PRIMO', '5511481248', '', '', '', '0', '0', '', '', '', '', 'NO CONTRATAR', '22/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR POR LA EDAD'),
@@ -14311,7 +14487,8 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (6059, 'NO', 'NUNEZ ', 'MARQUEZ', 'FRANCISCO JAVIER', '5528068714', '5571621942', '', '', '0', '0', '', '', '', '', 'NO CONTRATAR', '10/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR TIENE CARA DE RATERO, SALIO MAL DE LA EMPRESA ANTERIOR. '),
 (6060, 'No', 'URIBE', 'ESPINOSA', 'JORGE LUIS', '5553555552', '', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'RECHAZADO', '05/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'CITADO PARA KOWLAAN VESPERTINO, YA NO SE PRESENTO, VIVE POR AZCAPOTZALCO, CERCA DE METRO NORMAL'),
 (6061, 'No', 'NAZARIO', 'AYALA', 'OSWALDO', '5624165706', '', '5554377151', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'PENDIENTE', '06/01/2022', '', '', '', '.', '.', '0', '', '', '', 'oswaldo.naz@gmail.com', '', '', '', '', '', '', '', '', '', '', 'SE LE CITA PARA DESIERTO DE LOS LEONES, TIENE 2 DOMICILIOS, UNO EN IZTAPALAPA Y EL OTRO EN ECATEPEC, EL DOMICILIO DE IZTAPALAPA ES DE SU ABUELA Y EL DE ECATEPEC ES DE SUS PAPAS, CHECAR BIEN '),
-(6062, 'No', 'TORRES', 'MEJIA', 'JOSE ROBERTO', '5574305665', '', '5527224602', 'TARJETA', '1550', '300', 'BANCOMER', '1523782392', 'sur 1', 'SANTANDER DESIERTO DE LOS LEONES', 'VIGENTE', '06/01/2022', '11/01/2022', '', '', '.', '.', '0 Años, 0 Meses, -4 Dias', 'TOMR861203EZ8', '', 'TOMR861203HDFRJB06', 'jrobertotorres@gmail.com', 'PLAYA MANZANILLO', '531', '0', 'MILITAR MARTE', 'IZTACALCO', '08830', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA CONTRATACION, SE CONTRATA INGRESARA LA SIGUIENTE SEMANA');
+(6062, 'No', 'TORRES', 'MEJIA', 'JOSE ROBERTO', '5574305665', '', '5527224602', 'TARJETA', '1550', '300', 'BANCOMER', '1523782392', 'sur 1', 'SANTANDER DESIERTO DE LOS LEONES', 'VIGENTE', '06/01/2022', '11/01/2022', '', '', '.', '.', '0 Años, 0 Meses, -4 Dias', 'TOMR861203EZ8', '', 'TOMR861203HDFRJB06', 'jrobertotorres@gmail.com', 'PLAYA MANZANILLO', '531', '0', 'MILITAR MARTE', 'IZTACALCO', '08830', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA CONTRATACION, SE CONTRATA INGRESARA LA SIGUIENTE SEMANA'),
+(6063, 'No', 'SEGURA', 'MORALES', 'AARON SAMUEL', '5510738977', '', '5539336694', 'TARJETA', '2000', '300', 'BANCOMER', '', 'sur 2', 'Comodin', 'VIGENTE', '11/01/2022', '12/01/2022', '', '', '.', '.', '0 Años, 5 Meses, 3 Dias', 'SEMA9011133A7', '', 'SEMA901113HDFGRR09', 'aaronmya90@gmail.com', 'LAZARO CARDENAS', 'MZ 2', 'LT 22', 'PRESIDENTES DE MEXICO', 'IZTAPALAPA', '09740', 'LICENCIA', 'INE, COPIA CARTIILA, 2 FOTOGRAFIAS', '', '', 'RECOMENDADO DEL SR. RENE GAYTAN');
 
 -- --------------------------------------------------------
 
@@ -14461,6 +14638,288 @@ CREATE TABLE `rh.semanal.inturbide.val` (
 --
 
 INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES
+(1, 3, '11 ene. 2022', '', '0', '0'),
+(2, 3, '12 ene. 2022', '', '0', '0'),
+(3, 3, '13 ene. 2022', '', '0', '0'),
+(4, 3, '14 ene. 2022', '', '0', '0'),
+(5, 4, '11 ene. 2022', '12', '2310', '5640.0'),
+(6, 4, '12 ene. 2022', '32', '1230', '5640.0'),
+(7, 4, '13 ene. 2022', '432', '890', '5640.0'),
+(8, 4, '14 ene. 2022', '31', '2220', '5640.0');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rh.semanal.ptetitla.gast`
+--
+
+CREATE TABLE `rh.semanal.ptetitla.gast` (
+  `Numregistro` int(50) NOT NULL,
+  `Semanal` int(50) NOT NULL,
+  `Fecha` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Concepto` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Importe` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `#Lista` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rh.semanal.ptetitla.gast`
+--
+
+INSERT INTO `rh.semanal.ptetitla.gast` (`Numregistro`, `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES
+(1, 1, '13 ene. 2022', 'see', '0123', '324s2', '123.0'),
+(2, 2, '4 ene. 2022', '', '0', '', '0'),
+(3, 2, '5 ene. 2022', '', '0', '', '0'),
+(4, 2, '12 ene. 2022', '', '0', '', '0'),
+(5, 2, '19 ene. 2022', '', '0', '', '0'),
+(6, 2, '19 ene. 2022', '', '0', '', '0'),
+(7, 3, '8 ene. 2022', '', '0', '', '0'),
+(8, 3, '9 ene. 2022', '', '0', '', '0'),
+(9, 3, '10 ene. 2022', '', '0', '', '0'),
+(10, 4, '8 ene. 2022', 'a', '0100', '12332', '3543.0'),
+(11, 4, '9 ene. 2022', 'v', '03212', 'asd', '3543.0'),
+(12, 4, '10 ene. 2022', 'xc', '0231', 'asdas', '3543.0');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rh.semanal.ptetitla.nsem`
+--
+
+CREATE TABLE `rh.semanal.ptetitla.nsem` (
+  `#Nsem` int(50) NOT NULL,
+  `Fecha` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `hora` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `MMM/YY` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `Total de servicios y pensiones` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Total restando gastos` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Debe entregar` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `el entrega` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Debe` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rh.semanal.ptetitla.nsem`
+--
+
+INSERT INTO `rh.semanal.ptetitla.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`, `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`, `el entrega`, `Debe`) VALUES
+(1, 'sábado, 08/enero/2022', '10:36:19 AM', 'ene.-22', '2894.0', '2771.0', '2138.0', '02000', '138.0'),
+(2, 'sábado, 08/enero/2022', '10:38:46 AM', 'ene.-22', '0', '0', '0', '0', '0'),
+(3, 'sábado, 08/enero/2022', '10:45:54 AM', 'ene.-22', '0', '0', '0', '0', '0'),
+(4, 'sábado, 08/enero/2022', '10:48:45 AM', 'ene.-22', '10323.0', '6780.0', '1140.0', '140', '1000.0');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rh.semanal.ptetitla.pen`
+--
+
+CREATE TABLE `rh.semanal.ptetitla.pen` (
+  `Numregistro` int(50) NOT NULL,
+  `Semanal` int(50) NOT NULL,
+  `Fecha` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Servicio` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `# de padron` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Importe` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rh.semanal.ptetitla.scc`
+--
+
+CREATE TABLE `rh.semanal.ptetitla.scc` (
+  `Numregistro` int(50) NOT NULL,
+  `Semanal` int(50) NOT NULL,
+  `Fecha` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Servicio` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Importe` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rh.semanal.ptetitla.scc`
+--
+
+INSERT INTO `rh.semanal.ptetitla.scc` (`Numregistro`, `Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES
+(1, 1, '8 ene. 2022', 'Iturbide x 1 dia', '110', '1341.0'),
+(2, 1, '9 ene. 2022', 'Iturbide baño', '0111', '1341.0'),
+(3, 1, '10 ene. 2022', 'Iturbide x 12 hrs', '1120', '1341.0'),
+(4, 2, '2 ene. 2022', '  ', '0', '0'),
+(5, 2, '11 ene. 2022', '  ', '0', '0'),
+(6, 3, '2 ene. 2022', 'Iturbide x 1 dia', '0', '0'),
+(7, 3, '3 ene. 2022', 'Iturbide x 12 hrs', '0', '0'),
+(8, 3, '4 ene. 2022', 'Iturbide x 12 hrs', '0', '0'),
+(9, 4, '2 ene. 2022', 'Iturbide x 1 dia', '123', '4563.0'),
+(10, 4, '3 ene. 2022', 'Iturbide x 12 hrs', '1230', '4563.0'),
+(11, 4, '4 ene. 2022', 'Iturbide x 12 hrs', '3210', '4563.0'),
+(14, 4, '1/11/1111', 'ENTRE GAUCHOS', '1000', '4563.0'),
+(15, 4, '', '', '2', '	\r\n4563.0');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rh.semanal.ptetitla.val`
+--
+
+CREATE TABLE `rh.semanal.ptetitla.val` (
+  `Numregistro` int(50) NOT NULL,
+  `Semanal` int(50) NOT NULL,
+  `Fecha` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Observaciones` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL,
+  `Importe` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rh.semanal.ptetitla.val`
+--
+
+INSERT INTO `rh.semanal.ptetitla.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES
+(1, 3, '11 ene. 2022', '', '0', '0'),
+(2, 3, '12 ene. 2022', '', '0', '0'),
+(3, 3, '13 ene. 2022', '', '0', '0'),
+(4, 3, '14 ene. 2022', '', '0', '0'),
+(5, 4, '11 ene. 2022', '12', '2310', '5640.0'),
+(6, 4, '12 ene. 2022', '32', '1230', '5640.0'),
+(7, 4, '13 ene. 2022', '432', '890', '5640.0'),
+(8, 4, '14 ene. 2022', '31', '2220', '5640.0');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rh.semanal.tehuantepec.gast`
+--
+
+CREATE TABLE `rh.semanal.tehuantepec.gast` (
+  `Numregistro` int(50) NOT NULL,
+  `Semanal` int(50) NOT NULL,
+  `Fecha` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Concepto` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Importe` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `#Lista` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rh.semanal.tehuantepec.gast`
+--
+
+INSERT INTO `rh.semanal.tehuantepec.gast` (`Numregistro`, `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES
+(1, 1, '13 ene. 2022', 'see', '0123', '324s2', '123.0'),
+(2, 2, '4 ene. 2022', '', '0', '', '0'),
+(3, 2, '5 ene. 2022', '', '0', '', '0'),
+(4, 2, '12 ene. 2022', '', '0', '', '0'),
+(5, 2, '19 ene. 2022', '', '0', '', '0'),
+(6, 2, '19 ene. 2022', '', '0', '', '0'),
+(7, 3, '8 ene. 2022', '', '0', '', '0'),
+(8, 3, '9 ene. 2022', '', '0', '', '0'),
+(9, 3, '10 ene. 2022', '', '0', '', '0'),
+(10, 4, '8 ene. 2022', 'a', '0100', '12332', '3543.0'),
+(11, 4, '9 ene. 2022', 'v', '03212', 'asd', '3543.0'),
+(12, 4, '10 ene. 2022', 'xc', '0231', 'asdas', '3543.0');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rh.semanal.tehuantepec.nsem`
+--
+
+CREATE TABLE `rh.semanal.tehuantepec.nsem` (
+  `#Nsem` int(50) NOT NULL,
+  `Fecha` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `hora` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `MMM/YY` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `Total de servicios y pensiones` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Total restando gastos` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Debe entregar` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `el entrega` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Debe` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rh.semanal.tehuantepec.nsem`
+--
+
+INSERT INTO `rh.semanal.tehuantepec.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`, `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`, `el entrega`, `Debe`) VALUES
+(1, 'sábado, 08/enero/2022', '10:36:19 AM', 'ene.-22', '2894.0', '2771.0', '2138.0', '02000', '138.0'),
+(2, 'sábado, 08/enero/2022', '10:38:46 AM', 'ene.-22', '0', '0', '0', '0', '0'),
+(3, 'sábado, 08/enero/2022', '10:45:54 AM', 'ene.-22', '0', '0', '0', '0', '0'),
+(4, 'sábado, 08/enero/2022', '10:48:45 AM', 'ene.-22', '10323.0', '6780.0', '1140.0', '140', '1000.0');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rh.semanal.tehuantepec.pen`
+--
+
+CREATE TABLE `rh.semanal.tehuantepec.pen` (
+  `Numregistro` int(50) NOT NULL,
+  `Semanal` int(50) NOT NULL,
+  `Fecha` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Servicio` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `# de padron` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Importe` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rh.semanal.tehuantepec.scc`
+--
+
+CREATE TABLE `rh.semanal.tehuantepec.scc` (
+  `Numregistro` int(50) NOT NULL,
+  `Semanal` int(50) NOT NULL,
+  `Fecha` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Servicio` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Importe` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rh.semanal.tehuantepec.scc`
+--
+
+INSERT INTO `rh.semanal.tehuantepec.scc` (`Numregistro`, `Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES
+(1, 1, '8 ene. 2022', 'Iturbide x 1 dia', '110', '1341.0'),
+(2, 1, '9 ene. 2022', 'Iturbide baño', '0111', '1341.0'),
+(3, 1, '10 ene. 2022', 'Iturbide x 12 hrs', '1120', '1341.0'),
+(4, 2, '2 ene. 2022', '  ', '0', '0'),
+(5, 2, '11 ene. 2022', '  ', '0', '0'),
+(6, 3, '2 ene. 2022', 'Iturbide x 1 dia', '0', '0'),
+(7, 3, '3 ene. 2022', 'Iturbide x 12 hrs', '0', '0'),
+(8, 3, '4 ene. 2022', 'Iturbide x 12 hrs', '0', '0'),
+(9, 4, '2 ene. 2022', 'Iturbide x 1 dia', '123', '4563.0'),
+(10, 4, '3 ene. 2022', 'Iturbide x 12 hrs', '1230', '4563.0'),
+(11, 4, '4 ene. 2022', 'Iturbide x 12 hrs', '3210', '4563.0'),
+(14, 4, '1/11/1111', 'ENTRE GAUCHOS', '1000', '4563.0'),
+(15, 4, '', '', '2', '	\r\n4563.0');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rh.semanal.tehuantepec.val`
+--
+
+CREATE TABLE `rh.semanal.tehuantepec.val` (
+  `Numregistro` int(50) NOT NULL,
+  `Semanal` int(50) NOT NULL,
+  `Fecha` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Observaciones` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL,
+  `Importe` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rh.semanal.tehuantepec.val`
+--
+
+INSERT INTO `rh.semanal.tehuantepec.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES
 (1, 3, '11 ene. 2022', '', '0', '0'),
 (2, 3, '12 ene. 2022', '', '0', '0'),
 (3, 3, '13 ene. 2022', '', '0', '0'),
@@ -14696,6 +15155,18 @@ INSERT INTO `zona` (`idZona`, `Zonas`) VALUES
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `admin.tou`
+--
+ALTER TABLE `admin.tou`
+  ADD PRIMARY KEY (`id_TDO`);
+
+--
+-- Indices de la tabla `admin.usuarios`
+--
+ALTER TABLE `admin.usuarios`
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- Indices de la tabla `administradores`
@@ -15226,6 +15697,66 @@ ALTER TABLE `rh.semanal.inturbide.val`
   ADD PRIMARY KEY (`Numregistro`);
 
 --
+-- Indices de la tabla `rh.semanal.ptetitla.gast`
+--
+ALTER TABLE `rh.semanal.ptetitla.gast`
+  ADD PRIMARY KEY (`Numregistro`);
+
+--
+-- Indices de la tabla `rh.semanal.ptetitla.nsem`
+--
+ALTER TABLE `rh.semanal.ptetitla.nsem`
+  ADD PRIMARY KEY (`#Nsem`);
+
+--
+-- Indices de la tabla `rh.semanal.ptetitla.pen`
+--
+ALTER TABLE `rh.semanal.ptetitla.pen`
+  ADD PRIMARY KEY (`Numregistro`);
+
+--
+-- Indices de la tabla `rh.semanal.ptetitla.scc`
+--
+ALTER TABLE `rh.semanal.ptetitla.scc`
+  ADD PRIMARY KEY (`Numregistro`);
+
+--
+-- Indices de la tabla `rh.semanal.ptetitla.val`
+--
+ALTER TABLE `rh.semanal.ptetitla.val`
+  ADD PRIMARY KEY (`Numregistro`);
+
+--
+-- Indices de la tabla `rh.semanal.tehuantepec.gast`
+--
+ALTER TABLE `rh.semanal.tehuantepec.gast`
+  ADD PRIMARY KEY (`Numregistro`);
+
+--
+-- Indices de la tabla `rh.semanal.tehuantepec.nsem`
+--
+ALTER TABLE `rh.semanal.tehuantepec.nsem`
+  ADD PRIMARY KEY (`#Nsem`);
+
+--
+-- Indices de la tabla `rh.semanal.tehuantepec.pen`
+--
+ALTER TABLE `rh.semanal.tehuantepec.pen`
+  ADD PRIMARY KEY (`Numregistro`);
+
+--
+-- Indices de la tabla `rh.semanal.tehuantepec.scc`
+--
+ALTER TABLE `rh.semanal.tehuantepec.scc`
+  ADD PRIMARY KEY (`Numregistro`);
+
+--
+-- Indices de la tabla `rh.semanal.tehuantepec.val`
+--
+ALTER TABLE `rh.semanal.tehuantepec.val`
+  ADD PRIMARY KEY (`Numregistro`);
+
+--
 -- Indices de la tabla `servicio`
 --
 ALTER TABLE `servicio`
@@ -15258,6 +15789,18 @@ ALTER TABLE `zona`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `admin.tou`
+--
+ALTER TABLE `admin.tou`
+  MODIFY `id_TDO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `admin.usuarios`
+--
+ALTER TABLE `admin.usuarios`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `administradores`
@@ -15371,7 +15914,7 @@ ALTER TABLE `nomina.detallada.foraneos toluca.simss`
 -- AUTO_INCREMENT de la tabla `nomina.detallada.norte`
 --
 ALTER TABLE `nomina.detallada.norte`
-  MODIFY `#lista` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1232;
+  MODIFY `#lista` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1234;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.detallada.norte.simss`
@@ -15431,7 +15974,7 @@ ALTER TABLE `nomina.detallada.sur 2.simss`
 -- AUTO_INCREMENT de la tabla `nomina.listas.corporativo santander quincenal`
 --
 ALTER TABLE `nomina.listas.corporativo santander quincenal`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.corporativo santander quincenal.simss`
@@ -15443,7 +15986,7 @@ ALTER TABLE `nomina.listas.corporativo santander quincenal.simss`
 -- AUTO_INCREMENT de la tabla `nomina.listas.corporativo santander semanal`
 --
 ALTER TABLE `nomina.listas.corporativo santander semanal`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.corporativo santander semanal.simss`
@@ -15455,19 +15998,19 @@ ALTER TABLE `nomina.listas.corporativo santander semanal.simss`
 -- AUTO_INCREMENT de la tabla `nomina.listas.foraneos acapulco`
 --
 ALTER TABLE `nomina.listas.foraneos acapulco`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.foraneos acapulco.simss`
 --
 ALTER TABLE `nomina.listas.foraneos acapulco.simss`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.foraneos puebla`
 --
 ALTER TABLE `nomina.listas.foraneos puebla`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.foraneos puebla.simss`
@@ -15479,7 +16022,7 @@ ALTER TABLE `nomina.listas.foraneos puebla.simss`
 -- AUTO_INCREMENT de la tabla `nomina.listas.foraneos toluca`
 --
 ALTER TABLE `nomina.listas.foraneos toluca`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.foraneos toluca.simss`
@@ -15491,7 +16034,7 @@ ALTER TABLE `nomina.listas.foraneos toluca.simss`
 -- AUTO_INCREMENT de la tabla `nomina.listas.norte`
 --
 ALTER TABLE `nomina.listas.norte`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.norte.simss`
@@ -15503,19 +16046,19 @@ ALTER TABLE `nomina.listas.norte.simss`
 -- AUTO_INCREMENT de la tabla `nomina.listas.oficina`
 --
 ALTER TABLE `nomina.listas.oficina`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.oficina.simss`
 --
 ALTER TABLE `nomina.listas.oficina.simss`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.poniente`
 --
 ALTER TABLE `nomina.listas.poniente`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.poniente.simss`
@@ -15527,7 +16070,7 @@ ALTER TABLE `nomina.listas.poniente.simss`
 -- AUTO_INCREMENT de la tabla `nomina.listas.sur 1`
 --
 ALTER TABLE `nomina.listas.sur 1`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.sur 1.simss`
@@ -15539,7 +16082,7 @@ ALTER TABLE `nomina.listas.sur 1.simss`
 -- AUTO_INCREMENT de la tabla `nomina.listas.sur 2`
 --
 ALTER TABLE `nomina.listas.sur 2`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.sur 2.simss`
@@ -15755,7 +16298,7 @@ ALTER TABLE `rh.depositos.sur 2`
 -- AUTO_INCREMENT de la tabla `rh.empleados`
 --
 ALTER TABLE `rh.empleados`
-  MODIFY `# Exp` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6063;
+  MODIFY `# Exp` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6064;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.inturbide.gast`
@@ -15785,6 +16328,66 @@ ALTER TABLE `rh.semanal.inturbide.scc`
 -- AUTO_INCREMENT de la tabla `rh.semanal.inturbide.val`
 --
 ALTER TABLE `rh.semanal.inturbide.val`
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `rh.semanal.ptetitla.gast`
+--
+ALTER TABLE `rh.semanal.ptetitla.gast`
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de la tabla `rh.semanal.ptetitla.nsem`
+--
+ALTER TABLE `rh.semanal.ptetitla.nsem`
+  MODIFY `#Nsem` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `rh.semanal.ptetitla.pen`
+--
+ALTER TABLE `rh.semanal.ptetitla.pen`
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `rh.semanal.ptetitla.scc`
+--
+ALTER TABLE `rh.semanal.ptetitla.scc`
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de la tabla `rh.semanal.ptetitla.val`
+--
+ALTER TABLE `rh.semanal.ptetitla.val`
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `rh.semanal.tehuantepec.gast`
+--
+ALTER TABLE `rh.semanal.tehuantepec.gast`
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de la tabla `rh.semanal.tehuantepec.nsem`
+--
+ALTER TABLE `rh.semanal.tehuantepec.nsem`
+  MODIFY `#Nsem` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `rh.semanal.tehuantepec.pen`
+--
+ALTER TABLE `rh.semanal.tehuantepec.pen`
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `rh.semanal.tehuantepec.scc`
+--
+ALTER TABLE `rh.semanal.tehuantepec.scc`
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de la tabla `rh.semanal.tehuantepec.val`
+--
+ALTER TABLE `rh.semanal.tehuantepec.val`
   MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
