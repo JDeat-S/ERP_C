@@ -683,6 +683,8 @@ public final class pruebas extends javax.swing.JFrame {
         jPanel22 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         LDAZon = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        TDL = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -2855,14 +2857,18 @@ public final class pruebas extends javax.swing.JFrame {
 
         LDAZon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel5.setText("Tipo de lista:");
+
+        TDL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione tipo de lista", "Listas General", "Listas con imss" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(DiaCor16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2955,7 +2961,11 @@ public final class pruebas extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ULDA))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
+                                .addContainerGap()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TDL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2992,7 +3002,9 @@ public final class pruebas extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(CI)
                             .addComponent(jLabel7)
-                            .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(TDL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
@@ -3402,8 +3414,9 @@ public final class pruebas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void MostrarULDA() {
-        if (CI.isSelected() == true) {
-            String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort' AND TABLE_NAME = 'nomina.listas." + LDAZon.getText() + "'";
+        if (TDL.getSelectedIndex() == 2) {
+            String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort2022'"
+                    + " AND TABLE_NAME = 'nomina.listas." + LDAZon.getSelectedItem().toString() + "'";
             try {
                 java.sql.Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(SQL);
@@ -3415,13 +3428,14 @@ public final class pruebas extends javax.swing.JFrame {
                 rs.isClosed();
             } catch (SQLException e) {
 
-                JOptionPane.showMessageDialog(null, "Error al mostrar ultima lista registrada de " + LDAZon.getText() + ": " + e);
+                JOptionPane.showMessageDialog(null, "Error al mostrar ultima lista registrada de " + LDAZon.getSelectedItem().toString() + ": " + e);
 
             }
 
         }
-        if (CI.isSelected() == false) {
-            String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort' AND TABLE_NAME = 'nomina.listas." + LDAZon.getText() + ".simss'";
+        if (TDL.getSelectedIndex() == 1) {
+            String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort2022'"
+                    + " AND TABLE_NAME = 'nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss'";
             try {
                 java.sql.Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(SQL);
@@ -3433,7 +3447,7 @@ public final class pruebas extends javax.swing.JFrame {
                 rs.isClosed();
             } catch (SQLException e) {
 
-                JOptionPane.showMessageDialog(null, "Error al mostrar ultima lista registrada de " + LDAZon.getText() + ": " + e);
+                JOptionPane.showMessageDialog(null, "Error al mostrar ultima lista registrada de " + LDAZon.getSelectedItem().toString() + ": " + e);
 
             }
         }
@@ -4315,6 +4329,8 @@ public final class pruebas extends javax.swing.JFrame {
         }
 
         if (CI.isSelected() == false) {
+            
+
             int x = Integer.parseInt(LDA.getText());
             String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
@@ -21660,6 +21676,7 @@ public final class pruebas extends javax.swing.JFrame {
     private javax.swing.JMenuItem PRESQ;
     private javax.swing.JMenuItem PresSem;
     private javax.swing.JMenu Reportes;
+    private javax.swing.JComboBox<String> TDL;
     private javax.swing.JTable TableLDACI;
     private javax.swing.JTable TableLDACI1;
     private javax.swing.JTable TableLDACI2;
@@ -21708,6 +21725,7 @@ public final class pruebas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
