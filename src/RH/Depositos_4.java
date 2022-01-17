@@ -411,6 +411,8 @@ public final class Depositos_4 extends javax.swing.JFrame {
 
     public Depositos_4(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
+        this.usr = usr;
+        this.LP = LP;
         FunMD();
         // <editor-fold defaultstate="collapsed" desc="Fil Servicios">
         FiltrosZonas zz7 = new FiltrosZonas();
@@ -777,17 +779,20 @@ public final class Depositos_4 extends javax.swing.JFrame {
                 Menuadm.setVisible(false);
                 if (LP.getP1() == 0) {
                     Alumnos.setVisible(false);
-                }   if (LP.getP2() == 0) {
+                }
+                if (LP.getP2() == 0) {
                     EmpleadosT.setVisible(false);
-                }   if (LP.getP3() == 0) {
+                }
+                if (LP.getP3() == 0) {
                     //Depositos.setVisible(false);
-                }   if (LP.getP4() == 0) {
+                }
+                if (LP.getP4() == 0) {
                     Semanales.setVisible(false);
                 }
             }
             case 2 -> {
                 Menuadm.setVisible(false);
-                
+
             }
             default -> {
             }

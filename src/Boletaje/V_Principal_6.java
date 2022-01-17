@@ -1,8 +1,10 @@
-package Admin;
+package Boletaje;
 
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
+import Logicas.Logica_permisos;
+import Logicas.Logica_usuarios;
 import ZyS.Servicios;
 import ZyS.Zonas;
 import java.awt.HeadlessException;
@@ -23,16 +25,18 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class Admin_V_Principal_6 extends javax.swing.JFrame {
+public final class V_Principal_6 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
+    Logica_usuarios usr;
+    Logica_permisos LP;
 
     /*
      * Creates new form V_Principal
      */
-    public Admin_V_Principal_6() {
+    public V_Principal_6() {
         initComponents();
         FiltrosZonas FZS = new FiltrosZonas();
         DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
@@ -65,6 +69,44 @@ public final class Admin_V_Principal_6 extends javax.swing.JFrame {
         NumBb1.setVisible(false);
         MDEntradasBb();
         MDsalidaBb();
+    }
+
+    public V_Principal_6(Logica_usuarios usr, Logica_permisos LP) {
+        initComponents();
+        this.usr = usr;
+        this.LP = LP;
+        FiltrosZonas FZS = new FiltrosZonas();
+        DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
+        ZonaBb.setModel(MODELFZS);
+        MuestraBb();
+        Zonas zz = new Zonas();
+        DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
+        AgregarZ.setModel(modelzonas);
+        FiltrosZonas SeleccionZ = new FiltrosZonas();
+        DefaultComboBoxModel SZon = new DefaultComboBoxModel(SeleccionZ.mostrarzonas());
+        Zonacbx.setModel(SZon);
+        FiltrosZonas FilZ = new FiltrosZonas();
+        DefaultComboBoxModel Fzon = new DefaultComboBoxModel(FilZ.mostrarzonas());
+        FilZonAlm.setModel(Fzon);
+        MDAlm();
+        Servart.setVisible(false);
+        Servcbx.setVisible(false);
+        Zonart.setVisible(false);
+        Zonacbx.setVisible(false);
+        LabelFilZon.setVisible(false);
+        FilZonAlm.setVisible(false);
+        Filart.setVisible(false);
+        FilServAlm.setVisible(false);
+        FilArticulos.setVisible(false);
+        Filcanart.setVisible(false);
+        AgregarBb.setVisible(false);
+        ModBb.setVisible(false);
+        ServBb1.setVisible(false);
+        NumBb1.setVisible(false);
+        MDEntradasBb();
+        MDsalidaBb();
+         setTitle("Boletaje. # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+                + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
     }
 
     //mostrar entradas de la bd, cambiar .entradas.Bb, falta darle funcion y que muestre los folios disponibles revisar libreta
@@ -1655,14 +1697,18 @@ public final class Admin_V_Principal_6 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin_V_Principal_6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_Principal_6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin_V_Principal_6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_Principal_6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin_V_Principal_6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_Principal_6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_V_Principal_6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_Principal_6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -1670,7 +1716,7 @@ public final class Admin_V_Principal_6 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Admin_V_Principal_6().setVisible(true);
+            new V_Principal_6().setVisible(true);
         });
     }
 

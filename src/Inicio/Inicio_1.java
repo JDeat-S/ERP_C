@@ -1,5 +1,6 @@
 package Inicio;
 
+import Boletaje.V_Principal_6;
 import Nomina.NominaQ_5;
 import RH.Empleados_4;
 import Admin.*;
@@ -8,9 +9,6 @@ import Logicas.*;
 import Logicas.Logica_usuarios;
 import java.awt.Color;
 import java.sql.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -343,7 +341,7 @@ public class Inicio_1 extends javax.swing.JFrame {
                                 this.dispose();
                             }
                             case "3" -> {
-                                NominaQ_5 Nom = new NominaQ_5(usr, LP);
+                                V_Principal_6 Nom = new V_Principal_6(usr, LP);
                                 Nom.setVisible(true);
                                 this.dispose();
                             }

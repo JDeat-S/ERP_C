@@ -1,5 +1,6 @@
 package Nomina;
 
+import VentanasDReportes.RepNom_7;
 import Admin.*;
 import RH.*;
 import Logicas.*;
@@ -23037,7 +23038,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_LDAActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        Admin_RepNom_7 regr = new Admin_RepNom_7(usr, LP);
+        RepNom_7 regr = new RepNom_7(usr, LP);
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 

@@ -1,5 +1,6 @@
 package Nomina;
 
+import VentanasDReportes.RepNom_7;
 import RH.*;
 import Admin.*;
 import Conexion.ConexionSQL;
@@ -22717,7 +22718,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FDP1ItemStateChanged
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        Admin_RepNom_7 regr = new Admin_RepNom_7(usr, LP);
+        RepNom_7 regr = new RepNom_7(usr, LP);
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 

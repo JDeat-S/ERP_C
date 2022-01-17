@@ -1,4 +1,4 @@
-package Admin;
+package VentanasDReportes;
 
 import Filtros.FiltrosZonas;
 import Logicas.*;
@@ -31,13 +31,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDEAT
  */
-public class Admin_RepNom_7 extends javax.swing.JFrame {
+public class RepNom_7 extends javax.swing.JFrame {
 
     int xMouse, yMouse;
     Logica_usuarios usr;
     Logica_permisos LP;
 
-    public Admin_RepNom_7() {
+    public RepNom_7() {
         initComponents();
         this.setLocationRelativeTo(null);
         LabelQuin.setVisible(false);
@@ -47,7 +47,7 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
         cbxZona.setModel(contenido);
     }
 
-    public Admin_RepNom_7(Logica_usuarios usr, Logica_permisos LP) {
+    public RepNom_7(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
         this.LP = LP;
@@ -82,6 +82,8 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
         SantanderISI = new javax.swing.JCheckBox();
         EfectivoISI = new javax.swing.JCheckBox();
         BajasISI = new javax.swing.JCheckBox();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
@@ -218,6 +220,21 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jPanel3);
 
         jTabbedPane1.addTab("Nom. Quincenal", jScrollPane2);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 622, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 328, Short.MAX_VALUE)
+        );
+
+        jScrollPane3.setViewportView(jPanel1);
+
+        jTabbedPane1.addTab("Nom. Semanal", jScrollPane3);
 
         jScrollPane1.setViewportView(jTabbedPane1);
 
@@ -5837,11 +5854,11 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
                 try {
                     throw e;
                 } catch (IOException | NumberFormatException ex) {
-                    Logger.getLogger(Admin_RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(Admin_RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if (CbxTDR.getSelectedIndex() == 2) {
@@ -6711,11 +6728,11 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
                 try {
                     throw e;
                 } catch (IOException | NumberFormatException ex) {
-                    Logger.getLogger(Admin_RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(Admin_RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_jLabel5MousePressed
@@ -6763,19 +6780,20 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin_RepNom_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RepNom_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin_RepNom_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RepNom_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin_RepNom_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RepNom_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_RepNom_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RepNom_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Admin_RepNom_7().setVisible(true);
+            new RepNom_7().setVisible(true);
         });
     }
 
@@ -6798,9 +6816,11 @@ public class Admin_RepNom_7 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel txtbtnexit;
     // End of variables declaration//GEN-END:variables
