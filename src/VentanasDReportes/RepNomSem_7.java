@@ -31,13 +31,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDEAT
  */
-public class RepNom_7 extends javax.swing.JFrame {
+public class RepNomSem_7 extends javax.swing.JFrame {
 
     int xMouse, yMouse;
     Logica_usuarios usr;
     Logica_permisos LP;
 
-    public RepNom_7() {
+    public RepNomSem_7() {
         initComponents();
         this.setLocationRelativeTo(null);
         LabelQuin.setVisible(false);
@@ -47,7 +47,7 @@ public class RepNom_7 extends javax.swing.JFrame {
         cbxZona.setModel(contenido);
     }
 
-    public RepNom_7(Logica_usuarios usr, Logica_permisos LP) {
+    public RepNomSem_7(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
         this.LP = LP;
@@ -5563,11 +5563,11 @@ public class RepNom_7 extends javax.swing.JFrame {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RepNomSem_7.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RepNomSem_7.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -6438,11 +6438,11 @@ public class RepNom_7 extends javax.swing.JFrame {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RepNomSem_7.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RepNomSem_7.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -8970,20 +8970,22 @@ public class RepNom_7 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RepNom_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RepNomSem_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RepNom_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RepNomSem_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RepNom_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RepNomSem_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RepNom_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RepNomSem_7.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new RepNom_7().setVisible(true);
+            new RepNomSem_7().setVisible(true);
         });
     }
 
