@@ -5,6 +5,8 @@ import Admin.*;
 import Conexion.ConexionSQL;
 import RH.*;
 import Inicio.Inicio_1;
+import Logicas.Logica_bd_NomPresQ;
+import Logicas.Logica_bd_pagosCDA;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
 import java.awt.HeadlessException;
@@ -670,11 +672,11 @@ public final class PresQ_5 extends javax.swing.JFrame {
         Pre = new javax.swing.JTable();
         jButton6 = new javax.swing.JButton();
         CS5 = new javax.swing.JButton();
-        botonWeb3 = new botones.BotonWeb();
         FiltrosTP = new javax.swing.JComboBox<>();
         jLabel160 = new javax.swing.JLabel();
         FAPpres = new javax.swing.JTextField();
         FAMpres = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         TPDP = new javax.swing.JScrollPane();
         jPanel20 = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
@@ -1120,9 +1122,6 @@ public final class PresQ_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb3.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPrestamosQuin.php");
-
         FiltrosTP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
         FiltrosTP.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -1141,6 +1140,14 @@ public final class PresQ_5 extends javax.swing.JFrame {
         FAMpres.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FAMpresKeyReleased(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel1MousePressed(evt);
             }
         });
 
@@ -1169,7 +1176,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonWeb3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CS5)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1183,11 +1190,11 @@ public final class PresQ_5 extends javax.swing.JFrame {
                     .addComponent(FNamepres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6)
                     .addComponent(CS5)
-                    .addComponent(botonWeb3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FiltrosTP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel160)
                     .addComponent(FAPpres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FAMpres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FAMpres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
                 .addGap(55, 55, 55))
@@ -2056,6 +2063,11 @@ public final class PresQ_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ADMV2ActionPerformed
 
+    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
+        Logica_bd_NomPresQ obj = new Logica_bd_NomPresQ();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel1MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -2072,15 +2084,14 @@ public final class PresQ_5 extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PresQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PresQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PresQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(PresQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -2157,10 +2168,10 @@ public final class PresQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zona;
-    private botones.BotonWeb botonWeb3;
     private botones.BotonWeb botonWeb5;
     private javax.swing.JTextField interes;
     private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel157;
     private javax.swing.JLabel jLabel160;
