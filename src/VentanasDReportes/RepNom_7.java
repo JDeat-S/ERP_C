@@ -82,8 +82,6 @@ public class RepNom_7 extends javax.swing.JFrame {
         SantanderISI = new javax.swing.JCheckBox();
         EfectivoISI = new javax.swing.JCheckBox();
         BajasISI = new javax.swing.JCheckBox();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
@@ -117,7 +115,7 @@ public class RepNom_7 extends javax.swing.JFrame {
             }
         });
 
-        CbxTDR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Completo", "Quincenal" }));
+        CbxTDR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Todas las quincenas", "Quincenal", "Todas las Nominas detalladas", "Nominas Detalladas por quincena" }));
         CbxTDR.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CbxTDRItemStateChanged(evt);
@@ -151,7 +149,7 @@ public class RepNom_7 extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
+                        .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(IDeEfec)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -181,7 +179,7 @@ public class RepNom_7 extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(249, 249, 249)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,21 +218,6 @@ public class RepNom_7 extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jPanel3);
 
         jTabbedPane1.addTab("Nom. Quincenal", jScrollPane2);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 622, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 328, Short.MAX_VALUE)
-        );
-
-        jScrollPane3.setViewportView(jPanel1);
-
-        jTabbedPane1.addTab("Nom. Semanal", jScrollPane3);
 
         jScrollPane1.setViewportView(jTabbedPane1);
 
@@ -6734,7 +6717,1070 @@ public class RepNom_7 extends javax.swing.JFrame {
             } catch (ClassNotFoundException | SQLException ex) {
                 Logger.getLogger(RepNom_7.class.getName()).log(Level.SEVERE, null, ex);
             }
+
         }
+        if (CbxTDR.getSelectedIndex() == 3) {
+            JFileChooser chooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
+            chooser.setSelectedFile(new File("Reporte de Todas Nominas detalladas"));
+            chooser.setFileFilter(filter);
+            chooser.setDialogTitle("Guardar archivo");
+            chooser.setAcceptAllFileFilterUsed(false);
+            if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+            }
+            try {
+                String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
+                File archivoXLS = new File(ruta);
+                if (archivoXLS.exists()) {
+                    archivoXLS.delete();
+                }
+                archivoXLS.createNewFile();
+
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection connect = DriverManager.getConnection(
+                        "jdbc:mysql://192.168.1.170:3306/confort2022",
+                        "Servidor",
+                        "Confort1022"
+                );
+                Statement RHstatement = connect.createStatement();
+                ResultSet resultSetNom = RHstatement.executeQuery("SELECT * FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + "`");
+                try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                    XSSFWorkbook libro = new XSSFWorkbook();
+                    XSSFSheet spreadsheet = libro.createSheet("Nominas de Zona " + cbxZona.getSelectedItem().toString());
+
+                    XSSFCellStyle Encabezado = libro.createCellStyle();
+                    Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                    Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+
+                    XSSFCellStyle Stilodd = libro.createCellStyle();
+
+                    Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                    Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                    Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                    Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
+                    Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                    XSSFCellStyle StiloEEEE = libro.createCellStyle();
+
+                    StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                    StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                    StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                    StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
+                    StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                    XSSFCellStyle Contenido = libro.createCellStyle();
+                    Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                    Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+                    Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                    Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                    Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                    Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                    XSSFRow row = spreadsheet.createRow((short) 0);
+                    XSSFCell cell = (XSSFCell) row.createCell((short) 0);
+                    cell.setCellValue("Nominas detalladas de Zona " + cbxZona.getSelectedItem().toString());
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    0, //first row (0-based)
+                                    0, //last row (0-based)
+                                    0, //first column (0-based)
+                                    5 //last column (0-based)
+                            )
+                    );
+                    row = spreadsheet.createRow(1);
+                    cell = row.createCell(0);
+                    cell.setCellValue("# Lista");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellValue("Empleados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellValue("Apellido P");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellValue("Apellido M");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellValue("Nombre(s)");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue("Banco");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellValue("Cuenta de banco");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("Zona");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellValue("Servicio");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellValue("Sueldo");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(10);
+                    cell.setCellValue("Bono");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(11);
+                    cell.setCellValue("por dia");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(12);
+                    cell.setCellValue("por hora");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(13);
+                    cell.setCellValue("Quincena del mes");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(14);
+                    cell.setCellValue("Año");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(15);
+                    cell.setCellValue("1/16");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(16);
+                    cell.setCellValue("2/17");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(17);
+                    cell.setCellValue("3/18");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(18);
+                    cell.setCellValue("4/19");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(19);
+                    cell.setCellValue("5/20");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(20);
+                    cell.setCellValue("6/21");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(21);
+                    cell.setCellValue("7/22");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(22);
+                    cell.setCellValue("8/23");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(23);
+                    cell.setCellValue("9/24");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(24);
+                    cell.setCellValue("10/25");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(25);
+                    cell.setCellValue("11/26");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(26);
+                    cell.setCellValue("12/27");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(27);
+                    cell.setCellValue("13/28");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(28);
+                    cell.setCellValue("14/29");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(29);
+                    cell.setCellValue("15/30");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(30);
+                    cell.setCellValue("31");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(31);
+                    cell.setCellValue("Dias de incapacidad");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(32);
+                    cell.setCellValue("Pago de seguro");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(33);
+                    cell.setCellValue("Dias de vacaciones");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(34);
+                    cell.setCellValue("Pago de dias de vacaciones");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(35);
+                    cell.setCellValue("Dias descansados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(36);
+                    cell.setCellValue("Pago de Dias descansados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(37);
+                    cell.setCellValue("Dias Laborados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(38);
+                    cell.setCellValue("Pagos de Dias Laborados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(39);
+                    cell.setCellValue("Descansos trabajados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(40);
+                    cell.setCellValue("Pago de Descansos trabajados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(41);
+                    cell.setCellValue("Descanso sin gose de sueldo");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(42);
+                    cell.setCellValue("Pagos de Descanso sin gose de sueldo");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(43);
+                    cell.setCellValue("Faltas Justificadas");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(44);
+                    cell.setCellValue("Descanso otorgado");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(45);
+                    cell.setCellValue("Dias festivos");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(46);
+                    cell.setCellValue("Pago de dias festivos");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(47);
+                    cell.setCellValue("Dias festivos trabajados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(48);
+                    cell.setCellValue("Pagos Dias festivos trabajados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(49);
+                    cell.setCellValue("Horas extra");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(50);
+                    cell.setCellValue("Total de horas extra");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(51);
+                    cell.setCellValue("Retardos");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(52);
+                    cell.setCellValue("Pago con retardos");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(53);
+                    cell.setCellValue("Apoyo");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(54);
+                    cell.setCellValue("Lugar");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(55);
+                    cell.setCellValue("Rembolso");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(56);
+                    cell.setCellValue("Adicionales");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(57);
+                    cell.setCellValue("Faltas");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(58);
+                    cell.setCellValue("Descuentos por faltas");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(59);
+                    cell.setCellValue("Descuento IMSS");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(60);
+                    cell.setCellValue("Infonavit");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(61);
+                    cell.setCellValue("Fonacot");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(62);
+                    cell.setCellValue("ISR");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(63);
+                    cell.setCellValue("Faltantes de boleto");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(64);
+                    cell.setCellValue("Sancion");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(65);
+                    cell.setCellValue("Chamarra");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(66);
+                    cell.setCellValue("Chaleco");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(67);
+                    cell.setCellValue("Faltante de efectivo");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(68);
+                    cell.setCellValue("Grua");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(69);
+                    cell.setCellValue("Pantalon");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(70);
+                    cell.setCellValue("Credencial");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(71);
+                    cell.setCellValue("Boleto perdido");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(72);
+                    cell.setCellValue("Playera");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(73);
+                    cell.setCellValue("Corbata");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(74);
+                    cell.setCellValue("Adelanto de nomina");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(75);
+                    cell.setCellValue("Total de descuentos varios");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(76);
+                    cell.setCellValue("Pago de prestamo");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(77);
+                    cell.setCellValue("Caja de ahorro");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(78);
+                    cell.setCellValue("Orden de taller");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(79);
+                    cell.setCellValue("Deposito");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(80);
+                    cell.setCellValue("Observaciones");
+                    cell.setCellStyle(Contenido);
+
+                    int i = 2;
+
+                    while (resultSetNom.next()) {
+                        row = spreadsheet.createRow(i);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSetNom.getInt(1));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSetNom.getString(2));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(2);
+                        cell.setCellValue(resultSetNom.getString(3));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellValue(resultSetNom.getString(4));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellValue(resultSetNom.getString(5));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellValue(resultSetNom.getString(6));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellValue(resultSetNom.getString(7));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellValue(resultSetNom.getString(8));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(8);
+                        cell.setCellValue(resultSetNom.getString(9));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellValue(resultSetNom.getString(10));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(10);
+                        cell.setCellValue(resultSetNom.getString(11));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(11);
+                        cell.setCellValue(resultSetNom.getString(12));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(12);
+                        cell.setCellValue(resultSetNom.getString(13));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(13);
+                        cell.setCellValue(resultSetNom.getString(14));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(14);
+                        cell.setCellValue(resultSetNom.getString(15));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(15);
+                        cell.setCellValue(resultSetNom.getString(16));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(16);
+                        cell.setCellValue(resultSetNom.getString(17));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(17);
+                        cell.setCellValue(resultSetNom.getString(18));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(18);
+                        cell.setCellValue(resultSetNom.getString(19));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(19);
+                        cell.setCellValue(resultSetNom.getString(20));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(20);
+                        cell.setCellValue(resultSetNom.getString(21));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(21);
+                        cell.setCellValue(resultSetNom.getString(22));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(22);
+                        cell.setCellValue(resultSetNom.getString(23));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(23);
+                        cell.setCellValue(resultSetNom.getString(24));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(24);
+                        cell.setCellValue(resultSetNom.getString(25));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(25);
+                        cell.setCellValue(resultSetNom.getString(26));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(26);
+                        cell.setCellValue(resultSetNom.getString(27));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(27);
+                        cell.setCellValue(resultSetNom.getString(28));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(28);
+                        cell.setCellValue(resultSetNom.getString(29));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(29);
+                        cell.setCellValue(resultSetNom.getString(30));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(30);
+                        cell.setCellValue(resultSetNom.getString(31));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(31);
+                        cell.setCellValue(resultSetNom.getString(32));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(32);
+                        cell.setCellValue(resultSetNom.getString(33));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(33);
+                        cell.setCellValue(resultSetNom.getString(34));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(34);
+                        cell.setCellValue(resultSetNom.getString(35));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(35);
+                        cell.setCellValue(resultSetNom.getString(36));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(36);
+                        cell.setCellValue(resultSetNom.getString(37));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(37);
+                        cell.setCellValue(resultSetNom.getString(38));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(38);
+                        cell.setCellValue(resultSetNom.getString(39));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(39);
+                        cell.setCellValue(resultSetNom.getString(40));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(50);
+                        cell.setCellValue(resultSetNom.getString(51));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(51);
+                        cell.setCellValue(resultSetNom.getString(52));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(52);
+                        cell.setCellValue(resultSetNom.getString(53));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(53);
+                        cell.setCellValue(resultSetNom.getString(54));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(54);
+                        cell.setCellValue(resultSetNom.getString(55));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(55);
+                        cell.setCellValue(resultSetNom.getString(56));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(56);
+                        cell.setCellValue(resultSetNom.getString(57));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(57);
+                        cell.setCellValue(resultSetNom.getString(58));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(58);
+                        cell.setCellValue(resultSetNom.getString(59));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(59);
+                        cell.setCellValue(resultSetNom.getString(60));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(70);
+                        cell.setCellValue(resultSetNom.getString(71));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(71);
+                        cell.setCellValue(resultSetNom.getString(72));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(72);
+                        cell.setCellValue(resultSetNom.getString(73));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(73);
+                        cell.setCellValue(resultSetNom.getString(74));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(74);
+                        cell.setCellValue(resultSetNom.getString(75));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(75);
+                        cell.setCellValue(resultSetNom.getString(76));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(76);
+                        cell.setCellValue(resultSetNom.getString(77));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(77);
+                        cell.setCellValue(resultSetNom.getString(78));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(78);
+                        cell.setCellValue(resultSetNom.getString(79));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(79);
+                        cell.setCellValue(resultSetNom.getString(80));
+                        cell.setCellStyle(Contenido);
+
+                        i++;
+                    }
+
+                    spreadsheet.getPrintSetup();
+                    spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
+                    spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
+                    spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.1); // Margen (abajo)
+                    spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
+                    spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
+                    spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
+                    spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
+                    spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
+
+                    spreadsheet.setVerticallyCenter(true);
+                    libro.write(archivo);
+                }
+                Desktop.getDesktop().open(archivoXLS);
+            } catch (IOException | NumberFormatException e) {
+
+                try {
+                    throw e;
+                } catch (IOException | NumberFormatException ex) {
+                    Logger.getLogger(Logica_bd_NomODT.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(Logica_bd_NomODT.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+        if (CbxTDR.getSelectedIndex() == 4) {
+            JFileChooser chooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
+            chooser.setSelectedFile(new File("Reporte de la quincena " + cbxQuincena.getSelectedItem().toString() + " detallado"));
+            chooser.setFileFilter(filter);
+            chooser.setDialogTitle("Guardar archivo");
+            chooser.setAcceptAllFileFilterUsed(false);
+            if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+            }
+            try {
+                String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
+                File archivoXLS = new File(ruta);
+                if (archivoXLS.exists()) {
+                    archivoXLS.delete();
+                }
+                archivoXLS.createNewFile();
+
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection connect = DriverManager.getConnection(
+                        "jdbc:mysql://192.168.1.170:3306/confort2022",
+                        "Servidor",
+                        "Confort1022"
+                );
+                Statement RHstatement = connect.createStatement();
+                ResultSet resultSetNom = RHstatement.executeQuery("SELECT * FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + "`"
+                        + " WHERE `quincena del mes` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
+                try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                    XSSFWorkbook libro = new XSSFWorkbook();
+                    XSSFSheet spreadsheet = libro.createSheet("Nominas de Zona " + cbxZona.getSelectedItem().toString());
+
+                    XSSFCellStyle Encabezado = libro.createCellStyle();
+                    Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                    Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+
+                    XSSFCellStyle Stilodd = libro.createCellStyle();
+
+                    Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                    Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                    Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                    Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
+                    Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                    XSSFCellStyle StiloEEEE = libro.createCellStyle();
+
+                    StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                    StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                    StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                    StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
+                    StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                    XSSFCellStyle Contenido = libro.createCellStyle();
+                    Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                    Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+                    Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                    Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                    Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                    Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                    XSSFRow row = spreadsheet.createRow((short) 0);
+                    XSSFCell cell = (XSSFCell) row.createCell((short) 0);
+                    cell.setCellValue("Nominas detalladas de Zona " + cbxZona.getSelectedItem().toString());
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    0, //first row (0-based)
+                                    0, //last row (0-based)
+                                    0, //first column (0-based)
+                                    5 //last column (0-based)
+                            )
+                    );
+                    row = spreadsheet.createRow(1);
+                    cell = row.createCell(0);
+                    cell.setCellValue("# Lista");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellValue("Empleados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellValue("Apellido P");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellValue("Apellido M");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellValue("Nombre(s)");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue("Banco");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellValue("Cuenta de banco");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("Zona");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellValue("Servicio");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellValue("Sueldo");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(10);
+                    cell.setCellValue("Bono");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(11);
+                    cell.setCellValue("por dia");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(12);
+                    cell.setCellValue("por hora");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(13);
+                    cell.setCellValue("Quincena del mes");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(14);
+                    cell.setCellValue("Año");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(15);
+                    cell.setCellValue("1/16");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(16);
+                    cell.setCellValue("2/17");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(17);
+                    cell.setCellValue("3/18");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(18);
+                    cell.setCellValue("4/19");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(19);
+                    cell.setCellValue("5/20");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(20);
+                    cell.setCellValue("6/21");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(21);
+                    cell.setCellValue("7/22");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(22);
+                    cell.setCellValue("8/23");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(23);
+                    cell.setCellValue("9/24");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(24);
+                    cell.setCellValue("10/25");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(25);
+                    cell.setCellValue("11/26");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(26);
+                    cell.setCellValue("12/27");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(27);
+                    cell.setCellValue("13/28");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(28);
+                    cell.setCellValue("14/29");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(29);
+                    cell.setCellValue("15/30");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(30);
+                    cell.setCellValue("31");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(31);
+                    cell.setCellValue("Dias de incapacidad");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(32);
+                    cell.setCellValue("Pago de seguro");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(33);
+                    cell.setCellValue("Dias de vacaciones");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(34);
+                    cell.setCellValue("Pago de dias de vacaciones");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(35);
+                    cell.setCellValue("Dias descansados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(36);
+                    cell.setCellValue("Pago de Dias descansados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(37);
+                    cell.setCellValue("Dias Laborados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(38);
+                    cell.setCellValue("Pagos de Dias Laborados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(39);
+                    cell.setCellValue("Descansos trabajados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(40);
+                    cell.setCellValue("Pago de Descansos trabajados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(41);
+                    cell.setCellValue("Descanso sin gose de sueldo");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(42);
+                    cell.setCellValue("Pagos de Descanso sin gose de sueldo");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(43);
+                    cell.setCellValue("Faltas Justificadas");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(44);
+                    cell.setCellValue("Descanso otorgado");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(45);
+                    cell.setCellValue("Dias festivos");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(46);
+                    cell.setCellValue("Pago de dias festivos");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(47);
+                    cell.setCellValue("Dias festivos trabajados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(48);
+                    cell.setCellValue("Pagos Dias festivos trabajados");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(49);
+                    cell.setCellValue("Horas extra");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(50);
+                    cell.setCellValue("Total de horas extra");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(51);
+                    cell.setCellValue("Retardos");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(52);
+                    cell.setCellValue("Pago con retardos");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(53);
+                    cell.setCellValue("Apoyo");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(54);
+                    cell.setCellValue("Lugar");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(55);
+                    cell.setCellValue("Rembolso");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(56);
+                    cell.setCellValue("Adicionales");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(57);
+                    cell.setCellValue("Faltas");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(58);
+                    cell.setCellValue("Descuentos por faltas");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(59);
+                    cell.setCellValue("Descuento IMSS");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(60);
+                    cell.setCellValue("Infonavit");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(61);
+                    cell.setCellValue("Fonacot");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(62);
+                    cell.setCellValue("ISR");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(63);
+                    cell.setCellValue("Faltantes de boleto");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(64);
+                    cell.setCellValue("Sancion");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(65);
+                    cell.setCellValue("Chamarra");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(66);
+                    cell.setCellValue("Chaleco");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(67);
+                    cell.setCellValue("Faltante de efectivo");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(68);
+                    cell.setCellValue("Grua");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(69);
+                    cell.setCellValue("Pantalon");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(70);
+                    cell.setCellValue("Credencial");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(71);
+                    cell.setCellValue("Boleto perdido");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(72);
+                    cell.setCellValue("Playera");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(73);
+                    cell.setCellValue("Corbata");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(74);
+                    cell.setCellValue("Adelanto de nomina");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(75);
+                    cell.setCellValue("Total de descuentos varios");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(76);
+                    cell.setCellValue("Pago de prestamo");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(77);
+                    cell.setCellValue("Caja de ahorro");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(78);
+                    cell.setCellValue("Orden de taller");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(79);
+                    cell.setCellValue("Deposito");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(80);
+                    cell.setCellValue("Observaciones");
+                    cell.setCellStyle(Contenido);
+
+                    int i = 2;
+
+                    while (resultSetNom.next()) {
+                        row = spreadsheet.createRow(i);
+                        cell = row.createCell(0);
+                        cell.setCellValue(resultSetNom.getInt(1));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(1);
+                        cell.setCellValue(resultSetNom.getString(2));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(2);
+                        cell.setCellValue(resultSetNom.getString(3));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(3);
+                        cell.setCellValue(resultSetNom.getString(4));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(4);
+                        cell.setCellValue(resultSetNom.getString(5));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(5);
+                        cell.setCellValue(resultSetNom.getString(6));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(6);
+                        cell.setCellValue(resultSetNom.getString(7));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(7);
+                        cell.setCellValue(resultSetNom.getString(8));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(8);
+                        cell.setCellValue(resultSetNom.getString(9));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellValue(resultSetNom.getString(10));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(10);
+                        cell.setCellValue(resultSetNom.getString(11));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(11);
+                        cell.setCellValue(resultSetNom.getString(12));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(12);
+                        cell.setCellValue(resultSetNom.getString(13));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(13);
+                        cell.setCellValue(resultSetNom.getString(14));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(14);
+                        cell.setCellValue(resultSetNom.getString(15));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(15);
+                        cell.setCellValue(resultSetNom.getString(16));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(16);
+                        cell.setCellValue(resultSetNom.getString(17));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(17);
+                        cell.setCellValue(resultSetNom.getString(18));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(18);
+                        cell.setCellValue(resultSetNom.getString(19));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(19);
+                        cell.setCellValue(resultSetNom.getString(20));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(20);
+                        cell.setCellValue(resultSetNom.getString(21));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(21);
+                        cell.setCellValue(resultSetNom.getString(22));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(22);
+                        cell.setCellValue(resultSetNom.getString(23));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(23);
+                        cell.setCellValue(resultSetNom.getString(24));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(24);
+                        cell.setCellValue(resultSetNom.getString(25));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(25);
+                        cell.setCellValue(resultSetNom.getString(26));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(26);
+                        cell.setCellValue(resultSetNom.getString(27));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(27);
+                        cell.setCellValue(resultSetNom.getString(28));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(28);
+                        cell.setCellValue(resultSetNom.getString(29));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(29);
+                        cell.setCellValue(resultSetNom.getString(30));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(30);
+                        cell.setCellValue(resultSetNom.getString(31));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(31);
+                        cell.setCellValue(resultSetNom.getString(32));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(32);
+                        cell.setCellValue(resultSetNom.getString(33));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(33);
+                        cell.setCellValue(resultSetNom.getString(34));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(34);
+                        cell.setCellValue(resultSetNom.getString(35));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(35);
+                        cell.setCellValue(resultSetNom.getString(36));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(36);
+                        cell.setCellValue(resultSetNom.getString(37));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(37);
+                        cell.setCellValue(resultSetNom.getString(38));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(38);
+                        cell.setCellValue(resultSetNom.getString(39));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(39);
+                        cell.setCellValue(resultSetNom.getString(40));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(50);
+                        cell.setCellValue(resultSetNom.getString(51));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(51);
+                        cell.setCellValue(resultSetNom.getString(52));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(52);
+                        cell.setCellValue(resultSetNom.getString(53));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(53);
+                        cell.setCellValue(resultSetNom.getString(54));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(54);
+                        cell.setCellValue(resultSetNom.getString(55));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(55);
+                        cell.setCellValue(resultSetNom.getString(56));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(56);
+                        cell.setCellValue(resultSetNom.getString(57));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(57);
+                        cell.setCellValue(resultSetNom.getString(58));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(58);
+                        cell.setCellValue(resultSetNom.getString(59));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(59);
+                        cell.setCellValue(resultSetNom.getString(60));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(70);
+                        cell.setCellValue(resultSetNom.getString(71));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(71);
+                        cell.setCellValue(resultSetNom.getString(72));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(72);
+                        cell.setCellValue(resultSetNom.getString(73));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(73);
+                        cell.setCellValue(resultSetNom.getString(74));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(74);
+                        cell.setCellValue(resultSetNom.getString(75));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(75);
+                        cell.setCellValue(resultSetNom.getString(76));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(76);
+                        cell.setCellValue(resultSetNom.getString(77));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(77);
+                        cell.setCellValue(resultSetNom.getString(78));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(78);
+                        cell.setCellValue(resultSetNom.getString(79));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(79);
+                        cell.setCellValue(resultSetNom.getString(80));
+                        cell.setCellStyle(Contenido);
+
+                        i++;
+                    }
+
+                    spreadsheet.getPrintSetup();
+                    spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
+                    spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
+                    spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.1); // Margen (abajo)
+                    spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
+                    spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
+                    spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
+                    spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
+                    spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
+
+                    spreadsheet.setVerticallyCenter(true);
+                    libro.write(archivo);
+                }
+                Desktop.getDesktop().open(archivoXLS);
+            } catch (IOException | NumberFormatException e) {
+
+                try {
+                    throw e;
+                } catch (IOException | NumberFormatException ex) {
+                    Logger.getLogger(Logica_bd_NomODT.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(Logica_bd_NomODT.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+
     }//GEN-LAST:event_jLabel5MousePressed
 
     private void MoveMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoveMouseDragged
@@ -6752,14 +7798,62 @@ public class RepNom_7 extends javax.swing.JFrame {
         if (CbxTDR.getSelectedIndex() == 0) {
             LabelQuin.setVisible(false);
             cbxQuincena.setVisible(false);
+            BBVAISI.setEnabled(false);
+            IDBBVA.setEnabled(false);
+            IDSant.setEnabled(false);
+            IDeEfec.setEnabled(false);
+            IDbaj.setEnabled(false);
+            SantanderISI.setEnabled(false);
+            EfectivoISI.setEnabled(false);
+            BajasISI.setEnabled(false);
         }
         if (CbxTDR.getSelectedIndex() == 1) {
             LabelQuin.setVisible(false);
             cbxQuincena.setVisible(false);
+            BBVAISI.setEnabled(true);
+            IDBBVA.setEnabled(true);
+            IDSant.setEnabled(true);
+            IDeEfec.setEnabled(true);
+            IDbaj.setEnabled(true);
+            SantanderISI.setEnabled(true);
+            EfectivoISI.setEnabled(true);
+            BajasISI.setEnabled(true);
         }
         if (CbxTDR.getSelectedIndex() == 2) {
             LabelQuin.setVisible(true);
             cbxQuincena.setVisible(true);
+            BBVAISI.setEnabled(true);
+            IDBBVA.setEnabled(true);
+            IDSant.setEnabled(true);
+            IDeEfec.setEnabled(true);
+            IDbaj.setEnabled(true);
+            SantanderISI.setEnabled(true);
+            EfectivoISI.setEnabled(true);
+            BajasISI.setEnabled(true);
+        }
+        if (CbxTDR.getSelectedIndex() == 3) {
+            LabelQuin.setVisible(false);
+            cbxQuincena.setVisible(false);
+            BBVAISI.setEnabled(false);
+            IDBBVA.setEnabled(false);
+            IDSant.setEnabled(false);
+            IDeEfec.setEnabled(false);
+            IDbaj.setEnabled(false);
+            SantanderISI.setEnabled(false);
+            EfectivoISI.setEnabled(false);
+            BajasISI.setEnabled(false);
+        }
+        if (CbxTDR.getSelectedIndex() == 4) {
+            LabelQuin.setVisible(true);
+            cbxQuincena.setVisible(true);
+            BBVAISI.setEnabled(false);
+            IDBBVA.setEnabled(false);
+            IDSant.setEnabled(false);
+            IDeEfec.setEnabled(false);
+            IDbaj.setEnabled(false);
+            SantanderISI.setEnabled(false);
+            EfectivoISI.setEnabled(false);
+            BajasISI.setEnabled(false);
         }
     }//GEN-LAST:event_CbxTDRItemStateChanged
 
@@ -6816,11 +7910,9 @@ public class RepNom_7 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel txtbtnexit;
     // End of variables declaration//GEN-END:variables
