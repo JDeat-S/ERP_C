@@ -5,6 +5,9 @@ import Admin.*;
 import Conexion.ConexionSQL;
 import RH.*;
 import Inicio.Inicio_1;
+import Logicas.Logica_bd_NomODT;
+import Logicas.Logica_bd_pagosCDA;
+import Logicas.Logica_bd_pagosODT;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
 import java.awt.HeadlessException;
@@ -714,11 +717,11 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         OdT = new javax.swing.JTable();
         EliminarT = new javax.swing.JButton();
         CS7 = new javax.swing.JButton();
-        botonWeb4 = new botones.BotonWeb();
         jLabel161 = new javax.swing.JLabel();
         FiltrosTODT = new javax.swing.JComboBox<>();
         FilApodt = new javax.swing.JTextField();
         FilAmodt = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         TDPODT = new javax.swing.JScrollPane();
         jPanel19 = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
@@ -729,7 +732,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         FilnamePODT = new javax.swing.JTextField();
         FilApPODT = new javax.swing.JTextField();
         FilAmPODT = new javax.swing.JTextField();
-        botonWeb6 = new botones.BotonWeb();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -1308,10 +1311,6 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb4.setToolTipText("");
-        botonWeb4.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCOdTaller.php");
-
         jLabel161.setText("Filtros:");
 
         FiltrosTODT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
@@ -1330,6 +1329,14 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         FilAmodt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FilAmodtKeyReleased(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel1MousePressed(evt);
             }
         });
 
@@ -1355,7 +1362,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(EliminarT)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonWeb4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CS7))
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 4964, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1370,11 +1377,11 @@ public final class ODTQ_5 extends javax.swing.JFrame {
                     .addComponent(Fnameodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EliminarT)
                     .addComponent(CS7)
-                    .addComponent(botonWeb4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel161)
                     .addComponent(FiltrosTODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilApodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FilAmodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FilAmodt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(218, Short.MAX_VALUE))
@@ -1426,9 +1433,13 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb6.setToolTipText("");
-        botonWeb6.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosPrestamosQuin.php");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel2MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -1451,23 +1462,22 @@ public final class ODTQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FilAmPODT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonWeb6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 1038, Short.MAX_VALUE)))
+                        .addComponent(jLabel2)
+                        .addGap(0, 1065, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel153)
-                        .addComponent(FiltrosPDODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(LabelfilPODT)
-                        .addComponent(FilnamePODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FilApPODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FilAmPODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(botonWeb6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel153)
+                    .addComponent(FiltrosPDODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelfilPODT)
+                    .addComponent(FilnamePODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FilApPODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FilAmPODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
@@ -2908,6 +2918,16 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ADMV2ActionPerformed
 
+    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
+        Logica_bd_NomODT obj = new Logica_bd_NomODT();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel1MousePressed
+
+    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
+        Logica_bd_pagosODT obj = new Logica_bd_pagosODT();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel2MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -3037,12 +3057,12 @@ public final class ODTQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zona1;
-    private botones.BotonWeb botonWeb4;
-    private botones.BotonWeb botonWeb6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel151;
     private javax.swing.JLabel jLabel153;
     private javax.swing.JLabel jLabel161;
     private javax.swing.JLabel jLabel168;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel50;

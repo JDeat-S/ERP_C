@@ -1312,7 +1312,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="EliminarT" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botonWeb4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="CS7" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1331,11 +1331,11 @@
                               <Component id="Fnameodt" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="EliminarT" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="CS7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botonWeb4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel161" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FiltrosTODT" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FilApodt" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FilAmodt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane9" min="-2" pref="599" max="-2" attributes="0"/>
@@ -1414,15 +1414,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS7ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="botones.BotonWeb" name="botonWeb4">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                    </Property>
-                    <Property name="toolTipText" type="java.lang.String" value=""/>
-                    <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCOdTaller.php"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel161">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Filtros:"/>
@@ -1454,6 +1445,19 @@
                 <Component class="javax.swing.JTextField" name="FilAmodt">
                   <Events>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FilAmodtKeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel1">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MousePressed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -1493,8 +1497,8 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FilAmPODT" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botonWeb6" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="1038" max="32767" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="1065" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1505,16 +1509,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel153" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FiltrosPDODT" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LabelfilPODT" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FilnamePODT" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FilApPODT" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FilAmPODT" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="botonWeb6" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel153" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FiltrosPDODT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="LabelfilPODT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FilnamePODT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FilApPODT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FilAmPODT" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane11" min="-2" pref="800" max="-2" attributes="0"/>
@@ -1588,14 +1590,18 @@
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FilAmPODTKeyReleased"/>
                   </Events>
                 </Component>
-                <Component class="botones.BotonWeb" name="botonWeb6">
+                <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                     </Property>
-                    <Property name="toolTipText" type="java.lang.String" value=""/>
-                    <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosPrestamosQuin.php"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel2MousePressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
