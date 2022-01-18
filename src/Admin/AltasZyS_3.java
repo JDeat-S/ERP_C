@@ -272,7 +272,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
     public void AgregarZ() {
 
-        String SQL = "INSERT INTO `confort`.`zona` (`Zonas`) VALUES (?)";
+        String SQL = "INSERT INTO `zona` (`Zonas`) VALUES (?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);

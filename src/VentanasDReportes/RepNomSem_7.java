@@ -40,7 +40,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
     public RepNomSem_7() {
         initComponents();
         this.setLocationRelativeTo(null);
-        LabelQuin.setVisible(false);
+        LabelSem.setVisible(false);
         cbxQuincena.setVisible(false);
         FiltrosZonas zz8 = new FiltrosZonas();
         DefaultComboBoxModel contenido = new DefaultComboBoxModel(zz8.mostrarzonas());
@@ -52,7 +52,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
         this.usr = usr;
         this.LP = LP;
         this.setLocationRelativeTo(null);
-        LabelQuin.setVisible(false);
+        LabelSem.setVisible(false);
         cbxQuincena.setVisible(false);
         FiltrosZonas zz8 = new FiltrosZonas();
         DefaultComboBoxModel contenido = new DefaultComboBoxModel(zz8.mostrarzonas());
@@ -62,7 +62,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
     public void Reporte1() {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-        chooser.setSelectedFile(new File("Reporte de todas las quincenas de la zona " + cbxZona.getSelectedItem().toString()));
+        chooser.setSelectedFile(new File("Reporte de todas las Semanas de la zona " + cbxZona.getSelectedItem().toString()));
         chooser.setFileFilter(filter);
         chooser.setDialogTitle("Guardar archivo");
         chooser.setAcceptAllFileFilterUsed(false);
@@ -4852,9 +4852,10 @@ public class RepNomSem_7 extends javax.swing.JFrame {
 
                 if (IDBBVA.isSelected() == true) {
                     Statement CI = connect.createStatement();
-                    ResultSet CIBBVA = CI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                            + " `Cuenta de banco`, `Sueldo`, `Deposito`"
-                            + " FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%BANCOMER%'");
+                    ResultSet CIBBVA = CI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                            + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                            + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                            + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%BANCOMER%'");
                     int i = 3;
                     while (CIBBVA.next()) {
 
@@ -4901,37 +4902,56 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                         cell.setCellValue("Cuenta de banco");
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(6);
-                        cell.setCellValue("Sueldo");
+                        cell.setCellValue("Fecha sabado");
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(7);
+                        cell.setCellValue("Fecha Viernes");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(8);
+                        cell.setCellValue("Fecha de pago");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellValue("Sueldo");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(10);
                         cell.setCellValue("Deposito");
                         cell.setCellStyle(Contenido);
 
                         row = spreadsheet.getRow(i);
                         cell = row.createCell(0);
-                        cell.setCellValue(CIBBVA.getString("#lista"));
+                        cell.setCellValue(CIBBVA.getString(1));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(1);
-                        cell.setCellValue(CIBBVA.getString("Nombre(s)"));
+                        cell.setCellValue(CIBBVA.getString(2));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(2);
-                        cell.setCellValue(CIBBVA.getString("Apellido P"));
+                        cell.setCellValue(CIBBVA.getString(3));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(3);
-                        cell.setCellValue(CIBBVA.getString("Apellido M"));
+                        cell.setCellValue(CIBBVA.getString(4));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(4);
-                        cell.setCellValue(CIBBVA.getString("Banco"));
+                        cell.setCellValue(CIBBVA.getString(5));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(5);
-                        cell.setCellValue(CIBBVA.getString("Cuenta de banco"));
+                        cell.setCellValue(CIBBVA.getString(6));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(6);
-                        cell.setCellValue(CIBBVA.getString("Sueldo"));
+                        cell.setCellValue(CIBBVA.getString(7));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(7);
-                        cell.setCellValue(CIBBVA.getString("Deposito"));
+                        cell.setCellValue(CIBBVA.getString(8));
                         cell.setCellStyle(Contenido);
+                        cell = row.createCell(8);
+                        cell.setCellValue(CIBBVA.getString(9));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellValue(CIBBVA.getString(10));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(10);
+                        cell.setCellValue(CIBBVA.getString(11));
+                        cell.setCellStyle(Contenido);
+
                         CIBBVA.isClosed();
                         CI.isClosed();
                         i++;
@@ -4939,9 +4959,10 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                     }
                     if (BBVAISI.isSelected() == true) {
                         Statement SI = connect.createStatement();
-                        ResultSet SIfdp = SI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
-                                + " `Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM "
-                                + "`nomina.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%BANCOMER%'");
+                        ResultSet SIfdp = SI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                                + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                                + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                                + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%BANCOMER%'");
                         while (SIfdp.next()) {
                             row = spreadsheet.getRow(1);
                             cell = row.createCell(0);
@@ -4986,37 +5007,56 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                             cell.setCellValue("Cuenta de banco");
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(6);
-                            cell.setCellValue("Sueldo");
+                            cell.setCellValue("Fecha sabado");
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(7);
+                            cell.setCellValue("Fecha Viernes");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellValue("Fecha de pago");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellValue("Sueldo");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(10);
                             cell.setCellValue("Deposito");
                             cell.setCellStyle(Contenido);
 
                             row = spreadsheet.getRow(i);
                             cell = row.createCell(0);
-                            cell.setCellValue(SIfdp.getString("#lista"));
+                            cell.setCellValue(SIfdp.getString(1));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(1);
-                            cell.setCellValue(SIfdp.getString("Nombre(s)"));
+                            cell.setCellValue(SIfdp.getString(2));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(2);
-                            cell.setCellValue(SIfdp.getString("Apellido P"));
+                            cell.setCellValue(SIfdp.getString(3));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(3);
-                            cell.setCellValue(SIfdp.getString("Apellido M"));
+                            cell.setCellValue(SIfdp.getString(4));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(4);
-                            cell.setCellValue(SIfdp.getString("Banco"));
+                            cell.setCellValue(SIfdp.getString(5));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(5);
-                            cell.setCellValue(SIfdp.getString("Cuenta de banco"));
+                            cell.setCellValue(SIfdp.getString(6));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(6);
-                            cell.setCellValue(SIfdp.getString("Sueldo"));
+                            cell.setCellValue(SIfdp.getString(7));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(7);
-                            cell.setCellValue(SIfdp.getString("Deposito"));
+                            cell.setCellValue(SIfdp.getString(8));
                             cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellValue(SIfdp.getString(9));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellValue(SIfdp.getString(10));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(10);
+                            cell.setCellValue(SIfdp.getString(11));
+                            cell.setCellStyle(Contenido);
+
                             SIfdp.isClosed();
                             SI.isClosed();
                             i++;
@@ -5026,171 +5066,212 @@ public class RepNomSem_7 extends javax.swing.JFrame {
 
                 if (IDSant.isSelected() == true) {
                     Statement CI = connect.createStatement();
-                    ResultSet CISant = CI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                            + " `Cuenta de banco`, `Sueldo`, `Deposito`"
-                            + " FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%SANTANDER%'");
+                    ResultSet CISant = CI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                            + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                            + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                            + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%SANTANDER%'");
 
                     int i = 3;
                     while (CISant.next()) {
 
                         row = spreadsheet.getRow(1);
-                        cell = row.createCell(9);
+                        cell = row.createCell(11);
                         cell.setCellValue("SANTANDER");
                         cell.setCellStyle(Encabezado);
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
                                         1, //first row (0-based)
                                         1, //last row (0-based)
-                                        9, //first column (0-based)
-                                        14 //last column (0-based)
+                                        11, //first column (0-based)
+                                        16 //last column (0-based)
                                 )
                         );
-                        cell = row.createCell(10);
-                        cell.setCellStyle(Encabezado);
-                        cell = row.createCell(11);
-                        cell.setCellStyle(Encabezado);
                         cell = row.createCell(12);
                         cell.setCellStyle(Encabezado);
                         cell = row.createCell(13);
                         cell.setCellStyle(Encabezado);
                         cell = row.createCell(14);
+                        cell.setCellStyle(Encabezado);
+                        cell = row.createCell(15);
+                        cell.setCellStyle(Encabezado);
+                        cell = row.createCell(16);
                         cell.setCellStyle(Encabezado);
 
                         row = spreadsheet.getRow(2);
-                        cell = row.createCell(9);
+                        cell = row.createCell(11);
                         cell.setCellValue("# Lista");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(10);
+                        cell = row.createCell(12);
                         cell.setCellValue("Nombre(s)");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(11);
+                        cell = row.createCell(13);
                         cell.setCellValue("Apellido P");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(12);
+                        cell = row.createCell(14);
                         cell.setCellValue("Apellido M");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(13);
+                        cell = row.createCell(15);
                         cell.setCellValue("Banco");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(14);
+                        cell = row.createCell(16);
                         cell.setCellValue("Cuenta de banco");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(15);
+                        cell = row.createCell(17);
+                        cell.setCellValue("Fecha sabado");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(18);
+                        cell.setCellValue("Fecha viernes");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(20);
+                        cell.setCellValue("Fecha de pago");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(21);
                         cell.setCellValue("Sueldo");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(16);
+                        cell = row.createCell(22);
                         cell.setCellValue("Deposito");
                         cell.setCellStyle(Contenido);
 
                         row = spreadsheet.getRow(i);
-                        cell = row.createCell(9);
-                        cell.setCellValue(CISant.getString("#lista"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(10);
-                        cell.setCellValue(CISant.getString("Nombre(s)"));
-                        cell.setCellStyle(Contenido);
                         cell = row.createCell(11);
-                        cell.setCellValue(CISant.getString("Apellido P"));
+                        cell.setCellValue(CISant.getString(1));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(12);
-                        cell.setCellValue(CISant.getString("Apellido M"));
+                        cell.setCellValue(CISant.getString(2));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(13);
-                        cell.setCellValue(CISant.getString("Banco"));
+                        cell.setCellValue(CISant.getString(3));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(14);
-                        cell.setCellValue(CISant.getString("Cuenta de banco"));
+                        cell.setCellValue(CISant.getString(4));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(15);
-                        cell.setCellValue(CISant.getString("Sueldo"));
+                        cell.setCellValue(CISant.getString(5));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(16);
-                        cell.setCellValue(CISant.getString("Deposito"));
+                        cell.setCellValue(CISant.getString(6));
                         cell.setCellStyle(Contenido);
+                        cell = row.createCell(17);
+                        cell.setCellValue(CISant.getString(7));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(18);
+                        cell.setCellValue(CISant.getString(8));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(19);
+                        cell.setCellValue(CISant.getString(9));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(20);
+                        cell.setCellValue(CISant.getString(10));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(21);
+                        cell.setCellValue(CISant.getString(11));
+                        cell.setCellStyle(Contenido);
+
                         i++;
                         CISant.isClosed();
                         CI.isClosed();
                     }
                     if (SantanderISI.isSelected() == true) {
                         Statement SI = connect.createStatement();
-                        ResultSet SIfdp = SI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
-                                + " `Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM "
-                                + "`nomina.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%SANTANDER%'");
+                        ResultSet SIfdp = SI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                                + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                                + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                                + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%SANTANDER%'");
                         while (SIfdp.next()) {
+
                             row = spreadsheet.getRow(1);
-                            cell = row.createCell(9);
+                            cell = row.createCell(11);
                             cell.setCellValue("SANTANDER");
                             cell.setCellStyle(Encabezado);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             1, //first row (0-based)
                                             1, //last row (0-based)
-                                            9, //first column (0-based)
-                                            14 //last column (0-based)
+                                            11, //first column (0-based)
+                                            16 //last column (0-based)
                                     )
                             );
-                            cell = row.createCell(10);
-                            cell.setCellStyle(Encabezado);
-                            cell = row.createCell(11);
-                            cell.setCellStyle(Encabezado);
                             cell = row.createCell(12);
                             cell.setCellStyle(Encabezado);
                             cell = row.createCell(13);
                             cell.setCellStyle(Encabezado);
                             cell = row.createCell(14);
+                            cell.setCellStyle(Encabezado);
+                            cell = row.createCell(15);
+                            cell.setCellStyle(Encabezado);
+                            cell = row.createCell(16);
                             cell.setCellStyle(Encabezado);
 
                             row = spreadsheet.getRow(2);
-                            cell = row.createCell(9);
+                            cell = row.createCell(11);
                             cell.setCellValue("# Lista");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(10);
+                            cell = row.createCell(12);
                             cell.setCellValue("Nombre(s)");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(11);
+                            cell = row.createCell(13);
                             cell.setCellValue("Apellido P");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(12);
+                            cell = row.createCell(14);
                             cell.setCellValue("Apellido M");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(13);
+                            cell = row.createCell(15);
                             cell.setCellValue("Banco");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(14);
+                            cell = row.createCell(16);
                             cell.setCellValue("Cuenta de banco");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(15);
+                            cell = row.createCell(17);
+                            cell.setCellValue("Fecha sabado");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(18);
+                            cell.setCellValue("Fecha viernes");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(20);
+                            cell.setCellValue("Fecha de pago");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(21);
                             cell.setCellValue("Sueldo");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(16);
+                            cell = row.createCell(22);
                             cell.setCellValue("Deposito");
                             cell.setCellStyle(Contenido);
 
                             row = spreadsheet.getRow(i);
-                            cell = row.createCell(9);
-                            cell.setCellValue(SIfdp.getString("#lista"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(10);
-                            cell.setCellValue(SIfdp.getString("Nombre(s)"));
-                            cell.setCellStyle(Contenido);
                             cell = row.createCell(11);
-                            cell.setCellValue(SIfdp.getString("Apellido P"));
+                            cell.setCellValue(SIfdp.getString(1));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(12);
-                            cell.setCellValue(SIfdp.getString("Apellido M"));
+                            cell.setCellValue(SIfdp.getString(2));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(13);
-                            cell.setCellValue(SIfdp.getString("Banco"));
+                            cell.setCellValue(SIfdp.getString(3));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(14);
-                            cell.setCellValue(SIfdp.getString("Cuenta de banco"));
+                            cell.setCellValue(SIfdp.getString(4));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(15);
-                            cell.setCellValue(SIfdp.getString("Sueldo"));
+                            cell.setCellValue(SIfdp.getString(5));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(16);
-                            cell.setCellValue(SIfdp.getString("Deposito"));
+                            cell.setCellValue(SIfdp.getString(6));
                             cell.setCellStyle(Contenido);
+                            cell = row.createCell(17);
+                            cell.setCellValue(SIfdp.getString(7));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(18);
+                            cell.setCellValue(SIfdp.getString(8));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(19);
+                            cell.setCellValue(SIfdp.getString(9));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(20);
+                            cell.setCellValue(SIfdp.getString(10));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(21);
+                            cell.setCellValue(SIfdp.getString(11));
+                            cell.setCellStyle(Contenido);
+
                             SIfdp.isClosed();
                             SI.isClosed();
                             i++;
@@ -5199,170 +5280,209 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                 }
                 if (IDeEfec.isSelected() == true) {
                     Statement CI = connect.createStatement();
-                    ResultSet CIEfec = CI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                            + " `Cuenta de banco`, `Sueldo`, `Deposito`"
-                            + " FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%EFECTIVO%'");
+                    ResultSet CIEfec = CI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                            + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                            + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                            + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%EFECTIVO%'");
 
                     int i = 3;
                     while (CIEfec.next()) {
 
                         row = spreadsheet.getRow(1);
-                        cell = row.createCell(19);
+                        cell = row.createCell(23);
                         cell.setCellValue("EFECTIVO");
                         cell.setCellStyle(Encabezado);
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
                                         1, //first row (0-based)
                                         1, //last row (0-based)
-                                        19, //first column (0-based)
-                                        24 //last column (0-based)
+                                        23, //first column (0-based)
+                                        28 //last column (0-based)
                                 )
                         );
-                        cell = row.createCell(20);
-                        cell.setCellStyle(Encabezado);
-                        cell = row.createCell(21);
-                        cell.setCellStyle(Encabezado);
-                        cell = row.createCell(22);
-                        cell.setCellStyle(Encabezado);
-                        cell = row.createCell(23);
-                        cell.setCellStyle(Encabezado);
                         cell = row.createCell(24);
+                        cell.setCellStyle(Encabezado);
+                        cell = row.createCell(25);
+                        cell.setCellStyle(Encabezado);
+                        cell = row.createCell(26);
+                        cell.setCellStyle(Encabezado);
+                        cell = row.createCell(27);
+                        cell.setCellStyle(Encabezado);
+                        cell = row.createCell(28);
                         cell.setCellStyle(Encabezado);
 
                         row = spreadsheet.getRow(2);
-                        cell = row.createCell(19);
+                        cell = row.createCell(23);
                         cell.setCellValue("# Lista");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(20);
+                        cell = row.createCell(24);
                         cell.setCellValue("Nombre(s)");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(21);
+                        cell = row.createCell(25);
                         cell.setCellValue("Apellido P");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(22);
+                        cell = row.createCell(26);
                         cell.setCellValue("Apellido M");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(23);
+                        cell = row.createCell(27);
                         cell.setCellValue("Banco");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(24);
+                        cell = row.createCell(28);
                         cell.setCellValue("Cuenta de banco");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(25);
+                        cell = row.createCell(29);
+                        cell.setCellValue("Fecha Sabado");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(30);
+                        cell.setCellValue("Fecha viernes");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(31);
+                        cell.setCellValue("Fecha de pago");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(32);
                         cell.setCellValue("Sueldo");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(26);
+                        cell = row.createCell(33);
                         cell.setCellValue("Deposito");
                         cell.setCellStyle(Contenido);
 
                         row = spreadsheet.getRow(i);
-                        cell = row.createCell(19);
-                        cell.setCellValue(CIEfec.getString("#lista"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(20);
-                        cell.setCellValue(CIEfec.getString("Nombre(s)"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(21);
-                        cell.setCellValue(CIEfec.getString("Apellido P"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(22);
-                        cell.setCellValue(CIEfec.getString("Apellido M"));
-                        cell.setCellStyle(Contenido);
                         cell = row.createCell(23);
-                        cell.setCellValue(CIEfec.getString("Banco"));
+                        cell.setCellValue(CIEfec.getString(1));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(24);
-                        cell.setCellValue(CIEfec.getString("Cuenta de banco"));
+                        cell.setCellValue(CIEfec.getString(2));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(25);
-                        cell.setCellValue(CIEfec.getString("Sueldo"));
+                        cell.setCellValue(CIEfec.getString(3));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(26);
-                        cell.setCellValue(CIEfec.getString("Deposito"));
+                        cell.setCellValue(CIEfec.getString(4));
                         cell.setCellStyle(Contenido);
+                        cell = row.createCell(27);
+                        cell.setCellValue(CIEfec.getString(5));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(28);
+                        cell.setCellValue(CIEfec.getString(6));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(29);
+                        cell.setCellValue(CIEfec.getString(7));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(30);
+                        cell.setCellValue(CIEfec.getString(8));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(31);
+                        cell.setCellValue(CIEfec.getString(9));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(32);
+                        cell.setCellValue(CIEfec.getString(10));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(33);
+                        cell.setCellValue(CIEfec.getString(11));
+                        cell.setCellStyle(Contenido);
+
                         i++;
                         CIEfec.isClosed();
                         CI.isClosed();
                     }
                     if (SantanderISI.isSelected() == true) {
                         Statement SI = connect.createStatement();
-                        ResultSet SIfdp = SI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
-                                + " `Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM "
-                                + "`nomina.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%EFECTIVO%'");
+                        ResultSet SIfdp = SI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                                + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                                + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                                + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%EFECTIVO%'");
                         while (SIfdp.next()) {
                             row = spreadsheet.getRow(1);
-                            cell = row.createCell(19);
+                            cell = row.createCell(23);
                             cell.setCellValue("EFECTIVO");
                             cell.setCellStyle(Encabezado);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             1, //first row (0-based)
                                             1, //last row (0-based)
-                                            19, //first column (0-based)
-                                            24 //last column (0-based)
+                                            23, //first column (0-based)
+                                            28 //last column (0-based)
                                     )
                             );
-                            cell = row.createCell(20);
-                            cell.setCellStyle(Encabezado);
-                            cell = row.createCell(21);
-                            cell.setCellStyle(Encabezado);
-                            cell = row.createCell(22);
-                            cell.setCellStyle(Encabezado);
-                            cell = row.createCell(23);
-                            cell.setCellStyle(Encabezado);
                             cell = row.createCell(24);
+                            cell.setCellStyle(Encabezado);
+                            cell = row.createCell(25);
+                            cell.setCellStyle(Encabezado);
+                            cell = row.createCell(26);
+                            cell.setCellStyle(Encabezado);
+                            cell = row.createCell(27);
+                            cell.setCellStyle(Encabezado);
+                            cell = row.createCell(28);
                             cell.setCellStyle(Encabezado);
 
                             row = spreadsheet.getRow(2);
-                            cell = row.createCell(19);
+                            cell = row.createCell(23);
                             cell.setCellValue("# Lista");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(20);
+                            cell = row.createCell(24);
                             cell.setCellValue("Nombre(s)");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(21);
+                            cell = row.createCell(25);
                             cell.setCellValue("Apellido P");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(22);
+                            cell = row.createCell(26);
                             cell.setCellValue("Apellido M");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(23);
+                            cell = row.createCell(27);
                             cell.setCellValue("Banco");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(24);
+                            cell = row.createCell(28);
                             cell.setCellValue("Cuenta de banco");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(25);
+                            cell = row.createCell(29);
+                            cell.setCellValue("Fecha Sabado");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(30);
+                            cell.setCellValue("Fecha viernes");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(31);
+                            cell.setCellValue("Fecha de pago");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(32);
                             cell.setCellValue("Sueldo");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(26);
+                            cell = row.createCell(33);
                             cell.setCellValue("Deposito");
                             cell.setCellStyle(Contenido);
 
                             row = spreadsheet.getRow(i);
-                            cell = row.createCell(19);
-                            cell.setCellValue(SIfdp.getString("#lista"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(20);
-                            cell.setCellValue(SIfdp.getString("Nombre(s)"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(21);
-                            cell.setCellValue(SIfdp.getString("Apellido P"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(22);
-                            cell.setCellValue(SIfdp.getString("Apellido M"));
-                            cell.setCellStyle(Contenido);
                             cell = row.createCell(23);
-                            cell.setCellValue(SIfdp.getString("Banco"));
+                            cell.setCellValue(SIfdp.getString(1));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(24);
-                            cell.setCellValue(SIfdp.getString("Cuenta de banco"));
+                            cell.setCellValue(SIfdp.getString(2));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(25);
-                            cell.setCellValue(SIfdp.getString("Sueldo"));
+                            cell.setCellValue(SIfdp.getString(3));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(26);
-                            cell.setCellValue(SIfdp.getString("Deposito"));
+                            cell.setCellValue(SIfdp.getString(4));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(27);
+                            cell.setCellValue(SIfdp.getString(5));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(28);
+                            cell.setCellValue(SIfdp.getString(6));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(29);
+                            cell.setCellValue(SIfdp.getString(7));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(30);
+                            cell.setCellValue(SIfdp.getString(8));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(31);
+                            cell.setCellValue(SIfdp.getString(9));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(32);
+                            cell.setCellValue(SIfdp.getString(10));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(33);
+                            cell.setCellValue(SIfdp.getString(11));
                             cell.setCellStyle(Contenido);
                             SIfdp.isClosed();
                             SI.isClosed();
@@ -5372,86 +5492,105 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                 }
                 if (IDbaj.isSelected() == true) {
                     Statement CI = connect.createStatement();
-                    ResultSet CIBajas = CI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                            + " `Cuenta de banco`, `Sueldo`, `Deposito`"
-                            + " FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%BAJA%'");
+                    ResultSet CIBajas = CI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                            + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                            + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                            + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%BAJA%'");
 
                     int i = 3;
                     while (CIBajas.next()) {
 
                         row = spreadsheet.getRow(1);
-                        cell = row.createCell(28);
+                        cell = row.createCell(35);
                         cell.setCellValue("BAJAS");
                         cell.setCellStyle(Encabezado);
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
                                         1, //first row (0-based)
                                         1, //last row (0-based)
-                                        28, //first column (0-based)
-                                        33 //last column (0-based)
+                                        35, //first column (0-based)
+                                        40 //last column (0-based)
                                 )
                         );
-                        cell = row.createCell(29);
+                        cell = row.createCell(36);
                         cell.setCellStyle(Encabezado);
-                        cell = row.createCell(30);
+                        cell = row.createCell(37);
                         cell.setCellStyle(Encabezado);
-                        cell = row.createCell(31);
+                        cell = row.createCell(38);
                         cell.setCellStyle(Encabezado);
-                        cell = row.createCell(32);
+                        cell = row.createCell(39);
                         cell.setCellStyle(Encabezado);
-                        cell = row.createCell(33);
+                        cell = row.createCell(40);
                         cell.setCellStyle(Encabezado);
 
                         row = spreadsheet.getRow(2);
-                        cell = row.createCell(28);
+                        cell = row.createCell(35);
                         cell.setCellValue("# Lista");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(29);
+                        cell = row.createCell(36);
                         cell.setCellValue("Nombre(s)");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(30);
+                        cell = row.createCell(37);
                         cell.setCellValue("Apellido P");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(31);
+                        cell = row.createCell(38);
                         cell.setCellValue("Apellido M");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(32);
+                        cell = row.createCell(39);
                         cell.setCellValue("Banco");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(33);
+                        cell = row.createCell(40);
                         cell.setCellValue("Cuenta de banco");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(34);
+                        cell = row.createCell(41);
+                        cell.setCellValue("Fecha sabado");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(42);
+                        cell.setCellValue("Fecha viernes");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(43);
+                        cell.setCellValue("Fecha de pago");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(44);
                         cell.setCellValue("Sueldo");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(35);
+                        cell = row.createCell(45);
                         cell.setCellValue("Deposito");
                         cell.setCellStyle(Contenido);
 
                         row = spreadsheet.getRow(i);
-                        cell = row.createCell(28);
-                        cell.setCellValue(CIBajas.getString("#lista"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(29);
-                        cell.setCellValue(CIBajas.getString("Nombre(s)"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(30);
-                        cell.setCellValue(CIBajas.getString("Apellido P"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(31);
-                        cell.setCellValue(CIBajas.getString("Apellido M"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(32);
-                        cell.setCellValue(CIBajas.getString("Banco"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(33);
-                        cell.setCellValue(CIBajas.getString("Cuenta de banco"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(34);
-                        cell.setCellValue(CIBajas.getString("Sueldo"));
-                        cell.setCellStyle(Contenido);
                         cell = row.createCell(35);
-                        cell.setCellValue(CIBajas.getString("Deposito"));
+                        cell.setCellValue(CIBajas.getString(1));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(36);
+                        cell.setCellValue(CIBajas.getString(2));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(37);
+                        cell.setCellValue(CIBajas.getString(3));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(38);
+                        cell.setCellValue(CIBajas.getString(4));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(39);
+                        cell.setCellValue(CIBajas.getString(5));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(40);
+                        cell.setCellValue(CIBajas.getString(6));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(41);
+                        cell.setCellValue(CIBajas.getString(7));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(42);
+                        cell.setCellValue(CIBajas.getString(8));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(43);
+                        cell.setCellValue(CIBajas.getString(9));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(44);
+                        cell.setCellValue(CIBajas.getString(10));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(45);
+                        cell.setCellValue(CIBajas.getString(11));
                         cell.setCellStyle(Contenido);
                         i++;
                         CIBajas.isClosed();
@@ -5459,83 +5598,102 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                     }
                     if (SantanderISI.isSelected() == true) {
                         Statement SI = connect.createStatement();
-                        ResultSet SIfdp = SI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
-                                + " `Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM "
-                                + "`nomina.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%BAJA%'");
+                        ResultSet SIfdp = SI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                            + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                            + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                                + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%BAJA%'");
                         while (SIfdp.next()) {
                             row = spreadsheet.getRow(1);
-                            cell = row.createCell(28);
+                            cell = row.createCell(35);
                             cell.setCellValue("BAJAS");
                             cell.setCellStyle(Encabezado);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             1, //first row (0-based)
                                             1, //last row (0-based)
-                                            28, //first column (0-based)
-                                            33 //last column (0-based)
+                                            35, //first column (0-based)
+                                            40 //last column (0-based)
                                     )
                             );
-                            cell = row.createCell(29);
+                            cell = row.createCell(36);
                             cell.setCellStyle(Encabezado);
-                            cell = row.createCell(30);
+                            cell = row.createCell(37);
                             cell.setCellStyle(Encabezado);
-                            cell = row.createCell(31);
+                            cell = row.createCell(38);
                             cell.setCellStyle(Encabezado);
-                            cell = row.createCell(32);
+                            cell = row.createCell(39);
                             cell.setCellStyle(Encabezado);
-                            cell = row.createCell(33);
+                            cell = row.createCell(40);
                             cell.setCellStyle(Encabezado);
 
                             row = spreadsheet.getRow(2);
-                            cell = row.createCell(28);
+                            cell = row.createCell(35);
                             cell.setCellValue("# Lista");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(29);
+                            cell = row.createCell(36);
                             cell.setCellValue("Nombre(s)");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(30);
+                            cell = row.createCell(37);
                             cell.setCellValue("Apellido P");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(31);
+                            cell = row.createCell(38);
                             cell.setCellValue("Apellido M");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(32);
+                            cell = row.createCell(39);
                             cell.setCellValue("Banco");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(33);
+                            cell = row.createCell(40);
                             cell.setCellValue("Cuenta de banco");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(34);
+                            cell = row.createCell(41);
+                            cell.setCellValue("Fecha sabado");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(42);
+                            cell.setCellValue("Fecha viernes");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(43);
+                            cell.setCellValue("Fecha de pago");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(44);
                             cell.setCellValue("Sueldo");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(35);
+                            cell = row.createCell(45);
                             cell.setCellValue("Deposito");
                             cell.setCellStyle(Contenido);
 
                             row = spreadsheet.getRow(i);
-                            cell = row.createCell(28);
-                            cell.setCellValue(SIfdp.getString("#lista"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(29);
-                            cell.setCellValue(SIfdp.getString("Nombre(s)"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(30);
-                            cell.setCellValue(SIfdp.getString("Apellido P"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(31);
-                            cell.setCellValue(SIfdp.getString("Apellido M"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(32);
-                            cell.setCellValue(SIfdp.getString("Banco"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(33);
-                            cell.setCellValue(SIfdp.getString("Cuenta de banco"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(34);
-                            cell.setCellValue(SIfdp.getString("Sueldo"));
-                            cell.setCellStyle(Contenido);
                             cell = row.createCell(35);
-                            cell.setCellValue(SIfdp.getString("Deposito"));
+                            cell.setCellValue(SIfdp.getString(1));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(36);
+                            cell.setCellValue(SIfdp.getString(2));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(37);
+                            cell.setCellValue(SIfdp.getString(3));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(38);
+                            cell.setCellValue(SIfdp.getString(4));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(39);
+                            cell.setCellValue(SIfdp.getString(5));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(40);
+                            cell.setCellValue(SIfdp.getString(6));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(41);
+                            cell.setCellValue(SIfdp.getString(7));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(42);
+                            cell.setCellValue(SIfdp.getString(8));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(43);
+                            cell.setCellValue(SIfdp.getString(9));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(44);
+                            cell.setCellValue(SIfdp.getString(10));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(45);
+                            cell.setCellValue(SIfdp.getString(11));
                             cell.setCellStyle(Contenido);
                             SIfdp.isClosed();
                             SI.isClosed();
@@ -5591,7 +5749,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
-                    "jdbc:mysql://192.168.1.170:3306/confort2022",
+                    "jdbc:mysql://192.168.1.170:3306/confort",
                     "Servidor",
                     "Confort1022"
             );
@@ -5720,10 +5878,11 @@ public class RepNomSem_7 extends javax.swing.JFrame {
 
                 if (IDBBVA.isSelected() == true) {
                     Statement CI = connect.createStatement();
-                    ResultSet CIBBVA = CI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                            + " `Cuenta de banco`, `Sueldo`, `Deposito`"
-                            + " FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%BANCOMER%'"
-                            + " AND `quincena del mes` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
+                    ResultSet CIBBVA = CI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                            + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                            + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                            + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%BANCOMER%' "
+                                    + "AND `Semana` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
                     int i = 3;
                     while (CIBBVA.next()) {
 
@@ -5770,37 +5929,56 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                         cell.setCellValue("Cuenta de banco");
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(6);
-                        cell.setCellValue("Sueldo");
+                        cell.setCellValue("Fecha sabado");
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(7);
+                        cell.setCellValue("Fecha Viernes");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(8);
+                        cell.setCellValue("Fecha de pago");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellValue("Sueldo");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(10);
                         cell.setCellValue("Deposito");
                         cell.setCellStyle(Contenido);
 
                         row = spreadsheet.getRow(i);
                         cell = row.createCell(0);
-                        cell.setCellValue(CIBBVA.getString("#lista"));
+                        cell.setCellValue(CIBBVA.getString(1));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(1);
-                        cell.setCellValue(CIBBVA.getString("Nombre(s)"));
+                        cell.setCellValue(CIBBVA.getString(2));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(2);
-                        cell.setCellValue(CIBBVA.getString("Apellido P"));
+                        cell.setCellValue(CIBBVA.getString(3));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(3);
-                        cell.setCellValue(CIBBVA.getString("Apellido M"));
+                        cell.setCellValue(CIBBVA.getString(4));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(4);
-                        cell.setCellValue(CIBBVA.getString("Banco"));
+                        cell.setCellValue(CIBBVA.getString(5));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(5);
-                        cell.setCellValue(CIBBVA.getString("Cuenta de banco"));
+                        cell.setCellValue(CIBBVA.getString(6));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(6);
-                        cell.setCellValue(CIBBVA.getString("Sueldo"));
+                        cell.setCellValue(CIBBVA.getString(7));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(7);
-                        cell.setCellValue(CIBBVA.getString("Deposito"));
+                        cell.setCellValue(CIBBVA.getString(8));
                         cell.setCellStyle(Contenido);
+                        cell = row.createCell(8);
+                        cell.setCellValue(CIBBVA.getString(9));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(9);
+                        cell.setCellValue(CIBBVA.getString(10));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(10);
+                        cell.setCellValue(CIBBVA.getString(11));
+                        cell.setCellStyle(Contenido);
+
                         CIBBVA.isClosed();
                         CI.isClosed();
                         i++;
@@ -5808,10 +5986,11 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                     }
                     if (BBVAISI.isSelected() == true) {
                         Statement SI = connect.createStatement();
-                        ResultSet SIfdp = SI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
-                                + " `Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM "
-                                + "`nomina.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%BANCOMER%' AND "
-                                + "`quincena del mes` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
+                        ResultSet SIfdp = SI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                                + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                                + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                                + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%BANCOMER%' "
+                                        + "AND `Semana` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
                         while (SIfdp.next()) {
                             row = spreadsheet.getRow(1);
                             cell = row.createCell(0);
@@ -5856,37 +6035,56 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                             cell.setCellValue("Cuenta de banco");
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(6);
-                            cell.setCellValue("Sueldo");
+                            cell.setCellValue("Fecha sabado");
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(7);
+                            cell.setCellValue("Fecha Viernes");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellValue("Fecha de pago");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellValue("Sueldo");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(10);
                             cell.setCellValue("Deposito");
                             cell.setCellStyle(Contenido);
 
                             row = spreadsheet.getRow(i);
                             cell = row.createCell(0);
-                            cell.setCellValue(SIfdp.getString("#lista"));
+                            cell.setCellValue(SIfdp.getString(1));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(1);
-                            cell.setCellValue(SIfdp.getString("Nombre(s)"));
+                            cell.setCellValue(SIfdp.getString(2));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(2);
-                            cell.setCellValue(SIfdp.getString("Apellido P"));
+                            cell.setCellValue(SIfdp.getString(3));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(3);
-                            cell.setCellValue(SIfdp.getString("Apellido M"));
+                            cell.setCellValue(SIfdp.getString(4));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(4);
-                            cell.setCellValue(SIfdp.getString("Banco"));
+                            cell.setCellValue(SIfdp.getString(5));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(5);
-                            cell.setCellValue(SIfdp.getString("Cuenta de banco"));
+                            cell.setCellValue(SIfdp.getString(6));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(6);
-                            cell.setCellValue(SIfdp.getString("Sueldo"));
+                            cell.setCellValue(SIfdp.getString(7));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(7);
-                            cell.setCellValue(SIfdp.getString("Deposito"));
+                            cell.setCellValue(SIfdp.getString(8));
                             cell.setCellStyle(Contenido);
+                            cell = row.createCell(8);
+                            cell.setCellValue(SIfdp.getString(9));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(9);
+                            cell.setCellValue(SIfdp.getString(10));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(10);
+                            cell.setCellValue(SIfdp.getString(11));
+                            cell.setCellStyle(Contenido);
+
                             SIfdp.isClosed();
                             SI.isClosed();
                             i++;
@@ -5896,173 +6094,214 @@ public class RepNomSem_7 extends javax.swing.JFrame {
 
                 if (IDSant.isSelected() == true) {
                     Statement CI = connect.createStatement();
-                    ResultSet CISant = CI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                            + " `Cuenta de banco`, `Sueldo`, `Deposito`"
-                            + " FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%SANTANDER%'"
-                            + " AND `quincena del mes` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
+                    ResultSet CISant = CI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                            + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                            + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                            + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%SANTANDER%' "
+                                    + "AND `Semana` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
 
                     int i = 3;
                     while (CISant.next()) {
 
                         row = spreadsheet.getRow(1);
-                        cell = row.createCell(9);
+                        cell = row.createCell(11);
                         cell.setCellValue("SANTANDER");
                         cell.setCellStyle(Encabezado);
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
                                         1, //first row (0-based)
                                         1, //last row (0-based)
-                                        9, //first column (0-based)
-                                        14 //last column (0-based)
+                                        11, //first column (0-based)
+                                        16 //last column (0-based)
                                 )
                         );
-                        cell = row.createCell(10);
-                        cell.setCellStyle(Encabezado);
-                        cell = row.createCell(11);
-                        cell.setCellStyle(Encabezado);
                         cell = row.createCell(12);
                         cell.setCellStyle(Encabezado);
                         cell = row.createCell(13);
                         cell.setCellStyle(Encabezado);
                         cell = row.createCell(14);
+                        cell.setCellStyle(Encabezado);
+                        cell = row.createCell(15);
+                        cell.setCellStyle(Encabezado);
+                        cell = row.createCell(16);
                         cell.setCellStyle(Encabezado);
 
                         row = spreadsheet.getRow(2);
-                        cell = row.createCell(9);
+                        cell = row.createCell(11);
                         cell.setCellValue("# Lista");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(10);
+                        cell = row.createCell(12);
                         cell.setCellValue("Nombre(s)");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(11);
+                        cell = row.createCell(13);
                         cell.setCellValue("Apellido P");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(12);
+                        cell = row.createCell(14);
                         cell.setCellValue("Apellido M");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(13);
+                        cell = row.createCell(15);
                         cell.setCellValue("Banco");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(14);
+                        cell = row.createCell(16);
                         cell.setCellValue("Cuenta de banco");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(15);
+                        cell = row.createCell(17);
+                        cell.setCellValue("Fecha sabado");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(18);
+                        cell.setCellValue("Fecha viernes");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(20);
+                        cell.setCellValue("Fecha de pago");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(21);
                         cell.setCellValue("Sueldo");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(16);
+                        cell = row.createCell(22);
                         cell.setCellValue("Deposito");
                         cell.setCellStyle(Contenido);
 
                         row = spreadsheet.getRow(i);
-                        cell = row.createCell(9);
-                        cell.setCellValue(CISant.getString("#lista"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(10);
-                        cell.setCellValue(CISant.getString("Nombre(s)"));
-                        cell.setCellStyle(Contenido);
                         cell = row.createCell(11);
-                        cell.setCellValue(CISant.getString("Apellido P"));
+                        cell.setCellValue(CISant.getString(1));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(12);
-                        cell.setCellValue(CISant.getString("Apellido M"));
+                        cell.setCellValue(CISant.getString(2));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(13);
-                        cell.setCellValue(CISant.getString("Banco"));
+                        cell.setCellValue(CISant.getString(3));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(14);
-                        cell.setCellValue(CISant.getString("Cuenta de banco"));
+                        cell.setCellValue(CISant.getString(4));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(15);
-                        cell.setCellValue(CISant.getString("Sueldo"));
+                        cell.setCellValue(CISant.getString(5));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(16);
-                        cell.setCellValue(CISant.getString("Deposito"));
+                        cell.setCellValue(CISant.getString(6));
                         cell.setCellStyle(Contenido);
+                        cell = row.createCell(17);
+                        cell.setCellValue(CISant.getString(7));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(18);
+                        cell.setCellValue(CISant.getString(8));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(19);
+                        cell.setCellValue(CISant.getString(9));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(20);
+                        cell.setCellValue(CISant.getString(10));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(21);
+                        cell.setCellValue(CISant.getString(11));
+                        cell.setCellStyle(Contenido);
+
                         i++;
                         CISant.isClosed();
                         CI.isClosed();
                     }
                     if (SantanderISI.isSelected() == true) {
                         Statement SI = connect.createStatement();
-                        ResultSet SIfdp = SI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
-                                + " `Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM "
-                                + "`nomina.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%SANTANDER%' AND "
-                                + "`quincena del mes` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
+                        ResultSet SIfdp = SI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                                + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                                + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                                + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%SANTANDER%'"
+                                        + " AND `Semana` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
                         while (SIfdp.next()) {
+
                             row = spreadsheet.getRow(1);
-                            cell = row.createCell(9);
+                            cell = row.createCell(11);
                             cell.setCellValue("SANTANDER");
                             cell.setCellStyle(Encabezado);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             1, //first row (0-based)
                                             1, //last row (0-based)
-                                            9, //first column (0-based)
-                                            14 //last column (0-based)
+                                            11, //first column (0-based)
+                                            16 //last column (0-based)
                                     )
                             );
-                            cell = row.createCell(10);
-                            cell.setCellStyle(Encabezado);
-                            cell = row.createCell(11);
-                            cell.setCellStyle(Encabezado);
                             cell = row.createCell(12);
                             cell.setCellStyle(Encabezado);
                             cell = row.createCell(13);
                             cell.setCellStyle(Encabezado);
                             cell = row.createCell(14);
+                            cell.setCellStyle(Encabezado);
+                            cell = row.createCell(15);
+                            cell.setCellStyle(Encabezado);
+                            cell = row.createCell(16);
                             cell.setCellStyle(Encabezado);
 
                             row = spreadsheet.getRow(2);
-                            cell = row.createCell(9);
+                            cell = row.createCell(11);
                             cell.setCellValue("# Lista");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(10);
+                            cell = row.createCell(12);
                             cell.setCellValue("Nombre(s)");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(11);
+                            cell = row.createCell(13);
                             cell.setCellValue("Apellido P");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(12);
+                            cell = row.createCell(14);
                             cell.setCellValue("Apellido M");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(13);
+                            cell = row.createCell(15);
                             cell.setCellValue("Banco");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(14);
+                            cell = row.createCell(16);
                             cell.setCellValue("Cuenta de banco");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(15);
+                            cell = row.createCell(17);
+                            cell.setCellValue("Fecha sabado");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(18);
+                            cell.setCellValue("Fecha viernes");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(20);
+                            cell.setCellValue("Fecha de pago");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(21);
                             cell.setCellValue("Sueldo");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(16);
+                            cell = row.createCell(22);
                             cell.setCellValue("Deposito");
                             cell.setCellStyle(Contenido);
 
                             row = spreadsheet.getRow(i);
-                            cell = row.createCell(9);
-                            cell.setCellValue(SIfdp.getString("#lista"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(10);
-                            cell.setCellValue(SIfdp.getString("Nombre(s)"));
-                            cell.setCellStyle(Contenido);
                             cell = row.createCell(11);
-                            cell.setCellValue(SIfdp.getString("Apellido P"));
+                            cell.setCellValue(SIfdp.getString(1));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(12);
-                            cell.setCellValue(SIfdp.getString("Apellido M"));
+                            cell.setCellValue(SIfdp.getString(2));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(13);
-                            cell.setCellValue(SIfdp.getString("Banco"));
+                            cell.setCellValue(SIfdp.getString(3));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(14);
-                            cell.setCellValue(SIfdp.getString("Cuenta de banco"));
+                            cell.setCellValue(SIfdp.getString(4));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(15);
-                            cell.setCellValue(SIfdp.getString("Sueldo"));
+                            cell.setCellValue(SIfdp.getString(5));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(16);
-                            cell.setCellValue(SIfdp.getString("Deposito"));
+                            cell.setCellValue(SIfdp.getString(6));
                             cell.setCellStyle(Contenido);
+                            cell = row.createCell(17);
+                            cell.setCellValue(SIfdp.getString(7));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(18);
+                            cell.setCellValue(SIfdp.getString(8));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(19);
+                            cell.setCellValue(SIfdp.getString(9));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(20);
+                            cell.setCellValue(SIfdp.getString(10));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(21);
+                            cell.setCellValue(SIfdp.getString(11));
+                            cell.setCellStyle(Contenido);
+
                             SIfdp.isClosed();
                             SI.isClosed();
                             i++;
@@ -6071,172 +6310,211 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                 }
                 if (IDeEfec.isSelected() == true) {
                     Statement CI = connect.createStatement();
-                    ResultSet CIEfec = CI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                            + " `Cuenta de banco`, `Sueldo`, `Deposito`"
-                            + " FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%EFECTIVO%'"
-                            + " AND `quincena del mes` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
+                    ResultSet CIEfec = CI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                            + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                            + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                            + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%EFECTIVO%'"
+                                    + " AND `Semana` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
 
                     int i = 3;
                     while (CIEfec.next()) {
 
                         row = spreadsheet.getRow(1);
-                        cell = row.createCell(19);
+                        cell = row.createCell(23);
                         cell.setCellValue("EFECTIVO");
                         cell.setCellStyle(Encabezado);
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
                                         1, //first row (0-based)
                                         1, //last row (0-based)
-                                        19, //first column (0-based)
-                                        24 //last column (0-based)
+                                        23, //first column (0-based)
+                                        28 //last column (0-based)
                                 )
                         );
-                        cell = row.createCell(20);
-                        cell.setCellStyle(Encabezado);
-                        cell = row.createCell(21);
-                        cell.setCellStyle(Encabezado);
-                        cell = row.createCell(22);
-                        cell.setCellStyle(Encabezado);
-                        cell = row.createCell(23);
-                        cell.setCellStyle(Encabezado);
                         cell = row.createCell(24);
+                        cell.setCellStyle(Encabezado);
+                        cell = row.createCell(25);
+                        cell.setCellStyle(Encabezado);
+                        cell = row.createCell(26);
+                        cell.setCellStyle(Encabezado);
+                        cell = row.createCell(27);
+                        cell.setCellStyle(Encabezado);
+                        cell = row.createCell(28);
                         cell.setCellStyle(Encabezado);
 
                         row = spreadsheet.getRow(2);
-                        cell = row.createCell(19);
+                        cell = row.createCell(23);
                         cell.setCellValue("# Lista");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(20);
+                        cell = row.createCell(24);
                         cell.setCellValue("Nombre(s)");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(21);
+                        cell = row.createCell(25);
                         cell.setCellValue("Apellido P");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(22);
+                        cell = row.createCell(26);
                         cell.setCellValue("Apellido M");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(23);
+                        cell = row.createCell(27);
                         cell.setCellValue("Banco");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(24);
+                        cell = row.createCell(28);
                         cell.setCellValue("Cuenta de banco");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(25);
+                        cell = row.createCell(29);
+                        cell.setCellValue("Fecha Sabado");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(30);
+                        cell.setCellValue("Fecha viernes");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(31);
+                        cell.setCellValue("Fecha de pago");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(32);
                         cell.setCellValue("Sueldo");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(26);
+                        cell = row.createCell(33);
                         cell.setCellValue("Deposito");
                         cell.setCellStyle(Contenido);
 
                         row = spreadsheet.getRow(i);
-                        cell = row.createCell(19);
-                        cell.setCellValue(CIEfec.getString("#lista"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(20);
-                        cell.setCellValue(CIEfec.getString("Nombre(s)"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(21);
-                        cell.setCellValue(CIEfec.getString("Apellido P"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(22);
-                        cell.setCellValue(CIEfec.getString("Apellido M"));
-                        cell.setCellStyle(Contenido);
                         cell = row.createCell(23);
-                        cell.setCellValue(CIEfec.getString("Banco"));
+                        cell.setCellValue(CIEfec.getString(1));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(24);
-                        cell.setCellValue(CIEfec.getString("Cuenta de banco"));
+                        cell.setCellValue(CIEfec.getString(2));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(25);
-                        cell.setCellValue(CIEfec.getString("Sueldo"));
+                        cell.setCellValue(CIEfec.getString(3));
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(26);
-                        cell.setCellValue(CIEfec.getString("Deposito"));
+                        cell.setCellValue(CIEfec.getString(4));
                         cell.setCellStyle(Contenido);
+                        cell = row.createCell(27);
+                        cell.setCellValue(CIEfec.getString(5));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(28);
+                        cell.setCellValue(CIEfec.getString(6));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(29);
+                        cell.setCellValue(CIEfec.getString(7));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(30);
+                        cell.setCellValue(CIEfec.getString(8));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(31);
+                        cell.setCellValue(CIEfec.getString(9));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(32);
+                        cell.setCellValue(CIEfec.getString(10));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(33);
+                        cell.setCellValue(CIEfec.getString(11));
+                        cell.setCellStyle(Contenido);
+
                         i++;
                         CIEfec.isClosed();
                         CI.isClosed();
                     }
                     if (SantanderISI.isSelected() == true) {
                         Statement SI = connect.createStatement();
-                        ResultSet SIfdp = SI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
-                                + " `Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM "
-                                + "`nomina.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%EFECTIVO%' AND "
-                                + "`quincena del mes` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
+                        ResultSet SIfdp = SI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                                + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                                + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                                + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%EFECTIVO%'"
+                                + " AND `Semana` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
                         while (SIfdp.next()) {
                             row = spreadsheet.getRow(1);
-                            cell = row.createCell(19);
+                            cell = row.createCell(23);
                             cell.setCellValue("EFECTIVO");
                             cell.setCellStyle(Encabezado);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             1, //first row (0-based)
                                             1, //last row (0-based)
-                                            19, //first column (0-based)
-                                            24 //last column (0-based)
+                                            23, //first column (0-based)
+                                            28 //last column (0-based)
                                     )
                             );
-                            cell = row.createCell(20);
-                            cell.setCellStyle(Encabezado);
-                            cell = row.createCell(21);
-                            cell.setCellStyle(Encabezado);
-                            cell = row.createCell(22);
-                            cell.setCellStyle(Encabezado);
-                            cell = row.createCell(23);
-                            cell.setCellStyle(Encabezado);
                             cell = row.createCell(24);
+                            cell.setCellStyle(Encabezado);
+                            cell = row.createCell(25);
+                            cell.setCellStyle(Encabezado);
+                            cell = row.createCell(26);
+                            cell.setCellStyle(Encabezado);
+                            cell = row.createCell(27);
+                            cell.setCellStyle(Encabezado);
+                            cell = row.createCell(28);
                             cell.setCellStyle(Encabezado);
 
                             row = spreadsheet.getRow(2);
-                            cell = row.createCell(19);
+                            cell = row.createCell(23);
                             cell.setCellValue("# Lista");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(20);
+                            cell = row.createCell(24);
                             cell.setCellValue("Nombre(s)");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(21);
+                            cell = row.createCell(25);
                             cell.setCellValue("Apellido P");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(22);
+                            cell = row.createCell(26);
                             cell.setCellValue("Apellido M");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(23);
+                            cell = row.createCell(27);
                             cell.setCellValue("Banco");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(24);
+                            cell = row.createCell(28);
                             cell.setCellValue("Cuenta de banco");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(25);
+                            cell = row.createCell(29);
+                            cell.setCellValue("Fecha Sabado");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(30);
+                            cell.setCellValue("Fecha viernes");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(31);
+                            cell.setCellValue("Fecha de pago");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(32);
                             cell.setCellValue("Sueldo");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(26);
+                            cell = row.createCell(33);
                             cell.setCellValue("Deposito");
                             cell.setCellStyle(Contenido);
 
                             row = spreadsheet.getRow(i);
-                            cell = row.createCell(19);
-                            cell.setCellValue(SIfdp.getString("#lista"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(20);
-                            cell.setCellValue(SIfdp.getString("Nombre(s)"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(21);
-                            cell.setCellValue(SIfdp.getString("Apellido P"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(22);
-                            cell.setCellValue(SIfdp.getString("Apellido M"));
-                            cell.setCellStyle(Contenido);
                             cell = row.createCell(23);
-                            cell.setCellValue(SIfdp.getString("Banco"));
+                            cell.setCellValue(SIfdp.getString(1));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(24);
-                            cell.setCellValue(SIfdp.getString("Cuenta de banco"));
+                            cell.setCellValue(SIfdp.getString(2));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(25);
-                            cell.setCellValue(SIfdp.getString("Sueldo"));
+                            cell.setCellValue(SIfdp.getString(3));
                             cell.setCellStyle(Contenido);
                             cell = row.createCell(26);
-                            cell.setCellValue(SIfdp.getString("Deposito"));
+                            cell.setCellValue(SIfdp.getString(4));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(27);
+                            cell.setCellValue(SIfdp.getString(5));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(28);
+                            cell.setCellValue(SIfdp.getString(6));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(29);
+                            cell.setCellValue(SIfdp.getString(7));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(30);
+                            cell.setCellValue(SIfdp.getString(8));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(31);
+                            cell.setCellValue(SIfdp.getString(9));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(32);
+                            cell.setCellValue(SIfdp.getString(10));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(33);
+                            cell.setCellValue(SIfdp.getString(11));
                             cell.setCellStyle(Contenido);
                             SIfdp.isClosed();
                             SI.isClosed();
@@ -6246,87 +6524,106 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                 }
                 if (IDbaj.isSelected() == true) {
                     Statement CI = connect.createStatement();
-                    ResultSet CIBajas = CI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Banco`,"
-                            + " `Cuenta de banco`, `Sueldo`, `Deposito`"
-                            + " FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%BAJA%'"
-                            + " AND `quincena del mes` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
+                    ResultSet CIBajas = CI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                            + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                            + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                            + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + "` WHERE `Banco` LIKE '%BAJA%'"
+                            + " AND `Semana` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
 
                     int i = 3;
                     while (CIBajas.next()) {
 
                         row = spreadsheet.getRow(1);
-                        cell = row.createCell(28);
+                        cell = row.createCell(35);
                         cell.setCellValue("BAJAS");
                         cell.setCellStyle(Encabezado);
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
                                         1, //first row (0-based)
                                         1, //last row (0-based)
-                                        28, //first column (0-based)
-                                        33 //last column (0-based)
+                                        35, //first column (0-based)
+                                        40 //last column (0-based)
                                 )
                         );
-                        cell = row.createCell(29);
+                        cell = row.createCell(36);
                         cell.setCellStyle(Encabezado);
-                        cell = row.createCell(30);
+                        cell = row.createCell(37);
                         cell.setCellStyle(Encabezado);
-                        cell = row.createCell(31);
+                        cell = row.createCell(38);
                         cell.setCellStyle(Encabezado);
-                        cell = row.createCell(32);
+                        cell = row.createCell(39);
                         cell.setCellStyle(Encabezado);
-                        cell = row.createCell(33);
+                        cell = row.createCell(40);
                         cell.setCellStyle(Encabezado);
 
                         row = spreadsheet.getRow(2);
-                        cell = row.createCell(28);
+                        cell = row.createCell(35);
                         cell.setCellValue("# Lista");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(29);
+                        cell = row.createCell(36);
                         cell.setCellValue("Nombre(s)");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(30);
+                        cell = row.createCell(37);
                         cell.setCellValue("Apellido P");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(31);
+                        cell = row.createCell(38);
                         cell.setCellValue("Apellido M");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(32);
+                        cell = row.createCell(39);
                         cell.setCellValue("Banco");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(33);
+                        cell = row.createCell(40);
                         cell.setCellValue("Cuenta de banco");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(34);
+                        cell = row.createCell(41);
+                        cell.setCellValue("Fecha sabado");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(42);
+                        cell.setCellValue("Fecha viernes");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(43);
+                        cell.setCellValue("Fecha de pago");
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(44);
                         cell.setCellValue("Sueldo");
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(35);
+                        cell = row.createCell(45);
                         cell.setCellValue("Deposito");
                         cell.setCellStyle(Contenido);
 
                         row = spreadsheet.getRow(i);
-                        cell = row.createCell(28);
-                        cell.setCellValue(CIBajas.getString("#lista"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(29);
-                        cell.setCellValue(CIBajas.getString("Nombre(s)"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(30);
-                        cell.setCellValue(CIBajas.getString("Apellido P"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(31);
-                        cell.setCellValue(CIBajas.getString("Apellido M"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(32);
-                        cell.setCellValue(CIBajas.getString("Banco"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(33);
-                        cell.setCellValue(CIBajas.getString("Cuenta de banco"));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(34);
-                        cell.setCellValue(CIBajas.getString("Sueldo"));
-                        cell.setCellStyle(Contenido);
                         cell = row.createCell(35);
-                        cell.setCellValue(CIBajas.getString("Deposito"));
+                        cell.setCellValue(CIBajas.getString(1));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(36);
+                        cell.setCellValue(CIBajas.getString(2));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(37);
+                        cell.setCellValue(CIBajas.getString(3));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(38);
+                        cell.setCellValue(CIBajas.getString(4));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(39);
+                        cell.setCellValue(CIBajas.getString(5));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(40);
+                        cell.setCellValue(CIBajas.getString(6));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(41);
+                        cell.setCellValue(CIBajas.getString(7));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(42);
+                        cell.setCellValue(CIBajas.getString(8));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(43);
+                        cell.setCellValue(CIBajas.getString(9));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(44);
+                        cell.setCellValue(CIBajas.getString(10));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(45);
+                        cell.setCellValue(CIBajas.getString(11));
                         cell.setCellStyle(Contenido);
                         i++;
                         CIBajas.isClosed();
@@ -6334,84 +6631,103 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                     }
                     if (SantanderISI.isSelected() == true) {
                         Statement SI = connect.createStatement();
-                        ResultSet SIfdp = SI.executeQuery("SELECT `#lista`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
-                                + " `Banco`, `Cuenta de banco`, `Sueldo`, `Deposito` FROM "
-                                + "`nomina.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%BAJA%' AND "
-                                + "`quincena del mes` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
+                        ResultSet SIfdp = SI.executeQuery("SELECT `#Lista`, `Nombre(s)`, "
+                            + "`Apellido P`, `Apellido M`, `Banco`, `Cuenta de banco`,"
+                            + " `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`"
+                                + " FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + ".simss` WHERE `Banco` LIKE '%BAJA%'"
+                                + " AND `Semana` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
                         while (SIfdp.next()) {
                             row = spreadsheet.getRow(1);
-                            cell = row.createCell(28);
+                            cell = row.createCell(35);
                             cell.setCellValue("BAJAS");
                             cell.setCellStyle(Encabezado);
                             spreadsheet.addMergedRegion(
                                     new CellRangeAddress(
                                             1, //first row (0-based)
                                             1, //last row (0-based)
-                                            28, //first column (0-based)
-                                            33 //last column (0-based)
+                                            35, //first column (0-based)
+                                            40 //last column (0-based)
                                     )
                             );
-                            cell = row.createCell(29);
+                            cell = row.createCell(36);
                             cell.setCellStyle(Encabezado);
-                            cell = row.createCell(30);
+                            cell = row.createCell(37);
                             cell.setCellStyle(Encabezado);
-                            cell = row.createCell(31);
+                            cell = row.createCell(38);
                             cell.setCellStyle(Encabezado);
-                            cell = row.createCell(32);
+                            cell = row.createCell(39);
                             cell.setCellStyle(Encabezado);
-                            cell = row.createCell(33);
+                            cell = row.createCell(40);
                             cell.setCellStyle(Encabezado);
 
                             row = spreadsheet.getRow(2);
-                            cell = row.createCell(28);
+                            cell = row.createCell(35);
                             cell.setCellValue("# Lista");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(29);
+                            cell = row.createCell(36);
                             cell.setCellValue("Nombre(s)");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(30);
+                            cell = row.createCell(37);
                             cell.setCellValue("Apellido P");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(31);
+                            cell = row.createCell(38);
                             cell.setCellValue("Apellido M");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(32);
+                            cell = row.createCell(39);
                             cell.setCellValue("Banco");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(33);
+                            cell = row.createCell(40);
                             cell.setCellValue("Cuenta de banco");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(34);
+                            cell = row.createCell(41);
+                            cell.setCellValue("Fecha sabado");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(42);
+                            cell.setCellValue("Fecha viernes");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(43);
+                            cell.setCellValue("Fecha de pago");
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(44);
                             cell.setCellValue("Sueldo");
                             cell.setCellStyle(Contenido);
-                            cell = row.createCell(35);
+                            cell = row.createCell(45);
                             cell.setCellValue("Deposito");
                             cell.setCellStyle(Contenido);
 
                             row = spreadsheet.getRow(i);
-                            cell = row.createCell(28);
-                            cell.setCellValue(SIfdp.getString("#lista"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(29);
-                            cell.setCellValue(SIfdp.getString("Nombre(s)"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(30);
-                            cell.setCellValue(SIfdp.getString("Apellido P"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(31);
-                            cell.setCellValue(SIfdp.getString("Apellido M"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(32);
-                            cell.setCellValue(SIfdp.getString("Banco"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(33);
-                            cell.setCellValue(SIfdp.getString("Cuenta de banco"));
-                            cell.setCellStyle(Contenido);
-                            cell = row.createCell(34);
-                            cell.setCellValue(SIfdp.getString("Sueldo"));
-                            cell.setCellStyle(Contenido);
                             cell = row.createCell(35);
-                            cell.setCellValue(SIfdp.getString("Deposito"));
+                            cell.setCellValue(SIfdp.getString(1));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(36);
+                            cell.setCellValue(SIfdp.getString(2));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(37);
+                            cell.setCellValue(SIfdp.getString(3));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(38);
+                            cell.setCellValue(SIfdp.getString(4));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(39);
+                            cell.setCellValue(SIfdp.getString(5));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(40);
+                            cell.setCellValue(SIfdp.getString(6));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(41);
+                            cell.setCellValue(SIfdp.getString(7));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(42);
+                            cell.setCellValue(SIfdp.getString(8));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(43);
+                            cell.setCellValue(SIfdp.getString(9));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(44);
+                            cell.setCellValue(SIfdp.getString(10));
+                            cell.setCellStyle(Contenido);
+                            cell = row.createCell(45);
+                            cell.setCellValue(SIfdp.getString(11));
                             cell.setCellStyle(Contenido);
                             SIfdp.isClosed();
                             SI.isClosed();
@@ -6455,7 +6771,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        LabelQuin = new javax.swing.JLabel();
+        LabelSem = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         CbxTDR = new javax.swing.JComboBox<>();
@@ -6490,7 +6806,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
 
         jLabel1.setText("Tipo de reporte:");
 
-        LabelQuin.setText("Quincena:");
+        LabelSem.setText("Semana:");
 
         jLabel4.setText("Zona:");
 
@@ -6502,14 +6818,14 @@ public class RepNomSem_7 extends javax.swing.JFrame {
             }
         });
 
-        CbxTDR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Todas las quincenas", "Quincenal", "Todas las Nominas detalladas", "Todas las Nominas detalladas S/IMSS", "Nominas Detalladas por quincena", "Nominas Detalladas por quincena S/IMSS" }));
+        CbxTDR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Todas las Semanas", "Semanales", "Todas las Nominas detalladas", "Todas las Nominas detalladas S/IMSS", "Nominas Detalladas por Semanas", "Nominas Detalladas por Semanas S/IMSS" }));
         CbxTDR.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CbxTDRItemStateChanged(evt);
             }
         });
 
-        cbxQuincena.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        cbxQuincena.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
 
         cbxZona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
 
@@ -6548,7 +6864,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(CbxTDR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(LabelQuin)
+                                        .addComponent(LabelSem)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(cbxQuincena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(cbxZona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -6575,7 +6891,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(CbxTDR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelQuin)
+                    .addComponent(LabelSem)
                     .addComponent(cbxQuincena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -6604,7 +6920,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jPanel3);
 
-        jTabbedPane1.addTab("Nom. Quincenal", jScrollPane2);
+        jTabbedPane1.addTab("Nom. Semanal", jScrollPane2);
 
         jScrollPane1.setViewportView(jTabbedPane1);
 
@@ -6753,7 +7069,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                         "Confort1022"
                 );
                 Statement RHstatement = connect.createStatement();
-                ResultSet resultSetNom = RHstatement.executeQuery("SELECT * FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + "`");
+                ResultSet resultSetNom = RHstatement.executeQuery("SELECT * FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + "`");
                 try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                     XSSFWorkbook libro = new XSSFWorkbook();
                     XSSFSheet spreadsheet = libro.createSheet("Nominas de Zona " + cbxZona.getSelectedItem().toString());
@@ -7283,7 +7599,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                         "Confort1022"
                 );
                 Statement RHstatement = connect.createStatement();
-                ResultSet resultSetNom = RHstatement.executeQuery("SELECT * FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + ".simss`");
+                ResultSet resultSetNom = RHstatement.executeQuery("SELECT * FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + ".simss`");
                 try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                     XSSFWorkbook libro = new XSSFWorkbook();
                     XSSFSheet spreadsheet = libro.createSheet("Nominas de Zona " + cbxZona.getSelectedItem().toString());
@@ -7814,7 +8130,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                         "Confort1022"
                 );
                 Statement RHstatement = connect.createStatement();
-                ResultSet resultSetNom = RHstatement.executeQuery("SELECT * FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + "`"
+                ResultSet resultSetNom = RHstatement.executeQuery("SELECT * FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + "`"
                         + " WHERE `quincena del mes` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
                 try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                     XSSFWorkbook libro = new XSSFWorkbook();
@@ -8345,7 +8661,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                         "Confort1022"
                 );
                 Statement RHstatement = connect.createStatement();
-                ResultSet resultSetNom = RHstatement.executeQuery("SELECT * FROM `nomina.detallada." + cbxZona.getSelectedItem().toString() + ".simss`"
+                ResultSet resultSetNom = RHstatement.executeQuery("SELECT * FROM `nominasem.detallada." + cbxZona.getSelectedItem().toString() + ".simss`"
                         + " WHERE `quincena del mes` LIKE '%" + cbxQuincena.getSelectedItem().toString() + "%'");
                 try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                     XSSFWorkbook libro = new XSSFWorkbook();
@@ -8868,7 +9184,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
 
     private void CbxTDRItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CbxTDRItemStateChanged
         if (CbxTDR.getSelectedIndex() == 0) {
-            LabelQuin.setVisible(false);
+            LabelSem.setVisible(false);
             cbxQuincena.setVisible(false);
             BBVAISI.setEnabled(false);
             IDBBVA.setEnabled(false);
@@ -8880,7 +9196,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
             BajasISI.setEnabled(false);
         }
         if (CbxTDR.getSelectedIndex() == 1) {
-            LabelQuin.setVisible(false);
+            LabelSem.setVisible(false);
             cbxQuincena.setVisible(false);
             BBVAISI.setEnabled(true);
             IDBBVA.setEnabled(true);
@@ -8892,7 +9208,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
             BajasISI.setEnabled(true);
         }
         if (CbxTDR.getSelectedIndex() == 2) {
-            LabelQuin.setVisible(true);
+            LabelSem.setVisible(true);
             cbxQuincena.setVisible(true);
             BBVAISI.setEnabled(true);
             IDBBVA.setEnabled(true);
@@ -8904,7 +9220,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
             BajasISI.setEnabled(true);
         }
         if (CbxTDR.getSelectedIndex() == 3) {
-            LabelQuin.setVisible(false);
+            LabelSem.setVisible(false);
             cbxQuincena.setVisible(false);
             BBVAISI.setEnabled(false);
             IDBBVA.setEnabled(false);
@@ -8916,7 +9232,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
             BajasISI.setEnabled(false);
         }
         if (CbxTDR.getSelectedIndex() == 4) {
-            LabelQuin.setVisible(false);
+            LabelSem.setVisible(false);
             cbxQuincena.setVisible(false);
             BBVAISI.setEnabled(false);
             IDBBVA.setEnabled(false);
@@ -8928,7 +9244,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
             BajasISI.setEnabled(false);
         }
         if (CbxTDR.getSelectedIndex() == 5) {
-            LabelQuin.setVisible(true);
+            LabelSem.setVisible(true);
             cbxQuincena.setVisible(true);
             BBVAISI.setEnabled(false);
             IDBBVA.setEnabled(false);
@@ -8940,7 +9256,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
             BajasISI.setEnabled(false);
         }
         if (CbxTDR.getSelectedIndex() == 6) {
-            LabelQuin.setVisible(true);
+            LabelSem.setVisible(true);
             cbxQuincena.setVisible(true);
             BBVAISI.setEnabled(false);
             IDBBVA.setEnabled(false);
@@ -8999,7 +9315,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
     private javax.swing.JCheckBox IDSant;
     private javax.swing.JCheckBox IDbaj;
     private javax.swing.JCheckBox IDeEfec;
-    private javax.swing.JLabel LabelQuin;
+    private javax.swing.JLabel LabelSem;
     private javax.swing.JLabel Move;
     private javax.swing.JCheckBox SantanderISI;
     private javax.swing.JPanel btnexit;
