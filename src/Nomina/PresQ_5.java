@@ -2073,7 +2073,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MousePressed
 
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
-        Logica_bd_pagosPresQ obj = new Logica_bd_pagosPresQ();
+        Logica_bd_pagosPresQ obj = new Logica_bd_pagosPresQ ();
         obj.BDRH();
     }//GEN-LAST:event_jLabel2MousePressed
 

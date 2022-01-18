@@ -192,7 +192,7 @@ public final class PresS_5 extends javax.swing.JFrame {
         Pre = new javax.swing.JTable();
         jButton6 = new javax.swing.JButton();
         CS5 = new javax.swing.JButton();
-        botonWeb3 = new botones.BotonWeb();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jPanel7 = new javax.swing.JPanel();
         botonWeb5 = new botones.BotonWeb();
@@ -637,8 +637,13 @@ public final class PresS_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb3.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPrestamosSem.php");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel1MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -657,7 +662,7 @@ public final class PresS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonWeb3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CS5)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -671,7 +676,7 @@ public final class PresS_5 extends javax.swing.JFrame {
                     .addComponent(BP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6)
                     .addComponent(CS5)
-                    .addComponent(botonWeb3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
                 .addGap(55, 55, 55))
@@ -1929,6 +1934,11 @@ public final class PresS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ADMV2ActionPerformed
 
+    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
+        Logica_bd_NomPresS obj = new Logica_bd_NomPresS();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel1MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -2024,10 +2034,10 @@ public final class PresS_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane Tprestamos;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zona;
-    private botones.BotonWeb botonWeb3;
     private botones.BotonWeb botonWeb5;
     private javax.swing.JTextField interes;
     private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel157;
     private javax.swing.JLabel jLabel30;

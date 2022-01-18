@@ -1005,7 +1005,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botonWeb3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="CS5" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1023,7 +1023,7 @@
                               <Component id="BP" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="CS5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botonWeb3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane10" pref="708" max="32767" attributes="0"/>
@@ -1096,13 +1096,18 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS5ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="botones.BotonWeb" name="botonWeb3">
+                <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                     </Property>
-                    <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaSem/EPCPrestamosSem.php"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MousePressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
