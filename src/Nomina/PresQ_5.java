@@ -7,6 +7,7 @@ import RH.*;
 import Inicio.Inicio_1;
 import Logicas.Logica_bd_NomPresQ;
 import Logicas.Logica_bd_pagosCDA;
+import Logicas.Logica_bd_pagosPresQ;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
 import java.awt.HeadlessException;
@@ -687,7 +688,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
         FilPDPname = new javax.swing.JTextField();
         FilPDPAp = new javax.swing.JTextField();
         FilPDPAm = new javax.swing.JTextField();
-        botonWeb5 = new botones.BotonWeb();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -1246,9 +1247,13 @@ public final class PresQ_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb5.setToolTipText("");
-        botonWeb5.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosPrestamosQuin.php");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel2MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -1271,7 +1276,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FilPDPAm, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonWeb5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2)
                         .addGap(0, 1038, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -1279,15 +1284,14 @@ public final class PresQ_5 extends javax.swing.JFrame {
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel157)
-                        .addComponent(FiltrosTPDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(LabelFPDP)
-                        .addComponent(FilPDPname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FilPDPAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FilPDPAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(botonWeb5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel157)
+                    .addComponent(FiltrosTPDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelFPDP)
+                    .addComponent(FilPDPname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FilPDPAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FilPDPAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(12, 12, 12)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
                 .addContainerGap())
@@ -2068,6 +2072,11 @@ public final class PresQ_5 extends javax.swing.JFrame {
         obj.BDRH();
     }//GEN-LAST:event_jLabel1MousePressed
 
+    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
+        Logica_bd_pagosPresQ obj = new Logica_bd_pagosPresQ();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel2MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -2168,13 +2177,13 @@ public final class PresQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zona;
-    private botones.BotonWeb botonWeb5;
     private javax.swing.JTextField interes;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel157;
     private javax.swing.JLabel jLabel160;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;

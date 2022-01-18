@@ -1189,7 +1189,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FilPDPAm" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botonWeb5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="1038" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -1201,16 +1201,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel157" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FiltrosTPDP" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LabelFPDP" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FilPDPname" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FilPDPAp" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FilPDPAm" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="botonWeb5" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel157" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FiltrosTPDP" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="LabelFPDP" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FilPDPname" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FilPDPAp" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FilPDPAm" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Component id="jScrollPane12" pref="818" max="32767" attributes="0"/>
@@ -1284,14 +1282,18 @@
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FilPDPAmKeyReleased"/>
                   </Events>
                 </Component>
-                <Component class="botones.BotonWeb" name="botonWeb5">
+                <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                     </Property>
-                    <Property name="toolTipText" type="java.lang.String" value=""/>
-                    <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosPrestamosQuin.php"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel2MousePressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
