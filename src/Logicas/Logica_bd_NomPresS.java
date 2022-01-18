@@ -222,7 +222,10 @@ public class Logica_bd_NomPresS {
                     cell = row.createCell(18);
                     cell.setCellValue(resultSetRH.getString(19));
                     cell.setCellStyle(Contenido);
-
+                    cell = row.createCell(19);
+                    cell.setCellValue(resultSetRH.getString(20));
+                    cell.setCellStyle(Contenido);
+                    
                     i++;
                 }
 

@@ -1,12 +1,11 @@
 package Nomina;
 
-import VentanasDReportes.RepNom_7;
+import VentanasDReportes.*;
 import Admin.*;
 import Conexion.ConexionSQL;
 import RH.*;
 import Inicio.Inicio_1;
 import Logicas.Logica_bd_NomODT;
-import Logicas.Logica_bd_pagosCDA;
 import Logicas.Logica_bd_pagosODT;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
@@ -772,6 +771,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         LDA = new javax.swing.JMenuItem();
         Reportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem18 = new javax.swing.JMenuItem();
 
         Q11.setText("0");
 
@@ -1760,6 +1760,14 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             }
         });
         Reportes.add(jMenuItem6);
+
+        jMenuItem18.setText("Reportes de nomina sem");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        Reportes.add(jMenuItem18);
 
         jMenuBar1.add(Reportes);
 
@@ -2928,6 +2936,12 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         obj.BDRH();
     }//GEN-LAST:event_jLabel2MousePressed
 
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        RepNomSem_7 regr = new RepNomSem_7();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3106,6 +3120,8 @@ public final class ODTQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;

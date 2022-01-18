@@ -9,6 +9,7 @@ import Filtros.FiltrosZonas;
 import Inicio.Inicio_1;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
+import VentanasDReportes.RepNomSem_7;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.awt.print.PrinterException;
@@ -1300,6 +1301,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         LDA = new javax.swing.JMenuItem();
         Reportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nomina Semanal IMSS");
@@ -5907,6 +5909,14 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
         Reportes.add(jMenuItem6);
+
+        jMenuItem16.setText("Reportes de nomina sem");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        Reportes.add(jMenuItem16);
 
         jMenuBar1.add(Reportes);
 
@@ -14127,6 +14137,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ADMV2ActionPerformed
 
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        RepNomSem_7 regr = new RepNomSem_7();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -14650,6 +14666,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;

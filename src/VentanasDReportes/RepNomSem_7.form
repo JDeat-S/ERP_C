@@ -97,7 +97,7 @@
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="LabelSem" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="cbxQuincena" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="cbxSem" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Component id="cbxZona" min="-2" max="-2" attributes="0"/>
                                               </Group>
@@ -135,7 +135,7 @@
                                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="CbxTDR" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="LabelSem" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbxQuincena" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbxSem" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -219,7 +219,7 @@
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="cbxQuincena">
+                    <Component class="javax.swing.JComboBox" name="cbxSem">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="61">

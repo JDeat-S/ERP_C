@@ -1,6 +1,6 @@
 package Nomina;
 
-import VentanasDReportes.RepNom_7;
+import VentanasDReportes.*;
 import Admin.*;
 import RH.*;
 import Conexion.ConexionSQL;
@@ -655,6 +655,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         LDA = new javax.swing.JMenuItem();
         Reportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Caja de ahorro");
@@ -1113,7 +1114,6 @@ public final class CDAQ_5 extends javax.swing.JFrame {
                             .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel102)
                                 .addComponent(AMcda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Labelfilcda)
@@ -1628,6 +1628,14 @@ public final class CDAQ_5 extends javax.swing.JFrame {
             }
         });
         Reportes.add(jMenuItem6);
+
+        jMenuItem17.setText("Reportes de nomina sem");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
+        Reportes.add(jMenuItem17);
 
         jMenuBar1.add(Reportes);
 
@@ -2235,6 +2243,12 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         obj.BDRH();
     }//GEN-LAST:event_jLabel5MousePressed
 
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        RepNomSem_7 regr = new RepNomSem_7();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2385,6 +2399,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
