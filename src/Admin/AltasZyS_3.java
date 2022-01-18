@@ -5,7 +5,6 @@ import ColoresT.*;
 import Conexion.ConexionSQL;
 import Filtros.FiltrosZonas;
 import Logicas.*;
-import Nomina.*;
 import RH.*;
 import java.sql.ResultSetMetaData;
 import java.awt.HeadlessException;

@@ -505,7 +505,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FillAMCDA" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="botonWeb7" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="Eliminarcda" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -579,9 +579,12 @@
                                   <Component id="FilAPCDA" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="FillAMCDA" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="Eliminarcda" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="botonWeb7" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Eliminarcda" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1118,15 +1121,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ModCDAActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="botones.BotonWeb" name="botonWeb7">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                    </Property>
-                    <Property name="toolTipText" type="java.lang.String" value=""/>
-                    <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCCda.php"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel162">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Filtros:"/>
@@ -1166,6 +1160,16 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EliminarcdaActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel4">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MousePressed"/>
                   </Events>
                 </Component>
               </SubComponents>

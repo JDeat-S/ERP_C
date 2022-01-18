@@ -1,14 +1,5 @@
 package Admin;
 
-import Nomina.PresS_5;
-import Nomina.PresQ_5;
-import Nomina.ODTQ_5;
-import Nomina.NominaS_simss_5;
-import Nomina.NominaS_5;
-import Nomina.NominaQSiMSS_5;
-import Nomina.Listas_5;
-import RH.Depositos_4;
-import Nomina.CDAQ_5;
 import RH.*;
 import Nomina.*;
 import Conexion.ConexionSQL;

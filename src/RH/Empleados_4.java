@@ -144,11 +144,14 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 Menuadm.setVisible(false);
                 if (LP.getP1() == 0) {
                     Alumnos.setVisible(false);
-                }   if (LP.getP2() == 0) {
+                }
+                if (LP.getP2() == 0) {
                     EmpleadosT.setVisible(false);
-                }   if (LP.getP3() == 0) {
+                }
+                if (LP.getP3() == 0) {
                     Depositos.setVisible(false);
-                }   if (LP.getP4() == 0) {
+                }
+                if (LP.getP4() == 0) {
                     Semanales.setVisible(false);
                 }
             }
@@ -156,11 +159,14 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 Menuadm.setVisible(false);
                 if (LP.getP1() == 0) {
                     Alumnos.setVisible(false);
-                }   if (LP.getP2() == 0) {
+                }
+                if (LP.getP2() == 0) {
                     EmpleadosT.setVisible(false);
-                }   if (LP.getP3() == 0) {
+                }
+                if (LP.getP3() == 0) {
                     Depositos.setVisible(false);
-                }   if (LP.getP4() == 0) {
+                }
+                if (LP.getP4() == 0) {
                     Semanales.setVisible(false);
                 }
             }
@@ -1340,11 +1346,11 @@ public final class Empleados_4 extends javax.swing.JFrame {
         FiltroNSSGen = new javax.swing.JTextField();
         Filtroap = new javax.swing.JTextField();
         Filtroam = new javax.swing.JTextField();
-        botonWeb1 = new botones.BotonWeb();
         jScrollPane2 = new javax.swing.JScrollPane();
         ObsTgen = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         Filobs = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         IMSS = new javax.swing.JPanel();
         modIMSS = new javax.swing.JButton();
@@ -2112,17 +2118,6 @@ public final class Empleados_4 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb1.setLink("http://192.168.3.10/Reportes/ReporteRH/EPCEmpleados.php");
-        botonWeb1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonWeb1MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                botonWeb1MousePressed(evt);
-            }
-        });
-
         ObsTgen.setColumns(20);
         ObsTgen.setLineWrap(true);
         ObsTgen.setRows(5);
@@ -2141,6 +2136,13 @@ public final class Empleados_4 extends javax.swing.JFrame {
             }
         });
 
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel31MousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -2156,7 +2158,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Filtros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel31)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelF1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2213,9 +2215,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
                         .addComponent(Cs2)
                         .addComponent(Filtroap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Filtroam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1)
-                        .addComponent(Filobs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Filobs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel31))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ScrollpaneTG, javax.swing.GroupLayout.PREFERRED_SIZE, 749, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4064,15 +4066,6 @@ public final class Empleados_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    private void botonWeb1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonWeb1MousePressed
-        Logica_bd_RH obj = new Logica_bd_RH();
-        obj.BDRH();
-    }//GEN-LAST:event_botonWeb1MousePressed
-
-    private void botonWeb1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonWeb1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonWeb1MouseExited
-
     private void CsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CsActionPerformed
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
@@ -4241,6 +4234,11 @@ public final class Empleados_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ADMV1ActionPerformed
 
+    private void jLabel31MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MousePressed
+        Logica_bd_RH obj = new Logica_bd_RH();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel31MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -4360,7 +4358,6 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JButton add;
     private javax.swing.JButton addimss;
     private javax.swing.JComboBox<String> bf;
-    private botones.BotonWeb botonWeb1;
     private botones.BotonWeb botonWeb2;
     private javax.swing.JComboBox<String> cfin;
     private javax.swing.JTextField cta;
@@ -4400,6 +4397,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
