@@ -2137,6 +2137,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         });
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel31.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel31MousePressed(evt);

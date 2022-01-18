@@ -608,7 +608,6 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         FilnamePCDA = new javax.swing.JTextField();
         FilAPPCDA = new javax.swing.JTextField();
         FilAMPCDA = new javax.swing.JTextField();
-        botonWeb8 = new botones.BotonWeb();
         MMAPagos = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
         MADE = new javax.swing.JLabel();
@@ -616,6 +615,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         ADCDA = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         NQna = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -969,6 +969,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel4MousePressed(evt);
@@ -1231,10 +1232,6 @@ public final class CDAQ_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb8.setToolTipText("");
-        botonWeb8.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosCda.php");
-
         MMAPagos.setText("Mostrar monto ahorrado");
         MMAPagos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1253,6 +1250,14 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         jLabel3.setText("# Quincena");
 
         NQna.setText("0");
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel5MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1297,7 +1302,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FilAMPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonWeb8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)
                         .addContainerGap(713, Short.MAX_VALUE))
                     .addComponent(jScrollPane1)))
         );
@@ -1305,17 +1310,16 @@ public final class CDAQ_5 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel152)
-                        .addComponent(NFpagocda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel155)
-                        .addComponent(FilPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(labelpcda)
-                        .addComponent(FilnamePCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FilAPPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FilAMPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(botonWeb8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel152)
+                    .addComponent(NFpagocda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel155)
+                    .addComponent(FilPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelpcda)
+                    .addComponent(FilnamePCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FilAPPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FilAMPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -2222,9 +2226,14 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ADMV2ActionPerformed
 
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
-Logica_bd_NomCDA obj = new Logica_bd_NomCDA();
+        Logica_bd_NomCDA obj = new Logica_bd_NomCDA();
         obj.BDRH();
     }//GEN-LAST:event_jLabel4MousePressed
+
+    private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MousePressed
+        Logica_bd_pagosCDA obj = new Logica_bd_pagosCDA();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel5MousePressed
 
     /**
      * @param args the command line arguments
@@ -2327,7 +2336,6 @@ Logica_bd_NomCDA obj = new Logica_bd_NomCDA();
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JTextField Totalap;
     private javax.swing.JMenuItem ZYS;
-    private botones.BotonWeb botonWeb8;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel101;
@@ -2359,6 +2367,7 @@ Logica_bd_NomCDA obj = new Logica_bd_NomCDA();
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;

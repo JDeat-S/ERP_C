@@ -1167,6 +1167,9 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                     </Property>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MousePressed"/>
@@ -1237,7 +1240,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FilAMPCDA" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botonWeb8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="713" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane1" max="32767" attributes="0"/>
@@ -1249,18 +1252,16 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel152" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="NFpagocda" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel155" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FilPCDA" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelpcda" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FilnamePCDA" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FilAPPCDA" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FilAMPCDA" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="botonWeb8" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel152" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="NFpagocda" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel155" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FilPCDA" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelpcda" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FilnamePCDA" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FilAPPCDA" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FilAMPCDA" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1415,15 +1416,6 @@
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FilAMPCDAKeyReleased"/>
                   </Events>
                 </Component>
-                <Component class="botones.BotonWeb" name="botonWeb8">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                    </Property>
-                    <Property name="toolTipText" type="java.lang.String" value=""/>
-                    <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosCda.php"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JCheckBox" name="MMAPagos">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Mostrar monto ahorrado"/>
@@ -1461,6 +1453,19 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel5">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel5MousePressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
