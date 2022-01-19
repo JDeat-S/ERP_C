@@ -2088,7 +2088,6 @@ public final class PresQ_5 extends javax.swing.JFrame {
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
         RepNomSem_7 regr = new RepNomSem_7();
         regr.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     /**

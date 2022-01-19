@@ -2939,7 +2939,6 @@ public final class ODTQ_5 extends javax.swing.JFrame {
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
         RepNomSem_7 regr = new RepNomSem_7();
         regr.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     /**
