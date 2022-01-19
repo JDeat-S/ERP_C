@@ -63,7 +63,7 @@ public class pruebas2 {
             );
 
             Statement statement = connect.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas.sur 1.simss` WHERE `NDL` BETWEEN '20' AND '21'");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas.sur 1.simss` WHERE `NDL` BETWEEN '20' AND '21' LIMIT 1");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Listas de asistencia");
@@ -233,12 +233,9 @@ public class pruebas2 {
                     cell.setCellValue(resultSet.getString("Zona"));
                     spreadsheet.setColumnWidth(8, 4250);
                     cell.setCellStyle(Contenido);
-
-                    int a[] = new int[2];
-                    a[0] = resultSet.getInt("NDL");
-                    for (int i = 0; i < a.length; i++) {
+                        int a = resultSet.getInt(1);
                         cell = row.createCell(9);
-                        cell.setCellValue(a[0]);
+                        cell.setCellValue(a );
                         spreadsheet.setColumnWidth(9, 1500);
                         cell.setCellStyle(Contenido);
                         row = spreadsheet.createRow(23);
@@ -286,11 +283,9 @@ public class pruebas2 {
 
                         cell = row.createCell(9);
                         spreadsheet.setColumnWidth(9, 1500);
-                        cell.setCellValue(a[i]);
+                        cell.setCellValue(a );
                         cell.setCellStyle(Contenido);
-                        System.out.println(a[i]);
-                    }
-
+                        System.out.println(a);
                     row = spreadsheet.createRow(5);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
